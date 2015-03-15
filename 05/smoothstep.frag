@@ -16,7 +16,7 @@ float plot(vec2 _st, float _pct){
 void main() {
     vec2 st = gl_FragCoord.xy/u_resolution;
 
-    // Everthins is over 0.5 will be 1.0 the rest 0.0
+    // Smooth interpolation between 0.1 and 0.9
     float y = smoothstep(0.1,0.9,st.x);
 
     vec3 color = vec3(y);

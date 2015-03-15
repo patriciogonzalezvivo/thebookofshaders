@@ -16,7 +16,7 @@ void main() {
     vec2 st = gl_FragCoord.xy/u_resolution;
 
     // Step will return 0.0 unless the value is over 0.5,
-    // in that case will return 1.0
+    // in that case it will return 1.0
     float y = step(0.5,st.x);
 
     vec3 color = vec3(y);
