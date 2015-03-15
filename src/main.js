@@ -1,0 +1,362 @@
+//  Graph plotter function take from 
+//  From http://blog.hvidtfeldts.net/index.php/2011/07/plotting-high-frequency-functions-using-a-gpu/
+var preFunction = "\n\
+#ifdef GL_ES\n\
+precision mediump float;\n\
+#endif\n\
+\n\
+#define PI 3.14159265359\n\
+\n\
+uniform vec2 u_resolution;\n\
+uniform vec2 u_mouse;\n\
+uniform float u_time;\n\
+\n\
+float lineJitter = 0.5;\n\
+float lineWidth = 7.0;\n\
+float gridWidth = 1.7;\n\
+float scale = 0.0013;\n\
+float zoom = 2.5;\n\
+vec2 offset = vec2(0.5);\n\
+\n\
+float rand (in float _x) {\n\
+    return fract(sin(_x)*1e4);\n\
+}\n\
+\n\
+float rand (in vec2 co) {\n\
+    return fract(sin(dot(co.xy,vec2(12.9898,78.233)))*43758.5453);\n\
+}\n\
+\n\
+float noise (in float _x) {\n\
+    float i = floor(_x);\n\
+    float f = fract(_x);\n\
+    float u = f * f * (3.0 - 2.0 * f);\n\
+    return mix(rand(i), rand(i + 1.0), u);\n\
+}\n\
+\n\
+float noise (in vec2 _st) {\n\
+    vec2 i = floor(_st);\n\
+    vec2 f = fract(_st);\n\
+    // Four corners in 2D of a tile\n\
+    float a = rand(i);\n\
+    float b = rand(i + vec2(1.0, 0.0));\n\
+    float c = rand(i + vec2(0.0, 1.0));\n\
+    float d = rand(i + vec2(1.0, 1.0));\n\
+    vec2 u = f * f * (3.0 - 2.0 * f);\n\
+    return mix(a, b, u.x) + \n\
+            (c - a)* u.y * (1.0 - u.x) + \n\
+            (d - b) * u.x * u.y;\n\
+}\n\
+\n\
+float function(in float x) {\n\
+    float y = 0.0;\n";
+
+var postFunction = "\n\
+    return y;\n\
+}\n\
+\n\
+vec3 plot2D(in vec2 _st, in float _width ) {\n\
+    const float samples = 3.0;\n\
+\n\
+    vec2 steping = _width*vec2(scale)/samples;\n\
+    \n\
+    float count = 0.0;\n\
+    float mySamples = 0.0;\n\
+    for (float i = 0.0; i < samples; i++) {\n\
+        for (float j = 0.0;j < samples; j++) {\n\
+            if (i*i+j*j>samples*samples) \n\
+                continue;\n\
+            mySamples++;\n\
+            float ii = i + lineJitter*rand(vec2(_st.x+ i*steping.x,_st.y+ j*steping.y));\n\
+            float jj = j + lineJitter*rand(vec2(_st.y + i*steping.x,_st.x+ j*steping.y));\n\
+            float f = function(_st.x+ ii*steping.x)-(_st.y+ jj*steping.y);\n\
+            count += (f>0.) ? 1.0 : -1.0;\n\
+        }\n\
+    }\n\
+    vec3 color = vec3(1.0);\n\
+    if (abs(count)!=mySamples)\n\
+        color = vec3(abs(float(count))/float(mySamples));\n\
+    return color;\n\
+}\n\
+\n\
+vec3 grid2D( in vec2 _st, in float _width ) {\n\
+    float axisDetail = _width*scale;\n\
+    if (abs(_st.x)<axisDetail || abs(_st.y)<axisDetail) \n\
+        return 1.0-vec3(0.65,0.65,1.0);\n\
+    if (abs(mod(_st.x,1.0))<axisDetail || abs(mod(_st.y,1.0))<axisDetail) \n\
+        return 1.0-vec3(0.80,0.80,1.0);\n\
+    if (abs(mod(_st.x,0.25))<axisDetail || abs(mod(_st.y,0.25))<axisDetail) \n\
+        return 1.0-vec3(0.95,0.95,1.0);\n\
+    return vec3(0.0);\n\
+}\n\
+\n\
+void main(){\n\
+    vec2 st = (gl_FragCoord.xy/u_resolution.xy)-offset;\n\
+    st.x *= u_resolution.x/u_resolution.y;\n\
+\n\
+    scale *= zoom;\n\
+    st *= zoom;\n\
+\n\
+    vec3 color = plot2D(st,lineWidth);\n\
+    color -= grid2D(st,gridWidth);\n\
+\n\
+    gl_FragColor = vec4(color,1.0);\n\
+}";
+
+/*
+ *	Fetch for files
+ */
+function fetchHTTP(url, methood){
+	var request = new XMLHttpRequest(), response;
+
+	request.onreadystatechange = function () {
+		if (request.readyState === 4 && request.status === 200) {
+			response = request.responseText;
+		}
+	}
+	request.open(methood ? methood : 'GET', url, false);
+	request.send();
+	return response;
+}
+
+function randomString(length, chars) {
+    var mask = '';
+    if (chars.indexOf('a') > -1) mask += 'abcdefghijklmnopqrstuvwxyz';
+    if (chars.indexOf('A') > -1) mask += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    if (chars.indexOf('#') > -1) mask += '0123456789';
+    if (chars.indexOf('!') > -1) mask += '~`!@#$%^&*()_+-={}[]:";\'<>?,./|\\';
+    var result = '';
+    for (var i = length; i > 0; --i) result += mask[Math.round(Math.random() * (mask.length - 1))];
+    return result;
+}
+
+function loadMarkdown(){
+
+    // parse MARKDOWN
+    //
+	var mdFileURL = window.location.hash.substr(1);
+	var mdText = "No **text** found";
+	if(mdFileURL){
+		mdText = fetchHTTP(mdFileURL);
+	} else {
+		mdText = fetchHTTP("README.md");
+	}
+	content.innerHTML = marked(mdText);
+
+    // parse CODE & CANVAS boxes
+	var ccList = document.querySelectorAll(".codeAndCanvas");
+    var id = "", 
+        srcFile= "",
+        str = ""
+        imagesFiles = "",
+        inject = "";
+
+    var imgCounter = 0;
+	for(var i = 0; i < ccList.length; i++){
+		if (ccList[i].hasAttribute("data")){
+			id = randomString(16, '#aA');
+			srcFile = ccList[i].getAttribute("data");
+            
+            // load code
+            str = fetchHTTP(srcFile);
+            inject = '<div class="editor">\
+            <canvas id ='+id+' class="canvas" data-fragment="'+str+'" ';
+
+            // load images
+            imagesFiles = ccList[i].getAttribute("data-imgs");
+            imgCounter = 0;
+            if ( imagesFiles ){
+                var imgUrls = imagesFiles.split('&');
+                for(var j in imgUrls){
+                    var ext = imgUrls[j].substr(imgUrls[j].lastIndexOf('.') + 1);
+                    if (ext == "png" || ext == "jpg" || ext == "PNG" || ext == "JPG" ){
+                        if(imgCounter === 0){
+                            inject += 'data-textures="'
+                        } else {
+                            inject += ",";
+                        }
+                        inject += imgUrls[j];
+                        imgCounter++;
+                    }
+                }
+                if (imgCounter !== 0){
+                    inject += '" ';
+                }
+            } 
+            inject += ' width="250px" height="250px"></canvas>\
+			</div>';
+
+            // inject the code
+            ccList[i].innerHTML = inject;
+
+            // wakeup the code editor
+			var demoEditor = ccList[i].getElementsByTagName("div");
+			if(demoEditor[0]){
+				var editor = CodeMirror(demoEditor[0],{
+					value: str,
+					viewportMargin: Infinity,
+					lineNumbers: true,
+					matchBrackets: true,
+					mode: "x-shader/x-fragment",
+					keyMap: "sublime",
+					autoCloseBrackets: true,
+					extraKeys: {"Ctrl-Space": "autocomplete"},
+					showCursorWhenSelecting: true,
+                    indentUnit: 4
+				});
+
+				editor.id = id;
+
+				editor.on("change", function(cm, change) {
+					var canvasToChange = document.getElementById(cm.id)
+					canvasToChange.setAttribute("data-fragment", cm.getValue());
+					loadShaders();
+				});
+			}
+		}
+	}
+
+    // parse Simple FUNCTIONS
+    var fList = document.querySelectorAll(".simpleFunction");
+    for(var i = 0; i < fList.length; i++){
+        if (fList[i].hasAttribute("data")){
+            id = randomString(16, '#aA');
+            var funct = fList[i].getAttribute("data");
+  
+            // compose glslCanvas
+            fList[i].innerHTML = '<div class="function">\
+            <canvas id ='+id+' class="canvas" data-fragment="'+preFunction+funct+postFunction+'" width="800px" height="240px" ></canvas>\
+            </div>\
+            <p class="caption">Graph plotter by <a href="http://blog.hvidtfeldts.net/index.php/2011/07/plotting-high-frequency-functions-using-a-gpu/">Mikael Hvidtfeldt Christensen</a> (2011)<p>';
+
+            // wakeup the code editor
+            var demoEditor = fList[i].getElementsByTagName("div");
+            if(demoEditor[0]){
+                var editor = CodeMirror(demoEditor[0],{
+                    value: funct,
+                    viewportMargin: Infinity,
+                    lineNumbers: false,
+                    matchBrackets: true,
+                    mode: "x-shader/x-fragment",
+                    keyMap: "sublime",
+                    autoCloseBrackets: true,
+                    extraKeys: {"Ctrl-Space": "autocomplete"},
+                    showCursorWhenSelecting: true,
+                    indentUnit: 4
+                });
+                editor.id = id;
+
+                editor.on("change", function(cm, change) {
+                    var canvasToChange = document.getElementById(cm.id)
+                    canvasToChange.setAttribute("data-fragment", preFunction+cm.getValue()+postFunction);
+                    loadShaders();
+                });
+            }
+        }
+    }
+
+	// Load codes tags that have "src" attributes
+	var list = document.getElementsByTagName("code");
+	for(var i = 0; i < list.length; i++){
+		if (list[i].className == "lang-glsl" || 
+			list[i].className == "lang-bash" || 
+			list[i].className == "lang-cpp" || 
+			list[i].className == "lang-html" ||
+            list[i].className == "lang-processing" ){
+			hljs.highlightBlock(list[i]);
+		}
+	}
+}
+
+function insertAfter(newElement,targetElement) {
+    var parent = targetElement.parentNode;
+    if (parent.lastChild == targetElement) {
+        parent.appendChild(newElement);
+    } else {
+        parent.insertBefore(newElement,targetElement.nextSibling);
+    }
+}
+
+function captionizeImages() {
+    if (!document.getElementsByTagName) 
+        return false;
+
+    if (!document.createElement) 
+        return false;
+    
+    var images = document.getElementsByTagName("img");
+    if (images.length < 1) 
+        return false; 
+
+    for (var i=0; i<images.length; i++) {
+        var title = images[i].getAttribute("alt");
+
+        if (title != ""){
+            var divCaption = document.createElement("div");
+            divCaption.className = "caption";
+            var divCaption_text = document.createTextNode(title);
+            divCaption.appendChild(divCaption_text);
+            var divContainer = document.createElement("div");
+            divContainer.className="imgcontainer";
+            images[i].parentNode.insertBefore(divContainer,images[i]);
+            divContainer.appendChild(images[i]);
+            insertAfter(divCaption,images[i]);
+        }
+    }
+}
+
+function FormatNumberLength(num, length) {
+    var r = "" + num;
+    while (r.length < length) {
+        r = "0" + r;
+    }
+    return r;
+}
+
+function checkUrl(url) {
+    var request = false;
+    if (window.XMLHttpRequest) {
+            request = new XMLHttpRequest;
+    } else if (window.ActiveXObject) {
+            request = new ActiveXObject("Microsoft.XMLHttp");
+    }
+
+    if (request) {
+            request.open("GET", url);
+            if (request.status == 200) { return true; }
+    }
+
+    return false;
+}
+
+function previusPage(){
+	var path = window.location.pathname;
+	var n = parseInt( path.match( /[0-1].(?!.*[0-1])/ )[0] );
+    var url;
+	n -= 1;
+    if(n < 0){
+        url = "../";
+    } else {
+        url = "../" + FormatNumberLength(n,2);
+    }
+	window.location.href =  url;
+}
+
+function homePage(){
+	window.location.href = "../";
+}
+
+function nextPage(){
+	var path = window.location.pathname;
+	var n = parseInt( path.match( /[0-1].(?!.*[0-1])/ )[0] );
+	n += 1;
+	var url = "../" + FormatNumberLength(n,2);
+	window.location.href =  url;
+}
+
+window.onload = function(){
+	loadMarkdown();
+    captionizeImages();
+
+	loadShaders();
+	renderShaders(); 
+};
