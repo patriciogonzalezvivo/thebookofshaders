@@ -339,6 +339,7 @@ function fetchHTTP(url, methood){
 		}
 	}
 	request.open(methood ? methood : 'GET', url, false);
+	request.overrideMimeType("text/plain");
 	request.send();
 	return response;
 }

@@ -115,7 +115,6 @@ function fetchHTTP(url, methood){
 	}
 	request.open(methood ? methood : 'GET', url, false);
     request.overrideMimeType("text/plain");
-    // request.overrideMimeType("text/html");
 	request.send(null);
 	return response;
 }
