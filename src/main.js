@@ -141,7 +141,7 @@ function loadMarkdown(){
 	} else {
 		mdText = fetchHTTP("README.md");
 	}
-	content.innerHTML = marked(mdText);
+	document.getElementById('content').innerHTML = marked(mdText);
 
     // parse CODE & CANVAS boxes
 	var ccList = document.querySelectorAll(".codeAndCanvas");
