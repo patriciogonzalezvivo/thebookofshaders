@@ -12,9 +12,9 @@ float expStep( float x, float k, float n ){
     return exp( -k*pow(x,n) );
 }
 
-float plot(vec2 _st, float _pct){
-  return  smoothstep( _pct-0.01, _pct, _st.y) - 
-          smoothstep( _pct, _pct+0.01, _st.y);
+float plot(vec2 st, float pct){
+  return  smoothstep( pct-0.02, pct, st.y) - 
+          smoothstep( pct, pct+0.02, st.y);
 }
 
 void main() {
