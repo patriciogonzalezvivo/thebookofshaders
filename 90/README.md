@@ -27,7 +27,7 @@ Once you have everything installed you just need to do:
 ```bash
 cd ~
 git clone https://github.com/patriciogonzalezvivo/thebookofshaders.git
-cd GLSL-Book
+cd thebookofshaders
 python -m SimpleHTTPServer
 ```
 
