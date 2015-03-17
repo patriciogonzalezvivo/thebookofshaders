@@ -1,4 +1,4 @@
-<canvas id="custom" class="canvas" data-fragment-url="examples/moon.frag" data-textures="examples/images/moon-texture.jpg" width="400px" height="400px"></canvas>
+<canvas id="custom" class="canvas" data-fragment-url="examples/moon.frag" data-textures="examples/images/moon-texture.jpg" width="350px" height="350px"></canvas>
 
 # The Book of Shaders
 *by [Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/)*
@@ -50,10 +50,10 @@ This is a gentle step-by-step guide through the abstract and complex universe of
     * Environmental-maps (spherical and cube)
     * Reflect and refract
 
-* Appendix 
-    * [How can I navigate this book offline?](90/)
-    * [How to use this book in a classroom with RaspberryPi?](91/)
-    * [How to print this book?](92/)
+* [Appendix](appendix/)
+    * [How can I navigate this book offline?](http://thebookofshaders.com/appendix/index.html#02.md)
+    * [How to use this book in a classroom with RaspberryPi?](http://thebookofshaders.com/appendix/index.html#02.md)
+    * [How to print this book?](http://thebookofshaders.com/appendix/index.html#02.md)
 
 ## About the Author
 

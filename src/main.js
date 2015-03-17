@@ -114,7 +114,8 @@ function fetchHTTP(url, methood){
 		}
 	}
 	request.open(methood ? methood : 'GET', url, false);
-	request.send();
+    request.overrideMimeType("text/plain");
+	request.send(null);
 	return response;
 }
 
@@ -140,7 +141,7 @@ function loadMarkdown(){
 	} else {
 		mdText = fetchHTTP("README.md");
 	}
-	content.innerHTML = marked(mdText);
+	document.getElementById('content').innerHTML = marked(mdText);
 
     // parse CODE & CANVAS boxes
 	var ccList = document.querySelectorAll(".codeAndCanvas");

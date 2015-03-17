@@ -15,7 +15,7 @@ make
 make install
 cd ~
 git clone https://github.com/patriciogonzalezvivo/thebookofshaders.git
-cd GLSL-Book
+cd thebookofshaders
 ```
 
 At the end of each section you will find code and non-code based exercises to give to your students. They are designed to help students immediately put concepts into practice, making concrete the abstract principles of parallel programming.

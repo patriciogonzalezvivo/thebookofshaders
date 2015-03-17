@@ -62,7 +62,7 @@ For that open your terminal once again and type:
 ```bash
 cd ~
 git clone https://github.com/patriciogonzalezvivo/thebookofshaders.git
-cd GLSL-Book
+cd thebookofshaders
 make
 ```
 
