@@ -113,7 +113,7 @@ void draw() {
 }
 ```
 
-In the order for the shader to work, you need to add the following line at the beginning of your shader: ```#define PROCESSING_COLOR_SHADER```. So in Processing a shader looks like this:
+In the order for the shader to work on versions previus to 2.1, you need to add the following line at the beginning of your shader: ```#define PROCESSING_COLOR_SHADER```. So it looks like this:
 ```glsl
 #ifdef GL_ES
 precision mediump float;

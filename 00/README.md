@@ -18,7 +18,7 @@ In the following chapters you will discover how incredibly fast and powerful thi
 
 This book is written for creative coders, game developers and engineers who have coding experience, a basic knowledge of linear algebra and trigonometry, and who want to take their work to an exciting new level of graphical quality. (If you want to learn how to code, I highly recommend you start with [Processing](https://processing.org/) and come back later when you are comfortable with it.)
 
-This book will teach you how to use and integrate shaders into your projects, improving their performance and graphical quality. Because GLSL (OpenGL Shading Language) shaders compile and run on a variety of platforms, you will be able to apply what you learn here to any enviroment that uses OpenGL, OpenGL ES or WebGL. In other words, you will be able to apply and use your knowledge with [Processing](https://processing.org/) sketches, [openFrameworsk](http://openframeworks.cc/) applications, [Cinder](http://libcinder.org/) interactive installations, [Three.js](http://threejs.org/) websites or iOS/Android games.
+This book will teach you how to use and integrate shaders into your projects, improving their performance and graphical quality. Because GLSL (OpenGL Shading Language) shaders compile and run on a variety of platforms, you will be able to apply what you learn here to any enviroment that uses OpenGL, OpenGL ES or WebGL. In other words, you will be able to apply and use your knowledge with [Processing](https://processing.org/) sketches, [openFrameworks](http://openframeworks.cc/) applications, [Cinder](http://libcinder.org/) interactive installations, [Three.js](http://threejs.org/) websites or iOS/Android games.
 
 ## What does this book cover?
 
@@ -38,11 +38,11 @@ Not much! If you have a modern browser that can do WebGL (like Chrome, Firefox o
 
 Alternatively, based on what you have or what you need from this book you can:
 
-- [Make a off-line version of this book](../90/)
+- [Make a off-line version of this book](http://thebookofshaders.com/appendix/index.html#00.md)
 
-- [Run the examples on a RaspberryPi without a browser](../91/)
+- [Run the examples on a RaspberryPi without a browser](http://thebookofshaders.com/appendix/index.html#01.md)
 
-- [Make a PDF of the book to print](../92/)
+- [Make a PDF of the book to print](http://thebookofshaders.com/appendix/index.html#02.md)
 
 - Use the [on-line repository](https://github.com/patriciogonzalezvivo/thebookofshaders) to help resolve issues and share code.
 
