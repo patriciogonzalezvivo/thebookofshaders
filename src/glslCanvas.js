@@ -455,7 +455,7 @@ function renderShader( _billboard ) {
 		mouse.y <= rect.bottom){
 
 		var mouseLocation = _billboard.gl.getUniformLocation(_billboard.program, "u_mouse");
-		_billboard.gl.uniform2f(mouseLocation,mouse.x-rect.left,_billboard.canvas.height-mouse.y-rect.top);
+		_billboard.gl.uniform2f(mouseLocation,mouse.x-rect.left,_billboard.canvas.height-(mouse.y-rect.top));
 	}
 
 	// set the resolution uniform

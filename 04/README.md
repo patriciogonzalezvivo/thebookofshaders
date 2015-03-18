@@ -1,6 +1,6 @@
 ## Running your shader
 
-At this point you're probably excited to try shaders on platforms you feel comfortable with. The following are examples of how to set shaders in some popular frameworks with the same uniforms that we are going to use throughout this book. (In the [GitHub repository for this chapter](https://github.com/patriciogonzalezvivo/GLSL-Book/tree/master/04), you'll find the full source code for these three frameworks.)
+At this point you're probably excited to try shaders on platforms you feel comfortable with. The following are examples of how to set shaders in some popular frameworks with the same uniforms that we are going to use throughout this book. (In the [GitHub repository for this chapter](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), you'll find the full source code for these three frameworks.)
 
 **Note**: In case you don't want to try shaders on the following frameworks, but you want to work outside a browser, you can download and compile [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). This MacOS and RaspberryPi program runs directly from terminal and is especially designed to execute the examples in this book.
 
