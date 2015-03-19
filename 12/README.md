@@ -10,12 +10,12 @@ y = amplitud + sin( frequency );
 
 An interesting property of waves is that they can be add up. For example, adding harmonic octaves together produce that something like the following graph.
 
-<div class="simpleFunction" data="
+```glsl
 for( int i = 0; i < 4; ++i) {
     y += sin(x*PI*float(i))/float(i);
 }
 y *= 0.6;
-"></div>
+```
 
 But on other side adding sine waves of different frequencies and amplituds will produce something very chaotic. 
 
@@ -48,7 +48,9 @@ This fine level of fragmentation is what we are interested. ...
 
 <div class="codeAndCanvas" data="2d-fbm.frag"></div>
 
-...
+## Using Fractal Braownian Motion
+
+http://www.iquilezles.org/www/articles/warp/warp.htm
 
 <div class="codeAndCanvas" data="clouds.frag"></div>
 
