@@ -3,6 +3,7 @@ precision mediump float;
 #endif
 
 uniform vec2 u_resolution;
+uniform vec2 u_mouse;
 uniform float u_time;
 
 float random (in float _x) {
@@ -41,30 +42,13 @@ float noise (in vec3 _p) {
             u.z);
 }
 
-#define NUM_OCTAVES 5
-
-float fbm ( in vec3 _p) {
-    float v = 0.0;
-    float a = 0.5;
-    vec3 shift = vec3(100);
-    for (int i = 0; i < NUM_OCTAVES; ++i) {
-        v += a * noise(_p);
-        _p = _p * 2.0 + shift;
-        a *= 0.5;
-    }
-    return v;
-}
-
 void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     vec3 color = vec3(0.0);
 
     vec3 pos = vec3(st*5.0,u_time*0.1);
 
-    float noise = noise(pos);
-    float fbm = fbm(pos);
-
-    color = vec3( mix(noise, fbm, abs(sin(u_time))));
+    color = vec3(noise(pos));
 
     gl_FragColor = vec4(color,1.0);
 }

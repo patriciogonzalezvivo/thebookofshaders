@@ -14,9 +14,24 @@ As you can see, we are extracting only the fractional part of a sine wave. We ha
 
 By the time you get to 100000 ( and the equation looks like this: ```y = fract(sin(x)*100000.0)``` ) you probably are not hable to distinguish the sine wave any more. The granulary of the fractions have corrupt the flow of the sine in random chaos.
 
+## Controling chaos
+
+Using random could be hard, is both too chaotic and, sometimes, not random enought. Take a look to the following graph. Inside it, we are using a ```rand()``` fuction implemented exactly like we describe above. 
+
+Taking a closer look, you can se the ```sin()``` wave crest and though at -1s.5707 and 1.5707. I bet you know understand why. Also, if you see the distribution of it seem to be more likely to get values between 0.5 than on the edges.
+
+<div class="simpleFunction" data="y = rand(x);
+//y = rand(x)*rand(x);
+//y = sqrt(rand(x));
+//y = pow(rand(x),5.);"></div>
+
+A while ago [Pixelero](pixelero.wordpress.com) made an [interersting article about random distribution](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/). I add some of the function he use in the following lines of the previus graph for you to play and observe how the distribution changes. Un comment them and see how the distribution change.
+
+If you read [Pixelero's article](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/) , is important to have in mind that our ```rand()``` function is a deterministic random or also known as pseudo-random. Which means, for example ```rand(1.)``` is going to return always the same value. [Pixelero](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/) makes reference to the ActionScript function ```Math.random()``` which is non-deterministic, every call will return a different value.
+
 ## 2D Random
 
-Now is time to apply this same principle on both *x* and *y* axis. For that we need a way to transform a two dimensional vector into a one dimensional float point value. There are different ways to do this, but the ```dot()``` function can be very particulary helpfull in this case, becuse of it avility to return a float values between 0 and 1 depending if two vectors are align. 
+Now we understand better randomness, is time to apply it on both *x* and *y* axis. For that we need a way to transform a two dimensional vector into a one dimensional float point value. There are different ways to do this, but the ```dot()``` function can be very particulary helpfull in this case, becuse of it avility to return a float values between 0 and 1 depending if two vectors are align. 
 
 <div class="codeAndCanvas" data="2d-random.frag"></div>
 
@@ -26,9 +41,9 @@ Take a look to line 11 and 12 and how we are comparing the ```in vec2 _st``` wit
 
 ## Using the chaos
 
-Actually randomness in pure form can be too chaotic, letres try to balance it entropy with some order.
+Random in two dimensions looks a lot like TV noise. Right? Which is a hard raw material to use to compose images. Let's learn how to make use of it.
 
-Take close look to the following code. Specially on lines 20 and 21.
+Our first step is going to apply it on a grid. Take a look to the following code. Specially on lines 20 and 21.
 
 <div class="codeAndCanvas" data="2d-random-mosaic.frag"></div>
 

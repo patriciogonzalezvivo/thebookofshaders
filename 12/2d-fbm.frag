@@ -31,13 +31,31 @@ float noise (in vec2 _st) {
             (d - b) * u.x * u.y;
 }
 
+#define NUM_OCTAVES 5
+
+float fbm ( in vec2 _st) {
+    float v = 0.0;
+    float a = 0.5;
+    vec2 shift = vec2(100.0);
+    // Rotate to reduce axial bias
+    mat2 rot = mat2(cos(0.5), sin(0.5), 
+                    -sin(0.5), cos(0.50));
+    for (int i = 0; i < NUM_OCTAVES; ++i) {
+        v += a * noise(_st);
+        _st = rot * _st * 2.0 + shift;
+        a *= 0.5;
+    }
+    return v;
+}
+
 void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
+    st.x *= u_resolution.x/u_resolution.y;
     vec3 color = vec3(0.0);
 
-    vec2 pos = vec2(st*5.0+u_time);
-
-    color = vec3( noise(pos) );
+    float noise = noise(st*3.0);
+    float fractal = fbm(st*3.0);
+    color = vec3(mix(noise,fractal,abs(sin(u_time))));
 
     gl_FragColor = vec4(color,1.0);
 }
