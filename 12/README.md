@@ -50,7 +50,11 @@ This fine level of fragmentation is what we are interested. ...
 
 ## Using Fractal Braownian Motion
 
+http://www.iquilezles.org/www/articles/morenoise/morenoise.htm
+
 http://www.iquilezles.org/www/articles/warp/warp.htm
+
+http://www.iquilezles.org/www/articles/dynclouds/dynclouds.htm
 
 <div class="codeAndCanvas" data="clouds.frag"></div>
 
