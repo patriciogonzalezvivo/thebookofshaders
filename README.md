@@ -61,6 +61,8 @@ This is a gentle step-by-step guide through the abstract and complex universe of
 
 Patricio studied and practiced psychotherapy and expressive art therapy. He holds an MFA in Design & Technology from Parsons The New School, where he now teaches. Currently he works as a Graphic Engineer at Mapzen making openSource mapping tools.
 
+<p class="header"><a href="http://twitter.com/patriciogv" target="_blank">Twitter</a> - <a href="https://github.com/patriciogonzalezvivo" target="_blank">GitHub</a> - <a href="https://vimeo.com/patriciogv" target="_blank">Vimeo</a> - <a href="https://www.flickr.com/photos/106950246@N06/" target="_blank"> Flickr</a></div>
+
 ## Acknowledgements
 
 Thanks to my wife [Jen Lowe](http://www.datatelling.com/), for her unconditional support, help and time editing this book.
