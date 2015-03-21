@@ -1,5 +1,7 @@
 ## Shapes
 
+![Robert Mangold - Untitled (2008)](mangold.jpg)
+
 We have been building skill for this moment! We learn most of GLSL foundations, types and functions, together with the knowledge of how to use mathematical equations for shaping values. Now is time to put all that together. In this chapter we are going to learn how to draw simple shapes in a parallel procedural way.
 
 ### Rectangle
@@ -37,7 +39,7 @@ Here we are using ```step()``` to turn everything bellow 0.1 to to 0.0. That wil
 
 Looking closely to the previous code, we repeat the structure for each side. That means we can save some lines of code by passing directly two values and treating them in the same way with the same function. Look closely the following code.
 
-<div class="codeAndCanvas" data="rect-making-01.frag"></div>
+<div class="codeAndCanvas" data="rect-making.frag"></div>
 
 To repeat this on the top and left sides we need to invert the ```st``` gradient. That way the ```vec2(0.0,0.0)``` will be on the top left corner.
 
@@ -100,8 +102,7 @@ Try the following excersises:
 
 * Use your function to mask a color with it.
 
-* Make three compositions using just circles. Then animate them. 
-
+* Make three compositions using just circles. Then animate them. \
 
 #### For your tool box
 
@@ -111,11 +112,7 @@ Try the following excersises:
 
 ### More about shapes and distance fields
 
-Distance fields can be use to draw almost everything. Obviously the complex the shape is, the more complicated the equation will be.
-
-<div class="codeAndCanvas" data="line.frag"></div>
-
-A really convenient feature of DF is the ability to smooth edges. Because the “topological” nature of them, sharp edges get blended together producing softer edges the more away you are from the center you sample. This is particularly useful on fonts rendering.
+Distance fields can be use to draw almost everything. Obviously the complex the shape is, the more complicated the equation will be, but it pays off; a convenient feature of this technique is the ability to smooth edges. Because the “topological” nature of them, sharp edges get blended together producing softer edges the more away you are from the center you sample. This is particularly useful on fonts rendering.
 
 Take a look to the following code and note how the space is remaped in this topographical. Like concentric rings of a Zen garde the distance field values get smooth and rounders the further away they are from the center.
 
@@ -123,4 +120,34 @@ Take a look to the following code and note how the space is remaped in this topo
 
 If you play with the code you will discover that inside the triangle there is a negative area. Which in oposition makes shapes extremely sharp to the extreme. Because the values are under zero we can not see the diference but by changing ```fract()``` by ```sin()``` in line 42 you can see the triangle go shrink until disapear. This signed propertyis particular of **Signed Distance Fields**.
 
-Before going on deeper on Distance Field, let's learn more about moving, rotating and scaling our rectangles, circes and triangles. On the *Next* chapter we learn this and impruve our compositions.
+### Polar shapes
+
+In the chapter about color we map the cartesian coordinates to polar coordinates by calculating the radius and angles of each pixel with the following formula:
+
+```glsl
+    vec2 pos = vec2(0.5)-st;
+    float r = length(pos)*2.0;
+    float a = atan(pos.y,pos.x);
+```
+
+In the previus examples we have use the radius (from the center) to draw a circles, now that we have knowing the angle we can modulate the edges to modify the shape of it. How? Yes! Shaping functions!
+
+Below you will find the same functions in the cartesian graph and in a polar coordinates shader example (between lines 21 and 26). Uncomment one by one the functions paying atention the relationship between one coordinate system and the other
+
+<div class="simpleFunction" data="y = cos(x*3.);
+//y = abs(cos(x*3.));
+//y = abs(cos(x*2.5))*0.5+0.3;
+//y = abs(cos(x*12.)*sin(x*3.))*.8+.1;
+//y = smoothstep(-.5,1., cos(x*10.))*0.2+0.5;"></div>
+
+<div class="codeAndCanvas" data="polar.frag"></div>
+
+Try to:
+
+* Animate this shapes
+* Combine diferent shaping functions to *cut holes* on the shape to make better flowers, snowflakes and gears.
+* Use the ```plot()``` function we were using on the *Shaping Functions Chapter* to draw just the contour.
+
+Congratulations! You have made it through the rough part! Take a break and let this concepts sediment, drawing simple shapes on Processing is really easy but not here. In shader-land everything the way to thing on shapes is twisted and can be exhasting to adpt to this new paradigm of coding. 
+
+Now that you know how to draw shapes I'm sure new ideas will pop to your mind. In the following chapter we will learn more about how to move, rotate and scale them moving. This will allow you to compose them!

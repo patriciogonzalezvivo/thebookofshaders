@@ -2,11 +2,11 @@
 
 ![Paul Klee - Color Chart (1931)](klee.jpg)
 
-What are graphics without colors? right? First, lets learn more about the variable types you will probably use to store colors, that's a three dimensional vector (```vec3```) or fourth dimensional (```vec4```) if you are using an alpha channel.
-
 ### Vectors properties 
 
-We didn’t talk to much about vectors, but if you are familiar with object oriented programming paradigms you had notice that we have been accessing the data inside the vectors like any regular C ```struct```.
+We didn’t talk much about GLSL vectors, before going further Lets learn more about the variable types that we will use to store colors, three dimensional vector (```vec3```) or fourth dimensional (```vec4```) (if you are using an alpha channel). 
+
+If you are familiar with object oriented programming paradigms you had notice that we have been accessing the data inside the vectors like any regular C ```struct```.
 
 ```glsl
 vec3 red = vec3(1.0,0.0,0.0);

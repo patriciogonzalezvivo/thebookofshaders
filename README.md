@@ -17,8 +17,8 @@ This is a gentle step-by-step guide through the abstract and complex universe of
 
 * Algorithmic drawing
     * [Shaping functions](05/)
-    * Colors
-    * Shapes
+    * [Colors](06/)
+    * [Shapes](07/)
     * Matrices
     * Patterns
 
