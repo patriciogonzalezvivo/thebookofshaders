@@ -32,13 +32,17 @@ Another great feature of vector types in GLSL is that the properties can be comb
 ###### comment this code to clarify the points you're making ######
 
 ```glsl
-vec3 yellow, magenta, blue;
+vec3 yellow, magenta, green;
 
-yellow.rg = vec2(1.0);
-yellow[2] = 0.0; 
+// Making Yellow 
+yellow.rg = vec2(1.0);  // Assing 1. to red and green channels
+yellow[2] = 0.0;        // Assing 0. to blue channlel
 
-magenta = yellow.rbg;
-blue.b = magenta.z;
+// Making Magenta
+magenta = yellow.rbg;   // Assign the channels with green and blue swaped
+
+// Making Green
+green.rgb = yellow.bgb; // Assign the blue channel of Yellow (0) to red and blue channels 
 ```
 
 #### For your toolbox
@@ -54,6 +58,8 @@ You might not be used to picking colors with numbers - it can be very counterint
 
 Now that you know how colors are defined, it's time to integrate this with our previous knowledge. In GLSL there is a very useful function, ```mix()```, that lets you mix two values in percentages. Can you guess what the percentage range is? Yes, values between 0.0 and 1.0! Which is perfect for you, after those long hours practicing your karate moves with the fence - it is time to use them!
 
+![](mix-f.jpg)
+
 Check the following code at line 18 and see how we are using the absolute values of a sin wave over time to mix ```colorA``` and ```colorB```. 
 
 <div class="codeAndCanvas" data="mix.frag"></div>
@@ -65,6 +71,8 @@ Show off your skills by:
 ### Playing with gradients 
 
 The ```mix``` function has more to offer. Instead of a single ```float```, we can pass a variable type that matches the two first arguments, in our case a ```vec3```. By doing that we gain control over the mixing percentages of each individual color channel, ```r```, ```g``` and ```b```.
+
+![](mix-vec.jpg)
 
 Take a look at the following example. Like the examples in the previous chapter, we are hooking the transition to the normalized *x* coordinate and visualizing it with a line. Right now all the channels go along the same line. 
 

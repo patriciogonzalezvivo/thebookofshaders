@@ -34,6 +34,8 @@ Think on the surface of the ocean. This massive amount of water is propagating w
 
 By adding different octaves of the same noise function we can gain some extra granularity from the noise. Take a look to the following example and progresively change the for loop to do 2,3,4,5,6,7 and 8 iterations. See how incrisinly fragmented this wave function becomes.
 
+"simple sum of perlin noise functions with increasing frequencies and decreasing amplitudes" Iq at http://www.iquilezles.org/www/articles/warp/warp.htm 
+
 <div class="simpleFunction" data="
 float a = 0.5;
 for( int i = 0; i < 1; ++i) {
@@ -50,9 +52,11 @@ This fine level of fragmentation is what we are interested. ...
 
 ## Using Fractal Braownian Motion
 
+http://www.iquilezles.org/www/articles/warp/warp.htm
+
 http://www.iquilezles.org/www/articles/morenoise/morenoise.htm
 
-http://www.iquilezles.org/www/articles/warp/warp.htm
+
 
 http://www.iquilezles.org/www/articles/dynclouds/dynclouds.htm
 
