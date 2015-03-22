@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ## Color
+=======
+## Colors
+>>>>>>> master
 
 ![Paul Klee - Color Chart (1931)](klee.jpg)
 
