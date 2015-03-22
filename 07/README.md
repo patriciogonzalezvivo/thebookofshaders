@@ -41,7 +41,7 @@ Looking closely to the previous code, we repeat the structure for each side. Tha
 
 To repeat this on the top and left sides we need to invert the ```st``` gradient. That way the ```vec2(0.0,0.0)``` will be on the top left corner.
 
-#### Exercise
+Once you got the trick to make a rectangle try the following excersices:
 
 * Implement the same code using ```smoothstep()``` instead of ```step()```. Try different values to get different results, go from blurred edges to elegant antialiased borders.
 
