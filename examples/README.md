@@ -24,6 +24,7 @@ The following is a list of examples present in this book.
 
     * Color
         - [Mix](../edit.html#06/mix.frag)
+        - [Easing functions](../edit.html#06/easing.frag)
         - [Gradient](../edit.html#06/gradient.frag)
         - [HSB](../edit.html#06/hsb.frag)
         - [HSB - Color Wheel](../edit.html#06/hsb-colorwheel.frag)

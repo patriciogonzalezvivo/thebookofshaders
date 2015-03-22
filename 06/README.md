@@ -48,17 +48,19 @@ If you have a background on design or new media, you are probably used to pickin
 
 ### Mixing color
 
-Now that we know how colors could be define is time to integrate this with our previus knowladege. There is a little happy function that let you mix two values a percentage, it's name is ```mix()```. Can you imagen what's the percentage range? Yes, between 0.0 and 1.0! Which is perfect, because you now have all this knowlage about shaping functions. Our time working on the fense is paying off.
+Now that we know how colors could be define is time to integrate this with our previus knowladege. On GLSL there is a very usfull function that let you mix two values in percentages named ```mix()```. Can you imagen what's the percentage range? Yes, between values between 0.0 and 1.0! Which is perfect for you, after those long hours practicing your karate moves in the fense. Is time to use them!
 
 Check the following code at line 18 and see how we are using the absolute values of a sin wave over time to mix ```colorA``` and ```colorB```. 
 
 <div class="codeAndCanvas" data="mix.frag"></div>
 
-Mix can be use with any of the types we have seen so far: ```float```, ```vec2```, ```vec3``` and ```vec4```.
+Show of your skills by:
+
+* Make an expressive transition between colors. Think on a particular emotion. What color seams the more representative of it? How it apears? how it fades away? Think on another emotion and the matching color for it? Change the begining and ending color of above code to much those emotions. Then animate the transition using shaping functions. Robert Penner develop a series of popular shaping function for computer animation popularly known as [easing functions](http://easings.net/), you can use some [this example](../edit.html#06/easing.frag) as research and inspiration, but the best result will come by making your own transitions.
 
 ### Playing with gradients 
 
-The ```mix``` function have more to offer. If in the third argument we pass a ```vec3``` instead of a single ```float``` we will be hable to control the transition bettween colors by individual channel.
+The ```mix``` function have more to offer. Instead of a single ```float``` can pass a variable type that match the two first arguments, in our case a ```vec3```. By doing that we gain control over the mixing porcentages of each individual channel.
 
 Take a look to the following example.
 
@@ -114,7 +116,6 @@ By this time will not be a problem to try the following excersises
 
 * Use a shaping function together with the conversion function from HSB to RGB to expand a particular hue value and shrink the rest.
 
-
 ![William Home Lizars - Red, blue and yellow spectra, with the solar spectrum (1834)](spectrums.jpg)
 
 * If you look closely to the color wheel used on color pickers (see the image below) use a different spectrum acording to RYB color space. For example, the oposite color of red should be green (which is his opposite), but in our example is cyan. Can you find the way to fix that in order to look exactly like the following image? 
@@ -123,7 +124,7 @@ By this time will not be a problem to try the following excersises
 
 #### Note about functions and arguments
 
-Let’s stop and go back to look deeply to the functions, we will see that both of them receive and returns ```vec3``` variables. Also we will notice the arguments are define as ```in```. This is call variable [qualifier](http://www.shaderific.com/glsl-qualifiers/#inputqualifier) and in this case specify this variable as read only. In future examples we will see that also possible to define them variables as ```out``` or ```inout```. 
+Before jumping to the next chapter let’s stop and rewind. Go back and take look to the functions on previous examples. You will notice a ```in``` before the type of the arguments. This is a [qualifier](http://www.shaderific.com/glsl-qualifiers/#inputqualifier) and in this case specify that the variable is read only. In future examples we will see that also possible to define them variables as ```out``` or ```inout```. This last one, ```inout``` is conceptually similar to passing an argument by refernce which will five us the posibility to modify a pased variable.
 
 ```glsl
 int newFunction(in vec4 aVec4,   // read-only 
