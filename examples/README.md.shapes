@@ -28,6 +28,13 @@ The following is a list of examples present in this book.
         - [Gradient](../edit.html#06/gradient.frag)
         - [HSB](../edit.html#06/hsb.frag)
         - [HSB - Color Wheel](../edit.html#06/hsb-colorwheel.frag)
+    
+    * Shapes
+        - Rectangle: [making](../edit.html#07/rect-making.frag) and [function](../edit.html#07/rect.frag)
+        - Circle: [making](../edit.html#07/circle-making.frag) and [function](../edit.html#07/circle.frag)
+        - Triangle: [making](../edit.html#07/triangle-making.frag) and [function](../edit.html#07/triangle.frag)
+        - [Line](../edit.html#07/line.frag)
+        - [Polar](../edit.html#07/polar.frag)
 
 ### Advance
 

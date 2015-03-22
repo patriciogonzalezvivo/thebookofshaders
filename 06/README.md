@@ -29,17 +29,15 @@ These different ways of pointing to the variables inside a vector are just nomen
 
 Another great feature of vector types in GLSL is that the properties can be combined in any order you want, which makes it easy to cast and mix values. This ability is call *swizzle*.
 
-###### comment this code to clarify the points you're making ######
-
 ```glsl
 vec3 yellow, magenta, green;
 
 // Making Yellow 
-yellow.rg = vec2(1.0);  // Assing 1. to red and green channels
-yellow[2] = 0.0;        // Assing 0. to blue channlel
+yellow.rg = vec2(1.0);  // Assigning 1. to red and green channels
+yellow[2] = 0.0;        // Assigning 0. to blue channel
 
 // Making Magenta
-magenta = yellow.rbg;   // Assign the channels with green and blue swaped
+magenta = yellow.rbg;   // Assign the channels with green and blue swapped
 
 // Making Green
 green.rgb = yellow.bgb; // Assign the blue channel of Yellow (0) to red and blue channels 
