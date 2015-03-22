@@ -1,4 +1,4 @@
-## Color
+## Colors
 
 ![Paul Klee - Color Chart (1931)](klee.jpg)
 
