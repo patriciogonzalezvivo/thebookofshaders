@@ -30,11 +30,11 @@ y *= 0.1;
 
 Think on the surface of the ocean. This massive amount of water is propagating waves across it surface. Waves of diferent amplitud and frequencies.
 
-## 1D Fractal Brownian Motion
+## Fractal Brownian Motion
 
-By adding different octaves of the same noise function we can gain some extra granularity from the noise. Take a look to the following example and progresively change the for loop to do 2,3,4,5,6,7 and 8 iterations. See how incrisinly fragmented this wave function becomes.
+By adding different octaves of increasing frequencies and decreasing amplitudes of noise we can gain some extra granularity. This technique is call Fractal Brownian Motion and is very well documented in [this](http://www.iquilezles.org/www/articles/warp/warp.htm) [two](http://www.iquilezles.org/www/articles/morenoise/morenoise.htm) articles of Iñigo Quilez. 
 
-"simple sum of perlin noise functions with increasing frequencies and decreasing amplitudes" Iq at http://www.iquilezles.org/www/articles/warp/warp.htm 
+Take a look to the following example and progresively change the for loop to do 2,3,4,5,6,7 and 8 iterations. See how incrisinly fragmented this wave function becomes.
 
 <div class="simpleFunction" data="
 float a = 0.5;
@@ -44,9 +44,7 @@ for( int i = 0; i < 1; ++i) {
     a *= 0.5;
 }"></div>
 
-## 2D Fractal Brownian Motion
-
-This fine level of fragmentation is what we are interested. ...
+If we apply this to 2D will look like the following code:
 
 <div class="codeAndCanvas" data="2d-fbm.frag"></div>
 
@@ -55,8 +53,6 @@ This fine level of fragmentation is what we are interested. ...
 http://www.iquilezles.org/www/articles/warp/warp.htm
 
 http://www.iquilezles.org/www/articles/morenoise/morenoise.htm
-
-
 
 http://www.iquilezles.org/www/articles/dynclouds/dynclouds.htm
 
