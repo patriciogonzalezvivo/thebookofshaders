@@ -22,12 +22,12 @@ void main(){
     vec2 st = gl_FragCoord.xy/u_resolution;
     vec3 color = vec3(0.0);
 
-    // Use polar coordinates instead of cartesians
+    // Use polar coordinates instead of cartesian
     vec2 toCenter = vec2(0.5)-st;
     float angle = atan(toCenter.y,toCenter.x);
     float radius = length(toCenter)*2.0;
   
-    // Map the angle (-PI - PI) to the hue (from 0 to 1)
+    // Map the angle (-PI to PI) to the Hue (from 0 to 1)
     // and the Saturation to the radius
     color = hsb2rgb(vec3((angle/TWO_PI)+0.5,radius,1.0));
 
