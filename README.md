@@ -55,6 +55,8 @@ This is a gentle step-by-step guide through the abstract and complex universe of
     * [How to use this book in a classroom with RaspberryPi?](http://thebookofshaders.com/appendix/index.html#01.md)
     * [How to print this book?](http://thebookofshaders.com/appendix/index.html#02.md)
 
+* [Examples](examples/)
+
 ## About the Author
 
 [Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) (1982, Buenos Aires, Argentina) is a New York based artist and developer. He explores interstitial spaces between organic and synthetic, analog and digital, individual and collective. In his work he uses code as an expressive language with the intention of developing a better together.

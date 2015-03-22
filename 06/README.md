@@ -2,9 +2,9 @@
 
 ![Paul Klee - Color Chart (1931)](klee.jpg)
 
-We didn’t talk much about GLSL vectors. Before going further is important to learn more about these variable types that you will use to store colors. 
+We didn’t get the chance to talk about GLSL vectors types, so before going further is important to learn more about these variable. And the subject of colors is a great way to learn about it. 
 
-If you are familiar with object oriented programming paradigms you had notice that we have been accessing the data inside the vectors like any regular C ```struct```.
+If you are familiar with object oriented programming paradigms you probalby had notice that we have been accessing the data inside the vectors like any regular C-like ```struct```.
 
 ```glsl
 vec3 red = vec3(1.0,0.0,0.0);
@@ -13,11 +13,9 @@ red.y = 0.0;
 red.z = 0.0; 
 ```
 
-There are other ways to access the same information, which for colors will make your code more readable. The values on ```.x```, ```.y``` and ```.z``` are overloaded to ```.r```, ```.g``` and ```.b```. Also there is an extra nomenclature you can use: ```.s```, ```.t``` and ```.p```. This don’t affect the values and is completely interchangeable. Use it on your own convenience to write clear code.
+Define color using a *x*, *y* and *z* notation can be confusing and miss leading, right? That's why there are other ways to access the same information, but with different name. The values on ```.x```, ```.y``` and ```.z``` are overloaded to ```.r```, ```.g``` and ```.b```, and to ```.s```, ```.t``` and ```.p```. Also, because vectors are essentially arrays of value you can access to the data just by using the index position of the component you want to modify or set. This diferent ways of pointing to the variables inside a vector are just nomenclatures designed to help you writing clear code. At the same time, as a lenguage helps you organize and construct sense. This flexible detail will be the door for you to think interchangalbe about colors and space coordintates.  
 
-On ```vec4``` there is an extra value for the alpha that also have different ways to access to it. Also, because vectors are essentially arrays of value you can access to the data just by using the index position of the component you want to modify or set.
-
-That gives a big spectrum of ways to access the same information. All the following calls per line are homologous.
+The following lines shows al the homologous ways to access the same data:
 
 ```glsl
 vec4 vector;
@@ -27,7 +25,7 @@ vector[2] = vector.b = vector.z = vector.p;
 vector[3] = vector.a = vector.w = vector.q;
 ```
 
-Another great feature of vectors on GLSL is that this properties can be call combined and in different orders, making easy for example to cast and mix values.
+Another great feature of vectors types on GLSL is that the properties can be combined in any order you want. Making easy for example to cast and mix values. This hability is call *swizzle*.
 
 ```glsl
 vec3 yellow, magenta, blue;
@@ -88,7 +86,7 @@ Is hard to bring the subject of color with out speaking about color space. As yo
 
 [HSB](http://en.wikipedia.org/wiki/HSL_and_HSV) stands for Hue, Saturation and Brightness (or Value) and is a more intuitive and useful organization of colors. Take a moment to read the ```rgb2hsv()``` and ```hsv2rgb()``` functions on the following code. 
 
-<div class="codeAndCanvas" data="hsv.frag"></div>
+<div class="codeAndCanvas" data="hsb.frag"></div>
 
 Similarly to last mix example this functions plays with the interpolation of the diferent chapters to map it acording to hue.
 
@@ -106,7 +104,7 @@ If you where wondering, there are more geometric functions beside [```length```]
 
 Once we obtain the angle and the length we need to “normalize” their values to the docile range between 0.0 to 1.0 we are used to. On line 42, ```atan(x,y)``` will return an angle in radians between -PI and PI (-3.14 to 3.14), so we need to divide this number by ```TWO_PI``` (defined on the top of the code) to get values between -0.5 to 0.5 which by a simple addition we can accommodate to the desired range of 0.0 to 1.0. The radius in other hand will return a maximum of 0.5 (because we are calculatin the distance form the center of the viewport) so we need to extend this range to it double (by multiplying by two) to get a maximum of 1.0.
 
-<div class="codeAndCanvas" data="hsv-colorwheel.frag"></div>
+<div class="codeAndCanvas" data="hsb-colorwheel.frag"></div>
 
 As you can see, our game here is all about transforming and mapping ranges to what we want.
 

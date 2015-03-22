@@ -1,7 +1,5 @@
 ## Shapes
 
-![Robert Mangold - Untitled (2008)](mangold.jpg)
-
 We have been building skill for this moment! We learn most of GLSL foundations, types and functions, together with the knowledge of how to use mathematical equations for shaping values. Now is time to put all that together. In this chapter we are going to learn how to draw simple shapes in a parallel procedural way.
 
 ### Rectangle
@@ -121,6 +119,8 @@ Take a look to the following code and note how the space is remaped in this topo
 If you play with the code you will discover that inside the triangle there is a negative area. Which in oposition makes shapes extremely sharp to the extreme. Because the values are under zero we can not see the diference but by changing ```fract()``` by ```sin()``` in line 42 you can see the triangle go shrink until disapear. This signed propertyis particular of **Signed Distance Fields**.
 
 ### Polar shapes
+
+![Robert Mangold - Untitled (2008)](mangold.jpg)
 
 In the chapter about color we map the cartesian coordinates to polar coordinates by calculating the radius and angles of each pixel with the following formula:
 
