@@ -1,25 +1,34 @@
 # List of Examples
 
+The following is a list of examples present in this book.
+
 ### Chapters examples
 
 * Getting started
     * Hello World
-        - ["Hello World!"](http://thebookofshaders.com/edit.html#02/hello_world.frag)
+        - ["Hello World!"](../edit.html#02/hello_world.frag)
     * Uniforms
-        - [u_time](http://thebookofshaders.com/edit.html#03/time.frag)
-        - [gl_FragCoord](http://thebookofshaders.com/edit.html#03/space.frag)
+        - [u_time](../edit.html#03/time.frag)
+        - [gl_FragCoord](../edit.html#03/space.frag)
 * Algorithmic drawing
     * Shaping functions
-        - [Linear Interpolation](http://thebookofshaders.com/edit.html#05/linear.frag)
-        - [Exponential Interpolation](http://thebookofshaders.com/edit.html#05/expo.frag)
-        - [Step function](http://thebookofshaders.com/edit.html#05/step.frag)
-        - [Smoothstep function](http://thebookofshaders.com/edit.html#05/smoothstep.frag)
-        - [Iñigo Quiles's impulse](http://thebookofshaders.com/edit.html#05/impulse.frag)
-        - [Iñigo Quiles's Cubic Pulse](http://thebookofshaders.com/edit.html#05/cubicpulse.frag)
-        - [Iñigo Quiles's Exponential Step](http://thebookofshaders.com/edit.html#05/expstep.frag)
-        - [Iñigo Quiles's Parabola](http://thebookofshaders.com/edit.html#05/parabola.frag)
-        - [Iñigo Quiles's Power Curve](http://thebookofshaders.com/edit.html#05/pcurve.frag)
+        - [Linear Interpolation](../edit.html#05/linear.frag)
+        - [Exponential Interpolation](../edit.html#05/expo.frag)
+        - [Step function](../edit.html#05/step.frag)
+        - [Smoothstep function](../edit.html#05/smoothstep.frag)
+        - [Iñigo Quiles's Impulse](../edit.html#05/impulse.frag)
+        - [Iñigo Quiles's Cubic Pulse](../edit.html#05/cubicpulse.frag)
+        - [Iñigo Quiles's Exponential Step](../edit.html#05/expstep.frag)
+        - [Iñigo Quiles's Parabola](../edit.html#05/parabola.frag)
+        - [Iñigo Quiles's Power Curve](../edit.html#05/pcurve.frag)
+
+    * Color
+        - [Mix](../edit.html#06/mix.frag)
+        - [Easing functions](../edit.html#06/easing.frag)
+        - [Gradient](../edit.html#06/gradient.frag)
+        - [HSB](../edit.html#06/hsb.frag)
+        - [HSB - Color Wheel](../edit.html#06/hsb-colorwheel.frag)
 
 ### Advance
 
-* [Moon](http://thebookofshaders.com/edit.html#examples/moon.frag&examples/images/moon-texture.jpg)
+* [Moon](../edit.html#examples/moon.frag&examples/images/moon-texture.jpg)
