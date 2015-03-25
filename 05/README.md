@@ -89,7 +89,7 @@ At the end of the last exercise we introduced some new functions. Now it’s tim
 //y = abs(x);   // return the absolute value of x
 //y = clamp(x,0.0,1.0); // constrain x to lie between 0.0 and 1.0
 //y = min(0.0,x);   // return the lesser of x and 0.0
-//y = max(1.0,x);   // return the greater of x and 1.0 "></div>
+//y = max(0.0,x);   // return the greater of x and 0.0 "></div>
 
 ### Advance shaping functions
 
