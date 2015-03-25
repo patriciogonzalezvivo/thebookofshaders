@@ -5,7 +5,7 @@ This chapter could be named "Mr. Miyagi's fence lesson." Previously, we mapped t
 
 ![The Karate Kid (1984)](mr_miyagi.jpg)
 
-The following code structure is going to be our fence. In it, we visualize the normalized value of the *x* coordinate (```st.x```) in two ways: one with brightness (observe the nice gradient from black to white) and the other by plotting a green line on top (in that case the *x* value is assigned directly to *y*).
+The following code structure is going to be our fence. In it, we visualize the normalized value of the *x* coordinate (```st.x```) in two ways: one with brightness (observe the nice gradient from black to white) and the other by plotting a green line on top (in that case the *x* value is assigned directly to *y*). Don't focus too much on the plot function, we will go through it in more detail in a moment.
 
 <div class="codeAndCanvas" data="linear.frag"></div>
 
@@ -63,7 +63,7 @@ Try the following exercises and notice what happens:
 
 * Multiply *x* by ```PI``` before computing the ```sin```. Note how the two phases **shrink** so each cycle repeats every 2 integers.
 
-* Multiply time (```u_time```) by *x* before computing the ```sin```. See how the **frequency** between phases becomes more and more compressed.
+* Multiply time (```u_time```) by *x* before computing the ```sin```. See how the **frequency** between phases becomes more and more compressed. Note that u_time may have already become very large, making the graph hard to read.
 
 * Add 1.0 to ```sin(x)```. See how all the wave is **displaced** up and now all values are between 0.0 and 2.0. 
 
