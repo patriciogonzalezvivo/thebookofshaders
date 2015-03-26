@@ -2,7 +2,7 @@
 
 So far we have seen how the GPU manages large numbers of parallel threads, each one responsible for assigning the color to a fraction of the total image. Although each parallel thread is blind to the others, we need to be able to send some inputs from the CPU to all the threads. Because of the architecture of the graphic card those inputs are going to be equal (*uniform*) to all the threads and necessarily set as *read only*. In other words, each thread receives the same data which it can read but cannot change. 
 
-These inputs are call ```uniform``` and come in most of the supported types: ```float```, ```vec2```, ```vec3```, ```vec4```, ```mat2```, ```mat3```, ```mat4```, ```sampler2D``` and ```samplerCube```. Uniforms are defined with the corresponding type at the top of the shader right after assigning the default floating point permission.
+These inputs are call ```uniform``` and come in most of the supported types: ```float```, ```vec2```, ```vec3```, ```vec4```, ```mat2```, ```mat3```, ```mat4```, ```sampler2D``` and ```samplerCube```. Uniforms are defined with the corresponding type at the top of the shader right after assigning the default floating point precision.
 
 ```glsl
 #ifdef GL_ES
@@ -28,7 +28,7 @@ Enough talking, let's see the uniforms in action. In the following code we use `
 
 As you can see GLSL has more surprises. The GPU has hardware accelerated angle, trigonometric and exponential functions. Some of those functions are: [```sin()```](http://www.shaderific.com/glsl-functions/#sine), [```cos()```](http://www.shaderific.com/glsl-functions/#cosine), [```tan()```](http://www.shaderific.com/glsl-functions/#tangent), [```asin()```](http://www.shaderific.com/glsl-functions/#arcsine), [```acos()```](http://www.shaderific.com/glsl-functions/#arccosine), [```atan()```](http://www.shaderific.com/glsl-functions/#arctangent), [```pow()```](http://www.shaderific.com/glsl-functions/#exponentiation), [```exp()```](http://www.shaderific.com/glsl-functions/#exponentiation), [```log()```](http://www.shaderific.com/glsl-functions/#naturallogarithm), [```sqrt()```](http://www.shaderific.com/glsl-functions/#squareroot), [```abs()```](http://www.shaderific.com/glsl-functions/#absolutevalue), [```sign()```](http://www.shaderific.com/glsl-functions/#sign), [```floor()```](http://www.shaderific.com/glsl-functions/#floor), [```ceil()```](http://www.shaderific.com/glsl-functions/#ceiling), [```fract()```](http://www.shaderific.com/glsl-functions/#fractionalpart), [```mod()```](http://www.shaderific.com/glsl-functions/#modulo), [```min()```](http://www.shaderific.com/glsl-functions/#minimum), [```max()```](http://www.shaderific.com/glsl-functions/#maximum) and [```clamp()```](http://www.shaderific.com/glsl-functions/#clamp).
 
-Now is time again to play with the above code.
+Now it is time again to play with the above code.
 
 * Slow down the frequency until the color change becomes almost imperceptible.
 
