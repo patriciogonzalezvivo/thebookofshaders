@@ -49,7 +49,7 @@ green.rgb = yellow.bgb; // Assign the blue channel of Yellow (0) to red and blue
 
 #### For your toolbox
 
-You might not be used to picking colors with numbers - it can be very counterintuitive. Lucky you, there are a lot of smart programs that make this job easy. Find one that fits your needs and then train it to deliver colors in ```vec3``` or ```vec4``` format. For example, here are the templates I use on [Spectrum](http://www.eigenlogik.com/spectrum/mac):
+You might not be used to picking colors with numbers - it can be very counterintuitive. Lucky for you, there are a lot of smart programs that make this job easy. Find one that fits your needs and then train it to deliver colors in ```vec3``` or ```vec4``` format. For example, here are the templates I use on [Spectrum](http://www.eigenlogik.com/spectrum/mac):
 
 ```
 	vec3({{rn}},{{gn}},{{bn}})
@@ -68,7 +68,7 @@ Check the following code at line 18 and see how we are using the absolute values
 
 Show off your skills by:
 
-* Make an expressive transition between colors. Think of a particular emotion. What color seems most representative of it? How does it appear? How does it fade away? Think of another emotion and the matching color for it. Change the beginning and ending color of the above code to match those emotions. Then animate the transition using shaping functions. Robert Penner developed a series of popular shaping functions for computer animation known as [easing functions](http://easings.net/), you can use [this example](../edit.html#06/easing.frag) as research and inspiration, but the best result will come from making your own transitions.
+* Make an expressive transition between colors. Think of a particular emotion. What color seems most representative of it? How does it appear? How does it fade away? Think of another emotion and the matching color for it. Change the beginning and ending color of the above code to match those emotions. Then animate the transition using shaping functions. Robert Penner developed a series of popular shaping functions for computer animation known as [easing functions](http://easings.net/), you can use [this example](../edit.html#06/easing.frag) as research and inspiration but the best result will come from making your own transitions.
 
 ### Playing with gradients 
 
@@ -126,13 +126,13 @@ Try the following exercises:
 
 ![William Home Lizars - Red, blue and yellow spectra, with the solar spectrum (1834)](spectrums.jpg)
 
-* If you look closely at the color wheel used on color pickers (see the image below), they use a different spectrum according to RYB color space. For example, the opposite color of red should be green, but in our example it is cyan. Can you find the way to fix that in order to look exactly like the following image? [Hint: this is a great moment to use shaping functions.]
+* If you look closely at the color wheel used on color pickers (see the image below), they use a different spectrum according to RYB color space. For example, the opposite color of red should be green, but in our example it is cyan. Can you find a way to fix that in order to look exactly like the following image? [Hint: this is a great moment to use shaping functions.]
 
 ![](colorwheel.png)
 
 #### Note about functions and arguments
 
-Before jumping to the next chapter let’s stop and rewind. Go back and take look at the functions in previous examples. You will notice a ```in``` before the type of the arguments. This is a [*qualifier*](http://www.shaderific.com/glsl-qualifiers/#inputqualifier) and in this case it specifies that the variable is read only. In future examples we will see that it is also possible to define arguments as ```out``` or ```inout```. This last one, ```inout``` is conceptually similar to passing an argument by reference which will give us the possibility to modify a passed variable.
+Before jumping to the next chapter let’s stop and rewind. Go back and take look at the functions in previous examples. You will notice ```in``` before the type of the arguments. This is a [*qualifier*](http://www.shaderific.com/glsl-qualifiers/#inputqualifier) and in this case it specifies that the variable is read only. In future examples we will see that it is also possible to define arguments as ```out``` or ```inout```. This last one, ```inout```, is conceptually similar to passing an argument by reference which will give us the possibility to modify a passed variable.
 
 ```glsl
 int newFunction(in vec4 aVec4,   // read-only 
@@ -140,7 +140,7 @@ int newFunction(in vec4 aVec4,   // read-only
                 inout int aInt);   // read-write
 ``` 
 
-You may not believe it, but now we have all the elements to make cool drawings. In the next chapter we will learn how to combine all our tricks to make geometric forms by *blending* the space. Yep... *blending* the space.
+You may not believe it but now we have all the elements to make cool drawings. In the next chapter we will learn how to combine all our tricks to make geometric forms by *blending* the space. Yep... *blending* the space.
 
 
 
