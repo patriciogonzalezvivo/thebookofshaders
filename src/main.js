@@ -202,6 +202,7 @@ function loadMarkdown(){
 					autoCloseBrackets: true,
 					extraKeys: {"Ctrl-Space": "autocomplete"},
 					showCursorWhenSelecting: true,
+                    lineWrapping: true,
                     indentUnit: 4
 				});
 
