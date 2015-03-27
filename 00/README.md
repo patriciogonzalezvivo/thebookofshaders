@@ -10,7 +10,7 @@ This book is about the revolutionary computational technique, *fragment shaders*
 
 Fragment shaders give you total control over the pixels rendered on the screen at a super fast speed. This is why they're used in all sort of cases, from video filters on cellphones to incredible 3D video games.
 
-![Journey by The Game Company](journey.jpg)
+![Journey by That Game Company](journey.jpg)
 
 In the following chapters you will discover how incredibly fast and powerful this technique is and how to apply it to your professional and personal work.
 

@@ -17,7 +17,7 @@ This is a gentle step-by-step guide through the abstract and complex universe of
 
 * Algorithmic drawing
     * [Shaping functions](05/)
-    * Colors
+    * [Colors](06/)
     * Shapes
     * Matrices
     * Patterns
@@ -55,11 +55,15 @@ This is a gentle step-by-step guide through the abstract and complex universe of
     * [How to use this book in a classroom with RaspberryPi?](http://thebookofshaders.com/appendix/index.html#01.md)
     * [How to print this book?](http://thebookofshaders.com/appendix/index.html#02.md)
 
+* [Examples](examples/)
+
 ## About the Author
 
 [Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) (1982, Buenos Aires, Argentina) is a New York based artist and developer. He explores interstitial spaces between organic and synthetic, analog and digital, individual and collective. In his work he uses code as an expressive language with the intention of developing a better together.
 
 Patricio studied and practiced psychotherapy and expressive art therapy. He holds an MFA in Design & Technology from Parsons The New School, where he now teaches. Currently he works as a Graphic Engineer at Mapzen making openSource mapping tools.
+
+<p class="header"><a href="http://twitter.com/patriciogv" target="_blank">Twitter</a> - <a href="https://github.com/patriciogonzalezvivo" target="_blank">GitHub</a> - <a href="https://vimeo.com/patriciogv" target="_blank">Vimeo</a> - <a href="https://www.flickr.com/photos/106950246@N06/" target="_blank"> Flickr</a></div>
 
 ## Acknowledgements
 

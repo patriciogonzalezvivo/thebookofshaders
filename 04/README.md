@@ -113,7 +113,7 @@ void draw() {
 }
 ```
 
-In the order for the shader to work on versions previus to 2.1, you need to add the following line at the beginning of your shader: ```#define PROCESSING_COLOR_SHADER```. So it looks like this:
+In order for the shader to work on versions previous to 2.1, you need to add the following line at the beginning of your shader: ```#define PROCESSING_COLOR_SHADER```. So that it looks like this:
 ```glsl
 #ifdef GL_ES
 precision mediump float;
@@ -135,7 +135,7 @@ For more information about shaders in Processing check out this [tutorial](https
 
 ### In **openFrameworks**
 
-Everybody has a place where they feel comfortable, in my case, that’s still the [openFrameworks community](http://openframeworks.cc/). This C++ framework wraps around OpenGL and other open source C++ libraries. In many ways it's very similar to Processing, but with the obvious complications of dealing with C++ compilers. In the same way as Processing, openFrameworks will search for your shaders files in the data folder, so don’t forget to copy the ```.frag``` files you want to use and change the name when you load them.
+Everybody has a place where they feel comfortable, in my case, that’s still the [openFrameworks community](http://openframeworks.cc/). This C++ framework wraps around OpenGL and other open source C++ libraries. In many ways it's very similar to Processing, but with the obvious complications of dealing with C++ compilers. In the same way as Processing, openFrameworks will search for your shader files in the data folder, so don’t forget to copy the ```.frag``` files you want to use and change the name when you load them.
  
 ```cpp
 void ofApp::draw(){
