@@ -47,7 +47,7 @@ Once you got the trick to make a rectangle try the following excersices:
 
 * Do another implementation that use ```mod()```, ```ceil()```, ```floor()``` or ```fract()```.
 
-* Choose the implementation you like the most and make it function you ca reuse in the future. Try to leave it flexible and efficient.
+* Choose the implementation you like the most and make a function of it that you can reuse in the future. Try to leave it flexible and efficient.
 
 * Make another function to draw just the outline of the a rectagle.
 

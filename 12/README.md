@@ -1,6 +1,6 @@
 ## Fractal Brownian Motion
 
-At the end of previus chapter we were thinking on noise as random smooth waves. This *wavely* nature of noise is what makes it such an interdisciplinary concept. In fact, in acustics, sound is constructed by the manipulation of the amplitud and frecuency of a sine wave;
+At the end of previus chapter we were thinking on noise as random smooth waves. This *wavely* nature of noise is what makes it such an interdisciplinary concept. In fact, in acustics, sound is constructed by the manipulation of the amplitud and frecuency of a sine waves.
 
 ```glsl
 y = amplitud + sin( frequency );

@@ -12,17 +12,17 @@ uniform float u_time;
 
 void main(){
 	vec2 st = gl_FragCoord.xy/u_resolution;
+    float pct = 0.0;
 
     // a. The DISTANCE to the center whick is the 
-    float pct = distance(st,vec2(0.5));
+    pct = distance(st,vec2(0.5));
 
     // b. The LENGTH to the vector to the center 
     // vec2 tC = vec2(0.5)-st;
-    // float pct = length(tC);
+    // pct = length(tC);
 
     // c. The SQUARE ROOT of the vector
-    // vec2 tC = vec2(0.5)-st;
-    // float pct = sqrt(tC.x*tC.x+tC.y*tC.y);
+    // pct = sqrt(tC.x*tC.x+tC.y*tC.y);
 
     vec3 color = vec3(pct);
 

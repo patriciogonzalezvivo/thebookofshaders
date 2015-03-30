@@ -18,7 +18,7 @@ This is a gentle step-by-step guide through the abstract and complex universe of
 * Algorithmic drawing
     * [Shaping functions](05/)
     * [Colors](06/)
-    * Shapes
+    * [Shapes](07/)
     * Matrices
     * Patterns
 
@@ -26,6 +26,7 @@ This is a gentle step-by-step guide through the abstract and complex universe of
     * Random
     * Noise
     * Fractional brownian motion
+    * Fractals
 
 * Image processing:
     * What is a texture?
