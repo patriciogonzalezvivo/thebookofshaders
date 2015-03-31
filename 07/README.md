@@ -143,17 +143,17 @@ In terms of computational power ```sqrt()``` function (and all the once that dep
 
 Distance fields can be use to draw almost everything. Obviously the complex the shape is, the more complicated the equation will be, but it pays off; a convenient feature of this technique is the ability to smooth edges. Because the “topological” nature of them, sharp edges get blended together producing softer edges the more away you are from the center you sample. This is particularly useful on fonts rendering.
 
-Take a look to the following code and note how the space is remaped in this topographical. Like concentric rings of a Zen garde the distance field values get smooth and rounders the further away they are from the center.
+Take a look to the following code and note how the space is mapped. Like concentric rings on a Zen garde the distance field values on edges get smooth and rounder the further away they get from the center.
 
 <div class="codeAndCanvas" data="triangle-making.frag"></div>
 
-If you play with the code you will discover that inside the triangle there is a negative area. Which in oposition makes shapes extremely sharp to the extreme. Because the values are under zero we can not see the diference but by changing ```fract()``` by ```sin()``` in line 42 you can see the triangle go shrink until disapear. This signed propertyis particular of **Signed Distance Fields**.
+If you play with the code you will discover that inside the triangle there is a negative area. Which in position makes shapes extremely sharp to the extreme. Because the values are under zero we can not see the difference but by changing ```fract()``` by ```sin()``` in line 43 you can see the triangle go shrink until disappear. This signed properties particular of **Signed Distance Fields**.
 
 ### Polar shapes
 
 ![Robert Mangold - Untitled (2008)](mangold.jpg)
 
-In the chapter about color we map the cartesian coordinates to polar coordinates by calculating the radius and angles of each pixel with the following formula:
+In the chapter about color we map the cartesian coordinates to polar coordinates by calculating the *radius* and *angles* of each pixel with the following formula:
 
 ```glsl
     vec2 pos = vec2(0.5)-st;
@@ -161,9 +161,9 @@ In the chapter about color we map the cartesian coordinates to polar coordinates
     float a = atan(pos.y,pos.x);
 ```
 
-In the previus examples we have use the radius (from the center) to draw a circles, now that we have knowing the angle we can modulate the edges to modify the shape of it. How? Yes! Shaping functions!
+In the previous examples we have use the radius (from the center) to draw a circles. Now, if we compute the angle from the pixel (threat) to the center, we can modulate the radius to achieve different shapes. How? Yes! Shaping functions!
 
-Below you will find the same functions in the cartesian graph and in a polar coordinates shader example (between lines 21 and 26). Uncomment one by one the functions paying atention the relationship between one coordinate system and the other
+Below you will find the same functions in the cartesian graph and in a polar coordinates shader example (between lines 21 and 26). Uncomment one by one the functions paying attention the relationship between one coordinate system and the other
 
 <div class="simpleFunction" data="y = cos(x*3.);
 //y = abs(cos(x*3.));
@@ -176,9 +176,9 @@ Below you will find the same functions in the cartesian graph and in a polar coo
 Try to:
 
 * Animate this shapes
-* Combine diferent shaping functions to *cut holes* on the shape to make better flowers, snowflakes and gears.
+* Combine different shaping functions to *cut holes* on the shape to make better flowers, snowflakes and gears.
 * Use the ```plot()``` function we were using on the *Shaping Functions Chapter* to draw just the contour.
 
-Congratulations! You have made it through the rough part! Take a break and let this concepts sediment, drawing simple shapes on Processing is really easy but not here. In shader-land everything the way to thing on shapes is twisted and can be exhasting to adpt to this new paradigm of coding. 
+Congratulations! You have made it through the rough part! Take a break and let this concepts sediment, drawing simple shapes on Processing is really easy but not here. In shader-land everything the way to thing on shapes is twisted and can be exhausting to adapt to this new paradigm of coding. 
 
 Now that you know how to draw shapes I'm sure new ideas will pop to your mind. In the following chapter we will learn more about how to move, rotate and scale them moving. This will allow you to compose them!
