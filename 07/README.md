@@ -1,14 +1,20 @@
 ## Shapes
 
-We have been building skill for this moment! We learn most of GLSL foundations, types and functions, together with the knowledge of how to use mathematical equations for shaping values. Now is time to put all that together. In this chapter we are going to learn how to draw simple shapes in a parallel procedural way.
+Finally! We have been building skill for this moment! You learn most of the GLSL foundations. You know about types and functions. You practice your shaping equations over and over. Now is time to put all that together. You are up for this challenge. In this chapter we are going to finally learn how to draw simple shapes in a parallel procedural way. 
 
 ### Rectangle
 
-Think on the double gradient of *x* and *y* maped on the *red* and *green* color channels we did on the uniforms chapter. That's our field, our space and territory. How we can use it to draw a rectangle? 
+Imagine we have a grid paper, like the one we used on math classes, and the homework is to draw a square. The paper size is 10x10 and the square suppose to be 8x8. What you will do?
 
-* Sketch a peace of code that use ```if``` statements over that spacial field between 0.0 and 1.0 in *x* and *y*. 
+![](grid.jpg)
 
-Once you finish that excersise take a look to the following code and imagine what happen on it.
+Take the last two rows and two columns. Right? That was easy. What if the second exercise requires the square to be centered? 
+
+You paint everything except the last and first rows and last and first column. But now you are probably asking your self what this have to do with shaders? Each little scare of our grid paper is a thread. Each little scare knows their position, like the coordinates of a chess board. In previous chapters he have mapped *x* and *y* to the *red* and *green* color channels, we learn that’s our field and space. A narrow two dimensional territory between 0.0 and 1.0. How we can use it to draw a centered square in the middle of our billboard?
+
+* Sketch a peace of code that use ```if``` statements over our spacial field.
+
+Well done! This is a great step and accomplish. And speaking about steps, how we can simplify this code that use ```if``` statements with ```step()``` functions? Take a look to the following code.
 
 ```glsl
 #ifdef GL_ES
@@ -31,62 +37,75 @@ void main(){
 }
 ```
 
-Here we are using ```step()``` to turn everything bellow 0.1 to to 0.0. That will make a line on the left and bottom of the canvas.
+Here we are using ```step()``` to turn everything bellow 0.1 to to 0.0 (black). That will make a line on the left and bottom of the canvas.
 
 ![](rect.jpg)
 
-Looking closely to the previous code, we repeat the structure for each side. That means we can save some lines of code by passing directly two values and treating them in the same way with the same function. Look closely the following code.
+If we look close, on the previous code we repeat the structure for each side axis for left and bottom. We can save some lines of code by passing directly two values and treating them in the same way with the same function. Check the following code.
 
 <div class="codeAndCanvas" data="rect-making.frag"></div>
 
-To repeat this on the top and left sides we need to invert the ```st``` gradient. That way the ```vec2(0.0,0.0)``` will be on the top left corner.
+But this rectangle is not centered, is in the top right coorner. We need to “take out” equal peaces on both extremes on left-bottom and tight-top to obtain a centered square.
 
-Once you got the trick to make a rectangle try the following excersices:
+So, to repeat this on the top-right side we can invert the ```st``` gradient and repeat the same ```step()``` function. That way the ```vec2(0.0,0.0)``` will be on the top right corner. This is the digital equivalent of flipping the page. 
 
-* Implement the same code using ```smoothstep()``` instead of ```step()```. Try different values to get different results, go from blurred edges to elegant antialiased borders.
+Interesting right? Because per threat (pixel) we only know the coordinate position, our drawing methods are based on it. Drawing shapes is all about flipping and stretching this coordinate system.
 
-* Do another implementation that use ```mod()```, ```ceil()```, ```floor()``` or ```fract()```.
+Before the going forward, let’s use the simplicity of the rectangle as a training case. Try the following challenges:
 
-* Choose the implementation you like the most and make a function of it that you can reuse in the future. Try to leave it flexible and efficient.
+* Can you simplify lines between 16 and 21 in a two single lines? What about one line?
 
-* Make another function to draw just the outline of the a rectagle.
+* Experiment with the same code but using ```smoothstep()``` instead of ```step()```. Note that by changing values, you can go from blurred edges to elegant antialiased borders.
 
-* Make a composition of rectangles and colors that resemble a [Mark Rothko](http://en.wikipedia.org/wiki/Mark_Rothko) painting.
+* Do another implementation that use ```floor()```.
+
+* How you can draw rectangles of different sizes instead of just squares.
+
+* Choose the implementation you like the most and make a function of it that you can reuse in the future. Leave it flexible and efficient.
+
+* Make another function that just draw the outline of a rectangle.
+
+* How do you think we can move and place different rectangles in a  same billboard? If you figurate out how, show of your skills making a composition of rectangles and colors that resemble a [Mark Rothko](http://en.wikipedia.org/wiki/Mark_Rothko) painting.
 
 ![Mark Rothko - Three (1950)](rothko.jpg)
 
 ### Circles
 
-Circles requeire another approach. Rectangles were relative easy because of how the cartesian space works. For cicles, we can take advantage again of the polar coordinate system just like we did in the previus chapter. This time we 
-just need to calculate the distance to the center. All the points in the circunsference of a circle will have the same distance to the center so we can use this to trace the limits of this shape.
+In the same way is easy to draw squares on grid paper, is relatively easy to draw rectangles with cartesians coordinates. But circles requires another approach. Some how we need to *treat* the spacial coordinates in a way that at the end we can draw circles with just a ```step()``` functions. 
 
-There are several ways to calculate that. The easiest one is just using ```distance()``` functions, which internally get the ```length()``` of the difference between two points (in our case the fragment coordinate and the center of the canvas). The ```length()``` function is nothing but a shortcut of the [hypotenuse equation](http://en.wikipedia.org/wiki/Hypotenuse) that use square root (```sqrt()```) internally.
+Going back to the grid paper and the math class,  we were hable to draw perfect circles by opening a compass by the desired radius, pressing one of the endings on the desired center of the circles and spinning the other end around.
+
+![](compass.jpg)
+
+If we do this over a grid paper, thinking that each square on the grid is a pixel, we can draw a circle by *asking* each pixel (or thread) if they are inside the area of the circle. Right? We can know that area by computing the distance to the center of the center of the circle. 
+
+There are several ways to calculate that. The easiest one is just using the ```distance()``` functions, which internally computes the ```length()``` of the difference between two points (in our case the fragment coordinate and the center of the canvas). The ```length()``` function is nothing but a shortcut of the [hypotenuse equation](http://en.wikipedia.org/wiki/Hypotenuse) that use square root (```sqrt()```) internally.
 
 ![](hypotenuse.png)
 
-Take a look to the following code paying attention to what we do with the space coordinates.
+So far I just describe three functions (```distance()```, ```length()``` and ```sqrt()```) you can use. The following code  contain this three functions and how to get the exactly same result with each one. Note that on it we are mapping the distance to the center of the billboard to the color brightness of the pixel.
 
 <div class="codeAndCanvas" data="circle-making.frag"></div>
 
-The closer to the center we get the lower (darker) the values becomes. Values don't get to high because from the center ( ```vec2(0.5, 0.5)``` ) the maximum distance barely goes over 0.5. Think this pattern or gradiant as a map and think: 
+* Comment and uncomment lines to try the different ways to get the same result.
+
+The resultan *mapping* values between distance and brightness can be a really helpful technique. Note that, the closer the pixel is to the center the lower (darker) values it have. Values don't get to high because from the center ( ```vec2(0.5, 0.5)``` ) the maximum distance barely goes over 0.5. Contemplate this map and think:
 
 * What you can infer from it? 
 
-* How we can use it to draw circle?
-
-* Comment and uncomment lines to try the different ways to get the same result.
+* How we can use this to draw a circle?
 
 * Modify the above code in order to contain the circular gradient inside the canvas.
 
 ### Distance field
 
-Go back to the example above. Imagine this as an altitude map. The gradient show us the pattern of something shape similar to a cone view from above. Imagie your self on the top of that cone, you hold to tip of a ruled tape while you drop the rest. Because you are in the center of the canvas, the ruler will mark "0.5" in the extreme. This will be constant in all your directions. Buy choosing where to cut horizontally the cone you will get a bigger or smaller circular surface. 
+Imagine the above example as an inverse altitude map. The darker the taller. The gradient show us the pattern of something shape similar to a cone view from above. Imagine your self on the top of that cone, under your foot you hold the tip of a ruled tape while the rest of it goes than the hill. Because you are in the center of the canvas, the ruler will mark "0.5" in the extreme. This will be constant in all your directions. Buy choosing where to cut horizontally the top of cone you will get a bigger or smaller circular surface.
 
 ![](distance-field.jpg)
 
-This way of undersanding gradients as spacial information can be combined, once again with the shaping functions we have seen to get interesting results. This technique is known as “distant field” and is use in diferent ways from font outlines to 3D graphics.
+Interesting right? We can combine this re-interpretation of space to make shapes based on the distance to 0. This technique is known as “distant field” and is use in different ways from font outlines to 3D graphics.
 
-Try the following excersises:
+Try the following excursuses:
  
 * Use ```set()``` to turn everything above 0.5 to white and everything bellow to 0.0
 
@@ -94,17 +113,29 @@ Try the following excersises:
 
 * Using ```smoothstep()``` experiment trying different values to get nice antialiased borders on your circle.
 
-* Once you are happy with your exercises result make a function of it that you can re-use in the future. 
-
-* Can you animate your circle to grow and shrink simulating a beating heart?
+* Once you are happy with an implementation make a function of it that you can reuse in the future. 
 
 * Use your function to mask a color with it.
 
-* Make three compositions using just circles. Then animate them. \
+* Can you animate your circle to grow and shrink simulating a beating heart?
+
+* What about moving this circle? Can you move an place different circles in a single billboard?
+
+* What happen if you combine distances fields together using different functions and operations.
+
+```glsl
+pct = distance(st,vec2(0.4)) + distance(st,vec2(0.6));
+pct = distance(st,vec2(0.4)) * distance(st,vec2(0.6));
+pct = min(distance(st,vec2(0.4)),distance(st,vec2(0.6)));
+pct = max(distance(st,vec2(0.4)),distance(st,vec2(0.6)));
+pct = pow(distance(st,vec2(0.4)),distance(st,vec2(0.6)));
+```
+
+* Make three compositions using this technique. If they are animated better!
 
 #### For your tool box
 
-* This is another way to create a circular distance field by using ```dot()``` product. This last one is slyly less expensive (in terms of computational power) than ```sqrt()```.
+In terms of computational power ```sqrt()``` function (and all the once that depend on it) can be expensive. Here is another way to create a circular distance field by using ```dot()``` product.
 
 <div class="codeAndCanvas" data="circle.frag"></div>
 
