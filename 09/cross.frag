@@ -5,22 +5,12 @@
 precision mediump float;
 #endif
 
-#define PI 3.14159265358979323846
-
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
 
 vec2 tile(vec2 _st, float _zoom){
   _st *= _zoom;
-  return fract(_st);
-}
-
-vec2 brickTile(vec2 _st, float _zoom){
-  _st *= _zoom;
-  if (fract(_st.y * 0.5) > 0.5){
-      _st.x += 0.5;
-  }
   return fract(_st);
 }
 

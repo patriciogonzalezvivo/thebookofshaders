@@ -25,7 +25,10 @@ void main(){
   vec2 st = gl_FragCoord.xy/u_resolution.xy;
   st.x *= u_resolution.x/u_resolution.y;
   st = tile(st,5.);
-  vec3 color = vec3(circle(st, 0.2));
+  vec3 color = vec3(circle(st+vec2(0.,-.5), 0.35)+
+                    circle(st+vec2(0.,.5), 0.35)+
+                    circle(st+vec2(-.5,0.), 0.35)+
+                    circle(st+vec2(.5,0.), 0.35));
 
   gl_FragColor = vec4(color,1.0);
 }

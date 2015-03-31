@@ -5,6 +5,8 @@
 precision mediump float;
 #endif
 
+#define PI 3.14159265358979323846
+
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
@@ -31,7 +33,10 @@ void main(){
   st.x *= u_resolution.x/u_resolution.y;
   
   st = brickTile(st,5.);
-  vec3 color = vec3(1.0-circle(st, 0.11));
+  vec3 color = vec3(circle(st+vec2(0.,0.1), 0.007)+ 
+                    circle(st+vec2(0.00,-0.1), 0.007)+ 
+                    circle(st+vec2(-0.1,0.), 0.007)+ 
+                    circle(st+vec2(0.1,0), 0.007));
 
   gl_FragColor = vec4(color,1.0);
 }
