@@ -1,5 +1,7 @@
 ## Shapes
 
+![Kindergartner Alice Hubbard’s beauty form made with the fourteenth Froebel gift, Providence, United States, ca. 1892. Photo: Zindman/Freemont.](froebel.jpg)
+
 Finally! We have been building skill for this moment! You learn most of the GLSL foundations. You know about types and functions. You practice your shaping equations over and over. Now is time to put all that together. You are up for this challenge. In this chapter we are going to finally learn how to draw simple shapes in a parallel procedural way. 
 
 ### Rectangle

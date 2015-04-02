@@ -5,10 +5,8 @@
 precision mediump float;
 #endif
 
-#define PI 3.14159265358979323846
-#define TWO_PI 6.28318530717958647693
-
 uniform vec2 u_resolution;
+uniform vec2 u_mouse;
 uniform float u_time;
 
 // Based on https://www.shadertoy.com/view/4sSSzG

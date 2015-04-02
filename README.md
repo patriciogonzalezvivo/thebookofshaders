@@ -80,4 +80,3 @@ Thanks to my wife [Jen Lowe](http://www.datatelling.com/), for her unconditional
 Thanks [Scott Murray](http://alignedleft.com/) for the inspiration and advice.
 
 Thanks [Karim Naaji](http://karim.naaji.fr/) for contributing with support, good ideas and code.
-

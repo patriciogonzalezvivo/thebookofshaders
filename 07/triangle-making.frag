@@ -6,6 +6,7 @@ precision mediump float;
 #endif
 
 uniform vec2 u_resolution;
+uniform vec2 u_mouse;
 uniform float u_time;
 
 // Based on https://www.shadertoy.com/view/4sSSzG

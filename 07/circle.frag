@@ -6,6 +6,7 @@ precision mediump float;
 #endif
 
 uniform vec2 u_resolution;
+uniform vec2 u_mouse;
 uniform float u_time;
 
 float circle(in vec2 _st, in float _radius){
