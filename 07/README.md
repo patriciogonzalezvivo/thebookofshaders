@@ -145,16 +145,6 @@ In terms of computational power ```sqrt()``` function (and all the once that dep
 
 <div class="codeAndCanvas" data="circle.frag"></div>
 
-### More about shapes and distance fields
-
-Distance fields can be use to draw almost everything. Obviously the complex the shape is, the more complicated the equation will be, but it pays off; a convenient feature of this technique is the ability to smooth edges. Because the “topological” nature of them, sharp edges get blended together producing softer edges the more away you are from the center you sample. This is particularly useful on fonts rendering.
-
-Take a look to the following code and note how the space is mapped. Like concentric rings on a Zen garde the distance field values on edges get smooth and rounder the further away they get from the center.
-
-<div class="codeAndCanvas" data="triangle-making.frag"></div>
-
-If you play with the code you will discover that inside the triangle there is a negative area. Which in position makes shapes extremely sharp to the extreme. Because the values are under zero we can not see the difference but by changing ```fract()``` by ```sin()``` in line 43 you can see the triangle go shrink until disappear. This signed properties particular of **Signed Distance Fields**.
-
 ### Polar shapes
 
 ![Robert Mangold - Untitled (2008)](mangold.jpg)
@@ -184,6 +174,15 @@ Try to:
 * Animate this shapes
 * Combine different shaping functions to *cut holes* on the shape to make better flowers, snowflakes and gears.
 * Use the ```plot()``` function we were using on the *Shaping Functions Chapter* to draw just the contour.
+
+### Combining powers
+
+As we saw at the beginning polar coordinates are very useful and particularly easy to map into distance field. As we saw  
+in the circle example you just need to compute the radius using a `length()` function. Also we already learn how to modulate that radius according to the angle using the `atan()` function.
+
+We can combine both to construct shapes according to how many sides it have. Check the following code from [Andrew Baldwin](https://twitter.com/baldand) [one of his blog post](http://thndl.com/square-shaped-shaders.html) 
+
+<div class="codeAndCanvas" data="shapes.frag"></div>
 
 Congratulations! You have made it through the rough part! Take a break and let this concepts sediment, drawing simple shapes on Processing is really easy but not here. In shader-land everything the way to thing on shapes is twisted and can be exhausting to adapt to this new paradigm of coding. 
 

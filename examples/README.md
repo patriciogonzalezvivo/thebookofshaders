@@ -30,14 +30,14 @@ The following is a list of examples present in this book.
         - [HSB - Color Wheel](../edit.html#06/hsb-colorwheel.frag)
 
     * [Shapes](../07/)
-        - Rectangle: [making](../edit.html#07/rect-making.frag) and [function](../edit.html#07/rect.frag)
+        - Rectangle: [making](../edit.html#07/rect-making.frag), [function](../edit.html#07/rect.frag) and [distance-field](../edit.html#07/rect-df.frag)
         - Circle: [making](../edit.html#07/circle-making.frag) and [function](../edit.html#07/circle.frag)
-        - Triangle: [making](../edit.html#07/triangle-making.frag) and [function](../edit.html#07/triangle.frag)
+        - [Batman distance field](../edit.html#07/batman.frag)
         - [Line](../edit.html#07/line.frag)
         - [Cross](../edit.html#07/cross.frag)
         - [Polar](../edit.html#07/polar.frag)
-        - [Batman distance field](../edit.html#07/batman.frag)
-
+        - [Other Shapes](../edit.html#07/shapes.frag)
+        
 ### Advance
 
 * [Moon](../edit.html#examples/moon.frag&examples/images/moon-texture.jpg)
