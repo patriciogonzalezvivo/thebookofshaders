@@ -67,9 +67,11 @@ Before the going forward, let’s use the simplicity of the rectangle as a train
 
 * Make another function that just draw the outline of a rectangle.
 
-* How do you think we can move and place different rectangles in a  same billboard? If you figurate out how, show of your skills making a composition of rectangles and colors that resemble a [Mark Rothko](http://en.wikipedia.org/wiki/Mark_Rothko) painting.
+* How do you think we can move and place different rectangles in a  same billboard? If you figurate out how, show of your skills making a composition of rectangles and colors that resemble a [Piet Mondrian](http://en.wikipedia.org/wiki/Piet_Mondrian) painting.
 
-![Mark Rothko - Three (1950)](rothko.jpg)
+![Piet Mondria - Tableau (1921)](mondrian.jpg)
+
+
 
 ### Circles
 
