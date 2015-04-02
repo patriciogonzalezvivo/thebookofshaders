@@ -6,11 +6,9 @@ Finally! We have been building skill for this moment! You learn most of the GLSL
 
 Imagine we have a grid paper, like the one we used on math classes, and the homework is to draw a square. The paper size is 10x10 and the square suppose to be 8x8. What you will do?
 
-![](grid.jpg)
+![](grid_paper.jpg)
 
-Take the last two rows and two columns. Right? That was easy. What if the second exercise requires the square to be centered? 
-
-You paint everything except the last and first rows and last and first column. But now you are probably asking your self what this have to do with shaders? Each little scare of our grid paper is a thread. Each little scare knows their position, like the coordinates of a chess board. In previous chapters he have mapped *x* and *y* to the *red* and *green* color channels, we learn that’s our field and space. A narrow two dimensional territory between 0.0 and 1.0. How we can use it to draw a centered square in the middle of our billboard?
+You paint everything except the last and first rows and last and first column. Right? But now you are probably asking your self what this have to do with shaders? Each little scare of our grid paper is a thread. Each little scare knows their position, like the coordinates of a chess board. In previous chapters he have mapped *x* and *y* to the *red* and *green* color channels, we learn that’s our field and space. A narrow two dimensional territory between 0.0 and 1.0. How we can use it to draw a centered square in the middle of our billboard?
 
 * Sketch a peace of code that use ```if``` statements over our spacial field.
 
@@ -39,17 +37,19 @@ void main(){
 
 Here we are using ```step()``` to turn everything bellow 0.1 to to 0.0 (black). That will make a line on the left and bottom of the canvas.
 
-![](rect.jpg)
+![](rect-01.jpg)
 
 If we look close, on the previous code we repeat the structure for each side axis for left and bottom. We can save some lines of code by passing directly two values and treating them in the same way with the same function. Check the following code.
 
 <div class="codeAndCanvas" data="rect-making.frag"></div>
 
-But this rectangle is not centered, is in the top right coorner. We need to “take out” equal peaces on both extremes on left-bottom and tight-top to obtain a centered square.
+But this rectangle is not centered, is in the top right corner. We need to “take out” equal peaces on both extremes on left-bottom and tight-top to obtain a centered square.
 
 So, to repeat this on the top-right side we can invert the ```st``` gradient and repeat the same ```step()``` function. That way the ```vec2(0.0,0.0)``` will be on the top right corner. This is the digital equivalent of flipping the page. 
 
-Interesting right? Because per threat (pixel) we only know the coordinate position, our drawing methods are based on it. Drawing shapes is all about flipping and stretching this coordinate system.
+![](rect-02.jpg)
+
+Interesting right? Because we only know the coordinate position per pixel, our drawing methods are based on it. Drawing shapes is all about flipping and stretching this coordinate system.
 
 Before the going forward, let’s use the simplicity of the rectangle as a training case. Try the following challenges:
 
@@ -77,7 +77,9 @@ Going back to the grid paper and the math class,  we were hable to draw perfect 
 
 ![](compass.jpg)
 
-If we do this over a grid paper, thinking that each square on the grid is a pixel, we can draw a circle by *asking* each pixel (or thread) if they are inside the area of the circle. Right? We can know that area by computing the distance to the center of the center of the circle. 
+If we do this over a grid paper, thinking that each square on the grid is a pixel, we can draw a circle by *asking* each pixel (or thread) if they are inside the area of the circle. Right? We can know that area by computing the distance to the center of the center of the circle.
+
+![](circle.jpg)
 
 There are several ways to calculate that. The easiest one is just using the ```distance()``` functions, which internally computes the ```length()``` of the difference between two points (in our case the fragment coordinate and the center of the canvas). The ```length()``` function is nothing but a shortcut of the [hypotenuse equation](http://en.wikipedia.org/wiki/Hypotenuse) that use square root (```sqrt()```) internally.
 
