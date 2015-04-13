@@ -6,9 +6,6 @@ uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
 
-// Reference
-// http://thndl.com/category/shaders.html
-
 void main(){
   vec2 st = gl_FragCoord.xy/u_resolution.xy;
   st.x *= u_resolution.x/u_resolution.y;
@@ -18,22 +15,16 @@ void main(){
   // Remap the space to -1. to 1.
   st = st *2.-1.;
 
-  // Rectangular
-  vec2 r = abs(st);
-  color = vec3(r,0.);
+  // Making the distance field
+  d = length( abs(st)-.3 );
+  // d = length( min(abs(st)-.3,0.) );
+  // d = length( max(abs(st)-.3,0.) );
 
-  // d = max(r.x,r.y);
-  // color = vec3(d);
-  // color = vec3( step(.4,d) );
-  // color = vec3( step(.4,d) * step(d,.5) );
-  // color = vec3(smoothstep(.3,.4,d)* smoothstep(.6,.5,d));
+  // Visualizing the distance distance field
+  gl_FragColor = vec4(vec3(fract(d*10.0)),1.0);
 
-  // Rectangular round corners
-  // d = length( max( abs(st)-.3, 0.) );
-  // color = vec3(d);
-  // color = vec3( step(.4,d) );
-  // color = vec3( step(.4,d) * step(d,.5) );
-  // color = vec3(smoothstep(.3,.4,d)* smoothstep(.6,.5,d));
-
-  gl_FragColor = vec4(color,1.0);
+  // Drawing with the distance field
+  // gl_FragColor = vec4(vec3( step(.3,d) ),1.0);
+  // gl_FragColor = vec4(vec3( step(.3,d) * step(d,.4)),1.0);
+  // gl_FragColor = vec4(vec3( smoothstep(.3,.4,d)* smoothstep(.6,.5,d)) ,1.0);
 }

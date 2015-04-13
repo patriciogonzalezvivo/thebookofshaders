@@ -2,7 +2,7 @@
 
 ![Kindergartner Alice Hubbard’s beauty form made with the fourteenth Froebel gift, Providence, United States, ca. 1892. Photo: Zindman/Freemont.](froebel.jpg)
 
-Finally! We have been building skill for this moment! You learn most of the GLSL foundations. You know about types and functions. You practice your shaping equations over and over. Now is time to put all that together. You are up for this challenge. In this chapter we are going to finally learn how to draw simple shapes in a parallel procedural way. 
+Finally! We have been building skill for this moment! You learn most of the GLSL foundations. You know about types and functions. You practice your shaping equations over and over. Now is time to put all that together. You are up for this challenge! In this chapter we are going to finally learn how to draw simple shapes in a parallel procedural way. 
 
 ### Rectangle
 
@@ -10,11 +10,11 @@ Imagine we have a grid paper, like the one we used on math classes, and the home
 
 ![](grid_paper.jpg)
 
-You paint everything except the last and first rows and last and first column. Right? But now you are probably asking your self what this have to do with shaders? Each little scare of our grid paper is a thread. Each little scare knows their position, like the coordinates of a chess board. In previous chapters he have mapped *x* and *y* to the *red* and *green* color channels, we learn that’s our field and space. A narrow two dimensional territory between 0.0 and 1.0. How we can use it to draw a centered square in the middle of our billboard?
+You paint everything except the last and first rows and last and first column. Right? How this relates to shaders? Each little scare of our grid paper is a thread (a pixel). Each little square knows their position, like the coordinates of a chess board. In previous chapters he have mapped *x* and *y* to the *red* and *green* color channels, we learn that’s our field and space. A narrow two dimensional territory between 0.0 and 1.0. How we can use it to draw a centered square in the middle of our billboard?
 
-* Sketch a peace of code that use ```if``` statements over our spacial field.
+* Sketch a peace of code that use ```if``` statements over our spacial field. The principles to do it is remarcable similar to how we think it on the grid paper scenario.
 
-Well done! This is a great step and accomplish. And speaking about steps, how we can simplify this code that use ```if``` statements with ```step()``` functions? Take a look to the following code.
+Well done! This is a great step and accomplish. And speaking about steps, how can we simplify this code that use ```if``` statements with ```step()``` functions? Take a look to the following code.
 
 ```glsl
 #ifdef GL_ES
@@ -37,11 +37,11 @@ void main(){
 }
 ```
 
-Here we are using ```step()``` to turn everything bellow 0.1 to to 0.0 (black). That will make a line on the left and bottom of the canvas.
+Here we are using ```step()``` to turn everything bellow 0.1 to black color (```vec3(0.0)```). That will make a line on the left and bottom of the canvas.
 
 ![](rect-01.jpg)
 
-If we look close, on the previous code we repeat the structure for each side axis for left and bottom. We can save some lines of code by passing directly two values and treating them in the same way with the same function. Check the following code.
+If we look close, on the previous code we repeat the structure for each axis (left and bottom). We can save some lines of code by passing to ```step()```directly two values and treating them in the same way with the same function. Check the following code.
 
 <div class="codeAndCanvas" data="rect-making.frag"></div>
 
@@ -53,7 +53,7 @@ So, to repeat this on the top-right side we can invert the ```st``` gradient and
 
 Interesting right? Because we only know the coordinate position per pixel, our drawing methods are based on it. Drawing shapes is all about flipping and stretching this coordinate system.
 
-Before the going forward, let’s use the simplicity of the rectangle as a training case. Try the following challenges:
+Before going forward, let’s use the simplicity of the rectangle as a training case. Try the following challenges:
 
 * Can you simplify lines between 16 and 21 in a two single lines? What about one line?
 
@@ -71,17 +71,15 @@ Before the going forward, let’s use the simplicity of the rectangle as a train
 
 ![Piet Mondria - Tableau (1921)](mondrian.jpg)
 
-
-
 ### Circles
 
-In the same way is easy to draw squares on grid paper, is relatively easy to draw rectangles with cartesians coordinates. But circles requires another approach. Some how we need to *treat* the spacial coordinates in a way that at the end we can draw circles with just a ```step()``` functions. 
+In the same way is easy to draw squares on grid paper, is relatively easy to draw rectangles with cartesians coordinates. But circles requires another approach. Some how we need to *treat* the spacial coordinates in a way that we can draw circles with just a ```step()``` functions. 
 
-Going back to the grid paper and the math class,  we were hable to draw perfect circles by opening a compass by the desired radius, pressing one of the endings on the desired center of the circles and spinning the other end around.
+Back to math class and the grid paper,  we can remember drawing perfect circles by opening a compass at the desired radius, pressing one of the endings on the desired center of the circles and spinning the other end around.
 
 ![](compass.jpg)
 
-If we do this over a grid paper, thinking that each square on the grid is a pixel, we can draw a circle by *asking* each pixel (or thread) if they are inside the area of the circle. Right? We can know that area by computing the distance to the center of the center of the circle.
+Do this over a grid paper, and think. Each square on the grid is a pixel, we defenetyy can draw a circle by *asking* each pixel (or thread) if they are inside the area of the circle. Right? We can know that area by computing the distance to the center of the center of the circle.
 
 ![](circle.jpg)
 
@@ -145,6 +143,19 @@ In terms of computational power ```sqrt()``` function (and all the once that dep
 
 <div class="codeAndCanvas" data="circle.frag"></div>
 
+### Usefull properties of a Distance Field
+
+Distance fields can be use to draw almost everything. Obviously the complex the shape is, the more complicated the equation will be, but it pays off; a convenient feature of this technique could be instant is smooth edges and out lines. Because the “topological” nature of them, sharp edges could be blended together producing smooth edges the more away you are from the center. Also because the shape is "traced" from the field is very simple to draw extra contours lines. Because of this features, distances field are usually use for font rendering.
+
+Take a look to the following code and uncomment lines one by one. Note how we move the center of coordenates to the centrer and shrinked to the half. Now the values goes from -1 to 1.
+
+<div class="codeAndCanvas" data="rect-df.frag"></div>
+
+We start by visualizing the distance field with the line 24. You can see the distance pattern repeating over and over like rings in a Zen garden. This rings show the ecuation of line 20 were we compute the distance to the position `.3,.3` in all four sign permutations. We do that by obtaining the
+
+
+Like concentric rings on a Zen garde the distance field values on edges get smooth and rounder the further away they get from the center.
+
 ### Polar shapes
 
 ![Robert Mangold - Untitled (2008)](mangold.jpg)
@@ -177,8 +188,7 @@ Try to:
 
 ### Combining powers
 
-As we saw at the beginning polar coordinates are very useful and particularly easy to map into distance field. As we saw  
-in the circle example you just need to compute the radius using a `length()` function. Also we already learn how to modulate that radius according to the angle using the `atan()` function.
+As we saw at the beginning polar coordinates are very useful and particularly easy for mapping distance fields. As we saw, in the circle example, they just require to compute the radius using a `length()` function. On the previus sec already learn how to modulate that radius according to the angle using the `atan()` function.
 
 We can combine both to construct shapes according to how many sides it have. Check the following code from [Andrew Baldwin](https://twitter.com/baldand) [one of his blog post](http://thndl.com/square-shaped-shaders.html) 
 
