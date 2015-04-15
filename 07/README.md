@@ -2,7 +2,7 @@
 
 ![Kindergartner Alice Hubbard’s beauty form made with the fourteenth Froebel gift, Providence, United States, ca. 1892. Photo: Zindman/Freemont.](froebel.jpg)
 
-Finally! We have been building skill for this moment! You learn most of the GLSL foundations. You know about types and functions. You practice your shaping equations over and over. Now is time to put all that together. You are up for this challenge! In this chapter we are going to finally learn how to draw simple shapes in a parallel procedural way. 
+Finally! We have been building skill for this moment! You had learned most of the GLSL foundations, types and functions. You had practiced your shaping equations over and over. Now is time to put all that together. You are up for this challenge! In this chapter we are going to finally learn how to draw simple shapes in a parallel procedural way. 
 
 ### Rectangle
 
@@ -12,7 +12,7 @@ Imagine we have a grid paper, like the one we used on math classes, and the home
 
 You paint everything except the last and first rows and last and first column. Right? How this relates to shaders? Each little scare of our grid paper is a thread (a pixel). Each little square knows their position, like the coordinates of a chess board. In previous chapters he have mapped *x* and *y* to the *red* and *green* color channels, we learn that’s our field and space. A narrow two dimensional territory between 0.0 and 1.0. How we can use it to draw a centered square in the middle of our billboard?
 
-* Sketch a peace of code that use ```if``` statements over our spacial field. The principles to do it is remarcable similar to how we think it on the grid paper scenario.
+* Sketch a peace of code that use ```if``` statements over our spacial field. The principles to do it is remarkable similar to how we think it on the grid paper scenario.
 
 Well done! This is a great step and accomplish. And speaking about steps, how can we simplify this code that use ```if``` statements with ```step()``` functions? Take a look to the following code.
 
@@ -47,11 +47,11 @@ If we look close, on the previous code we repeat the structure for each axis (le
 
 But this rectangle is not centered, is in the top right corner. We need to “take out” equal peaces on both extremes on left-bottom and tight-top to obtain a centered square.
 
-So, to repeat this on the top-right side we can invert the ```st``` gradient and repeat the same ```step()``` function. That way the ```vec2(0.0,0.0)``` will be on the top right corner. This is the digital equivalent of flipping the page. 
+So, to repeat this on the top-right side by uncommenting lines 21 and 22 we invert the ```st``` gradient and repeat the same ```step()``` function. That way the ```vec2(0.0,0.0)``` will be on the top right corner. This is the digital equivalent of flipping the page and repeating the previous procedure.
 
 ![](rect-02.jpg)
 
-Interesting right? Because we only know the coordinate position per pixel, our drawing methods are based on it. Drawing shapes is all about flipping and stretching this coordinate system.
+Interesting right? This drawing method work per square with the supposition that each one only know it coordinate position. That's why this drawing technique is all about flipping and stretching this coordinate system.
 
 Before going forward, let’s use the simplicity of the rectangle as a training case. Try the following challenges:
 
@@ -73,27 +73,27 @@ Before going forward, let’s use the simplicity of the rectangle as a training 
 
 ### Circles
 
-In the same way is easy to draw squares on grid paper, is relatively easy to draw rectangles with cartesians coordinates. But circles requires another approach. Some how we need to *treat* the spacial coordinates in a way that we can draw circles with just a ```step()``` functions. 
+Is easy to draw squares on grid paper, in the same way is simple to draw rectangles on cartesians coordinates. But circles requires another approach, specially if we need to come up with a "per-pixel" or "per-square" approach. One solution is to *re-map* the spacial coordinates in a way that we just need to use a ```step()``` function to draw. 
 
-Back to math class and the grid paper,  we can remember drawing perfect circles by opening a compass at the desired radius, pressing one of the endings on the desired center of the circles and spinning the other end around.
+How? Let's start by going back to math class and the grid paper. If you remember we used to open a compass at the desired radius of a circle, then press one of the compass endings at the center of the circle position and then finally trace the contour of it with a simple spin.
 
 ![](compass.jpg)
 
-Do this over a grid paper, and think. Each square on the grid is a pixel, we defenetyy can draw a circle by *asking* each pixel (or thread) if they are inside the area of the circle. Right? We can know that area by computing the distance to the center of the center of the circle.
+Porting this to a shader where each square on the grid is a pixel implies *asking* each pixel (or thread) if they are inside the area of the circle. Right? We can know that area by computing the distance to the center of the center of the circle. 
 
 ![](circle.jpg)
 
-There are several ways to calculate that. The easiest one is just using the ```distance()``` functions, which internally computes the ```length()``` of the difference between two points (in our case the fragment coordinate and the center of the canvas). The ```length()``` function is nothing but a shortcut of the [hypotenuse equation](http://en.wikipedia.org/wiki/Hypotenuse) that use square root (```sqrt()```) internally.
+There are several ways to calculate that. The easiest one is just using the ```distance()``` functions, which internally computes the ```length()``` of the difference between two points (in our case the pixel coordinate and the center of the canvas). The ```length()``` function is nothing but a shortcut of the [hypotenuse equation](http://en.wikipedia.org/wiki/Hypotenuse) that use square root (```sqrt()```) internally.
 
 ![](hypotenuse.png)
 
-So far I just describe three functions (```distance()```, ```length()``` and ```sqrt()```) you can use. The following code  contain this three functions and how to get the exactly same result with each one. Note that on it we are mapping the distance to the center of the billboard to the color brightness of the pixel.
+So far I just describe three functions you can use (```distance()```, ```length()``` and ```sqrt()```) to calculate the distance to the center of the billboard. The following code contain this three functions and the non-surprising fact that each one return the exactly same result.
 
 <div class="codeAndCanvas" data="circle-making.frag"></div>
 
 * Comment and uncomment lines to try the different ways to get the same result.
 
-The resultan *mapping* values between distance and brightness can be a really helpful technique. Note that, the closer the pixel is to the center the lower (darker) values it have. Values don't get to high because from the center ( ```vec2(0.5, 0.5)``` ) the maximum distance barely goes over 0.5. Contemplate this map and think:
+In the previous example we are matching the distance to the center of the billboard to the color brightness of the pixel. The closer the pixel is to the center the lower (darker) values it have. Is important to notice that the values don't get to high because from the center ( ```vec2(0.5, 0.5)``` ) the maximum distance barely goes over 0.5. Contemplate this map and think:
 
 * What you can infer from it? 
 
@@ -103,11 +103,11 @@ The resultan *mapping* values between distance and brightness can be a really he
 
 ### Distance field
 
-Imagine the above example as an inverse altitude map. The darker the taller. The gradient show us the pattern of something shape similar to a cone view from above. Imagine your self on the top of that cone, under your foot you hold the tip of a ruled tape while the rest of it goes than the hill. Because you are in the center of the canvas, the ruler will mark "0.5" in the extreme. This will be constant in all your directions. Buy choosing where to cut horizontally the top of cone you will get a bigger or smaller circular surface.
+Imagine the above example as an inverse altitude map. The darker the taller. The gradient show us something similar the pattern made by a cone. Imagine your self on the top of that cone, under your foot you hold the tip of a ruled tape while the rest of it goes down the hill. Because you are in the center of the canvas, the ruler will mark "0.5" in the extreme. This will be constant in all your directions. Buy choosing where to “cut” cone you will get a bigger or smaller circular surface.
 
 ![](distance-field.jpg)
 
-Interesting right? We can combine this re-interpretation of space to make shapes based on the distance to 0. This technique is known as “distant field” and is use in different ways from font outlines to 3D graphics.
+Basically we are using a re-interpretation of the space (based on the distance to the center) to make shapes. This technique is known as “distant field” and is use in different ways from font outlines to 3D graphics.
 
 Try the following excursuses:
  
@@ -143,18 +143,25 @@ In terms of computational power ```sqrt()``` function (and all the once that dep
 
 <div class="codeAndCanvas" data="circle.frag"></div>
 
-### Usefull properties of a Distance Field
+### Useful properties of a Distance Field
 
-Distance fields can be use to draw almost everything. Obviously the complex the shape is, the more complicated the equation will be, but it pays off; a convenient feature of this technique could be instant is smooth edges and out lines. Because the “topological” nature of them, sharp edges could be blended together producing smooth edges the more away you are from the center. Also because the shape is "traced" from the field is very simple to draw extra contours lines. Because of this features, distances field are usually use for font rendering.
+![Zen garden](zen-garden.jpg)
 
-Take a look to the following code and uncomment lines one by one. Note how we move the center of coordenates to the centrer and shrinked to the half. Now the values goes from -1 to 1.
+Distance fields can be use to draw almost everything. Obviously the complex the shape is, the more complicated the equation will be, but it pays off; once you have the formula to make distance fields of particular shape is very easy to combine and/or apply effect to it, like smooth edges and multiple outlines. Because of this, distances field are popular in font rendering.
+
+Take a look to the following code.
 
 <div class="codeAndCanvas" data="rect-df.frag"></div>
 
-We start by visualizing the distance field with the line 24. You can see the distance pattern repeating over and over like rings in a Zen garden. This rings show the ecuation of line 20 were we compute the distance to the position `.3,.3` in all four sign permutations. We do that by obtaining the
+We start by moving moving the coordinates system to the center and shrieked to the half in order to contain the position values between -1 and 1. Also on line 24 we are visualizing the distance field values using a ```fract()``` function making it easy to see the pattern they conform. The distance field pattern repeating over and over like rings in a Zen garden.
 
+Let’s take a look to the distance field formula on line 19. There we are calculating the distance to the position on ```.3,.3``` or ```vec3(.3)``` in all four sign permutations ( that’s what ```abs()``` is doing there). 
 
-Like concentric rings on a Zen garde the distance field values on edges get smooth and rounder the further away they get from the center.
+If you uncomment *line 20*, you will note that we are combining the distances to this four point using the ```min()``` to zero. The result produce an interesting new pattern.
+
+Now try uncommenting *line 21*, we are doing the same but using the ```max()``` function. the resultant is a rectangle with rounded corners. Note how the rings of the distance field get smoother the further away they get from the center.
+
+Finish uncommenting the lines 26 to 29 one by one to understand the different uses of a distance field pattern.
 
 ### Polar shapes
 
