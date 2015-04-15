@@ -32,11 +32,12 @@ The following is a list of examples present in this book.
     * [Shapes](../07/)
         - Rectangle: [making](../edit.html#07/rect-making.frag), [function](../edit.html#07/rect.frag) and [distance-field](../edit.html#07/rect-df.frag)
         - Circle: [making](../edit.html#07/circle-making.frag) and [function](../edit.html#07/circle.frag)
-        - [Batman distance field](../edit.html#07/batman.frag)
-        - [Line](../edit.html#07/line.frag)
+        - [Batman (distance field)](../edit.html#07/batman.frag)
+        - [Line (distance field)](../edit.html#07/line.frag)
         - [Cross](../edit.html#07/cross.frag)
         - [Polar](../edit.html#07/polar.frag)
-        - [Other Shapes](../edit.html#07/shapes.frag)
+        - [Polar (distance field)](../edit.html#07/shapes.frag)
+        - [Arrow (distance field)](../edit.html#07/arrow.frag)
         
 ### Advance
 

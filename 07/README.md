@@ -153,15 +153,15 @@ Take a look to the following code.
 
 <div class="codeAndCanvas" data="rect-df.frag"></div>
 
-We start by moving moving the coordinates system to the center and shrieked to the half in order to contain the position values between -1 and 1. Also on line 24 we are visualizing the distance field values using a ```fract()``` function making it easy to see the pattern they conform. The distance field pattern repeating over and over like rings in a Zen garden.
+We start by moving moving the coordinates system to the center and shrieked to the half in order to contain the position values between -1 and 1. Also on *line 24* we are visualizing the distance field values using a ```fract()``` function making it easy to see the pattern they conform. The distance field pattern repeating over and over like rings in a Zen garden.
 
-Let’s take a look to the distance field formula on line 19. There we are calculating the distance to the position on ```.3,.3``` or ```vec3(.3)``` in all four sign permutations ( that’s what ```abs()``` is doing there). 
+Let’s take a look to the distance field formula on *line 19*. There we are calculating the distance to the position on ```.3,.3``` or ```vec3(.3)``` in all four sign permutations ( that’s what ```abs()``` is doing there). 
 
 If you uncomment *line 20*, you will note that we are combining the distances to this four point using the ```min()``` to zero. The result produce an interesting new pattern.
 
 Now try uncommenting *line 21*, we are doing the same but using the ```max()``` function. the resultant is a rectangle with rounded corners. Note how the rings of the distance field get smoother the further away they get from the center.
 
-Finish uncommenting the lines 26 to 29 one by one to understand the different uses of a distance field pattern.
+Finish uncommenting the *lines 26 to 29* one by one to understand the different uses of a distance field pattern.
 
 ### Polar shapes
 
@@ -175,9 +175,11 @@ In the chapter about color we map the cartesian coordinates to polar coordinates
     float a = atan(pos.y,pos.x);
 ```
 
-In the previous examples we have use the radius (from the center) to draw a circles. Now, if we compute the angle from the pixel (threat) to the center, we can modulate the radius to achieve different shapes. How? Yes! Shaping functions!
+We partially use this formula at the beginning of this chapter to draw a circle. We were calculating the distance to the center using ```length()```. Now that we learn about distance fields we  can learn another way of drawing shapes using polar coordinates. 
 
-Below you will find the same functions in the cartesian graph and in a polar coordinates shader example (between lines 21 and 26). Uncomment one by one the functions paying attention the relationship between one coordinate system and the other
+The technique is a little restrictive but very simple. It consist on modulating the radius of a circle depending on the angle to achieve different shapes. How the modulation work? Yes, using Shaping functions!
+
+Below you will find the same functions in the cartesian graph and in a polar coordinates shader example (between *lines 21 and 26*). Uncomment one by one the functions paying attention the relationship between one coordinate system and the other
 
 <div class="simpleFunction" data="y = cos(x*3.);
 //y = abs(cos(x*3.));
@@ -195,11 +197,15 @@ Try to:
 
 ### Combining powers
 
-As we saw at the beginning polar coordinates are very useful and particularly easy for mapping distance fields. As we saw, in the circle example, they just require to compute the radius using a `length()` function. On the previus sec already learn how to modulate that radius according to the angle using the `atan()` function.
+Now that we learn how to modulate that radius of a circle according to the angle using the `atan()` to draw different shapes, we can learn how to make distance fields with it and apply all the tricks and effect you can do with them. 
 
-We can combine both to construct shapes according to how many sides it have. Check the following code from [Andrew Baldwin](https://twitter.com/baldand) [one of his blog post](http://thndl.com/square-shaped-shaders.html) 
+The trick will consist on use the number of edges of a polygon to construct the distance field using polar coordinates. Check the following code from [Andrew Baldwin](https://twitter.com/baldand) [one of his blog post](http://thndl.com/square-shaped-shaders.html) 
 
 <div class="codeAndCanvas" data="shapes.frag"></div>
+
+* Using this example, make a function that given the position and number of corners of a desired shape, return a distance field value.
+
+* Mix distance fields together using ```min()``` and ```max()```.
 
 Congratulations! You have made it through the rough part! Take a break and let this concepts sediment, drawing simple shapes on Processing is really easy but not here. In shader-land everything the way to thing on shapes is twisted and can be exhausting to adapt to this new paradigm of coding. 
 
