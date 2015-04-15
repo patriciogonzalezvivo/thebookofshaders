@@ -207,6 +207,8 @@ The trick will consist on use the number of edges of a polygon to construct the 
 
 * Mix distance fields together using ```min()``` and ```max()```.
 
+* Choose a geometric logo to replicate using distance fields.
+
 Congratulations! You have made it through the rough part! Take a break and let this concepts sediment, drawing simple shapes on Processing is really easy but not here. In shader-land everything the way to thing on shapes is twisted and can be exhausting to adapt to this new paradigm of coding. 
 
 Now that you know how to draw shapes I'm sure new ideas will pop to your mind. In the following chapter we will learn more about how to move, rotate and scale them moving. This will allow you to compose them!
