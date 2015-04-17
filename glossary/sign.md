@@ -17,4 +17,4 @@ vec4 sign(vec4 x)
 <div class="simpleFunction" data="y = sign(x); "></div>
 
 ### See Also
-[abs](index.html#abs.md)
+[abs](index.html#abs.md), [Chapter 05: Shaping Functions](../05/)

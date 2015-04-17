@@ -18,4 +18,4 @@ vec4 inversesqrt(vec4 x)
 
 ### See Also
 
-[pow](index.html#pow.md), [sqrt](index.html#sqrt.md)
+[pow](index.html#pow.md), [sqrt](index.html#sqrt.md), [Chapter 05: Shaping Functions](../05/)

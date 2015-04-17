@@ -1,0 +1,28 @@
+## Max
+Return the greater of two values
+
+```glsl
+float max(float x, float y)  
+vec2 max(vec2 x, vec2 y)  
+vec3 max(vec3 x, vec3 y)  
+vec4 max(vec4 x, vec4 y)
+```
+
+```glsl
+vec2 max(vec2 x, float y)  
+vec3 max(vec3 x, float y)  
+vec4 max(vec4 x, float y)
+```
+
+### Parameters
+```x``` Specify the first value to compare.
+
+```y``` Specify the second value to compare.
+
+### Description
+```max()``` returns the maximum of the two parameters. It returns ```y``` if ```y``` is greater than ```x```, otherwise it returns ```x```.
+
+<div class="simpleFunction" data="y = max(x,0.5); "></div>
+
+### See Also
+[min](index.html#min.md), [abs](index.html#abs.md), [clamp](index.html#clamp.md), [Chapter 05: Shaping Functions](../05/)

@@ -20,4 +20,4 @@ vec4 pow(vec4 x, vec4 y)
 
 ### See Also
 
-[inversesqrt](index.html#inversesqrt.md), [sqrt](index.html#sqrt.md)
+[inversesqrt](index.html#inversesqrt.md), [sqrt](index.html#sqrt.md), [Chapter 05: Shaping Functions](../05/)

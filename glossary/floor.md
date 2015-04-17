@@ -12,9 +12,9 @@ vec4 floor(vec4 x)
 ```x``` Specify the value to evaluate.
 
 ### Description
-```sign()``` returns a value equal to the nearest integer that is less than or equal to x.
+```floor()``` returns a value equal to the nearest integer that is less than or equal to ```x```.
 
 <div class="simpleFunction" data="y = floor(x); "></div>
 
 ### See Also
-[ceil](index.html#ceil.md), [trunc](index.html#trunc.md), [round](index.html#round.md)
+[ceil](index.html#ceil.md), [fract](index.html#fract.md), [mod](index.html#mod.md), [Chapter 05: Shaping Functions](../05/)

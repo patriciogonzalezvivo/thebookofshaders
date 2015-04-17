@@ -17,4 +17,4 @@ vec4 acos(vec4 x)
 <div class="simpleFunction" data="y = acos(x); "></div>
 
 ### See Also
-[cos](index.html#cos.md), [sin](index.html#sin.md), [asin](index.html#asin.md), [tan](index.html#tan.md), [atan](index.html#atan.md)
+[cos](index.html#cos.md), [sin](index.html#sin.md), [asin](index.html#asin.md), [tan](index.html#tan.md), [atan](index.html#atan.md), [Chapter 05: Shaping Functions](../05/)

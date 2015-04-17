@@ -17,4 +17,4 @@ vec4 abs(vec4 x)
 <div class="simpleFunction" data="y = abs(x); "></div>
 
 ### See Also
-[sign](index.html#sign.md)
+[sign](index.html#sign.md), [min](index.html#min.md), [max](index.html#max.md), [Chapter 05: Shaping Functions](../05/)

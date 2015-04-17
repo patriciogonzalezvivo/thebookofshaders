@@ -18,4 +18,4 @@ vec4 exp2(vec4 x)
 
 ### See Also
 
-[log](index.html#log.md), [log2](index.html#log2.md), [exp](index.html#exp.md)
+[log](index.html#log.md), [log2](index.html#log2.md), [exp](index.html#exp.md), [Chapter 05: Shaping Functions](../05/)

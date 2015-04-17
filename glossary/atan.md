@@ -28,4 +28,4 @@ vec4 atan(vec4 y_over_x)
 For the second overload, ```atan()``` returns the angle whose tangent is ```y_over_x```. Values returned in this case are in the range -PI to PI.
 
 ### See Also
-[cos](index.html#cos.md), [acos](index.html#acos.md), [sin](index.html#sin.md), [asin](index.html#asin.md), [atan](index.html#atan.md)
+[cos](index.html#cos.md), [acos](index.html#acos.md), [sin](index.html#sin.md), [asin](index.html#asin.md), [atan](index.html#atan.md), [Chapter 05: Shaping Functions](../05/), [Chapter 06: Color](../06/)

@@ -17,4 +17,4 @@ vec4 sqrt(vec4 x)
 <div class="simpleFunction" data="y = sqrt(x); "></div>
 
 ### See Also
-[inversesqrt](index.html#inversesqrt.md), [pow](index.html#pow.md)
+[inversesqrt](index.html#inversesqrt.md), [pow](index.html#pow.md), [Chapter 05: Shaping Functions](../05/)
