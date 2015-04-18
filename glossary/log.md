@@ -1,6 +1,7 @@
 ## Log
 Return the natural logarithm of the parameter
 
+### Declaration
 ```glsl
 float log(float x)  
 vec2 log(vec2 x)  
@@ -9,7 +10,7 @@ vec4 log(vec4 x)
 ```
 
 ### Parameters
-```x``` Specify the value of which to take the natural logarithm.
+```x``` s### Declarationpecify the value of which to take the natural logarithm.
 
 ### Description
 ```log()``` returns the natural logarithm of ```x```.

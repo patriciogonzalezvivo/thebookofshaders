@@ -1,6 +1,7 @@
 ## Cos
 Return the cosine of the parameter
 
+### Declaration
 ```glsl
 float cos(float angle)  
 vec2 cos(vec2 angle)  
@@ -9,7 +10,7 @@ vec4 cos(vec4 angle)
 ```
 
 ### Parameters
-```angle``` Specify the quantity, in radians, of which to return the cosine.
+```angle``` specify the quantity, in radians, of which to return the cosine.
 
 ### Description
 ```cos()``` returns the trigonometric sine of angle.

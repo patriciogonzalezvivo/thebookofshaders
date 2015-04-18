@@ -1,6 +1,7 @@
 ## Asin
 Return the arcsine of the parameter
 
+### Declaration
 ```glsl
 float asin(float x)  
 vec2 asin(vec2 x)  
@@ -9,7 +10,7 @@ vec4 asin(vec4 x)
 ```
 
 ### Parameters
-```x``` Specify the value whose arcsine to return.
+```x``` specify the value whose arcsine to return.
 
 ### Description
 ```asin()``` returns the angle whose trigonometric sine is ```x```.

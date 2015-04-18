@@ -1,6 +1,7 @@
 ## Sin
 Return the sine of the parameter
 
+### Declaration
 ```glsl
 float sin(float angle)  
 vec2 sin(vec2 angle)  
@@ -9,7 +10,7 @@ vec4 sin(vec4 angle)
 ```
 
 ### Parameters
-```angle``` Specify the quantity, in radians, of which to return the sine.
+```angle``` specify the quantity, in radians, of which to return the sine.
 
 ### Description
 ```sin()``` returns the trigonometric sine of angle.

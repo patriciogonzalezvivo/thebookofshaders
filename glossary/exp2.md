@@ -1,6 +1,7 @@
 ## Exp2
 Return 2 raised to the power of the parameter
 
+### Declaration
 ```glsl
 float exp2(float x)  
 vec2 exp2(vec2 x)  
@@ -9,7 +10,7 @@ vec4 exp2(vec4 x)
 ```
 
 ### Parameters
-```x``` Specify the value of the power to which 2 will be raised.
+```x``` specify the value of the power to which 2 will be raised.
 
 ### Description
 ```exp2()``` returns 2 raised to the power of ```x```.

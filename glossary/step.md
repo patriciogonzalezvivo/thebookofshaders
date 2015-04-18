@@ -1,23 +1,22 @@
 ## Step
 Generate a step function by comparing two values
 
+### Declaration
 ```glsl
 float step(float edge, float x)  
 vec2 step(vec2 edge, vec2 x)  
 vec3 step(vec3 edge, vec3 x)  
 vec4 step(vec4 edge, vec4 x)
-```
 
-```glsl
 vec2 step(float edge, vec2 x)  
 vec3 step(float edge, vec3 x)  
 vec4 step(float edge, vec4 x)
 ```
 
 ### Parameters
-```edge``` Specifies the location of the edge of the step function.
+```edge``` specifies the location of the edge of the step function.
 
-```x``` Specify the value to be used to generate the step function.
+```x``` specify the value to be used to generate the step function.
 
 ### Description
 ```step()``` generates a step function by comparing ```x``` to ```edge```.

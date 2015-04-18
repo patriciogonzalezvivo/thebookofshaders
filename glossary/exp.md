@@ -1,6 +1,7 @@
 ## Exp
 Return the natural exponentiation of the parameter
 
+### Declaration
 ```glsl
 float exp(float x)  
 vec2 exp(vec2 x)  
@@ -9,7 +10,7 @@ vec4 exp(vec4 x)
 ```
 
 ### Parameters
-```x``` Specify the value to exponentiate.
+```x``` specify the value to exponentiate.
 
 ### Description
 ```exp()``` returns the natural exponentiation of ```x```.

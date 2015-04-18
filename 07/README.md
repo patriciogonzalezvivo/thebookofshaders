@@ -14,7 +14,7 @@ You paint everything except the last and first rows and last and first column. R
 
 * Sketch a peace of code that use ```if``` statements over our spacial field. The principles to do it is remarkable similar to how we think it on the grid paper scenario.
 
-Well done! This is a great step and accomplish. And speaking about steps, how can we simplify this code that use ```if``` statements with ```step()``` functions? Take a look to the following code.
+Well done! This is a great step and accomplish. And speaking about steps, how can we simplify this code that use ```if``` statements with [```step()```](../glossary/index.html#step.md) functions? Take a look to the following code.
 
 ```glsl
 #ifdef GL_ES
@@ -37,17 +37,17 @@ void main(){
 }
 ```
 
-Here we are using ```step()``` to turn everything bellow 0.1 to black color (```vec3(0.0)```). That will make a line on the left and bottom of the canvas.
+Here we are using [```step()```](../glossary/index.html#step.md) to turn everything bellow 0.1 to black color (```vec3(0.0)```). That will make a line on the left and bottom of the canvas.
 
 ![](rect-01.jpg)
 
-If we look close, on the previous code we repeat the structure for each axis (left and bottom). We can save some lines of code by passing to ```step()```directly two values and treating them in the same way with the same function. Check the following code.
+If we look close, on the previous code we repeat the structure for each axis (left and bottom). We can save some lines of code by passing to [```step()```](../glossary/index.html#step.md)directly two values and treating them in the same way with the same function. Check the following code.
 
 <div class="codeAndCanvas" data="rect-making.frag"></div>
 
 But this rectangle is not centered, is in the top right corner. We need to “take out” equal peaces on both extremes on left-bottom and tight-top to obtain a centered square.
 
-So, to repeat this on the top-right side by uncommenting lines 21 and 22 we invert the ```st``` gradient and repeat the same ```step()``` function. That way the ```vec2(0.0,0.0)``` will be on the top right corner. This is the digital equivalent of flipping the page and repeating the previous procedure.
+So, to repeat this on the top-right side by uncommenting lines 21 and 22 we invert the ```st``` gradient and repeat the same [```step()```](../glossary/index.html#step.md) function. That way the ```vec2(0.0,0.0)``` will be on the top right corner. This is the digital equivalent of flipping the page and repeating the previous procedure.
 
 ![](rect-02.jpg)
 
@@ -57,7 +57,7 @@ Before going forward, let’s use the simplicity of the rectangle as a training 
 
 * Can you simplify lines between 16 and 21 in a two single lines? What about one line?
 
-* Experiment with the same code but using ```smoothstep()``` instead of ```step()```. Note that by changing values, you can go from blurred edges to elegant antialiased borders.
+* Experiment with the same code but using [```smoothstep()```](../glossary/index.html#smoothstep.md) instead of [```step()```](../glossary/index.html#step.md). Note that by changing values, you can go from blurred edges to elegant antialiased borders.
 
 * Do another implementation that use ```floor()```.
 

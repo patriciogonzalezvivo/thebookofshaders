@@ -1,22 +1,21 @@
 ## Mod
 Compute value of one parameter modulo another
 
+### Declaration
 ```glsl
 float mod(float x, float y)  
 vec2 mod(vec2 x, vec2 y)  
 vec3 mod(vec3 x, vec3 y)  
 vec4 mod(vec4 x, vec4 y)
-```
 
-```glsl
 vec2 mod(vec2 x, float y)  
 vec3 mod(vec3 x, float y)  
 vec4 mod(vec4 x, float y)
 ```
 
 ### Parameters
-```x``` Specify the value to evaluate.
-```y``` Specify the value to obtain the modulo of.
+```x``` specify the value to evaluate.
+```y``` specify the value to obtain the modulo of.
 
 ### Description
 ```mod()``` returns the value of ```x``` modulo ```y```. This is computed as ```x - y * floor(x/y)```.

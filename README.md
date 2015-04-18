@@ -60,6 +60,8 @@ This is a gentle step-by-step guide through the abstract and complex universe of
 
 * [Examples](examples/)
 
+* [Glossary](glossary/)
+
 * [Appendix](appendix/)
     * [How can I navigate this book offline?](http://thebookofshaders.com/appendix/index.html#00.md)
     * [How to use this book in a classroom with RaspberryPi?](http://thebookofshaders.com/appendix/index.html#01.md)

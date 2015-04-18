@@ -1,6 +1,7 @@
 ## Tan
 Return the tangent of the parameter
 
+### Declaration
 ```glsl
 float tan(float angle)  
 vec2 tan(vec2 angle)  
@@ -9,7 +10,7 @@ vec4 tan(vec4 angle)
 ```
 
 ### Parameters
-```angle``` Specify the quantity, in radians, of which to return the tangent.
+```angle``` specify the quantity, in radians, of which to return the tangent.
 
 ### Description
 ```tan()``` returns the trigonometric tangent of angle.

@@ -1,6 +1,7 @@
 ## Fract
 Compute the fractional part of the argument
 
+### Declaration
 ```glsl
 float fract(float x)  
 vec2 fract(vec2 x)  
@@ -9,7 +10,7 @@ vec4 fract(vec4 x)
 ```
 
 ### Parameters
-```x``` Specify the value to evaluate.
+```x``` specify the value to evaluate.
 
 ### Description
 ```fract()``` returns the fractional part of ```x```. This is calculated as ```x - floor(x)```.
