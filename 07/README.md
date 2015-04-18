@@ -59,7 +59,7 @@ Before going forward, let’s use the simplicity of the rectangle as a training 
 
 * Experiment with the same code but using [```smoothstep()```](../glossary/index.html#smoothstep.md) instead of [```step()```](../glossary/index.html#step.md). Note that by changing values, you can go from blurred edges to elegant antialiased borders.
 
-* Do another implementation that use ```floor()```.
+* Do another implementation that use [```floor()```](../glossary/index.html#floor.md).
 
 * How you can draw rectangles of different sizes instead of just squares.
 
@@ -73,7 +73,7 @@ Before going forward, let’s use the simplicity of the rectangle as a training 
 
 ### Circles
 
-Is easy to draw squares on grid paper, in the same way is simple to draw rectangles on cartesians coordinates. But circles requires another approach, specially if we need to come up with a "per-pixel" or "per-square" approach. One solution is to *re-map* the spacial coordinates in a way that we just need to use a ```step()``` function to draw. 
+Is easy to draw squares on grid paper, in the same way is simple to draw rectangles on cartesians coordinates. But circles requires another approach, specially if we need to come up with a "per-pixel" or "per-square" approach. One solution is to *re-map* the spacial coordinates in a way that we just need to use a [```step()```](../glossary/index.html#step.md) function to draw. 
 
 How? Let's start by going back to math class and the grid paper. If you remember we used to open a compass at the desired radius of a circle, then press one of the compass endings at the center of the circle position and then finally trace the contour of it with a simple spin.
 
@@ -83,11 +83,11 @@ Porting this to a shader where each square on the grid is a pixel implies *askin
 
 ![](circle.jpg)
 
-There are several ways to calculate that. The easiest one is just using the ```distance()``` functions, which internally computes the ```length()``` of the difference between two points (in our case the pixel coordinate and the center of the canvas). The ```length()``` function is nothing but a shortcut of the [hypotenuse equation](http://en.wikipedia.org/wiki/Hypotenuse) that use square root (```sqrt()```) internally.
+There are several ways to calculate that. The easiest one is just using the [```distance()```](../glossary/index.html#distance.md) functions, which internally computes the [```length()```](../glossary/index.html#length.md) of the difference between two points (in our case the pixel coordinate and the center of the canvas). The ```length()``` function is nothing but a shortcut of the [hypotenuse equation](http://en.wikipedia.org/wiki/Hypotenuse) that use square root ([```sqrt()```](../glossary/index.html#sqrt.md)) internally.
 
 ![](hypotenuse.png)
 
-So far I just describe three functions you can use (```distance()```, ```length()``` and ```sqrt()```) to calculate the distance to the center of the billboard. The following code contain this three functions and the non-surprising fact that each one return the exactly same result.
+So far I just describe three functions you can use ([```distance()```](../glossary/index.html#distance.md), [```length()```](../glossary/index.html#length.md) and [```sqrt()```](../glossary/index.html#sqrt.md)) to calculate the distance to the center of the billboard. The following code contain this three functions and the non-surprising fact that each one return the exactly same result.
 
 <div class="codeAndCanvas" data="circle-making.frag"></div>
 
@@ -111,11 +111,11 @@ Basically we are using a re-interpretation of the space (based on the distance t
 
 Try the following excursuses:
  
-* Use ```set()``` to turn everything above 0.5 to white and everything bellow to 0.0
+* Use [```step()```](../glossary/index.html#step.md) to turn everything above 0.5 to white and everything bellow to 0.0
 
 * Inverse the colors of the background and foreground.
 
-* Using ```smoothstep()``` experiment trying different values to get nice antialiased borders on your circle.
+* Using [```smoothstep()```](../glossary/index.html#smoothstep.md) experiment trying different values to get nice antialiased borders on your circle.
 
 * Once you are happy with an implementation make a function of it that you can reuse in the future. 
 
@@ -139,7 +139,7 @@ pct = pow(distance(st,vec2(0.4)),distance(st,vec2(0.6)));
 
 #### For your tool box
 
-In terms of computational power ```sqrt()``` function (and all the once that depend on it) can be expensive. Here is another way to create a circular distance field by using ```dot()``` product.
+In terms of computational power [```sqrt()```](../glossary/index.html#sqrt.md) function (and all the once that depend on it) can be expensive. Here is another way to create a circular distance field by using [```dot()```](../glossary/index.html#dot.md) product.
 
 <div class="codeAndCanvas" data="circle.frag"></div>
 
@@ -153,13 +153,13 @@ Take a look to the following code.
 
 <div class="codeAndCanvas" data="rect-df.frag"></div>
 
-We start by moving moving the coordinates system to the center and shrieked to the half in order to contain the position values between -1 and 1. Also on *line 24* we are visualizing the distance field values using a ```fract()``` function making it easy to see the pattern they conform. The distance field pattern repeating over and over like rings in a Zen garden.
+We start by moving moving the coordinates system to the center and shrieked to the half in order to contain the position values between -1 and 1. Also on *line 24* we are visualizing the distance field values using a [```fract()```](../glossary/index.html#fract.md) function making it easy to see the pattern they conform. The distance field pattern repeating over and over like rings in a Zen garden.
 
-Let’s take a look to the distance field formula on *line 19*. There we are calculating the distance to the position on ```.3,.3``` or ```vec3(.3)``` in all four sign permutations ( that’s what ```abs()``` is doing there). 
+Let’s take a look to the distance field formula on *line 19*. There we are calculating the distance to the position on ```.3,.3``` or ```vec3(.3)``` in all four sign permutations ( that’s what [```abs()```](../glossary/index.html#abs.md) is doing there). 
 
-If you uncomment *line 20*, you will note that we are combining the distances to this four point using the ```min()``` to zero. The result produce an interesting new pattern.
+If you uncomment *line 20*, you will note that we are combining the distances to this four point using the [```min()```](../glossary/index.html#min.md) to zero. The result produce an interesting new pattern.
 
-Now try uncommenting *line 21*, we are doing the same but using the ```max()``` function. the resultant is a rectangle with rounded corners. Note how the rings of the distance field get smoother the further away they get from the center.
+Now try uncommenting *line 21*, we are doing the same but using the [```max()```](../glossary/index.html#max.md) function. the resultant is a rectangle with rounded corners. Note how the rings of the distance field get smoother the further away they get from the center.
 
 Finish uncommenting the *lines 26 to 29* one by one to understand the different uses of a distance field pattern.
 
@@ -175,7 +175,7 @@ In the chapter about color we map the cartesian coordinates to polar coordinates
     float a = atan(pos.y,pos.x);
 ```
 
-We partially use this formula at the beginning of this chapter to draw a circle. We were calculating the distance to the center using ```length()```. Now that we learn about distance fields we  can learn another way of drawing shapes using polar coordinates. 
+We partially use this formula at the beginning of this chapter to draw a circle. We were calculating the distance to the center using [```length()```](../glossary/index.html#length.md). Now that we learn about distance fields we  can learn another way of drawing shapes using polar coordinates. 
 
 The technique is a little restrictive but very simple. It consist on modulating the radius of a circle depending on the angle to achieve different shapes. How the modulation work? Yes, using Shaping functions!
 
@@ -197,7 +197,7 @@ Try to:
 
 ### Combining powers
 
-Now that we learn how to modulate that radius of a circle according to the angle using the `atan()` to draw different shapes, we can learn how to make distance fields with it and apply all the tricks and effect you can do with them. 
+Now that we learn how to modulate that radius of a circle according to the angle using the [```atan()```](../glossary/index.html#atan.md) to draw different shapes, we can learn how to make distance fields with it and apply all the tricks and effect you can do with them. 
 
 The trick will consist on use the number of edges of a polygon to construct the distance field using polar coordinates. Check the following code from [Andrew Baldwin](https://twitter.com/baldand) [one of his blog post](http://thndl.com/square-shaped-shaders.html) 
 
@@ -205,7 +205,7 @@ The trick will consist on use the number of edges of a polygon to construct the 
 
 * Using this example, make a function that given the position and number of corners of a desired shape, return a distance field value.
 
-* Mix distance fields together using ```min()``` and ```max()```.
+* Mix distance fields together using [```min()```](../glossary/index.html#min.md) and [```max()```](../glossary/index.html#max.md).
 
 * Choose a geometric logo to replicate using distance fields.
 
