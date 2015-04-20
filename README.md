@@ -62,12 +62,9 @@ This is a gentle step-by-step guide through the abstract and complex universe of
 
 * [Glossary](glossary/)
 
-* [Appendix](appendix/)
-    * [How can I navigate this book offline?](http://thebookofshaders.com/appendix/index.html#00.md)
-    * [How to use this book in a classroom with RaspberryPi?](http://thebookofshaders.com/appendix/index.html#01.md)
-    * [How to print this book?](http://thebookofshaders.com/appendix/index.html#02.md)
-
-
+* [Appendix:](appendix/) Other ways to use this book
+    * [How can I navigate this book offline?](appendix/)
+    * [How to use the GPU of a RaspberryPi to interact with the examples?](appendix/)
 
 ## About the Author
 
