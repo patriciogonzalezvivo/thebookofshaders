@@ -1,6 +1,6 @@
 # Appendix: Other ways to use this book
 
-This book is interactive. Is designed to be navigated with a modern web broser that supports WebGL technology (Firefox, Chrome, Safari, between others). But you may encounter the situation that you don't have a computer with no GPU card or not internet. If that's the case the following sections can help you.  
+This book is interactive. Is designed to be navigated with a modern web browser that supports WebGL technology (Firefox, Chrome, Safari, between others). But you may encounter the situation that you don't have a computer with no GPU card or not internet. If that's the case the following sections can help you.  
 
 ## Navigate this book off-line?
 
@@ -35,13 +35,13 @@ python -m SimpleHTTPServer
 
 Then open your browser to [```http://localhost:8000/```](http://localhost:8000/)
 
-## How to use the GPU of a RaspberryPi to interact with the examples?
+## How to run the examples on a RaspberryPi?
 
-A few years ago, taking for granted that everybody have a computer with a modern graphic card was a long shot. Now, although most computers have a graphic unit, this could be a restrictive on a class scenario. 
+A few years ago, taking for granted that everybody have a computer with a GPU was a long shot. Now, most computers have a graphic unit, but is a high bar for a requirement in for example a course or class. 
 
 Thanks to the [RaspberryPi project](http://www.raspberrypi.org/) a new type of small and cheap generation of computers (arround $35 each) has found its way into  classrooms. More importantly for the purposes of this book, the [RaspberryPi](http://www.raspberrypi.org/) comes with a decent Bradcom GPU card that can be accessed directly from the console. I made a [flexible GLSL live coding tool call **glslViewer**](https://github.com/patriciogonzalezvivo/glslViewer) that runs all the examples on this book. This program also is hable to update automatically the changes the user makes when they save it. What that means? you can edit the shader and every time you save it, the shader will be re-compile and rendered for you.
 
-By making a local copy of the repository of this book (see the above section) and having [```glslViewer``` installed](https://github.com/patriciogonzalezvivo/glslViewer), you can read the chapters using any console text reader (like ```less```, ```nano``` or ```vim```), run the examples with ```glslviewer``` ( the ```-l``` flag will allow you to edit and render the code at the same time), and modify them with their favorite text editor (like ```nano```, ```pico```, ```vi```, ```vim``` or ```emacs```). Also you can connect through ssh/sftp and use your favorite text editor remotely (for example: sublime text or atom).
+By making a local copy of the repository of this book (see the above section) and having [```glslViewer``` installed](https://github.com/patriciogonzalezvivo/glslViewer), users can run the examples with ```glslviewer```. Also by using the ```-l``` flag they can render the example on a corner of the screen while they modify it with any text editor (like ```nano```, ```pico```, ```vi```, ```vim``` or ```emacs```). This also works if the user is connected through ssh/sftp.
 
 To install and set this all up on the RaspberryPi after installing the OS and logging in, type the following commands:
 
@@ -49,7 +49,7 @@ To install and set this all up on the RaspberryPi after installing the OS and lo
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install git-core 
-sudo apt-get libfreeimage-dev
+sudo apt-get install libfreeimage-dev
 cd ~ 
 git clone http://github.com/patriciogonzalezvivo/glslViewer.git
 cd glslViewer
