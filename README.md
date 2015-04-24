@@ -63,8 +63,9 @@ This is a gentle step-by-step guide through the abstract and complex universe of
 * [Glossary](glossary/)
 
 * [Appendix:](appendix/) Other ways to use this book
-    * [How can I navigate this book offline?](appendix/)
-    * [How to use the GPU of a RaspberryPi to interact with the examples?](appendix/)
+	* [How can I navigate this book offline?](appendix/)
+	* [How to run the examples on a RaspberryPi?](appendix/)
+	* [How to print this book?](appendix/)
 
 ## About the Author
 
