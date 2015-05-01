@@ -8,19 +8,20 @@ uniform sampler2D u_tex0;
 uniform vec2 u_tex0Resolution;
 
 uniform vec2 u_resolution;
+uniform vec2 u_mouse;
 uniform float u_time;
 
 // Based on Morgan
 // https://www.shadertoy.com/view/4dS3Wd
-float random (in vec2 _st) { 
-    return fract(sin(dot(_st.xy,
+float random (in vec2 st) { 
+    return fract(sin(dot(st.xy,
                          vec2(12.9898,78.233)))* 
         43758.5453123);
 }
 
-float noise (in vec2 _st) {
-    vec2 i = floor(_st);
-    vec2 f = fract(_st);
+float noise (in vec2 st) {
+    vec2 i = floor(st);
+    vec2 f = fract(st);
 
     // Four corners in 2D of a tile
     float a = random(i);

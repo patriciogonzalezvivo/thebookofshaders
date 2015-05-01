@@ -6,17 +6,17 @@ uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
 
-float random (in float _x) {
-    return fract(sin(_x)*1e4);
+float random (in float x) {
+    return fract(sin(x)*1e4);
 }
 
 // Based on Morgan McGuire @morgan3d
 // https://www.shadertoy.com/view/4dS3Wd
-float noise (in vec3 _p) {
+float noise (in vec3 p) {
     const vec3 step = vec3(110.0, 241.0, 171.0);
 
-    vec3 i = floor(_p);
-    vec3 f = fract(_p);
+    vec3 i = floor(p);
+    vec3 f = fract(p);
  
     // For performance, compute the base input to a 
     // 1D random from the integer part of the 

@@ -6,20 +6,20 @@ uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
 
-float plot(vec2 _st, float _pct){
-  return  smoothstep( _pct-0.01, _pct, _st.y) - 
-          smoothstep( _pct, _pct+0.01, _st.y);
+float plot(vec2 st, float pct){
+  return  smoothstep( pct-0.01, pct, st.y) - 
+          smoothstep( pct, pct+0.01, st.y);
 }
 
-float random (in float _x) {
-    return fract(sin(_x)*1e4);
+float random (in float x) {
+    return fract(sin(x)*1e4);
 }
 
 // Based on Morgan McGuire @morgan3d
 // https://www.shadertoy.com/view/4dS3Wd
-float noise (in float _x) {
-    float i = floor(_x);
-    float f = fract(_x);
+float noise (in float x) {
+    float i = floor(x);
+    float f = fract(x);
     float u = f * f * (3.0 - 2.0 * f);
     return mix(random(i), random(i + 1.0), u);
 }

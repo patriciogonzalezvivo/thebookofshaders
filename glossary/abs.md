@@ -1,5 +1,5 @@
 ## Abs
-Return the absolute value of the parameter
+Return the absolute value of the parameter.
 
 ### Declaration
 ```glsl

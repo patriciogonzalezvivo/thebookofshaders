@@ -9,17 +9,17 @@ uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
 
-float random (in vec2 _st) { 
-    return fract(sin(dot(_st.xy,
+float random (in vec2 st) { 
+    return fract(sin(dot(st.xy,
                          vec2(12.9898,78.233)))* 
         43758.5453123);
 }
 
 // Based on Morgan McGuire @morgan3d
 // https://www.shadertoy.com/view/4dS3Wd
-float noise (in vec2 _st) {
-    vec2 i = floor(_st);
-    vec2 f = fract(_st);
+float noise (in vec2 st) {
+    vec2 i = floor(st);
+    vec2 f = fract(st);
 
     // Four corners in 2D of a tile
     float a = random(i);
@@ -34,18 +34,18 @@ float noise (in vec2 _st) {
             (d - b) * u.x * u.y;
 }
 
-mat2 rotate2d(float _angle){
-    return mat2(cos(_angle),-sin(_angle),
-                sin(_angle),cos(_angle));
+mat2 rotate2d(float angle){
+    return mat2(cos(angle),-sin(angle),
+                sin(angle),cos(angle));
 }
 
-float lines(in vec2 _pos, float _angle, float _b){
+float lines(in vec2 pos, float angle, float b){
     float scale = 10.0;
-    _pos *= scale;
-    _pos = rotate2d( _angle ) * _pos;
+    pos *= scale;
+    pos = rotate2d( angle ) * pos;
     return smoothstep(0.0,
-                    0.5+_b*0.5,
-                    abs((sin(_pos.x*3.1415)+_b*2.0))*0.5);
+                    0.5+b*0.5,
+                    abs((sin(pos.x*3.1415)+b*2.0))*0.5);
 }
 
 void main() {

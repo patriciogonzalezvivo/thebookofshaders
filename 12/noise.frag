@@ -3,12 +3,13 @@ precision mediump float;
 #endif
 
 uniform vec2 u_resolution;
+uniform vec2 u_mouse;
 uniform float u_time;
 
 // Based on Morgan
 // https://www.shadertoy.com/view/4dS3Wd
-float random (in float _x) {
-    return fract(sin(_x)*1e4);
+float random (in float x) {
+    return fract(sin(x)*1e4);
 }
 
 float random (in vec2 _st) { 
@@ -16,9 +17,9 @@ float random (in vec2 _st) {
     return fract( 1e4 * sin(17.0 * _st.x + _st.y * 0.1) * (0.1 + abs(sin(_st.y * 13.0 + _st.x)))); 
 }
 
-float noise (in float _x) {
-    float i = floor(_x);
-    float f = fract(_x);
+float noise (in float x) {
+    float i = floor(x);
+    float f = fract(x);
     float u = f * f * (3.0 - 2.0 * f);
     return mix(random(i), random(i + 1.0), u);
 }
@@ -63,13 +64,13 @@ float noise (in vec3 _p) {
 
 #define NUM_OCTAVES 5
 
-float fbm ( in float _x) {
+float fbm ( in float x) {
     float v = 0.0;
     float a = 0.5;
     float shift = float(100.0);
     for (int i = 0; i < NUM_OCTAVES; ++i) {
-        v += a * noise(_x);
-        _x = _x * 2.0 + shift;
+        v += a * noise(x);
+        x = x * 2.0 + shift;
         a *= 0.5;
     }
     return v;

@@ -11,9 +11,9 @@ uniform float u_time;
 vec3 colorA = vec3(0.149,0.141,0.912);
 vec3 colorB = vec3(1.000,0.833,0.224);
 
-float plot (vec2 _st, float _pct){
-  return  smoothstep( _pct-0.01, _pct, _st.y) - 
-          smoothstep( _pct, _pct+0.01, _st.y);
+float plot (vec2 st, float pct){
+  return  smoothstep( pct-0.01, pct, st.y) - 
+          smoothstep( pct, pct+0.01, st.y);
 }
 
 void main() {

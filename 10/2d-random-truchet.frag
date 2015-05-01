@@ -7,6 +7,7 @@ precision mediump float;
 #define PI 3.14159265358979323846
 
 uniform vec2 u_resolution;
+uniform vec2 u_mouse;
 uniform float u_time;
 
 float random (in vec2 _st) { 

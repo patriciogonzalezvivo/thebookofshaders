@@ -5,27 +5,27 @@ precision mediump float;
 uniform vec2 u_resolution;
 uniform float u_time;
 
-float random (in float _x) {
-    return fract(sin(_x)*1e4);
+float random (in float x) {
+    return fract(sin(x)*1e4);
 }
 
-float random (in vec2 _st) { 
-    // return fract(sin(dot(_st.xy ,vec2(12.9898,78.233))) * 43758.5453123);
-    return fract( 1e4 * sin(17.0 * _st.x + _st.y * 0.1) * (0.1 + abs(sin(_st.y * 13.0 + _st.x)))); 
+float random (in vec2 st) { 
+    // return fract(sin(dot(st.xy ,vec2(12.9898,78.233))) * 43758.5453123);
+    return fract( 1e4 * sin(17.0 * st.x + st.y * 0.1) * (0.1 + abs(sin(st.y * 13.0 + st.x)))); 
 }
 
 // Based on Morgan McGuire @morgan3d
 // https://www.shadertoy.com/view/4dS3Wd
-float noise (in float _x) {
-    float i = floor(_x);
-    float f = fract(_x);
+float noise (in float x) {
+    float i = floor(x);
+    float f = fract(x);
     float u = f * f * (3.0 - 2.0 * f);
     return mix(random(i), random(i + 1.0), u);
 }
 
-float noise (in vec2 _st){
-    vec2 i = floor(_st);
-    vec2 f = fract(_st);
+float noise (in vec2 st){
+    vec2 i = floor(st);
+    vec2 f = fract(st);
 
     // Four corners in 2D of a tile
     float a = random(i);
@@ -44,11 +44,11 @@ float noise (in vec2 _st){
     return mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
 }
 
-float noise (in vec3 _p) {
+float noise (in vec3 p) {
     const vec3 step = vec3(110.0, 241.0, 171.0);
 
-    vec3 i = floor(_p);
-    vec3 f = fract(_p);
+    vec3 i = floor(p);
+    vec3 f = fract(p);
  
     // For performance, compute the base input to a 1D random from the integer part of the argument and the 
     // incremental change to the 1D based on the 3D -> 1D wrapping
@@ -63,41 +63,39 @@ float noise (in vec3 _p) {
 
 #define NUM_OCTAVES 5
 
-float fbm ( in float _x) {
+float fbm ( in float x) {
     float v = 0.0;
     float a = 0.5;
     float shift = float(100.0);
     for (int i = 0; i < NUM_OCTAVES; ++i) {
-        v += a * noise(_x);
-        _x = _x * 2.0 + shift;
+        v += a * noise(x);
+        x = x * 2.0 + shift;
         a *= 0.5;
     }
     return v;
 }
 
-
-float fbm ( in vec2 _st) {
+float fbm ( in vec2 st) {
     float v = 0.0;
     float a = 0.5;
     vec2 shift = vec2(100.0);
     // Rotate to reduce axial bias
     mat2 rot = mat2(cos(0.5), sin(0.5), -sin(0.5), cos(0.50));
     for (int i = 0; i < NUM_OCTAVES; ++i) {
-        v += a * noise(_st);
-        _st = rot * _st * 2.0 + shift;
+        v += a * noise(st);
+        st = rot * st * 2.0 + shift;
         a *= 0.5;
     }
     return v;
 }
 
-
-float fbm ( in vec3 _p) {
+float fbm ( in vec3 p) {
     float v = 0.0;
     float a = 0.5;
     vec3 shift = vec3(100);
     for (int i = 0; i < NUM_OCTAVES; ++i) {
-        v += a * noise(_p);
-        _p = _p * 2.0 + shift;
+        v += a * noise(p);
+        p = p * 2.0 + shift;
         a *= 0.5;
     }
     return v;
