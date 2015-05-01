@@ -5,12 +5,9 @@
 
 This is a gentle step-by-step guide through the abstract and complex universe of Fragment Shaders.
 
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="float: right;">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="B5FSVSHGEATCG">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
+<div class="header">
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B5FSVSHGEATCG" style="float: right;"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" alt=""></a>
+</div>
 
 ## Contents
 
@@ -67,8 +64,6 @@ This is a gentle step-by-step guide through the abstract and complex universe of
 	* [How to run the examples on a RaspberryPi?](appendix/)
 	* [How to print this book?](appendix/)
 
-[ ![ ](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif) ](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B5FSVSHGEATCG)
-
 ## About the Author
 
 [Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) (1982, Buenos Aires, Argentina) is a New York based artist and developer. He explores interstitial spaces between organic and synthetic, analog and digital, individual and collective. In his work he uses code as an expressive language with the intention of developing a better together.
@@ -85,4 +80,4 @@ Thanks [Scott Murray](http://alignedleft.com/) for the inspiration and advice.
 
 Thanks [Karim Naaji](http://karim.naaji.fr/) for contributing with support, good ideas and code.
 
-Thanks to everyone that by beliving in this project had contribute with fixes or donations: *Andreas Wilcox, Jonathan Jin, James Phillips, Drew Lustro, Mike Reinstein, Bradley Bossard, Nestor Rubio Garcia, Magnus Öberg, Kyle Stewart, Al Matthews, Michael Parisi*
+Thanks to everyone that by beliving in this project had contribute with fixes or donations: *Andreas Wilcox, Jonathan Jin, James Phillips, Drew Lustro, Mike Reinstein, Bradley Bossard, Nestor Rubio Garcia, Magnus Öberg, Kyle Stewart, Al Matthews, Michael Parisi and Gerry Straathof*
