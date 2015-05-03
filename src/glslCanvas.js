@@ -268,6 +268,8 @@ function setupWebGL (_canvas, _opt_attribs) {
   if (!context) {
 	showLink(OTHER_PROBLEM);
   }
+
+  context.getExtension('OES_standard_derivatives');
   return context;
 };
 

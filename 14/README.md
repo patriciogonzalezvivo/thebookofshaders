@@ -1,8 +1,8 @@
 # Image processing
 
-![](01.jpg)
+## Textures
 
-## Textures, the new way of doing images
+![](01.jpg)
 
 Graphic cards (GPUs) have special memory types for images. Usually on CPUs images are stores as arrays of bites but on GPUs store images as ```sampler2D``` which is more like a table (or matrix) of floating point vectors. More interestingly is that the values of this *table* of vectors are continously. That means that value between pixels are interpolated in a low level.
 

@@ -33,7 +33,7 @@ This is a gentle step-by-step guide through the abstract and complex universe of
     * Fractals
 
 * Image processing:
-    * What is a texture?
+    * Textures
     * Image operations
     * Kernel convolutions
     * Filters
