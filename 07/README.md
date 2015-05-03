@@ -57,7 +57,7 @@ Before going forward, let’s use the simplicity of the rectangle as a training 
 
 * Can you simplify lines between 16 and 21 in a two single lines? What about one line?
 
-* Experiment with the same code but using [```smoothstep()```](../glossary/index.html#smoothstep.md) instead of [```step()```](../glossary/index.html#step.md). Note that by changing values, you can go from blurred edges to elegant antialiased borders.
+* Experiment with the same code but using [```smoothstep()```](../glossary/index.html#smoothstep.md) instead of [```step()```](../glossary/index.html#step.md). Note that by changing values, you can go from blurred edges to elegant smooth borders.
 
 * Do another implementation that use [```floor()```](../glossary/index.html#floor.md).
 
@@ -115,7 +115,7 @@ Try the following excursuses:
 
 * Inverse the colors of the background and foreground.
 
-* Using [```smoothstep()```](../glossary/index.html#smoothstep.md) experiment trying different values to get nice antialiased borders on your circle.
+* Using [```smoothstep()```](../glossary/index.html#smoothstep.md) experiment trying different values to get nice smooth borders on your circle.
 
 * Once you are happy with an implementation make a function of it that you can reuse in the future. 
 
@@ -209,6 +209,6 @@ The trick will consist on use the number of edges of a polygon to construct the 
 
 * Choose a geometric logo to replicate using distance fields.
 
-Congratulations! You have made it through the rough part! Take a break and let this concepts sediment, drawing simple shapes on Processing is really easy but not here. In shader-land everything the way to thing on shapes is twisted and can be exhausting to adapt to this new paradigm of coding. 
+Congratulations! You have made it through the rough part! Take a break and let this concepts sediment, drawing simple shapes on Processing is really easy but not here. In shader-land everything the way to thing on shapes is twisted and can be exhausting to adapt to this new paradigm of coding.
 
 Now that you know how to draw shapes I'm sure new ideas will pop to your mind. In the following chapter we will learn more about how to move, rotate and scale them moving. This will allow you to compose them!
