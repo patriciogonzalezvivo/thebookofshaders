@@ -48,8 +48,7 @@ void main () {
     st *= scale;
     st += radius * vec2(cos(angle),sin(angle));
 
-    vec4 color = vec4(st.x,st.y,0.0,1.0);
-    color = texture2D(u_tex0,st-offset);
+    vec4 color = texture2D(u_tex0,st);
 
     gl_FragColor = color;
 }
