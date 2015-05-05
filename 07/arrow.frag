@@ -26,8 +26,12 @@ float shape(vec2 st, int N){
 // Antialiazed Step function
 // from http://webstaff.itn.liu.se/~stegu/webglshadertutorial/shadertutorial.html
 float aastep(float threshold, float value) {
+  #ifdef GL_OES_standard_derivatives
   float afwidth = 0.7 * length(vec2(dFdx(value), dFdy(value)));
   return smoothstep(threshold-afwidth, threshold+afwidth, value);
+  #else
+  return step(threshold, value);
+  #endif
 }
 
 void main(){

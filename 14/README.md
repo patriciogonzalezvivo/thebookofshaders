@@ -38,21 +38,35 @@ All this features makes your images more like an infinit spandex fabric. You can
 
 ## Texture resolution
 
-Aboves examples play really well with squared images. Because both sides are equal they perfectly match our squared billboard. But for non-squared images things can be a little more tricky. We need to know the original proportions of the image to know how to streatch it correctly. Thats way the texture's original width and height is pass into the shader as an ```uniform```. In our example framework will be a ```uniform vec2``` with the same name of the texture pluss the world ```Resolution``` at the end of it.
+Aboves examples play well with squared images, where both sides are equal and match our squared billboard. But for non-squared images things can be a little more tricky, and unfortunatly centuries of picturical art and photography found more pleasent to the eye non-squared proportions for images.
+
+![Joseph Nicéphore Niépce (1826)](nicephore.jpg)
+
+How we can solve this problem? Well we need to know the original proportions of the image to know how to streatch the texture correctly in order to have the original [*aspect ratio*](http://en.wikipedia.org/wiki/Aspect_ratio). For that the texture width and height is pass to the shader as an ```uniform```. Which in our example framework are pass as an ```uniform vec2``` with the same name of the texture followed with proposition ```Resolution```. Once we have this information on the shader he can get the aspect ration by dividing the ```width``` for the ```height``` of the texture resolution. Finally by multiplying this ratio to the coordinates on ```y``` we will shrink these axis to match the original proportions.
+
+Uncomment line 21 of the following code to see this in action.
+
+<div class="codeAndCanvas" data="texture-resolution.frag" data-imgs="nicephore.jpg"></div>
+
+* What we need to do to center this image?
+
+## Digital upholstery
+
+![](03.jpg)
+
+You may be thinking that this is unnesesary complicated... and you are probably right. Also this way of working with images leave a enought room to different hacks and creative tricks. Try to imagine that you are an upholster and by streaching and folding a fabric over a structure you can create better and new patterns and techniques. 
 
 ![Eadweard's Muybridge study of motion](muybridge.jpg)
 
-Uncomment line 18 of the following example to scale correctly aboves image. Do you think you can centered?
+This level of craftsmanship links back to some of the first optical experiments ever made. For example on games *sprite animations* are very common, and is inevitably to see on it reminicence to phenakistoscope, zoetrope and praxinoscope.
 
-<div class="codeAndCanvas" data="texture-resolution.frag" data-imgs="muybridge.jpg"></div>
-
-This could seam simple but the posibilities of modifing textures coordinates is enormus. For example: *sprite animations*.
+This could seam simple but the posibilities of modifing textures coordinates is enormus. For example: .
 
 <div class="codeAndCanvas" data="texture-sprite.frag" data-imgs="muybridge.jpg"></div>
 
 Now is your turn:
 
 * Can you make a kaleidoscope using what we have learn?
-* 
+* What other optical toys can you re-create using textures?
 
 In the next chapters we will learn how to do some image processing using shaders. You will note that finnaly the complexity of shader makes sense, because was in a big sense designed to do this type of process. We will start doing some image operations!

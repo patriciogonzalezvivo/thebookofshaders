@@ -2,20 +2,15 @@
 
 
 ### Invert
+
 <div class="codeAndCanvas" data="inv.frag" data-imgs="00.jpg,01.jpg"></div>
 
-### Add
-<div class="codeAndCanvas" data="add.frag" data-imgs="00.jpg,01.jpg"></div>
+### Add, Substract, Multiply and others
 
-### Substract
-<div class="codeAndCanvas" data="sub.frag" data-imgs="00.jpg,01.jpg"></div>
+![](02.jpg)
 
-Absolute difference
-<div class="codeAndCanvas" data="diff.frag" data-imgs="00.jpg,01.jpg"></div>
-
-### Multiply
-<div class="codeAndCanvas" data="mult.frag" data-imgs="00.jpg,01.jpg"></div>
+<div class="codeAndCanvas" data="operations.frag" data-imgs="00.jpg,01.jpg"></div>
 
 ### PS Blending modes
 
-<div class="codeAndCanvas" data="blend.frag" data-imgs="00.jpg,rainbow.jpg"></div>
+<div class="codeAndCanvas" data="blend.frag" data-imgs="00.jpg,01.jpg"></div>
