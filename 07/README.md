@@ -12,66 +12,71 @@ Imagine we have grid paper, like the one we used in math classes, and the homewo
 
 You'd paint everything except the first and last rows and the first and last column, right? How does this relate to shaders? Each little square of our grid paper is a thread (a pixel). Each little square knows its position, like the coordinates of a chess board. In previous chapters we have mapped *x* and *y* to the *red* and *green* color channels, ____we learn that’s our field and space. A narrow two dimensional territory between 0.0 and 1.0.____ How we can use this to draw a centered square in the middle of our billboard?
 
-* Sketch a piece of code that uses ```if``` statements over our spatial field. The principles to do this are remarkably similar to how we think of the grid paper scenario.
-
-____the above is really confusing... what are people supposed to sketch a piece of code about???____
-
-Well done! ____people aren't going to be able to do the above by themselves, so this "Well done!" is almost kind of rude____ This is a great step and accomplishment. And speaking about steps, how can we simplify this code that uses ```if``` statements with [```step()```](../glossary/index.html#step.md) functions? Take a look at the following code. ____you need to step people through this more, and include the 'if' statement code____
+Let's start by sketch a pseudo code that uses ```if``` statements over our spatial field. The principles to do this are remarkably similar to how we think of the grid paper scenario.
 
 ```glsl
-#ifdef GL_ES
-precision mediump float;
-#endif
+    if ( (X OVER 1) AND (Y OVER 1) )
+        paint white
+    else 
+        paint black
+```
 
+Now we have a better idea how this could work lets replace the ```if``` statement with a [```step()```](../glossary/index.html#step.md), also instead of using 10x10 lets use normalize values.
+
+```glsl
 uniform vec2 u_resolution;
-uniform float u_time;
 
 void main(){
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     vec3 color = vec3(0.0);
     
-    float left = step(0.1,st.x);
-    float bottom = step(0.1,st.y);
-    
-    color = vec3( left * bottom );
+    float left = step(0.1,st.x);   // Similar to ( X over 0.1 )
+    float bottom = step(0.1,st.y); // Similar to ( Y over 0.1 )
+
+    // Each result will return 1.0 (white) or 0.0 (black)
+    // the multiplication of both will be similar to AND
+    color = vec3( left * bottom ); 
 
     gl_FragColor = vec4(color,1.0);
 }
 ```
 
-____in general more commenting of the code would be useful throughout the whole chapter____
-
-Here we are using [```step()```](../glossary/index.html#step.md) to turn everything below 0.1 to black (```vec3(0.0)```). That makes a line on the bottom and left side of the canvas.
+As we saw the [```step()```](../glossary/index.html#step.md) function will turn every pixel below 0.1 to black (```vec3(0.0)```) and the rest to white (```vec3(1.0)```) . The multiplication beetween them works as a logical ```AND``` operation, where both of them have to be 1.0 return 1.0 . This end up drawing two black lines, on at the bottom and other at the left side of the canvas.
 
 ![](rect-01.jpg)
 
-If we look closely, in the previous code we repeat the structure for each axis (left and bottom). We can save some lines of code by passing two values directly to [```step()```](../glossary/index.html#step.md) and treating them in the same way with the same function. Check out the following code.
+In the previous code we repeat the structure for each axis (left and bottom). We can save some lines of code by passing two values directly to [```step()```](../glossary/index.html#step.md) instead of one. That will look something like this:
+
+```glsl
+    vec2 borders = step(vec2(0.1),st); 
+    float pct = borders.x * borders.y;
+```
+
+So far, we only draw only two borders ( buttom-left ) of our rectangle. Let's do the other two ( top-right ). Check the following code
 
 <div class="codeAndCanvas" data="rect-making.frag"></div>
 
-____above needs some commenting to make it more clear____
-
-But this rectangle is not centered ____??? it looks centered____; it's in the top right corner. We need to “take out” equal pieces from both extremes on bottom-left and top-right to obtain a centered square.
-
-So, to repeat this on the top-right side, by uncommenting lines 21 and 22 we invert the ```st``` gradient and repeat the same [```step()```](../glossary/index.html#step.md) function. That way the ```vec2(0.0,0.0)``` will be in the top right corner. This is the digital equivalent of flipping the page and repeating the previous procedure.
-
-____this is just really, really confusing to me but that might just be my brain right now____
+Uncomment lines 21-22 and see how we invert the ```st``` coordinates and repeat the same [```step()```](../glossary/index.html#step.md) function. That way the ```vec2(0.0,0.0)``` will be in the top right corner. This is the digital equivalent of flipping the page and repeating the previous procedure. 
 
 ![](rect-02.jpg)
 
-Interesting right? This drawing method works for any square with the assumption ____that each one only know it coordinate position____. This drawing technique is all about flipping and stretching this coordinate system.
+Take note that all sides are been multiply between them, this is equivalent to write:
 
-____you need an example here of what you're describing above - a bunch of different rectangles at different positions____
+```glsl
+    vec2 bl = step(vec2(0.1),st);       // bottom-left
+    vec2 tr = step(vec2(0.1),1.0-st);   // top-right
+    color = vec3(bl.x * bl.y * tr.x * tr.y);
+```
 
-Before going forward, let’s use the simplicity of the rectangle as a training case. Try the following challenges:
+Interesting right? This technique is all about using [```step()```](../glossary/index.html#step.md) and multiply for logical operations and flipping the coordinates.
 
-* Can you simplify the lines between 16 and 21 into two lines? What about one line?
+Before going forward, try the following exercises:
+
+* Change the size and proportions of the rectangle.
 
 * Experiment with the same code but using [```smoothstep()```](../glossary/index.html#smoothstep.md) instead of [```step()```](../glossary/index.html#step.md). Note that by changing values, you can go from blurred edges to elegant smooth borders.
 
 * Do another implementation that uses [```floor()```](../glossary/index.html#floor.md).
-
-* How can you draw rectangles of different sizes instead of just squares?
 
 * Choose the implementation you like the most and make a function of it that you can reuse in the future. Make your function flexible and efficient.
 
@@ -102,8 +107,6 @@ You can use [```distance()```](../glossary/index.html#distance.md), [```length()
 * Comment and uncomment lines to try the different ways to get the same result.
 
 <div class="codeAndCanvas" data="circle-making.frag"></div>
-
-____above needs 'vec2 tC = ...' under part (c) so that each part stands alone____
 
 In the previous example we map the distance to the center of the billboard to the color brightness of the pixel. The closer a pixel is to the center, the lower (darker) value it has. Notice that the values don't get too high because from the center ( ```vec2(0.5, 0.5)``` ) the maximum distance barely goes over 0.5. Contemplate this map and think:
 

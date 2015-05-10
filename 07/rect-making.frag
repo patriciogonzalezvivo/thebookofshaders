@@ -13,13 +13,13 @@ void main(){
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     vec3 color = vec3(0.0);
     
-    // Right & Bottom 
-    vec2 rgBt = step(vec2(0.1),st); 
-    float pct = rgBt.x * rgBt.y;
+    // bottom-left
+    vec2 bl = step(vec2(0.1),st); 
+    float pct = bl.x * bl.y;
 
-    // Left & top 
-//     vec2 lfTp = step(vec2(0.1),1.0-st);
-//     pct *= lfTp.x * lfTp.y;
+    // top-right 
+    vec2 tr = step(vec2(0.1),1.0-st);
+    pct *= tr.x * tr.y;
     
     color = vec3(pct);
 

@@ -17,10 +17,11 @@ void main(){
     pct = distance(st,vec2(0.5));
 
     // b. The LENGTH to the vector to the center 
-    // vec2 tC = vec2(0.5)-st;
-    // pct = length(tC);
+    // vec2 toCenter = vec2(0.5)-st;
+    // pct = length(toCenter);
 
     // c. The SQUARE ROOT of the vector
+    // vec2 tC = vec2(0.5)-st;
     // pct = sqrt(tC.x*tC.x+tC.y*tC.y);
 
     vec3 color = vec3(pct);
