@@ -15,12 +15,12 @@ void main(){
   // Remap the space to -1. to 1.
   st = st *2.-1.;
 
-  // Making the distance field
+  // Make the distance field
   d = length( abs(st)-.3 );
   // d = length( min(abs(st)-.3,0.) );
   // d = length( max(abs(st)-.3,0.) );
 
-  // Visualizing the distance distance field
+  // Visualize the distance field
   gl_FragColor = vec4(vec3(fract(d*10.0)),1.0);
 
   // Drawing with the distance field

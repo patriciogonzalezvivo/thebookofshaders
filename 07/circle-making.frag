@@ -13,14 +13,16 @@ void main(){
 	vec2 st = gl_FragCoord.xy/u_resolution;
     float pct = 0.0;
 
-    // a. The DISTANCE to the center whick is the 
+    // a. The DISTANCE from the pixel to the center
     pct = distance(st,vec2(0.5));
 
-    // b. The LENGTH to the vector to the center 
+    // b. The LENGTH of the vector 
+    //    from the pixel to the center 
     // vec2 toCenter = vec2(0.5)-st;
     // pct = length(toCenter);
 
-    // c. The SQUARE ROOT of the vector
+    // c. The SQUARE ROOT of the vector 
+    //    from the pixel to the center 
     // vec2 tC = vec2(0.5)-st;
     // pct = sqrt(tC.x*tC.x+tC.y*tC.y);
 

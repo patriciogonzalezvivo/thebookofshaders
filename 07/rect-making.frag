@@ -18,8 +18,8 @@ void main(){
     float pct = bl.x * bl.y;
 
     // top-right 
-    vec2 tr = step(vec2(0.1),1.0-st);
-    pct *= tr.x * tr.y;
+    // vec2 tr = step(vec2(0.1),1.0-st);
+    // pct *= tr.x * tr.y;
     
     color = vec3(pct);
 
