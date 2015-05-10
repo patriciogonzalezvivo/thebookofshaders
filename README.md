@@ -5,12 +5,9 @@
 
 This is a gentle step-by-step guide through the abstract and complex universe of Fragment Shaders.
 
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="B5FSVSHGEATCG">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
+<div class="header">
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B5FSVSHGEATCG" style="float: right;"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" alt=""></a>
+</div>
 
 ## Contents
 
@@ -25,7 +22,7 @@ This is a gentle step-by-step guide through the abstract and complex universe of
 * Algorithmic drawing
     * [Shaping functions](05/)
     * [Colors](06/)
-    * Shapes
+    * [Shapes](07/)
     * Matrices
     * Patterns
 
@@ -36,7 +33,7 @@ This is a gentle step-by-step guide through the abstract and complex universe of
     * Fractals
 
 * Image processing:
-    * What is a texture?
+    * Textures
     * Image operations
     * Kernel convolutions
     * Filters
@@ -58,12 +55,14 @@ This is a gentle step-by-step guide through the abstract and complex universe of
     * Environmental-maps (spherical and cube)
     * Reflect and refract
 
-* [Appendix](appendix/)
-    * [How can I navigate this book offline?](http://thebookofshaders.com/appendix/index.html#00.md)
-    * [How to use this book in a classroom with RaspberryPi?](http://thebookofshaders.com/appendix/index.html#01.md)
-    * [How to print this book?](http://thebookofshaders.com/appendix/index.html#02.md)
-
 * [Examples](examples/)
+
+* [Glossary](glossary/)
+
+* [Appendix:](appendix/) Other ways to use this book
+	* [How can I navigate this book offline?](appendix/)
+	* [How to run the examples on a RaspberryPi?](appendix/)
+	* [How to print this book?](appendix/)
 
 ## About the Author
 
@@ -81,3 +80,4 @@ Thanks [Scott Murray](http://alignedleft.com/) for the inspiration and advice.
 
 Thanks [Karim Naaji](http://karim.naaji.fr/) for contributing with support, good ideas and code.
 
+Thanks to everyone that by beliving in this project had contribute with fixes or donations: *Andreas Wilcox, Jonathan Jin, James Phillips, Drew Lustro, Mike Reinstein, Bradley Bossard, Nestor Rubio Garcia, Magnus Öberg, Kyle Stewart, Al Matthews, Michael Parisi, Gerry Straathof and Matthias Treitler*
