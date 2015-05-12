@@ -80,4 +80,4 @@ Thanks [Scott Murray](http://alignedleft.com/) for the inspiration and advice.
 
 Thanks [Karim Naaji](http://karim.naaji.fr/) for contributing with support, good ideas and code.
 
-Thanks to everyone that by beliving in this project had contribute with fixes or donations: *Andreas Wilcox, Jonathan Jin, James Phillips, Drew Lustro, Mike Reinstein, Bradley Bossard, Nestor Rubio Garcia, Magnus Öberg, Kyle Stewart, Al Matthews, Michael Parisi, Gerry Straathof and Matthias Treitler*
+Thanks to everyone who has believed in this project and contributed with fixes or donations: *Andreas Wilcox, Jonathan Jin, James Phillips, Drew Lustro, Mike Reinstein, Bradley Bossard, Nestor Rubio Garcia, Magnus Öberg, Kyle Stewart, Al Matthews, Michael Parisi, Gerry Straathof and Matthias Treitler*
