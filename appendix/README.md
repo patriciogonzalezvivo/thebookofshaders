@@ -48,8 +48,7 @@ To install and set this all up on the RaspberryPi after installing the OS and lo
 ```bash
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install git-core 
-sudo apt-get install libfreeimage-dev
+sudo apt-get install git-core
 cd ~ 
 git clone http://github.com/patriciogonzalezvivo/glslViewer.git
 cd glslViewer
@@ -74,7 +73,6 @@ In **MacOSX** get sure to have [homebrew](http://brew.sh/) installed and then on
 ```bash
 brew update
 brew upgrade
-brew install git freeimage 
 brew tap homebrew/versions
 brew install glfw3
 cd ~ 
@@ -89,7 +87,7 @@ On **RaspberryPi** you need to do:
 ```bash
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install git-core libfreeimage
+sudo apt-get install git-core
 cd ~ 
 git clone http://github.com/patriciogonzalezvivo/glslViewer.git
 cd glslViewer
