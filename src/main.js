@@ -208,8 +208,17 @@ function loadMarkdown(){
 
 				editor.id = id;
 
+                editor.on("cursorActivity", function(cm) {
+                    var canvasToChange = document.getElementById(cm.id);
+                    var height = cm.heightAtLine(cm.getCursor().line+1,'local')-canvasToChange.height;
+                    if (height<0){
+                        height = 0.0;   
+                    }
+                    canvasToChange.style.top = (height).toString()+"px";
+                });
+
 				editor.on("change", function(cm, change) {
-					var canvasToChange = document.getElementById(cm.id)
+					var canvasToChange = document.getElementById(cm.id);
 					canvasToChange.setAttribute("data-fragment", cm.getValue());
 					loadShaders();
 				});
@@ -248,7 +257,7 @@ function loadMarkdown(){
                 editor.id = id;
 
                 editor.on("change", function(cm, change) {
-                    var canvasToChange = document.getElementById(cm.id)
+                    var canvasToChange = document.getElementById(cm.id);
                     canvasToChange.setAttribute("data-fragment", preFunction+cm.getValue()+postFunction);
                     loadShaders();
                 });

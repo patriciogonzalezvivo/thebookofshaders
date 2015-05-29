@@ -216,6 +216,7 @@ canvas {
 
 .codeAndCanvas canvas {
     float: right;
+    position: relative;
     border-radius: 10px;
     z-index: 1;
     overflow: hidden;
