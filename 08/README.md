@@ -18,7 +18,7 @@ To rotate objects we also need to move the entire space system. For that we are 
 
 ![](matrixes.png)
 
-GLSL has native support for two, three and four dimensional matrices: [```mat2```](http://www.shaderific.com/glsl-types/#2x2floatingpointmatrix) (2x2), [```mat3```](http://www.shaderific.com/glsl-types/#3x3floatingpointmatrix) (3x3) and [```mat4```](4x4floatingpointmatrix) (4x4). GLSL also supports matrix multiplication  (```*```) and a matrix specific function ([```matrixCompMult()```](http://www.shaderific.com/glsl-functions/#componentwisematrixmultiplication)).
+GLSL has native support for two, three and four dimensional matrices: [```mat2```](../glossary/index.html#mat2.md) (2x2), [```mat3```](../glossary/index.html#mat3.md) (3x3) and [```mat4```](../glossary/index.html#mat4.md) (4x4). GLSL also supports matrix multiplication  (```*```) and a matrix specific function ([```matrixCompMult()```](../glossary/index.html#matrixCompMult.md)).
 
 Based on how matrices behave it's possible to construct matrices to produce specific behaviors. For example we can use a matrix to translate a vector:
 
@@ -41,11 +41,7 @@ mat2 rotate2d(float _angle){
 
 According to the way we've been drawing shapes, this is not exactly what we want. Our cross shape is drawn in the center of the canvas which corresponds to the position ```vec2(0.5)```. So, before we rotate the space we need to move shape from the `center` to the ```vec2(0.0)``` coordinate, rotate the space, then finally move it back to the original place.
 
-____comment the code below to show where you're doing the steps described above____
-
 <div class="codeAndCanvas" data="cross-rotate.frag"></div>
-
-____This paragraph is straight-up impossible to understand and I don't think there's a way to write it well without another example, so consider adding another example or taking this paragraph out (I'm not editing it, so if you leave it in let me know and I'll edit it)____ Note that we need to multiply the rotation matrix for the position vector to return a rotated vector which in our example is just the original position variable that we are over writing. If you want to rotate different elements in different proportions you need to “preserve” the original coordinate system by assigning another vector.  
 
 Try the following exercises:
 
@@ -90,11 +86,8 @@ Try the following exercises to understand more deeply how this works.
 
 The following code is an interesting opportunity to use matrix operations in GLSL to transform colors from one mode to another.
 
-____add some comments to the code below to describe what you're doing____
-
 <div class="codeAndCanvas" data="yuv.frag"></div>
 
 As you can see we are treating colors as vectors by multiplying them with matrices. In that way we “move” the values around.
 
-____what have we learned in this chapter? what's coming next?____
-
+In this chapter we have learn about how to use matrix transformation to move, rotate and scale vectors. This will be esential to compose shapes like the once we learn to do in the previus chapter. On our next step we will apply all what we have learn to make beatiful procedural patterns. You will find that coding repetition and variation can be an exciting practice.

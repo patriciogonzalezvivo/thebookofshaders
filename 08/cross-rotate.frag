@@ -33,9 +33,12 @@ float cross(in vec2 _st, float _size){
 void main(){
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     vec3 color = vec3(0.0);
-        
+    
+    // move space from the center to the vec2(0.0)
     st -= vec2(0.5);
+    // rotate the space
     st = rotate2d( sin(u_time)*PI ) * st;
+    // move it back to the original place
     st += vec2(0.5);
 
     // Show the coordinates of the space on the background
