@@ -2,7 +2,13 @@
 
 ### Translate
 
-In the previous chapter we learned how to make some shapes - the trick to moving those shapes is to move the coordinate system itself. We can achieve that by simply adding a vector to the ```st``` variable that contains the location of each fragment. This causes the whole space coordinate system to move. This is easier to see than to explain, so to see for yourself:
+![](translate.jpg)
+
+In the previous chapter we learned how to make some shapes - the trick to moving those shapes is to move the coordinate system itself. We can achieve that by simply adding a vector to the ```st``` variable that contains the location of each fragment. This causes the whole space coordinate system to move. 
+
+![](translate-space.jpg)
+
+This is easier to see than to explain, so to see for yourself:
 
 * Uncomment line 35 of the code below to see how the space itself moves around.
 
@@ -24,8 +30,6 @@ Based on how matrices behave it's possible to construct matrices to produce spec
 
 ![](3dtransmat.png)
 
-____it would be good to draw an example here____
-
 More interestingly, we can use a matrix to rotate the coordinate system: 
 
 ![](2drotmat.png)
@@ -38,6 +42,8 @@ mat2 rotate2d(float _angle){
                 sin(_angle),cos(_angle));
 }
 ```
+
+![](rotate.jpg)
 
 According to the way we've been drawing shapes, this is not exactly what we want. Our cross shape is drawn in the center of the canvas which corresponds to the position ```vec2(0.5)```. So, before we rotate the space we need to move shape from the `center` to the ```vec2(0.0)``` coordinate, rotate the space, then finally move it back to the original place.
 
