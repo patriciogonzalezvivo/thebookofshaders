@@ -11,15 +11,15 @@ mat2 dMat2 = mat2(aVec3, aFloat);
 ```
 
 ### Description
-The data type ```mat2``` is used for floating point matrices with two times two components in column major order. There are several ways to initialize a matrix:
+```mat2``` data type is compose for a 2x2 matrix of floating point. As you can see above, can be initialize in different ways:
 
-- Components are specified by providing a scalar value for each component (first example). The matrix is filled column by column.
+- Providing a value for each component column by column.
 
-- Components are specified by providing one scalar value. This value is used for the components on the main diagonal (the second example is equivalent to the first).
+- Providing one value that is used for the components on the main diagonal.
 
-- Components are specified by providing a combination of vectors and scalars. The respective values are used to initialize the components column by column. The arguments of the constructor must have at least as many components as the matrix that is initialized.
+- Providing a combination of vectors and scalars.
 
-The following examples show how the values of a matrix can be accessed to set or get the values:
+In the same way data can be accessed component-wise or column by column:
 
 ```glsl
 mat2 aMat2;
@@ -29,16 +29,6 @@ float aFloat = aMat2[1][1];
 aMat2[0] = vec2(1.0);
 vec2 aVec2 = aMat2[0];
 ```
-
-The values of a matrix can be accessed component-wise or column by column:
-
-- In the first example the bottom right component of a matrix is set to a float value.
-
-- In the second example a new variable of type float is initialized with the value of the bottom right component of a matrix.
-
-- In the third example the first column vector of a matrix is set with a vector.
-
-- In the fourth example a new variable of type float vector is initialized with the column vector.
 
 ### See Also
 [mat3](index.html#mat3.md), [mat4](index.html#mat4.md), [matrixCompMult()](index.html#matrixCompMult.md)
