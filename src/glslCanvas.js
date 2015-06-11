@@ -68,7 +68,7 @@ function loadShaders() {
 	for(var i = 0; i < list.length; i++){
 
 		var shaderSrc = { vertURL: null, vertSTR: null,
-						  fragURL: null, fragSTR: null };
+						  fragURL: null, fragSTR: null};
 
 		if( list[i].hasAttribute("data-fragment") ){
 			shaderSrc.fragSTR = list[i].getAttribute('data-fragment');
@@ -88,11 +88,11 @@ function loadShaders() {
 			gl = billboards[i].gl
 		}
  
-		var program = loadShader(gl, shaderSrc);
+		var shader = loadShader(gl, shaderSrc);
 
-		if(!program){
+		if(!shader.program){
 			if(billboards[i].program){
-				program = billboards[i].program;
+				shader.program = billboards[i].program;
 			} else {
 				billboards[i] = null;
 				return;
@@ -107,7 +107,7 @@ function loadShaders() {
 
 			// Define UVS buffer
 			var uvs;
-			var texCoordLocation = gl.getAttribLocation(program, "a_texcoord");
+			var texCoordLocation = gl.getAttribLocation(shader.program, "a_texcoord");
 			uvs = gl.createBuffer();
 			gl.bindBuffer( gl.ARRAY_BUFFER, uvs);
 			gl.bufferData( gl.ARRAY_BUFFER, new Float32Array([0.0,  0.0,
@@ -122,7 +122,7 @@ function loadShaders() {
 			
 			// Define Vertex buffer
 			var vertices;
-			var positionLocation = gl.getAttribLocation(program, "a_position");
+			var positionLocation = gl.getAttribLocation(shader.program, "a_position");
 			vertices = gl.createBuffer();
 			gl.bindBuffer( gl.ARRAY_BUFFER, vertices);
 			gl.bufferData( gl.ARRAY_BUFFER, new Float32Array([-1.0, -1.0,
@@ -179,11 +179,12 @@ function loadShaders() {
 				gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 1, 1, 0, gl.RGBA, gl.UNSIGNED_BYTE, new Uint8Array([255, 255, 0, 255])); // red
 
 				textures[nImg].image = new Image();
-				textures[nImg].image.onload = function(_gl,_tex) { 
+				textures[nImg].image.onload = function(_canvas,_gl,_program,_textures,_tex) { 
 					return function() {
 						loadTexture(_gl, _tex); 
+						render(_canvas, _gl, _program, _textures)
 					};
-				}(gl,textures[nImg]);
+				}(canvas,gl,shader.program, textures, textures[nImg]);
 	  			textures[nImg].image.src = imgList[nImg];
 			}
 		}
@@ -191,18 +192,23 @@ function loadShaders() {
 		// Assign canvas, gl context, shader, UV/Verts buffers and animate boolean to billboard
 		billboards[i] = {	canvas: canvas, 
 							gl: gl, 
-							program: program,
+							program: shader.program,
 							vbo: vbo,
 							textures: textures,
-							mouse: mouse };
+							mouse: mouse,
+							animated: shader.animated };
+
+		renderShader( billboards[i] );
 	}
 }
 
 function renderShaders(){
 	for(var i = 0; i < billboards.length; i++){
 		// If there is something on the billboard
-		if(billboards[i]){
-			renderShader( billboards[i] );
+		if( billboards[i] !== undefined ){
+			if ( billboards[i].animated === true ){
+				renderShader( billboards[i] );
+			}	
 		}
 	}
 	window.requestAnimFrame(renderShaders);
@@ -405,6 +411,11 @@ void main(){\n\
 }";
 	}
 
+	var animated = false;
+    var nTimes = (fragString.match(/u_time/g)|| []).length;
+    var nMouse = (fragString.match(/u_mouse/g)|| []).length;
+    animated = ((nTimes > 1) || (nMouse > 1));
+
 	var vertexShader = createShader(_gl, vertString, _gl.VERTEX_SHADER);
 	var fragmentShader = createShader(_gl, fragString , _gl.FRAGMENT_SHADER);
 
@@ -419,12 +430,13 @@ void main(){\n\
 	_gl.useProgram(program);
 
 	// Delete shaders
-	// _gl.detachShader(program, vertexShader);
- //    _gl.detachShader(program, fragmentShader);
- //    _gl.deleteShader(vertexShader);
- //    _gl.deleteShader(fragmentShader);
+	_gl.detachShader(program, vertexShader);
+    _gl.detachShader(program, fragmentShader);
+    _gl.deleteShader(vertexShader);
+    _gl.deleteShader(fragmentShader);
 
-	return program;
+	return {'program': program, 
+			'animated': animated};
 }
 
 function FormatNumberLength(_num, _length) {
@@ -439,45 +451,50 @@ function FormatNumberLength(_num, _length) {
  *	Render loop of shader in a canvas
  */
 function renderShader( _billboard ) {
-	if (!_billboard.gl) {
+	render(_billboard.canvas, _billboard.gl, _billboard.program, _billboard.textures);
+}
+
+function render(_canvas, _gl, _program, _textures) {
+	if (!_gl) {
 		return;
 	}
 
 	// set the time uniform
 	var timeFrame = Date.now();
 	var time = (timeFrame-timeLoad) / 1000.0;
-	var timeLocation = _billboard.gl.getUniformLocation(_billboard.program, "u_time");
-	_billboard.gl.uniform1f(timeLocation, time);
+	var timeLocation = _gl.getUniformLocation(_program, "u_time");
+	_gl.uniform1f(timeLocation, time);
 
 	// set the mouse uniform
-	var rect = _billboard.canvas.getBoundingClientRect();
+	var rect = _canvas.getBoundingClientRect();
 	if( mouse.x >= rect.left && 
 		mouse.x <= rect.right && 
 		mouse.y >= rect.top &&
 		mouse.y <= rect.bottom){
 
-		var mouseLocation = _billboard.gl.getUniformLocation(_billboard.program, "u_mouse");
-		_billboard.gl.uniform2f(mouseLocation,mouse.x-rect.left,_billboard.canvas.height-(mouse.y-rect.top));
+		var mouseLocation = _gl.getUniformLocation(_program, "u_mouse");
+		_gl.uniform2f(mouseLocation,mouse.x-rect.left,_canvas.height-(mouse.y-rect.top));
 	}
 
 	// set the resolution uniform
-	var resolutionLocation = _billboard.gl.getUniformLocation(_billboard.program, "u_resolution");
-	_billboard.gl.uniform2f(resolutionLocation, _billboard.canvas.width, _billboard.canvas.height);
+	var resolutionLocation = _gl.getUniformLocation(_program, "u_resolution");
+	_gl.uniform2f(resolutionLocation, _canvas.width, _canvas.height);
 
-	for (var i = 0; i < _billboard.textures.length; ++i){
+	for (var i = 0; i < _textures.length; ++i){
 
-		_billboard.gl.uniform1i( _billboard.gl.getUniformLocation( _billboard.program, "u_tex"+i), i);
-		_billboard.gl.uniform2f( _billboard.gl.getUniformLocation( _billboard.program, "u_tex"+i+"Resolution"), 
-								 _billboard.textures[i].image.width,
-								 _billboard.textures[i].image.height);
+		_gl.uniform1i( _gl.getUniformLocation( _program, "u_tex"+i), i);
+		_gl.uniform2f( _gl.getUniformLocation( _program, "u_tex"+i+"Resolution"), 
+								 _textures[i].image.width,
+								 _textures[i].image.height);
 
-		_billboard.gl.activeTexture(_billboard.gl.TEXTURE0+i);
-		_billboard.gl.bindTexture(_billboard.gl.TEXTURE_2D, _billboard.textures[i]);
+		_gl.activeTexture(_gl.TEXTURE0+i);
+		_gl.bindTexture(_gl.TEXTURE_2D, _textures[i]);
 		
 	}
 
 	// Draw the rectangle.
-	_billboard.gl.drawArrays(_billboard.gl.TRIANGLES, 0, 6);
+	_gl.drawArrays(_gl.TRIANGLES, 0, 6);
+	// console.log("Render " + time);
 }
 
 document.addEventListener('mousemove', function(e){ 
@@ -489,24 +506,24 @@ document.addEventListener('mousemove', function(e){
  * Provides requestAnimationFrame in a cross browser way.
  */
 window.requestAnimFrame = (function() {
-  return window.requestAnimationFrame ||
-         window.webkitRequestAnimationFrame ||
-         window.mozRequestAnimationFrame ||
-         window.oRequestAnimationFrame ||
-         window.msRequestAnimationFrame ||
-         function(/* function FrameRequestCallback */ callback, /* DOMElement Element */ element) {
-            return window.setTimeout(callback, 1000/60);
-         };
+	return	window.requestAnimationFrame ||
+	    	window.webkitRequestAnimationFrame ||
+	    	window.mozRequestAnimationFrame ||
+	    	window.oRequestAnimationFrame ||
+	    	window.msRequestAnimationFrame ||
+	    	function(/* function FrameRequestCallback */ callback, /* DOMElement Element */ element) {
+	        	return window.setTimeout(callback, 1000/60);
+	     };
 })();
 
 /**
  * Provides cancelRequestAnimationFrame in a cross browser way.
  */
 window.cancelRequestAnimFrame = (function() {
-  return window.cancelCancelRequestAnimationFrame ||
-         window.webkitCancelRequestAnimationFrame ||
-         window.mozCancelRequestAnimationFrame ||
-         window.oCancelRequestAnimationFrame ||
-         window.msCancelRequestAnimationFrame ||
-         window.clearTimeout;
+ 	return	window.cancelCancelRequestAnimationFrame ||
+        	window.webkitCancelRequestAnimationFrame ||
+        	window.mozCancelRequestAnimationFrame ||
+        	window.oCancelRequestAnimationFrame ||
+        	window.msCancelRequestAnimationFrame ||
+        	window.clearTimeout;
 })();
