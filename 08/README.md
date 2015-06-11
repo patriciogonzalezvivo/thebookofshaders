@@ -43,9 +43,11 @@ mat2 rotate2d(float _angle){
 }
 ```
 
+According to the way we've been drawing shapes, this is not exactly what we want. Our cross shape is drawn in the center of the canvas which corresponds to the position ```vec2(0.5)```. So, before we rotate the space we need to move shape from the `center` to the ```vec2(0.0)``` coordinate, rotate the space, then finally move it back to the original place.
+
 ![](rotate.jpg)
 
-According to the way we've been drawing shapes, this is not exactly what we want. Our cross shape is drawn in the center of the canvas which corresponds to the position ```vec2(0.5)```. So, before we rotate the space we need to move shape from the `center` to the ```vec2(0.0)``` coordinate, rotate the space, then finally move it back to the original place.
+That will looks like the following code:
 
 <div class="codeAndCanvas" data="cross-rotate.frag"></div>
 
