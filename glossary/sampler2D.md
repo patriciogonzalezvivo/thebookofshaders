@@ -1,4 +1,4 @@
-## Precision
+## Sampler2D
 
 ### Declaration / Example
 

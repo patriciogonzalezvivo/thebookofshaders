@@ -1,4 +1,4 @@
-## Precision
+## Gl_MaxVaryingVectors
 
 ### Declaration / Example
 

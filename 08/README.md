@@ -2,11 +2,9 @@
 
 ### Translate
 
-![](translate.jpg)
-
 In the previous chapter we learned how to make some shapes - the trick to moving those shapes is to move the coordinate system itself. We can achieve that by simply adding a vector to the ```st``` variable that contains the location of each fragment. This causes the whole space coordinate system to move. 
 
-![](translate-space.jpg)
+![](translate.jpg)
 
 This is easier to see than to explain, so to see for yourself:
 
@@ -22,7 +20,7 @@ Now try the following exercise:
 
 To rotate objects we also need to move the entire space system. For that we are going to use a [matrix](http://en.wikipedia.org/wiki/Matrix_%28mathematics%29). A matrix is an organized set of numbers in columns and rows. Vectors are multiplied by matrices following a precise set of rules in order to modify the values of the vector in a particular way.
 
-![](matrixes.png)
+[![Wikipedia entry for Matrix (mathematics) ](matrixes.png)](https://en.wikipedia.org/wiki/Matrix)
 
 GLSL has native support for two, three and four dimensional matrices: [```mat2```](../glossary/index.html#mat2.md) (2x2), [```mat3```](../glossary/index.html#mat3.md) (3x3) and [```mat4```](../glossary/index.html#mat4.md) (4x4). GLSL also supports matrix multiplication  (```*```) and a matrix specific function ([```matrixCompMult()```](../glossary/index.html#matrixCompMult.md)).
 
@@ -32,9 +30,9 @@ Based on how matrices behave it's possible to construct matrices to produce spec
 
 More interestingly, we can use a matrix to rotate the coordinate system: 
 
-![](2drotmat.png)
+![](rotmat.png)
 
-Take a look at the following code for a function that constructs a 2D rotation matrix. This function follows the above [formula](http://en.wikipedia.org/wiki/Rotation_matrix) to rotate the coordinates around the ```vec2(0.0)``` point. 
+Take a look at the following code for a function that constructs a 2D rotation matrix. This function follows the above [formula](http://en.wikipedia.org/wiki/Rotation_matrix) for two dimentional vectors to rotate the coordinates around the ```vec2(0.0)``` point. 
 
 ```glsl
 mat2 rotate2d(float _angle){
@@ -47,7 +45,7 @@ According to the way we've been drawing shapes, this is not exactly what we want
 
 ![](rotate.jpg)
 
-That will looks like the following code:
+That looks like the following code:
 
 <div class="codeAndCanvas" data="cross-rotate.frag"></div>
 
@@ -63,7 +61,7 @@ Try the following exercises:
 
 We've seen how matrices are used to translate and rotate objects in space. (Or more precisely to transform the coordinate system to rotate and move the objects.) If you've used 3D modeling software or the push and pop matrix functions in Processing, you will know that matrices can also be used to scale the size of an object. 
 
-![](3dscalemat.png)
+![](scale.png)
 
 Following the previous formula, we can figure out how to make a 2D scaling matrix:
 
@@ -98,4 +96,4 @@ The following code is an interesting opportunity to use matrix operations in GLS
 
 As you can see we are treating colors as vectors by multiplying them with matrices. In that way we “move” the values around.
 
-In this chapter we have learn about how to use matrix transformation to move, rotate and scale vectors. This will be esential to compose shapes like the once we learn to do in the previus chapter. On our next step we will apply all what we have learn to make beatiful procedural patterns. You will find that coding repetition and variation can be an exciting practice.
+In this chapter we've learned how to use matrix transformations to move, rotate and scale vectors. These transformations will be essential for making compositions out of the shapes we learned about in the previous chapter. In the next chapter we'll apply all we've learned to make beautiful procedural patterns. You will find that coding repetition and variation can be an exciting practice.

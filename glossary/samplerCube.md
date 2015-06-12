@@ -1,4 +1,4 @@
-## Precision
+## SamplerCube
 
 ### Declaration / Example
 

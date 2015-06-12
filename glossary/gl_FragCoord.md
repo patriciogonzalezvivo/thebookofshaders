@@ -1,4 +1,4 @@
-## Precision
+## G_FragCoord
 
 ### Declaration / Example
 

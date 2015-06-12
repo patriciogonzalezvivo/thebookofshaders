@@ -1,4 +1,4 @@
-## Precision
+## Gl_MaxTextureImageUnits
 
 ### Declaration / Example
 

@@ -20,5 +20,4 @@ vec4 faceforward(vec4 N, vec4 I, vec4 Nref)
 ```faceforward()``` orients a vector to point away from a surface as defined by its normal. ```If dot(Nref, I) < 0``` faceforward returns ```N```, otherwise it returns ```-N```.
 
 ### See Also
-
 [reflect()](index.html#reflect.md), [refract()](index.html#refract.md)
