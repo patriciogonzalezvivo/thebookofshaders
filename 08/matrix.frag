@@ -26,7 +26,7 @@ float rchar(in vec2 outer,in vec2 inner){
 }
 
 vec3 matrix(in vec2 st){
-    float rows = 40.0;
+    float rows = 70.0;
     vec2 ipos = floor(st*rows);
 
     ipos += vec2(.0,floor(u_time*20.*random(ipos.x)));
