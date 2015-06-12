@@ -25,6 +25,11 @@ var timeLoad = Date.now();
 var mouse = {x: 0, y: 0};
 var billboards = []; 
 
+function isCanvasVisible(_canvas){
+	return	((_canvas.getBoundingClientRect().top + _canvas.height) > 0) && 
+			(_canvas.getBoundingClientRect().top < (window.innerHeight || document.documentElement.clientHeight));
+}
+
 function isPowerOf2(value) {
   return (value & (value - 1)) == 0;
 };
@@ -206,7 +211,8 @@ function renderShaders(){
 	for(var i = 0; i < billboards.length; i++){
 		// If there is something on the billboard
 		if( billboards[i] !== undefined ){
-			if ( billboards[i].animated === true ){
+			if ( billboards[i].animated === true &&
+				 isCanvasVisible(billboards[i].canvas )){
 				renderShader( billboards[i] );
 			}	
 		}
