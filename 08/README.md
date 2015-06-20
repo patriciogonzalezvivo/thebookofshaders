@@ -53,7 +53,7 @@ That looks like the following code:
 
 Try the following exercises:
 
-* Uncomment line 42 of above code and pay attention to what happens.
+* Uncomment line 45 of above code and pay attention to what happens.
 
 * Comment the translations before and after the rotation, on lines 37 and 39, and observe the consequences.
 
