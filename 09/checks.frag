@@ -1,5 +1,5 @@
-// Author @patriciogv - 2015
-// http://patriciogonzalezvivo.com
+// Author @patriciogv ( patriciogonzalezvivo.com ) - 2015
+
 #ifdef GL_ES
 precision mediump float;
 #endif
@@ -34,8 +34,13 @@ void main(void){
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     vec3 color = vec3(0.0);
 
-    st = tile(st,4.);
+    // Divide the space in 4
+    st = tile(st,4.);   
+
+    // Use a matrix to rotate the space 45 degrees
     st = rotate2D(st,PI*0.25);
+
+    // Draw a square
     color = vec3(box(st,vec2(0.7),0.01));
     // color = vec3(st,0.0);
 

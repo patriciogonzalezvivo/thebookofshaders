@@ -38,7 +38,28 @@ The following is a list of examples present in this book.
         - [Polar](../edit.html#07/polar.frag)
         - [Polar (distance field)](../edit.html#07/shapes.frag)
         - [Arrow (distance field)](../edit.html#07/arrow.frag)
+
+    * [Matrix](../08/)
+        - [cross](../edit.html#08/cross.frag)
+        - [translate](../edit.html#08/cross-translate.frag)
+        - [rotate](../edit.html#08/cross-rotate.frag)
+        - [scale](../edit.html#08/cross-scale.frag)
+        
+    * [Patterns](../09/)
+        - Grid: [making](../edit.html#09/grid-making.frag), [final](../edit.html#09/grid.frag), [grid of +](../edit.html#09/cross.frag)
+        - [Checks](../edit.html#09/checks.frag)
+        - [Diamond tiles](../edit.html#09/diamondtiles.frag)
+        - [Bricks](../edit.html#09/bricks.frag)
+        - Dots: [0](../edit.html#09/dots.frag), [1](../edit.html#09/dots1.frag), [2](../edit.html#09/dots2.frag), [3](../edit.html#09/dots3.frag), [4](../edit.html#09/dots4.frag)
+        - [Side grid](../edit.html#09/sidegrid.frag)
+        - [Rotated tiles](../edit.html#09/rotatedtiles.frag)
+        - [Nuts pattern](../edit.html#09/nuts.frag)
+        - [Mirror tiles](../edit.html#09/mirrortiles.frag)
+        - [Zigzag](../edit.html#09/zigzag.frag)
+        - [Truchet](../edit.html#09/truchet.frag)
+        - [Deco](../edit.html#09/deco.frag)
         
 ### Advance
 
 * [Moon](../edit.html#examples/moon.frag&examples/images/moon-texture.jpg)
+* [Matrix](../edit.html#08/matrix.frag)

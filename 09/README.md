@@ -8,7 +8,7 @@ In this chapter we are going to apply what we've learned so far and repeat it al
 
 *"The grid provides a framework within which human intuition and invention can operate and that it can subvert. Within the chaos of nature patterns provide a constrast and promise of order. From early patterns on pottery to geometric mosaics in Roman baths, people have long used grids to enhance their lives with decoration."* [*10 PRINT*, Mit Press, (2013)](http://10print.org/)
 
-First let's remember the [```fract()```](http://www.shaderific.com/glsl-functions/#fractionalpart) function, which is in essence the modulo of one (```mod(x,1.0)```) because it returns the fractional part of a number. In other words, ```fract()``` returns the number after the floating point. Our normalized coordinate system variable (```st```) already goes from 0.0 to 1.0 so it doesn't make sense to do something like:
+First let's remember the [```fract()```](../glossary/index.html#fract.md) function, which is in essence the modulo of one ([```mod(x,1.0)```](../glossary/index.html#mod.md)) because it returns the fractional part of a number. In other words, [```fract()```](../glossary/index.html#fract.md) returns the number after the floating point. Our normalized coordinate system variable (```st```) already goes from 0.0 to 1.0 so it doesn't make sense to do something like:
 
 ```glsl
 void main(){
@@ -22,11 +22,9 @@ void main(){
 
 But if we scale the normalized coordinate system up - let's say by three - we will get three sequences of linear interpolations between 0-1: the first one between 0-1, the second one for the floating points between 1-2 and the third one for the floating points between 2-3.
 
-____comment the code below with some comments about where the interpolation by three is happening____
-
 <div class="codeAndCanvas" data="grid-making.frag"></div>
 
-Now it's time to draw something on each subspace in the same way we did in previous chapters, by uncommenting line 25. Because we are multiplying equally in x and y the aspect ratio of the space doesn't change and shapes will be as expected.
+Now it's time to draw something on each subspace in the same way we did in previous chapters, by uncommenting line 27. Because we are multiplying equally in x and y the aspect ratio of the space doesn't change and shapes will be as expected.
 
 Try some of the following exercises to get a deeper understanding:
 
@@ -40,11 +38,17 @@ Try some of the following exercises to get a deeper understanding:
 
 Since each subdivision or cell is a smaller version of the normalized coordinate system we have already been using we can apply a matrix transformation to it in order to translate, rotate or scale the space inside. 
 
-____comment the code below with some comments about where the matrix transformations are happening____
-
 <div class="codeAndCanvas" data="checks.frag"></div>
 
-____maybe add some exercises here for the code above?____
+* Think on intersting ways of animating this pattern. Think on color, on shapes and motion. Make three different animations.
+
+* By composing diferent shapes recreate more complicated patterns
+
+<a href="../edit.html#09/diamondtiles.frag"><canvas id="custom" class="canvas" data-fragment-url="diamondtiles.frag"  width="520px" height="200px"></canvas></a>
+
+* Combine different layers of patterns like this one to compose your own [Scottish Tartan Patterns](https://www.google.com/search?q=scottish+patterns+fabric&tbm=isch&tbo=u&source=univ&sa=X&ei=Y1aFVfmfD9P-yQTLuYCIDA&ved=0CB4QsAQ&biw=1399&bih=799#tbm=isch&q=Scottish+Tartans+Patterns).
+
+[ ![Vector Pattern Scottish Tartan By Kavalenkava](tartan.jpg) ](http://graphicriver.net/item/vector-pattern-scottish-tartan/6590076)
 
 ### Offset patterns
 
@@ -64,11 +68,7 @@ By multiplying *x* by a half the space coordinate duplicate it size (which is th
 
 ____fix the previous two paragraphs with Jen____
 
-Now we can apply some offset to odd rows to give a *brick* effect to our tiles. Check line number 10 and 11 of the following code:
-
-____check if lines 10 and 11 are still the right lines____
-
-____comment the code below with notes about where the brick offset is happening____
+Now we can apply some offset to odd rows to give a *brick* effect to our tiles. Check line number 14 and 15 of the following code:
 
 <div class="codeAndCanvas" data="bricks.frag"></div>
 

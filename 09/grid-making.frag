@@ -1,5 +1,5 @@
 // Author @patriciogv - 2015
-// http://patriciogonzalezvivo.com
+
 #ifdef GL_ES
 precision mediump float;
 #endif
@@ -18,8 +18,10 @@ void main() {
 	vec2 st = gl_FragCoord.xy/u_resolution;
     vec3 color = vec3(0.0);
 
-    st *= 3.0;
-    st = fract(st);
+    st *= 3.0;      // Scale up the space by 3
+    st = fract(st); // Wrap arround 1.0
+
+    // Now we have 3 spaces that goes from 0-1
 
     color = vec3(st,0.0);
     //color = vec3(circle(st,0.5));
