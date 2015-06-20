@@ -28,3 +28,25 @@ Come to think of it, it is crazy that you can write:
     gl_FragCoord.xy / u_resolution
 
 and have that return a vec2!  In Processing you have to use something like vector.divide().  Maybe it would be worth explaining a bit what your line of code above does?  Does it really divide both the X and Y values by u_resolution?
+
+
+NOTES:
+
+uniform vec2 u_resolution;  // vec2(500.0,500.0)
+uniform vec2 u_mouse;
+uniform float u_time;
+
+void main() {
+    //                          X  Y
+    // gl_FragCoord.xy = vec2(0.0,0.0);
+    //                          / /
+    //                   vec2(500.0,500.0);
+    
+    vec2 st = gl_FragCoord.xy/u_resolution;
+    
+    // ST -> vec2(0.0,0.0) to vec2(1.0,1.0)
+    
+    //                  RED   GREEN   BLUE  ALPHA
+    gl_FragColor = vec4(st.x, st.y,   0.0,  1.0);
+}
+
