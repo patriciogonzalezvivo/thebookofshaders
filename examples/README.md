@@ -63,3 +63,4 @@ The following is a list of examples present in this book.
 
 * [Moon](../edit.html#examples/moon.frag&examples/images/moon-texture.jpg)
 * [Matrix](../edit.html#08/matrix.frag)
+* [I-Ching](../edit.html#09/iching.frag)
