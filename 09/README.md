@@ -68,13 +68,21 @@ By multiplying *x* by a half the space coordinate duplicate it size (which is th
 
 ____fix the previous two paragraphs with Jen____
 
-Now we can apply some offset to odd rows to give a *brick* effect to our tiles. Check line number 14 and 15 of the following code:
+Now we can apply some offset to odd rows to give a *brick* effect to our tiles. Check lines 14 and 15 of the following code, there we are using the function we just describe together with an ```if``` statement to detect even rows and give them an offset on ```x``` of half a space.
+
+Note also that uncommenting line 34 will streach the aspect ration of the coordinate system to mimic the aspect of a "modern brick". As we did before by uncomenting line 42 you can see how the coordinate system looks maped on RED and GREEN.
 
 <div class="codeAndCanvas" data="bricks.frag"></div>
 
-____mention uncommenting line 31 to get actual brick dimensions____
+* Try animating this by moving the offset acording to time?
 
-____maybe add exercises?____
+* Make another animation where even rows moves to the left while, not even move to the right.
+
+* Can you repete this effect but with colums?
+
+* Try combining an offset on ```x``` and ```y``` axis to get something like this:
+
+<a href="../edit.html#09/marching_dots.frag"><canvas id="custom" class="canvas" data-fragment-url="marching_dots.frag"  width="520px" height="200px"></canvas></a>
 
 ## Truchet Tiles
 
@@ -88,15 +96,13 @@ By changing the pattern across tiles, it's possible to contruct an infinite set 
 
 Pay close attention to the function ```rotateTilePattern()```, which subdivides the space into four cells and assigns an angle of rotation to each one.
 
-____comment the code below to describe what's happening in rotateTilePattern()____
-
 <div class="codeAndCanvas" data="truchet.frag"></div>
 
 * Comment, uncomment and duplicate lines 52 to 55 to compose new designs.
 
 ## Making your own rules
 
-Making procedural patterns is a mental exercise in finding minimal reusable elements. This practice is old; we as a species have been using grids and patterns to decorate textiles, floors and borders of objects for a long time ____this would be better if you could name a very old thing____. The pleasure of repetition and variation has caught our imagination. Take some time to look at [decorative](https://archive.org/stream/traditionalmetho00chririch#page/130/mode/2up) [patterns](https://www.pinterest.com/patriciogonzv/paterns/) and see how artists and designers have a long history of challenging the fine edge between the predictability of order and the surprise of variation and chaos. From Arabic geometrical patterns, to gorgeous Japanese designs, there is an entire universe of patterns to learn from. 
+Making procedural patterns is a mental exercise in finding minimal reusable elements. This practice is old; we as a species have been using grids and patterns to decorate textiles, floors and borders of objects for a long time: from meanders patterns on ancient Greece, to chinise lattise design the pleasure of repetition and variation has caught our imagination. Take some time to look at [decorative](https://archive.org/stream/traditionalmetho00chririch#page/130/mode/2up) [patterns](https://www.pinterest.com/patriciogonzv/paterns/) and see how artists and designers have a long history of challenging the fine edge between the predictability of order and the surprise of variation and chaos. From Arabic geometrical patterns, to gorgeous Japanese designs, there is an entire universe of patterns to learn from. 
 
 ![Franz Sales Meyer - A handbook of ornament (1920)](geometricpatters.png)
 
