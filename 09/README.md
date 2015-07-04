@@ -98,12 +98,22 @@ Pay close attention to the function ```rotateTilePattern()```, which subdivides 
 
 <div class="codeAndCanvas" data="truchet.frag"></div>
 
-* Comment, uncomment and duplicate lines 52 to 55 to compose new designs.
+* Comment, uncomment and duplicate lines 73 to 76 to compose new designs.
+
+* Change the black and white triangle for other element like: half cicles, rotated squares or lines.
+
+* Think and code other patterns where the elements are rotated acording to their position.
+
+* Make a pattern that change other properties cording to their position.
+
+* Think on something else that is not necesary a pattern where you can apply the princeples that we saw in this section. (Ex: iching hexagrams)
+
+<a href="../edit.html#09/iching-01.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-01.frag"  width="520px" height="200px"></canvas></a>
 
 ## Making your own rules
 
-Making procedural patterns is a mental exercise in finding minimal reusable elements. This practice is old; we as a species have been using grids and patterns to decorate textiles, floors and borders of objects for a long time: from meanders patterns on ancient Greece, to chinise lattise design the pleasure of repetition and variation has caught our imagination. Take some time to look at [decorative](https://archive.org/stream/traditionalmetho00chririch#page/130/mode/2up) [patterns](https://www.pinterest.com/patriciogonzv/paterns/) and see how artists and designers have a long history of challenging the fine edge between the predictability of order and the surprise of variation and chaos. From Arabic geometrical patterns, to gorgeous Japanese designs, there is an entire universe of patterns to learn from. 
+Making procedural patterns is a mental exercise in finding minimal reusable elements. This practice is old; we as a species have been using grids and patterns to decorate textiles, floors and borders of objects for a long time: from meanders patterns on ancient Greece, to chinise lattise design the pleasure of repetition and variation has caught our imagination. Take some time to look at [decorative](https://archive.org/stream/traditionalmetho00chririch#page/130/mode/2up) [patterns](https://www.pinterest.com/patriciogonzv/paterns/) and see how artists and designers have a long history of challenging the fine edge between the predictability of order and the surprise of variation and chaos. From Arabic geometrical patterns, to gorgeous affrican fabric designs, there is an entire universe of patterns to learn from. 
 
 ![Franz Sales Meyer - A handbook of ornament (1920)](geometricpatters.png)
 
-____what's coming next?____
+With this chapter we end this sections about Algorithmic Drawing. On the following chapters we will how to bring some entropy and produce Generative Designs.

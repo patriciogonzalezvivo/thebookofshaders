@@ -59,6 +59,7 @@ The following is a list of examples present in this book.
         - [Zigzag](../edit.html#09/zigzag.frag)
         - [Truchet](../edit.html#09/truchet.frag)
         - [Deco](../edit.html#09/deco.frag)
+        - [I Ching](../edit.html#09/iching-01.frag)
         
 ### Advance
 
