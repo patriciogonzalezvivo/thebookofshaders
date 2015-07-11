@@ -55,16 +55,14 @@ This is a gentle step-by-step guide through the abstract and complex universe of
     * Environmental-maps (spherical and cube)
     * Reflect and refract
 
-## More
-
-* [Glossary](glossary/)
-
-* [Examples Gallery](examples/)
-
 * [Appendix:](appendix/) Other ways to use this book
 	* [How can I navigate this book offline?](appendix/)
 	* [How to run the examples on a RaspberryPi?](appendix/)
 	* [How to print this book?](appendix/)
+
+* [Examples Gallery](examples/)
+
+* [Glossary](glossary/)
 
 ## About the Author
 
@@ -84,4 +82,6 @@ Thanks [Karim Naaji](http://karim.naaji.fr/) for contributing with support, good
 
 Thanks to everyone who has believed in this project and contributed with fixes or donations.
 
- <form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://tinyletter.com/thebookofshaders" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/thebookofshaders', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"><p><label for="tlemail">Enter your email address</label></p><p><input type="text" style="width:140px" name="email" id="tlemail" /></p><input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe" /><p><a href="https://tinyletter.com" target="_blank">powered by TinyLetter</a></p></form>
+## Subscribe for new chapters
+
+ <form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://tinyletter.com/thebookofshaders" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/thebookofshaders', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"><p><label for="tlemail">Enter your email address</label></p><p><input type="text" style="width:140px" name="email" id="tlemail" /></p><input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe" /><p><a href="https://tinyletter.com" target="_blank"></a></p></form>
