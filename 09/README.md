@@ -60,17 +60,17 @@ As a first step we need to know if the row of our thread is an even or odd numbe
 
 ____we have to fix these next two paragraphs together____
 
-For that we are going to use ```fract()``` again but with the coordinates at the double of space. Take a look to the folowing formula and how it looks like.
+For that we are going to use [```mod()```](../glossary/index.html#mod.md) of ```2.0``` and then see if the result is under ```1.0``` or not. Take a look to the folowing formula and uncomment the two last lines.
 
-<div class="simpleFunction" data="y = fract(x*0.5);"></div>
+<div class="simpleFunction" data="y = mod(x,2.0);
+// y = mod(x,2.0) < 1.0 ? 0. : 1. ;
+// y = step(1.0,mod(x,2.0));"></div>
 
-By multiplying *x* by a half the space coordinate duplicate it size (which is the oposite of what we have been doing where we multiply the ```st``` and the space got shrinked). Let's say we are in position 1.0 (not even) we divide by two will be 0.5, while if the position was 2.0 (even) we devide by two the result will be 1.0. For values over 2.0, ```fract()``` will wrap them up and start again and again. This means the return value of this function will give numbers bellow 0.5 for not even numbers and above 0.5 for even. Isn't this super help full?
+As you can see we can use a [ternary operator](https://en.wikipedia.org/wiki/%3F:) to check if the [```mod()```](../glossary/index.html#mod.md) of ```2.0``` is under ```1.0``` (second line) or similarly we can use a [```step()```](../glossary/index.html#step.md) function which does that the same operation, but faster. Why? Althogh is hard to know how each graphic card optimize and compiles the code is safe to assume that built-ins functions are faster than non-built-in one. Everytime you can use one, use it!
 
-____fix the previous two paragraphs with Jen____
+So now we have our even number formula we can apply some offset to odd rows to give a *brick* effect to our tiles. Check lines 14 the following code, there we are using the function we just describe "detect odd" rows and give them an offset on ```x``` of half of unit. Note that by multipling by ```0.0``` even will make the offset similiar to ```0.0``` so we don't add any offset. But on odd rows we multipliy the result of our function (```1.0```) to the offset of ```0.5``` to the ```x``` axis of the coordinate system.
 
-Now we can apply some offset to odd rows to give a *brick* effect to our tiles. Check lines 14 and 15 of the following code, there we are using the function we just describe together with an ```if``` statement to detect even rows and give them an offset on ```x``` of half a space.
-
-Note also that uncommenting line 34 will streach the aspect ration of the coordinate system to mimic the aspect of a "modern brick". As we did before by uncomenting line 42 you can see how the coordinate system looks maped on RED and GREEN.
+Now try uncommenting line 32, this will streach the aspect ration of the coordinate system to mimic the aspect of a "modern brick". As we did before by uncomenting line 40 you can see how the coordinate system looks maped on RED and GREEN.
 
 <div class="codeAndCanvas" data="bricks.frag"></div>
 
@@ -98,7 +98,7 @@ Pay close attention to the function ```rotateTilePattern()```, which subdivides 
 
 <div class="codeAndCanvas" data="truchet.frag"></div>
 
-* Comment, uncomment and duplicate lines 73 to 76 to compose new designs.
+* Comment, uncomment and duplicate lines 69 to 72 to compose new designs.
 
 * Change the black and white triangle for other element like: half cicles, rotated squares or lines.
 

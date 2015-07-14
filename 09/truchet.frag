@@ -30,12 +30,8 @@ vec2 rotateTilePattern(vec2 _st){
     //  Give to each cell a index number
     //  acording to their position
     float index = 0.0;    
-    if (fract(_st.x * 0.5) > 0.5){
-        index += 1.0;
-    }
-    if (fract(_st.y * 0.5) > 0.5){
-        index += 2.0;
-    }
+    index += step(1., mod(_st.x,2.0));
+    index += step(1., mod(_st.y,2.0))*2.0;
 
     //      |
     //  0   |   1

@@ -130,6 +130,7 @@ function randomString(length, chars) {
     return result;
 }
 
+var billboards = {}; 
 function loadMarkdown(){
 
     // parse MARKDOWN
@@ -160,7 +161,7 @@ function loadMarkdown(){
             // load code
             str = fetchHTTP(srcFile);
             inject = '<div class="editor">\
-            <canvas id ='+id+' class="canvas" data-fragment="'+str+'" ';
+            <canvas id ='+id+' class="canvas" data-fragment-url="'+srcFile+'" ';
 
             // load images
             imagesFiles = ccList[i].getAttribute("data-imgs");
@@ -218,9 +219,8 @@ function loadMarkdown(){
                 });
 
 				editor.on("change", function(cm, change) {
-					var canvasToChange = document.getElementById(cm.id);
-					canvasToChange.setAttribute("data-fragment", cm.getValue());
-					loadShaders();
+					billboards[cm.id].load(cm.getValue());
+                    billboards[cm.id].render(true);
 				});
 			}
 		}
@@ -257,9 +257,8 @@ function loadMarkdown(){
                 editor.id = id;
 
                 editor.on("change", function(cm, change) {
-                    var canvasToChange = document.getElementById(cm.id);
-                    canvasToChange.setAttribute("data-fragment", preFunction+cm.getValue()+postFunction);
-                    loadShaders();
+                    billboards[cm.id].load(preFunction+cm.getValue()+postFunction);
+                    billboards[cm.id].render(true);
                 });
             }
         }
@@ -276,6 +275,27 @@ function loadMarkdown(){
 			hljs.highlightBlock(list[i]);
 		}
 	}
+}
+
+var canvasCounter = 0;
+function loadCanvas() {
+    var canvas = document.getElementsByClassName("canvas");
+    for (var i = 0; i < canvas.length; i++){
+        // Initialize the GL context
+        if (canvas[i].id === "custom") {
+            canvas[i].id = canvas[i].id + " ID" + String(canvasCounter++);
+        }
+        billboards[canvas[i].id] = new GlslCanvas(canvas[i]);
+    }       
+}
+
+function renderCanvas() {
+    var IDs = Object.keys(billboards);
+    for(var i = 0; i < IDs.length; i++){
+        billboards[IDs[i]].setMouse(mouse);
+        billboards[IDs[i]].render();
+    }
+    window.requestAnimFrame(renderCanvas);
 }
 
 function insertAfter(newElement,targetElement) {
@@ -364,10 +384,43 @@ function nextPage(){
 	window.location.href =  url;
 }
 
+// Keep track of the mouse
+var mouse = {x: 0, y: 0};
+document.addEventListener('mousemove', function(e){ 
+    mouse.x = e.clientX || e.pageX; 
+    mouse.y = e.clientY || e.pageY 
+}, false);
+
+/**
+ * Provides requestAnimationFrame in a cross browser way.
+ */
+window.requestAnimFrame = (function() {
+    return  window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            window.oRequestAnimationFrame ||
+            window.msRequestAnimationFrame ||
+            function(/* function FrameRequestCallback */ callback, /* DOMElement Element */ element) {
+                return window.setTimeout(callback, 1000/60);
+         };
+})();
+
+/**
+ * Provides cancelRequestAnimationFrame in a cross browser way.
+ */
+window.cancelRequestAnimFrame = (function() {
+    return  window.cancelCancelRequestAnimationFrame ||
+            window.webkitCancelRequestAnimationFrame ||
+            window.mozCancelRequestAnimationFrame ||
+            window.oCancelRequestAnimationFrame ||
+            window.msCancelRequestAnimationFrame ||
+            window.clearTimeout;
+})();
+
 window.onload = function(){
 	loadMarkdown();
     captionizeImages();
 
-	loadShaders();
-	renderShaders(); 
+    loadCanvas();
+    renderCanvas(); 
 };

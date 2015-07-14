@@ -26,7 +26,7 @@
 		<script type="text/javascript" src="src/codemirror/mode/clike.js"></script>
 
 		<!-- GLSL Canvas -->
-		<script type="text/javascript" src="src/glslCanvas.js"></script>
+		<script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/build/GlslCanvas.min.js"></script>
 
 		<style>
 			body {
@@ -74,7 +74,41 @@
 			loadTag()
 		}, false);
 
+		var editor;
+		var billboard;
 		var imgs = [];
+
+		function fetchHTTP(url, methood){
+			var request = new XMLHttpRequest(), response;
+
+			request.onreadystatechange = function () {
+				if (request.readyState === 4 && request.status === 200) {
+					response = request.responseText;
+				}
+			}
+			request.open(methood ? methood : 'GET', url, false);
+		    request.overrideMimeType("text/plain");
+			request.send(null);
+			return response;
+		}
+
+		window.requestAnimFrame = (function() {
+			return	window.requestAnimationFrame ||
+			    	window.webkitRequestAnimationFrame ||
+			    	window.mozRequestAnimationFrame ||
+			    	window.oRequestAnimationFrame ||
+			    	window.msRequestAnimationFrame ||
+			    	function(/* function FrameRequestCallback */ callback, /* DOMElement Element */ element) {
+			        	return window.setTimeout(callback, 1000/60);
+			     };
+		})();
+
+		// Keep track of the mouse
+		var mouse = {x: 0, y: 0};
+		document.addEventListener('mousemove', function(e){ 
+		    mouse.x = e.clientX || e.pageX; 
+		    mouse.y = e.clientY || e.pageY 
+		}, false);
 
 		function removeElementsByClass(className){
 		    var elements = document.getElementsByClassName(className);
@@ -133,25 +167,23 @@ void main(){\n\
 			} 
 
 			var demoCanvas = document.getElementById("canvas");
-			if(demoCanvas && fragShader !== ""){
-				demoCanvas.setAttribute("data-fragment", fragShader);
-				console.log("data-fragment: " + fragFile);
-
-				if(imgs.length > 0){
+			if (demoCanvas && fragShader !== "") {
+				demoCanvas.setAttribute("data-fragment-url", fragFile);
+				if (imgs.length > 0) {
 					var textureList = "";
-					for(i in imgs){
+					for (i in imgs) {
 						textureList += imgs[i];
 						textureList += (i < imgs.length-1)?",":"";
 					}
 					demoCanvas.setAttribute("data-textures",textureList);
 					console.log("data-textures: " + textureList);
 				}
-				loadShaders();
+				billboard = new GlslCanvas(demoCanvas);
 			}
 
 			var demoEditor = document.getElementById("editor");
-			if(demoEditor){
-				var editor = CodeMirror(demoEditor,{
+			if (demoEditor) {
+				editor = CodeMirror(demoEditor,{
 					value: fragShader,
 					lineNumbers: true,
 					matchBrackets: true,
@@ -166,15 +198,22 @@ void main(){\n\
 
 				editor.on("change", function() {
 					demoCanvas.setAttribute("data-fragment", editor.getValue());
-					loadShaders();
+					billboard.load(editor.getValue());
 				});
 			}
 		}
 
+		function render() {
+			billboard.setMouse(mouse)
+			billboard.render()
+			window.requestAnimFrame(render);
+		}
 		window.onload = function () { 
 			loadTag();
-			renderShaders(); 
+			render();
 		};
+
+
 		</script>
 	</body>
 </html>
