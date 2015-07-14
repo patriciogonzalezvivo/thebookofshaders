@@ -203,15 +203,16 @@ void main(){\n\
 			}
 		}
 
+		window.onload = function () { 
+			loadTag();
+			render();
+		};
+
 		function render() {
 			billboard.setMouse(mouse)
 			billboard.render()
 			window.requestAnimFrame(render);
 		}
-		window.onload = function () { 
-			loadTag();
-			render();
-		};
 
 
 		</script>
