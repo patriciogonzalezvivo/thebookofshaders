@@ -277,13 +277,11 @@ function loadMarkdown(){
 	}
 }
 
-var canvasCounter = 0;
 function loadCanvas() {
     var canvas = document.getElementsByClassName("canvas");
     for (var i = 0; i < canvas.length; i++){
-        // Initialize the GL context
         if (canvas[i].id === "custom") {
-            canvas[i].id = canvas[i].id + " ID" + String(canvasCounter++);
+            canvas[i].id = randomString(16, '#aA');
         }
         billboards[canvas[i].id] = new GlslCanvas(canvas[i]);
     }       
