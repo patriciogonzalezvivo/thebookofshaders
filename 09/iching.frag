@@ -111,5 +111,5 @@ void main(){
     df = mix(hex(st,t),hex(st,t+1.),fract(t));
     df += snoise(vec3(st*100.,t*0.1))*0.03;
 
-	gl_FragColor += vec4(mix(vec3(0.),vec3(1.),step(0.7,df)),1.0);
+	gl_FragColor = vec4(mix(vec3(0.),vec3(1.),step(0.7,df)),1.0);
 }
