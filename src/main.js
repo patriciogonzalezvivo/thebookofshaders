@@ -133,17 +133,6 @@ function randomString(length, chars) {
 var billboards = {}; 
 function loadMarkdown(){
 
-    // parse MARKDOWN
-    //
-	var mdFileURL = window.location.hash.substr(1);
-	var mdText = "No **text** found";
-	if(mdFileURL){
-		mdText = fetchHTTP(mdFileURL);
-	} else {
-		mdText = fetchHTTP("README.md");
-	}
-	document.getElementById('content').innerHTML = marked(mdText);
-
     // parse CODE & CANVAS boxes
 	var ccList = document.querySelectorAll(".codeAndCanvas");
     var id = "", 

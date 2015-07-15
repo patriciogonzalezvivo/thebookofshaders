@@ -1,0 +1,3 @@
+[submodule "src/parsedown"]
+	path = src/parsedown
+	url = https://github.com/erusev/parsedown.git
