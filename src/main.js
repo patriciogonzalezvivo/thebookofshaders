@@ -367,7 +367,7 @@ function nextPage(){
 	var path = window.location.pathname;
 	var n = parseInt( path.match( /[0-1].(?!.*[0-1])/ )[0] );
 	n += 1;
-	var url = "../" + FormatNumberLength(n,2);
+	var url = "../" + FormatNumberLength(n,2) + "/";
 	window.location.href =  url;
 }
 

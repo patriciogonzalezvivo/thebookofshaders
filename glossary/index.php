@@ -9,15 +9,14 @@
 	';
 
 	$Parsedown = new Parsedown();
-	echo $Parsedown->text(file_get_contents ('README.md'));
+	if(empty($_GET)) 
+		echo $Parsedown->text(file_get_contents ('README.md'));
+	else 
+		echo $Parsedown->text(file_get_contents ( $_GET['load'] ));
 
 	echo '
 	</div>
-	<hr>
-	<ul class="navigationBar" >
-		<li class="navigationBar" onclick="homePage()"> Home </li>
-		<li class="navigationBar" onclick="nextPage()">Next &gt; &gt;</li>
-	</ul>';
+	<hr>';
 
 	include("../footer.php"); 
 ?>
