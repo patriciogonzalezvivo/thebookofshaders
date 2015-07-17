@@ -28,9 +28,10 @@ Once you have everything installed you just need to do:
 
 ```bash
 cd ~
-git clone https://github.com/patriciogonzalezvivo/thebookofshaders.git
+git clone --recursive https://github.com/patriciogonzalezvivo/thebookofshaders.git
 cd thebookofshaders
-python -m SimpleHTTPServer
+git submodule foreach git pull
+php -S localhost:8000
 ```
 
 Then open your browser to [```http://localhost:8000/```](http://localhost:8000/)
