@@ -4,7 +4,7 @@ echo '
 			<p> Copyright 2015 <a href="http://www.patriciogonzalezvivo.com" target="_blank">Patricio Gonzalez Vivo</a> </p>
 		</footer>
 
-		<script type="text/javascript" src="'.$path.'/src/main.js" defer></script>
+		<script type="text/javascript" src="'.$path.'src/main.js" defer></script>
 		<script>
 		  (function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
