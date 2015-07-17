@@ -1,5 +1,5 @@
 <?php 
-	$path = "";
+	$path = ".";
 	include("header.php");
 	echo '<div id="content">';
 	include("src/parsedown/Parsedown.php");
