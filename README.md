@@ -24,7 +24,7 @@ This is a gentle step-by-step guide through the abstract and complex universe of
     * [Colors](06/)
     * [Shapes](07/)
     * [Matrices](08/)
-    * [Patterns](09/)
+    * Patterns
 
 * Generative designs
     * Random
