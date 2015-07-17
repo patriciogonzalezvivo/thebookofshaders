@@ -256,11 +256,11 @@ function loadMarkdown(){
 	// Load codes tags that have "src" attributes
 	var list = document.getElementsByTagName("code");
 	for(var i = 0; i < list.length; i++){
-		if (list[i].className == "lang-glsl" || 
-			list[i].className == "lang-bash" || 
-			list[i].className == "lang-cpp" || 
-			list[i].className == "lang-html" ||
-            list[i].className == "lang-processing" ){
+		if (list[i].className == "language-glsl" || 
+			list[i].className == "language-bash" || 
+			list[i].className == "language-cpp" || 
+			list[i].className == "language-html" ||
+            list[i].className == "language-processing" ){
 			hljs.highlightBlock(list[i]);
 		}
 	}
@@ -354,7 +354,7 @@ function previusPage(){
     if(n < 0){
         url = "../";
     } else {
-        url = "../" + FormatNumberLength(n,2);
+        url = "../" + FormatNumberLength(n,2) + "/";
     }
 	window.location.href =  url;
 }

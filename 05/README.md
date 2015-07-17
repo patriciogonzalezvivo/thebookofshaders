@@ -19,25 +19,25 @@ This one-to-one relationship between  *x* and *y* (or the brightness) is know as
 
 Interesting, right? On line 19 try different exponents: 20.0, 2.0, 1.0, 0.0, 0.2 and 0.02 for example. Understanding this relationship between the value and the exponent will be very helpful. Using these types of mathematical functions here and there will give you expressive control over your code, a sort of data acupuncture that let you control the flow of values.
 
-[```pow()```](../glossary/index.html#pow.md) is a native function in GLSL and there are many others. Most of them are accelerated at the level of the hardware, which means if they are used in the right way and with discretion they will make your code faster. 
+[```pow()```](../glossary/?search=pow) is a native function in GLSL and there are many others. Most of them are accelerated at the level of the hardware, which means if they are used in the right way and with discretion they will make your code faster. 
 
-Replace the power function on line 19. Try other ones like: [```exp()```](../glossary/index.html#exp.md), [```log()```](../glossary/index.html#log.md) and [```sqrt()```](../glossary/index.html#sqrt.md). Some of these functions are more interesting when you play with them using PI. You can see on line 5 that I have defined a macro that will replace any call to ```PI``` with the value ```3.14159265359```.
+Replace the power function on line 19. Try other ones like: [```exp()```](../glossary/?search=exp), [```log()```](../glossary/?search=log) and [```sqrt()```](../glossary/?search=sqrt). Some of these functions are more interesting when you play with them using PI. You can see on line 5 that I have defined a macro that will replace any call to ```PI``` with the value ```3.14159265359```.
  
 ### Step and Smoothstep
 
 GLSL also has some unique native interpolation functions that are hardware accelerated. 
 
-The [```step()```](../glossary/index.html#step.md) interpolation receives two parameters. The first one is the limit or threshold, while the second one is the value we want to check or pass. Any value under the limit will return ```0.0``` while everything above the limit will return ```1.0```. 
+The [```step()```](../glossary/?search=step) interpolation receives two parameters. The first one is the limit or threshold, while the second one is the value we want to check or pass. Any value under the limit will return ```0.0``` while everything above the limit will return ```1.0```. 
 
 Try changing this threshold value on line 20 of the following code. 
 
 <div class="codeAndCanvas" data="step.frag"></div>
 
-The other unique function is known as [```smoothstep()```](../glossary/index.html#smoothstep.md). Given a range of two numbers and a value, this function will interpolate the value between the defined range. The two first parameters are for the beginning and end of the transition, while the third is for the value to interpolate.
+The other unique function is known as [```smoothstep()```](../glossary/?search=smoothstep). Given a range of two numbers and a value, this function will interpolate the value between the defined range. The two first parameters are for the beginning and end of the transition, while the third is for the value to interpolate.
 
 <div class="codeAndCanvas" data="smoothstep.frag"></div>
 
-In the previous example, on line 12, notice that we’ve been using smoothstep to draw the green line on the ```plot()``` function. For each position along the *x* axis this function makes a *bump* at a particular value of *y*. How? By connecting two [```smoothstep()```](../glossary/index.html#smoothstep.md) together. Take a look at the following function, replace it for line 20 above and think of it as a vertical cut. The background does look like a line, right?
+In the previous example, on line 12, notice that we’ve been using smoothstep to draw the green line on the ```plot()``` function. For each position along the *x* axis this function makes a *bump* at a particular value of *y*. How? By connecting two [```smoothstep()```](../glossary/?search=smoothstep) together. Take a look at the following function, replace it for line 20 above and think of it as a vertical cut. The background does look like a line, right?
 
 ```glsl
     float y = smoothstep(0.2,0.5,st.x) - smoothstep(0.5,0.8,st.x);
@@ -47,7 +47,7 @@ In the previous example, on line 12, notice that we’ve been using smoothstep t
 
 When you want to use some math to animate, shape or blend values, there is nothing better than being friends with sine and cosine.
 
-These two basic trigonometric functions work together to construct circles that are as handy as MacGyver’s Swiss army knife. It’s important to know how they behave and in what ways they can be combined. In a nutshell, given an angle (in radians) they will return the correct position of *x* ([cosine](../glossary/index.html#cos.md)) and *y* ([sine](../glossary/index.html#sin.md)) of a point on the edge of a circle with a radius equal to 1. But, the fact that they return normalized values (values between -1 and 1) in such a smooth way makes them an incredible tool.
+These two basic trigonometric functions work together to construct circles that are as handy as MacGyver’s Swiss army knife. It’s important to know how they behave and in what ways they can be combined. In a nutshell, given an angle (in radians) they will return the correct position of *x* ([cosine](../glossary/?search=cos)) and *y* ([sine](../glossary/?search=sin)) of a point on the edge of a circle with a radius equal to 1. But, the fact that they return normalized values (values between -1 and 1) in such a smooth way makes them an incredible tool.
 
 ![](sincos.gif)
 
@@ -55,7 +55,7 @@ While it's difficult to describe all the relationships between trigonometric fun
 
 <div class="simpleFunction" data="y = sin(x);"></div>
 
-Take a careful look at this sine wave. Note how the *y* values flow smoothly between +1 and -1. As we saw in the time example in the previous chapter, you can use this rhythmic behavior of [```sin()```](../glossary/index.html#sin.md) to animate properties. If you are reading this example in a browser you will see that the you can change the code in the formula above to watch how the wave changes. (Note: don't forget the semicolon at the end of the lines.)
+Take a careful look at this sine wave. Note how the *y* values flow smoothly between +1 and -1. As we saw in the time example in the previous chapter, you can use this rhythmic behavior of [```sin()```](../glossary/?search=sin) to animate properties. If you are reading this example in a browser you will see that the you can change the code in the formula above to watch how the wave changes. (Note: don't forget the semicolon at the end of the lines.)
 
 Try the following exercises and notice what happens:
 
@@ -65,15 +65,15 @@ Try the following exercises and notice what happens:
 
 * Multiply time (```u_time```) by *x* before computing the ```sin```. See how the **frequency** between phases becomes more and more compressed. Note that u_time may have already become very large, making the graph hard to read.
 
-* Add 1.0 to [```sin(x)```](../glossary/index.html#sin.md). See how all the wave is **displaced** up and now all values are between 0.0 and 2.0. 
+* Add 1.0 to [```sin(x)```](../glossary/?search=sin). See how all the wave is **displaced** up and now all values are between 0.0 and 2.0. 
 
-* Multiply [```sin(x)```](../glossary/index.html#sin.md) by 2.0. See how the **amplitude** doubles in size.
+* Multiply [```sin(x)```](../glossary/?search=sin) by 2.0. See how the **amplitude** doubles in size.
 
-* Compute the absolute value ([```abs()```](../glossary/index.html#abs.md)) of ```sin(x)```. It looks like the trace of a **bouncing** ball.
+* Compute the absolute value ([```abs()```](../glossary/?search=abs)) of ```sin(x)```. It looks like the trace of a **bouncing** ball.
 
-* Extract just the fraction part ([```fract()```](../glossary/index.html#fract.md)) of the resultant of [```sin(x)```](../glossary/index.html#sin.md).
+* Extract just the fraction part ([```fract()```](../glossary/?search=fract)) of the resultant of [```sin(x)```](../glossary/?search=sin).
 
-* Add the higher integer ([```ceil()```](../glossary/index.html#ceil.md)) and the smaller integer ([```floor()```](../glossary/index.html#floor.md)) of the resultant of [```sin(x)```](../glossary/index.html#sin.md) to get a digital wave of 1 and -1 values.
+* Add the higher integer ([```ceil()```](../glossary/?search=ceil)) and the smaller integer ([```floor()```](../glossary/?search=floor)) of the resultant of [```sin(x)```](../glossary/?search=sin) to get a digital wave of 1 and -1 values.
 
 ### Some extra useful functions
 

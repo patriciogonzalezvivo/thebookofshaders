@@ -8,7 +8,7 @@ In this chapter we are going to apply what we've learned so far and repeat it al
 
 *"The grid provides a framework within which human intuition and invention can operate and that it can subvert. Within the chaos of nature patterns provide a constrast and promise of order. From early patterns on pottery to geometric mosaics in Roman baths, people have long used grids to enhance their lives with decoration."* [*10 PRINT*, Mit Press, (2013)](http://10print.org/)
 
-First let's remember the [```fract()```](../glossary/index.html#fract.md) function, which is in essence the modulo of one ([```mod(x,1.0)```](../glossary/index.html#mod.md)) because it returns the fractional part of a number. In other words, [```fract()```](../glossary/index.html#fract.md) returns the number after the floating point. Our normalized coordinate system variable (```st```) already goes from 0.0 to 1.0 so it doesn't make sense to do something like:
+First let's remember the [```fract()```](../glossary/?search=fract) function, which is in essence the modulo of one ([```mod(x,1.0)```](../glossary/?search=mod)) because it returns the fractional part of a number. In other words, [```fract()```](../glossary/?search=fract) returns the number after the floating point. Our normalized coordinate system variable (```st```) already goes from 0.0 to 1.0 so it doesn't make sense to do something like:
 
 ```glsl
 void main(){
@@ -60,13 +60,13 @@ As a first step we need to know if the row of our thread is an even or odd numbe
 
 ____we have to fix these next two paragraphs together____
 
-For that we are going to use [```mod()```](../glossary/index.html#mod.md) of ```2.0``` and then see if the result is under ```1.0``` or not. Take a look to the folowing formula and uncomment the two last lines.
+For that we are going to use [```mod()```](../glossary/?search=mod) of ```2.0``` and then see if the result is under ```1.0``` or not. Take a look to the folowing formula and uncomment the two last lines.
 
 <div class="simpleFunction" data="y = mod(x,2.0);
 // y = mod(x,2.0) < 1.0 ? 0. : 1. ;
 // y = step(1.0,mod(x,2.0));"></div>
 
-As you can see we can use a [ternary operator](https://en.wikipedia.org/wiki/%3F:) to check if the [```mod()```](../glossary/index.html#mod.md) of ```2.0``` is under ```1.0``` (second line) or similarly we can use a [```step()```](../glossary/index.html#step.md) function which does that the same operation, but faster. Why? Althogh is hard to know how each graphic card optimize and compiles the code is safe to assume that built-ins functions are faster than non-built-in one. Everytime you can use one, use it!
+As you can see we can use a [ternary operator](https://en.wikipedia.org/wiki/%3F:) to check if the [```mod()```](../glossary/?search=mod) of ```2.0``` is under ```1.0``` (second line) or similarly we can use a [```step()```](../glossary/?search=step) function which does that the same operation, but faster. Why? Althogh is hard to know how each graphic card optimize and compiles the code is safe to assume that built-ins functions are faster than non-built-in one. Everytime you can use one, use it!
 
 So now we have our even number formula we can apply some offset to odd rows to give a *brick* effect to our tiles. Check lines 14 the following code, there we are using the function we just describe "detect odd" rows and give them an offset on ```x``` of half of unit. Note that by multipling by ```0.0``` even will make the offset similiar to ```0.0``` so we don't add any offset. But on odd rows we multipliy the result of our function (```1.0```) to the offset of ```0.5``` to the ```x``` axis of the coordinate system.
 

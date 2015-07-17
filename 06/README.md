@@ -54,7 +54,7 @@ You might not be used to picking colors with numbers - it can be very counterint
 
 ### Mixing color
 
-Now that you know how colors are defined, it's time to integrate this with our previous knowledge. In GLSL there is a very useful function, [```mix()```](../glossary/index.html#mix.md), that lets you mix two values in percentages. Can you guess what the percentage range is? Yes, values between 0.0 and 1.0! Which is perfect for you, after those long hours practicing your karate moves with the fence - it is time to use them!
+Now that you know how colors are defined, it's time to integrate this with our previous knowledge. In GLSL there is a very useful function, [```mix()```](../glossary/?search=mix), that lets you mix two values in percentages. Can you guess what the percentage range is? Yes, values between 0.0 and 1.0! Which is perfect for you, after those long hours practicing your karate moves with the fence - it is time to use them!
 
 ![](mix-f.jpg)
 
@@ -68,7 +68,7 @@ Show off your skills by:
 
 ### Playing with gradients 
 
-The [```mix()```](../glossary/index.html#mix.md) function has more to offer. Instead of a single ```float```, we can pass a variable type that matches the two first arguments, in our case a ```vec3```. By doing that we gain control over the mixing percentages of each individual color channel, ```r```, ```g``` and ```b```.
+The [```mix()```](../glossary/?search=mix) function has more to offer. Instead of a single ```float```, we can pass a variable type that matches the two first arguments, in our case a ```vec3```. By doing that we gain control over the mixing percentages of each individual color channel, ```r```, ```g``` and ```b```.
 
 ![](mix-vec.jpg)
 
@@ -102,13 +102,13 @@ By mapping the position on the x axis to the Hue and the position on the y axis 
 
 ### HSB in polar coordinates
 
-HSB was originally designed to be represented in polar coordinates (based on the angle and radius) instead of cartesian coordinates (based on x and y). To map our HSB function to polar coordinates we need to obtain the angle and distance from the center of the billboard to the pixel coordinate. For that we will use the [```length()```](../glossary/index.html#length.md) function and [```atan(y,x)```](../glossary/index.html#atan.md) (which is the GLSL version of the commonly used ```atan2(y,x)```).  
+HSB was originally designed to be represented in polar coordinates (based on the angle and radius) instead of cartesian coordinates (based on x and y). To map our HSB function to polar coordinates we need to obtain the angle and distance from the center of the billboard to the pixel coordinate. For that we will use the [```length()```](../glossary/?search=length) function and [```atan(y,x)```](../glossary/?search=atan) (which is the GLSL version of the commonly used ```atan2(y,x)```).  
 
 When using vector and trigonometric functions, ```vec2```, ```vec3``` and ```vec4``` are treated as vectors even when they represent colors. We will start treating colors and vectors similarly, in fact you will come to find this conceptual flexibility very empowering. 
 
-**Note:** If you were wondering, there are more geometric functions besides [```length```](../glossary/index.html#length.md) like: [```distance()```](../glossary/index.html#distance.md), [```dot()```](../glossary/index.html#dot.md), [```cross```](../glossary/index.html#cross.md), [```normalize()```](../glossary/index.html#normalize.md), [```faceforward()```](../glossary/index.html#fraceforward.md), [```reflect()```](../glossary/index.html#reflect.md) and [```refract()```](../glossary/index.html#refract.md). Also GLSL has special vector relational functions such as: [```lessThan()```](../glossary/index.html#lessThan.md), [```lessThanEqual()```](../glossary/index.html#lessThanEqual.md), [```greaterThan()```](../glossary/index.html#greaterThan.md), [```greaterThanEqual()```](../glossary/index.html#greaterThanEqual.md), [```equal()```](../glossary/index.html#equal.md) and [```notEqual()```](../glossary/index.html#notEqual.md).
+**Note:** If you were wondering, there are more geometric functions besides [```length```](../glossary/?search=length) like: [```distance()```](../glossary/?search=distance), [```dot()```](../glossary/?search=dot), [```cross```](../glossary/?search=cross), [```normalize()```](../glossary/?search=normalize), [```faceforward()```](../glossary/?search=fraceforward), [```reflect()```](../glossary/?search=reflect) and [```refract()```](../glossary/?search=refract). Also GLSL has special vector relational functions such as: [```lessThan()```](../glossary/?search=lessThan), [```lessThanEqual()```](../glossary/?search=lessThanEqual), [```greaterThan()```](../glossary/?search=greaterThan), [```greaterThanEqual()```](../glossary/?search=greaterThanEqual), [```equal()```](../glossary/?search=equal) and [```notEqual()```](../glossary/?search=notEqual).
 
-Once we obtain the angle and length we need to “normalize” their values to the range between 0.0 to 1.0. On line 27, [```atan(y,x)```](../glossary/index.html#atan.md) will return an angle in radians between -PI and PI (-3.14 to 3.14), so we need to divide this number by ```TWO_PI``` (defined at the top of the code) to get values between -0.5 to 0.5, which by simple addition we change to the desired range of 0.0 to 1.0. The radius will return a maximum of 0.5 (because we are calculating the distance from the center of the viewport) so we need to double this range (by multiplying by two) to get a maximum of 1.0.
+Once we obtain the angle and length we need to “normalize” their values to the range between 0.0 to 1.0. On line 27, [```atan(y,x)```](../glossary/?search=atan) will return an angle in radians between -PI and PI (-3.14 to 3.14), so we need to divide this number by ```TWO_PI``` (defined at the top of the code) to get values between -0.5 to 0.5, which by simple addition we change to the desired range of 0.0 to 1.0. The radius will return a maximum of 0.5 (because we are calculating the distance from the center of the viewport) so we need to double this range (by multiplying by two) to get a maximum of 1.0.
 
 As you can see, our game here is all about transforming and mapping ranges to the 0.0 to 1.0 that we like.
 

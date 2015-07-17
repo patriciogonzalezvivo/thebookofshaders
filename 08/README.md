@@ -24,7 +24,7 @@ To rotate objects we also need to move the entire space system. For that we are 
 
 [![Wikipedia entry for Matrix (mathematics) ](matrixes.png)](https://en.wikipedia.org/wiki/Matrix)
 
-GLSL has native support for two, three and four dimensional matrices: [```mat2```](../glossary/index.html#mat2.md) (2x2), [```mat3```](../glossary/index.html#mat3.md) (3x3) and [```mat4```](../glossary/index.html#mat4.md) (4x4). GLSL also supports matrix multiplication  (```*```) and a matrix specific function ([```matrixCompMult()```](../glossary/index.html#matrixCompMult.md)).
+GLSL has native support for two, three and four dimensional matrices: [```mat2```](../glossary/?search=mat2) (2x2), [```mat3```](../glossary/?search=mat3) (3x3) and [```mat4```](../glossary/?search=mat4) (4x4). GLSL also supports matrix multiplication  (```*```) and a matrix specific function ([```matrixCompMult()```](../glossary/?search=matrixCompMult)).
 
 Based on how matrices behave it's possible to construct matrices to produce specific behaviors. For example we can use a matrix to translate a vector:
 

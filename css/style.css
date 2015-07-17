@@ -142,7 +142,7 @@ code {
     border-radius: 4px;
 }
 
-.lang-bash { 
+.language-bash { 
     background-color: #ECECEC;
     display: block;
 
@@ -153,7 +153,7 @@ code {
     border-radius: 6px;
 }
 
-.lang-glsl { 
+.language-glsl { 
     background-color: #ECECEC;
 
     font-size: 14px;
@@ -163,7 +163,7 @@ code {
     border-radius: 6px;
 }
 
-.lang-cpp { 
+.language-cpp { 
     background-color: #ECECEC;
 
     font-size: 14px;
@@ -173,7 +173,7 @@ code {
     border-radius: 6px;
 }
 
-.lang-html { 
+.language-html { 
     background-color: #ECECEC;
 
     font-size: 14px;
@@ -183,7 +183,7 @@ code {
     border-radius: 6px;
 }
 
-.lang-processing {
+.language-processing {
     background-color: #ECECEC;
 
     font-size: 14px;
