@@ -1,6 +1,7 @@
 <?php 
 
 	$path = "..";
+	$subtitle = ": 2D Matrices";
 	include($path."/header.php");
 	include($path."/src/parsedown/Parsedown.php");
 

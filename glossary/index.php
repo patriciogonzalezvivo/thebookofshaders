@@ -1,6 +1,9 @@
 <?php 
 
 	$path = "..";
+	if(!empty($_GET)) 
+		$subtitle = ": ".$_GET['search'];
+
 	include($path."/header.php");
 	include($path."/src/parsedown/Parsedown.php");
 

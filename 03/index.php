@@ -1,6 +1,7 @@
 <?php 
 
 	$path = "..";
+	$subtitle = ": uniforms";
 	include($path."/header.php");
 	include($path."/src/parsedown/Parsedown.php");
 

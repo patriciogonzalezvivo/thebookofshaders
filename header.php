@@ -6,9 +6,15 @@ echo '
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>The Book of Shaders</title>
-		<meta name="keywords" content="shader,shaders,GLSL,book,pixel,fragment,uniform,texture,procedural,generative,matrix,random,noise" />
-		<meta name="description" content="This is a gentle step-by-step guide through the abstract and complex universe of Fragment Shaders." />
+		<title>The Book of Shaders'.$subtitle.'</title>
+		<meta name="keywords" content="shader,openGL,WebGL,GLSL,book,procedural,generative" />
+		<meta name="description" content="Gentle step-by-step guide through the abstract and complex universe of Fragment Shaders." />
+
+		<meta name="twitter:site" content="@bookofshaders">
+	    <meta name="twitter:title" content="The Book Of Shaders">
+	    <meta name="twitter:description" content="Gentle step-by-step guide through the abstract and complex universe of Fragment Shaders.">
+	    <meta name="twitter:creator" content="@patriciogv">
+	    <meta name="twitter:domain" content="thebookofshaders.edu">
 
 		<!-- CodeMirror -->
 		<link type="text/css" rel="stylesheet" href="'.$path.'/src/codemirror/css/codemirror.css">

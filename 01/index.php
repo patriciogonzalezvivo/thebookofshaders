@@ -1,6 +1,7 @@
 <?php 
 
 	$path = "..";
+	$subtitle = ": What is a shader?";
 	include($path."/header.php");
 	include($path."/src/parsedown/Parsedown.php");
 
