@@ -2,7 +2,7 @@
 
 Since shader programs are executed by pixel-by-pixel no matter how much you repeat a shape the number of calculations stays constant. This means that fragment shaders are particulary suitable for tile patterns. 
 
-![Nina Warmerdam - The IMPRINT Project (2013)](warmerdam.jpg)
+[ ![Nina Warmerdam - The IMPRINT Project (2013)](warmerdam.jpg) ](../edit.html#09/dots5.frag)
 
 In this chapter we are going to apply what we've learned so far and repeat it along a canvas. Like in previous chapters, our strategy will be based on multiplying the space coordinates (between 0.0 and 1.0), so that the shapes we draw between the values 0.0 and 1.0 will be repeated to make a grid. 
 
