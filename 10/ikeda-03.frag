@@ -17,30 +17,38 @@ float random (in vec2 st) {
     return fract(sin(dot(st.xy, vec2(12.9898,78.233)))* 43758.5453123);
 }
 
-float randomSerie(float x, float freq, float t) {
-    return step(.8,random( floor(x*freq)-floor(t) ));
+float pattern(vec2 st, vec2 v, float t) {
+    vec2 p = floor(st+v);
+    return step(t, random(100.+p*.000001)+random(p.x)*0.5 );
 }
 
 void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     st.x *= u_resolution.x/u_resolution.y;
+
+    st *= vec2(100.0,50.);
     
-    vec3 color = vec3(0.0);
+    vec2 ivec = floor(st);  // integer
+    vec2 fvec = fract(st);  // fraction
+    
+    vec2 vel = vec2(u_time*100.); // time
+    vel *= vec2(-1.,0.0) * random(ivec.y); // direction
 
-    float cols = 2.;
-    float freq = random(floor(u_time))+abs(atan(u_time)*0.1);
-    float t = 60.+u_time*(1.0-freq)*30.;
+    // vel *= (step(1., mod(ivec.y,2.0))-0.5)*2.; // Oposite directions
+    
+    // Move
+    ivec += floor(vel);
 
-    if (fract(st.x*cols* 0.5) < 0.5){
-        t *= -1.0;
-    }
+    // Assign a random value base on the integer coord
+    vec2 offset = vec2(0.25,0.);
 
-    freq += random(floor(st.x));
+    vec3 color = vec3(0.);
+    color.r = pattern(st+offset,vel,0.5+u_mouse.x/u_resolution.x);
+    color.g = pattern(st,vel,0.5+u_mouse.x/u_resolution.x);
+    color.b = pattern(st-offset,vel,0.5+u_mouse.x/u_resolution.x);
 
-    float offset = 0.025;
-    color = vec3(randomSerie(st.y, freq*100., t+offset),
-                 randomSerie(st.y, freq*100., t),
-                 randomSerie(st.y, freq*100., t-offset));
+    // Margins
+    color *= step(0.2,fvec.y);
 
-    gl_FragColor = vec4(color,1.0);
+    gl_FragColor = vec4(1.0-color,1.0);
 }
