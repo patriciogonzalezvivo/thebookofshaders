@@ -26,21 +26,18 @@ void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     st.x *= u_resolution.x/u_resolution.y;
 
-    st *= vec2(100.0,50.);
+    vec2 grid = vec2(100.0,50.);
+    st *= grid;
     
     vec2 ivec = floor(st);  // integer
     vec2 fvec = fract(st);  // fraction
     
-    vec2 vel = vec2(u_time*100.); // time
-    vel *= vec2(-1.,0.0) * random(ivec.y); // direction
-
+    vec2 vel = vec2(u_time*2.*max(grid.x,grid.y)); // time
+    vel *= vec2(-1.,0.0) * random(1.0+ivec.y); // direction
     // vel *= (step(1., mod(ivec.y,2.0))-0.5)*2.; // Oposite directions
-    
-    // Move
-    ivec += floor(vel);
 
     // Assign a random value base on the integer coord
-    vec2 offset = vec2(0.25,0.);
+    vec2 offset = vec2(0.1,0.);
 
     vec3 color = vec3(0.);
     color.r = pattern(st+offset,vel,0.5+u_mouse.x/u_resolution.x);
@@ -48,7 +45,7 @@ void main() {
     color.b = pattern(st-offset,vel,0.5+u_mouse.x/u_resolution.x);
 
     // Margins
-    color *= step(0.2,fvec.y);
+    // color *= step(0.2,fvec.y);
 
     gl_FragColor = vec4(1.0-color,1.0);
 }
