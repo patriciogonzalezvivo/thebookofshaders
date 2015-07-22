@@ -15,23 +15,26 @@ float random (in vec2 _st) { return fract(sin(dot(_st.xy, vec2(12.9898,78.233)))
 void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     st.x *= u_resolution.x/u_resolution.y;
-    vec3 color = vec3(0.0);
 
     st *= vec2(100.0,50.);
 
-    vec2 ivec = floor(st);  // integer
-    vec2 fvec = fract(st);  // fraction
+    vec2 ipos = floor(st);  // integer
+    vec2 fpos = fract(st);  // fraction
     
     vec2 vel = floor(vec2(u_time*10.)); // time
     vel *= vec2(-1.,0.); // direction
 
-    // vel *= (step(1., mod(ivec.y,2.0))-0.5)*2.; // Oposite directions
-    vel *= random(ivec.y); // random speed
+    vel *= (step(1., mod(ipos.y,2.0))-0.5)*2.; // Oposite directions
+    vel *= random(ipos.y); // random speed
     
     // Move
-    ivec += floor(vel);
+    ipos += floor(vel);
     // Assign a random value base on the integer coord
-    color = vec3(step(.8,random(ivec)));
 
-    gl_FragColor = vec4(color,1.0);
+    float pct = 1.0;
+    pct *= random(ipos);
+    pct *= step(.1,fpos.x)*step(.1,fpos.y); // margin
+    pct = step(0.001+u_mouse.x/u_resolution.x,pct); // threshold
+
+    gl_FragColor = vec4(vec3(pct),1.0);
 }

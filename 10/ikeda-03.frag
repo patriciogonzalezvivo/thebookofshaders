@@ -29,12 +29,11 @@ void main() {
     vec2 grid = vec2(100.0,50.);
     st *= grid;
     
-    vec2 ivec = floor(st);  // integer
-    vec2 fvec = fract(st);  // fraction
+    vec2 ipos = floor(st);  // integer
+    vec2 fpos = fract(st);  // fraction
     
     vec2 vel = vec2(u_time*2.*max(grid.x,grid.y)); // time
-    vel *= vec2(-1.,0.0) * random(1.0+ivec.y); // direction
-    // vel *= (step(1., mod(ivec.y,2.0))-0.5)*2.; // Oposite directions
+    vel *= vec2(-1.,0.0) * random(1.0+ipos.y); // direction
 
     // Assign a random value base on the integer coord
     vec2 offset = vec2(0.1,0.);
@@ -45,7 +44,7 @@ void main() {
     color.b = pattern(st-offset,vel,0.5+u_mouse.x/u_resolution.x);
 
     // Margins
-    // color *= step(0.2,fvec.y);
+    color *= step(0.2,fpos.y);
 
     gl_FragColor = vec4(1.0-color,1.0);
 }
