@@ -60,6 +60,14 @@ The following is a list of examples present in this book.
         - [Truchet](../edit.html#09/truchet.frag)
         - [Deco](../edit.html#09/deco.frag)
         - [I Ching](../edit.html#09/iching-01.frag)
+
+    * [Random](../10/)
+        - [1D Random](../edit.html#10/1d-random.frag)
+        - [2D Random](../edit.html#10/2d-random.frag)
+        - [Random Mosaic](../edit.html#10/2d-random-mosaic.frag)
+        - [Random Dots](../edit.html#10/2d-random-dots.frag)
+        - [Random Truchet](../edit.html#10/2d-random-truchet.frag)
+        - Ikeda's style: [test pattern](../edit.html#10/ikeda-00.frag), [data path](../edit.html#10/ikeda-03.frag) and [data defrag](../edit.html#10/ikeda-04.frag).
         
 ### Advance
 

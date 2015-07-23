@@ -27,7 +27,7 @@ This is a gentle step-by-step guide through the abstract and complex universe of
     * [Patterns](09/)
 
 * Generative designs
-    * Random
+    * [Random](10/)
     * Noise
     * Fractional brownian motion
     * Fractals
