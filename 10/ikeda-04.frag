@@ -46,10 +46,10 @@ void main() {
     color.b *= random(floor(st+vel-offset));
 
     color = smoothstep(0.,.5+u_mouse.x/u_resolution.x*.5,color*color); // smooth
-    // color = step(0.5+u_mouse.x/u_resolution.x*0.5,color); // threshold
+    color = step(0.5+u_mouse.x/u_resolution.x*0.5,color); // threshold
 
     //  Margin
     color *= step(.1,fract(st.x+vel.x))*step(.1,fract(st.y+vel.y));
 
-    gl_FragColor = vec4(color,1.0);
+    gl_FragColor = vec4(1.0-color,1.0);
 }

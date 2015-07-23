@@ -31,16 +31,16 @@ void main() {
     float freq = random(floor(u_time))+abs(atan(u_time)*0.1);
     float t = 60.+u_time*(1.0-freq)*30.;
 
-    if (fract(st.x*cols* 0.5) < 0.5){
+    if (fract(st.y*cols* 0.5) < 0.5){
         t *= -1.0;
     }
 
-    freq += random(floor(st.x));
+    freq += random(floor(st.y));
 
     float offset = 0.025;
-    color = vec3(randomSerie(st.y, freq*100., t+offset),
-                 randomSerie(st.y, freq*100., t),
-                 randomSerie(st.y, freq*100., t-offset));
+    color = vec3(randomSerie(st.x, freq*100., t+offset),
+                 randomSerie(st.x, freq*100., t),
+                 randomSerie(st.x, freq*100., t-offset));
 
-    gl_FragColor = vec4(color,1.0);
+    gl_FragColor = vec4(1.0-color,1.0);
 }

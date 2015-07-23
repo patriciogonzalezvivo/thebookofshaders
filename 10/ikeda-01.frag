@@ -10,13 +10,7 @@ uniform vec2 u_mouse;
 uniform float u_time;
 
 float random (in float x) { return fract(sin(x)*1e4); }
-
 float random (in vec2 st) { return fract(sin(dot(st.xy, vec2(12.9898,78.233)))* 43758.5453123); }
-
-float grid(vec2 st, float res){
-    vec2 grid = fract(st*res);
-    return 1.0-(step(0.005*res,grid.x) * step(0.005*res,grid.y));
-}
 
 void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
@@ -37,8 +31,6 @@ void main() {
         fpos = 1.0-fpos;
     }
     color += step(fpos.y*1.5,value);
-
-    color += vec3(0.5,0.,0.)*grid(st,2.)+vec3(0.2)*grid(st,10.0);
 
     gl_FragColor = vec4(color,1.0);
 }

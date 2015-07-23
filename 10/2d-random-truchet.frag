@@ -35,10 +35,10 @@ void main() {
     // st = (st-vec2(5.0))*(abs(sin(u_time*0.2))*5.);
     // st.x += u_time*3.0;
 
-    vec2 ivec = floor(st);  // integer
-    vec2 fvec = fract(st);  // fraction
+    vec2 ipos = floor(st);  // integer
+    vec2 fpos = fract(st);  // fraction
 
-    vec2 tile = truchetPattern(fvec, random( ivec ));
+    vec2 tile = truchetPattern(fpos, random( ipos ));
 
     float color = 0.0;
 
