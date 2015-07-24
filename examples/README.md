@@ -5,12 +5,16 @@ The following is a list of examples present in this book.
 ### Chapters examples
 
 * Getting started
+
     * [Hello World](../02/)
         - ["Hello World!"](../edit.html#02/hello_world.frag)
+
     * [Uniforms](../03/)
         - [u_time](../edit.html#03/time.frag)
         - [gl_FragCoord](../edit.html#03/space.frag)
+
 * Algorithmic drawing
+
     * [Shaping functions](../05/)
         - [Linear Interpolation](../edit.html#05/linear.frag)
         - [Exponential Interpolation](../edit.html#05/expo.frag)
@@ -32,12 +36,12 @@ The following is a list of examples present in this book.
     * [Shapes](../07/)
         - Rectangle: [making](../edit.html#07/rect-making.frag), [function](../edit.html#07/rect.frag) and [distance-field](../edit.html#07/rect-df.frag)
         - Circle: [making](../edit.html#07/circle-making.frag) and [function](../edit.html#07/circle.frag)
-        - [Batman (distance field)](../edit.html#07/batman.frag)
-        - [Line (distance field)](../edit.html#07/line.frag)
+        - [Batman](../edit.html#07/batman.frag)
+        - [Line](../edit.html#07/line.frag)
         - [Cross](../edit.html#07/cross.frag)
         - [Polar](../edit.html#07/polar.frag)
-        - [Polar (distance field)](../edit.html#07/shapes.frag)
-        - [Arrow (distance field)](../edit.html#07/arrow.frag)
+        - [Polar](../edit.html#07/shapes.frag)
+        - [Arrow](../edit.html#07/arrow.frag)
 
     * [Matrix](../08/)
         - [cross](../edit.html#08/cross.frag)
@@ -61,16 +65,25 @@ The following is a list of examples present in this book.
         - [Deco](../edit.html#09/deco.frag)
         - [I Ching](../edit.html#09/iching-01.frag)
 
+
+* Generative designs
+
     * [Random](../10/)
         - [1D Random](../edit.html#10/1d-random.frag)
         - [2D Random](../edit.html#10/2d-random.frag)
         - [Random Mosaic](../edit.html#10/2d-random-mosaic.frag)
         - [Random Dots](../edit.html#10/2d-random-dots.frag)
         - [Random Truchet](../edit.html#10/2d-random-truchet.frag)
-        - Ikeda's style: [test pattern](../edit.html#10/ikeda-00.frag), [data path](../edit.html#10/ikeda-03.frag) and [data defrag](../edit.html#10/ikeda-04.frag).
+        - Ikeda's style: [test pattern](../edit.html#10/ikeda-00.frag), [wave](../edit.html#10/ikeda-01.frag),[test pattern](../edit.html#10/ikeda-02.frag), [data path](../edit.html#10/ikeda-03.frag) and [data defrag](../edit.html#10/ikeda-04.frag).
+        - [Matrix](../edit.html#10/matrix.frag)
+        - [Digits](../edit.html#10/ikeda-digits.frag)
+        - [Random Grid](../edit.html#10/ikeda-simple-grid.frag)
+        - [Random Numbered Grid](../edit.html#10/ikeda-numered-grid.frag)
+        - [Random I Ching](../edit.html#10/iching-02.frag)
         
 ### Advance
 
 * [Moon](../edit.html#examples/moon.frag&examples/images/moon-texture.jpg)
 * [Matrix](../edit.html#08/matrix.frag)
 * [I Ching](../edit.html#09/iching.frag)
+* Ikeda's series: [test pattern](../edit.html#10/ikeda-00.frag), [data path](../edit.html#10/ikeda-03.frag) and [data defrag](../edit.html#10/ikeda-04.frag), [digits](../edit.html#10/ikeda-digits.frag), [radar](../edit.html#10/ikeda-simple-grid.frag), [numered grid](../edit.html#10/ikeda-numered-grid.frag)
