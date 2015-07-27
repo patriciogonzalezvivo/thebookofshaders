@@ -65,6 +65,9 @@
 		<canvas id="canvas" class="center" width="800" height="320"></canvas>
 		<div id="editor"></div>
 		<script type="text/javascript">
+
+		var billboard;
+		var editor;
         //  Graph plotter function take from 
         //  From http://blog.hvidtfeldts.net/index.php/2011/07/plotting-high-frequency-functions-using-a-gpu/
         var preFunction = "\n\
@@ -139,6 +142,25 @@ void main(){\n\
     gl_FragColor = vec4(color,1.0);\n\
 }";
 
+		// Events
+		window.requestAnimFrame = (function() {
+			return	window.requestAnimationFrame ||
+			    	window.webkitRequestAnimationFrame ||
+			    	window.mozRequestAnimationFrame ||
+			    	window.oRequestAnimationFrame ||
+			    	window.msRequestAnimationFrame ||
+			    	function(/* function FrameRequestCallback */ callback, /* DOMElement Element */ element) {
+			        	return window.setTimeout(callback, 1000/60);
+			     };
+		})();
+
+		// Keep track of the mouse
+		var mouse = {x: 0, y: 0};
+		document.addEventListener('mousemove', function(e){ 
+		    mouse.x = e.clientX || e.pageX; 
+		    mouse.y = e.clientY || e.pageY 
+		}, false);
+
 		window.addEventListener("hashchange", function () {
 			loadFunction()
 		}, false);
@@ -178,12 +200,12 @@ float function(in float x) {\n\
 			var demoCanvas = document.getElementById("canvas");
 			if(demoCanvas){
 				demoCanvas.setAttribute("data-fragment", preFunction + func + postFunction);
-				loadShaders();
+				billboard = new GlslCanvas(demoCanvas);
 			}
 
 			var demoEditor = document.getElementById("editor");
-			if(demoEditor){
-				var editor = CodeMirror(demoEditor,{
+			if (demoEditor) {
+				editor = CodeMirror(demoEditor,{
 					value: func,
 					lineNumbers: false,
 					matchBrackets: true,
@@ -197,14 +219,20 @@ float function(in float x) {\n\
 
 				editor.on("change", function() {
 					demoCanvas.setAttribute("data-fragment", preFunction + editor.getValue() + postFunction);
-					loadShaders();
+					billboard.load(editor.getValue());
 				});
 			}
 		}
 
+		function render() {
+			billboard.setMouse(mouse)
+			billboard.render()
+			window.requestAnimFrame(render);
+		}
+
 		window.onload = function () { 
 			loadFunction();
-			renderShaders(); 
+			render();
 		};
 		</script>
 	</body>
