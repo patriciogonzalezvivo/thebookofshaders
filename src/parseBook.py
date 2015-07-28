@@ -11,7 +11,6 @@ outputPath = "."
 if not os.path.exists(outputPath): os.makedirs(outputPath)
 pdfBookPath = os.path.join(outputPath, "book.pdf")
 texBookPath = os.path.join(outputPath, "book.tex")
-texTemplatePath = os.path.join(outputPath, "mytemplate.latex")
 
 chapters = []
 
@@ -44,9 +43,6 @@ def injectShaderBlocks( _folder, _text ):
             rta += line+'\n'
     return rta
 
-# TODO: Properly typeset the codeblocks so they don't spill over the margins.
-
-
 d='.'
 folders = [os.path.join(d,o) for o in os.listdir(d) if os.path.isdir(os.path.join(d,o))];
 folders.sort()
@@ -69,7 +65,6 @@ for folder in folders:
 # # Set up the appropriate options for the pandoc command
 inputOptions = chapters
 generalOptions = ["-N", "--smart", "--no-tex-ligatures", "--toc", "--standalone", "--preserve-tabs", "-V documentclass=scrbook", "-V papersize=a4", "-V links-as-note", "-S"] #
-#latexOptions = ["--template="+texTemplatePath, "--latex-engine="+latexEngine]
 latexOptions = ["--latex-engine="+latexEngine]
 outputOptions = ["--output={0}".format(pdfBookPath)]
 pandocCommand = ["pandoc"] + outputOptions + inputOptions + generalOptions + latexOptions
