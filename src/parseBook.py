@@ -39,14 +39,12 @@ def injectShaderBlocks( _folder, _text ):
                             " -s 0.5 -o " + shaderImage
             print shaderCommand
             returnCode = subprocess.call(shaderCommand, shell=True)
-            rta += "!["+shaderPath+"]("+shaderImage+")\n"
+            rta += "![]("+shaderImage+")\n"
         else:
             rta += line+'\n'
     return rta
 
-# TODO: Remove file names from captions for generated images.
-#       Fix insertShaderBlocks to properly parse image file names for textures.
-#       Properly typeset the codeblocks so they don't spill over the margins.
+# TODO: Properly typeset the codeblocks so they don't spill over the margins.
 
 
 d='.'
