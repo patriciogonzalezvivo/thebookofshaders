@@ -20,7 +20,7 @@ def injectShaderBlocks( _folder, _text ):
     lines = _text.split('\n');
     for line in lines:
         if line.find('<div class=\"codeAndCanvas\"') >= 0:
-            shaderFile = re.sub(r'<div class=\"codeAndCanvas\" data=\"(.*?)\"(></div>| .+></div>)', r'\1', line.rstrip())
+            shaderFile = re.sub(r'<div class=\"codeAndCanvas\" data=\"(.*?)\"(>| .+>)</div>', r'\1', line.rstrip())
             shaderName,shaderExt = os.path.splitext(shaderFile)
             shaderPath = folder+"/"+shaderFile;
 
@@ -38,6 +38,7 @@ def injectShaderBlocks( _folder, _text ):
 # TODO: Properly resizing images that are too big.
 #       Remove file names from captions for generated images.
 #       Fix insertShaderBlocks to properly parse image file names for textures.
+#       Properly typeset the codeblocks so they don't spill over the margins.
 
 
 d='.'
