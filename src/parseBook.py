@@ -20,14 +20,23 @@ def injectShaderBlocks( _folder, _text ):
     lines = _text.split('\n');
     for line in lines:
         if line.find('<div class=\"codeAndCanvas\"') >= 0:
+            shaderTextureResults = re.findall(r'<div class=\"codeAndCanvas\" data=\".*\" data-imgs=\"(.*)\"></div>', line.rstrip())
             shaderFile = re.sub(r'<div class=\"codeAndCanvas\" data=\"(.*?)\"(>| .+>)</div>', r'\1', line.rstrip())
+
             shaderName,shaderExt = os.path.splitext(shaderFile)
+
             shaderPath = folder+"/"+shaderFile;
+            if shaderTextureResults:
+                shaderTexturePaths = map (lambda f: folder+"/"+f, shaderTextureResults[0].split(","))
+            else:
+                shaderTexturePaths = []
 
             shaderString = open(shaderPath, 'r').read()
             rta += '```glsl\n'+shaderString.rstrip('\n')+'\n```\n'
             shaderImage = folder+"/tmp-"+shaderName+".png"
-            shaderCommand = "glslViewer " + shaderPath + " -s 0.5 -o " + shaderImage
+            shaderCommand = "glslViewer " + shaderPath + " " + \
+                            " ".join(shaderTexturePaths) + \
+                            " -s 0.5 -o " + shaderImage
             print shaderCommand
             returnCode = subprocess.call(shaderCommand, shell=True)
             rta += "!["+shaderPath+"]("+shaderImage+")\n"
@@ -35,8 +44,7 @@ def injectShaderBlocks( _folder, _text ):
             rta += line+'\n'
     return rta
 
-# TODO: Properly resizing images that are too big.
-#       Remove file names from captions for generated images.
+# TODO: Remove file names from captions for generated images.
 #       Fix insertShaderBlocks to properly parse image file names for textures.
 #       Properly typeset the codeblocks so they don't spill over the margins.
 
