@@ -1,10 +1,11 @@
 # Introduction
 # はじめに
 
-## 翻訳にあたって
+## 日本語訳について
 
 この文書はPatricio Gonzalez Vivoの The Book of Shader の日本語訳です。
 技術的な内容はできる限り正確に伝えるように心がけますが、その他の部分では読みやすさを優先してラフに訳し、一部ではざっくり表現を変えたり簡略化することもあると思います。まだ全部は訳していないし本編もまだ執筆中なので予想です。英語が得意な方はぜひ原文もどうぞ。
+フィードバックには[githubのレポジトリ](https://github.com/patriciogonzalezvivo/thebookofshaders)をご利用ください。
 
 <canvas id="custom" class="canvas" data-fragment-url="cmyk-halftone.frag" data-textures="vangogh.jpg" width="700px" height="320px"></canvas>
 
