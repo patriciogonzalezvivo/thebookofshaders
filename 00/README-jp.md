@@ -1,7 +1,7 @@
 # イントロダクション
 
 この文書はPatricio Gonzalez Vivoの The Book of Shader の日本語訳です。
-技術的な内容はできる限り正確に伝えるように心がけますが、その他の部分ではざっくり簡略化したり言葉を補ったり、表現を変えることもあると思います。結構カタカナだらけで読みにくいので、英語が得意な方は原文の方がわかりやすいかもしれません。ぜひ両方読んでみてください。
+技術的な内容はできる限り正確に伝えるように心がけますが、その他の部分ではざっくり簡略化したり言葉を補ったり、表現を変えることもあると思います。どうしてもカタカナだらけで読みにくいので、英語が得意な方は原文の方がわかりやすいかもしれません。ぜひ両方読んでみてください。
 フィードバックには[githubのレポジトリ](https://github.com/patriciogonzalezvivo/thebookofshaders)をご利用ください。
 
 <canvas id="custom" class="canvas" data-fragment-url="cmyk-halftone.frag" data-textures="vangogh.jpg" width="700px" height="320px"></canvas>
@@ -21,7 +21,7 @@
 
 ## 想定される読者
 
-この本は基本的な線形代数と三角関数の知識とプログラム経験があり、ひとつ上の刺激的なグラフィックを目指すクリエイティブコーダー、ゲームディベロッパーなどの開発者に向けて書かれています。もしコーディングについて学びたい場合は[Processing](https://processing.org/)を勉強することから始めて戻ってくることをお勧めします。
+この本はプログラム経験と基本的な線形代数や三角関数の知識があり、ひとレベル上の刺激的なグラフィックを目指すクリエイティブコーダー、ゲームディベロッパーなどの開発者に向けて書かれています。もしコーディングについて学びたい場合は[Processing](https://processing.org/)を勉強することから始めて戻ってくることをお勧めします。
 
 この本ではフラグメントシェーダーをプロジェクトに組み込む方法、パフォーマンスやグラフィックのクオリティを改善する方法について学ぶことができます。GLSL (OpenGL Shading Language, OpenGLシェーダー言語)は様々なプラットフォーム上でコンパイルして走らせることができるので、ここで学習したことはOpenGL、OpenGL ESまたはWebGLを使うことのできるどんな環境でも生かすことができます。
 
@@ -29,20 +29,20 @@
 
 ## この本で取り上げること
 
-この本では主にGLSLピクセルシェーダーについて説明します。シェーダーとは何かの定義から始まり、プログラムを用いて形や模様、質感や動きを作る方法について学びます。シェーダー言語の基礎とともに、畳み込み、ぼかし、カラーフィルター、ルックアップテーブルなどの画像処理技術、コンウェイのライフゲーム、グレイ=スコットの反応拡散系、水の波紋、水彩、ボロノイ図のようなシミュレーションなどより役に立つシナリオに応用する方法についても説明します。本の終わりの方ではレイマーチングに基づく高度なテクニックにも触れます。
+この本では主にGLSLのフラグメントシェーダーについて説明します。シェーダーとは何かの定義から始まり、プログラムを用いて形や模様、質感や動きを作る方法について学びます。シェーダー言語の基礎とともに、畳み込み、ぼかし、カラーフィルター、ルックアップテーブルなどの画像処理技術、コンウェイのライフゲーム、グレイ=スコットの反応拡散系、水の波紋、水彩、ボロノイ図のようなシミュレーションなどより役に立つシナリオに応用する方法についても説明します。本の終わりの方ではレイマーチングに基づく高度なテクニックにも触れます。
 
 どの章にも実際に動かして試すことのできるサンプルがついています。サンプルのコードを書き換えれば結果を即座に見ることもできます。抽象的でわかりにくいコンセプトも、実際に試してみることでより学習が楽になるでしょう。
 
 この本で取り上げないこと
 
 * この本はOpenGLやWebGLの本ではありません。OpenGL、WebGLはGLSLやフラグメントシェーダーよりもより広いトピックです。もしOpenGL、WebGLについてもっと学びたい場合は下記のページや本をお勧めします。
-[OpenGL Introduction](https://open.gl/introduction)
-[the 8th edition of the OpenGL Programming Guide](http://www.amazon.com/OpenGL-Programming-Guide-Official-Learning/dp/0321773039/ref=sr_1_1?s=books&ie=UTF8&qid=1424007417&sr=1-1&keywords=open+gl+programming+guide) (赤本)
-[WebGL: Up and Running](http://www.amazon.com/WebGL-Up-Running-Tony-Parisi/dp/144932357X/ref=sr_1_4?s=books&ie=UTF8&qid=1425147254&sr=1-4&keywords=webgl)
+  - [OpenGL Introduction](https://open.gl/introduction)
+  - [the 8th edition of the OpenGL Programming Guide](http://www.amazon.com/OpenGL-Programming-Guide-Official-Learning/dp/0321773039/ref=sr_1_1?s=books&ie=UTF8&qid=1424007417&sr=1-1&keywords=open+gl+programming+guide) (赤本)
+  - [WebGL: Up and Running](http://www.amazon.com/WebGL-Up-Running-Tony-Parisi/dp/144932357X/ref=sr_1_4?s=books&ie=UTF8&qid=1425147254&sr=1-4&keywords=webgl)
 
 * この本は数学の本ではありません。代数や三角関数が必要なアルゴリズムやテクニックもとりあげますが、数学についての詳しい説明は省略します。数学的な概念について知りたい場合は下記の本を手元に置いておくと良いでしょう。
-[3rd Edition of Mathematics for 3D Game Programming and computer Graphics](http://www.amazon.com/Mathematics-Programming-Computer-Graphics-Third/dp/1435458869/ref=sr_1_1?ie=UTF8&qid=1424007839&sr=8-1&keywords=mathematics+for+games)
-[2nd Edition of Essential Mathematics for Games and Interactive Applications](http://www.amazon.com/Essential-Mathematics-Games-Interactive-Applications/dp/0123742978/ref=sr_1_1?ie=UTF8&qid=1424007889&sr=8-1&keywords=essentials+mathematics+for+developers).
+  - [3rd Edition of Mathematics for 3D Game Programming and computer Graphics](http://www.amazon.com/Mathematics-Programming-Computer-Graphics-Third/dp/1435458869/ref=sr_1_1?ie=UTF8&qid=1424007839&sr=8-1&keywords=mathematics+for+games)
+  - [2nd Edition of Essential Mathematics for Games and Interactive Applications](http://www.amazon.com/Essential-Mathematics-Games-Interactive-Applications/dp/0123742978/ref=sr_1_1?ie=UTF8&qid=1424007889&sr=8-1&keywords=essentials+mathematics+for+developers).
 
 ## 必要なもの
 
