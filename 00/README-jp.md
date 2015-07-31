@@ -1,8 +1,8 @@
 # イントロダクション
 
 この文書はPatricio Gonzalez Vivoの The Book of Shader の日本語訳です。
-技術的な内容はできる限り正確に伝えるように心がけますが、その他の部分ではざっくり簡略化したり言葉を補ったり、表現を変えることもあると思います。どうしてもカタカナだらけで読みにくいので、英語が得意な方は原文の方がわかりやすいかもしれません。ぜひ両方読んでみてください。
-フィードバックには[githubのレポジトリ](https://github.com/patriciogonzalezvivo/thebookofshaders)をご利用ください。
+技術的な内容はできる限り正確に伝えるように心がけますが、その他の部分ではざっくり簡略化したり言葉を補ったり、表現を変えることもあると思います。英語が得意な方はぜひ原文読んでみてください。
+フィードバックには[githubのレポジトリ](https://github.com/patriciogonzalezvivo/thebookofshaders)をご利用ください。
 
 <canvas id="custom" class="canvas" data-fragment-url="cmyk-halftone.frag" data-textures="vangogh.jpg" width="700px" height="320px"></canvas>
 
