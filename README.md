@@ -78,6 +78,8 @@ Thanks to my wife [Jen Lowe](http://www.datatelling.com/), for her unconditional
 
 Thanks [Scott Murray](http://alignedleft.com/) for the inspiration and advice.
 
+Thanks [Kynd.info](https://twitter.com/kyndinfo) for the [Japanese translation](00/?lan=jp)
+
 Thanks [Karim Naaji](http://karim.naaji.fr/) for contributing with support, good ideas and code.
 
 Thanks to everyone who has believed in this project and contributed with fixes or donations.
