@@ -11,8 +11,11 @@
 	<div id="content">
 	';
 
+	$README = "README";
+	if(!empty($_GET['lan'])) 
+		$README .= '-'.$_GET['lan'];
 	$Parsedown = new Parsedown();
-	echo $Parsedown->text(file_get_contents ('README.md'));
+	echo $Parsedown->text(file_get_contents($README.'.md'));
 
 	echo '
 	</div>

@@ -1,3 +1,7 @@
+
+// PARSING
+//---------------------------------------------------------------
+
 //  Graph plotter function take from 
 //  From http://blog.hvidtfeldts.net/index.php/2011/07/plotting-high-frequency-functions-using-a-gpu/
 var preFunction = "\n\
@@ -105,7 +109,7 @@ void main(){\n\
 /*
  *	Fetch for files
  */
-function fetchHTTP(url, methood){
+function fetchHTTP(url, methood) {
 	var request = new XMLHttpRequest(), response;
 
 	request.onreadystatechange = function () {
@@ -131,7 +135,7 @@ function randomString(length, chars) {
 }
 
 var billboards = {}; 
-function loadMarkdown(){
+function loadMarkdown() {
 
     // parse CODE & CANVAS boxes
 	var ccList = document.querySelectorAll(".codeAndCanvas");
@@ -322,6 +326,9 @@ function captionizeImages() {
     }
 }
 
+// NAVIGATION
+//-----------------------------------------------------------------------
+
 function FormatNumberLength(num, length) {
     var r = "" + num;
     while (r.length < length) {
@@ -346,8 +353,16 @@ function checkUrl(url) {
     return false;
 }
 
-function previusPage(){
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function previusPage() {
 	var path = window.location.pathname;
+
 	var n = parseInt( path.match( /[0-1].(?!.*[0-1])/ )[0] );
     var url;
 	n -= 1;
@@ -356,19 +371,36 @@ function previusPage(){
     } else {
         url = "../" + FormatNumberLength(n,2) + "/";
     }
+
+    var language = getParameterByName('lan');
+    if (language !== ""){
+        url += "?lan="+language;
+    }
+
 	window.location.href =  url;
 }
 
-function homePage(){
+function homePage() {
 	window.location.href = "../";
 }
 
-function nextPage(){
+function nextPage() {
 	var path = window.location.pathname;
+
 	var n = parseInt( path.match( /[0-1].(?!.*[0-1])/ )[0] );
 	n += 1;
 	var url = "../" + FormatNumberLength(n,2) + "/";
+
+    var language = getParameterByName('lan');
+    if (language !== ""){
+        url += "?lan="+language;
+    }
+
 	window.location.href =  url;
+}
+
+function translate() {
+
 }
 
 // Keep track of the mouse
