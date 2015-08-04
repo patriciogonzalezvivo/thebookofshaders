@@ -1,7 +1,8 @@
 # イントロダクション
 
 この文書はPatricio Gonzalez Vivoの The Book of Shader の日本語訳です。
-技術的な内容はできる限り正確に伝えるように心がけていますが、その他の部分ではざっくり簡略化したり言葉を補ったり、表現を変えている部分もあります。英語が得意な方はぜひ原文も読んでみてください。翻訳って難しいですね。
+技術的な内容はできる限り正確に伝えるように心がけていますが、その他の部分ではざっくり簡略化したり言葉を補ったり、表現を変えている部分もあります。英語が得意な方はぜひ原文も読んでみてください。
+
 フィードバックには[githubのレポジトリ](https://github.com/patriciogonzalezvivo/thebookofshaders)をご利用ください。
 
 <canvas id="custom" class="canvas" data-fragment-url="cmyk-halftone.frag" data-textures="vangogh.jpg" width="700px" height="320px"></canvas>
@@ -35,7 +36,7 @@
 
 この本で取り上げないこと
 
-* この本はOpenGLやWebGLの本ではありません。OpenGL、WebGLはGLSLやフラグメントシェーダーを含むより広範なトピックです。もしOpenGL、WebGLについてもっと学びたい場合は下記のページや本をお勧めします。
+* この本はOpenGLやWebGLの本ではありません。OpenGL、WebGLはGLSLやフラグメントシェーダーを含むより広範なトピックです。もしOpenGL、WebGLについてもっと学びたい場合は下記のWebページや本をお勧めします。
   - [OpenGL Introduction](https://open.gl/introduction)
   - [the 8th edition of the OpenGL Programming Guide](http://www.amazon.com/OpenGL-Programming-Guide-Official-Learning/dp/0321773039/ref=sr_1_1?s=books&ie=UTF8&qid=1424007417&sr=1-1&keywords=open+gl+programming+guide) (赤本)
   - [WebGL: Up and Running](http://www.amazon.com/WebGL-Up-Running-Tony-Parisi/dp/144932357X/ref=sr_1_4?s=books&ie=UTF8&qid=1425147254&sr=1-4&keywords=webgl)

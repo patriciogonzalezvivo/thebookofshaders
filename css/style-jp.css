@@ -1,0 +1,46 @@
+
+body {
+    font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+    line-height: 1.8;
+}
+
+h1 {
+    font-size: 46px;
+    font-style: normal;
+    line-height: 1.5;
+}
+
+h2 {
+    font-size: 34px;
+    font-style: normal;
+    line-height: 1.5;
+}
+
+h3 {
+    font-size: 28px;
+    line-height: 1.5;
+}
+
+h4 {
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+}
+
+h3 {
+    margin-bottom: 5px;
+}
+
+li ul {
+    line-height: 1.5;
+    list-style-type: none;
+    margin-top:18px;
+    margin-bottom:24px;
+}
+
+li ul li {
+    margin-bottom:18px;
+}

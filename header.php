@@ -18,7 +18,7 @@ echo '
 
 		<!-- CodeMirror -->
 		<link type="text/css" rel="stylesheet" href="'.$path.'/src/codemirror/css/codemirror.css">
-		<link type="text/css" rel="stylesheet" href="'.$path.'/src/codemirror/addon/fold/foldgutter.css">	
+		<link type="text/css" rel="stylesheet" href="'.$path.'/src/codemirror/addon/fold/foldgutter.css">
 		<link type="text/css" rel="stylesheet" href="'.$path.'/src/codemirror/addon/dialog/dialog.css">
 		<link type="text/css" rel="stylesheet" href="'.$path.'/src/codemirror/addon/hint/show-hint.css">
 		<link type="text/css" rel="stylesheet" href="'.$path.'/src/codemirror/theme/neo.css">
@@ -42,6 +42,7 @@ echo '
 
 		<!-- My stuff -->
 		<link type="text/css" rel="stylesheet" href="'.$path.'/css/style.css">
+		<!--<link type="text/css" rel="stylesheet" href="'.$path.'/css/style-jp.css">-->
 		<script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/build/GlslCanvas.min.js"></script>
 		</style>
 	</head>
