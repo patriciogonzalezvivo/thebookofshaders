@@ -42,7 +42,9 @@
                 margin-left: auto;
                 margin-right: auto;
                 border-radius: 6px;
-                max-width: 800px;
+                max-width: 1200px;
+                width: 80%;
+                height: 50%;
 
                 overflow: hidden;
                 -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
@@ -164,6 +166,11 @@ void main(){\n\
 		window.addEventListener("hashchange", function () {
 			loadFunction()
 		}, false);
+
+		// window.onresize = function(event) {
+		// 	 if (typeof window.innerWidth != 'undefined') {
+  //     			billboard. = window.innerWidth
+		// };
 
 		function removeElementsByClass(className){
 		    var elements = document.getElementsByClassName(className);
