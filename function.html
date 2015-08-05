@@ -217,9 +217,9 @@ float function(in float x) {\n\
 					indentUnit: 4
 				});
 
-				editor.on("change", function() {
-					demoCanvas.setAttribute("data-fragment", preFunction + editor.getValue() + postFunction);
-					billboard.load(editor.getValue());
+				editor.on("change", function(cm) {
+					demoCanvas.setAttribute("data-fragment", preFunction + cm.getValue() + postFunction);
+					billboard.load(preFunction + cm.getValue() + postFunction);
 				});
 			}
 		}
