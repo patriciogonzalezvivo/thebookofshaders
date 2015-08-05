@@ -2,21 +2,21 @@
 
 	$path = "..";
 	$subtitle = ": about this book";
-	include($path."/header.php");
-	include($path."/src/parsedown/Parsedown.php");
-
-	echo '
-	<div class="header">
-		<p><a href="http://patriciogonzalezvivo.com/2015/thebookofshaders/">The Book of Shaders</a> by <a href="http://patriciogonzalezvivo.com">Patricio Gonzalez Vivo</a> </p>
-		<p>Translations: <a href=".">English</a> - <a href="?lan=jp">Japanese</a></p>
-	</div>
-	<hr>
-	<div id="content">
-	';
-
 	$README = "README";
-	if(!empty($_GET['lan'])) 
-		$README .= '-'.$_GET['lan'];
+	$language = "";
+
+	if ( !empty($_GET['lan']) ) {
+		if (file_exists($README.'-'.$_GET['lan'].'.md')) {
+			$language = '-'.$_GET['lan'];
+			$README .= $language;
+		}
+	}
+
+	include($path."/header.php");
+	include($path."/chap-header.php");
+	echo '<div id="content">';
+
+	include($path."/src/parsedown/Parsedown.php");
 	$Parsedown = new Parsedown();
 	echo $Parsedown->text(file_get_contents($README.'.md'));
 

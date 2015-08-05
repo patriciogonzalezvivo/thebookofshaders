@@ -1,17 +1,24 @@
 <?php 
 
 	$path = "..";
+	$subtitle = ": Fractals";
+	$README = "README";
+	$language = "";
+
+	if ( !empty($_GET['lan']) ) {
+		if (file_exists($README.'-'.$_GET['lan'].'.md')) {
+			$language = '-'.$_GET['lan'];
+			$README .= $language;
+		}
+	}
+
 	include($path."/header.php");
+	include($path."/chap-header.php");
+	echo '<div id="content">';
+
 	include($path."/src/parsedown/Parsedown.php");
-
-	echo '
-	<div class="header"><p><a href="http://patriciogonzalezvivo.com/2015/thebookofshaders/">The Book of Shaders</a> by <a href="http://patriciogonzalezvivo.com">Patricio Gonzalez Vivo</a></p></div>
-	<hr>
-	<div id="content">
-	';
-
 	$Parsedown = new Parsedown();
-	echo $Parsedown->text(file_get_contents ('README.md'));
+	echo $Parsedown->text(file_get_contents($README.'.md'));
 
 	echo '
 	</div>

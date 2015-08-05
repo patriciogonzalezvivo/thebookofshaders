@@ -5,19 +5,22 @@
 
 This is a gentle step-by-step guide through the abstract and complex universe of Fragment Shaders.
 
+## Translation notes
+
+
 <div class="header">
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B5FSVSHGEATCG" style="float: right;"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" alt=""></a>
 </div>
 
 ## Contents
 
-* [About this book](00/)
+* [About this book](00/?lan=jp)
 
 * Getting started
-    * [What is a shader?](01/)
-    * [“Hello world!”](02/)
-    * [Uniforms](03/)
-	* [Running your shader](04/)
+    * [What is a shader?](01/?lan=jp)
+    * [“Hello world!”](02/?lan=jp)
+    * [Uniforms](03/?lan=jp)
+    * [Running your shader](04/?lan=jp)
 
 * Algorithmic drawing
     * [Shaping functions](05/)
@@ -56,9 +59,9 @@ This is a gentle step-by-step guide through the abstract and complex universe of
     * Reflect and refract
 
 * [Appendix:](appendix/) Other ways to use this book
-	* [How can I navigate this book offline?](appendix/)
-	* [How to run the examples on a RaspberryPi?](appendix/)
-	* [How to print this book?](appendix/)
+    * [How can I navigate this book offline?](appendix/)
+    * [How to run the examples on a RaspberryPi?](appendix/)
+    * [How to print this book?](appendix/)
 
 * [Examples Gallery](examples/)
 
@@ -71,6 +74,10 @@ This is a gentle step-by-step guide through the abstract and complex universe of
 Patricio studied and practiced psychotherapy and expressive art therapy. He holds an MFA in Design & Technology from Parsons The New School, where he now teaches. Currently he works as a Graphic Engineer at Mapzen making openSource mapping tools.
 
 <div class="header"><a href="https://twitter.com/patriciogv" target="_blank">Twitter</a> - <a href="https://github.com/patriciogonzalezvivo" target="_blank">GitHub</a> - <a href="https://vimeo.com/patriciogv" target="_blank">Vimeo</a> - <a href="https://www.flickr.com/photos/106950246@N06/" target="_blank"> Flickr</a></div>
+
+## About the Translator
+
+[Kenichi Yoneda (Kynd)](https://twitter.com/kyndinfo) ...
 
 ## Acknowledgements
 

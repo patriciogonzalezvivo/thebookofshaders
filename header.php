@@ -42,10 +42,21 @@ echo '
 
 		<!-- My stuff -->
 		<link type="text/css" rel="stylesheet" href="'.$path.'/css/style.css">
-		<!--<link type="text/css" rel="stylesheet" href="'.$path.'/css/style-jp.css">-->
 		<script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/build/GlslCanvas.min.js"></script>
-		</style>
+
+		<!-- Translation -->
+		';
+		
+if ( $language !== '' && file_exists($path.'/css/style'.$language.'.css') ) {
+	echo '<link type="text/css" rel="stylesheet" href="'.$path.'/css/style'.$language.'.css">';
+}
+
+echo '
 	</head>
 	<body>
 	';
 ?>
+
+
+
+
