@@ -51,7 +51,7 @@ The following is a list of examples present in this book.
         
     * [Patterns](../09/)
         - Grid: [making](../edit.html#09/grid-making.frag), [final](../edit.html#09/grid.frag), [grid of +](../edit.html#09/cross.frag) and [fine grid](../edit.html#09/fine-grid.frag)
-        - [Lines](../edit.html#09/lines.frag)
+        - [Lines](../edit.html#09/lines.frag), [zigzag/wave lines](../edit.html#09/zigzag-lines.frag)
         - [Checks](../edit.html#09/checks.frag)
         - [Diamond tiles](../edit.html#09/diamondtiles.frag)
         - [Bricks](../edit.html#09/bricks.frag)
