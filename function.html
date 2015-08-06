@@ -42,7 +42,9 @@
                 margin-left: auto;
                 margin-right: auto;
                 border-radius: 6px;
-                max-width: 800px;
+                max-width: 1200px;
+                width: 80%;
+                height: 50%;
 
                 overflow: hidden;
                 -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
@@ -165,6 +167,11 @@ void main(){\n\
 			loadFunction()
 		}, false);
 
+		// window.onresize = function(event) {
+		// 	 if (typeof window.innerWidth != 'undefined') {
+  //     			billboard. = window.innerWidth
+		// };
+
 		function removeElementsByClass(className){
 		    var elements = document.getElementsByClassName(className);
 		    while(elements.length > 0){
@@ -217,9 +224,9 @@ float function(in float x) {\n\
 					indentUnit: 4
 				});
 
-				editor.on("change", function() {
-					demoCanvas.setAttribute("data-fragment", preFunction + editor.getValue() + postFunction);
-					billboard.load(editor.getValue());
+				editor.on("change", function(cm) {
+					demoCanvas.setAttribute("data-fragment", preFunction + cm.getValue() + postFunction);
+					billboard.load(preFunction + cm.getValue() + postFunction);
 				});
 			}
 		}
