@@ -44,7 +44,7 @@
 
 Chrome、FirefoxやSafariなどWebGLの使える今時のブラウザーとインターネットさえあれば始められます。ページの最後にある「Next」をクリックして先に進みましょう。
 
-もし必要な場合は下記もご覧ください（訳注：いまのところ英語のみです。そのうち翻訳します）。
+もし必要な場合は下記もご覧ください。（訳注：いまのところ英語のみです。そのうち翻訳します）
 
 - [Make an off-line version of this book](http://thebookofshaders.com/appendix/)
 

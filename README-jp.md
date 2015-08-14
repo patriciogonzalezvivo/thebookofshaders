@@ -22,7 +22,7 @@
 * 初めの一歩
     * [シェーダーとは？](01/?lan=jp)
     * [ハロー・ワールド！](02/?lan=jp)
-    * [Uniforms（未訳）](03/)
+    * [ユニフォーム変数](03/?lan=jp)
     * [Running your shader（未訳）](04/)
 
 * Algorithmic drawing

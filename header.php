@@ -46,7 +46,7 @@ echo '
 
 		<!-- Translation -->
 		';
-		
+
 if ( $language !== '' && file_exists($path.'/css/style'.$language.'.css') ) {
 	echo '<link type="text/css" rel="stylesheet" href="'.$path.'/css/style'.$language.'.css">';
 }
@@ -56,7 +56,3 @@ echo '
 	<body>
 	';
 ?>
-
-
-
-

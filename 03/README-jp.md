@@ -1,13 +1,9 @@
-## Uniforms
+## ユニフォーム変数
 
-So far we have seen how the GPU manages large numbers of parallel threads, each one responsible for assigning the color to a fraction of the total image. Although each parallel thread is blind to the others, we need to be able to send some inputs from the CPU to all the threads. Because of the architecture of the graphic card those inputs are going to be equal (*uniform*) to all the threads and necessarily set as *read only*. In other words, each thread receives the same data which it can read but cannot change.
+ここまで、GPUが沢山のスレッドを並列に処理する様子を見てきました。それぞれのスレッドは画像の各部分への色の割り当てを受け持っています。シェーダーではスレッド間の情報のやりとりを行うことはできませんが、CPUからそれぞれのスレッドに入力を送ることはできます。グラフィックカードは全てのスレッドにまったく同じ入力を、読み取り専用で送るように設計されています。それぞれのスレッドは同じデータを受け取り、それを書き換えることはできません。（訳注：英語の”uniform”には均一な、一様な、という意味があります）
 
-これまではGPUがたくさんのスレッドを並列に扱い、それぞれのスレッドが画像の部分部分に色を割り当てていく様子を見てきました。シェーダーではそれぞれのスレッド間でやりとりを行うことはできませんが、CPUからそれぞれのスレッドに入力を送ることができる必要があります。グラフィックカードは、全てのスレッドにの読み取り専用のまったく同じ入力を送るように設計されています（英語の”uniform”には均一な、一様な、という意味があります）。それぞれのスレッドは同じデータを受け取り、それを書き換えることはできません。
-
-These inputs are call ```uniform``` and come in most of the supported types: ```float```, ```vec2```, ```vec3```, ```vec4```, ```mat2```, ```mat3```, ```mat4```, ```sampler2D``` and ```samplerCube```. Uniforms are defined with the corresponding type at the top of the shader right after assigning the default floating point precision.
-
-これらの入力は ```uniform```変数 と呼ばれGLSLでサポートされているほとんどの型が使えます。サポートされている型には```float```、```vec2```、```vec3```、 ```vec4```、```mat2```、```mat3```、```mat4```、```sampler2D```、```samplerCube```などがあります。
-Uniform変数はシェーダーの冒頭、浮動小数点精度の指定の後で、型指定付きで定義します。
+これらの入力は```uniform```変数と呼ばれGLSLでサポートされているほとんどの型が使えます。サポートされている型には ```float```、```vec2```、```vec3```、```vec4```、```mat2```、```mat3```、```mat4```、```sampler2D```、```samplerCube```などがあります。
+uniform変数はシェーダーの冒頭、浮動小数点精度の設定の後に型指定付きで定義します。
 
 ```glsl
 #ifdef GL_ES
@@ -19,10 +15,9 @@ uniform vec2 u_mouse;      // mouse position in screen pixels
 uniform float u_time;	  // Time in seconds since load
 ```
 
-You can picture the uniforms like little bridges between the CPU and the GPU. The names will vary from implementation to implementation but in this series of examples I’m always passing: ```u_time``` (time in seconds since the shader started), ```u_resolution``` (billboard size where the shader is being drawn) and ```u_mouse``` (mouse position inside the billboard in pixels). I’m following the convention of putting ```u_``` before the uniform name to be explicit about the nature of this variable but you will find all kinds of names for uniforms. For example [ShaderToy.com](https://www.shadertoy.com/) uses the same uniforms but with the following names:
+uniform変数はCPUとGPUの間の小さな架け橋だと考えることができます。変数の名前は実装次第で変わりますが、この本のサンプルでは一貫して```u_time```（シェーダーが開始してから経過した秒数）、```u_resolution```（シェーダーが描画する領域の大きさ）、```u_mouse```（描画領域の中のマウスの位置）を渡すことにします。ここでは変数の種類を示すためにuniform変数の名前は```u_```で始めるという慣例に従っていますが、他の場所では異なる名前が使われているのも見かけることでしょう。
+例えば[ShaderToy.com](https://www.shadertoy.com/)では同じ意味を持つuniform変数に下記の名前が付けられています。
 
-Uniform変数はCPUとGPUの間の小さな架け橋だと想像することができます。変数の名前は実装次第で変わりますが、この本のサンプルでは一貫して```u_time```（シェーダーが開始してから経過した秒数）```u_resolution```（シェーダーが描画する領域の大きさ）、```u_mouse```（描画領域の中のマウスの位置）を渡すことにします.変数の所在をはっきりさせるためUniform変数の名前は```u_```で始めるという慣習を用いていますが、他の名前が使われているのも目にすることでしょう。
-例えば[ShaderToy.com](https://www.shadertoy.com/)では同じ意味を持つUniform変数に下記の名前が付けられています。
 
 ```glsl
 uniform vec3 iResolution;   // viewport resolution (in pixels)
@@ -30,58 +25,43 @@ uniform vec4 iMouse;        // mouse pixel coords. xy: current, zw: click
 uniform float iGlobalTime;  // shader playback time (in seconds)
 ```
 
-（訳注：uniform変数の数と名前は開発者が自由に決めることができ、上で挙げられている用途以外にも自由に使うことができます。C、JavascriptなどのCPUで走るプログラムの側からは、シェーダー側で決めた変数の名前を指定して値を渡すことができます）
+（訳注：uniform変数は開発者が自由に名前を決めることができ、上で挙げられている用途以外にも自由に使うことができます。C、JavascriptなどのCPUで走るプログラムからは、シェーダー側で決めた変数の名前を指定して値を渡すことができます）
 
-Enough talking, let's see the uniforms in action. In the following code we use ```u_time``` - the number of seconds since the shader started running - together with a sine function to animate the transition of the amount of red in the billboard.
-
-話はこれくらいにしてuniform変数を実際に使ってみましょう。続くコードでは```u_time```（シェーダーが実行を始めてからの秒数）をサイン関数でと組み合わせて使い、画面上の赤の色を変化させてみます。
+説明はこれくらいにしてuniform変数を実際に使ってみましょう。下記のコードでは、```u_time```（シェーダーが実行を始めてからの秒数）をサイン関数と組み合わせて使い、赤い画面の色を変化させています。
 
 <div class="codeAndCanvas" data="time.frag"></div>
 
-As you can see GLSL has more surprises. The GPU has hardware accelerated angle, trigonometric and exponential functions. Some of those functions are: [```sin()```](../glossary/?search=sin), [```cos()```](../glossary/?search=cos), [```tan()```](../glossary/?search=tan), [```asin()```](../glossary/?search=asin), [```acos()```](../glossary/?search=acos), [```atan()```](../glossary/?search=atan), [```pow()```](../glossary/?search=pow), [```exp()```](../glossary/?search=exp), [```log()```](../glossary/?search=log), [```sqrt()```](../glossary/?search=sqrt), [```abs()```](../glossary/?search=abs), [```sign()```](../glossary/?search=sign), [```floor()```](../glossary/?search=floor), [```ceil()```](../glossary/?search=ceil), [```fract()```](../glossary/?search=fract), [```mod()```](../glossary/?search=mod), [```min()```](../glossary/?search=min), [```max()```](../glossary/?search=max) and [```clamp()```](../glossary/?search=clamp).
+GPUの驚くべき機能の一つとして、角度や三角関数、指数関数などがハードウェア上で高速に処理されることが挙げられます。サポートされる関数には [```sin()```](../glossary/?search=sin)、 [```cos()```](../glossary/?search=cos)、[```tan()```](../glossary/?search=tan)、 [```asin()```](../glossary/?search=asin)、[```acos()```](../glossary/?search=acos)、 [```atan()```](../glossary/?search=atan)、[```pow()```](../glossary/?search=pow)、 [```exp()```](../glossary/?search=exp)、[```log()```](../glossary/?search=log)、 [```sqrt()```](../glossary/?search=sqrt)、[```abs()```](../glossary/?search=abs)、 [```sign()```](../glossary/?search=sign)、[```floor()```](../glossary/?search=floor)、 [```ceil()```](../glossary/?search=ceil)、[```fract()```](../glossary/?search=fract)、 [```mod()```](../glossary/?search=mod)、[```min()```](../glossary/?search=min)、 [```max()```](../glossary/?search=max)、[```clamp()```](../glossary/?search=clamp)などがあります。
 
-GPUには驚くような力があります。GPUでは角度や三角関数、指数関数などがハードウェア上で高速に処理されるのです。サポートされる関数には [```sin()```](../glossary/?search=sin)、 [```cos()```](../glossary/?search=cos)、[```tan()```](../glossary/?search=tan)、 [```asin()```](../glossary/?search=asin)、[```acos()```](../glossary/?search=acos)、 [```atan()```](../glossary/?search=atan)、[```pow()```](../glossary/?search=pow)、 [```exp()```](../glossary/?search=exp)、[```log()```](../glossary/?search=log)、 [```sqrt()```](../glossary/?search=sqrt)、[```abs()```](../glossary/?search=abs)、 [```sign()```](../glossary/?search=sign)、[```floor()```](../glossary/?search=floor)、 [```ceil()```](../glossary/?search=ceil)、[```fract()```](../glossary/?search=fract)、 [```mod()```](../glossary/?search=mod)、[```min()```](../glossary/?search=min)、 [```max()```](../glossary/?search=max)、[```clamp()```](../glossary/?search=clamp)などがあります。
+さて、また上のコードで色々と実験をしてみましょう。
 
-Now it is time again to play with the above code.
-さてまた上のコードで色々実験してみましょう。
+* 色が変わる頻度を下げて、変化にほとんど気がつかなくなるまで遅くしてみましょう。
 
-* Slow down the frequency until the color change becomes almost imperceptible.
+* 変化のスピードを上げて、点滅がなくなりひとつの色に見えるまで速くしてみましょう。
 
-* ほとんど変化に気がつかなくなるまで、色が変わる頻度を下げてゆっくりにしてみましょう。
-
-* Speed it up until you see a single color without flickering.
-
-* 点滅もない一色の色に見えるまでスピードを上げてみましょう。
-
-* Play with the three channels (RGB) in different frequencies to get interesting patterns and behaviors.
-
-* 三つのチャンネル（RGB）の変化の頻度を別々に変えて面白いパターンを作ってみましょう。
+* 三つのチャンネル（RGB）の変化の頻度を別々に変えて、面白いパターンを作ってみましょう。
 
 ## gl_FragCoord
 
-In the same way GLSL gives us a default output, ```vec4 gl_FragColor```, it also gives us a default input, ```vec4 gl_FragCoord```, which holds the screen coordinates of the *pixel* or *screen fragment* that the active thread is working on. With ```vec4 gl_FragCoord```, we know where a thread is working inside the billboard. In this case we don't call it ```uniform``` because it will be different from thread to thread, instead ```gl_FragCoord``` is called a *varying*.
-
-デフォルトの出力として```vec4 gl_FragColor```が用意されているように、GLSLはデフォルトの入力として画面上の「フラグメント」、つまりピクセルの位置を表す```vec4 gl_FragCoord```を持っています。```vec4 gl_FragCoord```を使うとスレッドが描画領域の中のどこで作業をしているのか知ることができます。この```gl_FragCoord```はスレッドごとに異なる値を持っているためuniform変数とは呼ばず、代わりにvarying変数と呼びます。
-（訳注：gl_FragColorはGLSL1.3から非推奨になりました。以降のバージョンでは開発者が自由に名前をつけることができます。）
+デフォルトの出力として```vec4 gl_FragColor```を使うことができるのと同様に、GLSLにはデフォルトの入力として画面上の「フラグメント」、つまりピクセルの位置を表す```vec4 gl_FragCoord```が用意されています。```vec4 gl_FragCoord```を使うとスレッドが描画領域内のどこで作業をしているかを知ることができます。この```gl_FragCoord```はスレッドごとに異なる値を持っているためuniform変数とは呼ばず、代わりにvarying変数と呼びます。
 
 <div class="codeAndCanvas" data="space.frag"></div>
 
-In the above code we *normalize* the coordinate of the fragment by dividing it by the total resolution of the billboard. By doing this the values will go between ```0.0``` and ```1.0```, which makes it easy to map the X and Y values to the RED and GREEN channel.
+上のサンプルではフラグメントの座標を描画領域全体のサイズで割ることによって正規化しています。こうすると座標値の範囲が```0.0```から```1.0```の間に収まるため、簡単にX座標とY座標の値をR（赤）とG（緑）のチャンネルに対応させることができます。
 
-上のコードではフラグメント（以降フラグメント＝ピクセルだと考えて問題ありません）
-
-In shader-land we don’t have too many resources for debugging besides assigning strong colors to variables and trying to make sense of them. You will discover that sometimes coding in GLSL is very similar to putting ships inside bottles. Is equally hard, beautiful and gratifying.
+シェーダーの世界ではデバッグに使える手段は限られています。判別しやすい色を変数の値に割り当てて確認するのは数少ない方法の一つです。GLSLのコーディングは時としてガラス瓶の中に船の模型を組み立てるのに似ています。どちらも同じくらい難しいですが、結果は美しく達成感があるものです。
 
 ![](08.png)
 
-Now it is time to try and challenge our understanding of this code.
+それでは、サンプルが理解できているか確かめてみましょう。
 
-* Can you tell where the coordinate ```(0.0,0.0)``` is in our canvas?
+* 座標```(0.0,0.0)```が描画領域のどこを指すかわかりますか？
 
-* What about ```(1.0,0.0)```, ```(0.0,1.0)```, ```(0.5,0.5)``` and ```(1.0,1.0)```?
+* ```(1.0,0.0)```、```(0.0,1.0)```、```(0.5,0.5)```、```(1.0,1.0)```はどうでしょう？
 
-* Can you figure out how to use ```u_mouse``` knowing that the values are in pixels and NOT normalized values? Can you use it to move colors around?
+* ```u_mouse```の使い方はわかりますか？ ```u_mouse```の値は正規化されていないことに注意してください。この変数を使って色を変化させることはできますか？
 
-* Can you imagine an interesting way of changing this color pattern using ```u_time``` and ```u_mouse``` coordinates?
+* ```u_time```と```u_mouse```の座標を使って色のパターンを自由に変化させてみましょう。
 
-After doing these exercises you might wonder where else you can try your new shader-powers. In the following chapter we will see  how to make your own shader tools in three.js, Processing, and openFrameworks.
+さて、課題を終えたところで、このシェーダーの力を他にどこで使うことができるのか興味が湧いているのではないでしょうか。
+次の章ではオリジナルのシェーダーをthree.js、Processing、openFrameworkで使う方法について説明します。
