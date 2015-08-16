@@ -23,7 +23,7 @@
     * [シェーダーとは？](01/?lan=jp)
     * [ハロー・ワールド！](02/?lan=jp)
     * [ユニフォーム変数](03/?lan=jp)
-    * [Running your shader（未訳）](04/)
+    * [シェーダーを使う](04/?lan=jp)
 
 * Algorithmic drawing
     * [Shaping functions（未訳）](05/)
