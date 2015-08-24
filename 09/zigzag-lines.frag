@@ -29,7 +29,7 @@ void main(){
     st.x *= u_resolution.x/u_resolution.y;
    
    	st *= 10.;
-   	st = zigzag(st, 3.);
+   	st = wave(st, 3.);
     vec3 color = vec3(line(st,.5));
     gl_FragColor = vec4(color, 1.0);
 }

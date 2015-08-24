@@ -2,7 +2,9 @@
 
 At this point you're probably excited to try shaders on platforms you feel comfortable with. The following are examples of how to set shaders in some popular frameworks with the same uniforms that we are going to use throughout this book. (In the [GitHub repository for this chapter](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), you'll find the full source code for these three frameworks.)
 
-**Note**: In case you don't want to try shaders on the following frameworks, but you want to work outside a browser, you can download and compile [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). This MacOS and RaspberryPi program runs directly from terminal and is especially designed to execute the examples in this book.
+**Note 1**: In case you don't want to try shaders on the following frameworks, but you want to work outside a browser, you can download and compile [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). This MacOS and RaspberryPi program runs directly from terminal and is especially designed to execute the examples in this book.
+
+**Note 2**: If you just want to display Shaders using WebGL and you don't care about the frameworks arround it, you can use [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) that exactly do that. This web tool was designed for this book but end up been so usefull that I use it all the time for different projects.
 
 ### In **Three.js**
  

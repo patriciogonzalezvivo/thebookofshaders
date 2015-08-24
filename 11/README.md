@@ -3,9 +3,9 @@
 
 ## Noise
 
-Break time! We have been playing with all this random functions that looks like TV white noise,  our head is still spinning around thinking on shaders, and our eyes are tired. Time to get out side and walk!
+Break time! We have been playing with all this random functions that looks like TV white noise,  our head is still spinning around thinking on shaders, and our eyes are tired. Time to get out side for a walk!
 
-We feel the air in our face, the sun in our nose and chicks. The world is such a vivid and rich places. Colors, textures, sounds. While we walk we can avoid notice the surface of the roads, rocks, trees and clouds. Suddenly all seams random. But definitely not the type of random we were making. The real world is such a rich place. How we can approximate to this level of variety computationally?
+We feel the air in our face, the sun in our nose and chicks. The world is such a vivid and rich places. Colors, textures, sounds. While we walk we can avoid notice the surface of the roads, rocks, trees and clouds. We note the stochasticity of textures, there is random on nature. But definitely not the type of random we were making. The “real world” is such a rich place. How we can approximate to this level of variety computationally?
 
 We are on the same path of thoughts that Ken Perlin's walk through on 1982 when he was commissioned with the job of generating "more realistic" textures for a new disney movie call "Tron". In response to that he came up with an elegant *oscar winner* noise algorithm.
 
@@ -42,7 +42,7 @@ y = mix(rand(i), rand(i + 1.0), u);
 
 ## 2D Noise
 
-Now that we understand how noise is made in one demotion, is time to port it to two dimensions. Check how on the following code the interpolation (line 29) is made between the for corners of a square (lines 22-25).
+Now that we understand how noise is made in one dimension, is time to port it to two. Check how on the following code the interpolation (line 29) is made between the for corners of a square (lines 22-25).
 
 <div class="codeAndCanvas" data="2d-noise.frag"></div>
 
@@ -62,7 +62,11 @@ Try:
 
 ![Mark Rothko - Three (1950)](rothko.jpg)
 
-## Using 2D Noise
+## Simplex Noise
+
+## Digital Jackson Pollock
+
+## Using 2D Noise to rotate the space
 
 As we saw, noise was designed to give a natural *je ne sais quoi* to digital textures, and could be use to make convincing generative textures. Lets refresh some of the previous knowledge and then jump forward learning how to mix all the knowledge we have learn so far. 
 
