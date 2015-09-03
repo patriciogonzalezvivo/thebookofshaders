@@ -49,7 +49,7 @@ void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     vec3 color = vec3(0.0);
 
-    vec3 pos = vec3(st*5.0,u_time*0.1);
+    vec3 pos = vec3(st*5.0,u_time*0.5);
 
     color = vec3(noise(pos));
 
