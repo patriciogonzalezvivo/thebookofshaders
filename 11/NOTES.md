@@ -16,8 +16,18 @@ https://en.wikipedia.org/wiki/Perlin_noise
 
 https://en.wikipedia.org/wiki/Colors_of_noise
 
-https://en.wikipedia.org/wiki/Value_noise
-
 https://en.wikipedia.org/wiki/Pink_noise
 
 https://en.wikipedia.org/wiki/Shot_noise
+
+# Value Noise
+https://en.wikipedia.org/wiki/Value_noise
+https://www.shadertoy.com/view/lsf3WH
+
+# Gradient Noise
+http://en.wikipedia.org/wiki/Gradient_noise
+https://www.shadertoy.com/view/XdXGW8
+
+# Simplex Noise
+http://en.wikipedia.org/wiki/Simplex_noise
+https://www.shadertoy.com/view/Msf3WH
