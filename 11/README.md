@@ -132,8 +132,9 @@ Yeah, right? How he did that? Well we saw that for one dimension he was smoothly
 
 ![](2^N.png)
 
-
 ## Digital Jackson Pollock
+
+# Voronoi Noise
 
 
 

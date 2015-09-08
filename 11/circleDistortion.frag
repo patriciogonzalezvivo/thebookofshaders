@@ -59,21 +59,28 @@ float snoise(vec2 v) {
     return 130.0 * dot(m, g);
 }
 
-mat2 rotate2d(float _angle){
-    return mat2(cos(_angle),-sin(_angle),
-                sin(_angle),cos(_angle));
+vec3 nNoise(vec2 st) {
+    vec2 offset = vec2(1.)/u_resolution.xy;
+    float center     = snoise(vec2(st.x, st.y));
+    float topLeft    = snoise(vec2(st.x - offset.x, st.y - offset.y));
+    float left       = snoise(vec2(st.x - offset.x, st.y));
+    float bottomLeft = snoise(vec2(st.x - offset.x, st.y + offset.y));
+    float top        = snoise(vec2(st.x, st.y - offset.y));
+    float bottom     = snoise(vec2(st.x, st.y + offset.y));
+    float topRight   = snoise(vec2(st.x + offset.x, st.y - offset.y));
+    float right      = snoise(vec2(st.x + offset.x, st.y));
+    float bottomRight= snoise(vec2(st.x + offset.x, st.y + offset.y));
+    float dX = topRight + 2.0 * right + bottomRight - topLeft - 2.0 * left - bottomLeft;
+    float dY = bottomLeft + 2.0 * bottom + bottomRight - topLeft - 2.0 * top - topRight;
+    return normalize(vec3( dX, dY, 0.01))*.5+.5;
 }
 
 float shape(vec2 st, float radius) {
 	st = vec2(0.5)-st;
     float r = length(st)*2.0;
     float a = atan(st.y,st.x);
-    float m = abs(mod(a+u_time*2.,3.14*2.)-3.14)/3.6;
-    m += snoise(st+u_time*0.1)*.8;
-    a *= 1.+abs(atan(u_time*0.2))*.1;
-    // a *= 1.+snoise(st+u_time*0.1)*0.1;
-    // a *= 1.+snoise(vec2(a,r)+u_time*0.1)*.1;
-    float f = (cos(a*50.)*.1*pow(m,2.))+radius;
+
+    float f = radius;
     return 1.-smoothstep(f,f+0.007,r);
 }
 
@@ -83,7 +90,12 @@ float shapeBorder(vec2 st, float radius, float width) {
 
 void main() {
 	vec2 st = gl_FragCoord.xy/u_resolution.xy;
-	vec3 color = vec3(1.0) * shapeBorder(st,0.8,0.02);
+	
+    vec3 color = vec3(0.0);
+    vec3 normals = nNoise(st*6.+u_time);
+    color = vec3(1.) * shapeBorder(st,0.8,0.02);
+    st -= .005;
+    color.g = shapeBorder(st+normals.xy*.01,0.81,0.03);
 
 	gl_FragColor = vec4( color, 1.0 );
 }
