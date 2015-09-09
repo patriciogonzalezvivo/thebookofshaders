@@ -11,8 +11,8 @@ uniform float u_time;
 
 float random (in vec2 st) { 
     return fract(sin(dot(st.xy,
-                         vec2(12.9898,78.233)))* 
-        43758.5453123);
+                         vec2(12.9898,78.233))) 
+                * 43758.5453123);
 }
 
 // Based on Morgan McGuire @morgan3d
@@ -44,30 +44,23 @@ float lines(in vec2 pos, float angle, float b){
     pos *= scale;
     pos = rotate2d( angle ) * pos;
     return smoothstep(0.0,
-                    0.5+b*0.5,
-                    abs((sin(pos.x*3.1415)+b*2.0))*0.5);
+                    .5+b*.5,
+                    abs((sin(pos.x*3.1415)+b*2.0))*.5);
 }
 
 void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
-    vec3 color = vec3(0.0);
+    st.y *= u_resolution.y/u_resolution.x;
 
-    vec2 pos = vec2(st*5.0);
+    vec2 pos = st.yx*vec2(10.,3.);
 
     float pattern = pos.x;
 
     // Stripes
-    // pattern = lines(pos*0.1, 0.0, 0.5 ); 
+    pattern = lines(pos, 0.0, 0.5 ); 
 
     // Add noise
-    // pattern = lines(pos, noise(pos), 0.5 );
+    pattern = lines(pos, noise(pos), .5 );
 
-    // Strech the noise pattern 
-    //pattern = lines(pos, noise(pos*vec2(2.,0.5)),0.5);
-
-    color = mix(vec3(0.275,0.145,0.059),
-                vec3(0.761,0.529,0.239),
-                pattern*1.7);
-
-    gl_FragColor = vec4(color,1.0);
+    gl_FragColor = vec4(vec3(pattern),1.0);
 }
