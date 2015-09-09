@@ -76,12 +76,12 @@ vec3 nNoise(vec2 st) {
 
 void main(){
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
-    
+    st.x *= u_resolution.x/u_resolution.y;
     float scale = 10.0;
     st *= scale;
 
     st += nNoise(st).xy*.1*sin(u_time);
     float df = sin(fract(st.y)*10.);
     
-    gl_FragColor= vec4(vec3(smoothstep(.9,.99,df)),1.);
+    gl_FragColor= vec4(vec3(1.0-smoothstep(.9,.99,df)),1.);
 }

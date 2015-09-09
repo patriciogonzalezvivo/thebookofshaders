@@ -7,7 +7,7 @@ Break time! We have been playing with all this random functions that looks like 
 
 We feel the air in our face, the sun in our nose and chicks. The world is such a vivid and rich place. Colors, textures, sounds. While we walk we can't avoid noticing the surface of the roads, rocks, trees and clouds. We note the stochasticity of textures, there is random on nature. But definitely not the type of random we were making in the previus chapter. The “real world” is such a rich place. How we can approximate to this level of variety computationally?
 
-We are on the same path of thoughts that Ken Perlin's walk through on 1982 when he was commissioned with the job of generating "more realistic" textures for a new disney movie call "Tron". In response to that he came up with an elegant *oscar winner* noise algorithm.
+We are on the same path of thoughts that [Ken Perlin](https://mrl.nyu.edu/~perlin/)'s walk through on 1982 when he was commissioned with the job of generating "more realistic" textures for a new disney movie call "Tron". In response to that he came up with an elegant *oscar winner* noise algorithm.
 
 The following is not the clasic Perlin noise algorithm, but is a good starting point to understand how to generate *smooth random* aka *noise*.
 
@@ -57,13 +57,25 @@ Now is your turn:
 
 ## 2D Noise
 
+![](02.png)
+
 Now that we know how to do noise in one dimension, is time to port it to two. For that instead of interpolating between two points (```fract(x)``` and ```fract(x)+1.0```) we are going to interpolate between the four coorners of square (```fract(st)```, ```fract(st)+vec2(1.,0.)```, ```fract(st)+vec2(0.,1.)``` and ```fract(st)+vec2(1.,1.)```). 
+
+![](01.png)
 
 Take a look to the following 2D noise function, see how on line 32 we interpolate random values (lines 25-28) acording to the the position of ```st``` the four corners of the squared area.
 
+![](04.jpg)
+
+If you pay atention is not just a linear interpolation but a cubic one which smoothly interpolates any points inside a squared grid
+
+![](05.jpg)
+
+In the following implementation of 2D noise we scale the size of the grid by 5 (line 41).
+
 <div class="codeAndCanvas" data="2d-noise.frag"></div>
 
-To this 2D noise at line 41 we scale the space by 5 and "move" it acording to time. No try:
+Now is your turn, try the following excersices:
 
 * Change the multiplier. Try to animate it.
 
@@ -79,40 +91,44 @@ To this 2D noise at line 41 we scale the space by 5 and "move" it acording to ti
 
 ![Mark Rothko - Three (1950)](rothko.jpg)
 
-## Using 2D Noise to rotate the space
+## Using Noise on generative designs
 
-As we saw, noise was designed to give a natural *je ne sais quoi* to digital textures, and could be use to make convincing generative textures. Lets refresh some of the previous knowledge and then jump forward learning how to mix all the knowledge we have learn so far. 
+As we saw, noise algorithms was original designed to give a natural *je ne sais quoi* to digital textures. Our first step to use it will be to differenciate different types of noise algorithms. So far all the implementations in 1D and 2D we saw, were interpolation between values and so they are usually call **Value Noise**. 
 
-In the following code you will find:
+<a href="../edit.html#11/2d-vnoise.frag"><canvas id="custom" class="canvas" data-fragment-url="2d-vnoise.frag"  width="520px" height="200px"></canvas> <p style="text-align: center;font-style: italic;">Value Noise by IQ</p></a>
 
-* Shaping functions to create: random (line 13), noise (line 32) and a line pattern (line 46).
-* A color gradient (line 68).
-* A matrix to rotate the line pattern (line 37-40 and 45)
-* A 2d random function (line 12-16)
-* A 2d noise function (line 20-35) 
+As you discovery on the previus excercises this type of noise tends to look "block", as a solution to this effect in 1985 again [Ken Perlin](https://mrl.nyu.edu/~perlin/) develop another implementation of the algorithm call **Gradient Noise**. In it what is interpolated per coorner is not a value but a direction (represented by a ```vec2```).
 
-<div class="codeAndCanvas" data="wood.frag"></div>
+<a href="../edit.html#11/2d-gnoise.frag"><canvas id="custom" class="canvas" data-fragment-url="2d-gnoise.frag"  width="520px" height="200px"></canvas> <p style="text-align: center;font-style: italic;">Gradient Noise by IQ</p></a>
 
-By uncommenting line 60 you will see the line pattern we are talking about.
-Revealing line 63 you can see how we can alternate this pattern in a "natural-like" way, to then finally, uncommenting line 66 we can stretch the noise pattern in *y* axis.
+Take a minute to look to these two examples by [Inigo Quilez](http://www.iquilezles.org/) and pay attention on the differences between [value noise](https://www.shadertoy.com/view/lsf3WH) and [gradient noise](https://www.shadertoy.com/view/XdXGW8).
 
-Wow! You really should be proud of your self. He have went from nothing to generating our own wood procedural texture!
+As a painter that understand how the pigments of their paint works, the more we know about noise implementations the better we will learn how to use it. The following step is to find interesting way of combining and using it.
 
-Now is time for you to play with it:
+For example, if we use a two dimensional noise implementation to rotate the "grid" we can produce the following effect that looks a lot like wood  
 
-* What do you thing it will happen if the patter looks like this:
+<a href="../edit.html#11/wood.frag"><canvas id="custom" class="canvas" data-fragment-url="wood.frag"  width="520px" height="200px"></canvas></a> 
 
 ```glsl
-pattern = sin(lines(pos, noise(pos*vec2(2.,0.5)),0.5)*3.14);
+    pos = rotate2d( noise(pos) ) * pos; // rotate the space
+    pattern = lines(pos,.5); // draw lines
 ```
 
-Or like this
+Another way to get interesting patterns from noise is to treat it like a distance field and apply some of the tricks described on the [Shapes chapter](../07)
+
+<a href="../edit.html#11/splatter.frag"><canvas id="custom" class="canvas" data-fragment-url="splatter.frag"  width="520px" height="200px"></canvas></a> 
 
 ```glsl
-pattern = fract(lines(pos, noise(pos*vec2(2.,0.5)),0.5)*2.0);
+    color += smoothstep(.15,.2,noise(st*10.)); // Black splatter
+    color -= smoothstep(.35,.4,noise(st*10.)); // Holes on splatter
 ```
 
-* What other generative pattern can you make? What about granite? marble? magma? water?
+The third way of using the noise function is using it to modulate a shapes, this probably require reviewing the [Shapes Chapter](../07)
+
+<a href="../edit.html#11/circleWave-noise.frag"><canvas id="custom" class="canvas" data-fragment-url="circleWave-noise.frag"  width="520px" height="520"></canvas></a> 
+
+* What other generative pattern can you make? What about granite? marble? magma? water? Find a picture of three textures you are interested and implement it algorithmically using noise.
+* Use noise to modulate three shapes.
 * What about noise apply to motion? Go back to the Matrix chapter and use the translation example that move a the "+" around to apply some *random* and *noise* movements to it.
 
 Nothing like having some control over the chaos and chances. Right?
