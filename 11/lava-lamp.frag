@@ -62,5 +62,5 @@ void main() {
 
     color = vec3( smoothstep(.7,.75,fract(DF)) );
 
-    gl_FragColor = vec4(color,1.0);
+    gl_FragColor = vec4(1.0-color,1.0);
 }

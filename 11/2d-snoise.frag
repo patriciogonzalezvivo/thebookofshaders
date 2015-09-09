@@ -72,7 +72,7 @@ void main() {
 
     vec2 pos = vec2(st*10.);
 
-    color = vec3( snoise(pos) );
+    color = vec3(snoise(pos)*.5+.5);
 
     gl_FragColor = vec4(color,1.0);
 }
