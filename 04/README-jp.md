@@ -31,8 +31,6 @@
         }
     </script>
     <script>
-        if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
-
         var container;
         var camera, scene, renderer;
         var uniforms;
