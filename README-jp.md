@@ -25,8 +25,8 @@
     * [ユニフォーム変数](03/?lan=jp)
     * [シェーダーを使う](04/?lan=jp)
 
-* Algorithmic drawing
-    * [Shaping functions（未訳）](05/)
+* アルゴリズムで絵を描く
+    * [シェイピング関数](05/?lan=jp)
     * [Colors（未訳）](06/)
     * [Shapes（未訳）](07/)
     * [Matrices（未訳）](08/)
@@ -80,7 +80,7 @@
 
 ## 訳者について
 
-[この人](http://www.kynd.info) が翻訳しました。
+[この人](http://www.kynd.info) が翻訳しました。冒険野郎マクガイバーは見たことがありません。
 
 ## 謝辞
 
