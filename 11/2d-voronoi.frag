@@ -67,11 +67,10 @@ void main() {
     // isolines
     color = c.x*(0.5 + 0.5*sin(64.0*c.x))*vec3(1.0);
     // borders  
-    color = mix( vec3(1.0,0.6,0.0), color, smoothstep( 0.01, 0.02, c.x ) );
+    color = mix( vec3(1.0,.0,.0), color, smoothstep( 0.01, 0.02, c.x ) );
     // feature points
     float dd = length( c.yz );
-    color = mix( vec3(1.0,0.6,0.1), color, smoothstep( 0.0, 0.12, dd) );
-    color += vec3(1.0,0.6,0.1)*(1.0-smoothstep( 0.0, 0.04, dd));
+    color += vec3(.0,1.,1.)*(1.0-smoothstep( 0.0, 0.04, dd));
 
     gl_FragColor = vec4(color,1.0);
 }
