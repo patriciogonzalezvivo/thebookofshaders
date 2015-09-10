@@ -1,6 +1,9 @@
 // Author @patriciogv - 2015
 // http://patriciogonzalezvivo.com
 
+// My own port of this processing code by @beesandbombs
+// https://dribbble.com/shots/1696376-Circle-wave
+
 #ifdef GL_ES
 precision mediump float;
 #endif
@@ -8,16 +11,6 @@ precision mediump float;
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
-
-//
-// Description : Array and textureless GLSL 2D simplex noise function.
-//      Author : Ian McEwan, Ashima Arts.
-//  Maintainer : ijm
-//     Lastmod : 20110822 (ijm)
-//     License : Copyright (C) 2011 Ashima Arts. All rights reserved.
-//               Distributed under the MIT License. See LICENSE file.
-//               https://github.com/ashima/webgl-noise
-// 
 
 vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
 vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
@@ -66,13 +59,34 @@ float snoise(vec2 v) {
     return 130.0 * dot(m, g);
 }
 
+mat2 rotate2d(float _angle){
+    return mat2(cos(_angle),-sin(_angle),
+                sin(_angle),cos(_angle));
+}
+
+float shape(vec2 st, vec2 offset, float radius) {
+	st = vec2(0.5)-st;
+    float r = length(st)*2.0;
+    float a = atan(st.y,st.x);
+    float m = abs(mod(a+offset.y*2.,3.14*2.)-3.14)/3.6;
+    m += snoise(st+u_time*0.1)*.8;
+    a += offset.x;
+    float f = radius;
+    f += (cos(a*20.)*.1*pow(m,2.));
+    return 1.-smoothstep(f,f+0.007,r);
+}
+
+float shapeBorder(vec2 st, vec2 offset, float radius, float width) {
+    return shape(st,offset,radius)-shape(st,offset,radius-width);
+}
+
 void main() {
-    vec2 st = gl_FragCoord.xy/u_resolution.xy;
-    vec3 color = vec3(0.0);
+	vec2 st = gl_FragCoord.xy/u_resolution.xy;
+	vec3 color = vec3(.0);
+    float t = u_time*.1;
+    color.r = shapeBorder(st,vec2(0.1,t),0.8,0.02);
+    color.g = shapeBorder(st,vec2(0.2,t),0.8,0.02);
+    color.b = shapeBorder(st,vec2(0.3,t),0.8,0.02); 
 
-    vec2 pos = vec2(st*10.);
-
-    color = vec3(snoise(pos)*.5+.5);
-
-    gl_FragColor = vec4(color,1.0);
+	gl_FragColor = vec4( color, 1.0 );
 }

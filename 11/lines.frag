@@ -9,16 +9,6 @@ uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
 
-//
-// Description : Array and textureless GLSL 2D simplex noise function.
-//      Author : Ian McEwan, Ashima Arts.
-//  Maintainer : ijm
-//     Lastmod : 20110822 (ijm)
-//     License : Copyright (C) 2011 Ashima Arts. All rights reserved.
-//               Distributed under the MIT License. See LICENSE file.
-//               https://github.com/ashima/webgl-noise
-// 
-
 vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
 vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
 vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
@@ -66,13 +56,32 @@ float snoise(vec2 v) {
     return 130.0 * dot(m, g);
 }
 
-void main() {
+vec3 nNoise(vec2 st) {
+    vec2 offset = vec2(1.)/u_resolution.xy;
+    float center     = snoise(vec2(st.x, st.y));
+    float topLeft    = snoise(vec2(st.x - offset.x, st.y - offset.y));
+    float left       = snoise(vec2(st.x - offset.x, st.y));
+    float bottomLeft = snoise(vec2(st.x - offset.x, st.y + offset.y));
+    float top        = snoise(vec2(st.x, st.y - offset.y));
+    float bottom     = snoise(vec2(st.x, st.y + offset.y));
+    float topRight   = snoise(vec2(st.x + offset.x, st.y - offset.y));
+    float right      = snoise(vec2(st.x + offset.x, st.y));
+    float bottomRight= snoise(vec2(st.x + offset.x, st.y + offset.y));
+    
+    float dX = topRight + 2.0 * right + bottomRight - topLeft - 2.0 * left - bottomLeft;
+    float dY = bottomLeft + 2.0 * bottom + bottomRight - topLeft - 2.0 * top - topRight;
+    
+    return normalize(vec3( dX, dY, 0.01))*.5+.5;
+}
+
+void main(){
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
-    vec3 color = vec3(0.0);
+    st.x *= u_resolution.x/u_resolution.y;
+    float scale = 10.0;
+    st *= scale;
 
-    vec2 pos = vec2(st*10.);
-
-    color = vec3(snoise(pos)*.5+.5);
-
-    gl_FragColor = vec4(color,1.0);
+    st += nNoise(st).xy*.1*sin(u_time);
+    float df = sin(fract(st.y)*10.);
+    
+    gl_FragColor= vec4(vec3(1.0-smoothstep(.9,.99,df)),1.);
 }

@@ -66,13 +66,24 @@ float snoise(vec2 v) {
     return 130.0 * dot(m, g);
 }
 
+float cascade(vec2 st, vec2 zoom, float time, float warp) {
+    vec2 pos = st*zoom*vec2(1.,pow(st.y,warp))+vec2(0.,time);
+    return (.5+snoise(pos)*.5)*(st.y);
+}
+
 void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     vec3 color = vec3(0.0);
+    vec2 pos = st-vec2(.5);
+    float r = dot(pos,pos);
+    float a = atan(pos.y,pos.x);
 
-    vec2 pos = vec2(st*10.);
+    st = vec2(a,r*8.);
 
-    color = vec3(snoise(pos)*.5+.5);
+    color = vec3(1.)*smoothstep(.5,.8, cascade(st,vec2(30.,3.),u_time*3.,5.));
+    color += vec3(.5)*smoothstep(.6,.7, cascade(st,vec2(50.,5.),u_time*2.,1.));
+    color += smoothstep(.03,.20,r)*.5;
+    color *= 1.0-smoothstep(.11,.13,r);
 
     gl_FragColor = vec4(color,1.0);
 }
