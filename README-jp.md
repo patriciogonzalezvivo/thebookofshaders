@@ -1,13 +1,13 @@
 <canvas id="custom" class="canvas" data-fragment-url="examples/moon.frag" data-textures="examples/images/moon-texture.jpg" width="350px" height="350px"></canvas>
 
 # The Book of Shaders
-[パトリシオ・ゴンザレス・ビボ](http://patriciogonzalezvivo.com/)　著
+[Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/)　著
 
 この本はフラグメントシェーダーについてのガイドブックです。難解で複雑なフラグメントシェーダーの世界を、一歩一歩わかりやすくご案内します。
 
 ## 翻訳について
 
-この文書はパトリシオ・ゴンザレス・ビボ（Patricio Gonzalez Vivo）のThe Book of Shaderの日本語訳です。
+この文書はPatricio Gonzalez VivoのThe Book of Shaderの日本語訳です。
 技術的な内容はできる限り正確に伝えるように心がけていますが、その他の部分では言葉を補ったり簡略化したり、表現を変えている部分もあります。英語が得意な方はぜひ原文もお読みください。
 フィードバックには[githubのレポジトリ](https://github.com/patriciogonzalezvivo/thebookofshaders)をご利用ください。
 
@@ -25,8 +25,8 @@
     * [ユニフォーム変数](03/?lan=jp)
     * [シェーダーを使う](04/?lan=jp)
 
-* Algorithmic drawing
-    * [Shaping functions（未訳）](05/)
+* アルゴリズムで絵を描く
+    * [シェイピング関数](05/?lan=jp)
     * [Colors（未訳）](06/)
     * [Shapes（未訳）](07/)
     * [Matrices（未訳）](08/)
@@ -72,7 +72,7 @@
 
 ## 著者について
 
-[パトリシオ・ゴンザレス・ビボ](http://patriciogonzalezvivo.com/)（Patricio Gonzalez Vivo　1982年、アルゼンチン、ブエノスアイレス生） はニューヨーク在住のアーティスト／開発者です。有機的なものと人工的なもの、アナログとデジタル、個人と集団の狭間を探求し、プログラミングコードを表現手段としてより良い共存のあり方を模索しています。
+[Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/)（1982年、アルゼンチン、ブエノスアイレス生） はニューヨーク在住のアーティスト／開発者です。有機的なものと人工的なもの、アナログとデジタル、個人と集団の狭間を探求し、プログラミングコードを表現手段としてより良い共存のあり方を模索しています。
 
 パトリシオは心理療法（psychotherapy）と表現療法（expressive art therapy）に精通しており、パーソンズ美術大学でデザイン&テクノロジーのMFA（Master of Fine Arts - 美術系の修士に相当）を取得しています。現在は[Mapzen](https://mapzen.com/)でグラフィックエンジニアとしてオープンソースのマッピングツールの開発に携わっています。
 
@@ -80,13 +80,13 @@
 
 ## 訳者について
 
-[この人](http://www.kynd.info) が翻訳しました。
+[この人](http://www.kynd.info) が翻訳しました。冒険野郎マクガイバーは見たことがありません。
 
 ## 謝辞
 
-妻の[ジェン・ロー](http://www.datatelling.com/)（Jen Lowe）はこの本の編集のために時間を割き、献身的にサポートしてくれました。ありがとう。
+妻の[Jen Lowe](http://www.datatelling.com/)はこの本の編集のために時間を割き、献身的にサポートしてくれました。ありがとう。
 
-インスピレーションとアドバイスを与えてくれた[スコット・マレー](http://alignedleft.com/) （Scott Murray）、日本語訳を担当してくれた[Kynd](https://twitter.com/kyndinfo)、素晴らしいアイデアとコードで貢献してくれた[カリム・ナージ](http://karim.naaji.fr/) （Karim Naaji）にも感謝します。
+インスピレーションとアドバイスを与えてくれた[Scott Murray](http://alignedleft.com/)、日本語訳を担当してくれた[Kynd](https://twitter.com/kyndinfo)、素晴らしいアイデアとコードで貢献してくれた[Karim Naaji](http://karim.naaji.fr/) にも感謝します。
 
 そして最後に、このプロジェクトを応援し[改善の手助けをしてくれた方々](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors)、寄付をくださったすべての皆様に感謝を述べたいと思います。
 
