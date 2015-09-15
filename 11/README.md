@@ -95,11 +95,11 @@ Now is your turn, try the following excersices:
 
 As we saw, noise algorithms was original designed to give a natural *je ne sais quoi* to digital textures. Our first step to use it will be to differenciate different types of noise algorithms. So far all the implementations in 1D and 2D we saw, were interpolation between values and so they are usually call **Value Noise**. 
 
-<a href="../edit.html#11/2d-vnoise.frag"><canvas id="custom" class="canvas" data-fragment-url="2d-vnoise.frag"  width="520px" height="200px"></canvas> <p style="text-align: center;font-style: italic;">Value Noise by IQ</p></a>
+[ ![Inigo Quilez - Value Noise](value-noise.png) ](../edit.html#11/2d-vnoise.frag)
 
 As you discovery on the previus excercises this type of noise tends to look "block", as a solution to this effect in 1985 again [Ken Perlin](https://mrl.nyu.edu/~perlin/) develop another implementation of the algorithm call **Gradient Noise**. In it what is interpolated per coorner is not a value but a direction (represented by a ```vec2```).
 
-<a href="../edit.html#11/2d-gnoise.frag"><canvas id="custom" class="canvas" data-fragment-url="2d-gnoise.frag"  width="520px" height="200px"></canvas> <p style="text-align: center;font-style: italic;">Gradient Noise by IQ</p></a>
+[ ![Inigo Quilez - Gradient Noise](gradient-noise.png) ](../edit.html#11/2d-gnoise.frag)
 
 Take a minute to look to these two examples by [Inigo Quilez](http://www.iquilezles.org/) and pay attention on the differences between [value noise](https://www.shadertoy.com/view/lsf3WH) and [gradient noise](https://www.shadertoy.com/view/XdXGW8).
 
@@ -144,7 +144,15 @@ For Ken Perlin the success of his algorithm wasn't enough. He thought it could p
 * A noise with well-defined and continuous gradients that can be computed quite cheaply
 * An algorithm that is easy to implemnt in hardware
 
-Yeah, right? I know what you are thinking... "Who is this man?". Yes, his work is fantastic. But seriusly, How he did that? Well we saw how for two dimensions he was interpolating 4 points (coorners of a square); also we can correctly preasume that for [three (see an implementation here)](../edit.html#11/3d-noise.frag) and four dimensions we need to interpolate 8 and 16 points. Right? In other words for N dimensions you need to smoothly interpolate 2 to the N points (2^N). But Ken smartly notice that although the obvious choice for a space-filling shape is a squar, but actually the formal simplex shape in 2D is an equilateral triangle. That means that the simplex shape for N dimensions is a shape with N + 1 corners. In other words one less corner to compute in 2D, 4 less coorners in 3D and 11 less coorners in 4D! That's a huge improvement!
+Yeah, right? I know what you are thinking... "Who is this man?". Yes, his work is fantastic. But seriusly, How he did that? Well we saw how for two dimensions he was interpolating 4 points (coorners of a square); also we can correctly preasume that for [three (see an implementation here)](../edit.html#11/3d-noise.frag) and four dimensions we need to interpolate 8 and 16 points. Right? In other words for N dimensions you need to smoothly interpolate 2 to the N points (2^N). But Ken smartly notice that although the obvious choice for a space-filling shape is a squar, but actually the formal simplex shape in 2D is an equilateral triangle. 
+
+![](simplex-grid-00.png)
+
+That means that the simplex shape for N dimensions is a shape with N + 1 corners. In other words one less corner to compute in 2D, 4 less coorners in 3D and 11 less coorners in 4D! That's a huge improvement!
+
+In 2D the interpolation happens between those three corners in a similar way we where seen before.
+
+![](simplex-grid-01.png)
 
 It worths taking a look to [this paper where Stefan Gustavson](http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf) explains all the beauty and elegance of Ken Perlin's Simplex Noise. Couting from it:
 

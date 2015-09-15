@@ -56,7 +56,7 @@ The following is a list of examples present in this book.
         - [Diamond tiles](../edit.html#09/diamondtiles.frag)
         - [Bricks](../edit.html#09/bricks.frag)
         - Dots: [0](../edit.html#09/dots.frag), [1](../edit.html#09/dots1.frag), [2](../edit.html#09/dots2.frag), [3](../edit.html#09/dots3.frag), [4](../edit.html#09/dots4.frag), [5](../edit.html#09/dots5.frag) and [marching dots](../edit.html#09/marching_dots.frag)
-        - [Side grid](../edit.html#09/sidegrid.frag)
+        - [Side grid](../edit.html#09/grid-side.frag)
         - [Rotated tiles](../edit.html#09/rotatedtiles.frag)
         - [Nuts pattern](../edit.html#09/nuts.frag)
         - [Mirror tiles](../edit.html#09/mirrortiles.frag)
