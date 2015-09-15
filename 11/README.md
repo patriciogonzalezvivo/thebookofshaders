@@ -5,13 +5,33 @@
 
 Break time! We have been playing with all this random functions that looks like TV white noise, our head is still spinning around thinking on shaders, and our eyes are tired. Time to get out for a walk!
 
-We feel the air in our face, the sun in our nose and chicks. The world is such a vivid and rich place. Colors, textures, sounds. While we walk we can't avoid noticing the surface of the roads, rocks, trees and clouds. We note the stochasticity of textures, there is random on nature. But definitely not the type of random we were making in the previus chapter. The “real world” is such a rich place. How we can approximate to this level of variety computationally?
+We feel the air in our skin, the sun in our face. The world is such a vivid and rich place. Colors, textures, sounds. While we walk we can't avoid noticing the surface of the roads, rocks, trees and clouds. 
 
-We are on the same path of thoughts that [Ken Perlin](https://mrl.nyu.edu/~perlin/)'s walk through on 1982 when he was commissioned with the job of generating "more realistic" textures for a new disney movie call "Tron". In response to that he came up with an elegant *oscar winner* noise algorithm.
+![](texture-00.jpg)
+![](texture-01.jpg)
+![](texture-02.jpg)
+![](texture-03.jpg)
+![](texture-04.jpg)
+![](texture-05.jpg)
+![](texture-06.jpg)
+
+The stochasticity of this textures could be call "random", but definitely not the type of random we were playing before in the previus chapter. The “real world” is such a rich place! It's rando is way complex. How we can approximate to this level of variety computationally?
+
+This was the question [Ken Perlin](https://mrl.nyu.edu/~perlin/) was trying to solve arround 1982 when he was commissioned with the job of generating "more realistic" textures for a new disney movie call "Tron". In response to that he came up with an elegant *oscar winner* noise algorithm.
+
+![Disney - Tron (1982)](tron.jpg)
 
 The following is not the clasic Perlin noise algorithm, but is a good starting point to understand how to generate *smooth random* aka *noise*.
 
 In the following graph you will see what we were doing on the previus chapter, obtaining ```rand()``` numbers of the integers of the `x` position (assigning it to `i` variable), while we keep the [```fract()```](.../glossary/?search=fract) part of it (and storing it on the `f` variable).
+
+You will also see, two commented lines. The first one interpolates linearly between the random value of the integer position and it next one.
+
+```glsl
+y = mix(rand(i), rand(i + 1.0), f);
+``` 
+
+Uncomment it an see how that looks. See how we use the [```fract()```](.../glossary/?search=fract) value store in `f` to [```mix()```](.../glossary/?search=mix) the two random values.
 
 <div class="simpleFunction" data="
 float i = floor(x);  // integer
@@ -20,14 +40,6 @@ y = rand(i);
 //y = mix(rand(i), rand(i + 1.0), f);
 //y = mix(rand(i), rand(i + 1.0), smoothstep(0.,1.,f));
 "></div>
-
-You will see also, two commented lines. The first one interpolates linearly between the random value of the integer position and it next one.
-
-```glsl
-y = mix(rand(i), rand(i + 1.0), f);
-``` 
-
-Uncomment it an see how that looks. See how we use the [```fract()```](.../glossary/?search=fract) value store in `f` to [```mix()```](.../glossary/?search=mix) the two random values.
 
 At this point on the book, we learned that we can do better than a linear interpolation. Right? 
 The following commented line, will transfor the linear interpolation of `f` with a [```smoothstep()```](.../glossary/?search=smoothstep) interpolation.
@@ -152,13 +164,13 @@ That means that the simplex shape for N dimensions is a shape with N + 1 corners
 
 In 2D the interpolation happens between those three corners in a similar way we where seen before.
 
-![](simplex-grid-01.png)
-
 It worths taking a look to [this paper where Stefan Gustavson](http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf) explains all the beauty and elegance of Ken Perlin's Simplex Noise. Couting from it:
 
-"A point P inside a simplex gets contributions to its value only from the three kernels centered on the surrounding corners (shaded, red circles). Kernels at corners farther away (green circles) decay to zero before they cross the boundary to the simplex containing P. Thus, the noise value at each point can always be calculated as a sum of three terms."
+_"A point P inside a simplex gets contributions to its value only from the three kernels centered on the surrounding corners (shaded, red circles). Kernels at corners farther away (green circles) decay to zero before they cross the boundary to the simplex containing P. Thus, the noise value at each point can always be calculated as a sum of three terms."_
 
-Here is an actual GLSL implementation of this algorithm
+![](simplex-grid-01.png)
+
+Following is an actual GLSL implementation of this algorithm:
 
 <div class="codeAndCanvas" data="2d-snoise.frag"></div>
 
