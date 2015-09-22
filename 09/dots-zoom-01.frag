@@ -29,13 +29,7 @@ vec2 brickTile(vec2 st, float zoom){
 }
 
 float circleDF(vec2 st){
-  vec2 pos = vec2(0.5)-st;
-  return dot(pos,pos)*3.14;
-}
-
-float dotsDF(vec2 st){
-    st = brickTile(st, 2.);
-    return circleDF(st);
+  return dot(st,st);
 }
 
 void main(){
@@ -48,11 +42,16 @@ void main(){
     
     float pct = 1.0-fract(u_mouse.y/u_resolution.y);
 
+    float A = circleDF(vec2(0.5)-st);
+    float B = circleDF(vec2(0.25)-st)*5.;
+    B = min(B, circleDF(vec2(0.75,0.25)-st)*5.);
+    B = min(B, circleDF(vec2(0.5,0.75)-st)*5.);
+    B = min(B, circleDF(vec2(0.,0.75)-st)*5.);
+    B = min(B, circleDF(vec2(1.,0.75)-st)*5.);
+
     float d = 0.0;
-    d = dotsDF(fract(IN))*(1.0-pct);
-    d += dotsDF(fract(OUT))*pct;
-    // d = max(dotsDF(fract(IN))*(1.0-pct),dotsDF(fract(OUT))*pct);
-    // d = aastep(.21,d);
+    d = mix(A,B,pct);
+    d = aastep(.21,d);
     color = vec3(d);
 
     gl_FragColor = vec4(color,1.0);

@@ -15,7 +15,7 @@ vec2 random2( vec2 p ) {
 }
 
 #define ANIMATE
-vec3 voronoi( in vec2 x ) {
+vec3 voronoi( in vec2 x, float rnd ) {
     vec2 n = floor(x);
     vec2 f = fract(x);
 
@@ -25,7 +25,7 @@ vec3 voronoi( in vec2 x ) {
     for (int j=-1; j<=1; j++ ) {
         for (int i=-1; i<=1; i++ ) {
             vec2 g = vec2(float(i),float(j));
-            vec2 o = random2( n + g );
+            vec2 o = random2( n + g )*rnd;
             #ifdef ANIMATE
             o = 0.5 + 0.5*sin( u_time + 6.2831*o );
             #endif  
@@ -45,7 +45,7 @@ vec3 voronoi( in vec2 x ) {
     for (int j=-2; j<=2; j++ ) {
         for (int i=-2; i<=2; i++ ) {
             vec2 g = mg + vec2(float(i),float(j));
-            vec2 o = random2( n + g );
+            vec2 o = random2(n + g)*rnd;
             #ifdef ANIMATE
             o = 0.5 + 0.5*sin( u_time + 6.2831*o );
             #endif  
@@ -61,16 +61,17 @@ vec3 voronoi( in vec2 x ) {
 void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     vec3 color = vec3(0.0);
-
-    vec3 c = voronoi( 8.0*st );
+    
+    float d = dot(st-.5,st-.5);
+    vec3 c = voronoi( 20.*st, pow(d,.4) );
 
     // isolines
-    color = c.x*(0.5 + 0.5*sin(64.0*c.x))*vec3(1.0);
+    // color = c.x*(0.5 + 0.5*sin(64.0*c.x))*vec3(1.0);
     // borders  
     color = mix( vec3(1.0), color, smoothstep( 0.01, 0.02, c.x ) );
     // feature points
     float dd = length( c.yz );
-    color += vec3(1.)*(1.0-smoothstep( 0.0, 0.04, dd));
+    color += vec3(1.)*(1.0-smoothstep( 0.0, 0.1, dd));
 
     gl_FragColor = vec4(color,1.0);
 }

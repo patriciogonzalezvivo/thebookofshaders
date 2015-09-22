@@ -85,5 +85,5 @@ The following is a list of examples present in this book.
 
 * [Moon](../edit.html#examples/moon.frag&examples/images/moon-texture.jpg)
 * [Matrix](../edit.html#08/matrix.frag)
-* [I Ching](../edit.html#09/iching.frag)
+* [I Ching](../edit.html#11/iching-02.frag)
 * Ikeda's series: [test pattern](../edit.html#10/ikeda-00.frag), [data path](../edit.html#10/ikeda-03.frag) and [data defrag](../edit.html#10/ikeda-04.frag), [digits](../edit.html#10/ikeda-digits.frag), [radar](../edit.html#10/ikeda-simple-grid.frag), [numered grid](../edit.html#10/ikeda-numered-grid.frag)

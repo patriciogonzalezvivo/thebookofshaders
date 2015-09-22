@@ -137,7 +137,7 @@ Another way to get interesting patterns from noise is to treat it like a distanc
 
 The third way of using the noise function is using it to modulate a shapes, this probably require reviewing the [Shapes Chapter](../07/)
 
-<a href="../edit.html#11/circleWave-noise.frag"><canvas id="custom" class="canvas" data-fragment-url="circleWave-noise.frag"  width="520px" height="520"></canvas></a> 
+<a href="../edit.html#11/circleWave-noise.frag"><canvas id="custom" class="canvas" data-fragment-url="circleWave-noise.frag"  width="300px" height="300"></canvas></a> 
 
 * What other generative pattern can you make? What about granite? marble? magma? water? Find three pictures of  textures you are interested and implement them algorithmically using noise.
 * Use noise to modulate a shapes.
@@ -162,17 +162,19 @@ Yeah, right? I know what you are thinking... "Who is this man?". Yes, his work i
 
 That means that the simplex shape for N dimensions is a shape with N + 1 corners. In other words one less corner to compute in 2D, 4 less coorners in 3D and 11 less coorners in 4D! That's a huge improvement!
 
-In 2D the interpolation happens between those three corners in a similar way we where seen before.
-
-It worths taking a look to [this paper where Stefan Gustavson](http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf) explains all the beauty and elegance of Ken Perlin's Simplex Noise. Couting from it:
-
-_"A point P inside a simplex gets contributions to its value only from the three kernels centered on the surrounding corners (shaded, red circles). Kernels at corners farther away (green circles) decay to zero before they cross the boundary to the simplex containing P. Thus, the noise value at each point can always be calculated as a sum of three terms."_
+So, in two dimension the interpolation happens, in a similar way than regular noise, by interpolating the values of the corners of a section. But, in this particular case, because we are using a simplex grid we just need to interpolate the sum of only 3 coornes (or contributors) to interpolate.
 
 ![](simplex-grid-01.png)
 
-Following is an actual GLSL implementation of this algorithm:
+How the simplex grid works? In another brillant and elegant move, simplex grid can be obtain by subdividing the cells of a regular 4 corners grid into two isoceles triangles and then skewing it unitl each triangle is equilateral.
 
-<div class="codeAndCanvas" data="2d-snoise.frag"></div>
+![](simplex-grid-02.png)
+
+Then, as [Stefan Gustavson describe in this paper](http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf): _"...by looking at the integer parts of the transformed coordinates (x,y) for the point we want to evaluate, we can quickly determine which cell of two simplices that contain the point. By also compareing the magnitudes of x and y, we can determine whether the points is in the upper or the lower simplex, and traverse the correct three corners points."_
+
+Following is an actual GLSL implementation of this algorithm made by Ian McEwan and Ashima Arts, which is probably over complicated for educational porposes because have been higly optimized.
+
+<div class="codeAndCanvas" data="2d-snoise-clear.frag"></div>
 
 Now:
 
@@ -182,5 +184,10 @@ Now:
 
 <a href="../edit.html#11/lava-lamp.frag"><canvas id="custom" class="canvas" data-fragment-url="lava-lamp.frag"  width="520px" height="200px"></canvas></a> 
 
-Nothing like having some control over the chaos and chances. Right?
+* Use Signed Noise to add some texture to a work you already made
+
+<a href="../edit.html#11/iching-02.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-02.frag"  width="520px" height="520px"></canvas></a> 
+
+Nothing like having some control over the chaos and chances. Right? 
+
 Noise is one of those subjects that you can dig and always find new exciting formulas. In fact if you think of it, noise means different things for different people. Musicians will think in audio noise, communicators into interference, and astrophysics on cosmic microwave background. On the next chapter we will use some related concepts from sign and audio behavior to our noise function to explore more uses of noise.
