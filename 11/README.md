@@ -172,6 +172,8 @@ How the simplex grid works? In another brillant and elegant move, simplex grid c
 
 Then, as [Stefan Gustavson describe in this paper](http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf): _"...by looking at the integer parts of the transformed coordinates (x,y) for the point we want to evaluate, we can quickly determine which cell of two simplices that contain the point. By also compareing the magnitudes of x and y, we can determine whether the points is in the upper or the lower simplex, and traverse the correct three corners points."_
 
+<a href="../edit.html#11/simplex-grid.frag"><canvas id="custom" class="canvas" data-fragment-url="simplex-grid.frag"  width="520px" height="200"></canvas></a> 
+
 Following is an actual GLSL implementation of this algorithm made by Ian McEwan and Ashima Arts, which is probably over complicated for educational porposes because have been higly optimized.
 
 <div class="codeAndCanvas" data="2d-snoise-clear.frag"></div>
