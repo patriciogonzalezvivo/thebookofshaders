@@ -31,8 +31,11 @@ void main() {
     st.x *= u_resolution.x/u_resolution.y;
     vec3 color = vec3(0.0);
 
+    float t = 1.0;
+    // Uncomment to animate
+    // t = abs(1.0-sin(u_time*.1))*5.;
     // Comment and uncomment the following lines:
-    st += noise(st*2.)*abs(1.0-sin(u_time*.1))*5.; // Animate the coordinate space
+    st += noise(st*2.)*t; // Animate the coordinate space
     color = vec3(1.) * smoothstep(.18,.2,noise(st)); // Big black drops
     color += smoothstep(.15,.2,noise(st*10.)); // Black splatter
     color -= smoothstep(.35,.4,noise(st*10.)); // Holes on splatter

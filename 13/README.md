@@ -1,27 +1,67 @@
-## Fractals
+## Fractal Brownian Motion
 
-https://www.shadertoy.com/view/lsX3W4
+http://www.iquilezles.org/www/articles/warp/warp.htm
+http://www.iquilezles.org/www/articles/morenoise/morenoise.htm
 
-https://www.shadertoy.com/view/Mss3Wf
+Noise is one of those subjects that you can dig and always find new exciting formulas. In fact noise tends to means different things for different people. Musicians will think in audio noise, communicators into interference, and astrophysics on cosmic microwave background. In fact noise could be interpreted as audio signals, and noise as well as sound can be constructed by the manipulation of the amplitud and frequency of the waves that compose it.
 
-https://www.shadertoy.com/view/4df3Rn
+```glsl
+y = amplitud + sin( frequency );
+```
 
-https://www.shadertoy.com/view/Mss3R8
+An interesting property of waves in general is that they can be add up. The following graph shows what happen if you add sine waves of different frequencies and amplitudes. 
 
-https://www.shadertoy.com/view/4dfGRn
+<div class="simpleFunction" data="
+float t = 0.01*(-u_time*130.0);
+y += sin(x*2.1 + t)*4.5;
+y += sin(x*1.72 + t*1.121)*4.0;
+y += sin(x*2.221 + t*0.437)*5.0;
+y += sin(x*3.1122+ t*4.269)*2.5;
+y *= 0.1;
+"></div>
 
-https://www.shadertoy.com/view/lss3zs
+Think on it as the surface of the ocean. Massive amount of water propagating waves across it surface. Waves of different heights (amplitud) and rhythms (frequencies) bouncing and interfering each other.
 
-https://www.shadertoy.com/view/4dXGDX
+Musicians learn long time ago that there are sounds that play well with each other. Those sound, carried by waves of air, vibrate in such a particular way that the resultan sound seams to be bust and enhance. Those sounds are call [harmonics](http://en.wikipedia.org/wiki/Harmonic).
 
-https://www.shadertoy.com/view/XsXGz2
+Back to code, we can add harmonics together and see how the resultant looks like. Try the following code on the previous graph.
 
-https://www.shadertoy.com/view/lls3D7
+```glsl
+y = 0.;
+for( int i = 0; i < 5; ++i) {
+    y += sin(PI*x*float(i))/float(i);
+}
+y *= 0.6;
+```
 
-https://www.shadertoy.com/view/XdB3DD
+As you can see in the above code, on every iteration the frequency increase by the double. By augmenting the number of iterations (chaining the 5 for a 10, a 20 or 50) the wave tends to break into smaller fractions, with more details and sharper fluctuations.
 
-https://www.shadertoy.com/view/XdBSWw
+## Fractal Brownian Motion
 
-https://www.shadertoy.com/view/llfGD2
+So we try adding different waves together, and the result was chaotic, we add up harmonic waves and the result was a consistent fractal pattern. We can use the best of both worlds and add up harmonic noise waves to exacerbate a noise pattern.
 
-https://www.shadertoy.com/view/Mlf3RX
+By adding different octaves of increasing frequencies and decreasing amplitudes of noise we can obtain a bigger level of detail or granularity. This technique is call Fractal Brownian Motion and usually consist on a fractal sum of noise functions. 
+
+Take a look to the following example and progressively change the for loop to do 2,3,4,5,6,7 and 8 iterations. See want happens
+
+<div class="simpleFunction" data="
+float a = 0.5;
+for( int i = 0; i < 1; ++i) {
+    y += a * noise(x);
+    x = x * 2.0;
+    a *= 0.5;
+}"></div>
+
+If we apply this one dimensional example to a bidimentional space it will look like the following example:
+
+<div class="codeAndCanvas" data="2d-fbm.frag"></div>
+
+## Using Fractal Brownian Motion
+
+In this [article](http://www.iquilezles.org/www/articles/warp/warp.htm) Iñigo Quilez describe an interesting use of fractal brownian motion constructing patterns by adding successive results of fractal brownian motions.
+
+Take a look to the code and how it looks
+
+<div class="codeAndCanvas" data="clouds.frag"></div>
+
+
