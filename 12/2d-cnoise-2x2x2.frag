@@ -75,9 +75,6 @@ vec2 cellular2x2x2(vec3 P) {
 #endif
 }
 
-
-varying vec3 vTexCoord3D;
-
 void main(void) {
 	vec2 st = gl_FragCoord.xy/u_resolution.xy;
 

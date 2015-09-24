@@ -58,8 +58,10 @@ vec2 cellular2x2(vec2 P) {
 void main(void) {
 	vec2 st = gl_FragCoord.xy/u_resolution.xy;
 
-	vec2 F = cellular2x2(st*20.);
+	vec2 F = cellular2x2(st*50.);
 
-	float n = 1.0-1.5*F.x;
+	float pct = st.x;
+
+	float n = step(pct,F.x*1.3);
 	gl_FragColor = vec4(n, n, n, 1.0);
 }

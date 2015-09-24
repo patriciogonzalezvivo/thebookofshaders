@@ -197,6 +197,6 @@ Well enought technicalities, is time for you to use this resource in your own ex
 
 * Use Signed Noise to add some texture to a work you already made.
 
-<a href="../edit.html#11/iching-02.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-02.frag"  width="520px" height="520px"></canvas></a> 
+<a href="../edit.html#11/iching-03.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-03.frag"  width="520px" height="520px"></canvas></a> 
 
 Well in this chapter we have introduce some control over the chaos. Is not an easy job. Becoming a noise bender master takes time and efford. On the following chapters we will review some "well-know" techniques to perfect your skills and get more out of your noise functions to design generative content on shaders.

@@ -60,6 +60,9 @@ void main(void) {
 
 	vec2 F = cellular2x2(st*20.);
 
-	float n = 1.0-1.5*F.x;
+	vec2 pos = st-.5;
+	float a = dot(pos,pos)-u_time*0.1;
+
+	float n = 1.0-step(abs(sin(a))-.1,.05+(F.x-F.y)*2.) ;
 	gl_FragColor = vec4(n, n, n, 1.0);
 }

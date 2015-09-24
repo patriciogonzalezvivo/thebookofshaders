@@ -7,22 +7,12 @@ precision mediump float;
 uniform vec2 u_resolution;
 uniform float u_time;
 
-// Cellular noise ("Worley noise") in 2D in GLSL.
-// Copyright (c) Stefan Gustavson 2011-04-19. All rights reserved.
-// This code is released under the conditions of the MIT license.
-// See LICENSE file for details.
+uniform sampler2D u_tex;
 
-// Permutation polynomial: (34x^2 + x) mod 289
 vec4 permute(vec4 x) {
   return mod((34.0 * x + 1.0) * x, 289.0);
 }
 
-// Cellular noise, returning F1 and F2 in a vec2.
-// Speeded up by using 2x2 search window instead of 3x3,
-// at the expense of some strong pattern artifacts.
-// F2 is often wrong and has sharp discontinuities.
-// If you need a smooth F2, use the slower 3x3 version.
-// F1 is sometimes wrong, too, but OK for most purposes.
 vec2 cellular2x2(vec2 P) {
 #define K 0.142857142857 // 1/7
 #define K2 0.0714285714285 // K/2
@@ -55,11 +45,34 @@ vec2 cellular2x2(vec2 P) {
 #endif
 }
 
+float getIntensity(vec2 u){
+	vec3 a = texture2D(u_tex,u).xyz;
+	return (a.x+a.y+a.z)/3.0;
+}
+
 void main(void) {
 	vec2 st = gl_FragCoord.xy/u_resolution.xy;
+	float n = 1.0;
 
-	vec2 F = cellular2x2(st*20.);
+	vec2 F = cellular2x2(st*100.);
+	float pct = 1.0-texture2D(u_tex,st).r;
+	n = step(pct,F.x*2.);
 
-	float n = 1.0-1.5*F.x;
+	vec2 p = vec2(2./u_resolution.xy);
+	
+	float avg = 0.0;
+	avg += getIntensity(st+vec2(p.x,0.0));
+	avg += getIntensity(st+vec2(-p.x,0.0));
+	avg += getIntensity(st+vec2(0.0,p.y));
+	avg += getIntensity(st+vec2(0.0,-p.y));
+	avg += getIntensity(st+vec2(p.x,p.y));
+	avg += getIntensity(st+vec2(-p.x,-p.y));
+	avg += getIntensity(st+vec2(p.x,-p.y));
+	avg += getIntensity(st+vec2(-p.x,p.y));
+	avg /= 8.0;
+	float edge = (1.0-getIntensity(st)) + avg;
+	edge = (1.0 - edge)*10.0;
+	n -= edge;
+
 	gl_FragColor = vec4(n, n, n, 1.0);
 }

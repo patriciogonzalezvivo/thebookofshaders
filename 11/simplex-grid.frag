@@ -44,7 +44,7 @@ void main() {
     // color.rg = fract(skew(st));
 
     // Subdivide the grid into to equilateral triangles
-    // color = simplexGrid(st);
+    color = simplexGrid(st);
 
     gl_FragColor = vec4(color,1.0);
 }
