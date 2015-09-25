@@ -18,12 +18,13 @@ float random (in float x) {
     return fract(sin(x)*1e4);
 }
 
-// Based on Morgan McGuire @morgan3d
-// https://www.shadertoy.com/view/4dS3Wd
 float noise (in float x) {
     float i = floor(x);
     float f = fract(x);
+    
+    // Cubic Hermine Curve
     float u = f * f * (3.0 - 2.0 * f);
+
     return mix(random(i), random(i + 1.0), u);
 }
 

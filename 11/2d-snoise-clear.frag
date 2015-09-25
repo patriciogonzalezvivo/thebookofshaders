@@ -1,6 +1,3 @@
-// Author @patriciogv - 2015
-// http://patriciogonzalezvivo.com
-
 #ifdef GL_ES
 precision mediump float;
 #endif
@@ -85,11 +82,14 @@ float snoise(vec2 v) {
 
 void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
+    st.x *= u_resolution.x/u_resolution.y;
+
     vec3 color = vec3(0.0);
 
-    vec2 pos = vec2(st*10.);
+    // Scale the space in order to see the function
+    st *= 10.;
 
-    color = vec3(snoise(pos)*.5+.5);
+    color = vec3(snoise(st)*.5+.5);
 
     gl_FragColor = vec4(color,1.0);
 }

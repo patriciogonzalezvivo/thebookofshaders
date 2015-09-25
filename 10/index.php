@@ -31,4 +31,5 @@
 
 	include($path."/footer.php"); 
 ?>
+
 <!-- <li class="navigationBar" onclick="nextPage()">Next &gt; &gt;</li> -->

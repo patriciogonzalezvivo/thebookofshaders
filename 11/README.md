@@ -119,7 +119,7 @@ As a painter that understand how the pigments of their paint works, the more we 
 
 For example, if we use a two dimensional noise implementation to rotate the "grid" we can produce the following effect that looks a lot like wood  
 
-<a href="../edit.html#11/wood.frag"><canvas id="custom" class="canvas" data-fragment-url="wood.frag"  width="520px" height="200px"></canvas></a> 
+[ ![Wood texture](wood.png) ](../edit.html#11/wood.frag)
 
 ```glsl
     pos = rotate2d( noise(pos) ) * pos; // rotate the space
@@ -128,7 +128,7 @@ For example, if we use a two dimensional noise implementation to rotate the "gri
 
 Another way to get interesting patterns from noise is to treat it like a distance field and apply some of the tricks described on the [Shapes chapter](../07/)
 
-<a href="../edit.html#11/splatter.frag"><canvas id="custom" class="canvas" data-fragment-url="splatter.frag"  width="520px" height="200px"></canvas></a> 
+[ ![Splatter texture](splatter.png) ](../edit.html#11/splatter.frag)
 
 ```glsl
     color += smoothstep(.15,.2,noise(st*10.)); // Black splatter
@@ -170,26 +170,33 @@ How the simplex grid works? In another brillant and elegant move, simplex grid c
 
 ![](simplex-grid-02.png)
 
-Then, as [Stefan Gustavson describe in this paper](http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf): _"...by looking at the integer parts of the transformed coordinates (x,y) for the point we want to evaluate, we can quickly determine which cell of two simplices that contain the point. By also compareing the magnitudes of x and y, we can determine whether the points is in the upper or the lower simplex, and traverse the correct three corners points."_
+Then, as [Stefan Gustavson describe in this paper](http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf): _"...by looking at the integer parts of the transformed coordinates (x,y) for the point we want to evaluate, we can quickly determine which cell of two simplices that contain the point. By also compareing the magnitudes of x and y, we can determine whether the points is in the upper or the lower simplex, and traverse the correct three corners points."_. On the following code you can un comment the line 44 to see how the grid is skew and then line 47 to see how a simplex grid can be constructed. Note how on line 22 we are subdiving the skewed squared on two equilateral triangles just buy detecting if ```x > y``` ("lower" triangle) or ```y > x``` ("upper" triangle).
 
-<a href="../edit.html#11/simplex-grid.frag"><canvas id="custom" class="canvas" data-fragment-url="simplex-grid.frag"  width="520px" height="200"></canvas></a> 
+<div class="codeAndCanvas" data="simplex-grid.frag"></div>
 
-Following is an actual GLSL implementation of this algorithm made by Ian McEwan and Ashima Arts, which is probably over complicated for educational porposes because have been higly optimized.
+Other improvements introduce by Perlin, is the replacement of the Cubic Hermite Curve ( _f(x) = 3x^2-2x^3_ ) for a Quintic Hermite Curve ( _f(x) = 6x^5-15x^4+10x^3_ ). In an efford to keep the "math stuff" simple this makes both ends of the curve more flat and by that a more continuos transition with the next interpolation. You can watch it for your self by uncommenting the second formula on the following graph example (or by see the [two equations side by side here](https://www.desmos.com/calculator/2xvlk5xp8b)). Note how the ends of the curve changes. You can read more about this in [on words of Ken it self in this paper](http://mrl.nyu.edu/~perlin/paper445.pdf).
 
-<div class="codeAndCanvas" data="2d-snoise-clear.frag"></div>
+<div class="simpleFunction" data="
+// Cubic Hermine Curve.  Same as SmoothStep()
+y = x*x*(3.0-2.0*x);
+// Quintic Hermine Curve
+//y = x*x*x*(x*(x*6.-15.)+10.);
+"></div>
 
-Now:
+Following is an actual GLSL implementation of this algorithm made by Ian McEwan (and presented in [this paper](http://webstaff.itn.liu.se/~stegu/jgt2012/article.pdf)) which is probably over complicated for educational porposes because have been higly optimized, but you will be happy to click on it and see that is less cryptic than you expect.
 
-* Take a closer look to the implementation and their results. Beside the eficient improvements, what you can say about how it looks?
+[ ![Ian McEwan of Ashima Arts - Simplex Noise](simplex-noise.png) ](../edit.html#11/2d-snoise-clear.frag)
+
+Well enought technicalities, is time for you to use this resource in your own expressive way:
+
+* Contemplate how each noise implementation looks. Imagine them as a raw material. Like a marble rock for a sculptor. What you can say about about the "feeling" that each one have? Squinch your eyes to trigger your imagination, like when you want to find shapes on a cloud, What do you see? what reminds you off? How do you imagine each noise implementation could be model into? Following your guts try to make it happen on code.
 
 * Make a shader that project the ilusion of flow. Like a lava lamp, ink drops, watter, etc.
 
 <a href="../edit.html#11/lava-lamp.frag"><canvas id="custom" class="canvas" data-fragment-url="lava-lamp.frag"  width="520px" height="200px"></canvas></a> 
 
-* Use Signed Noise to add some texture to a work you already made
+* Use Signed Noise to add some texture to a work you already made.
 
-<a href="../edit.html#11/iching-02.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-02.frag"  width="520px" height="520px"></canvas></a> 
+<a href="../edit.html#11/iching-03.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-03.frag"  width="520px" height="520px"></canvas></a> 
 
-Nothing like having some control over the chaos and chances. Right? 
-
-Noise is one of those subjects that you can dig and always find new exciting formulas. In fact if you think of it, noise means different things for different people. Musicians will think in audio noise, communicators into interference, and astrophysics on cosmic microwave background. On the next chapter we will use some related concepts from sign and audio behavior to our noise function to explore more uses of noise.
+Well in this chapter we have introduce some control over the chaos. Is not an easy job. Becoming a noise bender master takes time and efford. On the following chapters we will review some "well-know" techniques to perfect your skills and get more out of your noise functions to design generative content on shaders.

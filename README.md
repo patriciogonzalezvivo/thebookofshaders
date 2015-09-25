@@ -29,6 +29,7 @@ This is a gentle step-by-step guide through the abstract and complex universe of
 * Generative designs
     * [Random](10/)
     * Noise
+    * Cellular Noise & voronoi
     * Fractional brownian motion
     * Fractals
 
@@ -45,7 +46,6 @@ This is a gentle step-by-step guide through the abstract and complex universe of
     * Ripples
     * Water color
     * Reaction diffusion
-    * Voronoi
 
 * 3D graphics
     * Lights
