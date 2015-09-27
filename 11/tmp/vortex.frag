@@ -73,6 +73,11 @@ float cascade(vec2 st, vec2 zoom, float time, float warp) {
 
 void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
+    if (u_resolution.x>u_resolution.y) {
+        st.x *= u_resolution.x/u_resolution.y;
+    } else {
+        st.y *= u_resolution.y/u_resolution.x;
+    }
     vec3 color = vec3(0.0);
     vec2 pos = st-vec2(.5);
     float r = dot(pos,pos);
