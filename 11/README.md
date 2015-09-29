@@ -62,9 +62,13 @@ The *smooth random* is a game changer for graphical engeneers, it provides the h
 Now is your turn:
 
 * Make your own ```float noise(float x)``` function.
+
 * Use the noise funtion to animate a shape by moving it, rotating it or scaling it.
+
 * Make an animated composition of several shapes 'dancing' together using noise.
+
 * Construct "organic-looking" shapes using the noise function.
+
 * Once you have your "creature", try to develop further this into a character by assigning it a particular movement.
 
 ## 2D Noise
