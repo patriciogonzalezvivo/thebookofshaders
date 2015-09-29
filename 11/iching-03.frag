@@ -105,11 +105,10 @@ void main(){
 	vec2 st = gl_FragCoord.xy/u_resolution.xy;
     st.y *= u_resolution.y/u_resolution.x;
 
-    float t = u_time*0.1;
+    float t = u_time*0.5;
 
     float df = 1.0;
     df = mix(hex(st,t),hex(st,t+1.),fract(t));
-    df += snoise(vec3(st*100.,t*0.1))*0.03;
-
+    df += snoise(vec3(st*75.,t*0.1))*0.03;
 	gl_FragColor = vec4(mix(vec3(0.),vec3(1.),step(0.7,df)),1.0);
 }

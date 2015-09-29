@@ -9,16 +9,6 @@ uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
 
-//
-// Description : Array and textureless GLSL 2D simplex noise function.
-//      Author : Ian McEwan, Ashima Arts.
-//  Maintainer : ijm
-//     Lastmod : 20110822 (ijm)
-//     License : Copyright (C) 2011 Ashima Arts. All rights reserved.
-//               Distributed under the MIT License. See LICENSE file.
-//               https://github.com/ashima/webgl-noise
-// 
-
 vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
 vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
 vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
@@ -66,24 +56,46 @@ float snoise(vec2 v) {
     return 130.0 * dot(m, g);
 }
 
-float cascade(vec2 st, vec2 zoom, float time, float warp) {
-    vec2 pos = st*zoom*vec2(1.,pow(st.y,warp))+vec2(0.,time);
-    return (.5+snoise(pos)*.5)*(st.y);
+vec3 nNoise(vec2 st) {
+    vec2 offset = vec2(1.)/u_resolution.xy;
+    float center     = snoise(vec2(st.x, st.y));
+    float topLeft    = snoise(vec2(st.x - offset.x, st.y - offset.y));
+    float left       = snoise(vec2(st.x - offset.x, st.y));
+    float bottomLeft = snoise(vec2(st.x - offset.x, st.y + offset.y));
+    float top        = snoise(vec2(st.x, st.y - offset.y));
+    float bottom     = snoise(vec2(st.x, st.y + offset.y));
+    float topRight   = snoise(vec2(st.x + offset.x, st.y - offset.y));
+    float right      = snoise(vec2(st.x + offset.x, st.y));
+    float bottomRight= snoise(vec2(st.x + offset.x, st.y + offset.y));
+    
+    float dX = topRight + 2.0 * right + bottomRight - topLeft - 2.0 * left - bottomLeft;
+    float dY = bottomLeft + 2.0 * bottom + bottomRight - topLeft - 2.0 * top - topRight;
+    
+    return normalize(vec3( dX, dY, 0.01))*.5+.5;
 }
 
-void main() {
+vec2 tile(vec2 _st, float _zoom){
+    _st *= _zoom;
+    return fract(_st);
+}
+
+float X(vec2 _st, float _width){
+    float pct0 = smoothstep(_st.x-_width,_st.x,_st.y);
+    pct0 *= 1.-smoothstep(_st.x,_st.x+_width,_st.y);
+
+    float pct1 = smoothstep(_st.x-_width,_st.x,1.0-_st.y);
+    pct1 *= 1.-smoothstep(_st.x,_st.x+_width,1.0-_st.y);
+
+    return pct0+pct1;
+}
+
+void main(){
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
-    vec3 color = vec3(0.0);
-    vec2 pos = st-vec2(.5);
-    float r = dot(pos,pos);
-    float a = atan(pos.y,pos.x);
+    st.x *= u_resolution.x/u_resolution.y;
 
-    st = vec2(a,r*8.);
+    st += nNoise(st*10.).xy*.02*sin(u_time);
 
-    color = vec3(1.)*smoothstep(.5,.8, cascade(st,vec2(30.,3.),u_time*3.,5.));
-    color += vec3(.5)*smoothstep(.6,.7, cascade(st,vec2(50.,5.),u_time*2.,1.));
-    color += smoothstep(.03,.20,r)*.5;
-    color *= 1.0-smoothstep(.11,.13,r);
-
-    gl_FragColor = vec4(color,1.0);
+    float grid = 1.0-X(tile(st,10.),0.05);
+    
+    gl_FragColor= vec4(vec3(grid),1.);
 }

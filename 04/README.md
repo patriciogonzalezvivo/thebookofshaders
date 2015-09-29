@@ -31,8 +31,6 @@ Below is an example of the HTML and JS you need to get started with shaders in t
         }
     </script>
     <script>
-        if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
-
         var container;
         var camera, scene, renderer;
         var uniforms;
