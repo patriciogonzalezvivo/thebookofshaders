@@ -93,3 +93,19 @@ The following is a list of examples present in this book.
 * [Matrix](../edit.html#08/matrix.frag)
 * I Ching series:  [pattern](../edit.html#09/iching-01.frag), [random](../edit.html#10/iching-02.frag), [with noise](../edit.html#11/iching-03.frag)
 * Ikeda's series: [test pattern](../edit.html#10/ikeda-00.frag), [data path](../edit.html#10/ikeda-03.frag), [data defrag](../edit.html#10/ikeda-04.frag), [digits](../edit.html#10/ikeda-digits.frag), [radar](../edit.html#10/ikeda-simple-grid.frag) and [numered grid](../edit.html#10/ikeda-numered-grid.frag)
+
+### Students Work
+
+ * [Shaping functions](../05/)
+
+ * [Color](../06/)
+
+	- [Light](../edit.html#examples/06/behrn916-light.frag) by Nima Behravan
+	- [Turner Sunset](../edit.html#examples/06/dothh489-sunset.frag) by Hang Do Thi Duc
+	- [Villareal instalation](../edit.html#examples/06/dothh489-villareal.frag) by Hang Do Thi Duc 
+	- [Turner Sunset](../edit.html#examples/06/henrt555-turner.frag) by Tyler Henry
+	- [Villareal instalation 1](../edit.html#examples/06/mahau289-villareal1.frag) by Udit Mahajan
+	- [Villareal instalation 2](../edit.html#examples/06/mahau289-villareal2.frag) by Udit Mahajan
+	- [Sunrise/Sunset](../edit.html#examples/06/randj063-sunset.frag) by Jaskirat Randhawa
+	- [Villareal instalation](../edit.html#examples/06/tothn598-villareal.frag) by Nitcha Tothong
+	- [Villareal instalation](../edit.html#examples/06/wangl073-villareal.frag) by Luobin Wang 
