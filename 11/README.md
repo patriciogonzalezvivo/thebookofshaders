@@ -3,9 +3,9 @@
 
 ## Noise
 
-It's time for a break! We have been playing with all this random functions that looks like TV white noise, our head is still spinning around thinking on shaders, and our eyes are tired. Time to get out for a walk!
+It's time for a break! We've been playing with random functions that look like TV white noise, our head is still spinning thinking about shaders, and our eyes are tired. Time to go out for a walk!
 
-We feel the air in our skin, the sun in our face. The world is such a vivid and rich place. Colors, textures, sounds. While we walk we can't avoid noticing the surface of the roads, rocks, trees and clouds. 
+We feel the air on our skin, the sun in our face. The world is such a vivid and rich place. Colors, textures, sounds. While we walk we can't avoid noticing the surface of the roads, rocks, trees and clouds. 
 
 ![](texture-00.jpg)
 ![](texture-01.jpg)
@@ -15,115 +15,113 @@ We feel the air in our skin, the sun in our face. The world is such a vivid and 
 ![](texture-05.jpg)
 ![](texture-06.jpg)
 
-The stochasticity of this textures could be call "random", but definitely they don't look like the random we were playing before. The “real world” is such a rich and complex place! So, how can we approximate to this level of variety computationally?
+The unpredictability of these textures could be called "random," but they don't look like the random we were playing with before. The “real world” is such a rich and complex place! How can we approximate this variety computationally?
 
-This was the question [Ken Perlin](https://mrl.nyu.edu/~perlin/) was trying to solve arround 1982 when he was commissioned with the job of generating a "more realistic" textures for a new disney movie call "Tron". In response to that he came up with an elegant *oscar winner* noise algorithm. No biggie.
+This was the question [Ken Perlin](https://mrl.nyu.edu/~perlin/) was trying to solve in the eary 1980s when he was commissioned to generate more realistic textures for the movie "Tron." In response to that, he came up with an elegant *Oscar winning* noise algorithm. (No biggie.)
 
 ![Disney - Tron (1982)](tron.jpg)
 
-The following is not the clasic Perlin noise algorithm, but is a good starting point to understand how to generate *smooth random* aka *noise*.
+The following is not the classic Perlin noise algorithm, but it is a good starting point to understand how to generate noise.
 
 <div class="simpleFunction" data="
 float i = floor(x);  // integer
 float f = fract(x);  // fraction
-y = rand(i);
+y = rand(i); //rand() is described in the previous chapter
 //y = mix(rand(i), rand(i + 1.0), f);
 //y = mix(rand(i), rand(i + 1.0), smoothstep(0.,1.,f));
 "></div>
 
-In this lines we are doing something similar than the previus chapters, We are subdividing a continus floating value (```x````) in integers (```i```) using [```floor()```](.../glossary/?search=floor) and obtaining a random (```rand()```) number for each integer. At the same time we are storing the fractional part of each section using [```fract()```](.../glossary/?search=fract) and storing it on the ```f``` variable.
+In these lines we are doing something similar to what we did in the previous chapter. We are subdividing a continuous floating number (```x```) into its integer (```i```) and fractional (```f```) components. We use [```floor()```](.../glossary/?search=floor) to obtain ```i``` and [```fract()```](.../glossary/?search=fract) to obtain ```f```. Then we apply ```rand()``` to the integer part of ```x```, which gives a unique random value for each integer.
 
-After that you will also see, two commented lines. The first one interpolates each random value linearly.
+After that you see two commented lines. The first one interpolates each random value linearly.
 
 ```glsl
 y = mix(rand(i), rand(i + 1.0), f);
 ``` 
 
-Go ahead and uncomment this line an see how that looks. We use the [```fract()```](.../glossary/?search=fract) value store in `f` to [```mix()```](.../glossary/?search=mix) the two random values.
+Go ahead and uncomment this line to see how this looks. We use the [```fract()```](.../glossary/?search=fract) value store in `f` to [```mix()```](.../glossary/?search=mix) the two random values.
 
-At this point on the book, we learned that we can do better than a linear interpolation. Right? 
-Now try uncommenting the following line, which use a [```smoothstep()```](.../glossary/?search=smoothstep) interpolation instead of a linear one.
+At this point in the book, we've learned that we can do better than a linear interpolation, right? 
+Now try uncommenting the following line, which uses a [```smoothstep()```](.../glossary/?search=smoothstep) interpolation instead of a linear one.
 
 ```glsl
 y = mix(rand(i), rand(i + 1.0), smoothstep(0.,1.,f));
 ```
 
-After uncommenting it, notice how the transition between the peaks got smooth. On some noise implementations you will find that some programers prefere to code their own cubic curves (like the following formula) instead of using the [```smoothstep()```](.../glossary/?search=smoothstep). 
+After uncommenting it, notice how the transition between the peaks gets smooth. In some noise implementations you will find that programmers prefer to code their own cubic curves (like the following formula) instead of using the [```smoothstep()```](.../glossary/?search=smoothstep). 
 
 ```glsl
 float u = f * f * (3.0 - 2.0 * f ); // custom cubic curve
 y = mix(rand(i), rand(i + 1.0), u); // using it in the interpolation
 ```
 
-The *smooth random* is a game changer for graphical engeneers, it provides the hability to generate images and geometries with an organic feeling. Perlin's Noise Algorithm have been reimplemented over and over in different lenguage and dimensions for all kind of creative uses to make all sort of mesmerizing pieces.
+This *smooth randomness* is a game changer for graphical engineers or artists - it provides the ability to generate images and geometries with an organic feeling. Perlin's Noise Algorithm has been implemented over and over in different languages and dimensions to make mesmerizing pieces for all sorts of creative uses.
 
 ![Robert Hodgin - Written Images (2010)](robert_hodgin.jpg)
 
-Now is your turn:
+Now it's your turn:
 
 * Make your own ```float noise(float x)``` function.
 
-* Use the noise funtion to animate a shape by moving it, rotating it or scaling it.
+* Use your noise function to animate a shape by moving it, rotating it or scaling it.
 
 * Make an animated composition of several shapes 'dancing' together using noise.
 
 * Construct "organic-looking" shapes using the noise function.
 
-* Once you have your "creature", try to develop further this into a character by assigning it a particular movement.
+* Once you have your "creature," try to develop it further into a character by assigning it a particular movement.
 
 ## 2D Noise
 
 ![](02.png)
 
-Now that we know how to do noise in 1D, is time to port it to 2D. For that instead of interpolating between two points of a line (```fract(x)``` and ```fract(x)+1.0```) we are going to interpolate between the four coorners of a square area of a plane(```fract(st)```, ```fract(st)+vec2(1.,0.)```, ```fract(st)+vec2(0.,1.)``` and ```fract(st)+vec2(1.,1.)```).
+Now that we know how to do noise in 1D, it's time to move on to 2D. In 2D, instead of interpolating between two points of a line (```fract(x)``` and ```fract(x)+1.0```), we are going to interpolate between the four corners of the square area of a plane (```fract(st)```, ```fract(st)+vec2(1.,0.)```, ```fract(st)+vec2(0.,1.)``` and ```fract(st)+vec2(1.,1.)```).
 
 ![](01.png)
 
-Similarly if we want to obtain 3D noise we need to interpolate between the eight coorners of a cube. This technique it's all about interpolating values of random. That's why is call **value noise**.
+Similarly, if we want to obtain 3D noise we need to interpolate between the eight corners of a cube. This technique is all about interpolating random values, which is why it's called **value noise**.
 
 ![](04.jpg)
 
-Similarly to the previus example this interpolation is not liner but cubic, which smoothly interpolates any points inside our squared grid
+Like the 1D example, this interpolation is not linear but cubic, which smoothly interpolates any points inside our square grid.
 
 ![](05.jpg)
 
-Take a look to the following noise function. 
+Take a look at the following noise function. 
 
 <div class="codeAndCanvas" data="2d-noise.frag"></div>
 
-We start by scaling the space by 5 (line 45) in order. Then inside the noise function we subdived the space in cells similarly that we have done before. We store the integer position of the cell together with fractional inside values. We use the integer position to calculate the four corners corinates and obtain a random value for each one (lines 23-26). Then, finally in line 35 we interpolate 4 random values of the coorners using the fractional value we store before.
+We start by scaling the space by 5 (line 45) in order to see the interpolation between the squares of the grid. Then inside the noise function we subdivide the space into cells. We store the integer position of the cell along with the fractional positions inside the cell. We use the integer position to calculate the four corners' coordinates and obtain a random value for each one (lines 23-26). Finally, in line 35 we interpolate between the 4 random values of the corners using the fractional positions we stored before.
 
-Now is your turn, try the following excersices:
+Now it's your turn. Try the following exercises:
 
 * Change the multiplier of line 45. Try to animate it.
 
-* At what level of zoom the noise start looking like random again?
+* At what level of zoom does the noise start looking like random again?
 
-* At what zoom level the noise is imperceptible.
+* At what zoom level is the noise is imperceptible?
 
 * Try to hook up this noise function to the mouse coordinates.
 
-* What if we treat the gradient of the noise as a distance field? Make something interesing with it.
+* What if we treat the gradient of the noise as a distance field? Make something interesting with it.
 
-* Now that you achieve some control over order and chaos, is time to use that knowledge. Make a composition of rectangles, colors and noise that resemble some of the complexity of the texture of the following painting made by [Mark Rothko](http://en.wikipedia.org/wiki/Mark_Rothko).
+* Now that you've achieved some control over order and chaos, it's time to use that knowledge. Make a composition of rectangles, colors and noise that resembles some of the complexity of a [Mark Rothko](http://en.wikipedia.org/wiki/Mark_Rothko) painting.
 
 ![Mark Rothko - Three (1950)](rothko.jpg)
 
-## Using Noise on generative designs
+## Using Noise in Generative Designs
 
-As we saw, noise algorithms was original designed to give a natural *je ne sais quoi* to digital textures. So far all the implementations in 1D and 2D we saw, were interpolation between values reason why is usually call **Value Noise**, but there are more...
+Noise algorithms were originally designed to give a natural *je ne sais quoi* to digital textures. The 1D and 2D implementations we've seen so far were interpolations between random *values*, which is why they're called **Value Noise**, but there are more ways to obtain noise...
 
 [ ![Inigo Quilez - Value Noise](value-noise.png) ](../edit.html#11/2d-vnoise.frag)
 
-As you discovery on the previus excercises this type of noise tends to look "block", as a solution to this effect in 1985, again, [Ken Perlin](https://mrl.nyu.edu/~perlin/) develop another implementation of the algorithm call **Gradient Noise**. In it Ken figure out how to interpolate **random gradients** instead of values. This gradients where the result of 2D noise function that returns directions (represented by a ```vec2```) instead of single values (```float```). Click in the foolowing image to see the code and how it works.
+As you discovered in the previous exercises, value noise tends to look "blocky." To diminish this blocky effect, in 1985 [Ken Perlin](https://mrl.nyu.edu/~perlin/) developed another implementation of the algorithm called **Gradient Noise**. Ken figured out how to interpolate random *gradients* instead of values. These gradients were the result of a 2D random function that returns directions (represented by a ```vec2```) instead of single values (```float```). Click on the following image to see the code and how it works.
 
 [ ![Inigo Quilez - Gradient Noise](gradient-noise.png) ](../edit.html#11/2d-gnoise.frag)
 
-Take a minute to look to these two examples by [Inigo Quilez](http://www.iquilezles.org/) and pay attention on the differences between [value noise](https://www.shadertoy.com/view/lsf3WH) and [gradient noise](https://www.shadertoy.com/view/XdXGW8).
+Take a minute to look at these two examples by [Inigo Quilez](http://www.iquilezles.org/) and pay attention to the differences between [value noise](https://www.shadertoy.com/view/lsf3WH) and [gradient noise](https://www.shadertoy.com/view/XdXGW8).
 
-As a painter that understand how the pigments of their paints works, the more we know about noise implementations the better we will learn how to use it. The following step is to find interesting way of combine and use it.
-
-For example, if we use a two dimensional noise implementation to rotate the space where strign lines are render, we can produce the following swirly effect that looks like wood. Again you can click on the image to see how the code looks like 
+Like a painter who understands how the pigments of their paints work, the more we know about noise implementations the better we will be able to use them. For example, if we use a two dimensional noise implementation to rotate the space where straight lines are rendered, we can produce the following swirly effect that looks like wood. Again you can click on the image to see what the code looks like. 
 
 [ ![Wood texture](wood.png) ](../edit.html#11/wood.frag)
 
@@ -132,7 +130,7 @@ For example, if we use a two dimensional noise implementation to rotate the spac
     pattern = lines(pos,.5); // draw lines
 ```
 
-Another way to get interesting patterns from noise is to treat it like a distance field and apply some of the tricks described on the [Shapes chapter](../07/).
+Another way to get interesting patterns from noise is to treat it like a distance field and apply some of the tricks described in the [Shapes chapter](../07/).
 
 [ ![Splatter texture](splatter.png) ](../edit.html#11/splatter.frag)
 
@@ -141,50 +139,50 @@ Another way to get interesting patterns from noise is to treat it like a distanc
     color -= smoothstep(.35,.4,noise(st*10.)); // Holes on splatter
 ```
 
-A third way of using the noise function is to modulate a shapes, this also requires some of the techniques we learn on the [chapter about shapes](../07/)
+A third way of using the noise function is to modulate a shape. This also requires some of the techniques we learned in the [chapter about shapes](../07/).
 
 <a href="../edit.html#11/circleWave-noise.frag"><canvas id="custom" class="canvas" data-fragment-url="circleWave-noise.frag"  width="300px" height="300"></canvas></a> 
 
 For you to practice:
 
-* What other generative pattern can you make? What about granite? marble? magma? water? Find three pictures of  textures you are interested and implement them algorithmically using noise.
-* Use noise to modulate a shapes.
-* What about using noise for motion? Go back to the [Matrix chapter](../08/) and use the translation example that move a the "+" around to apply some *random* and *noise* movements to it.
-* Make a generative Jackson Pollock
+* What other generative pattern can you make? What about granite? marble? magma? water? Find three pictures of textures you are interested in and implement them algorithmically using noise.
+* Use noise to modulate a shape.
+* What about using noise for motion? Go back to the [Matrix chapter](../08/). Use the translation example that moves the "+" around, and apply some *random* and *noise* movements to it.
+* Make a generative Jackson Pollock.
 
 ![Jackson Pollock - Number 14 gray (1948)](pollock.jpg)
 
 ## Simplex Noise
 
-For Ken Perlin the success of his algorithm wasn't enough. He thought it could performance better. In Siggraph 2001 he presented the "simplex noise" in wich he achive the following improvements over the previus one:
+For Ken Perlin the success of his algorithm wasn't enough. He thought it could perform better. At Siggraph 2001 he presented the "simplex noise" in which he achieved the following improvements over the previous algorithm:
 
 * An algorithm with lower computational complexity and fewer multiplications.
 * A noise that scales to higher dimensions with less computational cost.
-* A noise without directional artifacts
-* A noise with well-defined and continuous gradients that can be computed quite cheaply
-* An algorithm that is easy to implemnt in hardware
+* A noise without directional artifacts.
+* A noise with well-defined and continuous gradients that can be computed quite cheaply.
+* An algorithm that is easy to implement in hardware.
 
-Yeah, right? I know what you are thinking... "Who is this man?". Yes, his work is fantastic! But seriusly, How he did that? Well we saw how for two dimensions he was interpolating 4 points (coorners of a square); also we can correctly preasume that for [three (see an implementation here)](../edit.html#11/3d-noise.frag) and four dimensions we need to interpolate 8 and 16 points. Right? In other words for N dimensions you need to smoothly interpolate 2 to the N points (2^N). But Ken smartly notice that although the obvious choice for a space-filling shape is a squar, the actually simpliest shape in 2D is the equilateral triangle. So he start by replace the squared grid (we finnaly learn how to use) for a simplex grid of equilateral triangles.
+I know what you are thinking... "Who is this man?" Yes, his work is fantastic! But seriously, how did he improve the algorithm? Well, we saw how for two dimensions he was interpolating 4 points (corners of a square); so we can correctly guess that for [three (see an implementation here)](../edit.html#11/3d-noise.frag) and four dimensions we need to interpolate 8 and 16 points. Right? In other words for N dimensions you need to smoothly interpolate 2 to the N points (2^N). But Ken smartly noticed that although the obvious choice for a space-filling shape is a square, the simplest shape in 2D is the equilateral triangle. So he started by replacing the squared grid (we just learned how to use) for a simplex grid of equilateral triangles.
 
 ![](simplex-grid-00.png)
 
-The simplex shape for N dimensions is a shape with N + 1 corners. In other words one less corner to compute in 2D, 4 less coorners in 3D and 11 less coorners in 4D! That's a huge improvement!
+The simplex shape for N dimensions is a shape with N + 1 corners. In other words one fewer corner to compute in 2D, 4 fewer corners in 3D and 11 fewer corners in 4D! That's a huge improvement!
 
-So then, in two dimension the interpolation happens, similarly than regular noise, by interpolating the values of the corners of a section. But, in this particular case, because we are using a simplex grid, we just need to interpolate the sum of only 3 coornes ( contributors).
+In two dimensions the interpolation happens similarly to regular noise, by interpolating the values of the corners of a section. But in this case, by using a simplex grid, we only need to interpolate the sum of 3 corners.
 
 ![](simplex-grid-01.png)
 
-How the simplex grid works? In another brillant and elegant move, the simplex grid can be obtain by subdividing the cells of a regular 4 corners grid into two isoceles triangles and then skewing it unitl each triangle is equilateral.
+How is the simplex grid made? In another brilliant and elegant move, the simplex grid can be obtained by subdividing the cells of a regular 4 cornered grid into two isosceles triangles and then skewing it until each triangle is equilateral.
 
 ![](simplex-grid-02.png)
 
-Then, as [Stefan Gustavson describe in this paper](http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf): _"...by looking at the integer parts of the transformed coordinates (x,y) for the point we want to evaluate, we can quickly determine which cell of two simplices that contain the point. By also compareing the magnitudes of x and y, we can determine whether the points is in the upper or the lower simplex, and traverse the correct three corners points."_. 
+Then, as [Stefan Gustavson describes in this paper](http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf): _"...by looking at the integer parts of the transformed coordinates (x,y) for the point we want to evaluate, we can quickly determine which cell of two simplices that contains the point. By also comparing the magnitudes of x and y, we can determine whether the point is in the upper or the lower simplex, and traverse the correct three corner points."_ 
 
-On the following code you can uncomment the line 44 to see how the grid is skew and then line 47 to see how a simplex grid can be constructed. Note how on line 22 we are subdiving the skewed squared on two equilateral triangles just buy detecting if ```x > y``` ("lower" triangle) or ```y > x``` ("upper" triangle).
+In the following code you can uncomment line 44 to see how the grid is skewed, and then uncomment line 47 to see how a simplex grid can be constructed. Note how on line 22 we are subdividing the skewed square into two equilateral triangles just by detecting if ```x > y``` ("lower" triangle) or ```y > x``` ("upper" triangle).
 
 <div class="codeAndCanvas" data="simplex-grid.frag"></div>
 
-Other improvements introduce by Perlin in the **Simplex Noise**, is the replacement of the Cubic Hermite Curve ( _f(x) = 3x^2-2x^3_ , wich is identical to the (.../glossary/?search=smoothstep) function ) for a Quintic Hermite Curve ( _f(x) = 6x^5-15x^4+10x^3_ ). This makes both ends of the curve more "flat" and by gracefully stiching with the next one. On other words you get more continuos transition between the cells. You can watch this by uncommenting the second formula on the following graph example (or by see the [two equations side by side here](https://www.desmos.com/calculator/2xvlk5xp8b)). 
+Another improvement introduced by Perlin with **Simplex Noise**, is the replacement of the Cubic Hermite Curve ( _f(x) = 3x^2-2x^3_ , which is identical to the [```smoothstep()```](.../glossary/?search=smoothstep) function) for a Quintic Hermite Curve ( _f(x) = 6x^5-15x^4+10x^3_ ). This makes both ends of the curve more "flat" so each border gracefully stiches with the next one. In other words you get a more continuous transition between the cells. You can see this by uncommenting the second formula in the following graph example (or see the [two equations side by side here](https://www.desmos.com/calculator/2xvlk5xp8b)). 
 
 <div class="simpleFunction" data="
 // Cubic Hermine Curve.  Same as SmoothStep()
@@ -193,27 +191,27 @@ y = x*x*(3.0-2.0*x);
 //y = x*x*x*(x*(x*6.-15.)+10.);
 "></div>
 
-Note how the ends of the curve changes. You can read more about this in [on words of Ken it self in this paper](http://mrl.nyu.edu/~perlin/paper445.pdf).
+Note how the ends of the curve change. You can read more about this in [Ken's own words](http://mrl.nyu.edu/~perlin/paper445.pdf).
 
-All this improvements result on a master peach of algorithms known as **Simplex Noise**. The following is an GLSL implementation of this algorithm made by Ian McEwan (and presented in [this paper](http://webstaff.itn.liu.se/~stegu/jgt2012/article.pdf)) which is probably over complicated for educational porposes because have been higly optimized, but you will be happy to click on it and see that is less cryptic than you expect.
+All these improvements result in an algorithmic masterpiece known as **Simplex Noise**. The following is a GLSL implementation of this algorithm made by Ian McEwan (and presented in [this paper](http://webstaff.itn.liu.se/~stegu/jgt2012/article.pdf)) which is overcomplicated for educational purposes, but you will be happy to click on it and see that it is less cryptic than you might expect.
 
 [ ![Ian McEwan of Ashima Arts - Simplex Noise](simplex-noise.png) ](../edit.html#11/2d-snoise-clear.frag)
 
-Well enought technicalities, is time for you to use this resource in your own expressive way:
+Well... enough technicalities, it's time for you to use this resource in your own expressive way:
 
-* Contemplate how each noise implementation looks. Imagine them as a raw material. Like a marble rock for a sculptor. What you can say about about the "feeling" that each one have? Squinch your eyes to trigger your imagination, like when you want to find shapes on a cloud, What do you see? what reminds you off? How do you imagine each noise implementation could be model into? Following your guts try to make it happen on code.
+* Contemplate how each noise implementation looks. Imagine them as a raw material, like a marble rock for a sculptor. What can you say about about the "feeling" that each one has? Squinch your eyes to trigger your imagination, like when you want to find shapes in a cloud. What do you see? What are you reminded of? What do you imagine each noise implementation could be made into? Following your guts and try to make it happen in code.
 
-* Make a shader that project the ilusion of flow. Like a lava lamp, ink drops, watter, etc.
+* Make a shader that projects the illusion of flow. Like a lava lamp, ink drops, water, etc.
 
 <a href="../edit.html#11/lava-lamp.frag"><canvas id="custom" class="canvas" data-fragment-url="lava-lamp.frag"  width="520px" height="200px"></canvas></a> 
 
-* Use Signed Noise to add some texture to a work you already made.
+* Use Simplex Noise to add some texture to a work you've already made.
 
 <a href="../edit.html#11/iching-03.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-03.frag"  width="520px" height="520px"></canvas></a> 
 
-In this chapter we have introduce some control over the chaos. Is not an easy job! Becoming a noise-bender-master takes time and efford. 
+In this chapter we have introduced some control over the chaos. It was not an easy job! Becoming a noise-bender-master takes time and effort. 
 
-On the following chapters we will see some "well-know" techniques to perfect your skills and get more out of your noise to design quality generative content with shaders. Until then enjoy some time outside contemplating nature and their intricate patterns. Your hability to observe need's equal (or probably more) dedication than your making skills. Go outside and enjoy the rest of day!
+In the following chapters we will see some well known techniques to perfect your skills and get more out of your noise to design quality generative content with shaders. Until then enjoy some time outside contemplating nature and its intricate patterns. Your ability to observe needs equal (or probably more) dedication than your making skills. Go outside and enjoy the rest of the day!
 
 <p style="text-align:center; font-style: italic;">"Talk to the tree, make friends with it." Bob Ross
 </p> 
