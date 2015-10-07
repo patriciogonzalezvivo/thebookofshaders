@@ -8,8 +8,8 @@ precision mediump float;
 uniform vec2 u_resolution;
 uniform float u_time;
 
-float random(in float x){ return fract(sin(x)*43758.5453); }
-float random(in vec2 st){ return fract(sin(dot(st.xy ,vec2(12.9898,78.233))) * 43758.5453); }
+float random (in float x) { return fract(sin(x)*1e4);}
+float random (in vec2 st){ return fract(sin(dot(st.xy ,vec2(12.9898,78.233))) * 43758.5453); }
 
 float bin(vec2 ipos, float n){
     float remain = mod(n,33554432.);

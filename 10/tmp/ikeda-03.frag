@@ -9,13 +9,8 @@ uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
 
-float random (in float x) {
-    return fract(sin(x)*1e4);
-}
-
-float random (in vec2 st) { 
-    return fract(sin(dot(st.xy, vec2(12.9898,78.233)))* 43758.5453123);
-}
+float random (in float x) { return fract(sin(x)*1e4);}
+float random (in vec2 st) { return fract(1e4 * sin(17.0 * st.x + st.y * 0.1) * (0.1 + abs(sin(st.y * 13.0 + st.x)))); }
 
 float pattern(vec2 st, vec2 v, float t) {
     vec2 p = floor(st+v);
