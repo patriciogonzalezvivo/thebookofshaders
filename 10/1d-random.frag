@@ -15,7 +15,7 @@ float plot(vec2 _st, float _pct){
 }
 
 float random (in float _x) {
-    return fract(sin(_x)*1e4);
+    return fract(sin(_x)*43758.5453);
 }
 
 void main() {
