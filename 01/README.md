@@ -3,7 +3,7 @@
 
 In the previous chapter we described shaders as the equivalent of the Gutenberg press for graphics. Why? And more importantly: what's a shader? 
 
-![From Leter-by-Leter, Right: William Blades (1891). To Page-by-page, Left: Rolt-Wheeler (1920).](print.png)
+![From Letter-by-Letter, Right: William Blades (1891). To Page-by-page, Left: Rolt-Wheeler (1920).](print.png)
 
 If you already have experience making drawings with computers, you know that in that process you draw a circle, then a rectangle, a line, some triangles until you compose the image you want. That process is very similar to writing a letter or a book by hand - it is a set of instructions that do one task after another.
 
