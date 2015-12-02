@@ -1,1 +1,1 @@
-## Kernel convolutions
+## Filters
