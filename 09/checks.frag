@@ -35,7 +35,7 @@ void main(void){
     vec3 color = vec3(0.0);
 
     // Divide the space in 4
-    st = tile(st,4.);   
+    st = tile(st,4.);
 
     // Use a matrix to rotate the space 45 degrees
     st = rotate2D(st,PI*0.25);
@@ -44,5 +44,5 @@ void main(void){
     color = vec3(box(st,vec2(0.7),0.01));
     // color = vec3(st,0.0);
 
-    gl_FragColor = vec4(color,1.0);    
+    gl_FragColor = vec4(color,1.0);
 }
