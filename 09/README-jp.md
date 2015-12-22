@@ -13,9 +13,10 @@ In this chapter we are going to apply what we've learned so far and repeat it al
 
 *"The grid provides a framework within which human intuition and invention can operate and that it can subvert. Within the chaos of nature, regular patterns provide a constrast and promise of order. From early patterns on pottery to geometric mosaics in Roman baths, people have long used grids to enhance their lives with decoration."* [*10 PRINT*, Mit Press, (2013)](http://10print.org/)
 
-*「グリッドは人間の直感と創意が働くための枠組みを提供し、and that it can subvert
+*「グリッドは人間の直感と創意が働く枠組み、構築と解体のためのフレームワークを提供します。
 自然界のカオスの中に、規則的なパターンは対比と秩序の兆しをもたらします。
-古くはローマの浴場にみられる幾何学的なモザイクのパターンから、人々はグリッドを用い生活を豊かに彩ってきました。」*[*10 PRINT*, Mit Press, (2013)](http://10print.org/)
+草創期の陶芸品の模様からローマ時代の浴場の幾何学的なモザイクまで、長い間人々はグリッドを用い生活を豊かに彩ってきました。」*[*10 PRINT*, Mit Press, (2013)](http://10print.org/)
+（訳注：そのまま訳すのが難しい文章だったため、本人に意図を確認して言葉を補いました。）
 
 First let's remember the [```fract()```](../glossary/?search=fract) function. It returns the fractional part of a number, making ```fract()``` in essence the modulo of one ([```mod(x,1.0)```](../glossary/?search=mod)). In other words, [```fract()```](../glossary/?search=fract) returns the number after the floating point. Our normalized coordinate system variable (```st```) already goes from 0.0 to 1.0 so it doesn't make sense to do something like:
 
