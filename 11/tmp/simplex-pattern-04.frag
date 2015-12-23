@@ -58,31 +58,6 @@ vec3 aastep(float threshold, vec3 value) {
                 aastep(threshold, value.z));
 }
 
-float isoGrid(vec2 st, float pct) {
-    vec3 S = simplexGrid(st);
-    S = aastep(pct-.01,1.-S);
-    return S.r + S.g + S.b;
-}
-
-vec2 sphereCoords(vec2 _st, float _scale){
-    float maxFactor = sin(1.570796327);
-    vec2 uv = vec2(0.0);
-    vec2 xy = 2.0 * _st.xy - 1.0;
-    float d = length(xy);
-    if (d < (2.0-maxFactor)){
-        d = length(xy * maxFactor);
-        float z = sqrt(1.0 - d * d);
-        float r = atan(d, z) / 3.1415926535 * _scale;
-        float phi = atan(xy.y, xy.x);
-
-        uv.x = r * cos(phi) + 0.5;
-        uv.y = r * sin(phi) + 0.5;
-    } else {
-        uv = _st.xy;
-    }
-    return uv;
-}
-
 //
 // Description : Array and textureless GLSL 2D/3D/4D simplex 
 //               noise functions.
@@ -171,20 +146,13 @@ void main() {
     st.x *= u_resolution.x/u_resolution.y;
     vec3 color = vec3(0.0);
 
-    // Blend black the edge of the sphere
-    float radius = 1.0-length( vec2(0.5)-st )*2.0;
-
-    // Scale the space to see the grid
-    st = sphereCoords(st, 1.0);
-
     float t = u_time*.5;
-    float pct = clamp((snoise(vec3(st*2.,t))*.5+.5)*.8 + abs(sin(dot(st-.5,st-.5)*3.14+t))*.5,0.,1.);
-    // color = vec3(pct);
+    float pct = clamp((snoise(vec3(st*2.,t))*.5+.5)*.2 + abs(sin(dot(st-.5,st-.5)*3.14-t))*.5,0.,1.);
 
-    st *= 1.733*20.;
-    color = vec3(1.-isoGrid(st,.1+pct*.9));
-
-    color *= step(0.001,radius);
-
+    st *= 1.733*10.+5.*clamp(abs(sin(dot(st-.5,st-.5)*3.14+t*0.5))*.5,0.2,1.);
+    vec3 S = simplexGrid(st);
+    S = aastep(abs(sin(pct*3.1415+u_time)),S);
+    pct = S.r * S.g * S.b;
+    color = vec3(pct);
     gl_FragColor = vec4(color,1.0);
 }
