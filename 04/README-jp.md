@@ -8,7 +8,7 @@
 
 ### **Three.js**を使う
 
-謙虚で才気あふれる[リカルド・カベロ](https://twitter.com/mrdoob)（Ricardo Cabello aka MrDoob）と[その他のメンバー](https://github.com/mrdoob/three.js/graphs/contributors)によって開発された[Three.js](http://threejs.org/)は、おそらく最もよく知られたWebGLのフレームワークのひとつです。このJavascriptのライブラリを使って3Dグラフィックを作る方法を学べる、サンプルやチュートリアル、本も沢山あります。
+謙虚で才気あふれる[Ricardo Cabello（MrDoob）](https://twitter.com/mrdoob)と[その他のメンバー](https://github.com/mrdoob/three.js/graphs/contributors)によって開発された[Three.js](http://threejs.org/)は、おそらく最もよく知られたWebGLのフレームワークのひとつです。このJavascriptのライブラリを使って3Dグラフィックを作る方法を学べる、サンプルやチュートリアル、本も沢山あります。
 
 下記はシェーダーをThree.jsで使うために必要なHTMLとJavascriptのサンプルです。```id="fragmentShader"```と書かれたスクリプトに注目してください。ここに、この本に登場するシェーダーをコピーして実行することができます。
 
@@ -92,7 +92,7 @@
 
 ### **Processing**を使う
 
-[ベン・フライ](http://benfry.com/) （Ben Fry）と[ケイシー・リース](http://reas.com/) （Casey Reas）が2001年に開発を始めた[Processing](https://processing.org/) はコーディングを始めるのに最適な、驚くほどシンプルでパワフルな開発環境です（少なくとも私にとってはそうでした）。[アンドレアス・コルブリ](https://codeanticode.wordpress.com/) （Andres Colubri）はopenGLとビデオに関する重要なアップデートを行いました。これによってProcessingでのシェーダーの使用が今まで以上に簡単になりました。Processingのスケッチは```data```フォルダーからシェーダーを検索します。このフォルダーにサンプルコードをコピーして```shader.frag```と名前を付けてください。
+[Ben Fry](http://benfry.com/)と[Casey Reas](http://reas.com/)が2001年に開発を始めた[Processing](https://processing.org/) はコーディングを始めるのに最適な、驚くほどシンプルでパワフルな開発環境です（少なくとも私にとってはそうでした）。[Andres Colubri](https://codeanticode.wordpress.com/)はopenGLとビデオに関する重要なアップデートを行いました。これによってProcessingでのシェーダーの使用が今まで以上に簡単になりました。Processingのスケッチは ```data``` フォルダーからシェーダーを検索します。このフォルダーにサンプルコードをコピーして ```shader.frag``` と名前を付けてください。
 
 ```processing
 PShader shader;
@@ -113,7 +113,7 @@ void draw() {
 }
 ```
 
-シェーダーを2.1以前のバージョンで使うには、最初に```#define PROCESSING_COLOR_SHADER```を追加する必要があります。つまり以下の様なプログラムになります。
+シェーダーを2.1以前のバージョンで使うには、最初に ```#define PROCESSING_COLOR_SHADER``` を追加する必要があります。つまり以下の様なプログラムになります。
 
 ```glsl
 #ifdef GL_ES
@@ -136,8 +136,7 @@ Processingでシェーダーを使う方法についてより詳しく知りた�
 
 ### **openFrameworks**を使う
 
-誰にでも落ち着ける場所があるものです。私にとっては今でも[openFrameworks](http://openframeworks.cc/)のコミュニティがそうです。このC++のフレームワークは、openGLやその他のC++のライブラリをラップして使いやすくしてくれます。様々な意味でProcessingに似ていますが、C++のコンパイラを扱う分だけ明らかに複雑です。openFrameworksはProcessingと同様に```data```フォルダー以下のシェーダーのファイルを検索します。サンプルを```shader.frag```にコピーして読み込むようにしてください。
-
+誰にでも落ち着ける場所があるものです。私にとっては今でも[openFrameworks](http://openframeworks.cc/)のコミュニティがそうです。このC++のフレームワークは、openGLやその他のC++のライブラリを内包して使いやすくしてくれます。様々な意味でProcessingに似ていますが、C++のコンパイラを扱う分だけ明らかに複雑です。openFrameworksはProcessingと同様に ```data``` フォルダー以下のシェーダーのファイルを検索します。サンプルを ```shader.frag``` にコピーして読み込むようにしてください。
 
 ```cpp
 void ofApp::draw(){
@@ -152,4 +151,4 @@ void ofApp::draw(){
 }
 ```
 
-openFrameworksでシェーダーを使う方法についてより詳しく知りたい場合は[ジョシュア・ノーブル](https://processing.org/tutorials/pshader/)の[素晴らしいチュートリアル](http://openframeworks.cc/tutorials/graphics/shaders.html) を参照してください。
+openFrameworksでシェーダーを使う方法についてより詳しく知りたい場合は[Joshua Noble](https://processing.org/tutorials/pshader/)の[素晴らしいチュートリアル](http://openframeworks.cc/tutorials/graphics/shaders.html) を参照してください。

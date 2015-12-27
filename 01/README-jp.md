@@ -37,7 +37,7 @@
 
 ## GLSLとは
 
-GLSLはopenGL Shading Languageの略で、標準化されたシェーダー言語の一つです。これ以降の章ではこの言語を扱います。他にもハードやOSによって異なるシェーダー言語があります。
+GLSLはopenGL Shading Languageの略で、標準化されたシェーダー言語の1つです。これ以降の章ではこの言語を扱います。他にもハードやOSによって異なるシェーダー言語があります。
 ここからは[クロノスグループ](https://www.khronos.org/opengl/)によって策定されたOpenGLの仕様に基づいて話を進めます。OpenGLの歴史を知っておくと奇妙な（訳注：プログラミング、言語仕様上の）慣習を理解する助けになるかもしれません。[openglbook.com/chapter-0-preface-what-is-opengl.html](http://openglbook.com/chapter-0-preface-what-is-opengl.html)に軽く目を通しておくと良いでしょう。
 
 ## なぜシェーダーは厄介だと思われているのか
