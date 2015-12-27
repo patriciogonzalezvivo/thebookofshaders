@@ -25,15 +25,25 @@ Above we are extracting the fractional content of a sine wave. The [```sin()```]
 
 By the time you get to ```100000.0``` ( and the equation looks like this: ```y = fract(sin(x)*100000.0)``` ) you aren't able to distinguish the sine wave any more. The granularity of the fractional part has corrupted the flow of the sine wave into pseudo-random chaos.
 
-```100000.0```　に至る頃には（式は ```y = fract(sin(x)*100000.0)``` のようになります）もうサインカーブを見えなくなっているでしょう。小数点部分は細かくなり、サイン波の流れるカーブは擬似ランダムなカオスになるまでに潰されています。
+```100000.0```　に至る頃には（式は ```y = fract(sin(x)*100000.0)``` のようになります）もうサインカーブには見えなくなっているでしょう。小数点部分は非常に細かくなり、サイン波の流れるカーブは潰されて混沌とした擬似的なランダム状態を作り出しています。
+
+
 
 ## Controlling chaos
+## カオスを制御する
 
 Using random can be hard; it is both too chaotic and sometimes not random enough. Take a look at the following graph. To make it, we are using a ```rand()``` function which is implemented exactly like we describe above.
 
-Taking a closer look, you can see the [```sin()```](../glossary/?search=sin) wave crest at ```-1.5707``` and ```1.5707```. I bet you now understand why - it's where the maximum and minimum of the sine wave happens.
+乱数を使いこなすのは易しいことではありません。無秩序すぎることも、十分にランダムでないこともあります。下記のグラフを見てください。このグラフは、上での述べた通りの方法で実装した ```rand()``` 関数を使って作られています。
+
+Taking a closer look, you can see the [```sin()```](../glossary/?search=sin) wave crest at ```-1.5707``` and  . I bet you now understand why - it's where the maximum and minimum of the sine wave happens.
+
+よく見ると [```sin()```](../glossary/?search=sin) の描く波が ```-1.5707``` と ```-1.5707``` で頂点を迎えています。お分かりですね。これは波が最大値と最小値になる場所です。*talking about "crests" doesn't make much sense here. Better mention the tiny gaps around +PI/2 and -PI/2 and explain why this happens, i.e. these are where the crest of the sine curve are?*
 
 If look closely at the random distribution, you will note that the there is some concentration around the middle compared to the edges.
+
+乱数の分布に注目すると、端にくらべて中央に値が集中しているのが分かるでしょう。
+
 
 <div class="simpleFunction" data="y = rand(x);
 //y = rand(x)*rand(x);
@@ -42,7 +52,12 @@ If look closely at the random distribution, you will note that the there is some
 
 A while ago [Pixelero](https://pixelero.wordpress.com) published an [interesting article about random distribution](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/). I've added some of the functions he uses in the previous graph for you to play with and see how the distribution can be changed. Uncomment the functions and see what happens.
 
+以前に[Pixelero](https://pixelero.wordpress.com)は[ランダムな分布についての興味深い記事](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/)を公開しました。上記のグラフにこの記事から幾つかの関数を加えておいたので、どのように値の分布が変化するか試してみてください。関数のコメントを外して何が起こるか見てみましょう。
+
 If you read [Pixelero's article](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/), it is important to keep in mind that our ```rand()``` function is a deterministic random, also known as pseudo-random. Which means for example ```rand(1.)``` is always going to return the same value. [Pixelero](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/) makes reference to the ActionScript function ```Math.random()``` which is non-deterministic; every call will return a different value.
+
+[Pixeleroの記事](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/)を読むときには、ここで作った ```rand()``` 関数は擬似ランダムとも呼ばれる、決定的（結果の値が一意に定まる）乱数だということを覚えておくことが重要です。これはつまり、例えば ```rand(1.)``` は常に同じ値を返すということです。[Pixelero](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/)が引き合いに出しているのはActionScriptの ```Math.random()``` で、これは非決定的な、つまり毎回異なる値を返す関数です。
+
 
 ## 2D Random
 
