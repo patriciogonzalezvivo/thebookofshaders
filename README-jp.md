@@ -30,7 +30,7 @@
     * [色について](06/?lan=jp)
     * [形について](07/?lan=jp)
     * [二次元行列](08/?lan=jp)
-    * [Patterns（未訳）](09/)
+    * [パターン](09/?lan=jp)
 
 * Generative designs
     * [Random（未訳）](10/)
