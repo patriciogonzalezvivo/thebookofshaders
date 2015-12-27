@@ -28,8 +28,8 @@
 * アルゴリズムで絵を描く
     * [シェイピング関数](05/?lan=jp)
     * [色について](06/?lan=jp)
-    * [Shapes（未訳）](07/)
-    * [Matrices（未訳）](08/)
+    * [形について](07/?lan=jp)
+    * [二次元行列](08/?lan=jp)
     * [Patterns（未訳）](09/)
 
 * Generative designs
