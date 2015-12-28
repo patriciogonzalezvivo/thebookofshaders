@@ -77,7 +77,7 @@ Thanks to my wife [Jen Lowe](http://www.datatelling.com/), for her unconditional
 
 Thanks [Scott Murray](http://alignedleft.com/) for the inspiration and advice.
 
-Thanks [Kenichi Yoneda (Kynd)](https://twitter.com/kyndinfo) for the [Japanese translation (日本語訳)](?lan=jp)
+Thanks [Kenichi Yoneda (Kynd)](https://twitter.com/kyndinfo) and [Sawako](https://twitter.com/sawakohome) for the [Japanese translation (日本語訳)](?lan=jp)
 
 Thanks [Karim Naaji](http://karim.naaji.fr/) for contributing with support, good ideas and code.
 

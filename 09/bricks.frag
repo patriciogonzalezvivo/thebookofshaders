@@ -33,11 +33,11 @@ void main(void){
 
     // Apply the brick tiling
     st = brickTile(st,5.0);
-    
+
     color = vec3(box(st,vec2(0.9)));
 
     // Uncomment to see the space coordinates
     // color = vec3(st,0.0);
 
-    gl_FragColor = vec4(color,1.0);    
+    gl_FragColor = vec4(color,1.0);
 }
