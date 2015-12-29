@@ -18,24 +18,24 @@ This is a gentle step-by-step guide through the abstract and complex universe of
 
 ## 目录
 
-* [关于这本书](00/)
+* [关于这本书](00/?lan=ch)
 
 * 开始
-    * [什么是着色器（shader）？](01/)
-    * [“Hello world!”](02/)
-    * [Uniforms值](03/)
-    * [运行你的shader](04/)
+    * [什么是片段着色器（Fragment Shader）？](01/?lan=ch)
+    * [“Hello world!”](02/?lan=ch)
+    * [Uniforms值](03/?lan=ch)
+    * [运行你的shader](04/?lan=ch)
 
 * 用算法绘画
-    * [造型函数](05/)
-    * [颜色](06/)
-    * [形状](07/)
-    * [矩阵](08/)
-    * [图案](09/)
+    * [造型函数](05/?lan=ch)
+    * [颜色](06/?lan=ch)
+    * [形状](07/?lan=ch)
+    * [矩阵](08/?lan=ch)
+    * [图案](09/?lan=ch)
 
 * 生成设计
-    * [Random函数](10/)
-    * [noise函数](11/)
+    * [Random函数](10/?lan=ch)
+    * [noise函数](11/?lan=ch)
     * 布朗运动
     * 分形
 
@@ -62,13 +62,13 @@ This is a gentle step-by-step guide through the abstract and complex universe of
     * 折射和反射
 
 * [附录:](appendix/) Other ways to use this book
-	* [如何离线阅读此书?](appendix/)
-	* [如何在RaspberryPi上运行示例?](appendix/)
-	* [如何打印这本书](appendix/)
+	* [如何离线阅读此书?](appendix/?lan=ch)
+	* [如何在RaspberryPi上运行示例?](appendix/?lan=ch)
+	* [如何打印这本书](appendix/?lan=ch)
 
-* [示例墙](examples/)
+* [示例墙](examples/?lan=ch)
 
-* [词汇表](glossary/)
+* [词汇表](glossary/?lan=ch)
 
 
 ## 关于作者
