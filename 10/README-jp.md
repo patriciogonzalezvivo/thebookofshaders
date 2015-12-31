@@ -4,7 +4,6 @@
 It is not a surprise that after so much repetition and order the author is forced to bring some chaos.
 
 繰り返しと秩序を十分に堪能したので、今度は多少の混沌を持ち込んでみましょう。
-*いいまわし２* 繰り返しと秩序を何回もやってみた後に、[筆者|作者]がある程度のカオスを持ち込まざるをえなくなることは、驚きではありません。
 
 ## Random
 ## ランダム
@@ -13,7 +12,7 @@ It is not a surprise that after so much repetition and order the author is force
 （訳注：池田亮司を「ランダム」でくくることに抵抗があるという意見を各方面からいただきましたが、翻訳なのでそのままにしておきます。）
 
 Randomness is a maximal expression of entropy. How can we generate randomness inside the seemingly predictable and rigid code environment?
-ランダムはエントロピーが最大になった状態を表します。一見規則正く厳格なコードの世界、どのようにしてランダムな要素を生成することができるのでしょうか。
+ランダムはエントロピーが最大になった状態です。一見規則正く厳格なコードの世界で、どのようにしてランダムな要素を生成することができるのでしょうか。
 
 Let's start by analyzing the following function:
 下記の関数を検討することから始めましょう。
@@ -22,12 +21,11 @@ Let's start by analyzing the following function:
 
 Above we are extracting the fractional content of a sine wave. The [```sin()```](../glossary/?search=sin) values that fluctuate between ```-1.0``` and ```1.0``` have been chopped behind the floating point, returning all positive values between ```0.0``` and ```1.0```. We can use this effect to get some pseudo-random values by "breaking" this sine wave into smaller pieces. How? By multiplying the resultant of [```sin(x)```](../glossary/?search=sin) by larger numbers. Go ahead and click on the function above and start adding some zeros.
 
-ここではサイン波から小数点部分を取り出しています。```-1.0``` から ```1.0``` の間を往復する [```sin()```](../glossary/?search=sin) の値から、```0.0``` から ```1.0``` の間の正の値だけが残るように小数点の後ろだけを切り取っています。サイン波を細かな部分に分割することで擬似的にランダムな値を得るために、これを応用することができます。どういうことでしょう。[```sin(x)```](../glossary/?search=sin) の結果の値に大きな数を掛けます。上の関数をクリックして 0 を幾つか書き加えてみましょう。
+ここではサイン波から小数点部分を取り出しています。```-1.0``` から ```1.0``` の間を往復する [```sin()```](../glossary/?search=sin) の値から、小数点の後ろだけを切り取ると```0.0``` から ```1.0```の間の正の値だけが残ります。これを利用し、さらにサイン波を細かな部分に分割することで擬似的にランダムな値を得ることができます。どういうことでしょう。[```sin(x)```](../glossary/?search=sin) の結果の値に大きな数を掛けてみます。上の関数をクリックして 0 を幾つか書き加えてみましょう。
 
 By the time you get to ```100000.0``` ( and the equation looks like this: ```y = fract(sin(x)*100000.0)``` ) you aren't able to distinguish the sine wave any more. The granularity of the fractional part has corrupted the flow of the sine wave into pseudo-random chaos.
 
-```100000.0```　に至る頃には（式は ```y = fract(sin(x)*100000.0)``` のようになります）もうサインカーブには見えなくなっているでしょう。小数点部分は非常に細かくなり、サイン波の流れるカーブは潰されて混沌とした擬似的なランダム状態を作り出しています。
-
+```100000.0```　に至る頃には（式は ```y = fract(sin(x)*100000.0)``` のようになります）もうサインカーブには見えなくなっているでしょう。小数点部分のサイクルは非常に短くなり、サイン波の流れるような曲線は潰されてランダムにしか見えないカオス状態を作り出しています。
 
 
 ## Controlling chaos
@@ -35,11 +33,11 @@ By the time you get to ```100000.0``` ( and the equation looks like this: ```y =
 
 Using random can be hard; it is both too chaotic and sometimes not random enough. Take a look at the following graph. To make it, we are using a ```rand()``` function which is implemented exactly like we describe above.
 
-乱数を使いこなすのは易しいことではありません。無秩序すぎることも、十分にランダムでないこともあります。下記のグラフを見てください。このグラフは、上での述べた通りの方法で実装した ```rand()``` 関数を使って作られています。
+乱数をうまく使いこなすのは難しいこともあります。無秩序すぎることも、十分にランダムでないこともあります。下記のグラフを見てください。このグラフは、上での述べた通りの方法で実装した ```rand()``` 関数を使って作られています。
 
 Taking a closer look, you can see the [```sin()```](../glossary/?search=sin) wave crest at ```-1.5707``` and  . I bet you now understand why - it's where the maximum and minimum of the sine wave happens.
 
-よく見ると [```sin()```](../glossary/?search=sin) の描く波が ```-1.5707``` と ```-1.5707``` で頂点を迎えています。お分かりですね。これは波が最大値と最小値になる場所です。*talking about "crests" doesn't make much sense here. Better mention the tiny gaps around +PI/2 and -PI/2 and explain why this happens, i.e. these are where the crest of the sine curve are?*
+よく見ると ```-1.5707``` と ```-1.5707``` のあたりに小さな裂け目のようなものがあるのが分かるでしょう。これは[```sin()```](../glossary/?search=sin) の描く波が最大と最小になる場所です。
 
 If look closely at the random distribution, you will note that the there is some concentration around the middle compared to the edges.
 
@@ -53,19 +51,19 @@ If look closely at the random distribution, you will note that the there is some
 
 A while ago [Pixelero](https://pixelero.wordpress.com) published an [interesting article about random distribution](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/). I've added some of the functions he uses in the previous graph for you to play with and see how the distribution can be changed. Uncomment the functions and see what happens.
 
-以前に[Pixelero](https://pixelero.wordpress.com)は[ランダムな分布についての興味深い記事](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/)を公開しました。上記のグラフにこの記事から幾つかの関数を加えておいたので、どのように値の分布が変化するか試してみてください。関数のコメントを外して何が起こるか見てみましょう。
+以前に[Pixelero](https://pixelero.wordpress.com)は[ランダムな値の分布についての興味深い記事](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/)を公開しました。上記のグラフにこの記事から幾つかの関数を加えておいたので、どのように値の分布が変化するか試してみてください。関数のコメントを外して何が起こるか見てみましょう。
 
 If you read [Pixelero's article](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/), it is important to keep in mind that our ```rand()``` function is a deterministic random, also known as pseudo-random. Which means for example ```rand(1.)``` is always going to return the same value. [Pixelero](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/) makes reference to the ActionScript function ```Math.random()``` which is non-deterministic; every call will return a different value.
 
-[Pixeleroの記事](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/)を読むときには、ここで作った ```rand()``` 関数は擬似ランダムとも呼ばれる、決定的（結果の値が一意に定まる）乱数だということを覚えておくことが重要です。これはつまり、例えば ```rand(1.)``` は常に同じ値を返すということです。[Pixelero](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/)が引き合いに出しているのはActionScriptの ```Math.random()``` で、これは非決定的な、つまり毎回異なる値を返す関数です。
+[Pixeleroの記事](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/)を読むときには、ここで私たちが作った ```rand()``` 関数は擬似ランダムとも呼ばれる、決定的な（結果の値が一意に定まる）乱数だということを覚えておくことが重要です。例えば ```rand(1.)``` は常に同じ値を返します。[Pixelero](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/)が引き合いにしているのはActionScriptの ```Math.random()``` で、これは非決定的な、つまり毎回異なる値を返す関数です。
 
 
 ## 2D Random
-## 2D ランダム
+## 2Dランダム
 
 Now that we have a better understanding of randomness, it's time to apply it in two dimensions, to both the ```x``` and ```y``` axis. For that we need a way to transform a two dimensional vector into a one dimensional floating point value. There are different ways to do this, but the [```dot()```](../glossary/?search=dot) function is particulary helpful in this case. It returns a single float value between ```0.0``` and ```1.0``` depending on the alignment of two vectors.
 
-ランダムな要素についてよく理解できたと思います。それでは次に、２次元、つまり ```x``` 軸と ```y``` 軸の両方に、応用してみましょう。そのためには、２次元ベクトルを、１次元の浮動小数点の値に変換することが必要です。いろいろなやり方がありますが、[```dot()```](../glossary/?search=dot) 関数は特に役に立ちます。 ２つのベクトルの配置に従って、 ```0.0``` と ```1.0``` の間の浮動小数点の値を戻してくれます。
+ランダムの性質についての理解が深まったところで、次に２次元、つまり ```x``` 軸と ```y``` 軸の両方に、応用してみましょう。そのためには、２次元ベクトルを、１次元の浮動小数点の値に変換することが必要です。いろいろなやり方がありますが、[```dot()```](../glossary/?search=dot) 関数は特に役に立ちます。 ２つのベクトルの配置に従って、 ```0.0``` と ```1.0``` の間の浮動小数点の値を戻してくれます。
 
 <div class="codeAndCanvas" data="2d-random.frag"></div>
 
