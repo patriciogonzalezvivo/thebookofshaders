@@ -202,7 +202,7 @@ pct = pow(distance(st,vec2(0.4)),distance(st,vec2(0.6)));
 
 极坐标这种方式虽然有所限制但却十分简单。
 
-Below you will find the same functions in the cartesian graph and in a polar coordinates shader example (between *lines 21 and 25*). Uncomment the functions one-by-one, paying attention the relationship between one coordinate system and the other.
+下面你会看到在同样在笛卡尔坐标下图形在极坐标下的着色器案例（在 *lines 21 和 25*之间）。对这些函数一个个取消注释，看看两坐标系之间的联系。
 
 <div class="simpleFunction" data="y = cos(x*3.);
 //y = abs(cos(x*3.));
