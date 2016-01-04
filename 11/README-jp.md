@@ -7,7 +7,7 @@
 
 It's time for a break! We've been playing with random functions that look like TV white noise, our head is still spinning thinking about shaders, and our eyes are tired. Time to go out for a walk!
 
-少し休憩しましょう！ここまでテレビのホワイトノイズに見えるようなランダム関数を扱ってきましたが、私たちの頭はまだシェイダーのことを考えることでいっぱいで、目が疲れてきました。散歩に出る時間です！
+少し休憩しましょう！ここまでテレビのホワイトノイズに見えるようなランダム関数を扱ってきましたが、私たちの頭はまだシェーダーのことを考えることでいっぱいで、目が疲れてきました。散歩に出る時間です！
 
 We feel the air on our skin, the sun in our face. The world is such a vivid and rich place. Colors, textures, sounds. While we walk we can't avoid noticing the surface of the roads, rocks, trees and clouds.
 
