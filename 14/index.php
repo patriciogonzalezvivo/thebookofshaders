@@ -1,7 +1,6 @@
 <?php 
 
 	$path = "..";
-	$subtitle = ": Fractals";
 	$README = "README";
 	$language = "";
 

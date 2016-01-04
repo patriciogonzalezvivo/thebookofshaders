@@ -96,9 +96,7 @@ The following is a list of examples present in this book.
 
 ### Students Work
 
- * [Shaping functions](../05/)
-
- * [Color](../06/)
+ * Expceserices from them [Color Chapter](../06/)
 
 	- [Light](../edit.html#examples/06/behrn916-light.frag) by Nima Behravan
 	- [Turner Sunset](../edit.html#examples/06/dothh489-sunset.frag) by Hang Do Thi Duc

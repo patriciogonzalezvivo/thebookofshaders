@@ -1,6 +1,7 @@
 <?php 
 
 	$path = "..";
+	$subtitle = ": More noise";
 	$README = "README";
 	$language = "";
 
