@@ -33,8 +33,8 @@
     * [パターン](09/?lan=jp)
 
 * Generative designs
-    * [Random（未訳）](10/)
-    * Noise
+    * [ランダム](10/?lan=jp)
+    * [Noise（未訳）](11/)
     * Fractional brownian motion
     * Fractals
 
