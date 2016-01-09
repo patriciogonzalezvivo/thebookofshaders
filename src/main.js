@@ -280,15 +280,6 @@ function loadCanvas() {
     }       
 }
 
-function renderCanvas() {
-    var IDs = Object.keys(billboards);
-    for(var i = 0; i < IDs.length; i++){
-        billboards[IDs[i]].setMouse(mouse);
-        billboards[IDs[i]].render();
-    }
-    window.requestAnimFrame(renderCanvas);
-}
-
 function insertAfter(newElement,targetElement) {
     var parent = targetElement.parentNode;
     if (parent.lastChild == targetElement) {
@@ -403,13 +394,6 @@ function translate() {
 
 }
 
-// Keep track of the mouse
-var mouse = {x: 0, y: 0};
-document.addEventListener('mousemove', function(e){ 
-    mouse.x = e.clientX || e.pageX; 
-    mouse.y = e.clientY || e.pageY 
-}, false);
-
 /**
  * Provides requestAnimationFrame in a cross browser way.
  */
@@ -441,5 +425,4 @@ window.onload = function(){
     captionizeImages();
 
     loadCanvas();
-    renderCanvas(); 
 };

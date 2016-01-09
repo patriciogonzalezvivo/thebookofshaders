@@ -156,21 +156,14 @@ void main(){\n\
 			     };
 		})();
 
-		// Keep track of the mouse
-		var mouse = {x: 0, y: 0};
-		document.addEventListener('mousemove', function(e){ 
-		    mouse.x = e.clientX || e.pageX; 
-		    mouse.y = e.clientY || e.pageY 
-		}, false);
-
 		window.addEventListener("hashchange", function () {
 			loadFunction()
 		}, false);
 
-		// window.onresize = function(event) {
-		// 	 if (typeof window.innerWidth != 'undefined') {
-  //     			billboard. = window.innerWidth
-		// };
+		window.onresize = function(event) {
+			 if (typeof window.innerWidth != 'undefined') {
+      			billboard. = window.innerWidth
+		};
 
 		function removeElementsByClass(className){
 		    var elements = document.getElementsByClassName(className);
@@ -231,15 +224,8 @@ float function(in float x) {\n\
 			}
 		}
 
-		function render() {
-			billboard.setMouse(mouse)
-			billboard.render()
-			window.requestAnimFrame(render);
-		}
-
 		window.onload = function () { 
 			loadFunction();
-			render();
 		};
 		</script>
 	</body>
