@@ -42,7 +42,7 @@ echo '
 
 		<!-- My stuff -->
 		<link type="text/css" rel="stylesheet" href="'.$path.'/css/style.css">
-		<script type="text/javascript" src="http://localhost:8001/build/GlslCanvas.min.js"></script>
+		<script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/build/GlslCanvas.min.js"></script>
 
 		<!-- Translation -->
 		';
@@ -56,5 +56,3 @@ echo '
 	<body>
 	';
 ?>
-
-<!-- <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/build/GlslCanvas.min.js"></script> -->
