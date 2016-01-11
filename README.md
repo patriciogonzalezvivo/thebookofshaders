@@ -79,7 +79,7 @@ Thanks [Scott Murray](http://alignedleft.com/) for the inspiration and advice.
 
 Thanks [Kenichi Yoneda (Kynd)](https://twitter.com/kyndinfo) and [Sawako](https://twitter.com/sawakohome) for the [Japanese translation (日本語訳)](?lan=jp)
 
-Thanks [Tong Li](https://www.facebook.com/tong.lee.9484) and [Yi Zhang](https://www.facebook.com/archer.zetta?pnref=story) for the [Chinese translation (中国的翻译)](?lan=ch)
+Thanks [Tong Li](https://www.facebook.com/tong.lee.9484) and [Yi Zhang](https://www.facebook.com/archer.zetta?pnref=story) for the [Chinese translation (中文版)](?lan=ch)
 
 Thanks [Karim Naaji](http://karim.naaji.fr/) for contributing with support, good ideas and code.
 
