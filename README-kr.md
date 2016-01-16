@@ -85,7 +85,7 @@ Patricio는 심리치료 및 표현예술을 공부했다. 그는 파슨스대�
 
 중국어 번역을 맡고 있는 [Tong Li](https://www.facebook.com/tong.lee.9484) 와 [Yi Zhang](https://www.facebook.com/archer.zetta?pnref=story) 에게 감사를 표합니다. [Chinese translation (中国的翻译)](?lan=ch)
 
-중국어 번역을 맡고 있는 [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) 에게 감사를 표합니다. [Korean translation (한국어)](?lan=kr)
+한국어 번역을 맡고 있는 [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) 에게 감사를 표합니다. [Korean translation (한국어)](?lan=kr)
 
 좋은 아이디어와 코드를 제공해주는 [Karim Naaji](http://karim.naaji.fr/) 에게 감사를 표합니다.
 
