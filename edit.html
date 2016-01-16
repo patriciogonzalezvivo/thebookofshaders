@@ -25,8 +25,14 @@
 	<link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/patriciogonzalezvivo/glslEditor/gh-pages/build/css/main.css">
     <script type="application/javascript" src="https://cdn.rawgit.com/patriciogonzalezvivo/glslEditor/gh-pages/build/js/glslEditor.js"></script>
     <script type="text/javascript">
-    	window.glslEditor = new GlslEditor('#glsl_editor');
-    	window.addEventListener("hashchange", function () {
+        window.glslEditor = new GlslEditor('#glsl_editor', { 
+            viewSize: 500, 
+            theme: 'monokai',
+            loadFromHatch: true,
+            menu: true
+        });
+
+        window.addEventListener("hashchange", function () {
             window.glslEditor.chechHash()
         }, false);
     </script>
