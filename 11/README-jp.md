@@ -99,7 +99,7 @@ Now it's your turn:
 * ノイズ関数を使って有機的に見える形を描いてみましょう。
 
 * Once you have your "creature," try to develop it further into a character by assigning it a particular movement.
-* 創造物を生みだしたら、特有の動きを与えて個性を持ったキャラクターに発展させてみましょう。
+* あなたの創造物たるものを生みだしたら、特有の動きを与えて個性を持ったキャラクターに発展させてみましょう。
 
 ## 2D Noise
 ## 2Dノイズ
@@ -233,36 +233,72 @@ For you to practice:
 ![Jackson Pollock - Number 14 gray (1948)](pollock.jpg)
 
 ## Simplex Noise
+## シンプレックスノイズ
 
 For Ken Perlin the success of his algorithm wasn't enough. He thought it could perform better. At Siggraph 2001 he presented the "simplex noise" in which he achieved the following improvements over the previous algorithm:
 
+Ken Perlinにとって彼のアルゴリズムの成功は十分でありませんでした。彼はもっとパフォーマンスをあげられると考えたのです。2001年のSiggraphで発表したシンプレックスノイズでは以前のアルゴリズムに比べて下記に挙げるような改良を実現しました。
+
 * An algorithm with lower computational complexity and fewer multiplications.
+
+* よりシンプルで乗算の回数が少ない済むアルゴリズム。
+
 * A noise that scales to higher dimensions with less computational cost.
+
+* 次元の数が増えても計算量の増加が抑えられる。
+
 * A noise without directional artifacts.
+
+* 向きによって生じるアーティファクトがない。
+
 * A noise with well-defined and continuous gradients that can be computed quite cheaply.
+
+* 非常に計算量の少ない、矛盾なく定義（[well-defined](https://ja.wikipedia.org/wiki/Well-defined)）され[連続](https://ja.wikipedia.org/wiki/%E9%80%A3%E7%B6%9A_(%E6%95%B0%E5%AD%A6))なグラデーション。
+（訳注：どこを取っても拡大すれば滑らかに繋がっているグラデーションが軽い処理で実現できる、程度に思ってください。もう少し厳密な説明はリンク先をどうぞ。）
+
 * An algorithm that is easy to implement in hardware.
 
+* ハードウェアで実現しやすいアルゴリズム。
+
 I know what you are thinking... "Who is this man?" Yes, his work is fantastic! But seriously, how did he improve the algorithm? Well, we saw how for two dimensions he was interpolating 4 points (corners of a square); so we can correctly guess that for [three (see an implementation here)](../edit.html#11/3d-noise.frag) and four dimensions we need to interpolate 8 and 16 points. Right? In other words for N dimensions you need to smoothly interpolate 2 to the N points (2^N). But Ken smartly noticed that although the obvious choice for a space-filling shape is a square, the simplest shape in 2D is the equilateral triangle. So he started by replacing the squared grid (we just learned how to use) for a simplex grid of equilateral triangles.
+
+この男は一体何者だ、と思っているかもしれませんね。そう、本当に素晴らしい仕事です。しかし実際に、一体どうやって彼はアルゴリズムを改善したのでしょう。私たちは二次元のノイズに対して4つの頂点（正方形の角）の間を補間したのを見ました。ここから三次元[（実装例）](../edit.html#11/3d-noise.frag)、四次元では8頂点、16頂点の補間が必要なことも推測できます。分かりますね。言い換えればN次元に対しては2のN乗の補間が必要になります。しかしKen Perlinはここで賢くも気付きました。空間を隙間なく埋める形として正方形を選ぶのは当然だけれども、二次元空間で最もシンプルな形は正三角形です。そこで彼は（我々がこの章でやり方を学んだ）正方形のグリッドを単純な正三角形で置き換えることから始めたのです。
 
 ![](simplex-grid-00.png)
 
 The simplex shape for N dimensions is a shape with N + 1 corners. In other words one fewer corner to compute in 2D, 4 fewer corners in 3D and 11 fewer corners in 4D! That's a huge improvement!
 
+N次元に対して最も単純な形は N + 1 の頂点を持ちます。つまり二次元に対しては1頂点、三次元に対しては4頂点、四次元に対しては11頂点少ない計算で済むのです。これは大変な改善です。
+
 In two dimensions the interpolation happens similarly to regular noise, by interpolating the values of the corners of a section. But in this case, by using a simplex grid, we only need to interpolate the sum of 3 corners.
+
+二次元では普通のノイズの場合と同様に領域の頂点の値が補間が行われますが、正三角形のグリッドを用いるので3つの頂点に対してだけ補間をすれば良いのです。
+
 
 ![](simplex-grid-01.png)
 
 How is the simplex grid made? In another brilliant and elegant move, the simplex grid can be obtained by subdividing the cells of a regular 4 cornered grid into two isosceles triangles and then skewing it until each triangle is equilateral.
 
+どうやってこのグリッドは作られるのでしょう。ここがもう1つの素晴らしいエレガントなアイデアなのですが、正三角形のグリッドは正方形のグリッドを2つの二等辺三角形に分割し、それを正三角形になるまで斜めに変形させていくことで得ることができます。
+
 ![](simplex-grid-02.png)
 
 Then, as [Stefan Gustavson describes in this paper](http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf): _"...by looking at the integer parts of the transformed coordinates (x,y) for the point we want to evaluate, we can quickly determine which cell of two simplices that contains the point. By also comparing the magnitudes of x and y, we can determine whether the point is in the upper or the lower simplex, and traverse the correct three corner points."_
 
+そしてStefan Gustavsonが[論文で説明しているように](http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf)、「評価したい点に対して変形された座標（x, y）の整数部分を見ることで、どの2つの三角形からなるマス目に含まれるのかを簡単に決定することができます。またxとyの値を比べることで上下どちらの三角形に含まれているのかも分かり、正しい3つの頂点に対して処理をすることができます」。
+
+
 In the following code you can uncomment line 44 to see how the grid is skewed, and then uncomment line 47 to see how a simplex grid can be constructed. Note how on line 22 we are subdividing the skewed square into two equilateral triangles just by detecting if ```x > y``` ("lower" triangle) or ```y > x``` ("upper" triangle).
+
+下記のコードでは、44行目のコメントを外すとどのようにグリッドが歪められるか、47行目を外すとどのように正三角形のグリッドが構成されるかを見ることができます。
+22行目で歪められた正方形をただ ```x``` と ```y``` を比較するだけで2つの正三角形に分割していることに注目してください（```x > y``` であれば下の三角形、```y >= x``` であれば上の三角形です）。
 
 <div class="codeAndCanvas" data="simplex-grid.frag"></div>
 
 Another improvement introduced by Perlin with **Simplex Noise**, is the replacement of the Cubic Hermite Curve ( _f(x) = 3x^2-2x^3_ , which is identical to the [```smoothstep()```](.../glossary/?search=smoothstep) function) for a Quintic Hermite Curve ( _f(x) = 6x^5-15x^4+10x^3_ ). This makes both ends of the curve more "flat" so each border gracefully stiches with the next one. In other words you get a more continuous transition between the cells. You can see this by uncommenting the second formula in the following graph example (or see the [two equations side by side here](https://www.desmos.com/calculator/2xvlk5xp8b)).
+
+Ken Perlinがシンプレックスノイズで導入したもう1つの改善点は、3次エルミート曲線（f(x) = 3x^2-2x^3 これは [```smoothstep()```](.../glossary/?search=smoothstep)関数と同等です）を4次エルミート曲線（f(x) = 6x^5-15x^4+10x^3）で置き換えたことです。これにより曲線の両端がより平坦になり次の曲線により綺麗につながり、マス目間の変化がより滑らかになります。下記のグラフの2つ目の式のコメントを外すとこれを実際に見ることができます（もしくは[ここ](https://www.desmos.com/calculator/2xvlk5xp8b)で並べて比較することもできます）。
+
 
 <div class="simpleFunction" data="
 // Cubic Hermine Curve.  Same as SmoothStep()
@@ -273,25 +309,42 @@ y = x*x*(3.0-2.0*x);
 
 Note how the ends of the curve change. You can read more about this in [Ken's own words](http://mrl.nyu.edu/~perlin/paper445.pdf).
 
+カーブの端の様子がどのように変わるかに注目しましょう。より詳しく知りたければ[Ken Perlin自身の言葉で](http://mrl.nyu.edu/~perlin/paper445.pdf)読むこともできます。
+
 All these improvements result in an algorithmic masterpiece known as **Simplex Noise**. The following is a GLSL implementation of this algorithm made by Ian McEwan (and presented in [this paper](http://webstaff.itn.liu.se/~stegu/jgt2012/article.pdf)) which is overcomplicated for educational purposes, but you will be happy to click on it and see that it is less cryptic than you might expect.
+
+これら全ての改善の結果がシンプレックスノイズというアルゴリズムの傑作になりました。下記はIan McEwanが[この論文](http://webstaff.itn.liu.se/~stegu/jgt2012/article.pdf)で示したGLSLによるアルゴリズムの実装です。教育目的のためかなり複雑になっていますが、下記の画像をクリックすればコードは思ったほどは謎めいていないことを知って安心できるでしょう。
 
 [ ![Ian McEwan of Ashima Arts - Simplex Noise](simplex-noise.png) ](../edit.html#11/2d-snoise-clear.frag)
 
 Well... enough technicalities, it's time for you to use this resource in your own expressive way:
 
+技術的な話は十分ですね。今度はこの財産をあなたの表現に使う番です。
+
 * Contemplate how each noise implementation looks. Imagine them as a raw material, like a marble rock for a sculptor. What can you say about about the "feeling" that each one has? Squinch your eyes to trigger your imagination, like when you want to find shapes in a cloud. What do you see? What are you reminded of? What do you imagine each noise implementation could be made into? Following your guts and try to make it happen in code.
 
+* それぞれのノイズの実装をじっくり見てみましょう。これらを彫刻家にとっての大理石の岩のような加工前の材料だと想像してください。それぞれの素材が持つ感覚や風合いについて何が言えますか。想像力を働かせるために目を細めてみましょう。雲の中に形を見つけるときのように。何が見えますか。何を思い出しますか。それぞれのノイズはどんなものに作り変えることができるでしょう。直感に従ってコードの中で実現してみましょう。
+
 * Make a shader that projects the illusion of flow. Like a lava lamp, ink drops, water, etc.
+
+* [ラバランプ](https://www.google.com/search?q=lava+lamp&espv=2&biw=1682&bih=1148&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiHraP9gLDKAhUY7mMKHbqhBVIQ_AUIBygC)、インクの水滴、水などのような、流れているかのような錯覚を起こさせるシェーダーを作ってください。
+
 
 <a href="../edit.html#11/lava-lamp.frag"><canvas id="custom" class="canvas" data-fragment-url="lava-lamp.frag"  width="520px" height="200px"></canvas></a>
 
 * Use Simplex Noise to add some texture to a work you've already made.
 
+* シンプレックスノイズを使ってこれまでに作った作品にテクスチャーを加えてみましょう。
+
 <a href="../edit.html#11/iching-03.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-03.frag"  width="520px" height="520px"></canvas></a>
 
 In this chapter we have introduced some control over the chaos. It was not an easy job! Becoming a noise-bender-master takes time and effort.
 
+この章ではカオスをいくらかでも制御してみました。これは簡単なことではありません。ノイズ使いの達人になるには時間も努力も必要です。
+
 In the following chapters we will see some well known techniques to perfect your skills and get more out of your noise to design quality generative content with shaders. Until then enjoy some time outside contemplating nature and its intricate patterns. Your ability to observe needs equal (or probably more) dedication than your making skills. Go outside and enjoy the rest of the day!
 
-<p style="text-align:center; font-style: italic;">"Talk to the tree, make friends with it." Bob Ross
-</p>
+続く章ではスキルを完璧なものにし、シェーダーによる質の高い作品を作るためにノイズをさらに生かすため、幾つかの有名なテクニックを見ていくことになります。それまでの間、少し外で自然とその複雑なパターンをじっくり眺めて楽しんでください。物事を観察するスキルは、何かを作り出すスキルと同じくらい（もしかするともっと）の献身を必要とします。外に出かけて残りの一日を楽しみましょう。
+
+<p style="text-align:center;">「木に話しかけよう。友達になるんだ。」
+	<a href="https://ja.wikipedia.org/wiki/%E3%83%9C%E3%83%96%E3%83%BB%E3%83%AD%E3%82%B9">Bob Ross</a></p>
