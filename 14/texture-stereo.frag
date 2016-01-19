@@ -14,16 +14,19 @@ uniform float u_time;
 
 void main () {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
-    vec4 color = vec4(0.0);
+    vec3 color = vec3(1.0);
 
     st *= vec2(.5,1.);
 
     // st.x *= u_resolution.x/u_resolution.y;
-    float t = u_time*10.;
+    float t = u_time*24.;
+    float pct = step(.75,abs(sin((st.x+t)*3.1415*10.)));
 
-    vec4 A = texture2D(u_tex0,st);
-    vec4 B = texture2D(u_tex0,st+vec2(.5,.0));
+    vec3 A = texture2D(u_tex0,st).rgb;
+    vec3 B = texture2D(u_tex0,st+vec2(.5,.0)).rgb;
 
-    color = mix(A, B, abs(sin(t)));
-    gl_FragColor = color;
+    color = abs(A-B);
+    // color = mix(A, B, abs(sin(pct)));
+    
+    gl_FragColor = vec4(color,1.);
 }
