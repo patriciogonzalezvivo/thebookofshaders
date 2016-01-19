@@ -27,7 +27,7 @@ vector[3] = vector.a = vector.w = vector.q;
 
 These different ways of pointing to the variables inside a vector are just nomenclatures designed to help you write clear code. This flexibility embedded in shading language is a door for you to start thinking interchangably about color and space coordinates. 
 
-Another great feature of vector types in GLSL is that the properties can be combined in any order you want, which makes it easy to cast and mix values. This ability is call *swizzle*.
+Another great feature of vector types in GLSL is that the properties can be combined in any order you want, which makes it easy to cast and mix values. This ability is called *swizzle*.
 
 ```glsl
 vec3 yellow, magenta, green;

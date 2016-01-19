@@ -67,6 +67,12 @@ This could seam simple but the posibilities of modifing textures coordinates is 
 Now is your turn:
 
 * Can you make a kaleidoscope using what we have learn?
+
+* Way before Oculus or google cardboard, stereoscopic photography was a big thing. Could code a simple shader to re-use this beautiful images?
+
+<a href=“../edit.html#10/ikeda-03.frag”><canvas id=“custom” class=“canvas” data-fragment-url=“ikeda-03.frag”  width=“520px” height=“200px”></canvas></a>
+
+
 * What other optical toys can you re-create using textures?
 
 In the next chapters we will learn how to do some image processing using shaders. You will note that finnaly the complexity of shader makes sense, because was in a big sense designed to do this type of process. We will start doing some image operations!
