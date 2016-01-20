@@ -1,5 +1,6 @@
 <?php 
 	$path = ".";
+	$subtitle = "";
 	$README = "README";
 	$language = "";
 
