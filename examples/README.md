@@ -26,6 +26,8 @@ The following is a list of examples present in this book.
         - [Iñigo Quiles's Parabola](../edit.html#05/parabola.frag)
         - [Iñigo Quiles's Power Curve](../edit.html#05/pcurve.frag)
         - [Easing functions](../edit.html#05/easing.frag)
+        - [Stepwise function](../edit.html#examples/05/stepwise.frag)
+        - [Drawing multiple shaping functions](../edit.html#examples/05/draw-multi-shaping-func.frag)
 
     * [Color](../06/)
         - [Mix](../edit.html#06/mix.frag)
