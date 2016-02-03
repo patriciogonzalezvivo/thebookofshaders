@@ -45,7 +45,7 @@ In these lines we are doing something similar to what we did in the previous cha
 
 这和之前章节我们做的事情很像。我们把单精度浮点 ```x``` 再分割成它的整数部分 ```i``` 和小数部分 ```f``` 。我们用 [```floor()```](.../glossary/?search=floor) 获取 ```i```，用 [```fract()```](.../glossary/?search=fract) 获取 ```f```。然后我们 ```rand()``` x 的整数部分，即根据这个整数生成一个随机值。
 
-在这之后有两个被 comment 掉的语句。第一句的作用是线性插值。
+在这之后有两个被注释掉的语句。第一句的作用是线性插值。
 
 After that you see two commented lines. The first one interpolates each random value linearly.
 
@@ -58,7 +58,7 @@ Go ahead and uncomment this line to see how this looks. We use the [```fract()``
 At this point in the book, we've learned that we can do better than a linear interpolation, right? 
 Now try uncommenting the following line, which uses a [```smoothstep()```](.../glossary/?search=smoothstep) interpolation instead of a linear one.
 
-试试取消这句的注释（即去掉 ```//``` ），看一下会变成什么样子。注意我们储存在 `f` 中的 [```fract()```](.../glossary/?search=fract) 值混合（[```mix()```](.../glossary/?search=mix)了两个随机值。
+试试取消这句的注释（即去掉 ```//``` ），看一下会变成什么样子。注意我们储存在 `f` 中的 [```fract()```](.../glossary/?search=fract) 值混合（[```mix()```](.../glossary/?search=mix))了两个随机值。
 
 到本书的这个部分，我们知道我们可以比比线性插值做得更好，不是吗？现在试试取消第二句的注释。第二句用 [```smoothstep()```](.../glossary/?search=smoothstep)进行插值。
 
