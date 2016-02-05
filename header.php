@@ -15,6 +15,7 @@ echo '
 	    <meta name="twitter:description" content="Gentle step-by-step guide through the abstract and complex universe of Fragment Shaders.">
 	    <meta name="twitter:creator" content="@patriciogv">
 	    <meta name="twitter:domain" content="thebookofshaders.edu">
+	    <link href="/favicon.gif" rel="shortcut icon"/>
 
 		<!-- CodeMirror -->
 		<link type="text/css" rel="stylesheet" href="'.$path.'/src/codemirror/css/codemirror.css">
