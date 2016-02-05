@@ -44,7 +44,7 @@ The following is a list of examples present in this book.
         - [Polar shapes](../edit.html#07/polar.frag)
         - [Polar Poligons](../edit.html#07/shapes.frag)
         - Composition: [Arrow](../edit.html#07/arrow.frag)
-        - More Distance field by [Kynd](https://twitter.com/kyndinfo): [0](../edit.html?log=160131053729), [1](../edit.html?log=160131053646g)
+        - More Distance field by [Kynd](https://twitter.com/kyndinfo): [0](../edit.html?log=160131053729), [1](../edit.html?log=160131053646)
 
     * [Matrix](../08/)
         - [cross](../edit.html#08/cross.frag)
