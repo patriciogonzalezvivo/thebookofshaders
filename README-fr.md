@@ -11,7 +11,7 @@ Ceci est un guide étape-par-étape à travers le monde abstrait et complexe des
 
 ## Contenu
 
-* [A propos de ce livre](00/)
+* [A propos de ce livre](00/?lan=fr)
 
 * Pour commencer
     * [Qu'est ce qu'un shader?](01/)

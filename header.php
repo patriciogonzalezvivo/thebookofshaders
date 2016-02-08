@@ -7,6 +7,7 @@ echo '
 	<head>
 		<meta charset="utf-8">
 		<title>The Book of Shaders'.$subtitle.'</title>
+		<link href="/favicon.gif" rel="shortcut icon"/>
 		<meta name="keywords" content="shader,openGL,WebGL,GLSL,book,procedural,generative" />
 		<meta name="description" content="Gentle step-by-step guide through the abstract and complex universe of Fragment Shaders." />
 
