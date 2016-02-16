@@ -4,7 +4,7 @@ At this point you're probably excited to try shaders on platforms you feel comfo
 
 **Note 1**: In case you don't want to try shaders on the following frameworks, but you want to work outside a browser, you can download and compile [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). This MacOS and RaspberryPi program runs directly from terminal and is especially designed to execute the examples in this book.
 
-**Note 2**: If you just want to display Shaders using WebGL and you don't care about the frameworks arround it, you can use [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) that exactly do that. This web tool was designed for this book but end up been so usefull that I use it all the time for different projects.
+**Note 2**: If you just want to display Shaders using WebGL and you don't care about the frameworks arround it, you can use [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) that exactly do that. This web tool was designed for this book but end up been so useful that I use it all the time for different projects.
 
 ### In **Three.js**
  
@@ -50,7 +50,8 @@ Below is an example of the HTML and JS you need to get started with shaders in t
 
             uniforms = {
                 u_time: { type: "f", value: 1.0 },
-                u_resolution: { type: "v2", value: new THREE.Vector2() }
+                u_resolution: { type: "v2", value: new THREE.Vector2() },
+                u_mouse: { type: "v2", value: new THREE.Vector2() }
             };
 
             var material = new THREE.ShaderMaterial( {
@@ -69,6 +70,11 @@ Below is an example of the HTML and JS you need to get started with shaders in t
 
             onWindowResize();
             window.addEventListener( 'resize', onWindowResize, false );
+            
+            document.onmousemove = function(e){
+              uniforms.u_mouse.value.x = e.pageX
+              uniforms.u_mouse.value.y = e.pageY
+            }
         }
 
         function onWindowResize( event ) {
