@@ -106,178 +106,49 @@ void main(){\n\
     gl_FragColor = vec4(color,1.0);\n\
 }";
 
-/*
- *	Fetch for files
- */
-function fetchHTTP(url, methood) {
-	var request = new XMLHttpRequest(), response;
+var glslCanvas = [];
+var glslEditors = [];
+var glslGraphs = [];
 
-	request.onreadystatechange = function () {
-		if (request.readyState === 4 && request.status === 200) {
-			response = request.responseText;
-		}
-	}
-	request.open(methood ? methood : 'GET', url, false);
-    request.overrideMimeType("text/plain");
-	request.send(null);
-	return response;
+function styleCodeBlocks() {
+    // Highlight code blocks
+    var list = document.getElementsByTagName("code");
+    for(var i = 0; i < list.length; i++){
+        if (list[i].className == "language-glsl" || 
+            list[i].className == "language-bash" || 
+            list[i].className == "language-cpp" || 
+            list[i].className == "language-html" ||
+            list[i].className == "language-processing" ){
+            hljs.highlightBlock(list[i]);
+        }
+    }
 }
 
-function randomString(length, chars) {
-    var mask = '';
-    if (chars.indexOf('a') > -1) mask += 'abcdefghijklmnopqrstuvwxyz';
-    if (chars.indexOf('A') > -1) mask += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    if (chars.indexOf('#') > -1) mask += '0123456789';
-    if (chars.indexOf('!') > -1) mask += '~`!@#$%^&*()_+-={}[]:";\'<>?,./|\\';
-    var result = '';
-    for (var i = length; i > 0; --i) result += mask[Math.round(Math.random() * (mask.length - 1))];
-    return result;
-}
+function loadGlslElements() {
 
-var billboards = {}; 
-function loadMarkdown() {
+    // Load single Shaders
+    var canvas = document.getElementsByClassName("canvas");
+    for (var i = 0; i < canvas.length; i++){
+        glslCanvas.push(new GlslCanvas(canvas[i]));
+    } 
 
-    // parse CODE & CANVAS boxes
+    // parse EDITORS
 	var ccList = document.querySelectorAll(".codeAndCanvas");
-    var id = "", 
-        srcFile= "",
-        str = ""
-        imagesFiles = "",
-        inject = "";
-
-    var imgCounter = 0;
 	for(var i = 0; i < ccList.length; i++){
 		if (ccList[i].hasAttribute("data")){
-			id = randomString(16, '#aA');
-			srcFile = ccList[i].getAttribute("data");
-            
-            // load code
-            str = fetchHTTP(srcFile);
-            inject = '<div class="editor">\
-            <canvas id ='+id+' class="canvas" data-fragment-url="'+srcFile+'" ';
-
-            // load images
-            imagesFiles = ccList[i].getAttribute("data-imgs");
-            imgCounter = 0;
-            if ( imagesFiles ){
-                var imgUrls = imagesFiles.split('&');
-                for(var j in imgUrls){
-                    var ext = imgUrls[j].substr(imgUrls[j].lastIndexOf('.') + 1);
-                    if (ext == "png" || ext == "jpg" || ext == "PNG" || ext == "JPG" ){
-                        if(imgCounter === 0){
-                            inject += 'data-textures="'
-                        } else {
-                            inject += ",";
-                        }
-                        inject += imgUrls[j];
-                        imgCounter++;
-                    }
-                }
-                if (imgCounter !== 0){
-                    inject += '" ';
-                }
-            } 
-            inject += ' width="250px" height="250px"></canvas>\
-			</div>';
-
-            // inject the code
-            ccList[i].innerHTML = inject;
-
-            // wakeup the code editor
-			var demoEditor = ccList[i].getElementsByTagName("div");
-			if(demoEditor[0]){
-				var editor = CodeMirror(demoEditor[0],{
-					value: str,
-					viewportMargin: Infinity,
-					lineNumbers: true,
-					matchBrackets: true,
-					mode: "x-shader/x-fragment",
-					keyMap: "sublime",
-					autoCloseBrackets: true,
-					extraKeys: {"Ctrl-Space": "autocomplete"},
-					showCursorWhenSelecting: true,
-                    lineWrapping: true,
-                    indentUnit: 4
-				});
-
-				editor.id = id;
-
-                editor.on("cursorActivity", function(cm) {
-                    var canvasToChange = document.getElementById(cm.id);
-                    var height = cm.heightAtLine(cm.getCursor().line+1,'local')-canvasToChange.height;
-                    if (height<0){
-                        height = 0.0;   
-                    }
-                    canvasToChange.style.top = (height).toString()+"px";
-                });
-
-				editor.on("change", function(cm, change) {
-					billboards[cm.id].load(cm.getValue());
-                    billboards[cm.id].render(true);
-				});
-			}
-		}
-	}
-
-    // parse Simple FUNCTIONS
-    var fList = document.querySelectorAll(".simpleFunction");
-    for(var i = 0; i < fList.length; i++){
-        if (fList[i].hasAttribute("data")){
-            id = randomString(16, '#aA');
-            var funct = fList[i].getAttribute("data");
-  
-            // compose glslCanvas
-            fList[i].innerHTML = '<div class="function">\
-            <canvas id ='+id+' class="canvas" data-fragment="'+preFunction+funct+postFunction+'" width="800px" height="240px" ></canvas>\
-            </div>\
-            <p class="caption">Graph plotter by <a href="http://blog.hvidtfeldts.net/index.php/2011/07/plotting-high-frequency-functions-using-a-gpu/">Mikael Hvidtfeldt Christensen</a> (2011)<p>';
-
-            // wakeup the code editor
-            var demoEditor = fList[i].getElementsByTagName("div");
-            if(demoEditor[0]){
-                var editor = CodeMirror(demoEditor[0],{
-                    value: funct,
-                    viewportMargin: Infinity,
-                    lineNumbers: false,
-                    matchBrackets: true,
-                    mode: "x-shader/x-fragment",
-                    keyMap: "sublime",
-                    autoCloseBrackets: true,
-                    extraKeys: {"Ctrl-Space": "autocomplete"},
-                    showCursorWhenSelecting: true,
-                    indentUnit: 4
-                });
-                editor.id = id;
-
-                editor.on("change", function(cm, change) {
-                    billboards[cm.id].load(preFunction+cm.getValue()+postFunction);
-                    billboards[cm.id].render(true);
-                });
-            }
+            var srcFile = ccList[i].getAttribute("data");
+            glslEditors.push(new GlslEditor(ccList[i], { canvas_size: 250, canvas_follow: true }).open(srcFile));
         }
     }
 
-	// Load codes tags that have "src" attributes
-	var list = document.getElementsByTagName("code");
-	for(var i = 0; i < list.length; i++){
-		if (list[i].className == "language-glsl" || 
-			list[i].className == "language-bash" || 
-			list[i].className == "language-cpp" || 
-			list[i].className == "language-html" ||
-            list[i].className == "language-processing" ){
-			hljs.highlightBlock(list[i]);
-		}
-	}
-}
-
-function loadCanvas() {
-    var canvas = document.getElementsByClassName("canvas");
-    for (var i = 0; i < canvas.length; i++){
-        if (canvas[i].id === "custom") {
-            canvas[i].id = randomString(16, '#aA');
+    // parse GRAPHS
+    var sfList = document.querySelectorAll(".simpleFunction");
+    for(var i = 0; i < sfList.length; i++){
+        if (sfList[i].hasAttribute("data")){
+            var srcFile = sfList[i].getAttribute("data");
+            glslGraphs.push(new GlslEditor(sfList[i], { canvas_width: 800, canvas_height: 250, frag_header: preFunction, frag_footer: postFunction }).open(srcFile));
         }
-        billboards[canvas[i].id] = new GlslCanvas(canvas[i]);
-    }       
+    }    
 }
 
 function insertAfter(newElement,targetElement) {
@@ -390,10 +261,6 @@ function nextPage() {
 	window.location.href =  url;
 }
 
-function translate() {
-
-}
-
 /**
  * Provides requestAnimationFrame in a cross browser way.
  */
@@ -421,8 +288,7 @@ window.cancelRequestAnimFrame = (function() {
 })();
 
 window.onload = function(){
-	loadMarkdown();
+    styleCodeBlocks();
+	loadGlslElements();
     captionizeImages();
-
-    loadCanvas();
 };

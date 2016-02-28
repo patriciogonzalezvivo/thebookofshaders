@@ -72,7 +72,6 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 6px;
     max-width: 520px;
 }
 
@@ -139,7 +138,6 @@ li.navigationBar {
 code {
     font-family: monospace;
     font-size: 16px;
-    border-radius: 4px;
 }
 
 .language-bash {
@@ -148,9 +146,7 @@ code {
 
     font-size: 14px;
     line-height: 1.5em;
-
     padding: 15px;
-    border-radius: 6px;
 }
 
 .language-glsl {
@@ -158,9 +154,7 @@ code {
 
     font-size: 14px;
     line-height: 1.5em;
-
     padding: 15px;
-    border-radius: 6px;
 }
 
 .language-cpp {
@@ -168,9 +162,7 @@ code {
 
     font-size: 14px;
     line-height: 1.5em;
-
     padding: 15px;
-    border-radius: 6px;
 }
 
 .language-html {
@@ -178,9 +170,7 @@ code {
 
     font-size: 14px;
     line-height: 1.5em;
-
     padding: 15px;
-    border-radius: 6px;
 }
 
 .language-processing {
@@ -188,28 +178,21 @@ code {
 
     font-size: 14px;
     line-height: 1.5em;
-
     padding: 15px;
-    border-radius: 6px;
 }
 
-/* Interactive GLSL Canvas
+/* Interactive GLSL Elements
 ---------------------------------
 */
 
-canvas {
+.canvas {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 6px;
     max-width: 700px;
-    overflow: hidden;
-    -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC); /* this fixes the overflow:hidden in Chrome/Opera */
 }
 
 .codeAndCanvas {
-    background-color: #ECECEC;
-    border-radius: 10px;
     height:auto;
     clear:both;
 }
@@ -217,37 +200,45 @@ canvas {
 .codeAndCanvas canvas {
     float: right;
     position: relative;
-    border-radius: 10px;
     z-index: 1;
-    overflow: hidden;
-    -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC); /* this fixes the overflow:hidden in Chrome/Opera */
+}
+
+.codeAndCanvas .ge_editor {
+    background: #ECECEC;
 }
 
 .CodeMirror {
     background: #ECECEC;
     font-size: 14px;
     line-height: 1.5em;
-    border-radius: 10px;
-    border-radius: 6px;
 }
 
-.simpleFunction canvas {
-    display: block;
+.simpleFunction {
     margin-left: auto;
     margin-right: auto;
-    border-radius: 6px;
     max-width: 700px;
-
-    overflow: hidden;
-    -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC); /* this fixes the overflow:hidden in Chrome/Opera */
+    
 }
 
 .simpleFunction .CodeMirror {
     background: #F9F9F9;
     font-size: 14px;
     line-height: 1.5em;
+}
+
+.simpleFunction canvas {
+    float: top;
+    position: relative;
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 6px;
     max-width: 700px;
+}
+
+.cm-s-default .cm-variable-3 {
+    color: #708;
+}
+
+.cm-s-default .cm-keyword {
+    color: #708;
 }
