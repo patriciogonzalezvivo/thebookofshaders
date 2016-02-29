@@ -146,7 +146,7 @@ function loadGlslElements() {
     for(var i = 0; i < sfList.length; i++){
         if (sfList[i].hasAttribute("data")){
             var srcFile = sfList[i].getAttribute("data");
-            glslGraphs.push(new GlslEditor(sfList[i], { canvas_width: 800, canvas_height: 250, frag_header: preFunction, frag_footer: postFunction }).open(srcFile));
+            glslGraphs.push(new GlslEditor(sfList[i], { canvas_width: 800, lineNumbers: false, canvas_height: 250, frag_header: preFunction, frag_footer: postFunction }).open(srcFile));
         }
     }    
 }
