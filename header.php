@@ -26,10 +26,8 @@ echo '
 		<script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/build/GlslCanvas.min.js"></script>
 
 		<!-- GlslEditor -->
-		<link type="text/css" rel="stylesheet" href="https://rawgit.com/patriciogonzalezvivo/glslEditor/gh-pages/build/css/main.css">
+    	<link type="text/css" rel="stylesheet" href="https://rawgit.com/patriciogonzalezvivo/glslEditor/gh-pages/build/css/main.css">
     	<script type="application/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslEditor/gh-pages/build/js/glslEditor.js"></script>
-
-
 
     	<link type="text/css" rel="stylesheet" href="'.$path.'/css/style.css">
 
@@ -45,6 +43,3 @@ echo '
 	<body>
 	';
 ?>
-
-    	<!-- <link type="text/css" rel="stylesheet" href="http://localhost:8000/build/css/main.css"> -->
-    	<!-- <script type="application/javascript" src="http://localhost:8000/build/js/glslEditor.js"></script> -->
