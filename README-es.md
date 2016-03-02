@@ -11,17 +11,17 @@ Esta es una guía paso a paso a través del abstracto y complejo universo de los
 
 ## Contenidos
 
-* [Acerca de este libro](00/)
+* [Acerca de este libro](00/?lan=es)
 
 * Comenzando
-    * [¿Qué es un shader?](01/)
-    * [“Hola Mundo!”](02/)
-    * [Uniforms](03/)
-	* [Ejecutando tu shader](04/)
+    * [¿Qué es un shader?](01/?lan=es)
+    * [“Hola Mundo!”](02/?lan=es)
+    * [Uniforms](03/?lan=es)
+	* [Ejecutando tu shader](04/?lan=es)
 
 * Dibujando con algoritmos
-    * [Funciones de forma](05/)
-    * [Colores](06/)
+    * [Funciones de forma](05/?lan=es)
+    * [Colores](06/?lan=es)
     * [Formas](07/)
     * [Matrices](08/)
     * [Patrones](09/)
