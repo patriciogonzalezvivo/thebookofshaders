@@ -246,12 +246,13 @@ code {
 /* GALLERY */
 
 .gallery {
-    -moz-column-width: 5em;
-    -webkit-column-width: 5em;
+    -moz-column-width: 10em;
+    -webkit-column-width: 12em;
     -moz-column-gap: 20px;
     -webkit-column-gap: 20px;
     margin-right: 0px;
     margin-left: 0px;
+    margin-top: 14px;
 }
 
 .gallery_item {
@@ -269,5 +270,5 @@ code {
 }
 
 .gallery_thumb {
-    max-width: 100px;
+    max-width: 250px;
 }
