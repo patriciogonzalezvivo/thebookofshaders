@@ -243,6 +243,18 @@ code {
     color: #708;
 }
 
+.ge_tooltip_modal {
+    background-color: #B4B4B4;
+}
+
+.ge_tooltip_modal p {
+    color: #000000;
+}
+
+.ge_tooltip_modal a {
+    color: #FEFFFF;
+}
+
 /* GALLERY */
 
 .gallery {
