@@ -137,7 +137,7 @@ function loadGlslElements() {
 	for(var i = 0; i < ccList.length; i++){
 		if (ccList[i].hasAttribute("data")){
             var srcFile = ccList[i].getAttribute("data");
-            var editor = new GlslEditor(ccList[i], { canvas_size: 250, canvas_follow: true, tooltips: true });
+            var editor = new GlslEditor(ccList[i], { canvas_size: 250, canvas_follow: true, tooltips: true, shareIcon: true });
             editor.open(srcFile);
             glslEditors.push(editor);
         }
