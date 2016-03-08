@@ -8,7 +8,7 @@ precision mediump float;
 #define PROCESSING_COLOR_SHADER
 
 uniform vec2 u_resolution;
-uniform vec3 u_mouse;
+uniform vec2 u_mouse;
 uniform float u_time;
 
 void main() {
