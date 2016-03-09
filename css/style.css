@@ -259,6 +259,10 @@ code {
     box-shadow: none;
 }
 
+.ge_colorpicker_link-button {
+    color: #333;
+}
+
 /* GALLERY */
 
 .gallery {
