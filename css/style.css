@@ -255,6 +255,10 @@ code {
     color: #FEFFFF;
 }
 
+.ge_export_modal {
+    box-shadow: none;
+}
+
 /* GALLERY */
 
 .gallery {
