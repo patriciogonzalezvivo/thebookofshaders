@@ -267,9 +267,9 @@ code {
 
 .gallery {
     -moz-column-width: 10em;
-    -webkit-column-width: 12em;
-    -moz-column-gap: 20px;
-    -webkit-column-gap: 20px;
+    -webkit-column-width: 15em;
+    -moz-column-gap: 15px;
+    -webkit-column-gap: 15px;
     margin-right: 0px;
     margin-left: 0px;
     margin-top: 14px;
