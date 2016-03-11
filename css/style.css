@@ -262,33 +262,3 @@ code {
 .ge_colorpicker_link-button {
     color: #333;
 }
-
-/* GALLERY */
-
-.gallery {
-    -moz-column-width: 10em;
-    -webkit-column-width: 15em;
-    -moz-column-gap: 15px;
-    -webkit-column-gap: 15px;
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-top: 14px;
-}
-
-.gallery_item {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-}
-
-.gallery_item p {
-    font-family: Baskerville, "Times New Roman", serif;
-    text-align: center;
-    font-size: 14px;
-    line-height: 1.3;
-    margin-top: 0px;
-}
-
-.gallery_thumb {
-    max-width: 250px;
-}
