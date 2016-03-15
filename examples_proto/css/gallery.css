@@ -1,0 +1,36 @@
+div.gallery {
+}
+
+div.gallery ul, div.gallery ul {
+	list-style: none;
+	padding:0;
+	margin: 0;
+}
+
+div.gallery li {
+	display: inline-block;
+	margin-bottom: 24px;
+	margin-left: 8px;
+	margin-right: 16px;
+}
+
+div.gallery .imgcontainer {
+	width: 242px;
+}
+div.gallery .imgcontainer img {
+	width: 240px;
+	border: solid 1px #ccc;
+}
+
+div.gallery h2 {
+	line-height: 64px;
+	border-bottom: solid 1px #9a9a9a;
+	margin-bottom: 24px;
+}
+
+div.gallery h3 {
+	margin-top: 64px;
+}
+div.gallery div.extra-container {
+	text-align: right;
+}
