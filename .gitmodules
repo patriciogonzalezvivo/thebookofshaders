@@ -1,3 +1,9 @@
 [submodule "src/parsedown"]
 	path = src/parsedown
 	url = https://github.com/erusev/parsedown.git
+[submodule "src/glslCanvas"]
+	path = src/glslCanvas
+	url = https://github.com/patriciogonzalezvivo/glslCanvas.git
+[submodule "src/glslEditor"]
+	path = src/glslEditor
+	url = https://github.com/patriciogonzalezvivo/glslEditor.git
