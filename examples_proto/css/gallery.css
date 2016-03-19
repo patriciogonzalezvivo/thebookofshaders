@@ -19,7 +19,8 @@ div.gallery .imgcontainer {
 }
 div.gallery .imgcontainer img {
 	width: 240px;
-	border: solid 1px #ccc;
+	height: 240px;
+	border: solid 1px #eeeeee;
 }
 
 div.gallery h2 {

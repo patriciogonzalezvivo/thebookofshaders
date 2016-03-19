@@ -6,7 +6,7 @@ Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tong
 
 Read the chapter [Color](../06/)
 
-<div id="c05-examples"></div>
+<div id="c06-examples"></div>
 <script type="text/javascript">gallery.createExampleList("c06")</script>
 
 <!---
