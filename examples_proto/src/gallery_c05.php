@@ -31,3 +31,4 @@ examples["c05-shared"] = [
   {url:"../edit.html#06/mix.frag", src: "images/preview.png", caption: "Caption, credit, etc."}
 ];
 ';
+?>
