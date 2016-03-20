@@ -10,14 +10,14 @@ examples.c05 = [
   {url:"../edit.html#05/cubicpulse.frag", src: "http://www.thebookofshaders.com/log/160319051235.png", caption: "Iñigo Quiles\'s Cubic Pulse"},
   {url:"../edit.html#05/expstep.frag", src: "http://www.thebookofshaders.com/log/160319051258.png", caption: "Iñigo Quiles\'s Exponential Step"},
   {url:"../edit.html#05/expstep.frag", src: "http://www.thebookofshaders.com/log/160319051312.png", caption: "Iñigo Quiles\'s Parabola"},
-  {url:"../edit.html#05/parabola.frag", src: "http://www.thebookofshaders.com/log/preview.png", caption: "Iñigo Quiles\'s Power Curve"},
-  {url:"../edit.html#05/expstep.frag", src: "http://www.thebookofshaders.com/log/preview.png", caption: "Iñigo Quiles\'s Parabola"},
-  {url:"../edit.html#05/pcurve.frag", src: "http://www.thebookofshaders.com/log/preview.png", caption: "Iñigo Quiles\'s Power Curve"},
-  {url:"../edit.html#05/easing.frag", src: "http://www.thebookofshaders.com/log/preview.png", caption: "Easing functions"},
-  {url:"../edit.html#examples/05/stepwise.frag", src: "http://www.thebookofshaders.com/log/preview.png", caption: "Stepwise function"},
-  {url:"../edit.html?log=160208105810", src: "http://www.thebookofshaders.com/log/preview.png", caption: "kynd\'s quadratic bezier"},
-  {url:"../edit.html?log=160208105716", src: "http://www.thebookofshaders.com/log/preview.png", caption: "kynd\'s cubic bezier (1)"},
-  {url:"../edit.html?log=160208105702", src: "http://www.thebookofshaders.com/log/preview.png", caption: "kynd\'s cubic bezier (2)"}
+  {url:"../edit.html#05/parabola.frag", src: "http://www.thebookofshaders.com/log/160320210250.png", caption: "Iñigo Quiles\'s Power Curve"},
+  {url:"../edit.html#05/expstep.frag", src: "http://www.thebookofshaders.com/log/160320210318.png", caption: "Iñigo Quiles\'s Parabola"},
+  {url:"../edit.html#05/pcurve.frag", src: "http://www.thebookofshaders.com/log/160320210337.png", caption: "Iñigo Quiles\'s Power Curve"},
+  {url:"../edit.html#05/easing.frag", src: "http://www.thebookofshaders.com/log/160320210456.png", caption: "Easing functions"},
+  {url:"../edit.html#examples/05/stepwise.frag", src: "http://www.thebookofshaders.com/log/160320210519.png", caption: "Stepwise function"},
+  {url:"../edit.html?log=160208105810", src: "http://www.thebookofshaders.com/log/160320210550.png", caption: "kynd\'s quadratic bezier"},
+  {url:"../edit.html?log=160208105716", src: "http://www.thebookofshaders.com/log/160320210609.png", caption: "kynd\'s cubic bezier (1)"},
+  {url:"../edit.html?log=160208105702", src: "http://www.thebookofshaders.com/log/160320210634.png", caption: "kynd\'s cubic bezier (2)"}
 ];
 
 examples["c05-shared"] = [

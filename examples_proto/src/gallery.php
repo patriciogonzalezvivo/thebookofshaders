@@ -21,8 +21,8 @@ var gallery = function() {
     var li = $("<li>");
     var a = $("<a>").attr("href", d.url.replace("../", "http://www.thebookofshaders.com/"));
     var container = $("<div>").attr("class", "imgcontainer")
-    .append($("<img>").attr({"src": d.src, "alt": d.caption}))
-    .append($("<div>").attr("class", "caption").text(d.caption));
+    .append($("<img>").attr({"src": d.src, "alt": d.caption}));
+    //.append($("<div>").attr("class", "caption").text(d.caption));
     li.append(a);
     a.append(container);
     return li;

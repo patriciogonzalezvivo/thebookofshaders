@@ -4,7 +4,7 @@ The following is the list of examples present in this book and more from our exc
 
 ## Featured shaders
 
-Featured examples from the shaders shared by our readers and students.
+Featured examples shared by our readers and students. We are looking forward to see a lot more shaders created with the [GLSL editor](http://editor.thebookofshaders.com/). Please share your masterpiecess to [@bookofshaders](https://twitter.com/bookofshaders).
 
 <div id="shared-examples"></div>
 <script type="text/javascript">gallery.createExampleList("shared", 9)</script>
@@ -15,7 +15,9 @@ Featured examples from the shaders shared by our readers and students.
 ## Getting started
 ### "Hello World!"
 
-Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tongue picanha pancetta kevin sausage. Meatloaf biltong cupim pork loin ham turducken shoulder t-bone bacon capicola pancetta pork kielbasa. Meatball kevin bresaola beef ribs, meatloaf ribeye drumstick turkey. Cow pig ham picanha corned beef leberkas filet mignon landjaeger ribeye pork capicola short ribs doner.
+Usually the "Hello world!" example is the first step to learning a new language. In GPU-land rendering text is an overcomplicated task for a first step, instead we'll choose a bright welcoming color to shout our enthusiasm!
+
+Read ["Hello World!"](../02) to learn more.
 
 <div id="c02-examples"></div>
 <script type="text/javascript">gallery.createExampleList("c02", 3)</script>
@@ -23,7 +25,15 @@ Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tong
 
 ### Uniforms
 
-Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tongue picanha pancetta kevin sausage. Meatloaf biltong cupim pork loin ham turducken shoulder t-bone bacon capicola pancetta pork kielbasa. Meatball kevin bresaola beef ribs, meatloaf ribeye drumstick turkey. Cow pig ham picanha corned beef leberkas filet mignon landjaeger ribeye pork capicola short ribs doner.
+Learn how to use Uniform variables. Uniform variables, or simply *uniforms* are the variables that carry information equally accessible from all of the threads of your shader. The [GSLS editor](http://editor.thebookofshaders.com/) has three uniforms set up for you.
+
+Read [Uniforms](../03) to learn more.
+
+```glsl
+uniform vec2 u_resolution; // Canvas size (width,height)
+uniform vec2 u_mouse;      // mouse position in screen pixels
+uniform float u_time;	  // Time in seconds since load
+```
 
 <div id="c03-examples"></div>
 <script type="text/javascript">gallery.createExampleList("c03", 3)</script>
@@ -31,7 +41,9 @@ Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tong
 ## Algorithmic drawing
 ### Shaping functions
 
-Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tongue picanha pancetta kevin sausage. Meatloaf biltong cupim pork loin ham turducken shoulder t-bone bacon capicola pancetta pork kielbasa. Meatball kevin bresaola beef ribs, meatloaf ribeye drumstick turkey. Cow pig ham picanha corned beef leberkas filet mignon landjaeger ribeye pork capicola short ribs doner.
+Shaping functions is fundamental technique that is recursively used throughout this book that let you control the variation of the value at will. Study how different functions of x are used to create different shapes and try making your own function.
+
+Read [Shaping functions](../05) to learn more.
 
 <div id="c05-examples"></div>
 <script type="text/javascript">gallery.createExampleList("c05", 3)</script>

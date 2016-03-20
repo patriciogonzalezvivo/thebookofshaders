@@ -2,9 +2,9 @@
 
 ## Examples
 
-Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tongue picanha pancetta kevin sausage. Meatloaf biltong cupim pork loin ham turducken shoulder t-bone bacon capicola pancetta pork kielbasa. Meatball kevin bresaola beef ribs, meatloaf ribeye drumstick turkey. Cow pig ham picanha corned beef leberkas filet mignon landjaeger ribeye pork capicola short ribs doner.
+Shaping functions is fundamental technique that is recursively used throughout this book that let you control the variation of the value at will. Study how different functions of x are used to create different shapes and try making your own function.
 
-Read the chapter [Shaping funcions](../05/)
+Read [Shaping functions](../05) to learn more.
 
 <div id="c05-examples"></div>
 <script type="text/javascript">gallery.createExampleList("c05")</script>
