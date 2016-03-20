@@ -41,7 +41,7 @@ uniform float u_time;	  // Time in seconds since load
 ## Algorithmic drawing
 ### Shaping functions
 
-Shaping functions is fundamental technique that is recursively used throughout this book that let you control the variation of the value at will. Study how different functions of x are used to create different shapes and try making your own function.
+Shaping functions is fundamental technique that is recursively used throughout this book that let you control the variation of value at will. Study how different functions of x are used to create different shapes and try making your own function.
 
 Read [Shaping functions](../05) to learn more.
 
@@ -51,7 +51,10 @@ Read [Shaping functions](../05) to learn more.
 
 ### Color
 
-Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tongue picanha pancetta kevin sausage. Meatloaf biltong cupim pork loin ham turducken shoulder t-bone bacon capicola pancetta pork kielbasa. Meatball kevin bresaola beef ribs, meatloaf ribeye drumstick turkey. Cow pig ham picanha corned beef leberkas filet mignon landjaeger ribeye pork capicola short ribs doner.
+Familiarize yourself with how to express colors in shaders. The examples cover how to mix colors and beautifully animate them over time as well as conversion between two different models(RGB and HSB).
+In GLSL, colors are simply just vectors, which means you can easily apply the concepts and techniques you learn here to other
+
+Read [Colors](../06) to learn more.
 
 <div id="c06-examples"></div>
 <script type="text/javascript">gallery.createExampleList("c06", 3)</script>

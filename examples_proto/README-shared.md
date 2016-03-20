@@ -1,6 +1,6 @@
-# Gallery - All Shared Shaders
+# Shared Gallery
 
-## Shared shaders
+## All Shared Shaders
 Let's look at what your fellow learners are doing. This page features all the shaders shared by the readers of this book.  
 
 <div id="shared-examples"></div>

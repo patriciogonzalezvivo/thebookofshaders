@@ -1,10 +1,11 @@
-# Gallery - Colors
+# Shader Gallery
 
-## Examples
+## Colors
 
-Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tongue picanha pancetta kevin sausage. Meatloaf biltong cupim pork loin ham turducken shoulder t-bone bacon capicola pancetta pork kielbasa. Meatball kevin bresaola beef ribs, meatloaf ribeye drumstick turkey. Cow pig ham picanha corned beef leberkas filet mignon landjaeger ribeye pork capicola short ribs doner.
+Familiarize yourself with how to express colors in shaders. The examples cover how to mix colors and beautifully animate them over time as well as conversion between two different models(RGB and HSB).
+In GLSL, colors are simply just vectors, which means you can easily apply the concepts and techniques you learn here to other
 
-Read the chapter [Color](../06/)
+Read [Colors](../06) to learn more.
 
 <div id="c06-examples"></div>
 <script type="text/javascript">gallery.createExampleList("c06")</script>
