@@ -3,6 +3,8 @@ echo '
 examples.advanced = [
   {url:"../edit.html#examples/moon.frag&examples/http://www.thebookofshaders.com/log/moon-texture.jpg", src: "http://www.thebookofshaders.com/log/160319080242.png", caption: "Moon"},
   {url:"../edit.html#08/matrix.frag", src: "http://www.thebookofshaders.com/log/160319080315.png", caption: "Matrix"},
+  {url:"../edit.html?log=160208105716", src: "http://www.thebookofshaders.com/log/160320210609.png", caption: "kynd\'s cubic bezier (1)"},
+  {url:"../edit.html?log=160208105702", src: "http://www.thebookofshaders.com/log/160320210634.png", caption: "kynd\'s cubic bezier (2)"},
   {url:"../edit.html#10/iching-02.frag", src: "http://www.thebookofshaders.com/log/160319075355.png", caption: "I Ching: pattern"},
   {url:"../edit.html#11/2d-gnoise.frag", src: "http://www.thebookofshaders.com/log/160319080357.png", caption: "I Ching: random"},
   {url:"../edit.html#11/iching-03.frag", src: "http://www.thebookofshaders.com/log/160319075326.png", caption: "I Ching: with noise"},

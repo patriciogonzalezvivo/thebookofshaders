@@ -2,9 +2,10 @@
 
 ## Noise
 
-Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tongue picanha pancetta kevin sausage. Meatloaf biltong cupim pork loin ham turducken shoulder t-bone bacon capicola pancetta pork kielbasa. Meatball kevin bresaola beef ribs, meatloaf ribeye drumstick turkey. Cow pig ham picanha corned beef leberkas filet mignon landjaeger ribeye pork capicola short ribs doner.
+How can we create more natural looking textures like surface of the roads, rocks, trees and clouds? Noise function is the answer.
+Since Ken Perlin invented his first noise algorithm in 80s, the technique has been extensively used throughout computer graphics and simulations. Even if you have never heard of the name, it's not possible you have never seen it. Let's look step by step at how the function is built and works. We also cover more efficient version of the algorithm called simplex noise.
 
-Read the chapter [Noise](../11/)
+Read [Noise](../11) to learn more.
 
 <div id="c11-examples"></div>
 <script type="text/javascript">gallery.createExampleList("c11")</script>

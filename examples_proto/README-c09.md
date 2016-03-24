@@ -2,9 +2,9 @@
 
 ## Patterns
 
-Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tongue picanha pancetta kevin sausage. Meatloaf biltong cupim pork loin ham turducken shoulder t-bone bacon capicola pancetta pork kielbasa. Meatball kevin bresaola beef ribs, meatloaf ribeye drumstick turkey. Cow pig ham picanha corned beef leberkas filet mignon landjaeger ribeye pork capicola short ribs doner.
+Repetitive patterns are perfect theme for computational sketching. Different from conventional way of drawing, shaders lets you draw everything parallelly at once. Instead of repeating the same procedure many times, you will wrap and repeat the "space". Sounds like Sci-Fi? Let's find out what it really means.
 
-Read the chapter [Patterns](../09/)
+Read [Patterns](../09) to learn more.
 
 <div id="c09-examples"></div>
 <script type="text/javascript">gallery.createExampleList("c09")</script>

@@ -1,9 +1,8 @@
 # Shader Gallery
 
-## Advanced
+## Advanced examples
 
-Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tongue picanha pancetta kevin sausage. Meatloaf biltong cupim pork loin ham turducken shoulder t-bone bacon capicola pancetta pork kielbasa. Meatball kevin bresaola beef ribs, meatloaf ribeye drumstick turkey. Cow pig ham picanha corned beef leberkas filet mignon landjaeger ribeye pork capicola short ribs doner.
-
+In this section, we gathered relatively advanced examples from different chapters. Try if you can read and understand all the examples here to test yourself.
 
 <div id="advanced-examples"></div>
 <script type="text/javascript">gallery.createExampleList("advanced")</script>

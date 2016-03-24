@@ -2,9 +2,9 @@
 
 ## Random
 
-Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tongue picanha pancetta kevin sausage. Meatloaf biltong cupim pork loin ham turducken shoulder t-bone bacon capicola pancetta pork kielbasa. Meatball kevin bresaola beef ribs, meatloaf ribeye drumstick turkey. Cow pig ham picanha corned beef leberkas filet mignon landjaeger ribeye pork capicola short ribs doner.
+Life is boring if everything was predictable. Though nothing is truly random in computers, we can create pseudo-randomness that looks totally unpredictable using simple tricks to create more interesting patterns and behaviors.
 
-Read the chapter [Random](../10/)
+Read [Random](../10) to learn more.
 
 <div id="c10-examples"></div>
 <script type="text/javascript">gallery.createExampleList("c10")</script>

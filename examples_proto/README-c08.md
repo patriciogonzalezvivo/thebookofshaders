@@ -1,10 +1,11 @@
-# Shader Gallery 
+# Shader Gallery
 
 ## Matrix
 
-Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tongue picanha pancetta kevin sausage. Meatloaf biltong cupim pork loin ham turducken shoulder t-bone bacon capicola pancetta pork kielbasa. Meatball kevin bresaola beef ribs, meatloaf ribeye drumstick turkey. Cow pig ham picanha corned beef leberkas filet mignon landjaeger ribeye pork capicola short ribs doner.
+Matrix is a very powerful tool for manipulating vectors. By mastering how to use matrices, you can freely translate, scale and rotate shapes. Since the technique can be equally applied to anything expressed by vectors, we will look at many more advanced use of matrices later in this book.
+Matrices may look complex at a first glance, but you'll find it very handy and useful as you get used to the concept. Let's practice here and learn basics with simple examples.
 
-Read the chapter [Matrix](../08/)
+Read [Matrix](../08) to learn more.
 
 <div id="c08-examples"></div>
 <script type="text/javascript">gallery.createExampleList("c08")</script>

@@ -62,7 +62,9 @@ Read [Colors](../06) to learn more.
 
 ### Shapes
 
-Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tongue picanha pancetta kevin sausage. Meatloaf biltong cupim pork loin ham turducken shoulder t-bone bacon capicola pancetta pork kielbasa. Meatball kevin bresaola beef ribs, meatloaf ribeye drumstick turkey. Cow pig ham picanha corned beef leberkas filet mignon landjaeger ribeye pork capicola short ribs doner.
+Let's look at how to draw simple shapes in a parallel procedural way. In a nutshell, all you need to do is to determine if each pixel belongs to the shape you want to draw or not, and apply different colors accordingly. You can use coordinate system like a grid paper to draw rectangles and squares. We'll look at more advanced concept called distance field to draw more complex shapes.
+
+Read [Shapes](../07) to learn more.
 
 <div id="c07-examples"></div>
 <script type="text/javascript">gallery.createExampleList("c07", 3)</script>
@@ -70,7 +72,10 @@ Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tong
 
 ### Matrix
 
-Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tongue picanha pancetta kevin sausage. Meatloaf biltong cupim pork loin ham turducken shoulder t-bone bacon capicola pancetta pork kielbasa. Meatball kevin bresaola beef ribs, meatloaf ribeye drumstick turkey. Cow pig ham picanha corned beef leberkas filet mignon landjaeger ribeye pork capicola short ribs doner.
+Matrix is a very powerful tool for manipulating vectors. By mastering how to use matrices, you can freely translate, scale and rotate shapes. Since the technique can be equally applied to anything expressed by vectors, we will look at many more advanced use of matrices later in this book.
+Matrices may look complex at a first glance, but you'll find it very handy and useful as you get used to the concept. Let's practice here and learn basics with simple examples.
+
+Read [Matrix](../08) to learn more.
 
 <div id="c08-examples"></div>
 <script type="text/javascript">gallery.createExampleList("c08", 3)</script>
@@ -78,7 +83,9 @@ Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tong
 
 ### Patterns
 
-Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tongue picanha pancetta kevin sausage. Meatloaf biltong cupim pork loin ham turducken shoulder t-bone bacon capicola pancetta pork kielbasa. Meatball kevin bresaola beef ribs, meatloaf ribeye drumstick turkey. Cow pig ham picanha corned beef leberkas filet mignon landjaeger ribeye pork capicola short ribs doner.
+Repetitive patterns are perfect theme for computational sketching. Different from conventional way of drawing, shaders lets you draw everything parallely at once. Instead of repeating the same procedure many times, you will wrap and repeat the "space". Sounds like Sci-Fi? Let's find out what it really means.
+
+Read [Patterns](../09) to learn more.
 
 <div id="c09-examples"></div>
 <script type="text/javascript">gallery.createExampleList("c09", 3)</script>
@@ -88,7 +95,9 @@ Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tong
 ## Generative designs
 ### Random
 
-Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tongue picanha pancetta kevin sausage. Meatloaf biltong cupim pork loin ham turducken shoulder t-bone bacon capicola pancetta pork kielbasa. Meatball kevin bresaola beef ribs, meatloaf ribeye drumstick turkey. Cow pig ham picanha corned beef leberkas filet mignon landjaeger ribeye pork capicola short ribs doner.
+Life is boring if everything was predictable. Though nothing is truly random in computers, we can create pseudo-randomness that looks totally unpredictable using simple tricks to create more interesting patterns and behaviors.
+
+Read [Random](../10) to learn more.
 
 <div id="c10-examples"></div>
 <script type="text/javascript">gallery.createExampleList("c10", 3)</script>
@@ -96,16 +105,20 @@ Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tong
 
 ### Noise
 
-Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tongue picanha pancetta kevin sausage. Meatloaf biltong cupim pork loin ham turducken shoulder t-bone bacon capicola pancetta pork kielbasa. Meatball kevin bresaola beef ribs, meatloaf ribeye drumstick turkey. Cow pig ham picanha corned beef leberkas filet mignon landjaeger ribeye pork capicola short ribs doner.
+How can we create more natural looking textures like surface of the roads, rocks, trees and clouds? Noise function is the answer.
+Since Ken Perlin invented his first noise algorithm in 80s, the technique has been extensively used throughout computer graphics and simulations. Even if you have never heard of the name, it's not possible you have never seen it. Let's look step by step at how the function is built and works. We also cover more efficient version of the algorithm called simplex noise.
+
+Read [Noise](../11) to learn more.
+
 
 <div id="c11-examples"></div>
 <script type="text/javascript">gallery.createExampleList("c11", 3)</script>
 <div class="extra-container"><a href="c11.php">See All Examples</a></div>
 
 
-## Advanced Examples
+## Advanced examples
 
-Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tongue picanha pancetta kevin sausage. Meatloaf biltong cupim pork loin ham turducken shoulder t-bone bacon capicola pancetta pork kielbasa. Meatball kevin bresaola beef ribs, meatloaf ribeye drumstick turkey. Cow pig ham picanha corned beef leberkas filet mignon landjaeger ribeye pork capicola short ribs doner.
+This section features relatively advanced examples from different chapters. Try if you can read and understand all the examples here to test yourself.
 
 <div id="advanced-examples"></div>
 <script type="text/javascript">gallery.createExampleList("advanced", 3)</script>

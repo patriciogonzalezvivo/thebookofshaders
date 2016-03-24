@@ -2,9 +2,9 @@
 
 ## Shapes
 
-Some blurb about what the chapter is about. Bacon ipsum dolor amet ham hock tongue picanha pancetta kevin sausage. Meatloaf biltong cupim pork loin ham turducken shoulder t-bone bacon capicola pancetta pork kielbasa. Meatball kevin bresaola beef ribs, meatloaf ribeye drumstick turkey. Cow pig ham picanha corned beef leberkas filet mignon landjaeger ribeye pork capicola short ribs doner.
+Let's look at how to draw simple shapes in a parallel procedural way. In a nutshell, all you need to do is to determine if each pixel belongs to the shape you want to draw or not, and apply different colors accordingly. You can use coordinate system like a grid paper to draw rectangles and squares. We'll look at more advanced concept called distance field to draw more complex shapes.
 
-Read the chapter [Shapes](../07/)
+Read [Shapes](../07) to learn more.
 
 <div id="c07-examples"></div>
 <script type="text/javascript">gallery.createExampleList("c07")</script>
