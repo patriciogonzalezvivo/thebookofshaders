@@ -83,6 +83,8 @@ Thanks [Tong Li](https://www.facebook.com/tong.lee.9484) and [Yi Zhang](https://
 
 Thanks [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) for the Korean [translation (한국어)](?lan=kr)
 
+Thanks [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) for the Spanish [translation (español)](?lan=es)
+
 Thanks [Karim Naaji](http://karim.naaji.fr/) for contributing with support, good ideas and code.
 
 Thanks to everyone who has believed in this project and [contributed with fixes](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) or donations.
