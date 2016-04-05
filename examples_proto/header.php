@@ -33,8 +33,8 @@ echo '
       <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
 
     <!-- Gallery -->
-      <link type="text/css" rel="stylesheet" href="css/gallery.css">
-      <script type="application/javascript" src="src/gallery.php"></script>
+      <link type="text/css" rel="stylesheet" href="./css/gallery.css">
+      <script type="application/javascript" src="./src/gallery.php"></script>
 
       <link type="text/css" rel="stylesheet" href="'.$path.'/css/style.css">
 
