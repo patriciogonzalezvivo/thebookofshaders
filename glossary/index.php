@@ -17,7 +17,7 @@
 	if(empty($_GET)) 
 		echo $Parsedown->text(file_get_contents ('README.md'));
 	else 
-		echo $Parsedown->text(file_get_contents ( $_GET['search'].'.md' ));
+		echo $Parsedown->text(file_get_contents ( $_GET['search'].'/README.md' ));
 
 	echo '
 	</div>
