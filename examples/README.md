@@ -26,6 +26,9 @@ The following is a list of examples present in this book.
         - [Iñigo Quiles's Parabola](../edit.html#05/parabola.frag)
         - [Iñigo Quiles's Power Curve](../edit.html#05/pcurve.frag)
         - [Easing functions](../edit.html#05/easing.frag)
+        - [Stepwise function](../edit.html#examples/05/stepwise.frag)
+        - [Drawing multiple shaping functions](../edit.html#examples/05/draw-multi-shaping-func.frag)
+        - By [Kynd](https://twitter.com/kyndinfo)'s extra examples: [quadratic bezier](../edit.html?log=160208105810), [cubic bezier 1](../edit.html?log=160208105716) and [cubic bezier 2](../edit.html?log=160208105702)
 
     * [Color](../06/)
         - [Mix](../edit.html#06/mix.frag)
@@ -42,6 +45,7 @@ The following is a list of examples present in this book.
         - [Polar shapes](../edit.html#07/polar.frag)
         - [Polar Poligons](../edit.html#07/shapes.frag)
         - Composition: [Arrow](../edit.html#07/arrow.frag)
+        - By [Kynd](https://twitter.com/kyndinfo)'s extra examples: [distance field shapes](../edit.html?log=160131053729), [distance field shape transitions](../edit.html?log=160131053646), [distance field metaball](../edit.html?log=160208110000)
 
     * [Matrix](../08/)
         - [cross](../edit.html#08/cross.frag)

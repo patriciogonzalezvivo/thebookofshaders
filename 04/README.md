@@ -1,10 +1,40 @@
 ## Running your shader
 
-At this point you're probably excited to try shaders on platforms you feel comfortable with. The following are examples of how to set shaders in some popular frameworks with the same uniforms that we are going to use throughout this book. (In the [GitHub repository for this chapter](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), you'll find the full source code for these three frameworks.)
+As part of the construction of this book and my art practice I made an ecosystem of tools to create, display, share and curate shaders. This tools works consistently across Linux Desktops, MacOS, [RaspberryPi](https://www.raspberrypi.org/) and browsers without the need of changing your code.
 
-**Note 1**: In case you don't want to try shaders on the following frameworks, but you want to work outside a browser, you can download and compile [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). This MacOS and RaspberryPi program runs directly from terminal and is especially designed to execute the examples in this book.
+**Display**: all life-examples in this book are displayed using [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) which makes the process of running standalone shader incredible easy. 
 
-**Note 2**: If you just want to display Shaders using WebGL and you don't care about the frameworks arround it, you can use [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) that exactly do that. This web tool was designed for this book but end up been so usefull that I use it all the time for different projects.
+```html
+<canvas class="glslCanvas" data-fragment-url=“yourShader.frag" data-textures=“yourInputImage.png” width="500" height="500"></canvas>
+```
+
+As you can see, it just need to a ```canvas``` element with ```class="glslCanvas"``` and the url to your shader in the ```data-fragment-url```. Learn more about it [here](https://github.com/patriciogonzalezvivo/glslCanvas).
+
+If you are like me, you will probably want to run shaders directly from the console, in that case you should check out [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). This application allows you to incorporate shaders into your ```bash``` scripts or unix pipelines and use it in a similarly in a similar way that [ImageMagic](http://www.imagemagick.org/script/index.php). Also [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) is a great way to compile shaders on your [RaspberryPi](https://www.raspberrypi.org/), reason why [openFrame.io](http://openframe.io/) use it to display shader artwork. Learn more about this application [here](https://github.com/patriciogonzalezvivo/glslViewer).
+
+```bash
+glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutputImage.png
+```
+
+**Create**: in order to illuminate the experience of coding shaders I made an online editor call [glslEditor](https://github.com/patriciogonzalezvivo/glslEditor). This editor is embebed on the book's life examples, it brings a series of handy widgets to make more tangible the abstract experience of working with glsl code. You can also run it as a standalone web application from [editor.thebookofshaders.com/](http://editor.thebookofshaders.com/). Learn more about it [here](https://github.com/patriciogonzalezvivo/glslEditor).
+
+![](glslEditor-01.gif)
+
+If you prefer to work offline using [SublimeText](https://www.sublimetext.com/) you can install this [package for glslViewer](https://packagecontrol.io/packages/glslViewer). Learn more about it [here](https://github.com/patriciogonzalezvivo/sublime-glslViewer)
+
+![](glslViewer.gif)
+
+**Share**: the online editor ([editor.thebookofshaders.com/](http://editor.thebookofshaders.com/)) can share your shaders! Both the embebed and standalone version have an export button where you can get an unique URL's to your shader. Also have the ability to export directly to an [openFrame.io](http://openframe.io/).
+
+![](glslEditor-00.gif)
+
+**Curate**: Sharing your code is the beginning of you sharing your shader as artwork! Beside the option to export to [openFrame.io](http://openframe.io/) I made a tool to curate your shaders into a gallery that can be embebed on any site, it’s name is [glslGallery](https://github.com/patriciogonzalezvivo/glslGallery). Learn more [here](https://github.com/patriciogonzalezvivo/glslGallery).
+
+![](glslGallery.gif)
+
+## Running your shaders on your favorite framework
+
+In case you already have experience programming in a framework like: [Processing](https://processing.org/), [Three.js](http://threejs.org/) or [OpenFrameworks](http://openframeworks.cc/), you're probably excited to try shaders on this platforms you feel comfortable with. The following are examples of how to set shaders in some popular frameworks with the same uniforms that we are going to use throughout this book. (In the [GitHub repository for this chapter](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), you'll find the full source code for these three frameworks.)
 
 ### In **Three.js**
  
@@ -50,7 +80,8 @@ Below is an example of the HTML and JS you need to get started with shaders in t
 
             uniforms = {
                 u_time: { type: "f", value: 1.0 },
-                u_resolution: { type: "v2", value: new THREE.Vector2() }
+                u_resolution: { type: "v2", value: new THREE.Vector2() },
+                u_mouse: { type: "v2", value: new THREE.Vector2() }
             };
 
             var material = new THREE.ShaderMaterial( {
@@ -69,6 +100,11 @@ Below is an example of the HTML and JS you need to get started with shaders in t
 
             onWindowResize();
             window.addEventListener( 'resize', onWindowResize, false );
+            
+            document.onmousemove = function(e){
+              uniforms.u_mouse.value.x = e.pageX
+              uniforms.u_mouse.value.y = e.pageY
+            }
         }
 
         function onWindowResize( event ) {
@@ -94,7 +130,7 @@ Below is an example of the HTML and JS you need to get started with shaders in t
 
 Started by [Ben Fry](http://benfry.com/) and [Casey Reas](http://reas.com/) in 2001, [Processing](https://processing.org/) is an extraordinarily simple and powerful environment in which to take your first steps in code (it was for me at least). [Andres Colubri](https://codeanticode.wordpress.com/) has made important updates to the openGL and video in Processing, making it easier than ever to use and play with GLSL shaders in this friendly environment. Processing will search for the shader named ```"shader.frag"``` in the ```data``` folder of the sketch. Be sure to copy the examples you find here into that folder and rename the file.
 
-```processing
+```cpp
 PShader shader;
 
 void setup() {
@@ -114,6 +150,7 @@ void draw() {
 ```
 
 In order for the shader to work on versions previous to 2.1, you need to add the following line at the beginning of your shader: ```#define PROCESSING_COLOR_SHADER```. So that it looks like this:
+
 ```glsl
 #ifdef GL_ES
 precision mediump float;

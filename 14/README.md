@@ -16,7 +16,7 @@ vec4 texture2D(sampler2D texture, vec2 coordinates)
 
 Check the following code where we load Hokusai's Wave (1830) as ```uniform sampler2D u_tex0``` and we call every pixel of it inside the billboard:
 
-<div class="codeAndCanvas" data="texture.frag" data-imgs="hokusai.jpg"></div>
+<div class="codeAndCanvas" data="texture.frag" data-textures="hokusai.jpg"></div>
 
 If you pay attention you will note that the coordinates for the texture are normalized! What a surprise right? Textures coordenates are consisten with the rest of the things we had saw and their coordenates are between 0.0 and 1.0 whitch match perfectly with the normalized space coordinates we have been using. 
 
@@ -34,7 +34,7 @@ Finnally, you can setup your image to repeat in the edges, so if you give values
 
 All this features makes your images more like an infinit spandex fabric. You can streach and shrinks your texture without noticing the grid of bites they originally where compose of or the ends of it. To experience this take a look to the following code where we distort a texture using [the noise function we already made](../11/).
 
-<div class="codeAndCanvas" data="texture-noise.frag" data-imgs="hokusai.jpg"></div>
+<div class="codeAndCanvas" data="texture-noise.frag" data-textures="hokusai.jpg"></div>
 
 ## Texture resolution
 
@@ -46,7 +46,7 @@ How we can solve this problem? Well we need to know the original proportions of 
 
 Uncomment line 21 of the following code to see this in action.
 
-<div class="codeAndCanvas" data="texture-resolution.frag" data-imgs="nicephore.jpg"></div>
+<div class="codeAndCanvas" data="texture-resolution.frag" data-textures="nicephore.jpg"></div>
 
 * What we need to do to center this image?
 
@@ -62,11 +62,17 @@ This level of craftsmanship links back to some of the first optical experiments 
 
 This could seam simple but the posibilities of modifing textures coordinates is enormus. For example: .
 
-<div class="codeAndCanvas" data="texture-sprite.frag" data-imgs="muybridge.jpg"></div>
+<div class="codeAndCanvas" data="texture-sprite.frag" data-textures="muybridge.jpg"></div>
 
 Now is your turn:
 
 * Can you make a kaleidoscope using what we have learn?
+
+* Way before Oculus or google cardboard, stereoscopic photography was a big thing. Could code a simple shader to re-use this beautiful images?
+
+<a href=“../edit.html#10/ikeda-03.frag”><canvas id=“custom” class=“canvas” data-fragment-url=“ikeda-03.frag”  width=“520px” height=“200px”></canvas></a>
+
+
 * What other optical toys can you re-create using textures?
 
 In the next chapters we will learn how to do some image processing using shaders. You will note that finnaly the complexity of shader makes sense, because was in a big sense designed to do this type of process. We will start doing some image operations!

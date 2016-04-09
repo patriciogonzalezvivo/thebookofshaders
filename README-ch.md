@@ -3,8 +3,6 @@
 # The Book of Shaders
 *by [Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/)*
 
-This is a gentle step-by-step guide through the abstract and complex universe of Fragment Shaders.
-
 这是一本关于 Fragment Shaders（片段着色器）的入门指南，它将一步一步地带你领略其中的纷繁与抽象。
 
 <div class="header">
