@@ -7,14 +7,4 @@ In GLSL, colors are simply just vectors, which means you can easily apply the co
 
 Read [Colors](../06) to learn more.
 
-<div id="c06-examples"></div>
-<script type="text/javascript">gallery.createExampleList("c06")</script>
-
-<!---
-## Shared Shaders
-
-Let's look at what your fellow learners are doing. Bellow are the shaders shared for this chapter by the readers of this book.  
-
-<div id="c05-shared-examples"></div>
-<script type="text/javascript">gallery.createExampleList("c05-shared")</script>
---->
+<div class="glslChapterGallery" data="06" ></div>

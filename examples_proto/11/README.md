@@ -7,14 +7,4 @@ Since Ken Perlin invented his first noise algorithm in 80s, the technique has be
 
 Read [Noise](../11) to learn more.
 
-<div id="c11-examples"></div>
-<script type="text/javascript">gallery.createExampleList("c11")</script>
-
-<!---
-## Shared Shaders
-
-Let's look at what your fellow learners are doing. Bellow are the shaders shared for this chapter by the readers of this book.  
-
-<div id="c05-shared-examples"></div>
-<script type="text/javascript">gallery.createExampleList("c05-shared")</script>
---->
+<div class="glslChapterGallery" data="11" ></div>

@@ -22,22 +22,15 @@ echo '
 		<link type="text/css" rel="stylesheet" href="'.$path.'/css/github.css">
 		<script type="text/javascript" src="'.$path.'/src/highlight.min.js"></script>
 
-		<!-- GlslCanvas -->
-		<script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/build/GlslCanvas.min.js"></script>
-
-		<!-- GlslEditor -->
-    	<link type="text/css" rel="stylesheet" href="https://rawgit.com/patriciogonzalezvivo/glslEditor/gh-pages/build/css/main.css">
-    	<script type="application/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslEditor/gh-pages/build/js/glslEditor.js"></script>
-
     <!-- Jquery -->
       <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
 
     <!-- Gallery -->
-      <link type="text/css" rel="stylesheet" href="./css/gallery.css">
-      <script type="application/javascript" src="./src/gallery.php"></script>
+      <link type="text/css" rel="stylesheet" href="'.$path.'/examples_proto/css/gallery.css">
+      <script type="application/javascript" src="'.$path.'/examples_proto/src/shaderList.js"></script>
+      <script type="application/javascript" src="'.$path.'/examples_proto/src/glslGallery.js"></script>
 
       <link type="text/css" rel="stylesheet" href="'.$path.'/css/style.css">
-
 
 ';
 

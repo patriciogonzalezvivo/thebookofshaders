@@ -6,14 +6,4 @@ Let's look at how to draw simple shapes in a parallel procedural way. In a nutsh
 
 Read [Shapes](../07) to learn more.
 
-<div id="c07-examples"></div>
-<script type="text/javascript">gallery.createExampleList("c07")</script>
-
-<!---
-## Shared Shaders
-
-Let's look at what your fellow learners are doing. Bellow are the shaders shared for this chapter by the readers of this book.  
-
-<div id="c05-shared-examples"></div>
-<script type="text/javascript">gallery.createExampleList("c05-shared")</script>
---->
+<div class="glslChapterGallery" data="07" ></div>
