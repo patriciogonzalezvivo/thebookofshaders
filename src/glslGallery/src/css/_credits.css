@@ -1,0 +1,30 @@
+.glslGallery_credits {
+    position: absolute; 
+    bottom: 5px; 
+    left: 5px; 
+    background: rgba(0,0,0,.5);
+    padding: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin: 0px;
+    z-index: var(--z-credits);
+}
+
+.glslGallery_label {
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none; 
+    line-height: 0.0;
+    z-index: var(--z-credits);
+}
+
+.glslGallery_title {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.glslGallery_author {
+    font-size: 10px; 
+    font-style: italic;
+    font-weight: 100;
+}

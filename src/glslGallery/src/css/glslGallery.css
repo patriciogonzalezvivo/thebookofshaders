@@ -1,0 +1,34 @@
+@charset 'utf-8';
+
+/* VARIABLES */
+
+:root {
+    --editor-font-family: 'Source Code Pro', monospace;
+    --ui-base-color: #36383c;
+    --ui-component-color: #2e3033;
+    --ui-element-color: #3a3c40;
+    --ui-active-color: #26282c;
+    --ui-highlight-color: #85CCC4;
+    --ui-component-text-color: #eefafa;
+    --ui-link-text-color: #e1eeee;
+    --ui-subtext-color: #c0c6c6;
+    --ui-border-color: #999ca0;
+    --modal-shadow: 0 0 0 5px rgba(0,0,0,0.2), 0 4px 8px 0 rgba(0,0,0,0.25);
+
+    --z-gallery: 100;
+    --z-item: 101;
+    --z-thumb: 102;
+    --z-canvas: 103;
+    --z-credits: 104;
+    --z-openFrameIcon: 105;
+}
+
+.glslGallery {
+    -moz-column-width: 15em;
+    -webkit-column-width: 15em;
+}
+
+@import '_item';
+@import '_credits';
+@import '_canvas';
+@import '_openFrameIcon';

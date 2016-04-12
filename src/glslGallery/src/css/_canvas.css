@@ -1,0 +1,14 @@
+.glslGallery_canvas {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: var(--z-canvas);
+    opacity:0;
+    transition:opacity 0.5s ease-in;
+    max-width: 250px;
+    display: inline-block;
+}
+
+.glslGallery_canvas:hover {
+    opacity:1;
+}

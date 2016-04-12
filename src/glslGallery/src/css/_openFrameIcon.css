@@ -1,0 +1,24 @@
+.glslGallery_openFrameIcon {
+    box-sizing: border-box;
+    position: absolute;
+    float: right;
+    right: 10px;
+    bottom: 10px;
+    padding: 5px;
+    user-select: none;
+    z-index: var(--z-openFrameIcon);
+
+    font-size: 20px;
+    color: black;
+    background-color: rgba(255,255,255,0.5);
+    cursor: pointer;
+
+    font-family: Helvetica,Geneva,sans-serif;
+    /*font-weight: 100;*/
+    font-size: 17px;
+
+}
+
+.glslGallery_openFrameIcon:hover {
+    color: var(--ui-highlight-color);
+}

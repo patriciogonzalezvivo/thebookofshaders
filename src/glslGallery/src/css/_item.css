@@ -1,0 +1,9 @@
+.glslGallery_item {
+    position: relative;
+    display: inline-block;
+    width: 250px;
+}
+
+.glslGallery_thumb {
+    max-width: 250px;
+}
