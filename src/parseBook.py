@@ -1,3 +1,4 @@
+
 import os
 import os.path
 import re
@@ -55,7 +56,7 @@ for folder in folders:
             imgPattern = r'(\!\[.*?\]\()(.*)'
             subPattern = r'\1' + folder + r'/\2'
             modifiedChapterString = re.sub(imgPattern, subPattern, fileString)
-            modifiedChapterString = injectShaderBlocks(folder,modifiedChapterString)
+            modifiedChapterString = injectShaderBlocks(folder, modifiedChapterString)
             modifiedChapterPath = folder+'/tmp.md'
             with open(modifiedChapterPath, "w") as modifiedChapter:
                 modifiedChapter.write(modifiedChapterString)

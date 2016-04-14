@@ -7,3 +7,6 @@
 [submodule "src/glslEditor"]
 	path = src/glslEditor
 	url = https://github.com/patriciogonzalezvivo/glslEditor.git
+[submodule "src/glslGallery"]
+	path = src/glslGallery
+	url = https://github.com/patriciogonzalezvivo/glslGallery.git

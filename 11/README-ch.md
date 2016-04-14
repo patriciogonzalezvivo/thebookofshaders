@@ -3,9 +3,9 @@
 
 ## Noise 噪声
 
-是时候来点突破了！我们已经玩过了看起来像电视白噪音的 random 函数，我们脑袋还在想着 shader，但是眼睛已经晕了。是时候出去走走了！
+稍事休息，我们来转换一下思路。我们已经玩过了看起来像电视白噪音的 random 函数，尽管脑子里还在嗡嗡地转着 shader，但是已经眼花缭乱了。是时候出去走走了。
 
-我们感知得到浮动在皮肤上的空气，晒在脸上的阳光。世界如此生动与丰富。颜色，质地，声音。当我们走在路上，不免会注意到路面、石头、树木和云朵的表面的样子。
+我们感知得到浮动在皮肤上的空气，晒在脸上的阳光。世界如此生动而丰富。颜色，质地，声音。当我们走在路上，不免会注意到路面、石头、树木和云朵的表面的样子。
 
 ![](texture-00.jpg)
 ![](texture-01.jpg)
@@ -15,9 +15,9 @@
 ![](texture-05.jpg)
 ![](texture-06.jpg)
 
-这些纹理的不可预测性应该叫做“random"(随机），但是它们看起来不像是我们之前玩的 random。「真实世界」是如此的丰富而复杂！我们如何才能才能用计算机模拟这些多样的纹理呢？
+这些纹理的不可预测性可以叫做“random"(随机），但是它们看起来不像是我们之前玩的 random。「真实世界」是如此的丰富而复杂！我们如何才能才能用计算机模拟这些多样的纹理呢？
 
-这就是 [Ken Perlin](https://mrl.nyu.edu/~perlin/) 想要解答的问题。在20世纪80年代早期，他被委任为电影“Tron”（电子世界争霸战）制作现实中的纹理。为了解决这个问题，他想出了一个优雅的算法，且获得了**奥斯卡奖**（名副其实）。
+这就是 [Ken Perlin](https://mrl.nyu.edu/~perlin/) 想要解答的问题。在20世纪80年代早期，他被委任为电影 “Tron”（电子世界争霸战）制作现实中的纹理。为了解决这个问题，他想出了一个优雅的算法，且获得了**奥斯卡奖**（名副其实）。
 
 ![Disney - Tron (1982)](tron.jpg)
 
@@ -31,7 +31,7 @@ y = rand(i); //rand() 在之前的章节提过
 //y = mix(rand(i), rand(i + 1.0), smoothstep(0.,1.,f));
 "></div>
 
-这和之前章节我们做的事情很像。我们把单精度浮点 ```x``` 再分割成它的整数部分 ```i``` 和小数部分 ```f``` 。我们用 [```floor()```](.../glossary/?search=floor) 获取 ```i```，用 [```fract()```](.../glossary/?search=fract) 获取 ```f```。然后我们 ```rand()``` x 的整数部分，即根据这个整数生成一个随机值。
+这和之前章节我们做的事情很像。我们把单精度浮点 ```x``` 分割成它的整数部分 ```i``` 和小数部分 ```f``` 。我们用 [```floor()```](.../glossary/?search=floor) 获取 ```i```，用 [```fract()```](.../glossary/?search=fract) 获取 ```f```。然后我们 ```rand()``` x 的整数部分，即根据这个整数生成一个随机值。
 
 在这之后有两个被注释掉的语句。第一句的作用是线性插值。
 
@@ -39,7 +39,7 @@ y = rand(i); //rand() 在之前的章节提过
 y = mix(rand(i), rand(i + 1.0), f);
 ``` 
 
-试试取消这句的注释，看一下会变成什么样子。注意我们储存在 `f` 中的 [```fract()```](.../glossary/?search=fract) 值混合（[```mix()```](.../glossary/?search=mix))了两个随机值。
+试试取消这句的注释，看一下会变成什么样子。注意我们储存在 `f` 中的 [```fract()```](.../glossary/?search=fract) 值[```mix()```](.../glossary/?search=mix)了两个随机值。
 
 到本书的这个部分，我们知道我们可以比比线性插值做得更好，不是吗？现在试试取消第二句的注释。第二句用 [```smoothstep()```](.../glossary/?search=smoothstep)进行插值。
 
@@ -54,7 +54,7 @@ float u = f * f * (3.0 - 2.0 * f ); // custom cubic curve
 y = mix(rand(i), rand(i + 1.0), u); // using it in the interpolation
 ```
 
-这个 **平滑的随机**（smooth randomness）是一个图形工程师或者说艺术家的制胜法宝——它能生成非常有机的图像或几何形态。Perlin 的 noise 算法被无数次用到各种语言和各种维度的设计中，制作出无数迷人的作品。
+这种 smooth randomness（平滑后的随机值）是一个图形工程师或者说艺术家的制胜法宝——它能生成非常有机的图像或几何形态。Perlin 的 noise 算法被无数次用到各种语言和各种维度的设计中，制作出无数迷人的作品。
 
 ![Robert Hodgin - Written Images (2010)](robert_hodgin.jpg)
 
@@ -74,11 +74,11 @@ y = mix(rand(i), rand(i + 1.0), u); // using it in the interpolation
 
 ![](02.png)
 
-现在我们知道了如何在一维使用 noise，是时候进入二维了。在 2D 中，除了在一条线的两点（```fract(x)``` 和 ```fract(x)+1.0```）中插值，我们将在一个平面上的方形的四角（```fract(st)```， ```fract(st)+vec2(1.,0.)```， ```fract(st)+vec2(0.,1.)``` 和 ```fract(st)+vec2(1.,1.)```）中插值。
+现在我们知道了如何在一维使用 noise，是时候进入二维世界了。在 2D 中，除了在一条线的两点（```fract(x)``` 和 ```fract(x)+1.0```）中插值，我们将在一个平面上的方形的四角（```fract(st)```， ```fract(st)+vec2(1.,0.)```， ```fract(st)+vec2(0.,1.)``` 和 ```fract(st)+vec2(1.,1.)```）中插值。
 
 ![](01.png)
 
-相似地，如果我们想要在三维中使用 noise，就需要在一个立方体的8个角中插值。这个技术的重点在于插入随机值，所以我们叫它**value noise**。
+同样，如果我们想要在三维中使用 noise，就需要在一个立方体的8个角中插值。这个技术的重点在于插入随机值，所以我们叫它 **value noise**。
 
 ![](04.jpg)
 
@@ -92,7 +92,7 @@ y = mix(rand(i), rand(i + 1.0), u); // using it in the interpolation
 
 我们先把空间大小变成五倍（第 45 行）以便看清栅格间的插值。然后在 noise 函数中我们把空间分成更小的单元。我们把它的整数部分和非整数部分都储存在这个单元里。我们计算整数位置的顶点的坐标，并给每个顶点生成一个随机值（第 23 - 26 行）。最后，在第 35 行用我们之前储存的小数位置的值，在四个顶点的随机值之间插值。
 
-现在又到你的时间了。试试下面的练习：
+现在又到你了。试试下面的练习：
 
 * 改变第 45 行的乘数。添加动态试试。
 
@@ -114,7 +114,7 @@ Noise 算法的设计初衷是将难以言说的自然质感转化成数字图�
 
 [ ![Inigo Quilez - Value Noise](value-noise.png) ](../edit.html#11/2d-vnoise.frag)
 
-如你所见，value noise 看起来非常“块状”。为了消除这种块状的效果，在 1985 年 [Ken Perlin](https://mrl.nyu.edu/~perlin/) 开发了另一种 noise 算法 **Gradient Noise**。Ken 解决了如何插入随机的 *gradients*（梯度）而不是一个固定值。这些梯度值来自于一个二维的随机函数，返回一个方向（```vec2``` 格式的向量），而不仅是一个值（```float```格式）。点击下面的图片查看代码，看这个函数是如何运作的。
+如你所见，value noise 看起来非常“块状”。为了消除这种块状的效果，在 1985 年 [Ken Perlin](https://mrl.nyu.edu/~perlin/) 开发了另一种 noise 算法 **Gradient Noise**。Ken 解决了如何插入随机的 *gradients*（梯度、渐变）而不是一个固定值。这些梯度值来自于一个二维的随机函数，返回一个方向（```vec2``` 格式的向量），而不仅是一个值（```float```格式）。点击下面的图片查看代码，看这个函数是如何运作的。
 
 [ ![Inigo Quilez - Gradient Noise](gradient-noise.png) ](../edit.html#11/2d-gnoise.frag)
 
@@ -184,18 +184,18 @@ Noise 算法的设计初衷是将难以言说的自然质感转化成数字图�
 
 <div class="codeAndCanvas" data="simplex-grid.frag"></div>
 
-另一个 **Simplex Noise** 的优化是把三次埃尔米特函数（Cubic Hermite Curve：_f(x) = 3x^2-2x^3_，和 [```smoothstep()```](.../glossary/?search=smoothstep) 一样）替换成了四次埃尔米特函数（ _f(x) = 6x^5-15x^4+10x^3_ ）。这就使得函数曲线两端更“平”，所以每个格的边缘更加优雅地与另一个衔接。也就是说格子的过渡更加连续。你可以取消下面例子的第二个公式的注释，亲眼看看其中的变化（或者看[这个例子](https://www.desmos.com/calculator/2xvlk5xp8b)）。
+另一个 **Simplex Noise** 的优化是把三次 Hermite 函数（Cubic Hermite Curve：_f(x) = 3x^2-2x^3_，和 [```smoothstep()```](.../glossary/?search=smoothstep) 一样）替换成了四次 Hermite 函数（ _f(x) = 6x^5-15x^4+10x^3_ ）。这就使得函数曲线两端更“平”，所以每个格的边缘更加优雅地与另一个衔接。也就是说格子的过渡更加连续。你可以取消下面例子的第二个公式的注释，亲眼看看其中的变化（或者看[这个例子](https://www.desmos.com/calculator/2xvlk5xp8b)）。
 
 <div class="simpleFunction" data="
-// 三次埃尔米特曲线。和 SmoothStep() 一样
+// 三次 Hermite 曲线。和 SmoothStep() 一样
 y = x*x*(3.0-2.0*x);
-// 四次埃尔米特曲线
+// 四次 Hermite 曲线
 //y = x*x*x*(x*(x*6.-15.)+10.);
 "></div>
 
-注意曲线的末端发生了怎样的变化。你可以阅读 [Ken 自己的阐述](http://mrl.nyu.edu/~perlin/paper445.pdf)了解更多。
+注意曲线的末端发生了怎样的变化。你可以阅读 [Ken 自己的解释](http://mrl.nyu.edu/~perlin/paper445.pdf)了解更多。
 
-所有这些进步汇聚成了算法中的杰作 **Simplex Noise**。下面是这个算法在 GLSL 中的应用，作者是 Ian McEwan，以[这篇论文](http://webstaff.itn.liu.se/~stegu/jgt2012/article.pdf)发表，对于我们的教学而言太复杂了，但你可以点开看看，也许没有你想象得那么晦涩难懂。
+所有这些进展汇聚成了算法中的杰作 **Simplex Noise**。下面是这个算法在 GLSL 中的应用，作者是 Ian McEwan，以[这篇论文](http://webstaff.itn.liu.se/~stegu/jgt2012/article.pdf)发表，对于我们的教学而言太复杂了，但你可以点开看看，也许没有你想象得那么晦涩难懂。
 
 [ ![Ian McEwan of Ashima Arts - Simplex Noise](simplex-noise.png) ](../edit.html#11/2d-snoise-clear.frag)
 
@@ -213,7 +213,7 @@ y = x*x*(3.0-2.0*x);
 
 在本章我们介绍了一些操控混沌的方法。这并不是一件简单的工作！成为 noise 超级大师需要时间和努力。
 
-在下面的章节我们会看到一些有名的技术，用来修葺你的技能树，并且从 noise 中学习更多，利用 shader 设计出更多优质的生成式艺术作品。在那之前，去外面走走，享受深入思考自然和错综复杂的图案的时光吧。培养洞察力也许需要和动手能力相同（甚至更多）的努力。出门走走享受今天剩余的时光吧！
+在下面的章节我们会看到一些很有名的技术，来修葺你的技能树，并且从 noise 中学到更多，并利用 shader 设计出更多优质的生成式艺术作品。在那之前，去外面走走，享受深入思考自然和错综复杂的图案的时光吧。培养洞察力也许需要和动手能力相同（甚至更多）的努力。出门走走享受今天剩余的时光吧！
 
 <p style="text-align:center; font-style: italic;">
 “和树聊聊天吧，和它交个朋友。” Bob Ross

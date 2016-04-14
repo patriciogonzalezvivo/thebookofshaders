@@ -1,0 +1,47 @@
+body {
+    font-family: Baskerville, "Times New Roman", SimSun, serif;
+    font-size: 22px;
+    line-height: 1.8;
+}
+
+h1 {
+    font-size: 46px;
+    font-style: normal;
+    line-height: 1.5;
+}
+
+h2 {
+    font-size: 34px;
+    font-style: normal;
+    line-height: 1.5;
+}
+
+h3 {
+    font-size: 28px;
+    line-height: 1.5;
+}
+
+h4 {
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+}
+
+h3 {
+    margin-top: 56px;
+    margin-bottom: 5px;
+}
+
+li ul {
+    line-height: 1.5;
+    list-style-type: none;
+    margin-top:18px;
+    margin-bottom:24px;
+}
+
+li ul li {
+    margin-bottom:12px;
+}
