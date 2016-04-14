@@ -4022,11 +4022,9 @@ var GlslChapterGallery = (function () {
             }
         }
         if (selector.hasAttribute('data')) {
-            console.log(selector.getAttribute('data'));
             var data = selector.getAttribute('data').split(',');
             var list = shaderList[data[0]];
             var numDisplay = (data[1]) ? Math.min(list.length, data[1]) : list.length;
-            console.log(data, numDisplay );
 
             for (var i = 0; i < numDisplay; i ++) {
                 this.items.push(new _appCoreGalleryItem2['default'](list[i], this, this.options));

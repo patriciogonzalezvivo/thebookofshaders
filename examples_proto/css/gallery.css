@@ -13,19 +13,20 @@
 	margin-bottom: 24px;
 	margin-left: 8px;
 	margin-right: 16px;
+	vertical-align: top;
 }
 
 .glslGallery_thumb{
-	max-width:240px;
+	max-width:242px;
 }
 
 .glslGallery_item canvas.glslGallery_canvas{
 	position:absolute;
-	top:1px;
-	left:1px;
+	top:0px;
+	left:0px;
 	z-index:103;
+	max-width: 242px;
 	transition:opacity .5s ease-in;
-	width:240px !important ;
 }
 
 .glslGallery_credits{
@@ -57,6 +58,7 @@
 .glslGallery_canvas:hover{
 	opacity:1
 }
+
 .glslGallery_openFrameIcon{
 	box-sizing:border-box;
 	position:absolute;
