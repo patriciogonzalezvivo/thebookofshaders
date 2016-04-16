@@ -6,4 +6,4 @@ Let's look at how to draw simple shapes in a parallel procedural way. In a nutsh
 
 Read [Shapes](../07) to learn more.
 
-<div class="glslChapterGallery" data="07" ></div>
+<div class="glslChapterGallery" data="07" data-properties="clickRun:editor"></div>

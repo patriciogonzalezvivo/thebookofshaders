@@ -6,4 +6,4 @@ Life is boring if everything was predictable. Though nothing is truly random in 
 
 Read [Random](../10) to learn more.
 
-<div class="glslChapterGallery" data="10" ></div>
+<div class="glslChapterGallery" data="10" data-properties="clickRun:editor"></div>

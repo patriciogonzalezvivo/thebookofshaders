@@ -7,4 +7,4 @@ In GLSL, colors are simply just vectors, which means you can easily apply the co
 
 Read [Colors](../06) to learn more.
 
-<div class="glslChapterGallery" data="06" ></div>
+<div class="glslChapterGallery" data="06" data-properties="clickRun:editor"></div>
