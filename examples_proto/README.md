@@ -7,7 +7,7 @@ The following is the list of examples present in this book and more from our exc
 Featured examples shared by our readers and students. We are looking forward to see a lot more shaders created with the [GLSL editor](http://editor.thebookofshaders.com/). Please share your masterpiecess to [@bookofshaders](https://twitter.com/bookofshaders).
 
 
-<div class="glslChapterGallery" data="shared" data-properties="clickRun:editor"></div>
+<div class="glslChapterGallery" log="shared"></div>
 
 <a id="shared"></a>
 ## Getting started
@@ -31,7 +31,7 @@ uniform vec2 u_mouse;      // mouse position in screen pixels
 uniform float u_time;	  // Time in seconds since load
 ```
 
-<div class="glslChapterGallery" data="02" data-properties="clickRun:editor"></div>
+<div class="glslChapterGallery" log="02"></div>
 
 
 <a id="05"></a>
@@ -42,7 +42,7 @@ Shaping functions is fundamental technique that is recursively used throughout t
 
 Read [Shaping functions](../05) to learn more.
 
-<div class="glslChapterGallery" data="05,3" data-properties="clickRun:editor"></div>
+<div class="glslChapterGallery" log="05,3"></div>
 <div class="extra-container"><a href="./05">See All Examples</a></div>
 
 
@@ -54,7 +54,7 @@ In GLSL, colors are simply just vectors, which means you can easily apply the co
 
 Read [Colors](../06) to learn more.
 
-<div class="glslChapterGallery" data="06,3" data-properties="clickRun:editor"></div>
+<div class="glslChapterGallery" log="06,3"></div>
 <div class="extra-container"><a href="./06">See All Examples</a></div>
 
 <a id="07"></a>
@@ -64,7 +64,7 @@ Let's look at how to draw simple shapes in a parallel procedural way. In a nutsh
 
 Read [Shapes](../07) to learn more.
 
-<div class="glslChapterGallery" data="07,3" data-properties="clickRun:editor"></div>
+<div class="glslChapterGallery" log="07,3"></div>
 <div class="extra-container"><a href="./07">See All Examples</a></div>
 
 <a id="08"></a>
@@ -75,7 +75,7 @@ Matrices may look complex at a first glance, but you'll find it very handy and u
 
 Read [Matrix](../08) to learn more.
 
-<div class="glslChapterGallery" data="08,3" data-properties="clickRun:editor"></div>
+<div class="glslChapterGallery" log="08,3"></div>
 <div class="extra-container"><a href="./08">See All Examples</a></div>
 
 
@@ -86,7 +86,7 @@ Repetitive patterns are perfect theme for computational sketching. Different fro
 
 Read [Patterns](../09) to learn more.
 
-<div class="glslChapterGallery" data="09,3" data-properties="clickRun:editor"></div>
+<div class="glslChapterGallery" log="09,3"></div>
 <div class="extra-container"><a href="./09">See All Examples</a></div>
 
 
@@ -98,7 +98,7 @@ Life is boring if everything was predictable. Though nothing is truly random in 
 
 Read [Random](../10) to learn more.
 
-<div class="glslChapterGallery" data="10,3" data-properties="clickRun:editor"></div>
+<div class="glslChapterGallery" log="10,3"></div>
 <div class="extra-container"><a href="./10">See All Examples</a></div>
 
 
@@ -110,7 +110,7 @@ Since Ken Perlin invented his first noise algorithm in 80s, the technique has be
 
 Read [Noise](../11) to learn more.
 
-<div class="glslChapterGallery" data="11,3" data-properties="clickRun:editor"></div>
+<div class="glslChapterGallery" log="11,3"></div>
 <div class="extra-container"><a href="./11">See All Examples</a></div>
 
 
@@ -119,5 +119,5 @@ Read [Noise](../11) to learn more.
 
 This section features relatively advanced examples from different chapters. Try if you can read and understand all the examples here to test yourself.
 
-<div class="glslChapterGallery" data="advanced, 3" data-properties="clickRun:editor"></div>
+<div class="glslChapterGallery" log="advanced, 3"></div>
 <div class="extra-container"><a href="./advanced">See All Examples</a></div>

@@ -124,21 +124,31 @@ var shaderList = {
 };
 
 window.addEventListener("load", function () {
-	var options = {clickRun: 'editor'};
     var elms = document.getElementsByClassName('glslChapterGallery');
 
 	for (var i = 0; i < elms.length; i++) {
 		var elm = elms[i];
-		if (elm.hasAttribute('data')) {
-            var data = elm.getAttribute('data').split(',');
-            if (data[1]) {
-            	options.logs = shaderList[data[0]].slice(0, Number(data[1]));
+		if (elm.hasAttribute('log')) {
+			var options = {clickRun: 'editor'};
+            var d = elm.getAttribute('log').split(',');
+            if (d[1]) {
+            	options.logs = concatList(shaderList[d[0]], Number(d[1]));
             } else {
-            	options.logs = shaderList[data[0]];
+            	options.logs = concatList(shaderList[d[0]]);
             }
-            console.log(options.logs);
 			var gallery = new GlslGallery(elm, options);
         }
+    }
+    function concatList(list, n) {
+    	var str = "";
+    	if (n) {
+    		list = list.slice(0, n);
+    	}
+    	for (var i = 0; i < list.length; i ++) {
+    		str += list[i];
+    		if (i != list.length - 1) { str += ","}
+    	}
+    	return str;
     }
 });
 
