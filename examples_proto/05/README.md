@@ -6,4 +6,4 @@ Shaping functions is fundamental technique that is recursively used throughout t
 
 Read [Shaping functions](../05) to learn more.
 
-<div class="glslChapterGallery" data="05" data-properties="clickRun:editor"></div>
+<div class="glslChapterGallery" data="05"></div>

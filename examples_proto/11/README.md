@@ -7,4 +7,4 @@ Since Ken Perlin invented his first noise algorithm in 80s, the technique has be
 
 Read [Noise](../11) to learn more.
 
-<div class="glslChapterGallery" data="11" data-properties="clickRun:editor"></div>
+<div class="glslChapterGallery" data="11"></div>

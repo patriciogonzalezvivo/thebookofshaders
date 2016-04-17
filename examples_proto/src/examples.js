@@ -108,6 +108,7 @@ var shaderList = {
 				"examples/06/tothn598-villareal",
 				"examples/06/wangl073-villareal"],
 
+
 	"advanced":[	"08/matrix",
 					"160414040957",
 					"160414040804",
@@ -122,8 +123,23 @@ var shaderList = {
 					"10/ikeda-numered-grid"]
 };
 
+window.addEventListener("load", function () {
+	var options = {clickRun: 'editor'};
+    var elms = document.getElementsByClassName('glslChapterGallery');
 
-
-
+	for (var i = 0; i < elms.length; i++) {
+		var elm = elms[i];
+		if (elm.hasAttribute('data')) {
+            var data = elm.getAttribute('data').split(',');
+            if (data[1]) {
+            	options.logs = shaderList[data[0]].slice(0, Number(data[1]));
+            } else {
+            	options.logs = shaderList[data[0]];
+            }
+            console.log(options.logs);
+			var gallery = new GlslGallery(elm, options);
+        }
+    }
+});
 
 

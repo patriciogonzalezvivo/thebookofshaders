@@ -7,4 +7,4 @@ Matrices may look complex at a first glance, but you'll find it very handy and u
 
 Read [Matrix](../08) to learn more.
 
-<div class="glslChapterGallery" data="08" data-properties="clickRun:editor"></div>
+<div class="glslChapterGallery" data="08"></div>

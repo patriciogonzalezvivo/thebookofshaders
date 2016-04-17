@@ -6,4 +6,4 @@ Repetitive patterns are perfect theme for computational sketching. Different fro
 
 Read [Patterns](../09) to learn more.
 
-<div class="glslChapterGallery" data="09" data-properties="clickRun:editor"></div>
+<div class="glslChapterGallery" data="09"></div>

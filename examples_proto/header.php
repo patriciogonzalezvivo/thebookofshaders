@@ -27,8 +27,8 @@ echo '
 
     <!-- Gallery -->
       <link type="text/css" rel="stylesheet" href="'.$path.'/examples_proto/css/gallery.css">
-      <script type="application/javascript" src="'.$path.'/examples_proto/src/shaderList.js"></script>
       <script type="application/javascript" src="'.$path.'/examples_proto/src/glslGallery.js"></script>
+      <script type="application/javascript" src="'.$path.'/examples_proto/src/examples.js"></script>
 
       <link type="text/css" rel="stylesheet" href="'.$path.'/css/style.css">
 
