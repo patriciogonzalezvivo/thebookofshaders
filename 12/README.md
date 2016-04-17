@@ -1,46 +1,57 @@
+## Emergin patterns
+
+We made pseudo random values from a sine wave, then from it we construct noise. We went from the absolute chaos to smooth random variations we can control.
+With it we were able to suggest more organic visual gestures. But we still far away from the “real” thing. If we look to satelites images, coherent structers emerge from mountans formation, looking closely to the surface of a leave we will see a clear an inner pattern. This surfaces speaks about the forces involve on their creation. On the tension of the laws applied apply to them together with the forces of their surrandings.
+The next step in our quest on learning how to mimic nature will be to learn about iterations. More precisely iterations on time and iterations on space.
+
 ## Fractal Brownian Motion
 
-http://www.iquilezles.org/www/articles/warp/warp.htm
-http://www.iquilezles.org/www/articles/morenoise/morenoise.htm
+Noise tends to means different things for different people. Musicians will think it in disturbing sounds, communicators as interference and astrophysics as cosmic microwave background. In fact most of this concept have one things in common that bring as back to the begining of random. Waves and their properties. Audio or electromagnetical waves, fluctuation overtime of a signal. That change happens in amplitud and frequency. The ecuation for it looks like this:
 
-Noise is one of those subjects that you can dig and always find new exciting formulas. In fact noise tends to means different things for different people. Musicians will think in audio noise, communicators into interference, and astrophysics on cosmic microwave background. In fact noise could be interpreted as audio signals, and noise as well as sound can be constructed by the manipulation of the amplitud and frequency of the waves that compose it.
+<div class="simpleFunction" data="
+float amplitud = 1.;
+float frequency = 1.;
+y = amplitud * sin(x * frequency);
+"></div>
 
-```glsl
-y = amplitud + sin( frequency );
-```
+* Try changing the values of the frequency and amplitud to understand how they behave.
+* Using shaping functions try changing the amplitud overtime.
+* Using shaping function try changing the frequency overtime.
 
-An interesting property of waves in general is that they can be add up. The following graph shows what happen if you add sine waves of different frequencies and amplitudes. 
+By doing the last to excersize you have manage to "modulate" a sine wave, and you just create AM (amplitud modulated) and FM (frequency modulated) waves. Congratulations!
+
+Another interesting property of waves is their ability to add up. Uncomment the lines one by one paying atention how the frequencies and amplitudes change conform we add different waves. 
 
 <div class="simpleFunction" data="
 float t = 0.01*(-u_time*130.0);
 y += sin(x*2.1 + t)*4.5;
-y += sin(x*1.72 + t*1.121)*4.0;
-y += sin(x*2.221 + t*0.437)*5.0;
-y += sin(x*3.1122+ t*4.269)*2.5;
+//y += sin(x*1.72 + t*1.121)*4.0;
+//y += sin(x*2.221 + t*0.437)*5.0;
+//y += sin(x*3.1122+ t*4.269)*2.5;
 y *= 0.1;
 "></div>
 
-Think on it as the surface of the ocean. Massive amount of water propagating waves across it surface. Waves of different heights (amplitud) and rhythms (frequencies) bouncing and interfering each other.
+* Experiment by changing their values.
+* Is it possible to cancel two waves? how that will look like?
+* Is it possible to add waves in such a way that they will amplify each other? 
 
-Musicians learn long time ago that there are sounds that play well with each other. Those sound, carried by waves of air, vibrate in such a particular way that the resultan sound seams to be bust and enhance. Those sounds are call [harmonics](http://en.wikipedia.org/wiki/Harmonic).
+All musicians know that sound is waves. Waves carried by air and produced by the vibration of something at particular frequencies. They also know that are particular groups of frequencies that play well together. Those sound vibrate in such a particular way that the resultan frequencies seams resonate as unite. Those sounds are call [harmonics](http://en.wikipedia.org/wiki/Harmonic).
 
-Back to code, we can add harmonics together and see how the resultant looks like. Try the following code on the previous graph.
+Back to code, we can experiment by adding on several iterations a waves of a lower octave and a fraction of the amplitud. Each octave is know as a phase, a cicle that repites every PI (3.1415...). Take a look to the following code.
 
-```glsl
-y = 0.;
-for( int i = 0; i < 5; ++i) {
-    y += sin(PI*x*float(i))/float(i);
+<div class="simpleFunction" data="y = 0.;
+for( int i = 0; i < 2; i++) {
+    float amplitud = 1./float(i);
+    float frequency = PI * float(i);
+    y += amplitud * sin(x * frequency);
 }
-y *= 0.6;
-```
+y *= 0.6;"></div>
 
-As you can see in the above code, on every iteration the frequency increase by the double. By augmenting the number of iterations (chaining the 5 for a 10, a 20 or 50) the wave tends to break into smaller fractions, with more details and sharper fluctuations.
+* Try changing de ```2``` on the for look for bigger numbers.
 
-## Fractal Brownian Motion
+Note how augmenting the number of iterations (chaining the 5 for a 10, a 20 or 50) the wave tends to break into smaller fractions, with more details and sharper fluctuations.
 
-So we try adding different waves together, and the result was chaotic, we add up harmonic waves and the result was a consistent fractal pattern. We can use the best of both worlds and add up harmonic noise waves to exacerbate a noise pattern.
-
-By adding different octaves of increasing frequencies and decreasing amplitudes of noise we can obtain a bigger level of detail or granularity. This technique is call Fractal Brownian Motion and usually consist on a fractal sum of noise functions. 
+We can use this property with noise. By adding different octaves of increasing frequencies and decreasing amplitudes of **noise** we can obtain a bigger level of detail or granularity. This technique is call Fractal Brownian Motion and usually consist on a fractal sum of noise functions. 
 
 Take a look to the following example and progressively change the for loop to do 2,3,4,5,6,7 and 8 iterations. See want happens
 
