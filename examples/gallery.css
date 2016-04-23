@@ -1,15 +1,13 @@
 @charset 'utf-8';
 
 .glslGallery {
-    -moz-column-width: 0em;
-    -webkit-column-width: 0em;
+    -moz-column-width: 7em;
+    -webkit-column-width: 7em;
 }
 
 .glslGallery_item{
 	width: 150px;
-	margin-bottom: 4;
-	margin-left: 2px;
-	margin-right: 2px;
+	margin: 2px;
 }
 
 .glslGallery_thumb{
