@@ -21,8 +21,50 @@
 
     echo $Parsedown->text(file_get_contents('README'.$language.'.md'));
 
-    $dirs = array_filter(glob('../??/'), 'is_dir');
-    foreach ($dirs as &$folder) {
+    if (empty($_GET)) {
+        // Load all the chapters
+        $dirs = array_filter(glob('../??/'), 'is_dir');
+        foreach ($dirs as &$folder) {
+            $chp = '';
+            preg_match("/\.\.\/(\d\d)\//", $folder, $matches);
+            if (count($matches) > 0) {
+                $chp = $matches[1];
+            }
+
+            if (file_exists($folder.'TITLE'.$language.'.md') and file_exists($folder.'SUMMARY'.$language.'.md')) {
+                echo '<a href="'.$folder.'">';
+                echo $Parsedown->text(file_get_contents($folder.'TITLE'.$language.'.md'));
+                echo '</a>';
+
+                if (file_exists($folder.'SUMMARY'.$language.'.md')) {
+                    echo $Parsedown->text(file_get_contents($folder.'SUMMARY'.$language.'.md'));
+                }
+
+                $shaders = array_reverse(glob($folder.'*.frag'));
+                $shadersTotal = min(count($shaders), 3);
+
+                if ($shadersTotal > 0) {
+                    echo '<div class="glslGallery" data="';
+                    for ($i = 0; $i < $shadersTotal; $i++) {
+                        echo $chp.'/'.basename($shaders[$i], '.frag');
+                        if ($i != $shadersTotal-1) {
+                            echo ',';
+                        }
+                    }
+                    echo '" data-properties="clickRun:edior,hoverPreview:false,showAuthor:false,openFrameIcon:false"></div>';
+                }
+                
+                if (file_exists($folder.'featured_examples.php') and file_exists('FEATURED'.$language.'.md')) {
+                    include($folder.'featured_examples.php');
+                }
+
+                echo '<a href="/examples/?chapter='.$chp.'"><p align="right"><i>See more examples of this chapter</i></p></a>';
+            }
+        }
+    } elseif ( !empty($_GET['chapter'])) {
+        $chp = $_GET['chapter'];
+        $folder = '../'.$chp.'/';
+        
         if (file_exists($folder.'TITLE'.$language.'.md') and file_exists($folder.'SUMMARY'.$language.'.md')) {
             echo $Parsedown->text(file_get_contents($folder.'TITLE'.$language.'.md'));
 
@@ -36,15 +78,12 @@
             if ($shadersTotal > 0) {
                 echo '<div class="glslGallery" data="';
                 for ($i = 0; $i < $shadersTotal; $i++) {
-                    preg_match("/\.\.\/(\d\d)\//", $folder, $matches);
-                    if (count($matches) > 0) {
-                        echo $matches[1].'/'.basename($shaders[$i], '.frag');
-                        if ($i != $shadersTotal-1) {
-                            echo ',';
-                        }
+                    echo $chp.'/'.basename($shaders[$i], '.frag');
+                    if ($i != $shadersTotal-1) {
+                        echo ',';
                     }
                 }
-                echo '" data-properties="clickRun:edior,hoverPreview:false,showAuthor:false,openFrameIcon:false"></div>';
+                echo '" data-properties="clickRun:edior,showAuthor:false,openFrameIcon:false"></div>';
             }
             
 
@@ -54,8 +93,7 @@
             }
         }
     }
-
-
+    
     echo '
         </div>
         <script>console.log();</script>
