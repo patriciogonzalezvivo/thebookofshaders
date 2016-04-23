@@ -1,26 +1,68 @@
-<?php 
 
-	$path = "..";
-	include($path."/header.php");
-	include($path."/src/parsedown/Parsedown.php");
+<?php
+    $path = '..';
+    $subtitle = ': Gallery';
+    $language = '';
 
-	echo '
-	<div class="header"><p><a href="http://thebookofshaders.com/">The Book of Shaders</a> by <a href="http://patriciogonzalezvivo.com">Patricio Gonzalez Vivo</a></p></div>
-	<hr>
-	<div id="content">
-	';
+    if ( !empty($_GET['lan']) ) {
+        if (file_exists('README-'.$_GET['lan'].'.md')) {
+            $language = '-'.$_GET['lan'];
+        }
+    }
 
-	$Parsedown = new Parsedown();
-	echo $Parsedown->text(file_get_contents ('README.md'));
+    include('../header.php');
+    include('../chap-header.php');
 
-	echo '
-	</div>
-	<hr>
-	<ul class="navigationBar" >
-		<li class="navigationBar" onclick="previusPage()">&lt; &lt; Previous</li>
-		<li class="navigationBar" onclick="homePage()"> Home </li>
-		<li class="navigationBar" onclick="nextPage()">Next &gt; &gt;</li>
-	</ul>';
+    echo '<div id="content">';
 
-	include($path."/footer.php"); 
+    include($path.'/src/parsedown/Parsedown.php');
+    $Parsedown = new Parsedown();
+
+    echo $Parsedown->text(file_get_contents('README'.$language.'.md'));
+
+    $dirs = array_filter(glob('../??/'), 'is_dir');
+    foreach ($dirs as &$folder) {
+        if (file_exists($folder.'TITLE'.$language.'.md') and file_exists($folder.'SUMMARY'.$language.'.md')) {
+            echo $Parsedown->text(file_get_contents($folder.'TITLE'.$language.'.md'));
+
+            if (file_exists($folder.'SUMMARY'.$language.'.md')) {
+                echo $Parsedown->text(file_get_contents($folder.'SUMMARY'.$language.'.md'));
+            }
+
+            $shaders = array_reverse(glob($folder.'*.frag'));
+            $shadersTotal = count($shaders);
+
+            if ($shadersTotal > 0) {
+                echo '<div class="glslGallery" data="';
+                for ($i = 0; $i < $shadersTotal; $i++) {
+                    preg_match("/\.\.\/(\d\d)\//", $folder, $matches);
+                    if (count($matches) > 0) {
+                        echo $matches[1].'/'.basename($shaders[$i], '.frag');
+                        if ($i != $shadersTotal-1) {
+                            echo ',';
+                        }
+                    }
+                }
+                echo '" data-properties="hoverPreview:false,showAuthor:false,showTitle:false"></div>';
+            }
+            
+
+            if (file_exists($folder.'featured_examples.php') and file_exists('FEATURED'.$language.'.md')) {
+                echo $Parsedown->text(file_get_contents('FEATURED'.$language.'.md'));
+                include($folder.'featured_examples.php');
+            }
+        }
+    }
+
+
+    echo '
+        </div>
+        <script>console.log();</script>
+        <hr>
+        <ul class="navigationBar" >
+            <li class="navigationBar" onclick="window.location.href=\'../\'"> Home </li>
+        </ul>';
+
+        include("../footer.php");
+
 ?>
