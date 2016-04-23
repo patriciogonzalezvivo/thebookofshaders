@@ -123,7 +123,7 @@ Take a minute to look at these two examples by [Inigo Quilez](http://www.iquilez
 
 Like a painter who understands how the pigments of their paints work, the more we know about noise implementations the better we will be able to use them. For example, if we use a two dimensional noise implementation to rotate the space where straight lines are rendered, we can produce the following swirly effect that looks like wood. Again you can click on the image to see what the code looks like. 
 
-[ ![Wood texture](wood.png) ](../edit.html#11/wood.frag)
+[ ![Wood texture](wood-long.png) ](../edit.html#11/wood.frag)
 
 ```glsl
     pos = rotate2d( noise(pos) ) * pos; // rotate the space
@@ -132,7 +132,7 @@ Like a painter who understands how the pigments of their paints work, the more w
 
 Another way to get interesting patterns from noise is to treat it like a distance field and apply some of the tricks described in the [Shapes chapter](../07/).
 
-[ ![Splatter texture](splatter.png) ](../edit.html#11/splatter.frag)
+[ ![Splatter texture](splatter-long.png) ](../edit.html#11/splatter.frag)
 
 ```glsl
     color += smoothstep(.15,.2,noise(st*10.)); // Black splatter

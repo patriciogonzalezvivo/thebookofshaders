@@ -41,6 +41,16 @@ if (file_exists($path."/src/glslEditor/build/glslEditor.js")) {
         <link type="text/css" rel="stylesheet" href="http://patriciogonzalezvivo.com/glslEditor/build/glslEditor.css"> 
         <script type="application/javascript" src="http://patriciogonzalezvivo.com/glslEditor/build/glslEditor.js"></script>';
 }
+
+if (file_exists($path."/src/glslGallery/build/glslGallery.js")) {
+    echo '
+        <link type="text/css" rel="stylesheet" href="'.$path.'/src/glslGallery/build/glslGallery.css"> 
+        <script type="application/javascript" src="'.$path.'/src/glslGallery/build/glslGallery.js"></script>';
+} else {
+    echo '
+        <link type="text/css" rel="stylesheet" href="http://patriciogonzalezvivo.com/glslGallery/build/glslGallery.css"> 
+        <script type="application/javascript" src="http://patriciogonzalezvivo.com/glslGallery/build/glslGallery.js"></script>';
+}
     echo '
         <link type="text/css" rel="stylesheet" href="'.$path.'/css/style.css">
 

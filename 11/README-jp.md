@@ -124,7 +124,7 @@ y = mix(rand(i), rand(i + 1.0), u); // using it in the interpolation
 
 絵の具の中の顔料の働きを理解している画家のように、ノイズの実装方法について詳しくなるほど、より上手に使いこなせるようになります。例えば複数の直線が描かれた空間を回転させるために二次元のノイズを使うと下記の通り、木目のように見える渦巻き状の効果を作り出すことができます。画像をクリックするとコードも見ることができます。
 
-[ ![Wood texture](wood.png) ](../edit.html#11/wood.frag)
+[ ![Wood texture](wood-long.png) ](../edit.html#11/wood.frag)
 
 ```glsl
     pos = rotate2d( noise(pos) ) * pos; // rotate the space
@@ -133,7 +133,7 @@ y = mix(rand(i), rand(i + 1.0), u); // using it in the interpolation
 
 ノイズから面白いパターンを作り出すもう1つの方法は、ノイズをディスタンスフィールドのように扱い、[形について](../07/)の章で取り上げたテクニックを応用することです。
 
-[ ![Splatter texture](splatter.png) ](../edit.html#11/splatter.frag)
+[ ![Splatter texture](splatter-long.png) ](../edit.html#11/splatter.frag)
 
 ```glsl
     color += smoothstep(.15,.2,noise(st*10.)); // Black splatter

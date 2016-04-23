@@ -12,8 +12,13 @@
 		}
 	}
 
-	include("./header.php");
+	include("../header.php");
 	include("../chap-header.php");
+
+	echo '
+		<!-- Gallery -->
+    	<script type="application/javascript" src="'.$path.'/examples_proto/src/examples.js"></script>
+		';
 
 	echo '<div id="content" class="gallery-top">';
 	include($path."/src/parsedown/Parsedown.php");

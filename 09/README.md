@@ -44,7 +44,8 @@ Since each subdivision or cell is a smaller version of the normalized coordinate
 
 * Recreate more complicated patterns by composing different shapes.
 
-<a href="../edit.html#09/diamondtiles.frag"><canvas id="custom" class="canvas" data-fragment-url="diamondtiles.frag"  width="520px" height="200px"></canvas></a>
+
+[![](diamondtiles-long.png)](../edit.html#09/diamondtiles.frag)
 
 * Combine different layers of patterns to compose your own [Scottish Tartan Patterns](https://www.google.com/search?q=scottish+patterns+fabric&tbm=isch&tbo=u&source=univ&sa=X&ei=Y1aFVfmfD9P-yQTLuYCIDA&ved=0CB4QsAQ&biw=1399&bih=799#tbm=isch&q=Scottish+Tartans+Patterns).
 
