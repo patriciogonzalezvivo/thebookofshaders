@@ -9,7 +9,7 @@ uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
 
-float rows = 10.0;
+float rows = 100.0;
 
 vec2 brickTile(vec2 _st, float _zoom){
   _st *= _zoom;
@@ -31,7 +31,7 @@ void main(){
   st.x *= u_resolution.x/u_resolution.y;
   vec2 pos = st;
 
-  st = brickTile(st,50.);
+  st = brickTile(st,500.);
   
   float pattern = texture2D(u_tex0,pos).r;
   pattern = circle(st, pattern);
