@@ -1,0 +1,21 @@
+@charset 'utf-8';
+
+.glslGallery {
+    -moz-column-width: 0em;
+    -webkit-column-width: 0em;
+}
+
+.glslGallery_item{
+	width: 150px;
+	margin-bottom: 4;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.glslGallery_thumb{
+	max-width: 150px;
+}
+
+.glslGallery_item canvas.glslGallery_canvas{
+	max-width: 150px;
+}

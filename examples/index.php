@@ -12,7 +12,8 @@
 
     include('../header.php');
     include('../chap-header.php');
-
+    
+    echo '<link type="text/css" rel="stylesheet" href="gallery.css">';
     echo '<div id="content">';
 
     include($path.'/src/parsedown/Parsedown.php');
@@ -43,7 +44,7 @@
                         }
                     }
                 }
-                echo '" data-properties="hoverPreview:false,showAuthor:false,showTitle:false"></div>';
+                echo '" data-properties="clickRun:edior,hoverPreview:false,showAuthor:false,openFrameIcon:false"></div>';
             }
             
 

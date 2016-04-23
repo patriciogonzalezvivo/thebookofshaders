@@ -173,10 +173,9 @@ function captionizeImages() {
     if (images.length < 1) 
         return false; 
 
-    for (var i=0; i<images.length; i++) {
+    for (var i = 0; i < images.length; i++) {
         var title = images[i].getAttribute("alt");
-
-        if (title != ""){
+        if (title && title !== ''){
             var divCaption = document.createElement("div");
             divCaption.className = "caption";
             var divCaption_text = document.createTextNode(title);
