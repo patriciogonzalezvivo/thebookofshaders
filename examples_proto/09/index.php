@@ -1,6 +1,6 @@
 <?php
 	$path = "../..";
-	$subtitle = ": Gallery - Patterns";
+	$subtitle = ": Gallery - Shaping functions";
 	$README = "README";
 	$language = "";
 
@@ -18,7 +18,8 @@
 	include("../../src/parsedown/Parsedown.php");
 	$Parsedown = new Parsedown();
 	echo $Parsedown->text(file_get_contents($README.'.md'));
-
+	$dir = basename(__DIR__);
+	echo "<div class=\"glslChapterGallery\" log=\"{$dir}\"></div>";
 	echo '
 	</div>
 	<hr>
@@ -26,5 +27,6 @@
 		<li class="navigationBar" onclick="window.location.href=\'../index.php\'">Gallery Home </li>
 	</ul>';
 
-	include("../footer.php");
+	include("../../footer.php");
 ?>
+

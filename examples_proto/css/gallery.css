@@ -1,5 +1,11 @@
 @charset 'utf-8';
 
+.gallery-top h2 {
+	padding-top: 48px;
+	margin-top: 48px;
+	border-top: 1px solid #CCCCCC;
+}
+
 .glslChapterGallery {
 	margin-top: 48px;
 	margin-bottom: 12px;

@@ -125,7 +125,7 @@ var shaderList = {
 
 window.addEventListener("load", function () {
     var elms = document.getElementsByClassName('glslChapterGallery');
-
+console.log(elms);
 	for (var i = 0; i < elms.length; i++) {
 		var elm = elms[i];
 		if (elm.hasAttribute('log')) {
