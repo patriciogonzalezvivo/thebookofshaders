@@ -1,19 +1,20 @@
 @charset 'utf-8';
 
 .glslGallery {
-    -moz-column-width: 7em;
-    -webkit-column-width: 7em;
+    -moz-column-width: initial;
+    -webkit-column-width: initial;
 }
 
 .glslGallery_item{
-	width: 150px;
-	margin: 2px;
+	width: 250px;
+	margin: 5px;
+	margin-top: 0px;
 }
 
 .glslGallery_thumb{
-	max-width: 150px;
+	max-width: 250px;
 }
 
 .glslGallery_item canvas.glslGallery_canvas{
-	max-width: 150px;
+	max-width: 250px;
 }

@@ -1,5 +1,5 @@
-// Author @patriciogv - 2015
-// http://patriciogonzalezvivo.com
+// Author: @patriciogv - 2015
+// Tittle: Turbulence
 
 #ifdef GL_ES
 precision mediump float;
