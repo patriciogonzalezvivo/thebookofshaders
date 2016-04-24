@@ -1,3 +1,5 @@
-# Shader Gallery
+# Examples Gallery
 
-The following is the list of examples present in this book and more from our excellent contributors and readers. Find your favorite example and play around with it. It's good idea to change the values or commenting out a part of the code to understand what each part of the code is doing. Once you feel comfortable with the example, try if you can create something unique and new by tweaking it bit by bit, then share your experiment with "share" button at the top of the editor so that someone can find it and study.
+<p align="right"><i>Cureated by <a href="https://twitter.com/kyndinfo">Kenichi Yoneda (@kyndinfo)</a></i></p>
+
+This is a collection of examples extracted from the chapters of this book together with shared shaders kindly donated by other readers using [the on-line editor](http://editor.thebookofshaders.com/). Feel free to explore and tweak them bit by bit. Once you have something you are proud of, click the "Export" and then copy the "URL to code...". Send it to [@bookofshaders](https://twitter.com/bookofshaders) or [@kyndinfo](https://twitter.com/kyndinfo). We are looking forward to see it!

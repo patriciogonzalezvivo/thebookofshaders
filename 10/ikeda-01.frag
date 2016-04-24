@@ -1,5 +1,5 @@
 // Author @patriciogv - 2015
-// http://patriciogonzalezvivo.com
+// Title: Wave
 
 #ifdef GL_ES
 precision mediump float;

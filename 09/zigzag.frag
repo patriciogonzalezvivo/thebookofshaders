@@ -1,5 +1,6 @@
 // Author @patriciogv - 2015
-// http://patriciogonzalezvivo.com
+// Title: Zigzag
+
 #ifdef GL_ES
 precision mediump float;
 #endif

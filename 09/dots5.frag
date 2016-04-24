@@ -1,5 +1,5 @@
 // Author @patriciogv ( patricio.io ) - 2015
-// Inspired by the Patterns of Nina Warmerdam ( www.behance.net/ninawarmerdam )
+// Title: Nina Warmerdam ( www.behance.net/ninawarmerdam )
 
 #ifdef GL_ES
 precision mediump float;
