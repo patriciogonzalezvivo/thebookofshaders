@@ -52,3 +52,23 @@
   right: 0px;
 	font-size:14px;
 }
+
+.more {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.more a {
+  font-size: 14px;
+  letter-spacing: 0.1em;
+	font-family:Helvetica,Arial,sans-serif;
+  font-weight: 600;
+  border-radius: 2px;
+  padding: 8px;
+  border: solid 1px #AAAAAA;
+  text-transform: uppercase;
+}
+
+.more a:hover {
+  background: #EEEEEE;
+}
