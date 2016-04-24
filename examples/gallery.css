@@ -72,3 +72,9 @@
 .more a:hover {
   background: #EEEEEE;
 }
+
+.gallery_author {
+  font-size: 16px;
+  font-style: italic;
+  text-align: right;
+}
