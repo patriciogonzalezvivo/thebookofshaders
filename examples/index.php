@@ -59,7 +59,7 @@
                     $shadersTotal += 3;
                 }
 
-                if ($shadersTotal > 3) {
+                if (count($shaders) > 3 or $shadersTotal > 3) {
                     echo '<p class="more"><a href="/examples/?chapter='.$chp.'">more</a></p>';
                 }
             }

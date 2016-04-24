@@ -63,7 +63,7 @@ Note how each in each octave the noise seams to have more detail. Also note the 
 
 The following code is an example of how fBm could be implemented on two dimensions.
 
-<div class="codeAndCanvas" data="2d-fbm.frag"></div>
+<div class='codeAndCanvas' data='2d-fbm.frag'></div>
 
 * Reduce the numbers of octaves by changing the value on line 37
 * Modify the lacunarity of the fBm on line 47
