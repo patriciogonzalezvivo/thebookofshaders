@@ -129,7 +129,7 @@ If everything goes well, you will see a ```book.pdf``` file which you can read o
 
 ## How can I collaborate with this book?
 
-Thanks for be willing to collaborate! There are different ways you can do it:
+Thanks for be willing to collaborate! There are plenty of ways you can:
 
 - Translating content
 - Improving the [```glossary/``` section](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/glossary)
@@ -140,17 +140,17 @@ Thanks for be willing to collaborate! There are different ways you can do it:
 
 This book is wrote in [Markdown language](https://daringfireball.net/projects/markdown/syntax) so it's very easy to edit and work on it. 
 
-1. Start by going to [github's repository at ```github.com/patriciogonzalezvivo/thebookofshaders```](https://github.com/patriciogonzalezvivo/thebookofshaders). Take a look the files and folders inside it. You will note that the content is on the ```README.md``` and others files with capital letters like: ```TITTLE.md```, ```SUMMARY.md```, etc. Also note that translations are hosted on files ending in two letters referencing the language they are on, ex.: ```README-jp.md```, ```README-es.md```, etc.
+1. Start by going to [github's repository at ```github.com/patriciogonzalezvivo/thebookofshaders```](https://github.com/patriciogonzalezvivo/thebookofshaders). Take a look the files and folders inside it. You will note that the content is on the ```README.md``` and others files with capital letters like: ```TITLE.md```, ```SUMMARY.md```, etc. Also note that translations are hosted on files ending in two letters referencing the language they are on, ex.: ```README-jp.md```, ```README-es.md```, etc.
 
 2. Fork the repository and clone it in your computer.
 
 3. Duplicate the content of the files want to translate. Remember to add to the two letters that makes reference to the language you are translating to the files you will work on. 
 
-4. Translate the contentent line by line (see **Translation notes**).
+4. Translate the content line by line (see **Translation notes**).
 
 5. Test it (see **Testing**).
 
-6. Push to your github fork and then make a [Pull Request]()
+6. Push to your own github fork to then make a [Pull Request](https://help.github.com/articles/using-pull-requests/)
 
 #### Translating notes
 
