@@ -58,6 +58,7 @@ This is a gentle step-by-step guide through the abstract and complex universe of
 	* [How can I navigate this book offline?](appendix/)
 	* [How to run the examples on a RaspberryPi?](appendix/)
 	* [How to print this book?](appendix/)
+    * [How can I collaborate?](appendix/)
 
 * [Examples Gallery](examples/)
 
