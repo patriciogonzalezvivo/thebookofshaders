@@ -56,9 +56,12 @@
 
                 if (file_exists($folder.'featured_examples.php') and file_exists('FEATURED'.$language.'.md')) {
                     include($folder.'featured_examples.php');
+                    $shadersTotal += 3;
                 }
 
-                echo '<p class="more"><a href="/examples/?chapter='.$chp.'">more</a></p>';
+                if ($shadersTotal > 3) {
+                    echo '<p class="more"><a href="/examples/?chapter='.$chp.'">more</a></p>';
+                }
             }
         }
     } elseif ( !empty($_GET['chapter'])) {
