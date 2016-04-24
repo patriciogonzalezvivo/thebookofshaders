@@ -97,11 +97,22 @@ img {
     color: #999;
 }
 
-.header a{
-    font-size: 18px;
+.header .subtitle {
+    
+}
+
+.header .subtitle a{
+    font-size: 1.3em;
     font-style: italic;
     text-decoration: none;
-    border:0!important;
+    border: 0!important;
+}
+
+.header a{
+    font-size: 0.8em;
+    font-style: italic;
+    text-decoration: none;
+    border: 0!important;
 }
 
 a:hover, a:visited, a:link, a:active {
