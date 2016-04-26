@@ -28,7 +28,7 @@ echo '
 if (file_exists($path."/src/glslCanvas/build/GlslCanvas.min.js")) {
     echo '<script type="text/javascript" src="'.$path.'/src/glslCanvas/build/GlslCanvas.min.js"></script>';
 } else {
-    echo '<script type="text/javascript" src="http://patriciogonzalezvivo.com/glslCanvas/build/GlslCanvas.min.js"></script>';
+    echo '<script type="text/javascript" src="http://thebookofshaders.com/glslCanvas/GlslCanvas.min.js"></script>';
 }
     echo '
         <!-- GlslEditor -->';
@@ -38,8 +38,8 @@ if (file_exists($path."/src/glslEditor/build/glslEditor.js")) {
         <script type="application/javascript" src="'.$path.'/src/glslEditor/build/glslEditor.js"></script>';
 } else {
     echo '
-        <link type="text/css" rel="stylesheet" href="http://patriciogonzalezvivo.com/glslEditor/build/glslEditor.css"> 
-        <script type="application/javascript" src="http://patriciogonzalezvivo.com/glslEditor/build/glslEditor.js"></script>';
+        <link type="text/css" rel="stylesheet" href="http://thebookofshaders.com/glslEditor/glslEditor.css"> 
+        <script type="application/javascript" src="http://thebookofshaders.com/glslEditor/glslEditor.js"></script>';
 }
 
 if (file_exists($path."/src/glslGallery/build/glslGallery.js")) {
@@ -48,8 +48,8 @@ if (file_exists($path."/src/glslGallery/build/glslGallery.js")) {
         <script type="application/javascript" src="'.$path.'/src/glslGallery/build/glslGallery.js"></script>';
 } else {
     echo '
-        <link type="text/css" rel="stylesheet" href="http://patriciogonzalezvivo.com/glslGallery/build/glslGallery.css"> 
-        <script type="application/javascript" src="http://patriciogonzalezvivo.com/glslGallery/build/glslGallery.js"></script>';
+        <link type="text/css" rel="stylesheet" href="http://thebookofshaders.com/glslGallery/glslGallery.css"> 
+        <script type="application/javascript" src="http://thebookofshaders.com/glslGallery/glslGallery.js"></script>';
 }
     echo '
         <link type="text/css" rel="stylesheet" href="'.$path.'/css/style.css">
