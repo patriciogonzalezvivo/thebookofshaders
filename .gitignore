@@ -1,3 +1,4 @@
+/src
 .DS_Store
 .dropbox
 tmp.md
@@ -5,3 +6,4 @@ tmp*.png
 book.tex
 book.pdf
 log/*
+/.idea
