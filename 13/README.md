@@ -73,7 +73,7 @@ for (int i = 0; i < OCTAVES; i++) {
 }
 ```
 
-<a href="../edit.html#12/turbulence.frag"><canvas id="custom" class="canvas" data-fragment-url="turbulence.frag"  width="520px" height="200px"></canvas></a> 
+<a href="../edit.html#13/turbulence.frag"><canvas id="custom" class="canvas" data-fragment-url="turbulence.frag"  width="520px" height="200px"></canvas></a> 
 
 Another member of this family is the ridge. Constructed similarly to the turbolence but with some extra calculations:
 
@@ -83,5 +83,5 @@ Another member of this family is the ridge. Constructed similarly to the turbole
     n = n * n;      // sharpen creases
 ```
 
-<a href="../edit.html#12/ridge.frag"><canvas id="custom" class="canvas" data-fragment-url="ridge.frag"  width="520px" height="200px"></canvas></a> 
+<a href="../edit.html#13/ridge.frag"><canvas id="custom" class="canvas" data-fragment-url="ridge.frag"  width="520px" height="200px"></canvas></a> 
 

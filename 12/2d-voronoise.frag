@@ -41,9 +41,11 @@ float iqnoise( in vec2 x, float u, float v ) {
 
 void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
+    st.x *= u_resolution.x/u_resolution.y;
     vec3 color = vec3(0.0);
 
-    float n = iqnoise( 30.0*st, abs(cos(u_time*.25)), 0.);
+    st *= 10.;
+    float n = iqnoise(st, u_mouse.x/u_resolution.x, u_mouse.y/u_resolution.y);
 
     gl_FragColor = vec4(vec3(n),1.0);
 }
