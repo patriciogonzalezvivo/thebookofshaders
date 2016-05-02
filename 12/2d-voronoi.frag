@@ -51,8 +51,9 @@ vec3 voronoi( in vec2 x ) {
             #endif  
             vec2 r = g + o - f;
 
-            if( dot(mr-r,mr-r)>0.00001 )
-            md = min( md, dot( 0.5*(mr+r), normalize(r-mr) ) );
+            if ( dot(mr-r,mr-r)>0.00001 ) {
+                md = min( md, dot( 0.5*(mr+r), normalize(r-mr) ) );
+            }
         }
     }
     return vec3( md, mr );

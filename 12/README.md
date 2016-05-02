@@ -3,3 +3,8 @@ With it we were able to suggest more organic visual gestures. But we still far a
 The next chapters in our quest on learning how to mimic nature will be to learn about iterations. More precisely iterations on time and iterations on space.
 
 ## Celluar noise
+
+
+http://editor.thebookofshaders.com/?log=160502110140
+
+http://editor.thebookofshaders.com/?log=160502110140
