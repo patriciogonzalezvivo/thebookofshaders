@@ -26,7 +26,7 @@ As you can see in the above code I add the mouse position to give and idea of ho
 
 ### Tiling and iterating
 
-Well if you have to scale the previus example with a bigger set of points you will discover that is actually very hard to do that in an efficient way.
+Well if you have to scale the previus example with a bigger set of points you will discover that is actually very hard to do that in an efficient way. The solution involves tiling the space like we have done before.
 
 <div class="codeAndCanvas" data="cellnoise-01.frag"></div>
 
