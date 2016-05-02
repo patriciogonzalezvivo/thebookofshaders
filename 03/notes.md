@@ -50,3 +50,18 @@ void main() {
     gl_FragColor = vec4(st.x, st.y,   0.0,  1.0);
 }
 
+### Nicolas
+*    >You can picture the uniforms like little bridges between the CPU and the GPU
+
+        a 'one-way'' bridges that is :) I translated it to:
+
+        >We can picture the uniforms as small one-way bridges from the CPU (our main program) to the GPU (where the shader will be executed).
+
+*   >In the same way GLSL gives us a default output, ```vec4 gl_FragColor```, it also gives us a default input, ```vec4 gl_FragCoord```,
+which holds the screen coordinates of the *pixel* or *screen fragment* that the active thread is working on.
+
+    I developped a bit more to disambiguate pixel & fragment, I think it's an important step, the first time we meet the word fragment _for real_
+
+* I've stressed the fact that gl_FragCoord is implicitly declared so that people don't panic when they don't find it in the new code sample :)
+    also those are reserved names, so I stressed the fact that you can't use them as var names in your custom code.
+

@@ -2,7 +2,7 @@
 
 So far we have seen how the GPU manages large numbers of parallel threads, each one responsible for assigning the color to a fraction of the total image. Although each parallel thread is blind to the others, we need to be able to send some inputs from the CPU to all the threads. Because of the architecture of the graphic card those inputs are going to be equal (*uniform*) to all the threads and necessarily set as *read only*. In other words, each thread receives the same data which it can read but cannot change. 
 
-These inputs are call ```uniform``` and come in most of the supported types: ```float```, ```vec2```, ```vec3```, ```vec4```, ```mat2```, ```mat3```, ```mat4```, ```sampler2D``` and ```samplerCube```. Uniforms are defined with the corresponding type at the top of the shader right after assigning the default floating point precision.
+These inputs are called ```uniform``` and come in most of the supported types: ```float```, ```vec2```, ```vec3```, ```vec4```, ```mat2```, ```mat3```, ```mat4```, ```sampler2D``` and ```samplerCube```. Uniforms are defined with the corresponding type at the top of the shader right after assigning the default floating point precision.
 
 ```glsl
 #ifdef GL_ES
