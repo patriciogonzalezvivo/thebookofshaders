@@ -2,13 +2,13 @@
 
 In 1996, sixting years after Perlin's Noise and five years before his Simplex Noise, [Steven Worley wrote a paper call  “A Cellular Texture Basis Function”](http://www.rhythmiccanvas.com/research/papers/worley.pdf). In it he describes a procedural texturing tecnique now extensively use by the graphics community.
 
-In 2011 that tecnique was [optimized for GPU by Stefan Gustavson](http://webstaff.itn.liu.se/~stegu/GLSL-cellular/GLSL-cellular-notes.pdf) becoming one powerfull way tools to produce textures with the feel&look of cellular tessue.
+Later in 2011, [Stefan Gustavson optimized for GPU](http://webstaff.itn.liu.se/~stegu/GLSL-cellular/GLSL-cellular-notes.pdf) becoming a powerfull tools to produce textures that looks and feel like organic tissue.
 
-To learn more about this technique we need to be confortable thinking in terms of iterations.
+To learn more about this technique we need to be confortable working with iterations.
 
 ### A distance field for some points
 
-Let's say we want to make a distance field of 4 points. What we need to? esentially in each pixel, calculate the distance to the closest point. That means that we need to iterate throught all the points and store the value to the most close one. 
+Let's say we want to make a distance field of 4 points. What we need to do? in a nutshell, for each pixel we want to calculate the distance to the closest point. That means that we need to iterate throught all the points and store the value to the most close one. Something like this
 
 ```glsl
     float m_dist = 1.;  // minimun distance
@@ -22,7 +22,7 @@ To do that we can use a ```for``` loop to iterate through an array of points and
 
 <div class="codeAndCanvas" data="cellnoise-00.frag"></div>
 
-In the above code you will find the mouse position as one of the given points, so you can get an idea of how this code behaves. Now try:
+Note in the above code, that one of the points is the mouse position. Play with it so you can get a more intuitive idea of how this code behaves. Then try this:
 
 - How can you animate the rest of the points?
 - After reading [the chapter about shapes](../07/), imagine interesting ways to use this distance field?
@@ -30,8 +30,10 @@ In the above code you will find the mouse position as one of the given points, s
 
 ### Tiling and iterating
 
-By this point you probably notice that ```for``` loops and *arrays* are not so friendly in GLSL. Loops don't accept dynamic limits on the condition.
-One way to solve this is to think the space in tiles. Not every pixel should be checking every single points, right? They just need to check the points that are close to them. Thats the original approach of [Steven Worley's paper](http://www.rhythmiccanvas.com/research/papers/worley.pdf). For that we are going to sub divide the space into cells like we did before in the [patterns](../09/), [random](../10/) and [noise](../11/) chapters, hopefully by now you are familiarize with this technique.
+You probably notice that ```for``` loops and *arrays* are not so friendly in GLSL. Loops don't accept dynamic limits on their condition.
+Also iterating through a lot of instances reduce the performance of your shader significantly. We need another stratergy.
+
+One way to aproach this problem is to divide the space in tiles. Not every pixel need to check every single points, right? They just need to check the points that are close to them. Thats was the original approach of [Steven Worley's paper](http://www.rhythmiccanvas.com/research/papers/worley.pdf). Let's start subdivide the space into cells like we did before in the [patterns](../09/), [random](../10/) and [noise](../11/) chapters, hopefully by now you are familiarize with this technique.
 
 ```glsl
     // Scale 
@@ -42,7 +44,7 @@ One way to solve this is to think the space in tiles. Not every pixel should be 
     vec2 f_st = fract(st);
 ```
 
-In the above code we subdivide the space in a 3x3 grid
+In the above code we subdivide the space in a 3x3 grid.
 
 Well if you have to scale the previus example with a bigger set of points you will discover that is actually very hard to do that in an efficient way. The solution involves tiling the space like we have done before.
 
