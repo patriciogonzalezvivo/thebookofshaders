@@ -1,12 +1,14 @@
-## Celluar noise
+## Celluar Noise
 
-We had made pseudo random values from a sine wave, then from it we construct noise. We went from the absolute chaos to smooth random variations we can control.
-With it we were able to suggest more organic visual gestures. But we still far away from the “real” thing. If we look to satelites images, coherent structers emerge from mountans formation, looking closely to the surface of a leave we will see a clear an inner pattern. This surfaces speaks about the forces involve on their creation. On the tension of the laws applied apply to them together with the forces of their surrandings.
-The next chapters in our quest on learning how to mimic nature will be to learn about iterations. More precisely iterations on time and iterations on space.
+In 1996, sixting years after Perlin's Noise and five years before his Simplex Noise, [Steven Worley wrote a paper call  “A Cellular Texture Basis Function”](http://www.rhythmiccanvas.com/research/papers/worley.pdf). In it he describes a procedural texturing tecnique now extensively use by the graphics community.
 
-### Distance field of 4 points
+In 2011 that tecnique was [optimized for GPU by Stefan Gustavson](http://webstaff.itn.liu.se/~stegu/GLSL-cellular/GLSL-cellular-notes.pdf) becoming one powerfull way tools to produce textures with the feel&look of cellular tessue.
 
-Let's start by making a distance field of four points. Each single pixel will iterate throught all the points and store the value to the most close one. For that we can use a ```for``` loop to iterate through an array of points and keep track of the minimum distance using a [```min()```](../glossary/?search=min) function. 
+To learn more about this technique we need to be confortable thinking in terms of iterations.
+
+### A distance field for some points
+
+Let's say we want to make a distance field of 4 points. What we need to? esentially in each pixel, calculate the distance to the closest point. That means that we need to iterate throught all the points and store the value to the most close one. 
 
 ```glsl
     float m_dist = 1.;  // minimun distance
@@ -16,15 +18,31 @@ Let's start by making a distance field of four points. Each single pixel will it
     }
 ```
 
+To do that we can use a ```for``` loop to iterate through an array of points and keep track of the minimum distance using a [```min()```](../glossary/?search=min) function. Here a brief implementation of that:
+
 <div class="codeAndCanvas" data="cellnoise-00.frag"></div>
 
-As you can see in the above code I add the mouse position to give and idea of how this algorithm behaves:
+In the above code you will find the mouse position as one of the given points, so you can get an idea of how this code behaves. Now try:
 
-- Can you think in a to animate the rest of the points?
-- After reading [the chapter about shapes](../07/) we learn different and interesting ways of using distance fields to draw patterns. Can you imagine something interesting that use this distance field?
-- What if you want to add more points to this distance field?
+- How can you animate the rest of the points?
+- After reading [the chapter about shapes](../07/), imagine interesting ways to use this distance field?
+- What if you want to add more points to this distance field? What if we want to dynamically add/substract points?
 
 ### Tiling and iterating
+
+By this point you probably notice that ```for``` loops and *arrays* are not so friendly in GLSL. Loops don't accept dynamic limits on the condition.
+One way to solve this is to think the space in tiles. Not every pixel should be checking every single points, right? They just need to check the points that are close to them. Thats the original approach of [Steven Worley's paper](http://www.rhythmiccanvas.com/research/papers/worley.pdf). For that we are going to sub divide the space into cells like we did before in the [patterns](../09/), [random](../10/) and [noise](../11/) chapters, hopefully by now you are familiarize with this technique.
+
+```glsl
+    // Scale 
+    st *= 3.;
+    
+    // Tile the space
+    vec2 i_st = floor(st);
+    vec2 f_st = fract(st);
+```
+
+In the above code we subdivide the space in a 3x3 grid
 
 Well if you have to scale the previus example with a bigger set of points you will discover that is actually very hard to do that in an efficient way. The solution involves tiling the space like we have done before.
 
