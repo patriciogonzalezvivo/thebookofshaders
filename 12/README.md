@@ -1,3 +1,5 @@
+![](dragonfly.jpg)
+
 ## Celluar Noise
 
 In 1996, sixting years after Perlin's Noise and five years before his Simplex Noise, [Steven Worley wrote a paper call  “A Cellular Texture Basis Function”](http://www.rhythmiccanvas.com/research/papers/worley.pdf). In it he describes a procedural texturing tecnique now extensively use by the graphics community.
@@ -8,7 +10,9 @@ To learn more about this technique we need to be confortable working with iterat
 
 ### A distance field for some points
 
-Let's say we want to make a distance field of 4 points. What we need to do? in a nutshell, for each pixel we want to calculate the distance to the closest point. That means that we need to iterate throught all the points and store the value to the most close one. Something like this
+Let's say we want to make a distance field of 4 points. What we need to do? in a nutshell, for each pixel we want to calculate the distance to the closest point. That means that we need to iterate throught all the points and store the value to the most close one.
+
+![](cell-00.png)
 
 ```glsl
     float m_dist = 1.;  // minimun distance
@@ -30,8 +34,9 @@ Note in the above code, that one of the points is the mouse position. Play with 
 
 ### Tiling and iterating
 
-You probably notice that ```for``` loops and *arrays* are not so friendly in GLSL. Loops don't accept dynamic limits on their condition.
-Also iterating through a lot of instances reduce the performance of your shader significantly. So... We need to find another stratergy.
+You probably notice that ```for``` loops and *arrays* are not so friendly in GLSL. Loops don't accept dynamic limits on their condition. Also iterating through a lot of instances reduce the performance of your shader significantly. So... We need to find another stratergy.
+
+![](cell-01.png)
 
 One way to aproach this problem is to divide the space in tiles. Not every pixel need to check every single points, right? They just need to check the points that are close to them. That's the main idea of [Steven Worley's paper](http://www.rhythmiccanvas.com/research/papers/worley.pdf). We already subdivide the space into cells in the chapters about: [patterns](../09/), [random](../10/) and [noise](../11/). Hopefully by now you are familiarize with this technique.
 
@@ -59,7 +64,7 @@ Each pixel inside that tile (stored in the float coordinate, ```f_st```) will ch
 
 This will look like this:
 
-<a href="../edit.html#12/cellnoise-01.frag"><img src="cellnoise.png"  width="520px" height="200px"></canvas></a> 
+<a href="../edit.html#12/cellnoise-01.frag"><img src="cellnoise.png"  width="520px" height="200px"></img></a> 
 
 We still need to calculate the points around each pixel. Not just the one in the current tile. For that we need to **iterate** through the neighbor tiles. Not all of them. just the one inmediatly arround it. That means from ```-1``` (left) to ```1``` (right) tile in ```x``` axis and ```-1``` (bottom) to ```1``` (top) in ```y``` axis. A 3x3 kernel of 9 tiles that we can iterate using a double ```for``` loop like this one:
 
@@ -73,9 +78,11 @@ for (int y= -1; y <= 1; y++) {
 }
 ```
 
+![](cell-02.png)
+
 Now, we can predict the position of the points on each one of the neightbors in our double ```for``` loop by adding the neighboor tile offset to the current tile coordinate.
 
-```
+```glsl
         ...
         // Random position from current + neighbor place in the grid
         vec2 point = random2(i_st + neighbor);
@@ -111,12 +118,16 @@ Explore by:
 - What if we want to compute an extra point with the mouse position?
 - What other ways of constructing this distance field beside ```m_dist = min(m_dist, dist);```, can you imagine?
 - What interesting patterns you can make with this distance field?
-- Try to replicate this metaballs example:
+- Try to replicate this:
 
-<a href="../edit.html#12/metaballs.frag"><canvas id="custom" class="canvas" data-fragment-url="metaballs.frag"  width="520px" height="200px"></canvas></a> 
+![](DeyrolleFilm.png)
+![](bubbles.jpg)
+<a href="../edit.html#12/metaballs.frag"><img src="metaballs.gif"  width="520px" height="200px"></img></a> 
 
 This algorithm can also be interpreted from the perspective of the points and not the pixels. In that case it can be describe as: each point grows until it finds the area of another point. Which mirrors some of the grow rules on nature. Living forms are shaped by this tension between an inner force to expand and grow limited by the forces 
 on their medium. The clasic algorithm that simulate this begaviur is named after [Georgy Voronoi](https://en.wikipedia.org/wiki/Georgy_Voronoy).
+
+![](monokot_root.jpg)
 
 ### Voronoi Algorithm
 
@@ -128,7 +139,11 @@ This is not scalable
 
 [Inigo Quilez voronoi borders article](http://www.iquilezles.org/www/articles/voronoilines/voronoilines.htm)
 
-<a href="../edit.html#12/2d-voronoi.frag"><canvas id="custom" class="canvas" data-fragment-url="2d-voronoi.frag"  width="520px" height="200px"></canvas></a> 
+<a href="../edit.html#12/2d-voronoi.frag"><img src="voronoi.gif"  width="520px" height="200px"></img></a> 
  
+![Accretion Disc Series - Clint Fulkerson](accretion.jpg)
+
 [Inigo Quilez article about voronoise](http://www.iquilezles.org/www/articles/voronoise/voronoise.htm)
 <a href="../edit.html#12/2d-voronoise.frag"><canvas id="custom" class="canvas" data-fragment-url="2d-voronoise.frag"  width="520px" height="200px"></canvas></a> 
+
+
