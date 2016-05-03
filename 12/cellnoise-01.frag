@@ -25,41 +25,22 @@ void main() {
     vec2 i_st = floor(st);
     vec2 f_st = fract(st);
 
-    float m_dist = 1.;  // minimun distance
+    vec2 point = random2(i_st);
+    vec2 diff = point - f_st;
     
-    for (int j= -1; j <= 1; j++) {
-        for (int i= -1; i <= 1; i++) {
-            // Neighbor place in the grid
-            vec2 neighbor = vec2(float(i),float(j));
-            
-            // Random position from current + neighbor place in the grid
-            vec2 offset = random2(i_st + neighbor);
-
-			// Animate the offset
-            offset = 0.5 + 0.5*sin(u_time + 6.2831*offset);
-            
-			// Position of the cell             
-            vec2 pos = neighbor + offset - f_st;
-            
-            // Cell distance
-            float dist = length(pos);
-
-            // Keep the closer distance
-            m_dist = min(m_dist, dist);
-        }
-    }
+    float dist = length(diff);
 
     // Draw the min distance (distance field)
-    color += m_dist;
+    color += dist;
 
     // Draw cell center
-    color += 1.-step(.02, m_dist);
+    color += 1.-step(.02, dist);
     
     // Draw grid
     color.r += step(.98, f_st.x) + step(.98, f_st.y);
     
     // Show isolines
-    // color -= step(.7,abs(sin(27.0*m_dist)))*.5;
+    // color -= step(.7,abs(sin(27.0*dist)))*.5;
     
     gl_FragColor = vec4(color,1.0);
 }

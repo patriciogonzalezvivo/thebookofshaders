@@ -1,5 +1,5 @@
 // Author: @patriciogv
-// Title: Simple Voronoi
+// Title: CellularNoise
 
 #ifdef GL_ES
 precision mediump float;
@@ -19,44 +19,47 @@ void main() {
     vec3 color = vec3(.0);
     
     // Scale 
-    st *= 5.;
+    st *= 3.;
     
     // Tile the space
     vec2 i_st = floor(st);
     vec2 f_st = fract(st);
 
-    float m_dist = 10.;  // minimun distance
-    vec2 m_point;        // minimum point
+    float m_dist = 1.;  // minimun distance
     
-    for (int j=-1; j<=1; j++ ) {
-        for (int i=-1; i<=1; i++ ) {
-            vec2 neighbor = vec2(float(i),float(j));
+    for (int y= -1; y <= 1; y++) {
+        for (int x= -1; x <= 1; x++) {
+            // Neighbor place in the grid
+            vec2 neighbor = vec2(float(x),float(y));
+            
+            // Random position from current + neighbor place in the grid
             vec2 point = random2(i_st + neighbor);
+
+			// Animate the point
             point = 0.5 + 0.5*sin(u_time + 6.2831*point);
+            
+			// Vector between the pixel and the point
             vec2 diff = neighbor + point - f_st;
+            
+            // Distance to the point
             float dist = length(diff);
 
-            if( dist < m_dist ) {
-                m_dist = dist;
-                m_point = point;
-            }
+            // Keep the closer distance
+            m_dist = min(m_dist, dist);
         }
     }
 
-    // Assign a color using the closest point position
-    color += dot(m_point,vec2(.3,.6));
-    
-    // Add distance field to closest point center 
-    // color.g = m_dist;
+    // Draw the min distance (distance field)
+    color += m_dist;
 
-    // Show isolines
-    // color *= abs(sin(40.0*m_dist));
-    
     // Draw cell center
-    color += 1.-step(.05, m_dist);
+    color += 1.-step(.02, m_dist);
     
     // Draw grid
     color.r += step(.98, f_st.x) + step(.98, f_st.y);
+    
+    // Show isolines
+    // color -= step(.7,abs(sin(27.0*m_dist)))*.5;
     
     gl_FragColor = vec4(color,1.0);
 }
