@@ -16,38 +16,38 @@ void main() {
     vec3 color = vec3(.0);
 
     // Cell positions
-    vec2 cell[5];
-    cell[0] = vec2(0.83,0.75);
-    cell[1] = vec2(0.60,0.07);
-    cell[2] = vec2(0.28,0.64);
-    cell[3] =  vec2(0.31,0.26);
-    cell[4] = u_mouse/u_resolution;
+    vec2 point[5];
+    point[0] = vec2(0.83,0.75);
+    point[1] = vec2(0.60,0.07);
+    point[2] = vec2(0.28,0.64);
+    point[3] =  vec2(0.31,0.26);
+    point[4] = u_mouse/u_resolution;
     
     float m_dist = 1.;  // minimun distance
-    vec2 m_pos;        // minimum position
+    vec2 m_point;        // minimum position
 
-    // Iterate through the cells positions
+    // Iterate through the points positions
     for (int i = 0; i < 5; i++) {
-        float dist = distance(st, cell[i]);
+        float dist = distance(st, point[i]);
         if ( dist < m_dist ) {
             // Keep the closer distance
             m_dist = dist;
 
-            // Kepp the position of the closer cell
-            m_pos = cell[i];
+            // Kepp the position of the closer point
+            m_point = point[i];
         }
     }
 
-    // Add distance field to closest cell center 
-    color += m_dist;
+    // Add distance field to closest point center 
+    color += m_dist*2.;
 
-    // tint acording the closest cell position
-    color.rg = m_pos;
+    // tint acording the closest point position
+    color.rg = m_point;
     
     // Show isolines
-    color *= abs(sin(90.0*m_dist));
+    color -= abs(sin(80.0*m_dist))*0.07;
     
-    // Draw cell center
+    // Draw point center
     color += 1.-step(.02, m_dist);
     
     gl_FragColor = vec4(color,1.0);

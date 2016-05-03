@@ -60,6 +60,14 @@ vec3 voronoi( in vec2 x, float rnd ) {
 
 void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
+    st = (st-.5)*.25+.5;
+    if (u_resolution.y > u_resolution.x ) {
+        st.y *= u_resolution.y/u_resolution.x;
+        st.y -= (u_resolution.y*.5-u_resolution.x*.5)/u_resolution.x;
+    } else {
+        st.x *= u_resolution.x/u_resolution.y;
+        st.x -= (u_resolution.x*.5-u_resolution.y*.5)/u_resolution.y;
+    }
     vec3 color = vec3(0.0);
     
     float d = dot(st-.5,st-.5);

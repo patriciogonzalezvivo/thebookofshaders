@@ -4,13 +4,11 @@
 
 In 1996, sixting years after Perlin's Noise and five years before his Simplex Noise, [Steven Worley wrote a paper call  “A Cellular Texture Basis Function”](http://www.rhythmiccanvas.com/research/papers/worley.pdf). In it he describes a procedural texturing tecnique now extensively use by the graphics community.
 
-Later in 2011, [Stefan Gustavson optimized for GPU](http://webstaff.itn.liu.se/~stegu/GLSL-cellular/GLSL-cellular-notes.pdf) becoming a powerfull tools to produce textures that looks and feel like organic tissue.
-
-To learn more about this technique we need to be confortable working with iterations.
+To learn understand the principles behind it we need to be confortable thinking in terms of distance fields and iterations.
 
 ### A distance field for some points
 
-Let's say we want to make a distance field of 4 points. What we need to do? in a nutshell, for each pixel we want to calculate the distance to the closest point. That means that we need to iterate throught all the points and store the value to the most close one.
+Let's say we want to make a distance field of 4 points. What we need to do? in a nutshell, **for each pixel we want to calculate the distance to the closest point**. That means that we need to iterate throught all the points and store the value to the most close one.
 
 ![](cell-00.png)
 
@@ -26,7 +24,7 @@ To do that we can use a ```for``` loop to iterate through an array of points and
 
 <div class="codeAndCanvas" data="cellnoise-00.frag"></div>
 
-Note in the above code, that one of the points is the mouse position. Play with it so you can get a more intuitive idea of how this code behaves. Then try this:
+Note in the above code, how one of the points is the mouse position. Play with it so you can get a more intuitive idea of how this code behaves. Then try this:
 
 - How can you animate the rest of the points?
 - After reading [the chapter about shapes](../07/), imagine interesting ways to use this distance field?
@@ -120,9 +118,8 @@ Explore by:
 - What interesting patterns you can make with this distance field?
 - Try to replicate this:
 
-![](DeyrolleFilm.png)
+<a href="../edit.html#12/metaballs.frag"><img src="metaballs.gif"  width="520px" height="200px"></img></a>
 ![](bubbles.jpg)
-<a href="../edit.html#12/metaballs.frag"><img src="metaballs.gif"  width="520px" height="200px"></img></a> 
 
 This algorithm can also be interpreted from the perspective of the points and not the pixels. In that case it can be describe as: each point grows until it finds the area of another point. Which mirrors some of the grow rules on nature. Living forms are shaped by this tension between an inner force to expand and grow limited by the forces 
 on their medium. The clasic algorithm that simulate this begaviur is named after [Georgy Voronoi](https://en.wikipedia.org/wiki/Georgy_Voronoy).
@@ -131,19 +128,49 @@ on their medium. The clasic algorithm that simulate this begaviur is named after
 
 ### Voronoi Algorithm
 
+Constructing voronoi diagrams from cellular noise is less hard what it seams. We just need to *keep* some extra information about the precise point which is closer to the pixel. For that we are going to use a ```vec2``` call ```m_point```. By storing the position to the center of the closest point will be "keeping" and "unique" identifier of that point.
+
+```glsl
+    ...
+    if( dist < m_dist ) {
+        m_dist = dist;
+        m_point = point;
+    }
+    ...
+```
+
+Note in the following code that we are not longer using ```min``` to calculate the closest distance but a regular ```if``` statement. Why? Because we actually want to do something every time a new closer point apears, store it position (lines 32 to 37). 
+
 <div class="codeAndCanvas" data="vorono-00.frag"></div>
 
-This is not scalable
+Note how the color of the moving cell (hook to the mouse position) change color acording it position. That's because the color is assigned using the value (position) of the closes point. 
 
-<div class="codeAndCanvas" data="vorono-01.frag"></div>
+Like we did before now is time to scale this up, switching to [Steven Worley's paper approach](http://www.rhythmiccanvas.com/research/papers/worley.pdf). Try implementing it your self. You can use the help of the following example by clicking on it. 
 
-[Inigo Quilez voronoi borders article](http://www.iquilezles.org/www/articles/voronoilines/voronoilines.htm)
+<a href="../edit.html#12/vorono-01.frag"><canvas id="custom" class="canvas" data-fragment-url="vorono-01.frag"  width="520px" height="200px"></canvas></a>
 
-<a href="../edit.html#12/2d-voronoi.frag"><img src="voronoi.gif"  width="520px" height="200px"></img></a> 
- 
+Once you figurate out this algorithm think interesting and creative uses for it
+
 ![Accretion Disc Series - Clint Fulkerson](accretion.jpg)
 
-[Inigo Quilez article about voronoise](http://www.iquilezles.org/www/articles/voronoise/voronoise.htm)
+### Improving Voronoi
+
+In 2011, [Stefan Gustavson optimized Steven Worley's algorithm to GPU](http://webstaff.itn.liu.se/~stegu/GLSL-cellular/GLSL-cellular-notes.pdf) by only iterating trough a 2x2 matrix instead of 3x3. This reduce the work significantly but can create artifacts in form of discontinuities. Take a look to the following examples.
+
+Later in 2012 [Inigo Quilez wrote an article on how to make precise voronoi borders](http://www.iquilezles.org/www/articles/voronoilines/voronoilines.htm).
+
+<a href="../edit.html#12/2d-voronoi.frag"><img src="2d-voronoi-long.png"  width="520px" height="200px"></img></a>
+ 
+Inigio's experiment on voronoi didn't stop there. In 2014 he wrote this nice articel about what he call [voro-noise](http://www.iquilezles.org/www/articles/voronoise/voronoise.htm), and exploration between regular noise and voronoi. In his words:
+
+*"Despite this similarity, the fact is that the way the grid is used in both patterns is different. Noise interpolates/averages random values (as in value noise) or gradients (as in gradient noise), while Voronoi computes the distance to the closest feature point. Now, smooth-bilinear interpolation and minimum evaluation are two very different operations, or... are they? Can they perhaps be combined in a more general metric? If that was so, then both Noise and Voronoi patterns could be seen as particular cases of a more general grid-based pattern genereator?"*
+
 <a href="../edit.html#12/2d-voronoise.frag"><canvas id="custom" class="canvas" data-fragment-url="2d-voronoise.frag"  width="520px" height="200px"></canvas></a> 
 
+Now is up to you to observe and learn how to use and modify this technique for your own expressive porposes.
 
+<a href="../edit.html#12/stippling.frag"><img src="stippling-long.png"  width="520px" height="200px"></img></a>
+
+<a href="../edit.html#12/cell.frag"><img src="cell-long.png"></img></a>
+
+![Deyrolle glass film](DeyrolleFilm.png)

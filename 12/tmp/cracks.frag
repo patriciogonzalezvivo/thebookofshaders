@@ -57,12 +57,20 @@ vec2 cellular2x2(vec2 P) {
 
 void main(void) {
 	vec2 st = gl_FragCoord.xy/u_resolution.xy;
+	st = (st-.5)*.25+.5;
+    if (u_resolution.y > u_resolution.x ) {
+        st.y *= u_resolution.y/u_resolution.x;
+        st.y -= (u_resolution.y*.5-u_resolution.x*.5)/u_resolution.x;
+    } else {
+        st.x *= u_resolution.x/u_resolution.y;
+        st.x -= (u_resolution.x*.5-u_resolution.y*.5)/u_resolution.y;
+    }
 
 	vec2 F = cellular2x2(st*20.);
 
 	vec2 pos = st-.5;
 	float a = dot(pos,pos)-u_time*0.1;
-	float n = step(abs(sin(a*3.1415*5.)),F.x*2.);
 
+	float n = 1.0-step(abs(sin(a))-.1,.05+(F.x-F.y)*2.) ;
 	gl_FragColor = vec4(n, n, n, 1.0);
 }

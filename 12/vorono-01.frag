@@ -50,7 +50,7 @@ void main() {
     // color.g = m_dist;
 
     // Show isolines
-    // color *= abs(sin(40.0*m_dist));
+    color -= abs(sin(40.0*m_dist))*0.07;
     
     // Draw cell center
     color += 1.-step(.05, m_dist);
