@@ -1,7 +1,7 @@
 # bien démarrer
 ## qu'est-ce qu'un fragment shader?
 
-Au chapitre précédent, nous avons décrit les shaders comme l'équivalent l'avènement de la presse de Gutenberg pour l'impression. Pourquoi cette comparaison mais surtout: Qu'est-ce qu'un shader?
+Au chapitre précédent, nous avons décrit les shaders comme l'équivalent de l'avènement de la presse par Gutenberg pour l'impression. Pourquoi cette comparaison mais surtout: Qu'est-ce qu'un shader?
 
 ![de la copie manuelle, lettre à lettre, à l'édition page à page (gauche: William Blades 1891, droite: Rolt-Wheeler 1920)](print.png)
 
