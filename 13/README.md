@@ -14,20 +14,18 @@ y = amplitud * sin(x * frequency);
 
 By doing the last to excersize you have manage to "modulate" a sine wave, and you just create AM (amplitud modulated) and FM (frequency modulated) waves. Congratulations!
 
-Another interesting property of waves is their ability to add up. Add the following lines to the previus example and pay atention how the frequencies and amplitudes change conform we add different waves. 
+Another interesting property of waves is their ability to add up. Comment/uncomment and tweak the following lines. Pay atention on how the frequencies and amplitudes change conform we add different waves.
 
 <div class="simpleFunction" data="
 float amplitud = 1.;
 float frequency = 1.;
 y = amplitud * sin(x * frequency);
-
 float t = 0.01*(-u_time*130.0);
 y += sin(x*2.1 + t)*4.5;
 y += sin(x*1.72 + t*1.121)*4.0;
 y += sin(x*2.221 + t*0.437)*5.0;
 y += sin(x*3.1122+ t*4.269)*2.5;
 y *= 0.06;
-
 "></div>
 
 * Experiment by changing their values.
@@ -78,7 +76,7 @@ for (int i = 0; i < OCTAVES; i++) {
 }
 ```
 
-<a href="../edit.html#13/turbulence.frag"><canvas id="custom" class="canvas" data-fragment-url="turbulence.frag"  width="520px" height="200px"></canvas></a> 
+<a href="../edit.html#13/turbulence.frag"><img src="turbulence-long.png"  width="520px" height="200px"></img></a> 
 
 Another member of this family is the ridge. Constructed similarly to the turbolence but with some extra calculations:
 
@@ -88,5 +86,5 @@ Another member of this family is the ridge. Constructed similarly to the turbole
     n = n * n;      // sharpen creases
 ```
 
-<a href="../edit.html#13/ridge.frag"><canvas id="custom" class="canvas" data-fragment-url="ridge.frag"  width="520px" height="200px"></canvas></a> 
+<a href="../edit.html#13/ridge.frag"><img src="ridge-long.png"  width="520px" height="200px"></img></a> 
 
