@@ -2,13 +2,13 @@
 
 ## Celluar Noise
 
-In 1996, sixting years after Perlin's Noise and five years before his Simplex Noise, [Steven Worley wrote a paper call  “A Cellular Texture Basis Function”](http://www.rhythmiccanvas.com/research/papers/worley.pdf). In it he describes a procedural texturing tecnique now extensively use by the graphics community.
+In 1996, sixteen years after Perlin's Noise and five years before his Simplex Noise, [Steven Worley wrote a paper call  “A Cellular Texture Basis Function”](http://www.rhythmiccanvas.com/research/papers/worley.pdf). In it he describes a procedural texturing technique now extensively use by the graphics community.
 
 To learn understand the principles behind it we need to be confortable thinking in terms of distance fields and iterations.
 
 ### A distance field for some points
 
-Let's say we want to make a distance field of 4 points. What we need to do? in a nutshell, **for each pixel we want to calculate the distance to the closest point**. That means that we need to iterate throught all the points and store the value to the most close one.
+Let's say we want to make a distance field of 4 points. What we need to do? in a nutshell, **for each pixel we want to calculate the distance to the closest point**. That means that we need to iterate through all the points and store the value to the most close one.
 
 ![](cell-00.png)
 
@@ -28,15 +28,15 @@ Note in the above code, how one of the points is the mouse position. Play with i
 
 - How can you animate the rest of the points?
 - After reading [the chapter about shapes](../07/), imagine interesting ways to use this distance field?
-- What if you want to add more points to this distance field? What if we want to dynamically add/substract points?
+- What if you want to add more points to this distance field? What if we want to dynamically add/subtract points?
 
 ### Tiling and iterating
 
-You probably notice that ```for``` loops and *arrays* are not so friendly in GLSL. Loops don't accept dynamic limits on their condition. Also iterating through a lot of instances reduce the performance of your shader significantly. So... We need to find another stratergy.
+You probably notice that ```for``` loops and *arrays* are not so friendly in GLSL. Loops don't accept dynamic limits on their condition. Also iterating through a lot of instances reduce the performance of your shader significantly. So... We need to find another strategy.
 
 ![](cell-01.png)
 
-One way to aproach this problem is to divide the space in tiles. Not every pixel need to check every single points, right? They just need to check the points that are close to them. That's the main idea of [Steven Worley's paper](http://www.rhythmiccanvas.com/research/papers/worley.pdf). We already subdivide the space into cells in the chapters about: [patterns](../09/), [random](../10/) and [noise](../11/). Hopefully by now you are familiarize with this technique.
+One way to approach this problem is to divide the space in tiles. Not every pixel need to check every single points, right? They just need to check the points that are close to them. That's the main idea of [Steven Worley's paper](http://www.rhythmiccanvas.com/research/papers/worley.pdf). We already subdivide the space into cells in the chapters about: [patterns](../09/), [random](../10/) and [noise](../11/). Hopefully by now you are familiarize with this technique.
 
 ```glsl
     // Scale 
@@ -47,7 +47,7 @@ One way to aproach this problem is to divide the space in tiles. Not every pixel
     vec2 f_st = fract(st);
 ```
 
-So what's the plan? We will use the tile coordinates (stored in the integer coordinate, ```i_st```) to construct a random position of a point. The ```random2f``` function we will use recive a ```vec2``` and give us a ```vec2``` with a random position. So for each tile we will have one point in a random position.
+So what's the plan? We will use the tile coordinates (stored in the integer coordinate, ```i_st```) to construct a random position of a point. The ```random2f``` function we will use receive a ```vec2``` and give us a ```vec2``` with a random position. So for each tile we will have one point in a random position.
 
 ```glsl
     vec2 point = random2(i_st);
@@ -64,7 +64,7 @@ This will look like this:
 
 <a href="../edit.html#12/cellnoise-01.frag"><img src="cellnoise.png"  width="520px" height="200px"></img></a> 
 
-We still need to calculate the points around each pixel. Not just the one in the current tile. For that we need to **iterate** through the neighbor tiles. Not all of them. just the one inmediatly arround it. That means from ```-1``` (left) to ```1``` (right) tile in ```x``` axis and ```-1``` (bottom) to ```1``` (top) in ```y``` axis. A 3x3 kernel of 9 tiles that we can iterate using a double ```for``` loop like this one:
+We still need to calculate the points around each pixel. Not just the one in the current tile. For that we need to **iterate** through the neighbor tiles. Not all of them. just the one immediately around it. That means from ```-1``` (left) to ```1``` (right) tile in ```x``` axis and ```-1``` (bottom) to ```1``` (top) in ```y``` axis. A 3x3 kernel of 9 tiles that we can iterate using a double ```for``` loop like this one:
 
 ```glsl
 for (int y= -1; y <= 1; y++) {
@@ -78,7 +78,7 @@ for (int y= -1; y <= 1; y++) {
 
 ![](cell-02.png)
 
-Now, we can predict the position of the points on each one of the neightbors in our double ```for``` loop by adding the neighboor tile offset to the current tile coordinate.
+Now, we can predict the position of the points on each one of the neighbors in our double ```for``` loop by adding the neighbor tile offset to the current tile coordinate.
 
 ```glsl
         ...
@@ -103,7 +103,7 @@ The rest is all about calculating the distance to that point and store the close
 
 The above code is inspired by [this Inigo's Quilez article](http://www.iquilezles.org/www/articles/smoothvoronoi/smoothvoronoi.htm) where he said:
 
-*"... it might be worth noting that there's a nice trick in this code above. Most implementations out there suffer from precission issues, because they generate their random points in "domain" space (like "world" or "object" space), which can be arbitrarily far from the origin. One can solve the issue moving all the code to higher precission data types, or by being a bit clever. My implementation does not generate the points in "domain" space, but in "cell" space: once the integer and fractioanl parts of the shading point are extracted and therefore the cell in which we are working identified, all we care about is what happens around this cell, meaning we can drop all the integer part of our coordinates away all together, saving many precision bits. In fact, in a regular voronoi implementation the integer parts of the point coordinates simply cancel out when the random per cell feature points are substracted from the shading point. In the implementation above, we don't even let that cancelation happen, cause we are moving all the computations to "cell" space. This trick also allows one to handle the case where you want to voronoi-shade a whole planet - one could simply replace the input to be double precission, perform the floor() and fract() computations, and go floating point with the rest of the computations without paying the cost of changing the whole implementation to double precission. Of course, same trick applies to Perlin Noise patterns (but i've never seen it implemented nor documented anywhere)."*
+*"... it might be worth noting that there's a nice trick in this code above. Most implementations out there suffer from precision issues, because they generate their random points in "domain" space (like "world" or "object" space), which can be arbitrarily far from the origin. One can solve the issue moving all the code to higher precision data types, or by being a bit clever. My implementation does not generate the points in "domain" space, but in "cell" space: once the integer and fractional parts of the shading point are extracted and therefore the cell in which we are working identified, all we care about is what happens around this cell, meaning we can drop all the integer part of our coordinates away all together, saving many precision bits. In fact, in a regular voronoi implementation the integer parts of the point coordinates simply cancel out when the random per cell feature points are subtracted from the shading point. In the implementation above, we don't even let that cancelation happen, cause we are moving all the computations to "cell" space. This trick also allows one to handle the case where you want to voronoi-shade a whole planet - one could simply replace the input to be double precision, perform the floor() and fract() computations, and go floating point with the rest of the computations without paying the cost of changing the whole implementation to double precision. Of course, same trick applies to Perlin Noise patterns (but i've never seen it implemented nor documented anywhere)."*
 
 Recaping: we subdivide the space in tiles; each pixel will calculate the distance to the point in their own tile and the other 8 tiles; store the closest distance. The resultant is distance field that looks like the following example:
 
@@ -122,7 +122,7 @@ Explore by:
 ![](bubbles.jpg)
 
 This algorithm can also be interpreted from the perspective of the points and not the pixels. In that case it can be describe as: each point grows until it finds the area of another point. Which mirrors some of the grow rules on nature. Living forms are shaped by this tension between an inner force to expand and grow limited by the forces 
-on their medium. The clasic algorithm that simulate this begaviur is named after [Georgy Voronoi](https://en.wikipedia.org/wiki/Georgy_Voronoy).
+on their medium. The classic algorithm that simulate this behavior is named after [Georgy Voronoi](https://en.wikipedia.org/wiki/Georgy_Voronoy).
 
 ![](monokot_root.jpg)
 
@@ -139,11 +139,11 @@ Constructing voronoi diagrams from cellular noise is less hard what it seams. We
     ...
 ```
 
-Note in the following code that we are not longer using ```min``` to calculate the closest distance but a regular ```if``` statement. Why? Because we actually want to do something every time a new closer point apears, store it position (lines 32 to 37). 
+Note in the following code that we are not longer using ```min``` to calculate the closest distance but a regular ```if``` statement. Why? Because we actually want to do something every time a new closer point appears, store it position (lines 32 to 37). 
 
 <div class="codeAndCanvas" data="vorono-00.frag"></div>
 
-Note how the color of the moving cell (hook to the mouse position) change color acording it position. That's because the color is assigned using the value (position) of the closes point. 
+Note how the color of the moving cell (hook to the mouse position) change color according it position. That's because the color is assigned using the value (position) of the closes point. 
 
 Like we did before now is time to scale this up, switching to [Steven Worley's paper approach](http://www.rhythmiccanvas.com/research/papers/worley.pdf). Try implementing it your self. You can use the help of the following example by clicking on it. 
 
@@ -161,13 +161,13 @@ Later in 2012 [Inigo Quilez wrote an article on how to make precise voronoi bord
 
 <a href="../edit.html#12/2d-voronoi.frag"><img src="2d-voronoi-long.png"  width="520px" height="200px"></img></a>
  
-Inigio's experiment on voronoi didn't stop there. In 2014 he wrote this nice articel about what he call [voro-noise](http://www.iquilezles.org/www/articles/voronoise/voronoise.htm), and exploration between regular noise and voronoi. In his words:
+Inigio's experiment on voronoi didn't stop there. In 2014 he wrote this nice article about what he call [voro-noise](http://www.iquilezles.org/www/articles/voronoise/voronoise.htm), and exploration between regular noise and voronoi. In his words:
 
-*"Despite this similarity, the fact is that the way the grid is used in both patterns is different. Noise interpolates/averages random values (as in value noise) or gradients (as in gradient noise), while Voronoi computes the distance to the closest feature point. Now, smooth-bilinear interpolation and minimum evaluation are two very different operations, or... are they? Can they perhaps be combined in a more general metric? If that was so, then both Noise and Voronoi patterns could be seen as particular cases of a more general grid-based pattern genereator?"*
+*"Despite this similarity, the fact is that the way the grid is used in both patterns is different. Noise interpolates/averages random values (as in value noise) or gradients (as in gradient noise), while Voronoi computes the distance to the closest feature point. Now, smooth-bilinear interpolation and minimum evaluation are two very different operations, or... are they? Can they perhaps be combined in a more general metric? If that was so, then both Noise and Voronoi patterns could be seen as particular cases of a more general grid-based pattern generator?"*
 
 <a href="../edit.html#12/2d-voronoise.frag"><canvas id="custom" class="canvas" data-fragment-url="2d-voronoise.frag"  width="520px" height="200px"></canvas></a> 
 
-Now is up to you to observe and learn how to use and modify this technique for your own expressive porposes.
+Now is up to you to observe and learn how to use and modify this technique for your own expressive porpoises.
 
 <a href="../edit.html#12/stippling.frag"><img src="stippling-long.png"  width="520px" height="200px"></img></a>
 
