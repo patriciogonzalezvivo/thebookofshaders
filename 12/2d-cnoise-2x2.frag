@@ -1,4 +1,5 @@
-// Author @patriciogv - 2015
+// Author: Stefan Gustavson
+// Title: Cellular noise ("Worley noise")
 
 #ifdef GL_ES
 precision mediump float;
@@ -24,9 +25,9 @@ vec4 permute(vec4 x) {
 // If you need a smooth F2, use the slower 3x3 version.
 // F1 is sometimes wrong, too, but OK for most purposes.
 vec2 cellular2x2(vec2 P) {
-#define K 0.142857142857 // 1/7
-#define K2 0.0714285714285 // K/2
-#define jitter 0.8 // jitter 1.0 makes F1 wrong more often
+	#define K 0.142857142857 // 1/7
+	#define K2 0.0714285714285 // K/2
+	#define jitter 0.8 // jitter 1.0 makes F1 wrong more often
 	vec2 Pi = mod(floor(P), 289.0);
  	vec2 Pf = fract(P);
 	vec4 Pfx = Pf.x + vec4(-0.5, -1.5, -0.5, -1.5);
@@ -58,7 +59,7 @@ vec2 cellular2x2(vec2 P) {
 void main(void) {
 	vec2 st = gl_FragCoord.xy/u_resolution.xy;
 
-	vec2 F = cellular2x2(st*20.);
+	vec2 F = cellular2x2(st*20.+vec2(u_time,0.));
 
 	float n = 1.0-1.5*F.x;
 	gl_FragColor = vec4(n, n, n, 1.0);

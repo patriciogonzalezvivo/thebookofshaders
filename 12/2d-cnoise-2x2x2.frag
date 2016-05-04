@@ -1,3 +1,6 @@
+// Author: Stefan Gustavson
+// Title: Cellular noise ("Worley noise")
+
 #ifdef GL_ES
 precision mediump float;
 #endif
@@ -24,12 +27,12 @@ vec3 permute(vec3 x) {
 // F2 is often wrong and has sharp discontinuities.
 // If you need a good F2, use the slower 3x3x3 version.
 vec2 cellular2x2x2(vec3 P) {
-#define K 0.142857142857 // 1/7
-#define Ko 0.428571428571 // 1/2-K/2
-#define K2 0.020408163265306 // 1/(7*7)
-#define Kz 0.166666666667 // 1/6
-#define Kzo 0.416666666667 // 1/2-1/6*2
-#define jitter 0.8 // smaller jitter gives less errors in F2
+	#define K 0.142857142857 // 1/7
+	#define Ko 0.428571428571 // 1/2-K/2
+	#define K2 0.020408163265306 // 1/(7*7)
+	#define Kz 0.166666666667 // 1/6
+	#define Kzo 0.416666666667 // 1/2-1/6*2
+	#define jitter 0.8 // smaller jitter gives less errors in F2
 	vec3 Pi = mod(floor(P), 289.0);
  	vec3 Pf = fract(P);
 	vec4 Pfx = Pf.x + vec4(0.0, -1.0, 0.0, -1.0);

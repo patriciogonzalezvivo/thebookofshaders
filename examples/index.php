@@ -13,7 +13,6 @@
     include('../header.php');
     include('../chap-header.php');
 
-    echo '<link type="text/css" rel="stylesheet" href="gallery.css">';
     echo '<div id="content">';
 
     include($path.'/src/parsedown/Parsedown.php');

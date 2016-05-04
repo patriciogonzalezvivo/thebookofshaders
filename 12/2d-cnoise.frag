@@ -1,4 +1,5 @@
-// Author @patriciogv - 2015
+// Author: Stefan Gustavson
+// Title: Classic 2D cellular noise
 
 #ifdef GL_ES
 precision mediump float;
@@ -15,9 +16,9 @@ vec3 permute(vec3 x) {
 // Cellular noise, returning F1 and F2 in a vec2.
 // Standard 3x3 search window for good F1 and F2 values
 vec2 cellular(vec2 P) {
-#define K 0.142857142857 // 1/7
-#define Ko 0.428571428571 // 3/7
-#define jitter 1.0 // Less gives more regular pattern
+	#define K 0.142857142857 // 1/7
+	#define Ko 0.428571428571 // 3/7
+	#define jitter 1.0 // Less gives more regular pattern
 	vec2 Pi = mod(floor(P), 289.0);
  	vec2 Pf = fract(P);
 	vec3 oi = vec3(-1.0, 0.0, 1.0);
@@ -58,7 +59,7 @@ vec2 cellular(vec2 P) {
 void main(void) {
 	vec2 st = gl_FragCoord.xy/u_resolution.xy;
 	st *= 10.;
-	vec2 F = cellular(st);
+	vec2 F = cellular(st+vec2(u_time,0.));
 	float facets = 0.1+(F.y-F.x);
 	float dots = smoothstep(0.05, 0.1, F.x);
 	float n = facets * dots;

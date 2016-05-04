@@ -1,5 +1,5 @@
-// Author @patriciogv - 2015
-// http://patriciogonzalezvivo.com
+// Author: Stefan Gustavson
+// Title: Classic 3D cellular noise
 
 #ifdef GL_ES
 precision mediump float;
@@ -27,12 +27,12 @@ vec3 permute(vec3 x) {
 // implementation of Worley noise hands down.
 
 vec2 cellular(vec3 P) {
-#define K 0.142857142857 // 1/7
-#define Ko 0.428571428571 // 1/2-K/2
-#define K2 0.020408163265306 // 1/(7*7)
-#define Kz 0.166666666667 // 1/6
-#define Kzo 0.416666666667 // 1/2-1/6*2
-#define jitter 1.0 // smaller jitter gives more regular pattern
+	#define K 0.142857142857 // 1/7
+	#define Ko 0.428571428571 // 1/2-K/2
+	#define K2 0.020408163265306 // 1/(7*7)
+	#define Kz 0.166666666667 // 1/6
+	#define Kzo 0.416666666667 // 1/2-1/6*2
+	#define jitter 1.0 // smaller jitter gives more regular pattern
 
 	vec3 Pi = mod(floor(P), 289.0);
  	vec3 Pf = fract(P) - 0.5;
@@ -188,6 +188,9 @@ void main(void) {
 	st *= 10.;
 
 	vec2 F = cellular(vec3(st,u_time));
+	float dots = smoothstep(0.05, 0.1, F.x);
 	float n = F.y-F.x;
+
+	n *= dots;
 	gl_FragColor = vec4(n, n, n, 1.0);
 }
