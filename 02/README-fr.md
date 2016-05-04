@@ -36,7 +36,7 @@ on peut spécifier la précision de chaque variable se servant des Float, ligne 
 nous pourrions leur donner une valeur *low* (```precision lowp float;```) ou *high* (```precision highp float;```).
 
 7. la dernière remarque, probablement la plus importante, est que les spécifications GLSL ne garantissent pas que les variables seront *castées* automatiquement.
-qu'est-ce à dire? si les fabricants ont des approches différentes pour accélérer leurs cartes graphiques, ils doivent toutefois se conformer à un ensemble de spécifications communes pour être utilisable par le plus grand nombre.
+qu'est-ce que cela veut dire? si les fabricants ont des approches différentes pour accélérer leurs cartes graphiques, ils doivent toutefois se conformer à un ensemble de spécifications communes pour être utilisable par le plus grand nombre.
 le casting automatique des variables ne fait pas partie des spécifications.
 Dans notre exemple, ```vec4``` attend des ```floats``` et rien d'autre. si vous voulez obtenir un code homogène et éviter de passer des heures à débugger un écran blanc, prenez l'habitude de mettre des points ( ```.``` ) dans vos floats.
 ce genre de code ne marchera pas toujours:
