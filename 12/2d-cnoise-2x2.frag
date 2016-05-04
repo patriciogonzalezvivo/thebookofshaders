@@ -1,5 +1,5 @@
 // Author: Stefan Gustavson
-// Title: Worley noise
+// Title: Worley noise 2x2
 
 #ifdef GL_ES
 precision mediump float;

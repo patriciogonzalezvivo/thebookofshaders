@@ -161,7 +161,7 @@ In 2011, [Stefan Gustavson optimized Steven Worley's algorithm to GPU](http://we
 
 Later in 2012 [Inigo Quilez wrote an article on how to make precise voronoi borders](http://www.iquilezles.org/www/articles/voronoilines/voronoilines.htm).
 
-<a href="../edit.html#12/2d-voronoi.frag"><img src="2d-voronoi-long.png"  width="520px" height="200px"></img></a>
+<a href="../edit.html#12/2d-voronoi.frag"><img src="2d-voronoi.gif"  width="520px" height="200px"></img></a>
  
 Inigio's experiment on voronoi didn't stop there. In 2014 he wrote this nice article about what he call [voro-noise](http://www.iquilezles.org/www/articles/voronoise/voronoise.htm), and exploration between regular noise and voronoi. In his words:
 

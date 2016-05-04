@@ -16,14 +16,19 @@ By doing the last to excersize you have manage to "modulate" a sine wave, and yo
 
 Another interesting property of waves is their ability to add up. Add the following lines to the previus example and pay atention how the frequencies and amplitudes change conform we add different waves. 
 
-```glsl
+<div class="simpleFunction" data="
+float amplitud = 1.;
+float frequency = 1.;
+y = amplitud * sin(x * frequency);
+
 float t = 0.01*(-u_time*130.0);
 y += sin(x*2.1 + t)*4.5;
 y += sin(x*1.72 + t*1.121)*4.0;
 y += sin(x*2.221 + t*0.437)*5.0;
 y += sin(x*3.1122+ t*4.269)*2.5;
 y *= 0.06;
-```
+
+"></div>
 
 * Experiment by changing their values.
 * Is it possible to cancel two waves? how that will look like?
