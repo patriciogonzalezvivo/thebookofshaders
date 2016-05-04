@@ -4,7 +4,7 @@
 
 In 1996, sixteen years after Perlin's Noise and five years before his Simplex Noise, [Steven Worley wrote a paper call  “A Cellular Texture Basis Function”](http://www.rhythmiccanvas.com/research/papers/worley.pdf). In it he describes a procedural texturing technique now extensively use by the graphics community.
 
-To learn understand the principles behind it we need to be confortable thinking in terms of distance fields and iterations.
+To understand the principles behind it we need to start thinking in terms iterations.
 
 ### A distance field for some points
 
@@ -128,7 +128,7 @@ on their medium. The classic algorithm that simulate this behavior is named afte
 
 ### Voronoi Algorithm
 
-Constructing voronoi diagrams from cellular noise is less hard what it seams. We just need to *keep* some extra information about the precise point which is closer to the pixel. For that we are going to use a ```vec2``` call ```m_point```. By storing the position to the center of the closest point will be "keeping" and "unique" identifier of that point.
+Constructing voronoi diagrams from cellular noise is less hard that what it seams. We just need to *keep* some extra information about the precise point which is closer to the pixel. For that we are going to use a ```vec2``` call ```m_point```. By storing the position to the center of the closest point will be "keeping" and "unique" identifier of that point.
 
 ```glsl
     ...
@@ -156,6 +156,8 @@ Once you figurate out this algorithm think interesting and creative uses for it
 ### Improving Voronoi
 
 In 2011, [Stefan Gustavson optimized Steven Worley's algorithm to GPU](http://webstaff.itn.liu.se/~stegu/GLSL-cellular/GLSL-cellular-notes.pdf) by only iterating trough a 2x2 matrix instead of 3x3. This reduce the work significantly but can create artifacts in form of discontinuities. Take a look to the following examples.
+
+<div class="gallery" log="12/2d-cnoise-2x2,12/2d-cnoise-2x2x2,12/2d-cnoise,12/3d-cnoise"></div>
 
 Later in 2012 [Inigo Quilez wrote an article on how to make precise voronoi borders](http://www.iquilezles.org/www/articles/voronoilines/voronoilines.htm).
 

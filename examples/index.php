@@ -99,12 +99,9 @@
 
     echo '
         </div>
-        <script>console.log();</script>
         <hr>
         <ul class="navigationBar" >
             <li class="navigationBar" onclick="window.location.href=\'../\'"> Home </li>
         </ul>';
-
         include("../footer.php");
-
 ?>

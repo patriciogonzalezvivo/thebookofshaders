@@ -292,4 +292,5 @@ window.onload = function(){
     styleCodeBlocks();
 	loadGlslElements();
     captionizeImages();
+    window.scrollTo(0, 0);
 };
