@@ -1,5 +1,5 @@
 // Author: Stefan Gustavson
-// Title: Cellular noise ("Worley noise")
+// Title: Worley noise
 
 #ifdef GL_ES
 precision mediump float;
