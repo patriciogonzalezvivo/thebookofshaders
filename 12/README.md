@@ -116,10 +116,6 @@ Explore by:
 - What if we want to compute an extra point with the mouse position?
 - What other ways of constructing this distance field beside ```m_dist = min(m_dist, dist);```, can you imagine?
 - What interesting patterns you can make with this distance field?
-- Try to replicate this:
-
-<a href="../edit.html#12/metaballs.frag"><img src="metaballs.gif"  width="520px" height="200px"></img></a>
-![](bubbles.jpg)
 
 This algorithm can also be interpreted from the perspective of the points and not the pixels. In that case it can be describe as: each point grows until it finds the area of another point. Which mirrors some of the grow rules on nature. Living forms are shaped by this tension between an inner force to expand and grow limited by the forces 
 on their medium. The classic algorithm that simulate this behavior is named after [Georgy Voronoi](https://en.wikipedia.org/wiki/Georgy_Voronoy).
@@ -149,15 +145,23 @@ Like we did before now is time to scale this up, switching to [Steven Worley's p
 
 <a href="../edit.html#12/vorono-01.frag"><canvas id="custom" class="canvas" data-fragment-url="vorono-01.frag"  width="520px" height="200px"></canvas></a>
 
-Once you figurate out this algorithm think interesting and creative uses for it
+Once you figurate out this algorithm think interesting and creative uses for it.
+
+![Extended Voronoi - Leo Solaas (2011)](solas.png)
+
+![Cloud Cities - Tomás Saraceno (2011)](saraceno.jpg)
 
 ![Accretion Disc Series - Clint Fulkerson](accretion.jpg)
+
+![Vonoroi Puzzle - Reza Ali (2015)](reza.png)
+
+<iframe src="https://player.vimeo.com/video/82989945?title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 ### Improving Voronoi
 
 In 2011, [Stefan Gustavson optimized Steven Worley's algorithm to GPU](http://webstaff.itn.liu.se/~stegu/GLSL-cellular/GLSL-cellular-notes.pdf) by only iterating trough a 2x2 matrix instead of 3x3. This reduce the work significantly but can create artifacts in form of discontinuities. Take a look to the following examples.
 
-<div class="glslGallery" data="12/2d-cnoise-2x2,12/2d-cnoise-2x2x2,12/2d-cnoise,12/3d-cnoise"></div>
+<div class="glslGallery" data="12/2d-cnoise-2x2,12/2d-cnoise-2x2x2,12/2d-cnoise,12/3d-cnoise" data-properties="clickRun:edior,openFrameIcon:false"></div>
 
 Later in 2012 [Inigo Quilez wrote an article on how to make precise voronoi borders](http://www.iquilezles.org/www/articles/voronoilines/voronoilines.htm).
 
@@ -171,8 +175,6 @@ Inigio's experiment on voronoi didn't stop there. In 2014 he wrote this nice art
 
 Now is up to you to observe and learn how to use and modify this technique for your own expressive porpoises.
 
-<a href="../edit.html#12/stippling.frag"><img src="stippling-long.png"  width="520px" height="200px"></img></a>
-
-<a href="../edit.html#12/cell.frag"><img src="cell-long.png"></img></a>
+<div class="glslGallery" data="12/metaballs,12/stippling,12/cell,12/tissue,12/cracks,160504143842" data-properties="clickRun:edior,openFrameIcon:false"></div>
 
 ![Deyrolle glass film](DeyrolleFilm.png)
