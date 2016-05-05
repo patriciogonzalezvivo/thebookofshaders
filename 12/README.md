@@ -1,6 +1,6 @@
 ![](dragonfly.jpg)
 
-## Celluar Noise
+## Cellular Noise
 
 In 1996, sixteen years after Perlin's Noise and five years before his Simplex Noise, [Steven Worley wrote a paper call  “A Cellular Texture Basis Function”](http://www.rhythmiccanvas.com/research/papers/worley.pdf). In it he describes a procedural texturing technique now extensively use by the graphics community.
 
