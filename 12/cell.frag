@@ -1,4 +1,5 @@
-// Author @patriciogv - 2015
+// Author: @patriciogv - 2015
+// Title: Cell
 
 #ifdef GL_ES
 precision mediump float;

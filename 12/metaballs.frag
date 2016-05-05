@@ -1,5 +1,5 @@
-// Author: @patriciogv
-// Title: MetaBalls
+// Author: @patriciogv - 2015
+// Title: Metaballs
 
 #ifdef GL_ES
 precision mediump float;

@@ -1,4 +1,5 @@
-// Author @patriciogv - 2015
+// Author: @patriciogv - 2015
+// Title: Stippling
 
 #ifdef GL_ES
 precision mediump float;
@@ -57,7 +58,7 @@ vec2 cellular2x2(vec2 P) {
 
 void main(void) {
 	vec2 st = gl_FragCoord.xy/u_resolution.xy;
-	st = (st-.5)*.5+.5;
+	st = (st-.5)*.75+.5;
     if (u_resolution.y > u_resolution.x ) {
         st.y *= u_resolution.y/u_resolution.x;
         st.y -= (u_resolution.y*.5-u_resolution.x*.5)/u_resolution.x;

@@ -1,3 +1,5 @@
+![Due East over Shadequarter Mountain - Matthew Rangel (2005) ](rangel.jpg)
+
 ## Fractal Brownian Motion
 
 Noise tends to means different things for different people. Musicians will think it in disturbing sounds, communicators as interference and astrophysics as cosmic microwave background. In fact most of this concept have one things in common that bring as back to the begining of random. Waves and their properties. Audio or electromagnetical waves, fluctuation overtime of a signal. That change happens in amplitud and frequency. The ecuation for it looks like this:
@@ -66,7 +68,11 @@ The following code is an example of how fBm could be implemented on two dimensio
 * Modify the lacunarity of the fBm on line 47
 * Explore by changing the gain on line 48
 
-This techniques is use commonly to construct procedural landscapes. The self similarity of the fBm is perfect for mountains, together with a close cassing known as turbulence. Esentially a fBm but constructed from the absolute value of a signed noise.
+This techniques is use commonly to construct procedural landscapes. The self similarity of the fBm is perfect for mountains. If you are interested in this use you defenetly should read [this great article of Inigo Quiles about advance noise](http://www.iquilezles.org/www/articles/morenoise/morenoise.htm). 
+
+![Blackout - Dan Holdsworth (2010)](holdsworth.jpg)
+
+Using escentially the same technique is also possible to obtain other effect like what is known as **turbulence**. It's esentially a fBm but constructed from the absolute value of a signed noise.
 
 ```glsl
 for (int i = 0; i < OCTAVES; i++) {
@@ -78,7 +84,7 @@ for (int i = 0; i < OCTAVES; i++) {
 
 <a href="../edit.html#13/turbulence.frag"><img src="turbulence-long.png"  width="520px" height="200px"></img></a> 
 
-Another member of this family is the ridge. Constructed similarly to the turbolence but with some extra calculations:
+Another member of this family of algorithms is the **ridge**. Constructed similarly to the turbolence but with some extra calculations:
 
 ```glsl
     n = abs(n);     // create creases
@@ -88,3 +94,12 @@ Another member of this family is the ridge. Constructed similarly to the turbole
 
 <a href="../edit.html#13/ridge.frag"><img src="ridge-long.png"  width="520px" height="200px"></img></a> 
 
+### Domain Warping
+
+[Inigo Quiles wrote this other fascinating article](http://www.iquilezles.org/www/articles/warp/warp.htm) about how is possible to use fBm to warp a space of a fBm. Mind blowing, Right? Is like the dream inside the dream of Inception. 
+
+![ f(p) = fbm( p + fbm( p + fbm( p ) ) ) - Inigo Quiles (2002)](quiles.jpg)
+
+A mild example of this technique is the following code where the wrap is use to produce something this clouds-like texture. Note how the self similarity propertie still is apreciated.
+
+<div class='codeAndCanvas' data='clouds.frag'></div>

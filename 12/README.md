@@ -155,8 +155,6 @@ Once you figurate out this algorithm think interesting and creative uses for it.
 
 ![Vonoroi Puzzle - Reza Ali (2015)](reza.png)
 
-<iframe src="https://player.vimeo.com/video/82989945?title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
 ### Improving Voronoi
 
 In 2011, [Stefan Gustavson optimized Steven Worley's algorithm to GPU](http://webstaff.itn.liu.se/~stegu/GLSL-cellular/GLSL-cellular-notes.pdf) by only iterating trough a 2x2 matrix instead of 3x3. This reduce the work significantly but can create artifacts in form of discontinuities. Take a look to the following examples.
@@ -173,8 +171,8 @@ Inigio's experiment on voronoi didn't stop there. In 2014 he wrote this nice art
 
 <a href="../edit.html#12/2d-voronoise.frag"><canvas id="custom" class="canvas" data-fragment-url="2d-voronoise.frag"  width="520px" height="200px"></canvas></a> 
 
-Now is up to you to observe and learn how to use and modify this technique for your own expressive porpoises.
+Now is up to look closely at things, be inspired by nature to find your own voice on this technique.
+
+![Deyrolle glass film - 1831](DeyrolleFilm.png)
 
 <div class="glslGallery" data="12/metaballs,12/stippling,12/cell,12/tissue,12/cracks,160504143842" data-properties="clickRun:edior,openFrameIcon:false"></div>
-
-![Deyrolle glass film](DeyrolleFilm.png)
