@@ -5,3 +5,6 @@
 * What is smoothstep()?  This example starts to lose me.  There are many new elements here.  Could you include a step by step walkthrough of this whole example before proceeding to the next part?
 
 * Actually, this is the point where you lose me. I want it to be more gradual.  It feels like there are 100 new concepts on this one page.
+
+### Nicolas
+* took the freedom to explain more indepth what interpolation is and why it rocks :)
