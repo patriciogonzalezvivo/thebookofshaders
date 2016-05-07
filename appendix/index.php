@@ -5,7 +5,7 @@
 	include($path."/src/parsedown/Parsedown.php");
 
 	echo '
-	<div class="header"><p><a href="http://thebookofshaders.com/">The Book of Shaders</a> by <a href="http://patriciogonzalezvivo.com">Patricio Gonzalez Vivo</a></p></div>
+	<div class="header"><p><a href="https://thebookofshaders.com/">The Book of Shaders</a> by <a href="http://patriciogonzalezvivo.com">Patricio Gonzalez Vivo</a></p></div>
 	<hr>
 	<div id="content">
 	';

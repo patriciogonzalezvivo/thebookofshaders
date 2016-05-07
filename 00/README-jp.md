@@ -46,10 +46,10 @@ Chrome、FirefoxやSafariなどWebGLの使える今時のブラウザーとイ�
 
 もし必要な場合は下記もご覧ください。（訳注：いまのところ英語のみです。そのうち翻訳します）
 
-- [Make an off-line version of this book](http://thebookofshaders.com/appendix/)
+- [Make an off-line version of this book](https://thebookofshaders.com/appendix/)
 
-- [Run the examples on a RaspberryPi without a browser](http://thebookofshaders.com/appendix/)
+- [Run the examples on a RaspberryPi without a browser](https://thebookofshaders.com/appendix/)
 
-- [Make a PDF of the book to print](http://thebookofshaders.com/appendix/)
+- [Make a PDF of the book to print](https://thebookofshaders.com/appendix/)
 
 - Use the [on-line repository](https://github.com/patriciogonzalezvivo/thebookofshaders) to help resolve issues and share code.

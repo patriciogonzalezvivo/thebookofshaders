@@ -50,11 +50,11 @@ si vous avez un navigateur récent (comme chrome, firefox ou safari) et une conn
 
 Cela étant et selon ce que vous voulez faire de ce livre, vous pouvez :
 
-- [créer une copie locale de ce livre pour le consulter hors-ligne](http://thebookofshaders.com/appendix/)
+- [créer une copie locale de ce livre pour le consulter hors-ligne](https://thebookofshaders.com/appendix/)
 
-- [lancer les exemples directement sur RaspberryPi, sans navigateur](http://thebookofshaders.com/appendix/)
+- [lancer les exemples directement sur RaspberryPi, sans navigateur](https://thebookofshaders.com/appendix/)
 
-- [créer un PDF du livre pour l'imprimer](http://thebookofshaders.com/appendix/)
+- [créer un PDF du livre pour l'imprimer](https://thebookofshaders.com/appendix/)
 
 - vous servir du [repo online](https://github.com/patriciogonzalezvivo/thebookofshaders) pour contribuer ou nous aider à débugger.
 

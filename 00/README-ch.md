@@ -42,10 +42,10 @@ Fragment shaders（片段着色器）可以让你控制像素在屏幕上的快�
 
 此外，基于你有的条件或需求你可以：
 
-* [制作一个离线版的本书](http://thebookofshaders.com/appendix/)
+* [制作一个离线版的本书](https://thebookofshaders.com/appendix/)
 
-* [用树莓派而不是浏览器来运行书中示例](http://thebookofshaders.com/appendix/)
+* [用树莓派而不是浏览器来运行书中示例](https://thebookofshaders.com/appendix/)
 
-* [做一个PDF版的书用于打印](http://thebookofshaders.com/appendix/)
+* [做一个PDF版的书用于打印](https://thebookofshaders.com/appendix/)
 
 * 用[github仓库](https://github.com/patriciogonzalezvivo/thebookofshaders)来帮助解决问题和分享代码

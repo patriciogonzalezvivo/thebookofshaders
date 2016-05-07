@@ -8,7 +8,7 @@
 	include($path."/src/parsedown/Parsedown.php");
 ?>
 	<div class="header">
-		<p class="subtitle"><a href="http://thebookofshaders.com/">The Book of Shaders</a> by <a href="http://patriciogonzalezvivo.com">Patricio Gonzalez Vivo</a></p>
+		<p class="subtitle"><a href="https://thebookofshaders.com/">The Book of Shaders</a> by <a href="http://patriciogonzalezvivo.com">Patricio Gonzalez Vivo</a></p>
 	</div>
 	<hr>
 	<div id="content">

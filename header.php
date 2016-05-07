@@ -9,13 +9,16 @@
 
         <link href="/favicon.gif" rel="shortcut icon"/>
         <meta name="keywords" content="shader,openGL,WebGL,GLSL,book,procedural,generative" />
-        <meta name="description" content="Gentle step-by-step guide through the abstract and complex universe of Fragment Shaders." />
+        <meta name="description" content="Gentle step-by-step guide through the abstract and complex universe of Fragment Shaders."/>
 
+        <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@bookofshaders">
+        <meta name="twitter:creator" content="@patriciogv">
         <meta name="twitter:title" content="The Book Of Shaders">
         <meta name="twitter:description" content="Gentle step-by-step guide through the abstract and complex universe of Fragment Shaders.">
-        <meta name="twitter:creator" content="@patriciogv">
+        <meta name="twitter:image" content="https://thebookofshaders.com/thumb.jpg">
         <meta name="twitter:domain" content="thebookofshaders.com">
+        
         <link href="/favicon.gif" rel="shortcut icon"/>
 
         <!-- Highlight -->
@@ -32,7 +35,7 @@
         <script type="text/javascript" src="'.$path.'/src/glslCanvas/build/GlslCanvas.min.js"></script>';
     } else {
         echo '
-        <script type="text/javascript" src="http://thebookofshaders.com/glslCanvas/GlslCanvas.min.js"></script>';
+        <script type="text/javascript" src="https://thebookofshaders.com/glslCanvas/GlslCanvas.min.js"></script>';
     }
 ?>
 
@@ -44,8 +47,8 @@
         <script type="application/javascript" src="'.$path.'/src/glslEditor/build/glslEditor.js"></script>';
     } else {
         echo '
-        <link type="text/css" rel="stylesheet" href="http://thebookofshaders.com/glslEditor/glslEditor.css"> 
-        <script type="application/javascript" src="http://thebookofshaders.com/glslEditor/glslEditor.js"></script>';
+        <link type="text/css" rel="stylesheet" href="https://thebookofshaders.com/glslEditor/glslEditor.css"> 
+        <script type="application/javascript" src="https://thebookofshaders.com/glslEditor/glslEditor.js"></script>';
     }
 ?>
 
@@ -57,8 +60,8 @@
         <script type="application/javascript" src="'.$path.'/src/glslGallery/build/glslGallery.js"></script>';
     } else {
         echo '
-        <link type="text/css" rel="stylesheet" href="http://thebookofshaders.com/glslGallery/glslGallery.css"> 
-        <script type="application/javascript" src="http://thebookofshaders.com/glslGallery/glslGallery.js"></script>';
+        <link type="text/css" rel="stylesheet" href="https://thebookofshaders.com/glslGallery/glslGallery.css"> 
+        <script type="application/javascript" src="https://thebookofshaders.com/glslGallery/glslGallery.js"></script>';
     }
 ?>
 

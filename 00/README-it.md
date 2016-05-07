@@ -40,11 +40,11 @@ Non tanto! Se si dispone di un browser moderno che può far girare WebGL (come C
 
 In alternativa, in base a ciò di cui avete bisogno, è possibile:
 
-- [Creare versione offline di questo libro](http://thebookofshaders.com/appendix/)
+- [Creare versione offline di questo libro](https://thebookofshaders.com/appendix/)
 
-- [Eseguire gli esempi su un Raspberry Pi senza navigatore](http://thebookofshaders.com/appendix/)
+- [Eseguire gli esempi su un Raspberry Pi senza navigatore](https://thebookofshaders.com/appendix/)
 
-- [Fare un PDF del libro da stampare](http://thebookofshaders.com/appendix/)
+- [Fare un PDF del libro da stampare](https://thebookofshaders.com/appendix/)
 
 - Utilizzare la [repository on-line](https://github.com/patriciogonzalezvivo/thebookofshaders) per aiutare a risolvere i problemi e per condividere il codice.
 
