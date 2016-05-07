@@ -14,9 +14,6 @@ Add some references and ideas from this IQ article: http://iquilezles.org/www/ar
 [source](https://github.com/KhronosGroup/WebGL/blob/master/sdk/tests/conformance/glsl/misc/shader-with-array-of-structs-uniform.html)
 
 
-
-
-
 [NICO]
 note: I had previously associated the name *accessor* to 'the way one can access the properties of an object'.
 
