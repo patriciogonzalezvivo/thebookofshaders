@@ -1,8 +1,8 @@
-## Colors
-
 ![Paul Klee - Color Chart (1931)](klee.jpg)
 
-We haven't had much of a chance to talk about GLSL vector types. Before going further it's important to learn more about these variables and the subject of colors is a great way to find out more about them.
+## Colors
+
+We haven't much of a chance to talk about GLSL vector types. Before going further it's important to learn more about these variables and the subject of colors is a great way to find out more about them. 
 
 If you are familiar with object oriented programming paradigms you've probably noticed that we have been accessing the data inside the vectors like any regular C-like ```struct```.
 
@@ -217,6 +217,10 @@ Try the following exercises:
 
 ![](colorwheel.png)
 
+* Read [Josep's Alvers book Interaction of Color](http://www.goodreads.com/book/show/111113.Interaction_of_Color) and use the following shaders examples as practice.
+
+<div class="glslGallery" data="160505191155,160505193939,160505200330" data-properties="clickRun:editor,openFrameIcon:false,showAuthor:false"></div>
+
 #### Note about functions and arguments
 
 Before jumping to the next chapter let’s stop and rewind. Go back and take look at the functions in previous examples. You will notice ```in``` before the type of the arguments. This is a [*qualifier*](http://www.shaderific.com/glsl-qualifiers/#inputqualifier) and in this case it specifies that the variable is read only. In future examples we will see that it is also possible to define arguments as ```out``` or ```inout```. This last one, ```inout```, is conceptually similar to passing an argument by reference which will give us the possibility to modify a passed variable.
@@ -225,9 +229,8 @@ Before jumping to the next chapter let’s stop and rewind. Go back and take loo
 int newFunction(in vec4 aVec4,   // read-only 
                 out vec3 aVec3,    // write-only
                 inout int aInt);   // read-write
-``` 
+```
 
 You may not believe it but now we have all the elements to make cool drawings. In the next chapter we will learn how to combine all our tricks to make geometric forms by *blending* the space. Yep... *blending* the space.
-
 
 

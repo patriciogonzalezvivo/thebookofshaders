@@ -13,7 +13,6 @@
     include('../header.php');
     include('../chap-header.php');
 
-    echo '<link type="text/css" rel="stylesheet" href="gallery.css">';
     echo '<div id="content">';
 
     include($path.'/src/parsedown/Parsedown.php');
@@ -99,12 +98,9 @@
 
     echo '
         </div>
-        <script>console.log();</script>
         <hr>
         <ul class="navigationBar" >
             <li class="navigationBar" onclick="window.location.href=\'../\'"> Home </li>
         </ul>';
-
         include("../footer.php");
-
 ?>

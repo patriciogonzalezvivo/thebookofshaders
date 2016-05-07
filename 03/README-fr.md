@@ -23,7 +23,7 @@ Les noms peuvent varier selon les implémentations et les plateformes mais dans 
 ```u_resolution``` (la taille du canvas sur lequel le shader est exécuté) & ```u_mouse``` (la position de la souris à l'intérieur du canvas).
 Le fait de préfixer les noms des uniforms par ```u_``` est une convention de nommage assez répandue, ça permet de reconnaître facilement le type de cette varibale mais ce n'est pas une obligation.
 
-Par exemple [ShaderToy.com](https://www.shadertoy.com/) utilises les mêmes uniforms avec les noms suivants:
+Par exemple [ShaderToy.com](https://www.shadertoy.com/) utilise les mêmes uniforms avec les noms suivants:
 
 ```glsl
 uniform vec3 iResolution;   // taille du canvas (en pixels)
@@ -42,11 +42,11 @@ la valeur *absolue* d'une fonction de sinus sera quant à elle toujours comprise
 <div class="codeAndCanvas" data="time.frag"></div>
 
 On peut constater que ça va vite (par rapport au même traitement sur le CPU), cela vient de l'*accélération matérielle*.
-En effet, au chapitre 1 nous avons vu que les GPU implémenent parfois l'accélération *matérielle* de certaines opérations, certaines fonctions trigonométriques telles que:
+En effet, au chapitre 1 nous avons vu que les GPU implémentent parfois l'accélération *matérielle* de certaines opérations, certaines fonctions trigonométriques telles que:
 [```sin()```](../glossary/?search=sin), [```cos()```](../glossary/?search=cos), [```tan()```](../glossary/?search=tan), [```asin()```](../glossary/?search=asin), [```acos()```](../glossary/?search=acos), [```atan()```](../glossary/?search=atan), [```pow()```](../glossary/?search=pow), [```exp()```](../glossary/?search=exp), [```log()```](../glossary/?search=log), [```sqrt()```](../glossary/?search=sqrt), [```abs()```](../glossary/?search=abs), [```sign()```](../glossary/?search=sign), [```floor()```](../glossary/?search=floor), [```ceil()```](../glossary/?search=ceil), [```fract()```](../glossary/?search=fract), [```mod()```](../glossary/?search=mod), [```min()```](../glossary/?search=min), [```max()```](../glossary/?search=max) & [```clamp()```](../glossary/?search=clamp),
 sont donc exécutées _matériellement_ et peuvent aller très (très) vite.
 
-Eassayons de jouer avec le code ci dessus.
+Essayons de jouer avec le code ci dessus.
 
 * Ralentissez la fréquence jusqu'à ce que le changement de couleur deviennent imperceptible.
 
@@ -75,7 +75,7 @@ Dans le code ci-dessus, nous *normalisons* les coordonnées du *fragment* en les
 En *normalisant* les coordonnées, elles vont se retrouver comprises entre ```0.0``` & ```1.0``` ce qui permet de *mapper* facilement les valeurs X et Y du *fragment* vers les canaux rouges et verts (R&G) de la couleur de sortie (```gl_FragColor```).
 
 Au pays des shaders, nous avons peu de moyen de débugger une application à part assigner des valeurs criardes aux fragments et essayer de comprendre ce qui se passe.
-Vous découvrirez que parfois, coder un shader c'ets comme de fabriquer un tout petit bateau dans une bouteille, c'est dur, c'est beau et c'est gratifiant.
+Vous découvrirez que parfois, coder un shader c'est comme de fabriquer un tout petit bateau dans une bouteille, c'est dur, c'est beau et c'est gratifiant.
 
 ![](08.png)
 
