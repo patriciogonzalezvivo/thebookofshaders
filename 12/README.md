@@ -159,7 +159,7 @@ Once you figurate out this algorithm think interesting and creative uses for it.
 
 In 2011, [Stefan Gustavson optimized Steven Worley's algorithm to GPU](http://webstaff.itn.liu.se/~stegu/GLSL-cellular/GLSL-cellular-notes.pdf) by only iterating trough a 2x2 matrix instead of 3x3. This reduce the work significantly but can create artifacts in form of discontinuities. Take a look to the following examples.
 
-<div class="glslGallery" data="12/2d-cnoise-2x2,12/2d-cnoise-2x2x2,12/2d-cnoise,12/3d-cnoise" data-properties="clickRun:edior,openFrameIcon:false"></div>
+<div class="glslGallery" data="12/2d-cnoise-2x2,12/2d-cnoise-2x2x2,12/2d-cnoise,12/3d-cnoise" data-properties="clickRun:editor,openFrameIcon:false"></div>
 
 Later in 2012 [Inigo Quilez wrote an article on how to make precise voronoi borders](http://www.iquilezles.org/www/articles/voronoilines/voronoilines.htm).
 
@@ -175,4 +175,4 @@ Now is up to look closely at things, be inspired by nature to find your own voic
 
 ![Deyrolle glass film - 1831](DeyrolleFilm.png)
 
-<div class="glslGallery" data="12/metaballs,12/stippling,12/cell,12/tissue,12/cracks,160504143842" data-properties="clickRun:edior,openFrameIcon:false"></div>
+<div class="glslGallery" data="12/metaballs,12/stippling,12/cell,12/tissue,12/cracks,160504143842" data-properties="clickRun:editor,openFrameIcon:false"></div>

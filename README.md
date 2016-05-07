@@ -79,6 +79,8 @@ Thanks to my wife [Jen Lowe](http://www.datatelling.com/), for her unconditional
 
 Thanks [Scott Murray](http://alignedleft.com/) for the inspiration and advice.
 
+Thanks [Kenichi Yoneda (Kynd)](https://twitter.com/kyndinfo), [Nicolas Barradeau](https://twitter.com/nicoptere), [Karim Naaji](http://karim.naaji.fr/) for contributing with support, good ideas and code.
+
 Thanks [Kenichi Yoneda (Kynd)](https://twitter.com/kyndinfo) and [Sawako](https://twitter.com/sawakohome) for the [Japanese translation (日本語訳)](?lan=jp)
 
 Thanks [Tong Li](https://www.facebook.com/tong.lee.9484) and [Yi Zhang](https://www.facebook.com/archer.zetta?pnref=story) for the [Chinese translation (中文版)](?lan=ch)
@@ -87,7 +89,7 @@ Thanks [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) for the Korean [transla
 
 Thanks [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) for the Spanish [translation (español)](?lan=es)
 
-Thanks [Karim Naaji](http://karim.naaji.fr/) for contributing with support, good ideas and code.
+Thanks [Nicolas Barradeau](https://twitter.com/nicoptere) and [Karim Naaji](http://karim.naaji.fr/) for the French [translation (france)](?lan=fr)
 
 Thanks to everyone who has believed in this project and [contributed with fixes](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) or donations.
 

@@ -50,7 +50,7 @@
                             echo ',';
                         }
                     }
-                    echo '" data-properties="clickRun:edior,hoverPreview:false,showAuthor:false,openFrameIcon:false"></div>';
+                    echo '" data-properties="clickRun:editor,hoverPreview:false,showAuthor:false,openFrameIcon:false"></div>';
                 }
 
                 if (file_exists($folder.'featured_examples.php') and file_exists('FEATURED'.$language.'.md')) {
@@ -85,7 +85,7 @@
                         echo ',';
                     }
                 }
-                echo '" data-properties="clickRun:edior,showAuthor:false,openFrameIcon:false"></div>';
+                echo '" data-properties="clickRun:editor,showAuthor:false,openFrameIcon:false"></div>';
             }
 
 
