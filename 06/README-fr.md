@@ -94,7 +94,7 @@ color.stpq != color.qstp != color.sptq != color.qpts etc.
 
 C'est une fonctionnalité très puissante ; elle permet de stocker les informations dans un format compact.
 Un exemple d'utilisation, si on veut décrire un rectangle, on peut se servir soit de 2 ```vec2``` décrivant respectivement le coin supérieur gauche et le coin inférieur droit,
-ou bien, utiliser un seul ```vec4``` dont l'**accessur** ```.xy``` renverra un ```vec2``` décrivant le coin supérieur gauche, et l'**accesseur** ```.zw``` renverra un ```vec2``` décrivant le coin inférieur droit.
+ou bien, utiliser un seul ```vec4``` dont l'**accesseur** ```.xy``` renverra un ```vec2``` décrivant le coin supérieur gauche, et l'**accesseur** ```.zw``` renverra un ```vec2``` décrivant le coin inférieur droit.
 
 [/NDT]
 
@@ -242,6 +242,10 @@ Par exemple, la couleur opposée au rouge devrait être le vert mais dans nos ex
 Pouvez vous trouver un moyen d'arranger ça de manière à obtenir exactement le meme rendu que sur l'image? [indice: c'est un bon moment pour vous servir des fonctions de formes.]
 
 ![](colorwheel.png)
+
+* Lisez [le livre de Josep's Alvers: l'interaction des couleurs](http://www.goodreads.com/book/show/111113.Interaction_of_Color) et servez vous des exemples suivants pour vous entraîner à reproduire ses exemples.
+
+<div class="glslGallery" data="160505191155,160505193939,160505200330,160507154604,160507160421" data-properties="clickRun:editor,openFrameIcon:false,showAuthor:false"></div>
 
 #### A propos des fonctions et des arguments
 
