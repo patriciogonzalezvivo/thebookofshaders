@@ -10,7 +10,7 @@
 </div>
 
 ## 关于翻译
-这本书是 Patricio 的 Book of Shaders 的中文翻译。我们希望借此将 Shader 这个有趣有益的工具介绍给更多国人。能力所限，不免有误，如有翻译不当，也请多多指出。
+这本书是 Patricio 的 the Book of Shaders 的中文翻译。我们希望借此将 Shader 这个有趣有益的工具介绍给更多国人。能力所限，不免有误，如有翻译不当，也请多多指出。
 
 感谢 Patricio 对我们的翻译的信任和支持。
 
@@ -22,7 +22,7 @@
     * [什么是片段着色器（Fragment Shader）？](01/?lan=ch)
     * [“Hello world!”](02/?lan=ch)
     * [Uniforms值](03/?lan=ch)
-    * [运行你的shader](04/?lan=ch)
+    * [运行你的 shader](04/?lan=ch)
 
 * 用算法绘画
     * [造型函数](05/?lan=ch)
@@ -32,22 +32,22 @@
     * [图案](09/?lan=ch)
 
 * 生成设计
-    * [Random函数](10/?lan=ch)
-    * [noise函数](11/?lan=ch)
+    * [Random 函数](10/?lan=ch)
+    * [noise 函数](11/?lan=ch)
     * 布朗运动
     * 分形
 
 * 图像处理:
     * 纹理
-    * 图像操作
-    * 内核卷积
-    * 过滤器
+    * 图像处理
+    * 卷积核
+    * 滤镜
     * 其他效果
 
 * 模拟
     * 乒乓
     * Conway生命游戏
-    * 涟漪
+    * 水波
     * 水彩
     * 反应扩散
 
@@ -55,16 +55,16 @@
     * 灯光
     * 法线贴图
     * 凹凸贴图
-    * 光线跟踪
+    * 光线跟踪（Ray marching）
     * 环境贴图 (spherical and cube)
     * 折射和反射
 
-* [附录:](appendix/) Other ways to use this book
+* [附录:](appendix/) 其他阅读本书的方式
 	* [如何离线阅读此书?](appendix/?lan=ch)
-	* [如何在RaspberryPi上运行示例?](appendix/?lan=ch)
+	* [如何在树莓派上运行示例程序?](appendix/?lan=ch)
 	* [如何打印这本书](appendix/?lan=ch)
 
-* [示例墙](examples/?lan=ch)
+* [example gallery](examples/?lan=ch)
 
 * [词汇表](glossary/?lan=ch)
 
@@ -79,8 +79,11 @@ Patricio 研习和实践精神疗法（psychotherapy）和表达性艺术治疗�
 
 ## 关于译者
 
-* [Artrustee](https://github.com/Artrustee) 
-* [tornote](http://tornote.com/) 
+* [tornote](http://tornote.com/) 翻译 00-05 及第 11 章。
+
+* [Artrustee](https://github.com/Artrustee) 翻译 06-10 章。
+
+后续章节作者仍在撰写中，如果感兴趣可以在 github 上查看部分后续章节代码。
 
 ## 致谢
 
@@ -88,11 +91,17 @@ Patricio 研习和实践精神疗法（psychotherapy）和表达性艺术治疗�
 
 感谢 [Scott Murray](http://alignedleft.com/) 给予的启发和建议。
 
-感谢 [Kenichi Yoneda (Kynd)](https://twitter.com/kyndinfo) 的 [日语翻译 (日本語訳)](?lan=jp)
+感谢 [Kenichi Yoneda (Kynd)](https://twitter.com/kyndinfo) 和 [Sawako](https://twitter.com/sawakohome) 的 [日文版翻译(日本語訳)](?lan=jp)
+
+感谢 [Tong Li](https://www.facebook.com/tong.lee.9484) 和 [Yi Zhang](https://www.facebook.com/archer.zetta?pnref=story) 的 [中文版(Chinese)](?lan=ch) 翻译。
+
+感谢 [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) 的 [韩文版 (한국어)](?lan=kr) 翻译。
+
+感谢 [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) 的 [西班牙语(español)](?lan=es) 翻译。
 
 感谢 [Karim Naaji](http://karim.naaji.fr/) 在代码和想法上的支持和贡献。
 
-感谢所有相信这个项目志友们[contributed with fixes](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) 以及大家的捐赠.
+感谢所有相信这个项目的人[contributed with fixes](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) 以及大家的捐赠.
 
 ## 获取新的章节
 
