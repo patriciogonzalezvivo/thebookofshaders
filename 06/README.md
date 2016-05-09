@@ -128,7 +128,7 @@ Try the following exercises:
 
 * Read [Josep's Alvers book Interaction of Color](http://www.goodreads.com/book/show/111113.Interaction_of_Color) and use the following shaders examples as practice.
 
-<div class="glslGallery" data="160505191155,160505193939,160505200330,160507154604,160507160421" data-properties="clickRun:editor,openFrameIcon:false,showAuthor:false"></div>
+<div class="glslGallery" data="160505191155,160505193939,160505200330,160509131554,160509131509,160509131420,160509131240" data-properties="clickRun:editor,openFrameIcon:false,showAuthor:false"></div>
 
 #### Note about functions and arguments
 
