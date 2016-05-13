@@ -14,7 +14,7 @@ Un exemple sera sans doute plus explicite:
 * Décommentez la ligne 35 du code ci-dessous pour voir le système de coordonnées bouger.
 
 <div class="codeAndCanvas" data="cross-translate.frag"></div>
- 
+
 Essayez l'exercice suivant:
 
 * servez vous d'```u_time``` et des fonctions de formes pour déplacer la croix de façon intéressante.
@@ -59,7 +59,7 @@ mat2 rotate2d(float _angle){
 ```
 
 Cett manière d'effectuer un rotation (autour de l'origine) ne marche pas avec l'approche que nous avons eu jusqu'à présent pour dessiner les formes.
-En effet notre croix est dessinée au centre du canvas (le point ```vec2(0.5)```) alor sque la rotation se fait autour de l'origine (le point ```vec2(0.0)```).
+En effet notre croix est dessinée au centre du canvas (le point ```vec2(0.5)```) alors sque la rotation se fait autour de l'origine (le point ```vec2(0.0)```).
  Donc, avant d'effectuer la rotation, nous devons déplacer la forme du `centre` vers l'origine ```vec2(0.0)```, appliquer la rotation puis re-déplacer la forme au `centre` du canvas.
 
 ![](rotate.jpg)
@@ -74,7 +74,7 @@ Essayez les choses suivantes:
 
 * Commentez les translations avant et après la rotation aux lignes 37 et 39, observez ce qui se passe.
 
-* Utilisez les rotations pour améliorer l'animation basée sur les translation que vous avez fait plus haut.
+* Utilisez les rotations pour améliorer l'animation basée sur les translations que vous avez fait plus haut.
 
 ### Echelle
 
@@ -92,7 +92,7 @@ mat2 scale(vec2 _scale){
 }
 ```
 
-<div class="codeAndCanvas" data="cross-scale.frag"></div> 
+<div class="codeAndCanvas" data="cross-scale.frag"></div>
 
 Pour mieux comprendre comment ça marche, essayez les choses suivantes:
 
@@ -111,7 +111,7 @@ Servez vous du sketch ShaderToy suivant (par [Ndel](https://www.shadertoy.com/us
 ### Autres utilisations des matrices: l'espace colorimétrique YUV
 
 [YUV](https://fr.wikipedia.org/wiki/YUV) est un espace colorimétrique utilisé pour l'encodage de photographies et de vidéos analogues.
-Il prend en compte ce que perçoit l'oeil humain de la lumière et modifie les plages du spectre lunienux pour s'y adapter.
+Il prend en compte ce que perçoit l'oeil humain de la lumière et modifie les plages du spectre lumineux pour s'y adapter.
 
 Dans le code suivant, nous utilisons une matrice pour opérer la conversion d'un espace colorimétrique à l'autre (RGB est l'espace colorimétrique par défaut)
 
