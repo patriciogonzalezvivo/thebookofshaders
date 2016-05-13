@@ -1,13 +1,13 @@
 ## Motifs
 
 Les shaders sont exécutés au pixel et quel que soit le nombre de répétitions d'une forme, le nombre d'opérations effectuées restera constant.
-Cela signifie que les fragments shaders sont tout à fait indiqués pour la création de motifis répétitifs ; des *pavages* du plan.
+Cela signifie que les fragments shaders sont tout à fait indiqués pour la création de motifs répétitifs ; des *pavages* du plan.
 
 [ ![Nina Warmerdam - The IMPRINT Project (2013)](warmerdam.jpg) ](../edit.php#09/dots5.frag)
 
 Dans ce chapitre, nous allons mettre en application tout ce que nous avons vu jusqu'à présent et le répéter sur le canvas.
 Comme dans les chapitres précédents, notre stratégie consistera à multiplier les coordonnées pour que les formes que nous dessinons restent dans un espace normalisé entre 0 et 1.
-Le fait de multiplier les coordonnées du fragment en X et en Y créera une *grille* et le fait de divisier les coordonnées *étirera* une portion du canvas.
+Le fait de multiplier les coordonnées du fragment en X et en Y créera une *grille* et le fait de diviser les coordonnées *étirera* une portion du canvas.
 
 *"The grid provides a framework within which human intuition and invention can operate and that it can subvert.
 Within the chaos of nature patterns provide a constrast and promise of order.
@@ -60,7 +60,7 @@ Comme nous ne changeons pas le *ratio* (le rapport largeur/hauteur) en x et y, l
 
 Essayez les choses suivantes pour mieux comprendre:
 
-* Changez le facteur de multiplication de des coordonnées ```st```, essayez des valeurs inférieures à zéro et des valeurs différentes en X et Y.
+* Changez le facteur de multiplication des coordonnées ```st```, essayez des valeurs inférieures à zéro et des valeurs différentes en X et Y.
 
 * Créez un fonction réutilisable pour cette manipulation.
 
@@ -106,8 +106,8 @@ Pour illustrer l'effet du modulo, regardez la formule suivante et décommentez l
 On peut utiliser un [opérateur ternaire](https://fr.wikipedia.org/wiki/Op%C3%A9rateur_(informatique)) pour vérifier si le modulo ([```mod()```](../glossary/?search=mod)) renvoie une valeur inférieure à 1 (ligne 2)
 ou bien on peut se servir d'un [```step()```](../glossary/?search=step) qui renvoie le même résultat plus vite.
 
-Pourquoi? Bien qu'il soit difficile de dire comment chaque carte graphique compile et optimise le code, on peut partir d principe que les fonctions natives sont plus rapides que les fonctions personnalisées.
-Chaque fois que vou pouvez utiliser une fonction native, faites le!
+Pourquoi? Bien qu'il soit difficile de dire comment chaque carte graphique compile et optimise le code, on peut partir du principe que les fonctions natives sont plus rapides que les fonctions personnalisées.
+Chaque fois que vous pouvez utiliser une fonction native, faites le!
 
 [NDT]En fait un opérateur ternaire est un ```if``` déguisé, le programme est obligé de créer et d'évaluer les deux branches du ```if``` ce qui ralentit son exécution. En l'occurrence, on pourrait écrire:
 ```glsl
@@ -133,7 +133,7 @@ En décommentant la ligne 40, on peut visualiser la distorsion grâce aux canaux
 
 * Essayez d'animer le motif en faisant varier la quantité de décalage en fonction du temps.
 
-* Créez une autre animation où les rangées paires bougent vers la droite et les rangées impaires bougent vers la gauche.
+* Créez une autre animation où les rangées paires bougent vers la droite et les rangées impaires bougeant vers la gauche.
 
 * Pouvez vous appliquer cet effet sur les colonnes?
 
@@ -174,7 +174,7 @@ Créer des motifs procéduraux est un exercice cérébral consistant à trouver 
 C'est une pratique très ancienne, en tant qu'espèce, nous avons utilisé les grilles et les motifs pour décorer les textiles, les sols et les objets depuis la nuit des temps.
 Des frises grecques aux lattices chinoises, le plaisir des variations et des répétitions est une grande source d'inspiration.
 Prenez le temps de vous intéresser aux [motifs](https://www.pinterest.com/patriciogonzv/paterns/) [ornementaux](https://archive.org/stream/traditionalmetho00chririch#page/130/mode/2up)
-et constatez que de tous temps, artistes et designers ont navigué entre un ordre prédictible et les variations, accidentelles et chaotiques.
+et constatez que de tout temps, artistes et designers ont navigué entre un ordre prédictible et les variations, accidentelles et chaotiques.
 Des motifs islamiques aux textiles africains, nous disposons d'un univers de motifs à explorer.
 
 ![Franz Sales Meyer - A handbook of ornament (1920)](geometricpatters.png)
