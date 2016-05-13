@@ -108,8 +108,9 @@
                                                                     fileDrops: true,
                                                                     menu: true
                                                                 });
+            document.body.style.backgroundColor = window.getComputedStyle(glslEditor.editor.getWrapperElement(),null).getPropertyValue('background-color'); 
         }
-        document.body.style.backgroundColor = window.getComputedStyle(window.glslEditor.editor.getWrapperElement(),null).getPropertyValue('background-color'); 
+        
     </script>
     <script>
         (function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){
