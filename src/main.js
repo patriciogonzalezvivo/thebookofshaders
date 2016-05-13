@@ -262,39 +262,13 @@ function nextPage() {
 	window.location.href =  url;
 }
 
-/**
- * Provides requestAnimationFrame in a cross browser way.
- */
-window.requestAnimFrame = (function() {
-    return  window.requestAnimationFrame ||
-            window.webkitRequestAnimationFrame ||
-            window.mozRequestAnimationFrame ||
-            window.oRequestAnimationFrame ||
-            window.msRequestAnimationFrame ||
-            function(/* function FrameRequestCallback */ callback, /* DOMElement Element */ element) {
-                return window.setTimeout(callback, 1000/60);
-         };
-})();
-
-/**
- * Provides cancelRequestAnimationFrame in a cross browser way.
- */
-window.cancelRequestAnimFrame = (function() {
-    return  window.cancelCancelRequestAnimationFrame ||
-            window.webkitCancelRequestAnimationFrame ||
-            window.mozCancelRequestAnimationFrame ||
-            window.oCancelRequestAnimationFrame ||
-            window.msCancelRequestAnimationFrame ||
-            window.clearTimeout;
-})();
-
 window.onload = function(){
     window.scrollTo(0, 0);
     styleCodeBlocks();
 	loadGlslElements();
     captionizeImages();
     window.scrollTo(0, 0);
-    setTimeout(function () {
-         window.scrollTo(0, 0);
-    }, 1000);
+    // setTimeout(function () {
+    //      window.scrollTo(0, 0);
+    // }, 1000);
 };
