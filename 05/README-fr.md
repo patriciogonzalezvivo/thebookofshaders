@@ -151,11 +151,11 @@ Comme un chef qui collectionnerait les épices et autres ingrédients exotiques,
 Après avoir lu [cet article](http://www.iquilezles.org/www/articles/functions/functions.htm) regardez leur traduction en GLSL.
 Notez bien les petits changements nécessaires, comme le "." (point) sur les floats et l'utilisation des conventions de nommage GLSL pour les fonctions C ; par exemple ```powf()``` devient ```pow()```:
 
-* [Impulse](../editor.php#05/impulse.frag)
-* [Cubic Pulse](../editor.php#05/cubicpulse.frag)
-* [Exponential Step](../editor.php#05/expstep.frag)
-* [Parabola](../editor.php#05/parabola.frag)
-* [Power Curve](../editor.php#05/pcurve.frag)
+* [Impulse](../edit.php#05/impulse.frag)
+* [Cubic Pulse](../edit.php#05/cubicpulse.frag)
+* [Exponential Step](../edit.php#05/expstep.frag)
+* [Parabola](../edit.php#05/parabola.frag)
+* [Power Curve](../edit.php#05/pcurve.frag)
 
 Pour vous motiver, voici un exemple élégant, fait par [Danguafer](https://www.shadertoy.com/user/Danguafer) qui montre le karaté des fonctions de formes.
 

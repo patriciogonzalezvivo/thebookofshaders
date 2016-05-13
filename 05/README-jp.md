@@ -117,11 +117,11 @@ GLSLには他にも、値を変化させるのに使うことができるネイ�
 
 [Iñigo Quiles](http://www.iquilezles.org/)は便利な関数の[素晴らしいコレクション](http://www.iquilezles.org/www/articles/functions/functions.htm)を持っています。 [この記事](http://www.iquilezles.org/www/articles/functions/functions.htm)をまず読んでから、下記にあるGLSLへ翻訳したバージョンを見てみましょう。浮動小数点の数値に「.（小数点）」を追加したり、Cの関数をGLSL特有の関数名で置き換える、例えば ```powf()``` の代わりに ```pow()``` を使うなどの細かな変更点に注意してください。
 
-* [Impulse](../editor.php#05/impulse.frag)
-* [Cubic Pulse](../editor.php#05/cubicpulse.frag)
-* [Exponential Step](../editor.php#05/expstep.frag)
-* [Parabola](../editor.php#05/parabola.frag)
-* [Power Curve](../editor.php#05/pcurve.frag)
+* [Impulse](../edit.php#05/impulse.frag)
+* [Cubic Pulse](../edit.php#05/cubicpulse.frag)
+* [Exponential Step](../edit.php#05/expstep.frag)
+* [Parabola](../edit.php#05/parabola.frag)
+* [Power Curve](../edit.php#05/pcurve.frag)
 
 匠の技を見てモチベーションを上げましょう。[Danguafer](https://www.shadertoy.com/user/Danguafer)の作品です。
 

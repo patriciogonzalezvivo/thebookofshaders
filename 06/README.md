@@ -64,7 +64,7 @@ Check the following code at line 18 and see how we are using the absolute values
 
 Show off your skills by:
 
-* Make an expressive transition between colors. Think of a particular emotion. What color seems most representative of it? How does it appear? How does it fade away? Think of another emotion and the matching color for it. Change the beginning and ending color of the above code to match those emotions. Then animate the transition using shaping functions. Robert Penner developed a series of popular shaping functions for computer animation known as [easing functions](http://easings.net/), you can use [this example](../editor.php#06/easing.frag) as research and inspiration but the best result will come from making your own transitions.
+* Make an expressive transition between colors. Think of a particular emotion. What color seems most representative of it? How does it appear? How does it fade away? Think of another emotion and the matching color for it. Change the beginning and ending color of the above code to match those emotions. Then animate the transition using shaping functions. Robert Penner developed a series of popular shaping functions for computer animation known as [easing functions](http://easings.net/), you can use [this example](../edit.php#06/easing.frag) as research and inspiration but the best result will come from making your own transitions.
 
 ### Playing with gradients 
 

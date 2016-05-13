@@ -2,7 +2,7 @@
 
 因为着色器按一个个像素执行，那么无论你重复一个图形多少次，计算的数量仍然是个常数。
 
-[ ![Nina Warmerdam - The IMPRINT Project (2013)](warmerdam.jpg) ](../editor.php#09/dots5.frag)
+[ ![Nina Warmerdam - The IMPRINT Project (2013)](warmerdam.jpg) ](../edit.php#09/dots5.frag)
 
 本章中我们将综合我们目前所学的并应用在画布上。和前几章一样，我们的策略依然基于乘以空间坐标（0到1之间），这样我们的画的在0到1之间的图形就会重复地形成网格。
 
@@ -44,7 +44,7 @@ void main(){
 
 * 通过组合不同的形状重新创造更复杂的图案。
 
-<a href="../editor.php#09/diamondtiles.frag"><canvas id="custom" class="canvas" data-fragment-url="diamondtiles.frag"  width="520px" height="200px"></canvas></a>
+<a href="../edit.php#09/diamondtiles.frag"><canvas id="custom" class="canvas" data-fragment-url="diamondtiles.frag"  width="520px" height="200px"></canvas></a>
 
 * 结合多层图案来制作你自己的 [Scottish Tartan Patterns](https://www.google.com/search?q=scottish+patterns+fabric&tbm=isch&tbo=u&source=univ&sa=X&ei=Y1aFVfmfD9P-yQTLuYCIDA&ved=0CB4QsAQ&biw=1399&bih=799#tbm=isch&q=Scottish+Tartans+Patterns).
 
@@ -84,7 +84,7 @@ ____我们需要两段来解决这个问题____
 
 * 试着结合 ```x``` 和 ```y``` 轴的偏移来得到下面这样的效果：
 
-<a href="../editor.php#09/marching_dots.frag"><canvas id="custom" class="canvas" data-fragment-url="marching_dots.frag"  width="520px" height="200px"></canvas></a>
+<a href="../edit.php#09/marching_dots.frag"><canvas id="custom" class="canvas" data-fragment-url="marching_dots.frag"  width="520px" height="200px"></canvas></a>
 
 ## Truchet 瓷砖
 
@@ -110,7 +110,7 @@ ____我们需要两段来解决这个问题____
 
 * 想想其他能用这章原理的案例，不一定是图案. (例: 易经卦)
 
-<a href="../editor.php#09/iching-01.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-01.frag"  width="520px" height="200px"></canvas></a>
+<a href="../edit.php#09/iching-01.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-01.frag"  width="520px" height="200px"></canvas></a>
 
 ## 制定自己的规则
 

@@ -62,7 +62,7 @@ Each pixel inside that tile (stored in the float coordinate, ```f_st```) will ch
 
 This will look like this:
 
-<a href="../editor.php#12/cellnoise-01.frag"><img src="cellnoise.png"  width="520px" height="200px"></img></a> 
+<a href="../edit.php#12/cellnoise-01.frag"><img src="cellnoise.png"  width="520px" height="200px"></img></a> 
 
 We still need to calculate the points around each pixel. Not just the one in the current tile. For that we need to **iterate** through the neighbor tiles. Not all of them. just the one immediately around it. That means from ```-1``` (left) to ```1``` (right) tile in ```x``` axis and ```-1``` (bottom) to ```1``` (top) in ```y``` axis. A 3x3 kernel of 9 tiles that we can iterate using a double ```for``` loop like this one:
 
@@ -143,7 +143,7 @@ Note how the color of the moving cell (hook to the mouse position) change color 
 
 Like we did before now is time to scale this up, switching to [Steven Worley's paper approach](http://www.rhythmiccanvas.com/research/papers/worley.pdf). Try implementing it your self. You can use the help of the following example by clicking on it. 
 
-<a href="../editor.php#12/vorono-01.frag"><canvas id="custom" class="canvas" data-fragment-url="vorono-01.frag"  width="520px" height="200px"></canvas></a>
+<a href="../edit.php#12/vorono-01.frag"><canvas id="custom" class="canvas" data-fragment-url="vorono-01.frag"  width="520px" height="200px"></canvas></a>
 
 Once you figurate out this algorithm think interesting and creative uses for it.
 
@@ -163,13 +163,13 @@ In 2011, [Stefan Gustavson optimized Steven Worley's algorithm to GPU](http://we
 
 Later in 2012 [Inigo Quilez wrote an article on how to make precise voronoi borders](http://www.iquilezles.org/www/articles/voronoilines/voronoilines.htm).
 
-<a href="../editor.php#12/2d-voronoi.frag"><img src="2d-voronoi.gif"  width="520px" height="200px"></img></a>
+<a href="../edit.php#12/2d-voronoi.frag"><img src="2d-voronoi.gif"  width="520px" height="200px"></img></a>
  
 Inigio's experiment on voronoi didn't stop there. In 2014 he wrote this nice article about what he call [voro-noise](http://www.iquilezles.org/www/articles/voronoise/voronoise.htm), and exploration between regular noise and voronoi. In his words:
 
 *"Despite this similarity, the fact is that the way the grid is used in both patterns is different. Noise interpolates/averages random values (as in value noise) or gradients (as in gradient noise), while Voronoi computes the distance to the closest feature point. Now, smooth-bilinear interpolation and minimum evaluation are two very different operations, or... are they? Can they perhaps be combined in a more general metric? If that was so, then both Noise and Voronoi patterns could be seen as particular cases of a more general grid-based pattern generator?"*
 
-<a href="../editor.php#12/2d-voronoise.frag"><canvas id="custom" class="canvas" data-fragment-url="2d-voronoise.frag"  width="520px" height="200px"></canvas></a> 
+<a href="../edit.php#12/2d-voronoise.frag"><canvas id="custom" class="canvas" data-fragment-url="2d-voronoise.frag"  width="520px" height="200px"></canvas></a> 
 
 Now is up to look closely at things, be inspired by nature to find your own voice on this technique.
 

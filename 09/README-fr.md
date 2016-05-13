@@ -3,7 +3,7 @@
 Les shaders sont exécutés au pixel et quel que soit le nombre de répétitions d'une forme, le nombre d'opérations effectuées restera constant.
 Cela signifie que les fragments shaders sont tout à fait indiqués pour la création de motifis répétitifs ; des *pavages* du plan.
 
-[ ![Nina Warmerdam - The IMPRINT Project (2013)](warmerdam.jpg) ](../editor.php#09/dots5.frag)
+[ ![Nina Warmerdam - The IMPRINT Project (2013)](warmerdam.jpg) ](../edit.php#09/dots5.frag)
 
 Dans ce chapitre, nous allons mettre en application tout ce que nous avons vu jusqu'à présent et le répéter sur le canvas.
 Comme dans les chapitres précédents, notre stratégie consistera à multiplier les coordonnées pour que les formes que nous dessinons restent dans un espace normalisé entre 0 et 1.
@@ -78,7 +78,7 @@ Sachant que chaque subdivision est une reproduction du motif original, nous pouv
 
 * Créez des motifs plus complexes en combinant plusieurs formes.
 
-[![](diamondtiles-long.png)](../editor.php#09/diamondtiles.frag)
+[![](diamondtiles-long.png)](../edit.php#09/diamondtiles.frag)
 
 * Combinez différentes couches de motifs pour composer votre propre [Tartan écossais](https://fr.wikipedia.org/wiki/Tartan).
 
@@ -139,7 +139,7 @@ En décommentant la ligne 40, on peut visualiser la distorsion grâce aux canaux
 
 * Essayez de combiner les décalages en ```x``` et ```y``` pour obtenir quelque chose comme ça:
 
-<a href="../editor.php#09/marching_dots.frag"><canvas id="custom" class="canvas" data-fragment-url="marching_dots.frag"  width="520px" height="200px"></canvas></a>
+<a href="../edit.php#09/marching_dots.frag"><canvas id="custom" class="canvas" data-fragment-url="marching_dots.frag"  width="520px" height="200px"></canvas></a>
 
 ## Pavage de Truchet
 
@@ -166,7 +166,7 @@ Regardez attentivement la fonction ```rotateTilePattern()```, qui subdivise l'es
 
 * Pensez à quelque chose d'autre qui ne soit pas nécessairement un pavage du plan et où vous pourriez appliquer les principes vus dans cette section (exemple: [les Hexagrammes YI Jing](https://fr.wikipedia.org/wiki/Hexagramme_Yi_Jing))
 
-<a href="../editor.php#09/iching-01.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-01.frag"  width="520px" height="200px"></canvas></a>
+<a href="../edit.php#09/iching-01.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-01.frag"  width="520px" height="200px"></canvas></a>
 
 ## Créer ses propres pavages
 

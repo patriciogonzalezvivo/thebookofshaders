@@ -20,7 +20,7 @@
         <meta property="og:description" content="The Book of Shaders player" />
 <?php
     if (!empty($_GET['log'])) {
-        echo '        <meta property="og:url" content="https://thebookofshaders.com/editor.php?log='. $_GET['log'].'"/>
+        echo '        <meta property="og:url" content="https://thebookofshaders.com/edit.php?log='. $_GET['log'].'"/>
         <meta property="og:image" content="https://thebookofshaders.com/log/'.$_GET['log'].'.png"/>
         <meta property="og:image:type" content="image/png"/>
         <meta property="og:image:width" content="500"/>
@@ -37,7 +37,7 @@
 <?php
     if (!empty($_GET['log'])) {
         echo '
-        <meta name="twitter:url" content="https://thebookofshaders.com/editor.php?log='. $_GET['log'].'"/>
+        <meta name="twitter:url" content="https://thebookofshaders.com/edit.php?log='. $_GET['log'].'"/>
         <meta name="twitter:image" content="https://thebookofshaders.com/log/'.$_GET['log'].'.png"/>
         <meta name="twitter:image:width" content="500">
         <meta name="twitter:image:height" content="500">';
