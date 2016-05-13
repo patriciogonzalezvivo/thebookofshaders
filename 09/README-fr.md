@@ -50,7 +50,7 @@ st = 0.80 | st * 3 = 2.40 | fract( st * 3 ) = 0.40
 st = 0.90 | st * 3 = 2.70 | fract( st * 3 ) = 0.70
 st = 1.00 | st * 3 = 3.00 | fract( st * 3 ) = 1.00
 ```
-On voit bien que sur le premier bloc, la valeur ```st * 3``` est égale à ```fract( st * 3 )``` masi dès le second *bloc*, ```st * 3``` dépassse 1 alors que ```fract( st * 3 )``` reste toujours compris entre 0 et 1.
+On voit bien que sur le premier bloc, la valeur ```st * 3``` est égale à ```fract( st * 3 )``` mais dès le second *bloc*, ```st * 3``` dépassse 1 alors que ```fract( st * 3 )``` reste toujours compris entre 0 et 1.
 [/NDT]
 
 <div class="codeAndCanvas" data="grid-making.frag"></div>
