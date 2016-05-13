@@ -13,9 +13,6 @@
 ?>
 		<link href='/favicon.gif' rel='shortcut icon'/>
 
-		<!-- GLSL Canvas -->
-		<script type='text/javascript' src='https://thebookofshaders.com/glslCanvas/GlslCanvas.js'></script>
-
         <!— Open Graph data —>
         <meta property="og:type" content="article" />
         <meta property="og:title" content="GLSL Shader Editor" />
@@ -95,9 +92,10 @@
             }
             else {
                 console.log('Try to load a local glslEditor');
-                loadjscssfile('src/glslCanvas/build/glslCanvas.min.js', 'js');
-                loadjscssfile('src/glslEditor/build/glslEditor.css', 'css');
-                loadjscssfile('src/glslEditor/build/glslEditor.js', 'js', init);
+                if (!window.glslEditor) {
+                    loadjscssfile('src/glslEditor/build/glslEditor.css', 'css');
+                    loadjscssfile('src/glslEditor/build/glslEditor.js', 'js', init);
+                }
             }
         };
 
