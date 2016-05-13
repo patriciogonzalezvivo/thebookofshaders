@@ -159,7 +159,7 @@ Montrez de quoi vous êtes capable
 * pensez à une autre émotion et à la couleur correspondante, changez les couleur A et B dans le code puis utilisez les fonctions de formes pour opérer la transition.
 
 Robert Penner a développé une série de fonctions destinées à créer des animations, connues sous le nom d'[easing functions](http://easings.net/).
-Vous pouvez utiliser [cet exemple](../edit.html#06/easing.frag) comme base de recherche mais les meilleures transitions seront celles que vous ferez vous mêmes.
+Vous pouvez utiliser [cet exemple](../editor.php#06/easing.frag) comme base de recherche mais les meilleures transitions seront celles que vous ferez vous mêmes.
 
 ### Jouer avec les dégradés
 

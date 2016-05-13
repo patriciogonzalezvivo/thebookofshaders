@@ -82,7 +82,7 @@ for (int i = 0; i < OCTAVES; i++) {
 }
 ```
 
-<a href="../edit.html#13/turbulence.frag"><img src="turbulence-long.png"  width="520px" height="200px"></img></a> 
+<a href="../editor.php#13/turbulence.frag"><img src="turbulence-long.png"  width="520px" height="200px"></img></a> 
 
 Another member of this family of algorithms is the **ridge**. Constructed similarly to the turbolence but with some extra calculations:
 
@@ -92,7 +92,7 @@ Another member of this family of algorithms is the **ridge**. Constructed simila
     n = n * n;      // sharpen creases
 ```
 
-<a href="../edit.html#13/ridge.frag"><img src="ridge-long.png"  width="520px" height="200px"></img></a> 
+<a href="../editor.php#13/ridge.frag"><img src="ridge-long.png"  width="520px" height="200px"></img></a> 
 
 ### Domain Warping
 

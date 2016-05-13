@@ -2,10 +2,51 @@
 <html>
 	<head>
 		<meta charset='utf-8'>
-		<title>GLSL Editor</title>
+<?php
+    if (!empty($_GET['log'])) {
+        echo '
+        <title>'.$_GET['log'].'</title>';
+    } else {
+        echo '
+        <title>GLSL Editor</title>';
+    }
+?>
 		<link href='/favicon.gif' rel='shortcut icon'/>
+
 		<!-- GLSL Canvas -->
 		<script type='text/javascript' src='https://thebookofshaders.com/glslCanvas/GlslCanvas.js'></script>
+
+        <!— Open Graph data —>
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="GLSL Shader Editor" />
+        <meta property="og:site_name" content="The Book of Shaders"/>
+        <meta property="og:description" content="The Book of Shaders player" />
+<?php
+    if (!empty($_GET['log'])) {
+        echo '        <meta property="og:url" content="https://thebookofshaders.com/editor.php?log='. $_GET['log'].'"/>
+        <meta property="og:image" content="https://thebookofshaders.com/log/'.$_GET['log'].'.png"/>
+        <meta property="og:image:type" content="image/png"/>
+        <meta property="og:image:width" content="500"/>
+        <meta property="og:image:height" content="500"/>';
+    }
+?>
+
+        <!— Twitter Card—>
+        <meta name="twitter:card" content="image">
+        <meta name="twitter:site" content="@bookofshaders">
+        <meta name="twitter:title" content="GLSL Shader Editor">
+        <meta name="twitter:description" content="The Book of Shaders editor">
+        <meta name="twitter:domain" content="thebookofshaders.com">
+<?php
+    if (!empty($_GET['log'])) {
+        echo '
+        <meta name="twitter:url" content="https://thebookofshaders.com/editor.php?log='. $_GET['log'].'"/>
+        <meta name="twitter:image" content="https://thebookofshaders.com/log/'.$_GET['log'].'.png"/>
+        <meta name="twitter:image:width" content="500">
+        <meta name="twitter:image:height" content="500">';
+    }
+?>
+
 		<style>
 			body {
 				height: 100%;

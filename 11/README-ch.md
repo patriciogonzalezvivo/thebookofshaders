@@ -112,17 +112,17 @@ y = mix(rand(i), rand(i + 1.0), u); // using it in the interpolation
 
 Noise 算法的设计初衷是将难以言说的自然质感转化成数字图像。在目前我们看到的一维和二维的实践中，都是在random *values*（随机值）之间插值，所以它们才被叫做 **Value Noise**，但是还有很多很多获取 noise 的方法……
 
-[ ![Inigo Quilez - Value Noise](value-noise.png) ](../edit.html#11/2d-vnoise.frag)
+[ ![Inigo Quilez - Value Noise](value-noise.png) ](../editor.php#11/2d-vnoise.frag)
 
 如你所见，value noise 看起来非常“块状”。为了消除这种块状的效果，在 1985 年 [Ken Perlin](https://mrl.nyu.edu/~perlin/) 开发了另一种 noise 算法 **Gradient Noise**。Ken 解决了如何插入随机的 *gradients*（梯度、渐变）而不是一个固定值。这些梯度值来自于一个二维的随机函数，返回一个方向（```vec2``` 格式的向量），而不仅是一个值（```float```格式）。点击下面的图片查看代码，看这个函数是如何运作的。
 
-[ ![Inigo Quilez - Gradient Noise](gradient-noise.png) ](../edit.html#11/2d-gnoise.frag)
+[ ![Inigo Quilez - Gradient Noise](gradient-noise.png) ](../editor.php#11/2d-gnoise.frag)
 
 花一分钟来看看 [Inigo Quilez](http://www.iquilezles.org/) 做的两个例子，注意 [value noise](https://www.shadertoy.com/view/lsf3WH) 和 [gradient noise](https://www.shadertoy.com/view/XdXGW8)的区别。
 
 就像一个画家非常了解画上的颜料是如何晕染的，我们越了解 noise 是如何运作的，越能更好地使用 noise。比如，如果我们要用一个二维的 noise 来旋转空间中的直线，我们就可以制作下图的旋涡状效果，看起来就像木头表皮一样。同样地，你可以点击图片查看代码。
 
-[ ![Wood texture](wood-long.png) ](../edit.html#11/wood.frag)
+[ ![Wood texture](wood-long.png) ](../editor.php#11/wood.frag)
 
 ```glsl
     pos = rotate2d( noise(pos) ) * pos; // 旋转空间
@@ -131,7 +131,7 @@ Noise 算法的设计初衷是将难以言说的自然质感转化成数字图�
 
 另一种用 noise 制作有趣的图案的方式是用 distance field（距离场）处理它，用用 [第七章](../07/)提到的招数。
 
-[ ![Splatter texture](splatter-long.png) ](../edit.html#11/splatter.frag)
+[ ![Splatter texture](splatter-long.png) ](../editor.php#11/splatter.frag)
 
 ```glsl
     color += smoothstep(.15,.2,noise(st*10.)); // 黑色的泼溅点
@@ -140,7 +140,7 @@ Noise 算法的设计初衷是将难以言说的自然质感转化成数字图�
 
 第三种方法是用 noise 函数来变换一个形状。这个也需要我们在[第七章](../07/)学到的技术。
 
-<a href="../edit.html#11/circleWave-noise.frag"><canvas id="custom" class="canvas" data-fragment-url="circleWave-noise.frag"  width="300px" height="300"></canvas></a> 
+<a href="../editor.php#11/circleWave-noise.frag"><canvas id="custom" class="canvas" data-fragment-url="circleWave-noise.frag"  width="300px" height="300"></canvas></a> 
 
 给你的练习：
 
@@ -164,7 +164,7 @@ Noise 算法的设计初衷是将难以言说的自然质感转化成数字图�
 * 有着定义得很精巧的连续的 gradients（梯度），可以大大降低计算成本。
 * 特别易于硬件实现。
 
-我知道你一定在想：“这人是谁？”是的，他的工作非常杰出！但是说真的，他是如何优化算法的呢？我们已经知道在二维中他是如何在四个点（正方形的四个角）之间插值的；所以没错你已经猜到了，对于三维[（这里有个示例）](../edit.html#11/3d-noise.frag)和四维我们需要插入 8 个和 16 个点。对吧？也就是说对于 N 维你需要插入 2 的 n 次方个点（2^N）。但是 Ken 很聪明地意识到尽管很显然填充屏幕的形状应该是方形，在二维中最简单的形状却是等边三角形。所以他把正方形网格（我们才刚学了怎么用）替换成了单纯形等边三角形的网格。
+我知道你一定在想：“这人是谁？”是的，他的工作非常杰出！但是说真的，他是如何优化算法的呢？我们已经知道在二维中他是如何在四个点（正方形的四个角）之间插值的；所以没错你已经猜到了，对于三维[（这里有个示例）](../editor.php#11/3d-noise.frag)和四维我们需要插入 8 个和 16 个点。对吧？也就是说对于 N 维你需要插入 2 的 n 次方个点（2^N）。但是 Ken 很聪明地意识到尽管很显然填充屏幕的形状应该是方形，在二维中最简单的形状却是等边三角形。所以他把正方形网格（我们才刚学了怎么用）替换成了单纯形等边三角形的网格。
 
 ![](simplex-grid-00.png)
 
@@ -197,7 +197,7 @@ y = x*x*(3.0-2.0*x);
 
 所有这些进展汇聚成了算法中的杰作 **Simplex Noise**。下面是这个算法在 GLSL 中的应用，作者是 Ian McEwan，以[这篇论文](http://webstaff.itn.liu.se/~stegu/jgt2012/article.pdf)发表，对于我们的教学而言太复杂了，但你可以点开看看，也许没有你想象得那么晦涩难懂。
 
-[ ![Ian McEwan of Ashima Arts - Simplex Noise](simplex-noise.png) ](../edit.html#11/2d-snoise-clear.frag)
+[ ![Ian McEwan of Ashima Arts - Simplex Noise](simplex-noise.png) ](../editor.php#11/2d-snoise-clear.frag)
 
 好了，技术细节就说到这里，现在你可以利用它好好自由发挥一下：
 
@@ -205,11 +205,11 @@ y = x*x*(3.0-2.0*x);
 
 * 做一个 shader 来表现流体的质感。比如像[熔岩灯](https://en.wikipedia.org/wiki/Lava_lamp?oldformat=true)，墨水滴，水，等等。
 
-<a href="../edit.html#11/lava-lamp.frag"><canvas id="custom" class="canvas" data-fragment-url="lava-lamp.frag"  width="520px" height="200px"></canvas></a> 
+<a href="../editor.php#11/lava-lamp.frag"><canvas id="custom" class="canvas" data-fragment-url="lava-lamp.frag"  width="520px" height="200px"></canvas></a> 
 
 * 用 Simplex Noise 给你现在的作品添加更多的材质效果。
 
-<a href="../edit.html#11/iching-03.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-03.frag"  width="520px" height="520px"></canvas></a> 
+<a href="../editor.php#11/iching-03.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-03.frag"  width="520px" height="520px"></canvas></a> 
 
 在本章我们介绍了一些操控混沌的方法。这并不是一件简单的工作！成为 noise 超级大师需要时间和努力。
 

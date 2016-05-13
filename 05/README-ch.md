@@ -107,11 +107,11 @@ GLSL 还有一些独特的原生插值函数可以被硬件加速。
 
 [Iñigo Quiles](http://www.iquilezles.org/) 收集了一套[有用的函数](http://www.iquilezles.org/www/articles/functions/functions.htm)。在看过[这篇文章](http://www.iquilezles.org/www/articles/functions/functions.htm)后，看看下列函数转换到 GLSL 的样子。注意那些细小的改变，比如给浮点数（float)加小数点“.”，给“C 系函数”换成它们在 GLSL 里的名字，比如不是用 ```powf()``` 而是用 ```pow()```：
 
-* [Impulse](../edit.html#05/impulse.frag)
-* [Cubic Pulse](../edit.html#05/cubicpulse.frag)
-* [Exponential Step](../edit.html#05/expstep.frag)
-* [Parabola](../edit.html#05/parabola.frag)
-* [Power Curve](../edit.html#05/pcurve.frag)
+* [Impulse](../editor.php#05/impulse.frag)
+* [Cubic Pulse](../editor.php#05/cubicpulse.frag)
+* [Exponential Step](../editor.php#05/expstep.frag)
+* [Parabola](../editor.php#05/parabola.frag)
+* [Power Curve](../editor.php#05/pcurve.frag)
 
 给你们看些东西刺激一下斗志，这里有一个非常优雅的例子（作者是 [Danguafer](https://www.shadertoy.com/user/Danguafer)，造型函数的空手道黑带）。
 

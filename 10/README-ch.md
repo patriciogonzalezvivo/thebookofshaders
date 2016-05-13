@@ -78,15 +78,15 @@ Randomness is a maximal expression of entropy. How can we generate randomness in
 
 * 做按行随机移动的单元（以相反方向）。只显示亮一些的单元。让各行的速度随时间变化。
 
-<a href="../edit.html#10/ikeda-00.frag"><canvas id="custom" class="canvas" data-fragment-url="ikeda-00.frag"  width="520px" height="200px"></canvas></a>
+<a href="../editor.php#10/ikeda-00.frag"><canvas id="custom" class="canvas" data-fragment-url="ikeda-00.frag"  width="520px" height="200px"></canvas></a>
 
 * 同样地，让某几行以不同的速度和方向。用鼠标位置关联显示单元的阀值。
 
-<a href="../edit.html#10/ikeda-03.frag"><canvas id="custom" class="canvas" data-fragment-url="ikeda-03.frag"  width="520px" height="200px"></canvas></a>
+<a href="../editor.php#10/ikeda-03.frag"><canvas id="custom" class="canvas" data-fragment-url="ikeda-03.frag"  width="520px" height="200px"></canvas></a>
 
 * 创早其他有趣的效果。
 
-<a href="../edit.html#10/ikeda-04.frag"><canvas id="custom" class="canvas" data-fragment-url="ikeda-04.frag"  width="520px" height="200px"></canvas></a>
+<a href="../editor.php#10/ikeda-04.frag"><canvas id="custom" class="canvas" data-fragment-url="ikeda-04.frag"  width="520px" height="200px"></canvas></a>
 
 优雅的使用随机是困难的，尤其是你希望创作自然的模拟。随机仅仅是过于混乱了，真实生活中很少有东西看上去如此 ```random()```。如果观察（玻璃床上）雨滴的肌理或是股票的曲线 — 这两个都挺随机的 — 但是他们和我们在章开始的随机图案看起来不是同一对爹妈生的。原因？嗯，随机值是没有因果关系的，而大多数自然图案（肌理）都对前一个状态有所记忆（基于前一个状态）。
 

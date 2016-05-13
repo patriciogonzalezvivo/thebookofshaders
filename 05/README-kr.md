@@ -108,11 +108,11 @@ GLSL에는 하드웨어 가속화된 내장 보간법 함수들이 존재한다.
 
 [Iñigo Quiles](http://www .iquilezles.org/)가 가지고 있는 [useful functions](http://www.iquilezles.org/www/articles/functions/functions.htm)정리는 매우 유용하다. [이 글](http://www.iquilezles.org/www/articles/functions/functions.htm)을 읽고, GLSL로 번역해보는 작업도 해볼수 있다. 조심해야 될 점들은, "."(점)을 실수 뒤에 꼭 넣어야 한다는 점이다. 함수의 이름이 ```powf()``` 에서 ```pow()```등으로 바뀌어 구현되는 점등이다. 
 
-* [Impulse](../edit.html#05/impulse.frag)
-* [Cubic Pulse](../edit.html#05/cubicpulse.frag)
-* [Exponential Step](../edit.html#05/expstep.frag)
-* [Parabola](../edit.html#05/parabola.frag)
-* [Power Curve](../edit.html#05/pcurve.frag)
+* [Impulse](../editor.php#05/impulse.frag)
+* [Cubic Pulse](../editor.php#05/cubicpulse.frag)
+* [Exponential Step](../editor.php#05/expstep.frag)
+* [Parabola](../editor.php#05/parabola.frag)
+* [Power Curve](../editor.php#05/pcurve.frag)
 
 계속 작업이 뜨겁게 진행되는것을 도울수 있게 여기 멋진 작업도 소개해본다. (made by [Danguafer](https://www.shadertoy.com/user/Danguafer))
 

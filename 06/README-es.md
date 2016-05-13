@@ -65,7 +65,7 @@ Echa un vistazo al siguiente código en la línea 18 y observa cómo estamos usa
 
 Demuestra tus habilidades:
 
-* Crea una transición expresiva entre dos colores. Piensa en una emoción en particular. ¿Qué color es el más representativo de esa emoción? ¿Cómo aparece? ¿Cómo se desvanece? Piensa en otra emoción y el color que la represente. Cambia los colores del código de arriba por los de tus emociones. Luego anima las transiciones utilizando las funciones de forma. Robert Penner desarrolló una serie de funciones de forma populares, conocidas como [easing functions](http://easings.net/), puedes usar [este ejemplo](../edit.html#06/easing.frag) como investigación o inspiración, pero los mejores resultados saldrán cuando crees tus propias transiciones.
+* Crea una transición expresiva entre dos colores. Piensa en una emoción en particular. ¿Qué color es el más representativo de esa emoción? ¿Cómo aparece? ¿Cómo se desvanece? Piensa en otra emoción y el color que la represente. Cambia los colores del código de arriba por los de tus emociones. Luego anima las transiciones utilizando las funciones de forma. Robert Penner desarrolló una serie de funciones de forma populares, conocidas como [easing functions](http://easings.net/), puedes usar [este ejemplo](../editor.php#06/easing.frag) como investigación o inspiración, pero los mejores resultados saldrán cuando crees tus propias transiciones.
 
 ### Jugando con gradientes
 

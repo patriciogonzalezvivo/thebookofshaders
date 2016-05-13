@@ -70,7 +70,7 @@ Now is your turn:
 
 * Way before Oculus or google cardboard, stereoscopic photography was a big thing. Could code a simple shader to re-use this beautiful images?
 
-<a href=“../edit.html#10/ikeda-03.frag”><canvas id=“custom” class=“canvas” data-fragment-url=“ikeda-03.frag”  width=“520px” height=“200px”></canvas></a>
+<a href=“../editor.php#10/ikeda-03.frag”><canvas id=“custom” class=“canvas” data-fragment-url=“ikeda-03.frag”  width=“520px” height=“200px”></canvas></a>
 
 
 * What other optical toys can you re-create using textures?
