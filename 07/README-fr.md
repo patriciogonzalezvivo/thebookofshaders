@@ -29,7 +29,7 @@ Le procédé est très proche de la démarche que nous avons eu avec le papier m
 ```glsl
     if ( (X SUPERIEUR A 1) AND (Y SUPERIEUR A 1) )
         dessine en blanc
-    else 
+    else
         dessine en noir
 ```
 
@@ -42,7 +42,7 @@ uniform vec2 u_resolution;
 void main(){
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     vec3 color = vec3(0.0);
-    
+
     // chaque appel à step() renverra soit: 1.0 (blanc), soit 0.0 (noir).
     float gauche = step(0.1,st.x);   // équivalent à: si( X supérieur à 0.1 )
     float bas = step(0.1,st.y); // équivalent à: si( Y supérieur à 0.1 )
@@ -107,7 +107,7 @@ Avant d'aller plus loin, essayez les choses suivantes:
 
 * Créez un fonction qui dessine uniquement l'extérieur du rectangle.
 
-* Comment placer et déplacer plusieurs rectangles sur le canvas? si vous trouvez la réponse, tentez de créer une compostion à la [Piet Mondrian](http://en.wikipedia.org/wiki/Piet_Mondrian).
+* Comment placer et déplacer plusieurs rectangles sur le canvas? si vous trouvez la réponse, tentez de créer une composition à la [Piet Mondrian](http://en.wikipedia.org/wiki/Piet_Mondrian).
 
 ![Piet Mondria - Tableau (1921)](mondrian.jpg)
 
@@ -166,7 +166,7 @@ En somme, on utilise une ré-interprétation de l'espace, en se basant sur la di
 Cette technique s'appelle un "champ de distances" (Distance Field) et s'applique dans de nombreux contextes allant du dessin de contours à la 3D.
 
 Essayez les choses suivantes:
- 
+
 * Utilisez [```step()```](../glossary/?search=step) pour passer toutes les valeurs supérieures à 0.5 en blanc et toutes les autres en noir.
 
 * Inverser les couleurs d'avant plan et d'arrière plan.
@@ -269,7 +269,7 @@ Essayez de:
 
 ### Combinatoires
 
-Nous venons de voir comment moduler le rayon d'un cercle en fonction d'un angle en utilisant la fonction [```atan()```](../glossary/?search=atan) pour dessiner déifférentes formes.
+Nous venons de voir comment moduler le rayon d'un cercle en fonction d'un angle en utilisant la fonction [```atan()```](../glossary/?search=atan) pour dessiner différentes formes.
 Voyons maintenant comment utiliser ```atan()``` avec un champ de distances de façon à pouvoir utiliser les effets qu'ils permettent.
 
 L'astuce c'est d'utiliser le nombre de côtés d'un polygone régulier pour construire un champ de distances dans un espace polaire.
