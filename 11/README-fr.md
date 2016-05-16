@@ -4,7 +4,7 @@
 ## Bruit
 
 Il est temps de faire une pause!
-Nous avons joué avec des fonctions aléatoires qui ressemblait au bruit blanc d'une télévision.
+Nous avons joué avec des fonctions aléatoires qui ressemblaient au bruit blanc d'une télévision.
 On a encore la tête qui tourne en pensant aux shaders et nos yeux sont fatigués.
 Il est grand temps de sortir faire un tour!
 
