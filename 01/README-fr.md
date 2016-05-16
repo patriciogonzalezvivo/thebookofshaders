@@ -65,7 +65,7 @@ Comprendre l'histoire d'OpenGL peut être utile pour comprendre certaines conven
 
 ## Pourquoi les gens tremblent en entendant le mot Shader?
 
-Comme disait Uncle Ben's ([?!](http://quoteinvestigator.com/2015/07/23/great-power/) NDT) "une grande responsabilité est la suite inséparable d’un grand pouvoir", le traitement parallèle ne déroge pas à cette règle et aussi puissante que soit la programmation GPU, elle apporte un cortège de contraintes et de restrictions.
+Comme dit *Uncle Ben* dans Spiderman: "with great power comes great responsibility" ([merci à Nicolas Gans](https://en.m.wikipedia.org/wiki/Uncle_Ben)), le traitement parallèle ne déroge pas à cette règle et aussi puissante que soit la programmation GPU, elle apporte un cortège de contraintes et de restrictions.
 
 Pour pouvoir travailler avec une *trame* de *threads*, il faut que thread soit indépendant des autres. On dit que le thread est *aveugle* à ce que font les autres threads.
 Cette restriction implique que toutes les données doivent aller dans le même sens, il est donc impossible de se servir ou simplement de connaître les résultat d'un autre thread.
