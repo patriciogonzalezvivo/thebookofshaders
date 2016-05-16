@@ -11,13 +11,30 @@
         <meta name="keywords" content="shader,openGL,WebGL,GLSL,book,procedural,generative" />
         <meta name="description" content="Gentle step-by-step guide through the abstract and complex universe of Fragment Shaders."/>
 
-        <meta name="twitter:card" content="summary">
+        <!— Open Graph data —>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="The Book of Shaders"/>
+        <meta property="og:site_name" content="The Book of Shaders"/>
+        <meta property="og:description" content="Gentle step-by-step guide through the abstract and complex universe of Fragment Shaders."/>
+        <meta property="og:url" content="http://thebookofshaders.com"/>
+        <meta property="og:image" content="http://thebookofshaders.com/thumb.png"/>
+        <meta property="og:image:type" content="image/png"/>
+        <meta property="og:image:width" content="500" />
+        <meta property="og:image:height" content="500" />
+
+
+        <!— Twitter Card—>
+        <meta name="twitter:card" content="image">
+        <!-- <meta name="twitter:card" content="summary"> -->
         <meta name="twitter:site" content="@bookofshaders">
         <meta name="twitter:creator" content="@patriciogv">
         <meta name="twitter:title" content="The Book Of Shaders">
-        <meta name="twitter:description" content="Gentle step-by-step guide through the abstract and complex universe of Fragment Shaders.">
-        <meta name="twitter:image" content="https://thebookofshaders.com/thumb.jpg">
         <meta name="twitter:domain" content="thebookofshaders.com">
+        <meta name="twitter:description" content="Gentle step-by-step guide through the abstract and complex universe of Fragment Shaders.">
+        <meta name="twitter:image" content="http://thebookofshaders.com/thumb.png">
+        <meta name="twitter:image:width" content="500">
+        <meta name="twitter:image:height" content="500">
+
         
         <link href="/favicon.gif" rel="shortcut icon"/>
 
