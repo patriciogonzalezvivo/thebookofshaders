@@ -17,15 +17,21 @@
         <meta property="og:type" content="article" />
         <meta property="og:title" content="GLSL Shader Editor" />
         <meta property="og:site_name" content="The Book of Shaders"/>
-        <meta property="og:description" content="The Book of Shaders player" />
+        <meta property="og:description" content="The Book of Shaders Editor" />
+
 <?php
     if (!empty($_GET['log'])) {
         echo '        <meta property="og:url" content="https://thebookofshaders.com/edit.php?log='. $_GET['log'].'"/>
-        <meta property="og:image" content="https://thebookofshaders.com/log/'.$_GET['log'].'.png"/>
-        <meta property="og:image:type" content="image/png"/>
-        <meta property="og:image:width" content="500"/>
-        <meta property="og:image:height" content="500"/>';
+        <meta property="og:image" content="https://thebookofshaders.com/log/'.$_GET['log'].'.png"/>';
+    } else {
+        echo '        <meta property="og:url" content="https://thebookofshaders.com/edit.php"/>
+        <meta property="og:image" content="https://thebookofshaders.com/thumb.png"/>';
     }
+
+    echo'
+        <meta property="og:image:type" content="image/png"/>
+        <meta property="og:image:width" content="500" />
+        <meta property="og:image:height" content="500" />';
 ?>
 
         <!— Twitter Card—>
@@ -38,12 +44,17 @@
     if (!empty($_GET['log'])) {
         echo '
         <meta name="twitter:url" content="https://thebookofshaders.com/edit.php?log='. $_GET['log'].'"/>
-        <meta name="twitter:image" content="https://thebookofshaders.com/log/'.$_GET['log'].'.png"/>
+        <meta name="twitter:image" content="https://thebookofshaders.com/log/'.$_GET['log'].'.png"/>';
+    } else {
+        echo '
+        <meta name="twitter:url" content="https://thebookofshaders.com/edit.php"/>
+        <meta name="twitter:image" content="https://thebookofshaders.com/thumb.png"/>';
+    }
+
+    echo '
         <meta name="twitter:image:width" content="500">
         <meta name="twitter:image:height" content="500">';
-    }
 ?>
-
 		<style>
 			body {
 				height: 100%;
