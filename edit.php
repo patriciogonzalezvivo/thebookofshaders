@@ -21,11 +21,11 @@
 
 <?php
     if (!empty($_GET['log'])) {
-        echo '        <meta property="og:url" content="https://thebookofshaders.com/edit.php?log='. $_GET['log'].'"/>
+        echo '
         <meta property="og:image" content="http://thebookofshaders.com/log/'.$_GET['log'].'.png"/>
         <meta property="og:image:secure_url" content="https://thebookofshaders.com/log/'.$_GET['log'].'.png"/>';
     } else {
-        echo '        <meta property="og:url" content="https://thebookofshaders.com/edit.php"/>
+        echo '
         <meta property="og:image" content="https://thebookofshaders.com/thumb.png"/>';
     }
 
@@ -44,11 +44,9 @@
 <?php
     if (!empty($_GET['log'])) {
         echo '
-        <meta name="twitter:url" content="https://thebookofshaders.com/edit.php?log='. $_GET['log'].'"/>
         <meta name="twitter:image" content="https://thebookofshaders.com/log/'.$_GET['log'].'.png"/>';
     } else {
         echo '
-        <meta name="twitter:url" content="https://thebookofshaders.com/edit.php"/>
         <meta name="twitter:image" content="https://thebookofshaders.com/thumb.png"/>';
     }
 
