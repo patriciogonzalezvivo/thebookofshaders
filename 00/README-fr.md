@@ -2,7 +2,7 @@
 
 <canvas id="custom" class="canvas" data-fragment-url="cmyk-halftone.frag" data-textures="vangogh.jpg" width="700px" height="320px"></canvas>
 
-Les images ci-dessus onté été crées de différentes manières.
+Les images ci-dessus ont été crées de différentes manières.
 La première est un tableau de Van Gogh, réalisée en appliquant des couches de peinture successives.
 ça lui a pris des jours, voire des semaines.
 La seconde est réalisée en temps réel en combinant 4 matrices de pixels ; une pour le cyan, une pour le magenta, une pour le jaune et une pour le noir.
