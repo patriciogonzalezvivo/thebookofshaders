@@ -35,24 +35,24 @@
         <meta property="og:image:height" content="500" />';
 ?>
 
-        <!— Twitter Card—>
+<!--         <!— Twitter Card—>
         <meta name="twitter:card" content="image">
         <meta name="twitter:site" content="@bookofshaders">
         <meta name="twitter:title" content="GLSL Shader Editor">
         <meta name="twitter:description" content="The Book of Shaders editor">
-        <meta name="twitter:domain" content="thebookofshaders.com">
+        <meta name="twitter:domain" content="thebookofshaders.com"> -->
 <?php
-    if (!empty($_GET['log'])) {
-        echo '
-        <meta name="twitter:image" content="https://thebookofshaders.com/log/'.$_GET['log'].'.png"/>';
-    } else {
-        echo '
-        <meta name="twitter:image" content="https://thebookofshaders.com/thumb.png"/>';
-    }
+    // if (!empty($_GET['log'])) {
+    //     echo '
+    //     <meta name="twitter:image" content="https://thebookofshaders.com/log/'.$_GET['log'].'.png"/>';
+    // } else {
+    //     echo '
+    //     <meta name="twitter:image" content="https://thebookofshaders.com/thumb.png"/>';
+    // }
 
-    echo '
-        <meta name="twitter:image:width" content="500">
-        <meta name="twitter:image:height" content="500">';
+    // echo '
+    //     <meta name="twitter:image:width" content="500">
+    //     <meta name="twitter:image:height" content="500">';
 ?>
 		<style>
 			body {
@@ -73,6 +73,8 @@
 	<link type='text/css' rel='stylesheet' href='https://thebookofshaders.com/glslEditor/glslEditor.css'>
     <script type='application/javascript' src='https://thebookofshaders.com/glslEditor/glslEditor.js'></script>
     <script type='text/javascript'>
+        var glslEditor = {};
+        
         function loadjscssfile(filename, filetype, callback){
             if (filetype=="js") { //if filename is a external JavaScript file
                 var fileref = document.createElement('script')
@@ -109,7 +111,7 @@
         };
 
         function init() {
-            window.glslEditor = new GlslEditor('#glsl_editor', { 
+            glslEditor = new GlslEditor('#glsl_editor', { 
                                                                     canvas_size: 500,
                                                                     canvas_draggable: true,
                                                                     theme: 'monokai',
