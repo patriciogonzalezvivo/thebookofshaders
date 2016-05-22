@@ -1,10 +1,8 @@
-<?php
-
-    $path = "../../";
+<?php 
+    $path = "../../../";
 	$subtitle = "learning to fly";
 	$language = isset( $_GET[ 'lan' ] ) ? $_GET[ 'lan' ] : "";
 	$README = "README";
-
     include($path."/header.php");
     include($path."/src/parsedown/Parsedown.php");
 
@@ -16,16 +14,15 @@
 
     $Parsedown = new Parsedown();
     echo $Parsedown->text(file_get_contents ('README.md'));
-    /*
+
     echo '
     </div>
     <hr>
     <ul class="navigationBar" >
-        <!--li class="navigationBar" onclick="previusPage()">&lt; &lt; Previous</li /-->
+        <li class="navigationBar" onclick="previusPage()">&lt; &lt; Previous</li>
         <li class="navigationBar" onclick="homePage()"> Home </li>
         <li class="navigationBar" onclick="nextPage()">Next &gt; &gt;</li>
     </ul>';
-    //*/
 
-    include($path."/footer.php");
+    include($path."/footer.php"); 
 ?>
