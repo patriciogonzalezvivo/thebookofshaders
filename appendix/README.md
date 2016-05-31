@@ -8,7 +8,7 @@
 
 4. [How can I collaborate with this book?](03/)
 
-5. [An introduction for those coming from JS](04/) by ...
+5. [An introduction for those coming from JS](04/) by [Nicolas Barradeau](http://www.barradeau.com/)
 
 6. [An introduction for vectors](05/) by ...
 
