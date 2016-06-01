@@ -1,5 +1,5 @@
 ## An introduction for those coming from JS
-by Nicolas Barradeau
+by [Nicolas Barradeau](http://www.barradeau.com/)
 
 
 If you're a JavaScript developer, chances are you'll be a bit puzzled when reading the book.
@@ -105,6 +105,7 @@ The solution to this is to use **type casting** ; it will _make the compiler bel
 //casting the type of the integer variable 'i' into float
 float   r = float( i ) * f;
 ```
+
 Which is strictly equivalent to dressing up a **_cat_** in a **_giraffe_ outfit** and will work as expected ( `r` will store the result of `i` x `f`).
 
 It is possible to **cast** any of the above types into any other type, note that casting a `float` to `int` will behave like a `Math.floor()` as it will remove the values behind the floating point.
@@ -124,7 +125,6 @@ int     i = int( true );
 This may not sound like much for `scalar` types, it's not very different from **casting**, but it will make sense when adressing the *overload* section.
 
 Ok, so these three are the `primitive types`, things you can't live without but of course, GLSL has more to offer.
-
 
 ### Vectors
 ![first search result for 'vector villain' on Google Image, on the 2016/05/20](vector.jpg)
@@ -438,5 +438,3 @@ Of course we could have gone deeper into the various concepts but as mentioned e
 It's a quite a lot to ingest but with patience and practice, this will become more and more natural.
 
 I hope you found some of this useful, now [what about starting your journey through the book?]("https://www.thebookofshaders.com/")
-
-
