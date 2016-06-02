@@ -39,8 +39,8 @@ The examples of this book and the [companion editor](http://editor.thebookofshad
 They'll tell you where and why your program failed to compile, then you'll have to fix things and whenever the shader is ready to compile, it will be displayed instantly.
 That's a great way of learning as it's very visual and you can't really break anything.
 
-Last note, a **shader** is made of 2 programs, the **vertex shaderr** and the **fragment shader**.
-In a nutshell, the **vertex shader**, the first program, recieves a *geometry* as an input and turns it into series of **pixels** (or *fragments*) then hands them over to the
+Last note, a **shader** is made of 2 programs, the **vertex shader** and the **fragment shader**.
+In a nutshell, the **vertex shader**, the first program, receives a *geometry* as an input and turns it into series of **pixels** (or *fragments*) then hands them over to the
 **fragment shader**, the second program, that will decide which color to paint the pixels.
 This book is mostly focused on the latter, in all the examples, the geometry is a simple quadrilateral that covers the whole screen.
 
@@ -80,7 +80,7 @@ Not that hard right? as mentioned above, it even makes things easier when it com
 When in doubt, remember that you're doing this for your program to run immensely faster than in JS.
 
 #### void
-There is a `void` type that roughly cooresponds to `null`, it is used as the return type of a method that doesn't return anything.
+There is a `void` type that roughly corresponds to `null`, it is used as the return type of a method that doesn't return anything.
 you can't assign it to a variable.
 
 #### boolean
@@ -122,7 +122,7 @@ int     i = int( 1 );
 int     i = int( 1.9995 );
 int     i = int( true );
 ```
-This may not sound like much for `scalar` types, it's not very different from **casting**, but it will make sense when adressing the *overload* section.
+This may not sound like much for `scalar` types, it's not very different from **casting**, but it will make sense when addressing the *overload* section.
 
 Ok, so these three are the `primitive types`, things you can't live without but of course, GLSL has more to offer.
 
@@ -142,7 +142,7 @@ var Point = function( x, y ){
 var p = new Point( 100,100 );
 ```
 
-As we've just seen, this is SO wrong at SO many levels! That **`var`** keyword for one, then the horendous **`this`**, then again **untyped** `x` and `y` values...
+As we've just seen, this is SO wrong at SO many levels! That **`var`** keyword for one, then the horrendous **`this`**, then again **untyped** `x` and `y` values...
 No, this is not going to work in shaderland.
 
 Instead, GLSL exposes built-in data structures to hold data together, namely:
@@ -200,8 +200,8 @@ And the clever bunny you are already noticed three things:
    * `R`, `G`, `B` & `A` are used to encode colors and alpha
    * `[0]`, `[1]`, `[2]` & `[3]` mean that we have a random access array of values
 
-So depending on wether you're manipulating 2D or 3D coordinates, a color with or without an alpha value or simply some random variables, you can pick the most suited **vector** type and size.
-Typically 2D coordinates and vectors (in the geometric sense) are stored as a `vec2`, `vec3` or `vec4`, colors as `vec3` or `vec4` if you need opacity but htere is no restriction on how to use the vectors.
+So depending on whether you're manipulating 2D or 3D coordinates, a color with or without an alpha value or simply some random variables, you can pick the most suited **vector** type and size.
+Typically 2D coordinates and vectors (in the geometric sense) are stored as a `vec2`, `vec3` or `vec4`, colors as `vec3` or `vec4` if you need opacity but there is no restriction on how to use the vectors.
 For instance, if you want to store only one boolean value in a `bvce4`, it's possible, it's just a waste of memory.
 
 **note**: in a shader, color values (`R`, `G`, `B` & `A`) are normalised, they range from 0 to 1 and not from 0 to 0xFF, so you'd rather use a Float `vec4` than an Integer `ivec4` to store them.
@@ -240,7 +240,7 @@ So not only can you retrieve a subset of your data, but you can also specify the
 vec4 color = vec4( 0.2, 0.8, 0.0, 1.0 );
 
 //and retrieve the color components in the A,B,G,R order
-vec4 backwards = v4.abgr; // backawrds = vec4( 1.0, 0.0, 0.8, 0.2 );
+vec4 backwards = v4.abgr; // backwards = vec4( 1.0, 0.0, 0.8, 0.2 );
 ```
 And of course, you can ask the same component multiple times:
 ```glsl
@@ -282,7 +282,7 @@ We built a `vec4` out of two `vec2`, by doing so, the new `vec4` used the `a.x` 
 Then it took `b.x` and `b.y` and used them as the `Z` and `W` components of `c`.
 
 This is what happens when a **function** is overloaded to accept different arguments, in this case, the `vec4` **constructor**.
-It means that many **vesrions** of the same method with a different signature can coexist in the same program, for instance the following declarations are all valid:
+It means that many **versions** of the same method with a different signature can coexist in the same program, for instance the following declarations are all valid:
 ```glsl
 vec4 a = vec4(1.0, 1.0, 1.0, 1.0);
 vec4 a = vec4(1.0);// x, y, z, w all equal 1.0
@@ -294,7 +294,7 @@ the only thing you should make sure of is to provide enough arguments to feed yo
 
 Last thing, you are allowed to overload the built-in functions in your program so they can take arguments they were not designed for (this shouldn't happen too often though).
 
-### more types
+#### more types
 Vectors are fun, they're the meat of your shader.
 There are other primitives such as Matrices and Texture samplers which will be covered later in the book.
 
@@ -338,7 +338,7 @@ sandy.color0 // vec3(0.92,0.83,0.60)
 ```
 This is syntactic sugar but it can help you write cleaner code, at least code you're more familiar with.
 
-### statements & conditions
+#### statements & conditions
 
 Data structures are nice as such but we _might_ need to iterate or perform conditional tests at some point.
 Fortunately for us, the syntax is very close to the JavaScript.
@@ -380,7 +380,7 @@ note that on some hardware, ```break``` does not work as expected and the loop d
 In general, you'll want to keep the iteration count as low as possible and avoid the loops and the conditionals as often as you can.
 
 
-### qualifiers
+#### qualifiers
 
 On top of the variable types, GLSL uses **qualifiers**.
 Long story short, qualifiers help the compiler know which variable is what.
@@ -388,11 +388,11 @@ For instance some data can only be provided by the CPU to the GPU, those are cal
 The **attributes** are reserved for the vertex shaders, the **uniforms** can be used in both the vertex and the fragment shaders.
 There's also a ```varying``` qualifier used to pass variables between the vertex and the fragment shader.
 
-I won't go too much into details here as we're mostly focused on the **fragment shader** but later in the book, you'll see sometihng like:
+I won't go too much into details here as we're mostly focused on the **fragment shader** but later in the book, you'll see something like:
 ```glsl
 uniform vec2 u_resolution;
 ```
-See what we did here? we stuck a ```unifrom``` qualifier before the type of the variable
+See what we did here? we stuck a ```uniform``` qualifier before the type of the variable
 This means that the resolution of the canvas we're working on is passed to the shader from the CPU.
 The width of the canvas is stored in the x and the height in the y component of the 2D vector.
 
@@ -417,7 +417,7 @@ banana( value );
 console.log( value );// > 0 ; the changes are not taken into account outside the function
 ```
 
-With argumnts qualifiers, you can specify the behaviour of the the arguments:
+With arguments qualifiers, you can specify the behaviour of the the arguments:
   * ```in``` will be read-only ( default )
   * ```out```  write-only: you can't read the value of this argument but you can set it
   * ```inout```  read-write: you can both get and set the value of this variable
@@ -432,9 +432,17 @@ banana( A ); //now A = 1.;
 ```
 This is very different from JS and quite powerful too but you don't have to specify the signature qualifiers (the default is read-only).
 
+#### space & coordinates
+
+Final note, in the DOM and the Canvas 2D, we're used to have the Y axis pointing 'down'.
+This makes sense in the context of a DOM as it follows the way a web page unrolls ; the navbar at the top, content expanding towards the bottom.
+In a WebGL canvas, the Y axis is flipped: Y points 'up'.
+
+This means that the origin, the point (0,0), is located at the bottom left corner of a WebGL context, not at the top left corner like in a 2D Canvas.
+The textures coordinates follow this rule which might be counter-intuitive at first.
 
 ## And we're done!
-Of course we could have gone deeper into the various concepts but as mentioned earlier, this is meant to give a BUG HUG to the newcomers.
+Of course we could have gone deeper into the various concepts but as mentioned earlier, this is meant to give a BIG HUG to the newcomers.
 It's a quite a lot to ingest but with patience and practice, this will become more and more natural.
 
 I hope you found some of this useful, now [what about starting your journey through the book?]("https://www.thebookofshaders.com/")
