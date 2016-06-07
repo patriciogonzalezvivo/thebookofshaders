@@ -46,12 +46,12 @@
 
         <!-- GlslCanvas -->
 <?php
-    if (file_exists($path."/src/glslCanvas/build/GlslCanvas.min.js")) {
+    if (file_exists($path."/src/glslCanvas/build/GlslCanvas.js")) {
         echo '
-        <script type="text/javascript" src="'.$path.'/src/glslCanvas/build/GlslCanvas.min.js"></script>';
+        <script type="text/javascript" src="'.$path.'/src/glslCanvas/build/GlslCanvas.js"></script>';
     } else {
         echo '
-        <script type="text/javascript" src="https://thebookofshaders.com/glslCanvas/GlslCanvas.min.js"></script>';
+        <script type="text/javascript" src="https://thebookofshaders.com/glslCanvas/GlslCanvas.js"></script>';
     }
 ?>
 
