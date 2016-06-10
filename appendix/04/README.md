@@ -149,7 +149,7 @@ Instead, GLSL exposes built-in data structures to hold data together, namely:
 
  * `bvec2`: a 2D Boolean vector, `bvec3`: a 3D Boolean vector, `bvec4`: a 4D Boolean vector
  * `ivec2`: a 2D Integer vector, `ivec3`: a 3D Integer vector, `ivec4`: a 4D Integer vector
- * `vec2`: a 2D Float vector, `vec3`: a 3D Float vector, `ivec4`: a 4D Float vector
+ * `vec2`: a 2D Float vector, `vec3`: a 3D Float vector, `vec4`: a 4D Float vector
 
 You immediately noticed that there's a type of **vector** for each primitive type, clever bunny.
 From what we just saw, you can deduce that a `bvec2` will hold two values of type `bool` and a `vec4` will hold four `float` values.
@@ -260,7 +260,7 @@ In the types section, I mentioned something about the **constructor** and that's
 For those who don't know, **overloading** an operator or a function roughly means: _'changing the behaviour of said operator or function depending on the operands/arguments'_.
 Overloading is not allowed in JavaScript, so this may be a bit strange at first but I'm sure that once you get used to it, you'll wonder why it is not implemented in JS (short answer, *typing*).
 
-the most basic example of operator overloading goes as follow:
+The most basic example of operator overloading goes as follow:
 
 ```glsl
 vec2 a = vec2( 1.0, 1.0 );
@@ -268,7 +268,7 @@ vec2 b = vec2( 1.0, 1.0 );
 //overloaded addition
 vec2 c = a + b;     // c = vec2( 2.0, 2.0 );
 ```
-WHAT? so you can add things that are not numbers?!
+WHAT? So you can add things that are not numbers?!
 
 Yes, precisely. Of course this applies to all operators (`+`, `-`, `*` & `/`) but that's only the beginning.
 Consider the following snippet:
@@ -290,7 +290,7 @@ vec4 a = vec4( v2, float, v4 );// vec4( v2.x, v2.y, float, v4.x );
 vec4 a = vec4( v3, float );// vec4( v3.x, v3.y, v3.z, float );
 etc.
 ```
-the only thing you should make sure of is to provide enough arguments to feed your **vector**.
+The only thing you should make sure of is to provide enough arguments to feed your **vector**.
 
 Last thing, you are allowed to overload the built-in functions in your program so they can take arguments they were not designed for (this shouldn't happen too often though).
 
@@ -375,7 +375,7 @@ for( float i = 0.0; i <= count; i+= 1.0 ){
     if( i >= 8. )break;
 }
 ```
-note that on some hardware, ```break``` does not work as expected and the loop doesn't bail out early.
+Note that on some hardware, ```break``` does not work as expected and the loop doesn't bail out early.
 
 In general, you'll want to keep the iteration count as low as possible and avoid the loops and the conditionals as often as you can.
 
@@ -392,7 +392,7 @@ I won't go too much into details here as we're mostly focused on the **fragment 
 ```glsl
 uniform vec2 u_resolution;
 ```
-See what we did here? we stuck a ```uniform``` qualifier before the type of the variable
+See what we did here? We stuck a ```uniform``` qualifier before the type of the variable
 This means that the resolution of the canvas we're working on is passed to the shader from the CPU.
 The width of the canvas is stored in the x and the height in the y component of the 2D vector.
 
@@ -422,7 +422,7 @@ With arguments qualifiers, you can specify the behaviour of the the arguments:
   * ```out```  write-only: you can't read the value of this argument but you can set it
   * ```inout```  read-write: you can both get and set the value of this variable
 
-rewriting the banana method in GLSL would look like
+Rewriting the banana method in GLSL would look like
 ```glsl
 void banana( inout float a ){
     a += 1.;
