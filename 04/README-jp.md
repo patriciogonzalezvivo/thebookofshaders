@@ -151,4 +151,4 @@ void ofApp::draw(){
 }
 ```
 
-openFrameworksでシェーダーを使う方法についてより詳しく知りたい場合は[Joshua Noble](https://processing.org/tutorials/pshader/)の[素晴らしいチュートリアル](http://openframeworks.cc/tutorials/graphics/shaders.html) を参照してください。
+openFrameworksでシェーダーを使う方法についてより詳しく知りたい場合は[Joshua Noble](http://openframeworks.cc/ofBook/chapters/shaders.html)の[素晴らしいチュートリアル](http://openframeworks.cc/tutorials/graphics/shaders.html) を参照してください。
