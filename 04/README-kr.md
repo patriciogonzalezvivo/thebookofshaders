@@ -150,4 +150,4 @@ void ofApp::draw(){
 }
 ```
 
-더 자세한 정보는 [Joshua Noble](http://thefactoryfactory.com/)가 만든 [강좌](http://openframeworks.cc/tutorials/graphics/shaders.html)를 보기 바란다.
+더 자세한 정보는 [Joshua Noble](http://thefactoryfactory.com/)가 만든 [강좌](http://openframeworks.cc/ofBook/chapters/shaders.html)를 보기 바란다.

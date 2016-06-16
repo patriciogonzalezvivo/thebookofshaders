@@ -187,4 +187,4 @@ void ofApp::draw(){
 }
 ```
 
-For more information about shaders in openFrameworks go to this [excellent tutorial](http://openframeworks.cc/tutorials/graphics/shaders.html) made by [Joshua Noble](http://thefactoryfactory.com/).
+For more information about shaders in openFrameworks go to this [excellent tutorial](http://openframeworks.cc/ofBook/chapters/shaders.html) made by [Joshua Noble](http://thefactoryfactory.com/).

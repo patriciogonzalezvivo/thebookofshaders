@@ -153,4 +153,4 @@ void ofApp::draw(){
 }
 ```
 
-关于 shader 在 openFrameworks 的更多信息请参考这篇[excellent tutorial](http://openframeworks.cc/tutorials/graphics/shaders.html)，作者是 [Joshua Noble](http://thefactoryfactory.com/)。
+关于 shader 在 openFrameworks 的更多信息请参考这篇[excellent tutorial](http://openframeworks.cc/ofBook/chapters/shaders.html)，作者是 [Joshua Noble](http://thefactoryfactory.com/)。
