@@ -29,15 +29,15 @@ This is a gentle step-by-step guide through the abstract and complex universe of
 * Generative designs
     * [Random](10/)
     * [Noise](11/)
-    * Cellular noise
-    * Fractional brownian motion
-    * Fractals
+    * [Cellular noise](12/)
+    * [Fractional brownian motion](13/)
+    * [Fractals](14/)
 
 * Image processing:
-    * Textures
-    * Image operations
-    * Kernel convolutions
-    * Filters
+    * [Textures](15/)
+    * [Image operations](16/)
+    * [Kernel convolutions](17/)
+    * [Filters](18/)
     * Others effects
 
 * Simulation
