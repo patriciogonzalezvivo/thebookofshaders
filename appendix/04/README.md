@@ -89,7 +89,7 @@ If the conditional branching is a valid option on the CPU, [the parallel nature]
 Using conditionals is even discouraged most of the time, the book explains a couple of alternative techniques to solve this.
 
 #### type casting
-As [Aragorn](https://en.wikipedia.org/wiki/Aragorn) put it, "One does not simply combine Typed primitives". Unlike JavaScript, GLSL will not allow you to perform operations between variables of different types.
+As [Boromir](https://en.wikipedia.org/wiki/Boromir) put it, "One does not simply combine Typed primitives". Unlike JavaScript, GLSL will not allow you to perform operations between variables of different types.
 
 This for instance:
 ```glsl
