@@ -4,13 +4,27 @@
 
 In 1996, sixteen years after Perlin's Noise and five years before his Simplex Noise, [Steven Worley wrote a paper call  “A Cellular Texture Basis Function”](http://www.rhythmiccanvas.com/research/papers/worley.pdf). In it he describes a procedural texturing technique now extensively use by the graphics community.
 
-To understand the principles behind it we need to start thinking in terms iterations.
+To understand the principles behind it we need to start thinking in terms **iterations**. Probably you know what that means, yes start usigin ```for``` loops. There is only one catch on ```for``` loops on GLSL, the number we are checking against must be a constant (```const```), so no dynamic loops, once you set the number of iteration to do you are set.
 
-### A distance field for some points
+Let's take a look to an example.
 
-Let's say we want to make a distance field of 4 points. What we need to do? in a nutshell, **for each pixel we want to calculate the distance to the closest point**. That means that we need to iterate through all the points and store the value to the most close one.
+### Points for a distance field
+
+Let's say we want to make a distance field of 4 points. What we need to do? Well, **for each pixel we want to calculate the distance to the closest point**. That means that we need to iterate through all the points and store the value to the most close one.
+
+```glsl
+    float min_dist = 1.; // A variable to store the closest distance to a point
+
+    min_dist = min(min_dist, distance(st, point_a));
+    min_dist = min(min_dist, distance(st, point_b));
+    min_dist = min(min_dist, distance(st, point_c));
+    min_dist = min(min_dist, distance(st, point_d));
+```
 
 ![](cell-00.png)
+
+
+This is not really elegant but does the trick. Now let's re implement it using an array and a ```for``` loop.
 
 ```glsl
     float m_dist = 1.;  // minimun distance
@@ -20,11 +34,11 @@ Let's say we want to make a distance field of 4 points. What we need to do? in a
     }
 ```
 
-To do that we can use a ```for``` loop to iterate through an array of points and keep track of the minimum distance using a [```min()```](../glossary/?search=min) function. Here a brief implementation of that:
+Note how we use a ```for``` loop to iterate through an array of points and keep track of the minimum distance using a [```min()```](../glossary/?search=min) function Here a brief working implementation of this idea:
 
 <div class="codeAndCanvas" data="cellnoise-00.frag"></div>
 
-Note in the above code, how one of the points is the mouse position. Play with it so you can get a more intuitive idea of how this code behaves. Then try this:
+In the above code, one of the points is assigned with the mouse position. Play with it so you can get an intuitive idea of how this code behaves. Then try this:
 
 - How can you animate the rest of the points?
 - After reading [the chapter about shapes](../07/), imagine interesting ways to use this distance field?
@@ -32,11 +46,11 @@ Note in the above code, how one of the points is the mouse position. Play with i
 
 ### Tiling and iterating
 
-You probably notice that ```for``` loops and *arrays* are not so friendly in GLSL. Loops don't accept dynamic limits on their condition. Also iterating through a lot of instances reduce the performance of your shader significantly. So... We need to find another strategy.
+You probably notice that ```for``` loops and *arrays* are not so friendly in GLSL. Like we said before loops don't accept dynamic limits on their condition. Also iterating through a lot of instances reduce the performance of your shader significantly. That means we can't use this as is, for big amounts on points. We need to find another strategy, one that takes advantage of the parallel processing archeture of the GPU.
 
 ![](cell-01.png)
 
-One way to approach this problem is to divide the space in tiles. Not every pixel need to check every single points, right? They just need to check the points that are close to them. That's the main idea of [Steven Worley's paper](http://www.rhythmiccanvas.com/research/papers/worley.pdf). We already subdivide the space into cells in the chapters about: [patterns](../09/), [random](../10/) and [noise](../11/). Hopefully by now you are familiarize with this technique.
+One way to approach this problem is to divide the space in tiles. Not every pixel need to check every single points, right? Given the fact that each pixel runs in his own thread, we can subdivide the space in a cells, each one with an unique point to watch. Also, to avoid aberrations on the edges on the cells we need to check for the distances to the points on the neightbor cells. That's the main brillant idea of [Steven Worley's paper](http://www.rhythmiccanvas.com/research/papers/worley.pdf). At the end each pixel just need to check only nine position, their own point and the 8 of the cells arround. We already subdivide the space into cells in the chapters about: [patterns](../09/), [random](../10/) and [noise](../11/). Hopefully by now you are familiarize with this technique.
 
 ```glsl
     // Scale 
