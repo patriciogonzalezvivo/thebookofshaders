@@ -29,7 +29,7 @@ Questa è una guida passo passo attraverso l'universo astratto e complesso dei F
 * Progettazione generativa
     * [Random](10/?lan=it)
     * [Rumore](11/?lan=it)
-    * Cellular noise
+    * Rumore cellulare
     * Moto browniano frazionario
     * Frattali
 
@@ -43,9 +43,9 @@ Questa è una guida passo passo attraverso l'universo astratto e complesso dei F
 * Simulazione
     * Pingpong
     * Conway
-    * Ripples
-    * Water color
-    * Reaction diffusion
+    * Increspature
+    * Acquerello
+    * Reazione-diffusione
 
 * Grafica 3D
     * Luci
@@ -56,10 +56,10 @@ Questa è una guida passo passo attraverso l'universo astratto e complesso dei F
     * Riflesso e rifrazione
 
 * [Appendice:](appendix/) Altri modi per utilizzare questo libro
-	* [Come posso consultare questo libro offline?](appendix/00/)
-	* [Come posso far andare gli esempi su un RaspberryPi?](appendix/01/)
-	* [Come posso stampare questo libro?]((appendix/02/)
-    * [Come posso collaborare?](appendix/03/)
+	* [Come posso consultare questo libro offline?](appendix/00/?lan=it)
+	* [Come posso eseguire gli esempi su un Raspberry Pi?](appendix/01/?lan=it)
+	* [Come posso stampare questo libro?](appendix/02/?lan=it)
+    * [Come posso collaborare a questo libro?](appendix/03/?lan=it)
     * [Un'introduzione per chi proviene da JS](appendix/04/) di [Nicolas Barradeau](http://www.barradeau.com/)
 
 * [Galleria d'esempi](examples/)
@@ -70,13 +70,11 @@ Questa è una guida passo passo attraverso l'universo astratto e complesso dei F
 
 [Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) (1982, Buenos Aires, Argentina) è un artista e sviluppatore con sede a New York. Esplora lo spazio interstiziale fra organico e sintetico, analogico e digitale, individuale e collettivo. Nel suo lavoro usa il codice come un linguaggio espressivo con l'intenzione di creare un migliore vivere insieme.
 
-Patricio studiò e praticò la psicoterapia e l'arteterapia. Ha conseguito un MFA in Design e Tecnologia alla Parsons The New School. dove ora insegna. Attualmente lavora come Ingegnere Grafico alla Mapzen realizzando strumenti cartografici openSource. 
+Patricio studiò e praticò la psicoterapia e l'arteterapia. Ha conseguito un MFA in Design e Tecnologia alla Parsons The New School dove ora insegna. Attualmente lavora come Ingegnere Grafico alla Mapzen realizzando strumenti cartografici openSource. 
 
 <div class="header"> <a href="http://patriciogonzalezvivo.com/" target="_blank">WebSite</a> - <a href="https://twitter.com/patriciogv" target="_blank">Twitter</a> - <a href="https://github.com/patriciogonzalezvivo" target="_blank">GitHub</a> - <a href="https://vimeo.com/patriciogv" target="_blank">Vimeo</a> - <a href="https://www.flickr.com/photos/106950246@N06/" target="_blank"> Flickr</a></div>
 
-[Jen Lowe](http://jenlowe.net/) is an independent data scientist and data communicator at Datatelling where she brings together people + numbers + words. She teaches in SVA's Design for Social Innovation program, cofounded the School for Poetic Computation, taught Math for Artists at NYU ITP, researched at the Spatial Information Design Lab at Columbia University, and contributed ideas at the White House Office of Science and Technology Policy. She's spoken at SXSW and Eyeo. Her work has been covered by The New York Times and Fast Company. Her research, writing, and speaking explore the promises and implications of data and technology in society. She has a B.S. in Applied Math and a Master's in Information Science. Often oppositional, she's always on the side of love.
-
-[Jen Lowe](http://jenlowe.net/) è una scienziata indipendente e comunicatrice di dati alla Datatelling dove si riunisce persone + numeri + parole. Insegna alla SVA's Design per il programma di Social Innovation, ha co-fondato la School for Poetic Computation, ha insegnato Matematica per Artisti al NYU ITP, ha fatto della ricerca al Spatial Information Design Lab presso la Columbia University, e ha contribuito con idee alla White House Office of Science and Technology Policy. Ha parlato al SXSW e Eyeo. Il suo lavoro è stato trattato dal The New York Times and Fast Company. La sua ricerca, i suoi scritti e la sue dissertazioni esplorano le promesse e le implicazioni dei dati e della tecnologia nella società. Ha una laurea triennale in Matematica Applicata e una laurea specialistica in Scienze Informatiche. Spesso combattiva, è sempre dalla parte dell'amore.
+[Jen Lowe](http://jenlowe.net/) è una scienziata indipendente e comunicatrice di dati alla Datatelling dove riunisce persone + numeri + parole. Insegna alla SVA's Design per il programma di Social Innovation, ha co-fondato la School for Poetic Computation, ha insegnato Matematica per Artisti al NYU ITP, ha fatto della ricerca al Spatial Information Design Lab presso la Columbia University, e ha contribuito con idee alla White House Office of Science and Technology Policy. Ha parlato al SXSW e Eyeo. Il suo lavoro è stato trattato dal The New York Times and Fast Company. La sua ricerca, i suoi scritti e la sue dissertazioni esplorano le promesse e le implicazioni dei dati e della tecnologia nella società. Ha una laurea triennale in Matematica Applicata e una laurea specialistica in Scienze Informatiche. Spesso combattiva, è sempre dalla parte dell'amore.
 
 <div class="header"> <a href="http://jenlowe.net/" target="_blank">WebSite</a> - <a href="https://twitter.com/datatelling" target="_blank">Twitter</a> - <a href="https://github.com/datatelling" target="_blank">GitHub</a></div>
 
@@ -84,7 +82,7 @@ Patricio studiò e praticò la psicoterapia e l'arteterapia. Ha conseguito un MF
 
 Grazie a [Scott Murray](http://alignedleft.com/) per l'ispirazione e i consigli.
 
-Grazie a [Kenichi Yoneda (Kynd)](https://twitter.com/kyndinfo), [Nicolas Barradeau](https://twitter.com/nicoptere), [Karim Naaji](http://karim.naaji.fr/) per aver contribuito con il sostegno, delle buone idee e il codice.
+Grazie a [Kenichi Yoneda (Kynd)](https://twitter.com/kyndinfo), a [Nicolas Barradeau](https://twitter.com/nicoptere), a [Karim Naaji](http://karim.naaji.fr/) per aver contribuito con il loro sostegno, con delle buone idee e con del codice.
 
 Grazie a [Kenichi Yoneda (Kynd)](https://twitter.com/kyndinfo) e a [Sawako](https://twitter.com/sawakohome) per la [traduzione giapponese (日本語訳)](?lan=jp)
 
@@ -94,11 +92,9 @@ Grazie a [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) per la [traduzione (�
 
 Grazie a [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) per la [traduzione (español)](?lan=es) spagnola
 
-Grazie a [Nicolas Barradeau](https://twitter.com/nicoptere) e [Karim Naaji](http://karim.naaji.fr/) per la [traduzione (francese)](?lan=fr) francese
+Grazie a [Nicolas Barradeau](https://twitter.com/nicoptere) e a [Karim Naaji](http://karim.naaji.fr/) per la [traduzione (français)](?lan=fr) francese
 
-Grazie [Karim Naaji](http://karim.naaji.fr/) che a contribuito con il suo supporto, le sue buone idee e il suo codice.
-
-Grazie a tutti coloro i quali hanno  creduto in questo progetto e [contribuito con correzioni](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) o donazioni.
+Grazie a tutti coloro i quali hanno creduto in questo progetto e [contribuito con correzioni](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) o donazioni.
 
 ## Come ottenere i nuovi capitoli?
 

@@ -59,6 +59,6 @@ We are all humans. If you see something say something and make a Pull Request or
 
 ### Sharing your shaders examples
 
-You will see a lot of links to [the on-line editor](http://editor.thebookofshaders.com/) and embebed instances of it.  
+You will see a lot of links to [the on-line editor](http://editor.thebookofshaders.com/) and embedded instances of it.  
 Once you code something that makes you proud, click the "Export" (or the ```⇪``` icon) and then copy the "URL to code...". Send it to [@bookofshaders](https://twitter.com/bookofshaders) or [@kyndinfo](https://twitter.com/kyndinfo). We are looking forward to see it and add it to [the example gallery section](https://thebookofshaders.com/examples/).
 
