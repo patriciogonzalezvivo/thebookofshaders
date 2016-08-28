@@ -17,7 +17,7 @@ Questa è una guida passo passo attraverso l'universo astratto e complesso dei F
     * [Che cosa è uno shader?](01/?lan=it)
     * ["Ciao mondo!"](02/?lan=it)
     * [Uniforms](03/?lan=it)
-	* [Esegui il tuo shader](04/?lan=it)
+	* [Eseguite il vostro shader](04/?lan=it)
 
 * Disegno algoritmico
     * [Le funzioni di forma](05/?lan=it)
