@@ -8,27 +8,27 @@ Nell'ambito della realizzazione di questo libro e della mia pratica artistica ho
 <canvas class="glslCanvas" data-fragment-url=“yourShader.frag" data-textures=“yourInputImage.png” width="500" height="500"></canvas>
 ```
 
-Come potete vedere, è solo necessario l'elemento ```canvas``` con l'attributo ```class="glslCanvas"``` e l'indirizzo verso il vostro shader nel ```data-fragment-url```. Scopri di più a proposito [cliccando qui](https://github.com/patriciogonzalezvivo/glslCanvas).
+Come potete vedere, è solo necessario l'elemento ```canvas``` con l'attributo ```class="glslCanvas"``` e l'indirizzo verso il vostro shader nel ```data-fragment-url```. Scoprite di più a proposito [cliccando qui](https://github.com/patriciogonzalezvivo/glslCanvas).
 
-Se siete come me, probabilmente vorrete eseguire gli shader direttamente dalla console. In questo caso si dovrebbe dare un'occhiata a [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). Questa applicazione consente di incorporare gli shader nel vostro script ```bash``` o UNIX pipelines e di utilizzarli in modo simile a [ImageMagick](http://www.imagemagick.org/script/index.php). Anche [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) è un ottimo modo per compilare gli shader sul [Raspberry Pi](https://www.raspberrypi.org/), motivo per il quale [openFrame.io](http://openframe.io/) lo usa per visualizzare le opere d'arte shader. Ulteriori informazioni su questa applicazione [cliccando qui](https://github.com/patriciogonzalezvivo/glslViewer).
+Se siete come me, probabilmente vorrete eseguire gli shader direttamente dalla console. In questo caso date un'occhiata a [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). Questa applicazione consente d'incorporare gli shader nel vostro script ```bash``` o pipelines UNIX e d?utilizzarli in modo simile a [ImageMagick](http://www.imagemagick.org/script/index.php). Anche [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) è un ottimo modo per compilare gli shader sul [Raspberry Pi](https://www.raspberrypi.org/), motivo per il quale [openFrame.io](http://openframe.io/) lo usa per visualizzare le opere d'arte di tipo shader. Potete trovare ulteriori informazioni su questa applicazione [cliccando qui](https://github.com/patriciogonzalezvivo/glslViewer).
 
 ```bash
 glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutputImage.png
 ```
 
-**Creare**: per migliorare l'esperienza di codifica degli shader, ho realizzato un editor online chiamato [glslEditor](https://github.com/patriciogonzalezvivo/glslEditor). Questo editor è integrato agli esempi del libro e mette a disposizione una serie di comodi widget per rendere più tangibile l'esperienza astratta del codice GLSL. È anche possibile eseguirlo come un'applicazione stand-alone web da [editor.thebookofshaders.com/](http://editor.thebookofshaders.com/). Scopri di più a proposito [cliccando qui](https://github.com/patriciogonzalezvivo/glslEditor).
+**Creare**: per migliorare la programmazione degli shader, ho realizzato un editor online chiamato [glslEditor](https://github.com/patriciogonzalezvivo/glslEditor). Questo editor è integrato agli esempi del libro e mette a disposizione una serie di comodi widget per rendere più tangibile il codice astratto GLSL. È anche possibile eseguirlo come un'applicazione standalone web da [editor.thebookofshaders.com/](http://editor.thebookofshaders.com/). Scoprite di più a proposito [cliccando qui](https://github.com/patriciogonzalezvivo/glslEditor).
 
 ![](glslEditor-01.gif)
 
-Se si preferisce lavorare offline utilizzando [SublimeText](https://www.sublimetext.com/) è possibile installare questo [pacchetto per glslViewer](https://packagecontrol.io/packages/glslViewer). Scopri di più [cliccando qui](https://github.com/patriciogonzalezvivo/sublime-glslViewer).
+Se si preferisce lavorare offline utilizzando [SublimeText](https://www.sublimetext.com/) è possibile installare questo [pacchetto per glslViewer](https://packagecontrol.io/packages/glslViewer). Scoprite di più [cliccando qui](https://github.com/patriciogonzalezvivo/sublime-glslViewer).
 
 ![](glslViewer.gif)
 
-**Condividere**: l'editor online ([editor.thebookofshaders.com/](http://editor.thebookofshaders.com/)) può condividere i tuoi shader! Sia la versione standalone che quella integrata hanno un pulsante per esportare con il quale è possibile ottenere un URL unico verso il vostro shader. Avete anche la possibilità di esportare direttamente verso un [openFrame.io](http://openframe.io/).
+**Condividere**: l'editor online ([editor.thebookofshaders.com/](http://editor.thebookofshaders.com/)) può condividere i tuoi shader! Sia la versione standalone che quella integrata hanno un pulsante per esportare con il quale è possibile ottenere un URL unico verso il vostro shader. Avete anche la possibilità d'esportare direttamente verso un [openFrame.io](http://openframe.io/).
 
 ![](glslEditor-00.gif)
 
-**Curare**: Condividere il tuo codice è la prima tappa per condividere il tuo shader inteso come opera d'arte! Accanto alla possibilità di esportare verso [openFrame.io](http://openframe.io/) ho fatto uno strumento per curare i vostri shader in una galleria che può essere integrata su qualsiasi sito, il suo nome è [glslGallery](https://github.com/patriciogonzalezvivo/glslGallery). Per saperne di più [cliccando qui](https://github.com/patriciogonzalezvivo/glslGallery).
+**Curare**: Condividere il vostro codice è la prima tappa per intendere il vostro shader come un'opera d'arte! Accanto alla possibilità di esportare verso [openFrame.io](http://openframe.io/) ho fatto uno strumento per curare i vostri shader in una galleria che può essere integrata su qualsiasi sito, il suo nome è [glslGallery](https://github.com/patriciogonzalezvivo/glslGallery). Per saperne di più [cliccando qui](https://github.com/patriciogonzalezvivo/glslGallery).
 
 ![](glslGallery.gif)
 
@@ -187,4 +187,4 @@ void ofApp::draw(){
 }
 ```
 
-Per ulteriori informazioni sugli shader in openFrameworks andate a consultare questo [ottimo tutorial](http://openframeworks.cc/ofBook/chapters/shaders.html) fatto da [Joshua Noble](http://thefactoryfactory.com/).
+Per ulteriori informazioni sugli shader in openFrameworks consultate questo [ottimo tutorial](http://openframeworks.cc/ofBook/chapters/shaders.html) fatto da [Joshua Noble](http://thefactoryfactory.com/).
