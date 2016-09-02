@@ -26,7 +26,7 @@ Anche se queste semplici righe di codice non sembrano essere molto importanti, p
 
 ```glsl
 void main() {
-	gl_FragColor = vec4(1,0,0,1);	// ERROR
+	gl_FragColor = vec4(1,0,0,1);	// ERRORE
 }
 ```
 

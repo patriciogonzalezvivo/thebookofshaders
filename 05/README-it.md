@@ -81,15 +81,15 @@ AAl termine dell’ultimo esercizio abbiamo presentato alcune nuove funzioni. È
 
 ![Anthony Mattox (2009)](anthony-mattox-ribbon.jpg)
 
-<div class="simpleFunction" data="y = mod(x,0.5); // return x modulo of 0.5
-//y = fract(x); // return only the fraction part of a number
-//y = ceil(x);  // nearest integer that is greater than or equal to x
-//y = floor(x); // nearest integer less than or equal to x
-//y = sign(x);  // extract the sign of x
-//y = abs(x);   // return the absolute value of x
-//y = clamp(x,0.0,1.0); // constrain x to lie between 0.0 and 1.0
-//y = min(0.0,x);   // return the lesser of x and 0.0
-//y = max(0.0,x);   // return the greater of x and 0.0 "></div>
+<div class="simpleFunction" data="y = mod(x,0.5); // restituisce il modulo di 0.5
+//y = fract(x); // restituisce solo la parte frazionale di un numero
+//y = ceil(x);  // il numero intero più vicino che sia più grande o uguale a x
+//y = floor(x); // il numero intero più vicino che sia più piccolo o uguale a x 
+//y = sign(x);  // estrae il segno di x
+//y = abs(x);   // restituisce il valore assoluto di x
+//y = clamp(x,0.0,1.0); // costringe x a restare fra 0.0 e 1.0
+//y = min(0.0,x);   // restituisce il valore più piccolo fra x e 0.0
+//y = max(0.0,x);   // restituisce il valore più grande fra x e 0.0"></div>
 
 ### Funzioni di forma avanzate
 

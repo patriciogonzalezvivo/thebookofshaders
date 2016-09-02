@@ -56,6 +56,6 @@ Ora è il momento di mettere in pratica gli insegnamenti che abbiamo imparato.
 
 * Riuscite ad immaginare come usare ```u_mouse``` sapendo che i valori sono espressi in pixel e NON in valori normalizzati? Sapresti usare ```u_mouse``` per muovere i colori?
 
-* Sapresti trovare un modo interessante per cambiare questo pattern grafico utilizzando ```u_time``` e le coordinate ```u_mouse```?
+* Sapreste trovare un modo interessante per cambiare questo pattern grafico utilizzando ```u_time``` e le coordinate ```u_mouse```?
 
 Dopo aver fatto questi esercizi, ci si potrebbe chiedere dove si potrebbero provare i nuovi super poteri che gli shader ci hanno dato. Nel prossimo capitolo vedremo come creare i vostri shader in Three.js, Processing e openFrameworks.

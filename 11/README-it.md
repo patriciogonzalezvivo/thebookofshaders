@@ -105,7 +105,7 @@ Ora è il vostro turno. Provate i seguenti esercizi:
 
 * Che cosa succede se utilizziamo il gradiente del rumore come un campo di distanza? Fatene qualcosa di interessante.
 
-* Ora che avete raggiunto un certo controllo sull'ordine e il caos, è il momento di utilizzare tale conoscenza. Effettuate una composizione di rettangoli, colori e rumore che assomiglia a un dipinto di [Mark Rothko](http://en.wikipedia.org/wiki/Mark_Rothko).
+* Ora che avete raggiunto un certo controllo sull'ordine e il caos, è il momento di utilizzare tale conoscenza. Effettuate una composizione di rettangoli, colori e rumore che assomiglia a un dipinto di [Mark Rothko](https://it.wikipedia.org/wiki/Mark_Rothko).
 
 ![Mark Rothko - Three (1950)](rothko.jpg)
 
