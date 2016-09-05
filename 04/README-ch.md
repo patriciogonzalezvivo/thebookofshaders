@@ -2,7 +2,7 @@
 
 现在你可能跃跃欲试，想在你熟悉的平台上小试牛刀了。接下来会有一些比较流行的平台的示例代码，展示如何在这些平台上配置 shader。（在这个 [github 仓库](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04) 中有本章的三种平台的示例代码）
 
-**注释 1**：如果你不想用这些平台来运行 shader，且你想在浏览器外使用 shader，你可以下载[glslViewer](https://github.com/patriciogonzalezvivo/glslViewer)。这个 MacOS +树莓派程序直接在终端运行，并且是为本书的例子量身打造的。
+**注释 1**：如果你不想用这些平台来运行 shader，且你想在浏览器外使用 shader，你可以下载[glslViewer](https://github.com/patriciogonzalezvivo/glslViewer)。这个 MacOS+树莓派程序直接在终端运行，并且是为本书的例子量身打造的。
 
 **注释2**：如果你想用 WebGL 显示 shader，并不关心其他平台，你可以用[glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) 。这个 web 工具本来是为本书设计的，但是太好用了，所以我常常用在其他项目中。
 
@@ -153,4 +153,4 @@ void ofApp::draw(){
 }
 ```
 
-关于 shader 在 openFrameworks 的更多信息请参考这篇[excellent tutorial](http://openframeworks.cc/tutorials/graphics/shaders.html)，作者是 [Joshua Noble](http://thefactoryfactory.com/)。
+关于 shader 在 openFrameworks 的更多信息请参考这篇[excellent tutorial](http://openframeworks.cc/ofBook/chapters/shaders.html)，作者是 [Joshua Noble](http://thefactoryfactory.com/)。

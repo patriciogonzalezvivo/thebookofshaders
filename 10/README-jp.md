@@ -82,15 +82,15 @@
 
 * ランダムな値を用いて（反対の方向に）動くセルの列をつくってみましょう。より明るい値のセルのみを表示させてみましょう。列の速さを時間とともに変化させてみましょう。
 
-<a href="../edit.html#10/ikeda-00.frag"><canvas id="custom" class="canvas" data-fragment-url="ikeda-00.frag"  width="520px" height="200px"></canvas></a>
+<a href="../edit.php#10/ikeda-00.frag"><canvas id="custom" class="canvas" data-fragment-url="ikeda-00.frag"  width="520px" height="200px"></canvas></a>
 
 * 同様に、違う方向に違うスピードで動くいくつかの列をつくってみましょう。どのセルを表示させるかの閾値として、マウスの位置情報を適用してみましょう。
 
-<a href="../edit.html#10/ikeda-03.frag"><canvas id="custom" class="canvas" data-fragment-url="ikeda-03.frag"  width="520px" height="200px"></canvas></a>
+<a href="../edit.php#10/ikeda-03.frag"><canvas id="custom" class="canvas" data-fragment-url="ikeda-03.frag"  width="520px" height="200px"></canvas></a>
 
 * 他にも面白いエフェクトを作ってみましょう。
 
-<a href="../edit.html#10/ikeda-04.frag"><canvas id="custom" class="canvas" data-fragment-url="ikeda-04.frag"  width="520px" height="200px"></canvas></a>
+<a href="../edit.php#10/ikeda-04.frag"><canvas id="custom" class="canvas" data-fragment-url="ikeda-04.frag"  width="520px" height="200px"></canvas></a>
 
 美しい表現のためにランダムを用いても上手くいかないことがあります。自然に見えるシミュレーションをつくりたいと思っているときは特にそうです。ランダムは単純に無秩序すぎて、現実世界には ```random()``` に見えるものはほんの少ししかありません。雨の様子や株価のチャートはどちらもとても不規則なものですが、私たちがこの章の始めに生成したランダムとは似ても似つかないものです。なぜでしょう。ランダムの値はそれぞれの値の間にまったく相関性をもっていないのに対し、多くの自然界のパターンには過去の状態の記憶が含まれているからです。
 

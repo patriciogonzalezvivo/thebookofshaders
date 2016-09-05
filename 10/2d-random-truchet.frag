@@ -1,5 +1,5 @@
 // Author @patriciogv - 2015
-// http://patriciogonzalezvivo.com
+// Title: Truchet - 10 print 
 
 #ifdef GL_ES
 precision mediump float;

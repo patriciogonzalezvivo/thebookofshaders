@@ -1,1 +1,0 @@
-Add some references and ideas from this IQ article: http://iquilezles.org/www/articles/palettes/palettes.htm 

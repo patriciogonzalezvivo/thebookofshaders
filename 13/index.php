@@ -1,7 +1,7 @@
 <?php 
 
 	$path = "..";
-	$subtitle = ": Fractals";
+	$subtitle = ": Fractal Brownian Motion";
 	$README = "README";
 	$language = "";
 

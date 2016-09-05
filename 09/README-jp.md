@@ -2,7 +2,7 @@
 
 シェーダーのプログラムはピクセルごとに並列で処理されるので、同じ形を何度も繰り返したとしても計算の回数は一定に留まります。そのためフラグメントシェーダーはタイルのような繰り返しのパターンに特に適しています。
 
-[ ![Nina Warmerdam - The IMPRINT Project (2013)](warmerdam.jpg) ](../edit.html#09/dots5.frag)
+[ ![Nina Warmerdam - The IMPRINT Project (2013)](warmerdam.jpg) ](../edit.php#09/dots5.frag)
 
 この章ではこれまでに学んだことを応用して、描画領域のなかで繰り返しを行います。前章で行ったのと同様に、空間座標に対して掛け算を行い、0.0 から 1.0 の間に掛かれた図形がグリッド状に反復されるようにします。
 
@@ -47,7 +47,7 @@ void main(){
 * 異なる形を組み合わせてより複雑なパターンを作ってみましょう。
 
 
-<a href="../edit.html#09/diamondtiles.frag"><canvas id="custom" class="canvas" data-fragment-url="diamondtiles.frag"  width="520px" height="200px"></canvas></a>
+<a href="../edit.php#09/diamondtiles.frag"><canvas id="custom" class="canvas" data-fragment-url="diamondtiles.frag"  width="520px" height="200px"></canvas></a>
 
 * 異なるパターンのレイヤーを重ねてオリジナルの[タータンチェック](https://www.google.com/search?q=scottish+patterns+fabric&tbm=isch&tbo=u&source=univ&sa=X&ei=Y1aFVfmfD9P-yQTLuYCIDA&ved=0CB4QsAQ&biw=1399&bih=799#tbm=isch&q=Scottish+Tartans+Patterns)のパターンを作ってください。
 
@@ -86,7 +86,7 @@ xをずらす必要があるかを決めるには、まず現在のスレッド�
 
 * ```x``` と ```y``` をずらしてこんなパターンを作ってみましょう。
 
-<a href="../edit.html#09/marching_dots.frag"><canvas id="custom" class="canvas" data-fragment-url="marching_dots.frag"  width="520px" height="200px"></canvas></a>
+<a href="../edit.php#09/marching_dots.frag"><canvas id="custom" class="canvas" data-fragment-url="marching_dots.frag"  width="520px" height="200px"></canvas></a>
 
 ## トルシェタイル
 
@@ -113,7 +113,7 @@ xをずらす必要があるかを決めるには、まず現在のスレッド�
 
 * 必ずしも繰り返しのパターンではないもので、この項で学んだ原則を使える例を考えてください（例：八卦の組み合わせの一覧）。
 
-<a href="../edit.html#09/iching-01.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-01.frag"  width="520px" height="200px"></canvas></a>
+<a href="../edit.php#09/iching-01.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-01.frag"  width="520px" height="200px"></canvas></a>
 
 ## 自分でルールを作る
 

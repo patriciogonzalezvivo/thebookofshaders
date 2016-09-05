@@ -1,4 +1,5 @@
 // Author @patriciogv ( patriciogonzalezvivo.com ) - 2015 
+// Title: Diamond Tiles
 
 #ifdef GL_ES
 precision mediump float;

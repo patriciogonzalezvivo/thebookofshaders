@@ -1,3 +1,6 @@
+// Author: Inigo Quiles
+// Title: ExpStep
+
 #ifdef GL_ES
 precision mediump float;
 #endif

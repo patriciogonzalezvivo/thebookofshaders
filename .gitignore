@@ -5,3 +5,9 @@ tmp*.png
 book.tex
 book.pdf
 log/*
+/.idea
+.idea/
+idea/
+/07/test.html
+/appendix/04/index.html
+/09/test.html
