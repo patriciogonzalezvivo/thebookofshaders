@@ -86,7 +86,7 @@ Before going forward, try the following exercises:
 
 * How do you think you can move and place different rectangles in the same billboard? If you figure out how, show off your skills by making a composition of rectangles and colors that resembles a [Piet Mondrian](http://en.wikipedia.org/wiki/Piet_Mondrian) painting.
 
-![Piet Mondria - Tableau (1921)](mondrian.jpg)
+![Piet Mondrian - Tableau (1921)](mondrian.jpg)
 
 ### Circles
 
