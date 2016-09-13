@@ -1,0 +1,1 @@
+Shaders have infinite possibility far beyond what we can cover in this book. This section features interesting and exiting examples handpicked from the on-line posts for your inspiration. Enjoy!
