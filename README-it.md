@@ -94,6 +94,8 @@ Grazie a [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) per la [traduzione (e
 
 Grazie a [Nicolas Barradeau](https://twitter.com/nicoptere) e a [Karim Naaji](http://karim.naaji.fr/) per la [traduzione (français)](?lan=fr) francese
 
+Grazie a [Andrea Rovescalli](https://www.earove.info) per la [traduzione](?lan=it) italiana
+
 Grazie a tutti coloro i quali hanno creduto in questo progetto e [contribuito con correzioni](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) o donazioni.
 
 ## Come ottenere i nuovi capitoli?

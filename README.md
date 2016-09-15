@@ -94,6 +94,8 @@ Thanks [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) for the Spanish [transl
 
 Thanks [Nicolas Barradeau](https://twitter.com/nicoptere) and [Karim Naaji](http://karim.naaji.fr/) for the French [translation (français)](?lan=fr)
 
+Thanks [Andrea Rovescalli](https://www.earove.info) for the Italian [translation (italiano)](?lan=it)
+
 Thanks to everyone who has believed in this project and [contributed with fixes](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) or donations.
 
 ## Get new chapters
