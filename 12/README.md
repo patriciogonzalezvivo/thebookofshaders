@@ -23,7 +23,6 @@ Cellular Noise is based on distance fields, the distance to the closest one of a
 
 ![](cell-00.png)
 
-
 This is not very elegant, but it does the trick. Now let's re-implement it using an array and a ```for``` loop.
 
 ```glsl
