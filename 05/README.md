@@ -17,11 +17,11 @@ This one-to-one relationship between  *x* and *y* (or the brightness) is know as
 
 <div class="codeAndCanvas" data="expo.frag"></div>
 
-Interesting, right? On line 19 try different exponents: 20.0, 2.0, 1.0, 0.0, 0.2 and 0.02 for example. Understanding this relationship between the value and the exponent will be very helpful. Using these types of mathematical functions here and there will give you expressive control over your code, a sort of data acupuncture that let you control the flow of values.
+Interesting, right? On line 22 try different exponents: 20.0, 2.0, 1.0, 0.0, 0.2 and 0.02 for example. Understanding this relationship between the value and the exponent will be very helpful. Using these types of mathematical functions here and there will give you expressive control over your code, a sort of data acupuncture that let you control the flow of values.
 
 [```pow()```](../glossary/?search=pow) is a native function in GLSL and there are many others. Most of them are accelerated at the level of the hardware, which means if they are used in the right way and with discretion they will make your code faster. 
 
-Replace the power function on line 19. Try other ones like: [```exp()```](../glossary/?search=exp), [```log()```](../glossary/?search=log) and [```sqrt()```](../glossary/?search=sqrt). Some of these functions are more interesting when you play with them using PI. You can see on line 5 that I have defined a macro that will replace any call to ```PI``` with the value ```3.14159265359```.
+Replace the power function on line 22. Try other ones like: [```exp()```](../glossary/?search=exp), [```log()```](../glossary/?search=log) and [```sqrt()```](../glossary/?search=sqrt). Some of these functions are more interesting when you play with them using PI. You can see on line 8 that I have defined a macro that will replace any call to ```PI``` with the value ```3.14159265359```.
  
 ### Step and Smoothstep
 

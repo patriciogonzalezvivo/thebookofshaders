@@ -17,11 +17,11 @@ Questa relazione uno a uno tra *x* e *y* (o la luminosità) è conosciuta come *
 
 <div class="codeAndCanvas" data="expo.frag"></div>
 
-Interessante, vero? Alla riga 19 prova esponenti diversi, per esempio: 20.0, 2.0, 1.0, 0.0, 0.2 e 0.02. comprendere questa relazione tra il valore e l’esponente sarà molto utile. Questo genere di funzioni matematiche ci darà un controllo espressivo sul codice, come una specie di agopuntura che permette di controllare il flusso dei valori.
+Interessante, vero? Alla riga 22 prova esponenti diversi, per esempio: 20.0, 2.0, 1.0, 0.0, 0.2 e 0.02. comprendere questa relazione tra il valore e l’esponente sarà molto utile. Questo genere di funzioni matematiche ci darà un controllo espressivo sul codice, come una specie di agopuntura che permette di controllare il flusso dei valori.
 
 [```pow()```](../glossary/?search=pow) è una funzione nativa il GLSL e ce ne sono molte altre. La maggior parte di queste sono accelerate al livello dell’hardware; ciò significa che se esse sono usate in modo appropriato e con discrezione, renderanno il tuo codice molto più veloce.
 
-Sostituisci la funzione alla riga 19. Provane altre, come: [```exp()```](../glossary/?search=exp), [```log()```](../glossary/?search=log) e [```sqrt()```](../glossary/?search=sqrt). Alcune di queste funzioni sono più interessanti quando le si utilizza con PI.  Puoi vedere alla riga 5, che ho definito un macro che sostituisce qualsiasi chiamata a ```PI``` con valore ```3.14159265359```.
+Sostituisci la funzione alla riga 22. Provane altre, come: [```exp()```](../glossary/?search=exp), [```log()```](../glossary/?search=log) e [```sqrt()```](../glossary/?search=sqrt). Alcune di queste funzioni sono più interessanti quando le si utilizza con PI.  Puoi vedere alla riga 8, che ho definito un macro che sostituisce qualsiasi chiamata a ```PI``` con valore ```3.14159265359```.
  
 ### Step e Smoothstep
 
