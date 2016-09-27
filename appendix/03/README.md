@@ -25,7 +25,7 @@ This book is wrote in [Markdown language](https://daringfireball.net/projects/ma
 
 #### Translating notes
 
-Do not erase or modify things the embebed examples, that looks like this:
+Do not erase or modify things the embedded examples, that looks like this:
 
 ```html
     <div class="codeAndCanvas" data="grid-making.frag"></div>
