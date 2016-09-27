@@ -16,7 +16,7 @@ If you are like me, you will probably want to run shaders directly from the cons
 glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutputImage.png
 ```
 
-**Create**: in order to illuminate the experience of coding shaders I made an online editor called [glslEditor](https://github.com/patriciogonzalezvivo/glslEditor). This editor is embebed on the book's life examples, it brings a series of handy widgets to make more tangible the abstract experience of working with glsl code. You can also run it as a standalone web application from [editor.thebookofshaders.com/](http://editor.thebookofshaders.com/). Learn more about it [here](https://github.com/patriciogonzalezvivo/glslEditor).
+**Create**: in order to illuminate the experience of coding shaders I made an online editor called [glslEditor](https://github.com/patriciogonzalezvivo/glslEditor). This editor is embedded on the book's life examples, it brings a series of handy widgets to make more tangible the abstract experience of working with glsl code. You can also run it as a standalone web application from [editor.thebookofshaders.com/](http://editor.thebookofshaders.com/). Learn more about it [here](https://github.com/patriciogonzalezvivo/glslEditor).
 
 ![](glslEditor-01.gif)
 
@@ -24,7 +24,7 @@ If you prefer to work offline using [SublimeText](https://www.sublimetext.com/) 
 
 ![](glslViewer.gif)
 
-**Share**: the online editor ([editor.thebookofshaders.com/](http://editor.thebookofshaders.com/)) can share your shaders! Both the embebed and standalone version have an export button where you can get an unique URL's to your shader. Also have the ability to export directly to an [openFrame.io](http://openframe.io/).
+**Share**: the online editor ([editor.thebookofshaders.com/](http://editor.thebookofshaders.com/)) can share your shaders! Both the embedded and standalone version have an export button where you can get an unique URL's to your shader. Also have the ability to export directly to an [openFrame.io](http://openframe.io/).
 
 ![](glslEditor-00.gif)
 
