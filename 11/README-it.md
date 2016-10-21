@@ -31,7 +31,7 @@ y = rand(i); //rand() è spiegata nel capitolo precedente
 //y = mix(rand(i), rand(i + 1.0), smoothstep(0.,1.,f));
 "></div>
 
-In queste righe stiamo facendo qualcosa di simile a quello che abbiamo fatto nel capitolo precedente. Stiamo suddividendo un numero floating continuo (```x```) nel suo intero (```i```) e nelle componenti frazionarie (```f```). Usiamo [```floor()```](.../glossary/?search=floor) per ottenere ```i``` e [```fract()```](.../glossary/?search=fract) per ottenere ```f```. Poi applichiamo ```rand()``` per la parte intera di ```x```, che dà un valore random unico a ogni integer.
+In queste righe stiamo facendo qualcosa di simile a quello che abbiamo fatto nel capitolo precedente. Stiamo suddividendo un numero floating continuo (```x```) nel suo intero (```i```) e nelle componenti frazionarie (```f```). Usiamo [```floor()```](../glossary/?search=floor) per ottenere ```i``` e [```fract()```](../glossary/?search=fract) per ottenere ```f```. Poi applichiamo ```rand()``` per la parte intera di ```x```, che dà un valore random unico a ogni integer.
 
 Dopo di che si osservino le due righe commentate. La prima interpola ogni valore random in modo lineare.
 
@@ -39,16 +39,16 @@ Dopo di che si osservino le due righe commentate. La prima interpola ogni valore
 y = mix(rand(i), rand(i + 1.0), f);
 ``` 
 
-Andate avanti e rimuovete il commento di questa linea per vedere che cosa succede. Utilizziamo la parte frazionale `f` per mischiare ([```mix()```](.../glossary/?search=mix)) i due valori random.
+Andate avanti e rimuovete il commento di questa linea per vedere che cosa succede. Utilizziamo la parte frazionale `f` per mischiare ([```mix()```](../glossary/?search=mix)) i due valori random.
 
 A questo punto del libro, abbiamo imparato che possiamo fare meglio d'una interpolazione lineare, giusto?
-Ora provate a decommentare la riga seguente, che utilizza una interpolazione [```smoothstep()```](.../glossary/?search=smoothstep) invece di una lineare.
+Ora provate a decommentare la riga seguente, che utilizza una interpolazione [```smoothstep()```](../glossary/?search=smoothstep) invece di una lineare.
 
 ```glsl
 y = mix(rand(i), rand(i + 1.0), smoothstep(0.,1.,f));
 ```
 
-Tolto il commento, si noti che la transizione tra i picchi diventa armoniosa. In alcune implementazioni del rumore, troverete che i programmatori preferiscono creare le proprie curve cubiche (come la seguente formula) invece di utilizzare la funzione [```smoothstep()```](.../glossary/?search=smoothstep).
+Tolto il commento, si noti che la transizione tra i picchi diventa armoniosa. In alcune implementazioni del rumore, troverete che i programmatori preferiscono creare le proprie curve cubiche (come la seguente formula) invece di utilizzare la funzione [```smoothstep()```](../glossary/?search=smoothstep).
 
 ```glsl
 float u = f * f * (3.0 - 2.0 * f ); // curva cubica personalizzata
@@ -182,7 +182,7 @@ Nel seguente codice è possibile rimuovere il commento alla linea 44 per vedere 
 
 <div class="codeAndCanvas" data="simplex-grid.frag"></div>
 
-Un altro miglioramento introdotto da Perlin con il **Rumore Simplesso**, è la sostituzione della Curva Cubica di Hermite ( _f(x) = 3x^2-2x^3_ , che è identica alla funzione [```smoothstep()```](.../glossary/?search=smoothstep) ) con una Curva Quintica di Hermite ( _f(x) = 6x^5-15x^4+10x^3_ ). In questo modo entrambe le estremità della curva sono più "piatte" così che ogni limite si unisce con grazia con quello successivo. In altre parole si ottiene una transizione più continua tra le celle. Si può osservare ciò decommentando la seconda formula nel seguente esempio grafico (o osservando le [due equazioni fianco a fianco cliccando qui](https://www.desmos.com/calculator/2xvlk5xp8b)).
+Un altro miglioramento introdotto da Perlin con il **Rumore Simplesso**, è la sostituzione della Curva Cubica di Hermite ( _f(x) = 3x^2-2x^3_ , che è identica alla funzione [```smoothstep()```](../glossary/?search=smoothstep) ) con una Curva Quintica di Hermite ( _f(x) = 6x^5-15x^4+10x^3_ ). In questo modo entrambe le estremità della curva sono più "piatte" così che ogni limite si unisce con grazia con quello successivo. In altre parole si ottiene una transizione più continua tra le celle. Si può osservare ciò decommentando la seconda formula nel seguente esempio grafico (o osservando le [due equazioni fianco a fianco cliccando qui](https://www.desmos.com/calculator/2xvlk5xp8b)).
 
 <div class="simpleFunction" data="
 // Curva Cubica di Hermite.  Identica alla funzione SmoothStep()
