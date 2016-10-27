@@ -41,7 +41,7 @@ Alternativamente, dependiendo cuales sean tus necesidades puedes:
 
 - [Crear una versión offline del libro](https://thebookofshaders.com/appendix/)
 
-- [Correr los ejemplos en una RaspberryPI sin un navegador](https://thebookofshaders.com/appendix/)
+- [Correr los ejemplos en una Raspberry Pi sin un navegador](https://thebookofshaders.com/appendix/)
 
 - [Crear un PDF del libro para imprimir.](https://thebookofshaders.com/appendix/)
 

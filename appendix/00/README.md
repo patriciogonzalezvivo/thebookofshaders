@@ -2,7 +2,7 @@
 
 Let’s say you have a long trip and you want to use it to teach yourself some shaders. In that case you can make a local copy of this book on your computer and run a local server.
 
-For that you only need Python 2.6 and a git client. On MacOS and RaspberryPi computers Python is installed by default but you still need to install a git client. For that:
+For that you only need Python 2.6 and a git client. On MacOS and Raspberry Pi computers Python is installed by default but you still need to install a git client. For that:
 
 In **MacOSX** be sure to have [homebrew](http://brew.sh/) installed and then on your terminal do:
 
@@ -12,7 +12,7 @@ brew upgrade
 brew install git 
 ```
 
-On **RaspberryPi** you need to do:
+On **Raspberry Pi** you need to do:
 
 ```bash
 sudo apt-get update

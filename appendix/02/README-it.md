@@ -20,7 +20,7 @@ make
 make install
 ```
 
-Su **RaspberryPi** è necessario fare:
+Su **Raspberry Pi** è necessario fare:
 
 ```bash
 sudo apt-get update
@@ -45,7 +45,7 @@ Scarica e Installa [basictex & MacTeX-Additions](http://www.tug.org/mactex/morep
 brew install pandoc
 ```
 
-Su **RaspberryPi**:
+Su **Raspberry Pi**:
 
 ```bash
 sudo apt-get install texlive-xetex pandoc
