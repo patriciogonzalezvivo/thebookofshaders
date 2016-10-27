@@ -2,7 +2,7 @@
 
 En este punto seguro estás entusiasmado con poder probar shaders en las plataformas en las que te sientes cómodo. En los siguientes ejemplos veremos como agregarlos el algunos frameworks populares con las mismas uniforms con las que estamos trabajando en este libro. (En el [repositorio de GitHub de este capítulo](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04) encontrarás el código completo de estos ejemplos.)
 
-**Nota 1**: En caso de que no quieras utilizar los shaders en los siguientes frameworks pero quieras hacerlo fuera del navegador, puedes descargar y compilar [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). Este programa corre en MacOS y en RaspberryPI, permite ejecutar directamente los ejemplos desde la terminal.
+**Nota 1**: En caso de que no quieras utilizar los shaders en los siguientes frameworks pero quieras hacerlo fuera del navegador, puedes descargar y compilar [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). Este programa corre en MacOS y en Raspberry Pi, permite ejecutar directamente los ejemplos desde la terminal.
 
 **Nota 2**: Si no quieres usar WebGl con tus shaders y no te interesan los frameworks siguientes, puedes usar [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas). Esta herramienta fue diseñada para este libro, pero se volvió tan útil que he terminado usándola en muchos proyectos.
 

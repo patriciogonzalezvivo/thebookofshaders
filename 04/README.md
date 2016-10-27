@@ -1,6 +1,6 @@
 ## Running your shader
 
-As part of the construction of this book and my art practice I made an ecosystem of tools to create, display, share and curate shaders. This tools works consistently across Linux Desktops, MacOS, [RaspberryPi](https://www.raspberrypi.org/) and browsers without the need of changing your code.
+As part of the construction of this book and my art practice I made an ecosystem of tools to create, display, share and curate shaders. This tools works consistently across Linux Desktops, MacOS, [Raspberry Pi](https://www.raspberrypi.org/) and browsers without the need of changing your code.
 
 **Display**: all live examples in this book are displayed using [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) which makes the process of running standalone shader incredible easy. 
 
@@ -10,7 +10,7 @@ As part of the construction of this book and my art practice I made an ecosystem
 
 As you can see, it just needs a ```canvas``` element with ```class="glslCanvas"``` and the url to your shader in the ```data-fragment-url```. Learn more about it [here](https://github.com/patriciogonzalezvivo/glslCanvas).
 
-If you are like me, you will probably want to run shaders directly from the console, in that case you should check out [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). This application allows you to incorporate shaders into your ```bash``` scripts or unix pipelines and use it in a similar way that [ImageMagick](http://www.imagemagick.org/script/index.php). Also [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) is a great way to compile shaders on your [RaspberryPi](https://www.raspberrypi.org/), reason why [openFrame.io](http://openframe.io/) use it to display shader artwork. Learn more about this application [here](https://github.com/patriciogonzalezvivo/glslViewer).
+If you are like me, you will probably want to run shaders directly from the console, in that case you should check out [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). This application allows you to incorporate shaders into your ```bash``` scripts or unix pipelines and use it in a similar way that [ImageMagick](http://www.imagemagick.org/script/index.php). Also [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) is a great way to compile shaders on your [Raspberry Pi](https://www.raspberrypi.org/), reason why [openFrame.io](http://openframe.io/) use it to display shader artwork. Learn more about this application [here](https://github.com/patriciogonzalezvivo/glslViewer).
 
 ```bash
 glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutputImage.png

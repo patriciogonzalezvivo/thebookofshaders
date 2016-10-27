@@ -12,7 +12,7 @@ brew upgrade
 brew install git 
 ```
 
-Su **RaspberryPi** è necessario fare:
+Su **Raspberry Pi** è necessario fare:
 
 ```bash
 sudo apt-get update

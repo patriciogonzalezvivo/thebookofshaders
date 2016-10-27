@@ -40,7 +40,7 @@ Alternatively, based on what you have or what you need from this book you can:
 
 - [Make an off-line version of this book](https://thebookofshaders.com/appendix/)
 
-- [Run the examples on a RaspberryPi without a browser](https://thebookofshaders.com/appendix/)
+- [Run the examples on a Raspberry Pi without a browser](https://thebookofshaders.com/appendix/)
 
 - [Make a PDF of the book to print](https://thebookofshaders.com/appendix/)
 

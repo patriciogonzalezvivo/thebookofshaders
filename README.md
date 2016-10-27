@@ -57,7 +57,7 @@ This is a gentle step-by-step guide through the abstract and complex universe of
 
 * [Appendix:](appendix/) Other ways to use this book
 	* [How can I navigate this book offline?](appendix/00/)
-	* [How to run the examples on a RaspberryPi?](appendix/01/)
+	* [How to run the examples on a Raspberry Pi?](appendix/01/)
 	* [How to print this book?](appendix/02/)
     * [How can I collaborate?](appendix/03/)
     * [An introduction for those coming from JS](appendix/04/) by [Nicolas Barradeau](http://www.barradeau.com/)

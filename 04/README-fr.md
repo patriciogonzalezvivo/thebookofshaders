@@ -1,7 +1,7 @@
 ## exécuter vos shaders
 
 Pour les besoins de ce livre comme pour ma pratique artistique, j'ai créé un écosystème d'outils permettant de créer, d'afficher, de partager et d'organiser mes shaders.
-Ces outils fonctionnent de la même manière sur Linux Desktop, MacOS, [RaspberryPi](https://www.raspberrypi.org/) et dans les navigateurs sans avoir besoin d'altérer le code.
+Ces outils fonctionnent de la même manière sur Linux Desktop, MacOS, [Raspberry Pi](https://www.raspberrypi.org/) et dans les navigateurs sans avoir besoin d'altérer le code.
 
 **Affichage**: tous les exemples de ce livre sont affichés dans la page grâce à [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) qui facilite grandement la fabrication et l'affichage de shaders autonomes.
 
@@ -14,7 +14,7 @@ Pour en savoir plus, [vous pouvez lire ceci](https://github.com/patriciogonzalez
 Si vous êtes comme moi, vous aurez sans doute envie de lancer vos shaders en lignes de commandes, dans ce cas vous devriez regarder [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer).
 Cette application permet d'incorporer un shader dans un script ```bash``` ou un pipeline Unix et de l'utiliser comme [ImageMagick](http://www.imagemagick.org/script/index.php).
 
-[glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) est aussi un bon moyen de compiler vos shaders sur un [RaspberryPi](https://www.raspberrypi.org/) et c'est la raison pour laquelle [openFrame.io](http://openframe.io/) l'utilise pour afficher les oeuvres.
+[glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) est aussi un bon moyen de compiler vos shaders sur un [Raspberry Pi](https://www.raspberrypi.org/) et c'est la raison pour laquelle [openFrame.io](http://openframe.io/) l'utilise pour afficher les oeuvres.
 Pour en savoir plus, [cliquez ici](https://github.com/patriciogonzalezvivo/glslViewer).
 
 ```bash

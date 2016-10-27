@@ -21,7 +21,7 @@ make
 make install
 ```
 
-On **RaspberryPi** you need to do:
+On **Raspberry Pi** you need to do:
 
 ```bash
 sudo apt-get update
@@ -46,7 +46,7 @@ Download and Install [basictex & MacTeX-Additions](http://www.tug.org/mactex/mor
 brew install pandoc
 ```
 
-On **RaspberryPi**:
+On **Raspberry Pi**:
 
 ```bash
 sudo apt-get install texlive-xetex pandoc

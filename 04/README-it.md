@@ -1,6 +1,6 @@
 ## Eseguite il vostro shader
 
-Nell'ambito della realizzazione di questo libro e della mia pratica artistica ho creato un ecosistema di strumenti per creare, visualizzare, condividere e curare gli shaders. Questo strumento funziona in modo coerente su Linux Desktop, MacOS, [RaspberryPi](https://www.raspberrypi.org/) e browser, senza la necessità di dover cambiare il vostro codice.
+Nell'ambito della realizzazione di questo libro e della mia pratica artistica ho creato un ecosistema di strumenti per creare, visualizzare, condividere e curare gli shaders. Questo strumento funziona in modo coerente su Linux Desktop, MacOS, [Raspberry Pi](https://www.raspberrypi.org/) e browser, senza la necessità di dover cambiare il vostro codice.
 
 **Visualizzare**: tutti gli esempi di questo libro vengono visualizzati utilizzando [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) che rende il processo di esecuzione dello shader standalone incredibilmente facile.
 
