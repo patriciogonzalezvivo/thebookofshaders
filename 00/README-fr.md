@@ -26,7 +26,7 @@ Ce livre est écrit pour les *creative coders*, les développeurs de jeux, les i
 Si vous n'avez aucune connaissance en code, nous vous recommandons chaudement de commencer par [Processing](https://processing.org/) puis de revenir à ce livre lorsque vous vous sentirez plus à l'aise.
 
 Ce livre vous montrera comment utiliser et intégrer des shaders dans vos projets, comment améliorer leurs performances et leur rendu graphique.
-Du fait que les shaders GLSL (OpenGL Shading Language) peuvent être compilés sur diverses plateformes, il vous sera possible de réutiliser ce que vous aurez appris ici dans n'importe quel environnement utilisant OpenGL, OpenGL ES ou WebGL. Autrement dit, vous pourrez réutiliser vos connaissances sur des plateformes comme [Processing](https://processing.org/), [openFrameworks](http://openframeworks.cc/), [Cinder](http://libcinder.org/), [Three.js](http://threejs.org/) ou iOS et Android.
+Du fait que les shaders [GLSL (OpenGL Shading Language)](https://fr.wikipedia.org/wiki/GLSL) peuvent être compilés sur diverses plateformes, il vous sera possible de réutiliser ce que vous aurez appris ici dans n'importe quel environnement utilisant OpenGL, OpenGL ES ou WebGL. Autrement dit, vous pourrez réutiliser vos connaissances sur des plateformes comme [Processing](https://processing.org/), [openFrameworks](http://openframeworks.cc/), [Cinder](http://libcinder.org/), [Three.js](http://threejs.org/) ou iOS et Android.
 
 ## que contient ce livre?
 
