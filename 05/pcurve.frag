@@ -1,3 +1,6 @@
+// Author: Inigo Quiles
+// Title: Pcurve
+
 #ifdef GL_ES
 precision mediump float;
 #endif

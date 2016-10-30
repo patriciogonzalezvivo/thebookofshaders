@@ -2,7 +2,7 @@
 
 Since shader programs are executed by pixel-by-pixel no matter how much you repeat a shape the number of calculations stays constant. This means that fragment shaders are particulary suitable for tile patterns. 
 
-[ ![Nina Warmerdam - The IMPRINT Project (2013)](warmerdam.jpg) ](../edit.html#09/dots5.frag)
+[ ![Nina Warmerdam - The IMPRINT Project (2013)](warmerdam.jpg) ](../edit.php#09/dots5.frag)
 
 In this chapter we are going to apply what we've learned so far and repeat it along a canvas. Like in previous chapters, our strategy will be based on multiplying the space coordinates (between 0.0 and 1.0), so that the shapes we draw between the values 0.0 and 1.0 will be repeated to make a grid. 
 
@@ -44,7 +44,8 @@ Since each subdivision or cell is a smaller version of the normalized coordinate
 
 * Recreate more complicated patterns by composing different shapes.
 
-<a href="../edit.html#09/diamondtiles.frag"><canvas id="custom" class="canvas" data-fragment-url="diamondtiles.frag"  width="520px" height="200px"></canvas></a>
+
+[![](diamondtiles-long.png)](../edit.php#09/diamondtiles.frag)
 
 * Combine different layers of patterns to compose your own [Scottish Tartan Patterns](https://www.google.com/search?q=scottish+patterns+fabric&tbm=isch&tbo=u&source=univ&sa=X&ei=Y1aFVfmfD9P-yQTLuYCIDA&ved=0CB4QsAQ&biw=1399&bih=799#tbm=isch&q=Scottish+Tartans+Patterns).
 
@@ -82,7 +83,7 @@ Now try uncommenting line 32 - this stretches the aspect ratio of the coordinate
 
 * Try combining an offset on ```x``` and ```y``` axis to get something like this:
 
-<a href="../edit.html#09/marching_dots.frag"><canvas id="custom" class="canvas" data-fragment-url="marching_dots.frag"  width="520px" height="200px"></canvas></a>
+<a href="../edit.php#09/marching_dots.frag"><canvas id="custom" class="canvas" data-fragment-url="marching_dots.frag"  width="520px" height="200px"></canvas></a>
 
 ## Truchet Tiles
 
@@ -90,7 +91,7 @@ Now that we've learned how to tell if our cell is in an even or odd row or colum
 
 ![](truchet-00.png)
 
-By changing the pattern across tiles, it's possible to contruct an infinite set of complex designs. 
+By changing the pattern across tiles, it's possible to construct an infinite set of complex designs. 
 
 ![](truchet-01.png)
 
@@ -108,7 +109,7 @@ Pay close attention to the function ```rotateTilePattern()```, which subdivides 
 
 * Think of something else that is not necessarily a pattern where you can apply the principles from this section. (Ex: I Ching hexagrams)
 
-<a href="../edit.html#09/iching-01.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-01.frag"  width="520px" height="200px"></canvas></a>
+<a href="../edit.php#09/iching-01.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-01.frag"  width="520px" height="200px"></canvas></a>
 
 ## Making your own rules
 

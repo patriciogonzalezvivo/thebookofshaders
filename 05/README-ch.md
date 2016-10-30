@@ -13,7 +13,7 @@
 
 这些代码就是你的基本功；遵守和理解它非常重要。你将会一遍又一遍地回到 0.0 到 1.0 这个区间。你将会掌握融合与构建这些代码的艺术。
 
-这些 x 与 y（或亮度）之间一对一的关系称作**线性插值**（linear interpolation）。（译者注：插值是离散函数逼近的重要方法，利用它可通过函数在有限个点处的取值状况，估算出函数在其他点处的近似值。因为对机器运算来说，屏幕像素注定是离散的而不是连续的，计算机图形学常用插值来填充图像变换时像素之间的空隙。）现在起我们可以用一些数学函数来改造这些代码行。比如说我们可以做一个求 x 的 5 次幂的曲线。
+这些 x 与 y（或亮度）之间一对一的关系称作**线性插值**（linear interpolation）。（译者注：插值是离散函数逼近的重要方法，利用它可通过函数在有限个点处的取值状况，估算出函数在其他点处的近似值。因为对计算机来说，屏幕像素是离散的而不是连续的，计算机图形学常用插值来填充图像像素之间的空隙。）现在起我们可以用一些数学函数来改造这些代码行。比如说我们可以做一个求 x 的 5 次幂的曲线。
 
 <div class="codeAndCanvas" data="expo.frag"></div>
 
@@ -107,11 +107,11 @@ GLSL 还有一些独特的原生插值函数可以被硬件加速。
 
 [Iñigo Quiles](http://www.iquilezles.org/) 收集了一套[有用的函数](http://www.iquilezles.org/www/articles/functions/functions.htm)。在看过[这篇文章](http://www.iquilezles.org/www/articles/functions/functions.htm)后，看看下列函数转换到 GLSL 的样子。注意那些细小的改变，比如给浮点数（float)加小数点“.”，给“C 系函数”换成它们在 GLSL 里的名字，比如不是用 ```powf()``` 而是用 ```pow()```：
 
-* [Impulse](../edit.html#05/impulse.frag)
-* [Cubic Pulse](../edit.html#05/cubicpulse.frag)
-* [Exponential Step](../edit.html#05/expstep.frag)
-* [Parabola](../edit.html#05/parabola.frag)
-* [Power Curve](../edit.html#05/pcurve.frag)
+* [Impulse](../edit.php#05/impulse.frag)
+* [Cubic Pulse](../edit.php#05/cubicpulse.frag)
+* [Exponential Step](../edit.php#05/expstep.frag)
+* [Parabola](../edit.php#05/parabola.frag)
+* [Power Curve](../edit.php#05/pcurve.frag)
 
 给你们看些东西刺激一下斗志，这里有一个非常优雅的例子（作者是 [Danguafer](https://www.shadertoy.com/user/Danguafer)，造型函数的空手道黑带）。
 

@@ -1,6 +1,6 @@
-## Shapes
-
 ![Alice Hubbard, Providence, United States, ca. 1892. Photo: Zindman/Freemont.](froebel.jpg)
+
+## Shapes
 
 Finally! We have been building skills for this moment! You have learned most of the GLSL foundations, types and functions. You have practiced your shaping equations over and over. Now is the time to put it all together. You are up for this challenge! In this chapter you'll learn how to draw simple shapes in a parallel procedural way. 
 
@@ -86,7 +86,7 @@ Before going forward, try the following exercises:
 
 * How do you think you can move and place different rectangles in the same billboard? If you figure out how, show off your skills by making a composition of rectangles and colors that resembles a [Piet Mondrian](http://en.wikipedia.org/wiki/Piet_Mondrian) painting.
 
-![Piet Mondria - Tableau (1921)](mondrian.jpg)
+![Piet Mondrian - Tableau (1921)](mondrian.jpg)
 
 ### Circles
 

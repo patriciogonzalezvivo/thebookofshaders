@@ -14,22 +14,22 @@ Ceci est un guide étape-par-étape à travers le monde abstrait et complexe des
 * [A propos de ce livre](00/?lan=fr)
 
 * Pour commencer
-    * [Qu'est ce qu'un shader?](01/)
-    * [“Hello world!”](02/)
-    * [Les uniforms](03/)
-    * [Exécuter votre shader](04/)
+    * [Qu'est ce qu'un shader?](01/?lan=fr)
+    * [“Hello world!”](02/?lan=fr)
+    * [Les uniforms](03/?lan=fr)
+    * [Exécuter votre shader](04/?lan=fr)
 
 * Le dessin algorithmique
-    * [Les fonctions](05/)
-    * [Les couleurs](06/)
-    * [Les formes](07/)
-    * [Les matrices](08/)
-    * [Les motifs](09/)
+    * [Les fonctions](05/?lan=fr)
+    * [Les couleurs](06/?lan=fr)
+    * [Les formes](07/?lan=fr)
+    * [Les matrices](08/?lan=fr)
+    * [Les motifs](09/?lan=fr)
 
 * La conception générative
-    * [Le hasard](10/)
-    * [Le bruit](11/)
-    * Fractional brownian motion
+    * [Le hasard](10/?lan=fr)
+    * [Le bruit](11/?lan=fr)
+    * Fractional Brownian Motion
     * Fractals
 
 * Image processing:
@@ -56,7 +56,7 @@ Ceci est un guide étape-par-étape à travers le monde abstrait et complexe des
 
 * [Appendice:](appendix/) Autres manières d'utiliser ce livre
 	* [Comment puis-je consulter ce livre hors-ligne?](appendix/)
-	* [Comment exécuter les exemples sur un RaspberryPi?](appendix/)
+	* [Comment exécuter les exemples sur un Raspberry Pi?](appendix/)
 	* [Comment imprimer ce livre?](appendix/)
 
 * [Galerie d'exemples](examples/)

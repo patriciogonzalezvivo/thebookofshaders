@@ -1,6 +1,6 @@
-## Colors
-
 ![Paul Klee - Color Chart (1931)](klee.jpg)
+
+## Colors
 
 We haven't much of a chance to talk about GLSL vector types. Before going further it's important to learn more about these variables and the subject of colors is a great way to find out more about them. 
 
@@ -13,7 +13,7 @@ red.y = 0.0;
 red.z = 0.0; 
 ```
 
-Defining color using an *x*, *y* and *z* notation can be confusing and misleading, right? That's why there are other ways to access this same information, but with different names. The values of ```.x```, ```.y``` and ```.z``` can also be called ```.r```, ```.g``` and ```.b```, and ```.s```, ```.t``` and ```.p```. (```.s```, ```.t``` and ```.p``` are usually used for spatial coordinates of a texture, which we'll see in a later chapter.) You can also access the data in a vector by using the index position, ```[0]```, ```[1]``` and ```[2]```. 
+Defining color using an *x*, *y* and *z* notation can be confusing and misleading, right? That's why there are other ways to access this same information, but with different names. The values of ```.x```, ```.y``` and ```.z``` can also be called ```.r```, ```.g``` and ```.b```, and ```.s```, ```.t``` and ```.p```. (```.s```, ```.t``` and ```.p``` are usually used for spatial coordinates of a texture, which we'll see in a later chapter.) You can also access the data in a vector by using the index position, ```[0]```, ```[1]``` and ```[2]```.
 
 The following lines show all the ways to access the same data:
 
@@ -64,7 +64,7 @@ Check the following code at line 18 and see how we are using the absolute values
 
 Show off your skills by:
 
-* Make an expressive transition between colors. Think of a particular emotion. What color seems most representative of it? How does it appear? How does it fade away? Think of another emotion and the matching color for it. Change the beginning and ending color of the above code to match those emotions. Then animate the transition using shaping functions. Robert Penner developed a series of popular shaping functions for computer animation known as [easing functions](http://easings.net/), you can use [this example](../edit.html#06/easing.frag) as research and inspiration but the best result will come from making your own transitions.
+* Make an expressive transition between colors. Think of a particular emotion. What color seems most representative of it? How does it appear? How does it fade away? Think of another emotion and the matching color for it. Change the beginning and ending color of the above code to match those emotions. Then animate the transition using shaping functions. Robert Penner developed a series of popular shaping functions for computer animation known as [easing functions](http://easings.net/), you can use [this example](../edit.php#06/easing.frag) as research and inspiration but the best result will come from making your own transitions.
 
 ### Playing with gradients 
 
@@ -126,6 +126,10 @@ Try the following exercises:
 
 ![](colorwheel.png)
 
+* Read [Josep's Alvers book Interaction of Color](http://www.goodreads.com/book/show/111113.Interaction_of_Color) and use the following shaders examples as practice.
+
+<div class="glslGallery" data="160505191155,160505193939,160505200330,160509131554,160509131509,160509131420,160509131240" data-properties="clickRun:editor,openFrameIcon:false,showAuthor:false"></div>
+
 #### Note about functions and arguments
 
 Before jumping to the next chapter let’s stop and rewind. Go back and take look at the functions in previous examples. You will notice ```in``` before the type of the arguments. This is a [*qualifier*](http://www.shaderific.com/glsl-qualifiers/#inputqualifier) and in this case it specifies that the variable is read only. In future examples we will see that it is also possible to define arguments as ```out``` or ```inout```. This last one, ```inout```, is conceptually similar to passing an argument by reference which will give us the possibility to modify a passed variable.
@@ -134,9 +138,8 @@ Before jumping to the next chapter let’s stop and rewind. Go back and take loo
 int newFunction(in vec4 aVec4,   // read-only 
                 out vec3 aVec3,    // write-only
                 inout int aInt);   // read-write
-``` 
+```
 
 You may not believe it but now we have all the elements to make cool drawings. In the next chapter we will learn how to combine all our tricks to make geometric forms by *blending* the space. Yep... *blending* the space.
-
 
 

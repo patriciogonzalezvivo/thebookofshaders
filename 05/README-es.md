@@ -108,11 +108,11 @@ Como los chefs que colectan especias e ingredientes exóticos, los artistas digi
 
 [Iñigo Quiles](http://www.iquilezles.org/) tiene una gran colección de [funciones útiles](http://www.iquilezles.org/www/articles/functions/functions.htm). Después de leer [este artículo](http://www.iquilezles.org/www/articles/functions/functions.htm) echa un vistazo a la traducción de esas funciones a GLSL. Presta atención a los pequeños cambios necesarios, como poner "." (punto) en los valores flotantes y usar los nombres en GLSL de las *funciones en C*; por ejemplo en vez de ```powf()``` usamos ```pow()```:
 
-* [Impulse](../edit.html#05/impulse.frag)
-* [Cubic Pulse](../edit.html#05/cubicpulse.frag)
-* [Exponential Step](../edit.html#05/expstep.frag)
-* [Parabola](../edit.html#05/parabola.frag)
-* [Power Curve](../edit.html#05/pcurve.frag)
+* [Impulse](../edit.php#05/impulse.frag)
+* [Cubic Pulse](../edit.php#05/cubicpulse.frag)
+* [Exponential Step](../edit.php#05/expstep.frag)
+* [Parabola](../edit.php#05/parabola.frag)
+* [Power Curve](../edit.php#05/pcurve.frag)
 
 Para que te mantengas motivado, aqui hay un elegante ejemplo (hecho por [Danguafer](https://www.shadertoy.com/user/Danguafer)) de alguien que logró dominar su karate en las funciones.
 

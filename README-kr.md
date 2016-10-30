@@ -60,7 +60,7 @@
 
 * [Appendix:](appendix/) Other ways to use this book
 	* [How can I navigate this book offline?](appendix/)
-	* [How to run the examples on a RaspberryPi?](appendix/)
+	* [How to run the examples on a Raspberry Pi?](appendix/)
 	* [How to print this book?](appendix/)
 
 * [Examples Gallery](examples/)

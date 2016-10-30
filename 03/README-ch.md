@@ -38,13 +38,13 @@ GLSL 还有更多惊喜。GPU 的硬件加速支持我们使用角度，三角�
 
 ## gl_FragCoord
 
-就像 GLSL 有个默认输出值 ```vec4 gl_FragColor``` 一样，它也有一个默认输入值（ ```vec4 gl_FragCoord``` ）。``` gl_FragCoord```存储了活动线程正在处理的**像素**或**屏幕片段**的坐标。有了它我们就知道了屏幕上的哪一个线程正在运转。为什么我们不叫 ``` gl_FragCoord``` uniform （统一值）呢？因为每个像素的坐标都不同，所以我们把它叫做**varying**（变化值）。
+就像 GLSL 有个默认输出值 ```vec4 gl_FragColor``` 一样，它也有一个默认输入值（ ```vec4 gl_FragCoord``` ）。``` gl_FragCoord```存储了活动线程正在处理的**像素**或**屏幕碎片**的坐标。有了它我们就知道了屏幕上的哪一个线程正在运转。为什么我们不叫 ``` gl_FragCoord``` uniform （统一值）呢？因为每个像素的坐标都不同，所以我们把它叫做 **varying**（变化值）。
 
 <div class="codeAndCanvas" data="space.frag"></div>
 
 上述代码中我们用 ```gl_FragCoord.xy``` 除以 ```u_resolution```，对坐标进行了**规范化**。这样做是为了使所有的值落在 ```0.0``` 到 ```1.0``` 之间，这样就可以轻松把 X 或 Y 的值映射到红色或者绿色通道。
 
-在 shader 的领域我们没有太多要 debug 的，更多地是试着给变量赋一些很炫的颜色，试图做出一些效果。有时你会觉得用 GLSL 编程就像是把一搜船放到了瓶子里。它同样地困难、美丽而令人满足。
+在 shader 的领域我们没有太多要 debug 的，更多地是试着给变量赋一些很炫的颜色，试图做出一些效果。有时你会觉得用 GLSL 编程就像是把一搜船放到了瓶子里。它同等地困难、美丽而令人满足。
 
 ![](08.png)
 
@@ -58,4 +58,4 @@ GLSL 还有更多惊喜。GPU 的硬件加速支持我们使用角度，三角�
 
 * 你可以用 ```u_time``` 和 ```u_mouse``` 来改变颜色的图案吗？不妨琢磨一些有趣的途径。
 
-经过这些小练习后，你可能会好奇还能用 shader 大法做什么。接下来的章节你会知道如何把你的 shader 和 three.js，Processing，和 openFrameworks 结合起来。
+经过这些小练习后，你可能会好奇还能用强大的 shader 做什么。接下来的章节你会知道如何把你的 shader 和 three.js，Processing，和 openFrameworks 结合起来。

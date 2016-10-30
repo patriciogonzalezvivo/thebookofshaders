@@ -114,17 +114,17 @@ y = mix(rand(i), rand(i + 1.0), u); // using it in the interpolation
 
 ノイズのアルゴリズムは本来、自然な *je ne sais quoi* （訳注：言葉では表せない質感、美しさ）をデジタルなテクスチャーに与えるために考え出されました。ここまで見てきた一次元と二次元の実装はランダムな値の間の補間を行うもので、そのためバリューノイズと呼ばれていました。しかしノイズを作り出す方法はこれだけではありません。
 
-[ ![Inigo Quilez - Value Noise](value-noise.png) ](../edit.html#11/2d-vnoise.frag)
+[ ![Inigo Quilez - Value Noise](value-noise.png) ](../edit.php#11/2d-vnoise.frag)
 
 課題の中で気付いたと思いますが、バリューノイズはブロック状に見えてしまいがちです。これを抑えるため、[Ken Perlin](https://mrl.nyu.edu/~perlin/) は1985年にグラデーションノイズ（gradient noise）と呼ばれるアルゴリズムを開発しました。このグラデーションは一次元の値（```float```）の代わりに、向きを持った（```vec2```）を返す二次元のランダム関数によって作り出されます。下記の画像をクリックしてコードを表示し、仕組みを見てみましょう。
 
-[ ![Inigo Quilez - Gradient Noise](gradient-noise.png) ](../edit.html#11/2d-gnoise.frag)
+[ ![Inigo Quilez - Gradient Noise](gradient-noise.png) ](../edit.php#11/2d-gnoise.frag)
 
 上記2つの[Inigo Quilez](http://www.iquilezles.org/)によるサンプルをじっくり見比べてみましょう。[バリューノイズ](https://www.shadertoy.com/view/lsf3WH)と[グラデーションノイズ](https://www.shadertoy.com/view/XdXGW8)との違いに注目してください。
 
 絵の具の中の顔料の働きを理解している画家のように、ノイズの実装方法について詳しくなるほど、より上手に使いこなせるようになります。例えば複数の直線が描かれた空間を回転させるために二次元のノイズを使うと下記の通り、木目のように見える渦巻き状の効果を作り出すことができます。画像をクリックするとコードも見ることができます。
 
-[ ![Wood texture](wood.png) ](../edit.html#11/wood.frag)
+[ ![Wood texture](wood-long.png) ](../edit.php#11/wood.frag)
 
 ```glsl
     pos = rotate2d( noise(pos) ) * pos; // rotate the space
@@ -133,7 +133,7 @@ y = mix(rand(i), rand(i + 1.0), u); // using it in the interpolation
 
 ノイズから面白いパターンを作り出すもう1つの方法は、ノイズをディスタンスフィールドのように扱い、[形について](../07/)の章で取り上げたテクニックを応用することです。
 
-[ ![Splatter texture](splatter.png) ](../edit.html#11/splatter.frag)
+[ ![Splatter texture](splatter-long.png) ](../edit.php#11/splatter.frag)
 
 ```glsl
     color += smoothstep(.15,.2,noise(st*10.)); // Black splatter
@@ -142,7 +142,7 @@ y = mix(rand(i), rand(i + 1.0), u); // using it in the interpolation
 
 3つ目の方法はノイズ関数を図形を変形させるのに使うことです。これにもまた[形について](../07/)の章で学んだテクニックが必要になります。
 
-<a href="../edit.html#11/circleWave-noise.frag"><canvas id="custom" class="canvas" data-fragment-url="circleWave-noise.frag"  width="300px" height="300"></canvas></a>
+<a href="../edit.php#11/circleWave-noise.frag"><canvas id="custom" class="canvas" data-fragment-url="circleWave-noise.frag"  width="300px" height="300"></canvas></a>
 
 練習してみましょう。
 
@@ -173,7 +173,7 @@ Ken Perlinにとって彼のアルゴリズムの成功は十分ではありま�
 
 この男は一体何者だ、と思っているかもしれませんね。そう、彼の仕事は本当に素晴らしい。しかし実際、どうやって彼はアルゴリズムを改善したのでしょう。
 
-私たちは二次元のノイズで4つの頂点（正方形の角）の間を補間するのを見ました。ここから三次元では8頂点（[実装例](../edit.html#11/3d-noise.frag)）、四次元では16頂点の補間が必要なことも推測できます。分かりますね。言い換えればN次元に対しては2のN乗の頂点を補間する必要があります。しかしKen Perlinはここで賢くも気付きました。空間を隙間なく埋める形として正方形を選ぶのは当然だけれども、二次元空間で最もシンプルな形は正三角形です。そこで彼は（我々がこの章でやり方を学んだ）正方形のグリッドを単純な正三角形で置き換えることから始めたのです。
+私たちは二次元のノイズで4つの頂点（正方形の角）の間を補間するのを見ました。ここから三次元では8頂点（[実装例](../edit.php#11/3d-noise.frag)）、四次元では16頂点の補間が必要なことも推測できます。分かりますね。言い換えればN次元に対しては2のN乗の頂点を補間する必要があります。しかしKen Perlinはここで賢くも気付きました。空間を隙間なく埋める形として正方形を選ぶのは当然だけれども、二次元空間で最もシンプルな形は正三角形です。そこで彼は（我々がこの章でやり方を学んだ）正方形のグリッドを単純な正三角形で置き換えることから始めたのです。
 
 ![](simplex-grid-00.png)
 
@@ -208,7 +208,7 @@ y = x*x*(3.0-2.0*x);
 
 これら全ての改善の結果、シンプレックスノイズというアルゴリズムの傑作が生まれました。下記はIan McEwanが[この論文](http://webstaff.itn.liu.se/~stegu/jgt2012/article.pdf)で示したGLSLによるアルゴリズムの実装です。教育目的のためかなり複雑になっていますが、実際のコードはそれほど謎めいていないので安心してください。下記の画像をクリックして見てみましょう。
 
-[ ![Ian McEwan of Ashima Arts - Simplex Noise](simplex-noise.png) ](../edit.html#11/2d-snoise-clear.frag)
+[ ![Ian McEwan of Ashima Arts - Simplex Noise](simplex-noise.png) ](../edit.php#11/2d-snoise-clear.frag)
 
 技術的な話は十分ですね。今度はこの財産をあなたの表現に使う番です。
 
@@ -217,11 +217,11 @@ y = x*x*(3.0-2.0*x);
 * [ラバランプ](https://www.google.com/search?q=lava+lamp&espv=2&biw=1682&bih=1148&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiHraP9gLDKAhUY7mMKHbqhBVIQ_AUIBygC)、インクの水滴、水などのように、流れているかのような錯覚を起こさせるシェーダーを作ってください。
 
 
-<a href="../edit.html#11/lava-lamp.frag"><canvas id="custom" class="canvas" data-fragment-url="lava-lamp.frag"  width="520px" height="200px"></canvas></a>
+<a href="../edit.php#11/lava-lamp.frag"><canvas id="custom" class="canvas" data-fragment-url="lava-lamp.frag"  width="520px" height="200px"></canvas></a>
 
 * シンプレックスノイズを使ってこれまで作った作品にテクスチャーを加えてみましょう。
 
-<a href="../edit.html#11/iching-03.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-03.frag"  width="520px" height="520px"></canvas></a>
+<a href="../edit.php#11/iching-03.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-03.frag"  width="520px" height="520px"></canvas></a>
 
 この章ではカオスを多少なりとも制御してみました。簡単というわけにはいきませんでしたね。ノイズ使いの達人になるには時間も努力も必要です。
 

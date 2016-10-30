@@ -1,7 +1,7 @@
 <?php 
 
 	$path = "..";
-	$subtitle = ": Fractal Brownian Motion";
+	$subtitle = ": More noise";
 	$README = "README";
 	$language = "";
 
@@ -29,5 +29,5 @@
 		<li class="navigationBar" onclick="nextPage()">Next &gt; &gt;</li>
 	</ul>';
 
-	include($path."/footer.php"); 
+	include($path."/footer.php");
 ?>
