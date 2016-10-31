@@ -16,7 +16,7 @@
 glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutputImage.png
 ```
 
-**作成する**: シェーダーのコーディングを簡単にするため、[glslEditor](https://github.com/patriciogonzalezvivo/glslEditor)というオンラインのエディターを用意しました。このエディターはこの本のサンプルにも埋め込まれています。glslEditorには幾つもの便利なウィジェットが備わっていて、直接触って具体的に結果を見ることで、抽象的なglslのコーディングをより理解しやすくしてくれます。
+**作成する**: シェーダーのコーディングを簡単にするため、[glslEditor](https://github.com/patriciogonzalezvivo/glslEditor)というオンラインのエディターを用意しました。このエディターはこの本のサンプルにも埋め込まれています。glslEditorには幾つもの便利なウィジェットが備わっていて、直接触って具体的に結果を見ることで、抽象的なglslのコーディングをより理解しやすくしてくれます。[editor.thebookofshaders.com/](http://editor.thebookofshaders.com/)から単体で使うこともできます。詳しくは[こちら](https://github.com/patriciogonzalezvivo/glslEditor)をご覧ください。
 
 ![](glslEditor-01.gif)
 
@@ -82,7 +82,8 @@ glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutput
 
             uniforms = {
                 u_time: { type: "f", value: 1.0 },
-                u_resolution: { type: "v2", value: new THREE.Vector2() }
+                u_resolution: { type: "v2", value: new THREE.Vector2() },
+                u_mouse: { type: "v2", value: new THREE.Vector2() }
             };
 
             var material = new THREE.ShaderMaterial( {
@@ -101,6 +102,11 @@ glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutput
 
             onWindowResize();
             window.addEventListener( 'resize', onWindowResize, false );
+
+            document.onmousemove = function(e){
+              uniforms.u_mouse.value.x = e.pageX
+              uniforms.u_mouse.value.y = e.pageY
+            }
         }
 
         function onWindowResize( event ) {
@@ -126,7 +132,7 @@ glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutput
 
 [Ben Fry](http://benfry.com/)と[Casey Reas](http://reas.com/)が2001年に開発を始めた[Processing](https://processing.org/) はコーディングを始めるのに最適な、驚くほどシンプルでパワフルな開発環境です（少なくとも私にとってはそうでした）。[Andres Colubri](https://codeanticode.wordpress.com/)はopenGLとビデオに関する重要なアップデートを行いました。これによってProcessingでのシェーダーの使用が今まで以上に簡単になりました。Processingのスケッチは ```data``` フォルダーからシェーダーを検索します。このフォルダーにサンプルコードをコピーして ```shader.frag``` と名前を付けてください。
 
-```processing
+```cpp
 PShader shader;
 
 void setup() {
