@@ -1,7 +1,7 @@
 <canvas id="custom" class="canvas" data-fragment-url="examples/moon.frag" data-textures="examples/images/moon-texture.jpg" width="350px" height="350px"></canvas>
 
 # The Book of Shaders
-[Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/)　著
+[Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/)、[Jen Lowe](http://jenlowe.net/)著
 
 この本はフラグメントシェーダーについてのガイドブックです。難解で複雑なフラグメントシェーダーの世界を、一歩一歩わかりやすくご案内します。
 
@@ -34,7 +34,7 @@
 
 * Generative designs
     * [ランダム](10/?lan=jp)
-    * [Noise（未訳）](11/)
+    * [Noise](11/?lan=jp)
     * Fractional brownian motion
     * Fractals
 
@@ -74,9 +74,9 @@
 
 [Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/)（1982年、アルゼンチン、ブエノスアイレス生） はニューヨーク在住のアーティスト／開発者です。有機的なものと人工的なもの、アナログとデジタル、個人と集団の狭間を探求し、プログラミングコードを表現手段としてより良い共存のあり方を模索しています。
 
-パトリシオは心理療法（psychotherapy）と表現療法（expressive art therapy）に精通しており、パーソンズ美術大学でデザイン&テクノロジーのMFA（Master of Fine Arts - 美術系の修士に相当）を取得しています。現在は[Mapzen](https://mapzen.com/)でグラフィックエンジニアとしてオープンソースのマッピングツールの開発に携わっています。
+Patricioは心理療法（psychotherapy）と表現療法（expressive art therapy）に精通しており、パーソンズ美術大学でデザイン&テクノロジーのMFA（Master of Fine Arts - 美術系の修士に相当）を取得しています。現在は[Mapzen](https://mapzen.com/)でグラフィックエンジニアとしてオープンソースのマッピングツールの開発に携わっています。
 
-<div class="header"><a href="https://twitter.com/patriciogv" target="_blank">Twitter</a> - <a href="https://github.com/patriciogonzalezvivo" target="_blank">GitHub</a> - <a href="https://vimeo.com/patriciogv" target="_blank">Vimeo</a> - <a href="https://www.flickr.com/photos/106950246@N06/" target="_blank"> Flickr</a></div>
+<div class="header"> <a href="http://patriciogonzalezvivo.com/" target="_blank">WebSite</a> - <a href="https://twitter.com/patriciogv" target="_blank">Twitter</a> - <a href="https://github.com/patriciogonzalezvivo" target="_blank">GitHub</a> - <a href="https://vimeo.com/patriciogv" target="_blank">Vimeo</a> - <a href="https://www.flickr.com/photos/106950246@N06/" target="_blank"> Flickr</a></div>
 
 ## 訳者について
 
