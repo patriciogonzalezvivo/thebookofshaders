@@ -97,18 +97,29 @@ img {
     color: #999;
 }
 
-.header .subtitle {
-    
+.toc-header {
+    font-size: 16px;
+    line-height: 16px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    text-align: right;
+    color: #999;
 }
 
-.header .subtitle a{
+.header .subtitle {
+
+}
+
+.header .subtitle a,
+.toc-header .subtitle a {
     font-size: 1.3em;
     font-style: italic;
     text-decoration: none;
     border: 0!important;
 }
 
-.header a{
+.header a,
+.toc-header a {
     font-size: 0.8em;
     font-style: italic;
     text-decoration: none;
@@ -228,7 +239,7 @@ code {
     margin-left: auto;
     margin-right: auto;
     max-width: 700px;
-    
+
 }
 
 .simpleFunction .CodeMirror {
@@ -357,4 +368,3 @@ code {
   font-style: italic;
   text-align: right;
 }
-
