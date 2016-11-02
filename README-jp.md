@@ -1,4 +1,4 @@
-<canvas id="custom" class="canvas" data-fragment-url="examples/moon.frag" data-textures="examples/images/moon-texture.jpg" width="350px" height="350px"></canvas>
+<canvas id="custom" class="canvas" data-fragment-url="src/moon/moon.frag" data-textures="src/moon/moon.jpg" width="350px" height="350px"></canvas>
 
 # The Book of Shaders
 [Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/)、[Jen Lowe](http://jenlowe.net/)著
