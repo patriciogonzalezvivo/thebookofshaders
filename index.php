@@ -1,4 +1,4 @@
-<?php 
+<?php
 	$path = ".";
 	$subtitle = "";
 	$README = "README";
@@ -12,13 +12,14 @@
 	}
 
 	include("header.php");
-	
+
+	include("toc-header.php");
 	echo '<div id="content">';
-	
+
 	include($path."/src/parsedown/Parsedown.php");
 	$Parsedown = new Parsedown();
 	echo $Parsedown->text(file_get_contents($README.'.md'));
-	
+
 	echo '</div>';
 	include("footer.php");
 ?>

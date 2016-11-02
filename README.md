@@ -29,8 +29,8 @@ This is a gentle step-by-step guide through the abstract and complex universe of
 * Generative designs
     * [Random](10/)
     * [Noise](11/)
-    * Cellular noise
-    * Fractional brownian motion
+    * [Cellular noise](12/)
+    * [Fractional brownian motion](13/)
     * Fractals
 
 * Image processing:
