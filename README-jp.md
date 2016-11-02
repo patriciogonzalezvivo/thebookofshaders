@@ -35,7 +35,8 @@
 * Generative designs
     * [ランダム](10/?lan=jp)
     * [Noise](11/?lan=jp)
-    * Fractional brownian motion
+    * [Cellular noise](12/)
+    * [Fractional brownian motion](13/)
     * Fractals
 
 * Image processing:
