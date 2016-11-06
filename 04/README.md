@@ -1,8 +1,8 @@
 ## Running your shader
 
-As part of the construction of this book and my art practice I made an ecosystem of tools to create, display, share and curate shaders. This tools works consistently across Linux Desktops, MacOS, [RaspberryPi](https://www.raspberrypi.org/) and browsers without the need of changing your code.
+As part of the construction of this book and my art practice I made an ecosystem of tools to create, display, share and curate shaders. This tools works consistently across Linux Desktops, MacOS, [Raspberry Pi](https://www.raspberrypi.org/) and browsers without the need of changing your code.
 
-**Display**: all life-examples in this book are displayed using [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) which makes the process of running standalone shader incredible easy. 
+**Display**: all live examples in this book are displayed using [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) which makes the process of running standalone shader incredible easy. 
 
 ```html
 <canvas class="glslCanvas" data-fragment-url=“yourShader.frag" data-textures=“yourInputImage.png” width="500" height="500"></canvas>
@@ -10,13 +10,13 @@ As part of the construction of this book and my art practice I made an ecosystem
 
 As you can see, it just needs a ```canvas``` element with ```class="glslCanvas"``` and the url to your shader in the ```data-fragment-url```. Learn more about it [here](https://github.com/patriciogonzalezvivo/glslCanvas).
 
-If you are like me, you will probably want to run shaders directly from the console, in that case you should check out [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). This application allows you to incorporate shaders into your ```bash``` scripts or unix pipelines and use it in a similar way that [ImageMagick](http://www.imagemagick.org/script/index.php). Also [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) is a great way to compile shaders on your [RaspberryPi](https://www.raspberrypi.org/), reason why [openFrame.io](http://openframe.io/) use it to display shader artwork. Learn more about this application [here](https://github.com/patriciogonzalezvivo/glslViewer).
+If you are like me, you will probably want to run shaders directly from the console, in that case you should check out [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). This application allows you to incorporate shaders into your ```bash``` scripts or unix pipelines and use it in a similar way that [ImageMagick](http://www.imagemagick.org/script/index.php). Also [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) is a great way to compile shaders on your [Raspberry Pi](https://www.raspberrypi.org/), reason why [openFrame.io](http://openframe.io/) use it to display shader artwork. Learn more about this application [here](https://github.com/patriciogonzalezvivo/glslViewer).
 
 ```bash
 glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutputImage.png
 ```
 
-**Create**: in order to illuminate the experience of coding shaders I made an online editor called [glslEditor](https://github.com/patriciogonzalezvivo/glslEditor). This editor is embebed on the book's life examples, it brings a series of handy widgets to make more tangible the abstract experience of working with glsl code. You can also run it as a standalone web application from [editor.thebookofshaders.com/](http://editor.thebookofshaders.com/). Learn more about it [here](https://github.com/patriciogonzalezvivo/glslEditor).
+**Create**: in order to illuminate the experience of coding shaders I made an online editor called [glslEditor](https://github.com/patriciogonzalezvivo/glslEditor). This editor is embedded on the book's live examples, it brings a series of handy widgets to make more tangible the abstract experience of working with glsl code. You can also run it as a standalone web application from [editor.thebookofshaders.com/](http://editor.thebookofshaders.com/). Learn more about it [here](https://github.com/patriciogonzalezvivo/glslEditor).
 
 ![](glslEditor-01.gif)
 
@@ -24,7 +24,7 @@ If you prefer to work offline using [SublimeText](https://www.sublimetext.com/) 
 
 ![](glslViewer.gif)
 
-**Share**: the online editor ([editor.thebookofshaders.com/](http://editor.thebookofshaders.com/)) can share your shaders! Both the embebed and standalone version have an export button where you can get an unique URL's to your shader. Also have the ability to export directly to an [openFrame.io](http://openframe.io/).
+**Share**: the online editor ([editor.thebookofshaders.com/](http://editor.thebookofshaders.com/)) can share your shaders! Both the embedded and standalone version have an export button where you can get an unique URL's to your shader. Also have the ability to export directly to an [openFrame.io](http://openframe.io/).
 
 ![](glslEditor-00.gif)
 

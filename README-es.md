@@ -56,7 +56,7 @@ Esta es una guía paso a paso a través del abstracto y complejo universo de los
 
 * [Apéndice:](appendix/) Otras formas de usar este libro
 	* [¿Cómo puedo ver el libro offline?](appendix/)
-	* [¿Cómo puedo correr los ejemplos en una RaspberryPi?](appendix/)
+	* [¿Cómo puedo correr los ejemplos en una Raspberry Pi?](appendix/)
 	* [¿Cómo imprimir este libro?](appendix/)
 
 * [Galería de ejemplos](examples/)

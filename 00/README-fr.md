@@ -52,7 +52,7 @@ Cela étant et selon ce que vous voulez faire de ce livre, vous pouvez :
 
 - [créer une copie locale de ce livre pour le consulter hors-ligne](https://thebookofshaders.com/appendix/)
 
-- [lancer les exemples directement sur RaspberryPi, sans navigateur](https://thebookofshaders.com/appendix/)
+- [lancer les exemples directement sur Raspberry Pi, sans navigateur](https://thebookofshaders.com/appendix/)
 
 - [créer un PDF du livre pour l'imprimer](https://thebookofshaders.com/appendix/)
 

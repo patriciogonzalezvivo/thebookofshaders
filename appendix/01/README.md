@@ -1,12 +1,12 @@
-## How to run the examples on a RaspberryPi?
+## How to run the examples on a Raspberry Pi?
 
-A few years ago, taking for granted that everybody have a computer with a GPU was a long shot. Now, most computers have a graphic unit, but is a high bar for a requirement in for example a course or class. 
+A few years ago, assuming that everybody has a computer with a graphical processing unit was a long shot. Now, most computers have a GPU, but it's still a high bar for a requirement in a workshop or class, for example. 
 
-Thanks to the [RaspberryPi project](http://www.raspberrypi.org/) a new type of small and cheap generation of computers (arround $35 each) has found its way into  classrooms. More importantly for the purposes of this book, the [RaspberryPi](http://www.raspberrypi.org/) comes with a decent Bradcom GPU card that can be accessed directly from the console. I made a [flexible GLSL live coding tool call **glslViewer**](https://github.com/patriciogonzalezvivo/glslViewer) that runs all the examples on this book. This program also is hable to update automatically the changes the user makes when they save it. What that means? you can edit the shader and every time you save it, the shader will be re-compile and rendered for you.
+Thanks to the [Raspberry Pi Foundation](http://www.raspberrypi.org/) a new type of small and cheap generation of computers (around $35 each) has found its way into classrooms. More importantly for the purposes of this book, the [Raspberry Pi](http://www.raspberrypi.org/) comes with a decent Broadcom GPU that can be accessed directly from the console. I made a [flexible GLSL live coding tool call **glslViewer**](https://github.com/patriciogonzalezvivo/glslViewer) that runs all the examples in this book. This program also has the ability to update automatically when the user saves a change to their code. What does this mean? You can edit the shader and every time you save it, the shader will be re-compile and render for you.
 
-By making a local copy of the repository of this book (see the above section) and having [```glslViewer``` installed](https://github.com/patriciogonzalezvivo/glslViewer), users can run the examples with ```glslviewer```. Also by using the ```-l``` flag they can render the example on a corner of the screen while they modify it with any text editor (like ```nano```, ```pico```, ```vi```, ```vim``` or ```emacs```). This also works if the user is connected through ssh/sftp.
+By making a local copy of the repository of this book (see the above section) and having [```glslViewer``` installed](https://github.com/patriciogonzalezvivo/glslViewer), users can run the examples with ```glslviewer```. Also by using the ```-l``` flag they can render the example in a corner of the screen while they modify it with any text editor (like ```nano```, ```pico```, ```vi```, ```vim``` or ```emacs```). This also works if the user is connected through ssh/sftp.
 
-To install and set this all up on the RaspberryPi after installing the OS and logging in, type the following commands:
+To install and set this all up on the Raspberry Pi after installing the OS and logging in, type the following commands:
 
 ```bash
 sudo apt-get update

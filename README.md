@@ -29,8 +29,8 @@ This is a gentle step-by-step guide through the abstract and complex universe of
 * Generative designs
     * [Random](10/)
     * [Noise](11/)
-    * Cellular noise
-    * Fractional brownian motion
+    * [Cellular noise](12/)
+    * [Fractional brownian motion](13/)
     * Fractals
 
 * Image processing:
@@ -57,7 +57,7 @@ This is a gentle step-by-step guide through the abstract and complex universe of
 
 * [Appendix:](appendix/) Other ways to use this book
 	* [How can I navigate this book offline?](appendix/00/)
-	* [How to run the examples on a RaspberryPi?](appendix/01/)
+	* [How to run the examples on a Raspberry Pi?](appendix/01/)
 	* [How to print this book?](appendix/02/)
     * [How can I collaborate?](appendix/03/)
     * [An introduction for those coming from JS](appendix/04/) by [Nicolas Barradeau](http://www.barradeau.com/)
@@ -93,6 +93,8 @@ Thanks [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) for the Korean [transla
 Thanks [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) for the Spanish [translation (español)](?lan=es)
 
 Thanks [Nicolas Barradeau](https://twitter.com/nicoptere) and [Karim Naaji](http://karim.naaji.fr/) for the French [translation (français)](?lan=fr)
+
+Thanks [Andrea Rovescalli](https://www.earove.info) for the Italian [translation (italiano)](?lan=it)
 
 Thanks to everyone who has believed in this project and [contributed with fixes](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) or donations.
 

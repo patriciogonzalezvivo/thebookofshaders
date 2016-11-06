@@ -56,7 +56,7 @@ Ceci est un guide étape-par-étape à travers le monde abstrait et complexe des
 
 * [Appendice:](appendix/) Autres manières d'utiliser ce livre
 	* [Comment puis-je consulter ce livre hors-ligne?](appendix/)
-	* [Comment exécuter les exemples sur un RaspberryPi?](appendix/)
+	* [Comment exécuter les exemples sur un Raspberry Pi?](appendix/)
 	* [Comment imprimer ce livre?](appendix/)
 
 * [Galerie d'exemples](examples/)

@@ -91,7 +91,7 @@ Now that we've learned how to tell if our cell is in an even or odd row or colum
 
 ![](truchet-00.png)
 
-By changing the pattern across tiles, it's possible to contruct an infinite set of complex designs. 
+By changing the pattern across tiles, it's possible to construct an infinite set of complex designs. 
 
 ![](truchet-01.png)
 
