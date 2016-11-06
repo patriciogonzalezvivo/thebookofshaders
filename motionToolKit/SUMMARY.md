@@ -6,11 +6,11 @@ Exercises:
 
 * Can you draw different waves using different easing functions, then animate circles following the waves?
 
+* Animate two circles. Can you express difference between different materials through motion? How a metal ball and a plastic ball behave differently?
+
 * Design your character(an animal, monster, spaceship, etc.) by combining shapes and animate it.
 
 * Speed up or down your character animation. Can you make it five times faster or slower than the original?
-
-* Can you express difference between different materials through motion? How a metal ball and a plastic ball behave differently?
 
 * Add a new scene to the "wipes" example. How can you make it easy so that you don't have to adjust the timing of all subsequent parts manually?
 
