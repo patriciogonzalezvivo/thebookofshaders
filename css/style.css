@@ -295,16 +295,18 @@ code {
 }
 
 .glslGallery_item{
+    vertical-align: top;
     width: 242px;
     margin: 8px;
 }
 
 .glslGallery_thumb{
     max-width: 240px;
-  border: solid 1px #EEEEEE;
+    border: solid 1px #EEEEEE;
 }
 
 .glslGallery_item canvas.glslGallery_canvas{
+    vertical-align: top;
     max-width: 242px;
 }
 
