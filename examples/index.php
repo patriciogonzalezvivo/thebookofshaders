@@ -32,9 +32,13 @@ error_reporting(0);
             }
 
             if (file_exists($folder.'TITLE'.$language.'.md') and file_exists($folder.'SUMMARY'.$language.'.md')) {
-                echo '<a href="'.$folder.'">';
-                echo $Parsedown->text(file_get_contents($folder.'TITLE'.$language.'.md'));
-                echo '</a>';
+                if (file_exists($folder.'README.md')) {
+                  echo '<a href="'.$folder.'">';
+                  echo $Parsedown->text(file_get_contents($folder.'TITLE'.$language.'.md'));
+                  echo '</a>';
+                } else {
+                  echo $Parsedown->text(file_get_contents($folder.'TITLE'.$language.'.md'));
+                }
 
                 if (file_exists($folder.'SHORT_SUMMARY'.$language.'.md')) {
                     echo $Parsedown->text(file_get_contents($folder.'SHORT_SUMMARY'.$language.'.md'));
