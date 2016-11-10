@@ -1,107 +1,147 @@
-<canvas id="custom" class="canvas" data-fragment-url="src/moon/moon.frag" data-textures="src/moon/moon.jpg" width="350px" height="350px"></canvas>
+![Paul Klee - Color Chart (1931)](klee.jpg)
 
-# The Book of Shaders
-*von [Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) und [Jen Lowe](http://jenlowe.net/)*
+## Farben
 
-Dies ist eine behutsame Schritt-für-Schritt-Einführung in die komplexe und vielfach abstrakte Welt der Fragment Shader.
+Wir hatten bislang noch wenig Gelegenheit, um über die Vektortypen von GLSL zu sprechen. Bevor es mit anderen Inhalten weitergeht, ist es wichtig, mehr über diese Variablentypen zu erfahren. Das Thema „Farben“ bietet sich dafür an. 
 
-<div class="header">
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B5FSVSHGEATCG" style="float: right;"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" alt=""></a>
-</div>
+Falls Du mit den Konzepten der objektorientierten Programmierung vertraut bist, ist Dir vielleicht schon aufgefallen, dass wir die verschiedenen Elemente innerhalb eines Vektors wie eine gewöhnliche ```struct``` in C ansprechen.
 
-## Inhalt
+```glsl
+vec3 red = vec3(1.0,0.0,0.0);
+red.x = 1.0;
+red.y = 0.0;
+red.z = 0.0; 
+```
 
-* [Über dieses Buch](00/?lan=de)
+Die Festlegung von Farben über die Komponenten *x*, *y* und *z* wirkt zunächst etwas merkwürdig, nicht wahr? Aus diesem Grund gibt es weitere Möglichkeiten, um auf diese Elemente zuzugreifen. Die Inhalte von ```.x```, ```.y``` und ```.z``` können auch als ```.r```, ```.g``` und ```.b```, sowie als ```.s```, ```.t``` und ```.p``` angesprochen werden (```.s```, ```.t``` und ```.p``` werden typischerweise für die Raumkoordinaten von Texturen genutzt, wie wir in späteren Kapiteln noch sehen werden). Darüber hinaus lassen sich die Elemente eines Vektors auch über ihre Index-Position als ```[0]```, ```[1]``` und ```[2]``` ansprechen.
 
-* Jetzt geht’s los
-    * [Was ist ein Shader?](01/?lan=de)
-    * [“Hallo Welt!”](02/?lan=de)
-    * [Uniforms](03/?lan=de)
-    * [Ausführung Deiner Shader](04/?lan=de)
+Die folgenden Programmzeilen zeigen die unterschiedlichen Ansätze, um jeweils auf die gleichen Vektorinhalte zuzugreifen:
 
-* Algorithmisches Zeichnen
-    * [Formgebende Funktionen](05/?lan=de)
-    * [Farben](06/?lan=de)
-    * [Formen](07/?lan=de)
-    * [Matrizen](08/?lan=de)
-    * [Muster](09/?lan=de)
+```glsl
+vec4 vector;
+vector[0] = vector.r = vector.x = vector.s;
+vector[1] = vector.g = vector.y = vector.t;
+vector[2] = vector.b = vector.z = vector.p;
+vector[3] = vector.a = vector.w = vector.q;
+```
 
-* Generative Designs
-    * [Zufall](10/?lan=de)
-    * [Rauschen](11/?lan=de)
-    * Zelluläres Rauschen
-    * Gebrochene Brownsche Bewegung
-    * Fraktale
+Tatsächlich handelt es sich bei den unterschiedlichen Namen nur um verschiedene Bezeichner für jeweils ein und dieselbe Sache. Die Namen sollen Dir helfen, verständlichen Code zu schreiben, je nachdem, wofür ein Vektor gerade zum Einsatz kommt (Farben, Koordinaten, Raumpunkte etc.)  
 
-* Bildverarbeitung
-    * Texturen
-    * Bildbearbeitungsfunktionen
-    * Kernel Verwindungen
-    * Filter
-    * Weitere Effekte
+Ein weiteres praktisches Merkmal der Vektortypen in GLSL ist die Möglichkeit, ihre Eigenschaften in beliebiger Weise zu kombinieren. Das macht es besonders einfach, Werte zu tauschen und in andere Datentypen zu konvertieren. Diese Fähigkeit wird im Englischen als *swizzle* bezeichnet, was so viel wie „umrühren“ oder „mischen“ bedeutet.
 
-* Simulationen
-    * Pingpong
-    * Conway
-    * Wellen
-    * Wasserfarben
-    * Reaktionsausbreitung
+```glsl
+vec3 yellow, magenta, green;
 
-* 3D Grafiken
-    * Licht
-    * Normal Mapping
-    * Bump-Mapping
-    * Ray Marching
-    * Environmental-Maps (sphärisch und kubisch)
-    * Reflektionen und Ablenkungen
+// Zusammenruehren von Gelb
+yellow.rg = vec2(1.0);  // Zuweisung von 1. an den Rot- und den Gruen-Kanal von yellow
+yellow[2] = 0.0;        // Zuweisung von 0. an den Blau-Kanal von yellow
 
-* [Anhang:](appendix/?lan=de) Weitere Wege zur Nutzung dieses Buches
-	* [Wie kann ich dieses Buch offline lesen?](appendix/00/?lan=de)
-	* [Wie lasse ich die Beispielprogramme auf einem RaspberryPi ablaufen?](appendix/01/?lan=de)
-	* [Wie drucke ich dieses Buch aus?](appendix/02/?lan=de)
-    * [Wie kann ich zu diesem Buch beitragen?](appendix/03/?lan=de)
-    * [Eine Einführung für alle, die von JavaScript kommen](appendix/04/?lan=de) von [Nicolas Barradeau](http://www.barradeau.com/) (Englisch)
+// Zusammenruehren von Magenta
+magenta = yellow.rbg;   // Zuweisung von yellow an magenta bei gleichzeitigem Tausch der Kanaele fuer Blau und Gruen
 
-* [Beispielgalerien](examples/)
+// Zusammenruehren von Gruen
+green.rgb = yellow.bgb; // Zuweisung des Blau-Kanals von yellow an den Rot- und Blau-Kanal von green
+```
 
-* [Glossar](glossary/) (Englisch)
+#### Für Deine Werkzeugkiste
 
-## Über die Autoren
+Vielleicht bist Du es nicht gewohnt, Farben über Zahlenwerte zu definieren. Und mal ganz ehrlich, das ist ja auch nicht sonderlich intuitiv. Glücklicherweise gibt es eine Menge intelligenter Programme und Webseiten, mit denen man Farben am Bildschirm auswählen kann und dann die zugehörigen Werte für Rot, Grün und Blau erhält. Am besten, man bekommt sie gleich als Definition für einen ```vec3``` oder ```vec4``` im GLSL-Format geliefert. Hier sind zum Beispiel die Vorlagen, die ich auf [Spectrum](http://www.eigenlogik.com/spectrum/mac) nutze, um einen passenden Ausdruck für GLSL zu erhalten:
 
-[Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) (1982, Buenos Aires, Argentinien) ist ein Künstler und Entwickler, der in New York lebt. Er erforscht die Räume zwischen Organischem und Synthetischem, Analogem und Digitalem, Individuen und Kollektiven. In seinen Arbeiten nutzt er Programmcode als Ausdrucksform, um das Zusammenwirken von Menschen zu verbessern.
+```
+	vec3({{rn}},{{gn}},{{bn}})
+	vec4({{rn}},{{gn}},{{bn}},1.0)
+```
 
-Patricio hat Psychotherapie studiert und praktiziert, außerdem kunstorientiertes Handeln, die sogenannte „Expressive Arts Therapy“. Er hat einen MFA-Abschluss in „Design & Technology“ von der „Parsons The New School“, wo er auch unterrichtet. Zur Zeit arbeitet Patricio als Grafikingenieur bei der Firma Mapzen und entwickelt dort Open Source Werkzeuge für die Computer-Kartographie.
-<div class="header"> <a href="http://patriciogonzalezvivo.com/" target="_blank">Webseite</a> - <a href="https://twitter.com/patriciogv" target="_blank">Twitter</a> - <a href="https://github.com/patriciogonzalezvivo" target="_blank">GitHub</a> - <a href="https://vimeo.com/patriciogv" target="_blank">Vimeo</a> - <a href="https://www.flickr.com/photos/106950246@N06/" target="_blank"> Flickr</a></div>
+### Mischen von Farben
 
-[Jen Lowe](http://jenlowe.net/) ist eine unabhängige Datenwissenschaftlerin und Datenkommunikatorin bei der Firma Datatelling, wo sie Menschen, Zahlen und Sprache zusammenführt. Sie unterrichtet im Rahmen des „SVA Design for Social Innovation“-Programms, hat die Schule für „Poetic Computation“ mitbegründet, Mathematik für Künstler an der New Yorker ITP-Universität unterrichtet, Forschungen am „Spatial Information Design Lab“ der Columbia Universität durchgeführt und Beiträge für das „White House Office of Science and Technology“ geliefert, das den US-Präsidenten in Fragen des technischen Fortschritts berät. Als Sprecherin ist Jen auf Konferenzen wie der SXSW und der Eyeo aufgetreten. Von ihren Arbeiten hat unter anderem die New York Times, sowie das Magazin FastCompany berichtet. Ihre Forschungsarbeiten, Publikationen und Vorträge kreisen um die Versprechungen und Folgen von Daten und Technologien für die gesellschaftliche Entwicklung. Sie hat einen „Bachelor of Science“-Abschluss in angewandter Mathematik und einen Master-Abschluss in Informatik. Obwohl man angesichts dieser Biographie vielleicht etwas anderes vermuten könnte, schlägt sich Jen immer auf die Seite der Liebe.
-<div class="header"> <a href="http://jenlowe.net/" target="_blank">Webseite</a> - <a href="https://twitter.com/datatelling" target="_blank">Twitter</a> - <a href="https://github.com/datatelling" target="_blank">GitHub</a></div>
+Jetzt, wo Du weißt, wie man Farben definiert, wird es Zeit, dies mit unserem bisher gesammelten Wissen zu verknüpfen. In GLSL gibt es eine äußerst praktische Funktion mit dem Namen [```mix()```](../glossary/?search=mix), über die man zwei Werte in Form von Prozentangaben mischen kann. Vielleicht kannst Du Dir bereits denken, wie diese Prozentangaben auszusehen haben? Genau, als Werte zwischen ```0.0``` und ```1.0```! Das passt doch perfekt, nachdem Du schon so viel Zahlen-Karate am Zaun geübt hast. Es ist an der Zeit, Dein Wissen umzusetzen.
 
-## Danksagungen
+![](mix-f.jpg)
 
-Dank an [Scott Murray](http://alignedleft.com/) für die Inspirationen und Ratschläge.
+Lenke Dein Augenmerk im folgenden Programm besonders auf die *Zeile 18*. Schau Dir genau an, wie hier die absoluten Werte aus einer *Sinusfunktion* genutzt werden, um zeitabhängig und mit unterschiedlichen Verhältnissen die Farben aus den Variablen ```colorA``` und ```colorB``` zu mischen. 
 
-Dank an [Kenichi Yoneda (Kynd)](https://twitter.com/kyndinfo), [Nicolas Barradeau](https://twitter.com/nicoptere) und [Karim Naaji](http://karim.naaji.fr/) für ihre Unterstützung, Anregungen und Programmcode.
+<div class="codeAndCanvas" data="mix.frag"></div>
 
-Dank an [Kenichi Yoneda (Kynd)](https://twitter.com/kyndinfo) und [Sawako](https://twitter.com/sawakohome) für die [japanische Übersetzung des Textes (日本語訳)](?lan=jp)
+Jetzt zeige Deine Fähigkeiten, indem Du:
 
-Dank an [Tong Li](https://www.facebook.com/tong.lee.9484) und [Yi Zhang](https://www.facebook.com/archer.zetta?pnref=story) für die [chinesische Übersetzung des Textes (中文版)](?lan=ch)
+* Einen ausdrucksstarken Übergang zwischen den Farben konstruierst. Denke an ein bestimmtes Gefühl, eine impulsive menschliche Regung. Welche Farbe vermag dieses Gefühl wohl am besten auszudrücken? Und wie soll sich diese Farbe entwickeln, um anschließend wieder zu verschwinden? Animiere den Übergang mit Hilfe formgebender Funktionen. Robert Penner hat eine Reihe populärer Übergangsfunktionen für Computeranimationen entwickelt, die als [easing functions](http://easings.net/) bekannt sind. Du kannst für Deine Nachforschungen und als Inspiration auf [dieses Beispiel](../edit.php#06/easing.frag) zurückgreifen. Aber die besten Ergebnisse erzielst Du natürlich, wenn Du Deine ganz eigenen Übergänge kreierst.
 
-Dank an [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) für die [koreanische Übersetzung des Textes (한국어)](?lan=kr)
+### Das Spiel mit Farbverläufen 
 
-Dank an [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) für die 
-[spanische Übersetzung des Textes (español)](?lan=es)
+Die [```mix()```](../glossary/?search=mix)-Funktion hat noch mehr zu bieten. Anstelle eines einzelnen Werts vom Typ ```float```, können wir auch einen Datentyp übergeben, der zu den ersten beiden Argumenten passt. In unserem Fall ist das ein ```vec3```. Dadurch gewinnen wir die Kontrolle über das Mischen in allen drei Farbkanälen *Rot*, *Grün* und *Blau* (```r```, ```g``` und ```b```).
 
-Dank an [Nicolas Barradeau](https://twitter.com/nicoptere) und [Karim Naaji](http://karim.naaji.fr/) für die [französische Übersetzung des Textes (français)](?lan=fr)
+![](mix-vec.jpg)
 
-Dank an [Andrea Rovescalli](https://www.earove.info) für die  [italienische Übersetzung des Textes (italiano)](?lan=it)
+Werfe nun einen Blick auf das folgende Beispiel. Wie schon bei den Beispielen im letzten Kapitel verbinden wir den Übergang auch hier mit dem normalisierten Wert der *X-Ordinate* und visualisieren ihn als eine Linie. Im ersten Schritt folgen die Übergänge in allen drei Farbkanälen derselben Linie. 
 
-Dank an [Michael Tischer](http://www.mitinet.de) für die [deutsche Übersetzung des Textes](?lan=de)
+Lösche jetzt die Kommentarzeichen aus der *Programmzeile 25*, damit diese ebenfalls ausgeführt wird, und schau, was daraufhin geschieht. Dann entferne auch die Kommentarzeichen vor den *Zeilen 26 und 27*. Achte darauf, dass diese drei Zeilen jeweils das Mischverhältnis für die *Rot-*, *Grün*, und *Blau-Kanäle* zwischen den Farben aus den Variablen ```colorA``` und ```colorB``` festlegen.
 
-Und natürlich Danke an alle, die an dieses Projekt geglaubt, dafür gespendet oder durch Hinweise und Korrekturen [daran mitgewirkt haben](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors).
+<div class="codeAndCanvas" data="gradient.frag"></div>
 
-## Hol Dir die neuen Kapitel
+Vielleicht erkennst Du die drei formgebenden Funktionen in den *Zeilen 25 bis 27* wieder. Experimentiere mit ihnen. Es ist an der Zeit, dass Du die erlernten Fähigkeiten aus dem letzten Kapitel nutzt, um interessante Farbverläufe zu produzieren. Probiere die folgenden Übungen aus:
 
-Melde Dich für den Newsletter an oder [folge uns auf Twitter](https://twitter.com/bookofshaders)
+![William Turner - The Fighting Temeraire (1838)](turner.jpg)
 
- <form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://tinyletter.com/thebookofshaders" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/thebookofshaders', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"><a href="https://tinyletter.com/thebookofshaders"><p><label for="tlemail">Deine Email-Adresse</label></p></a><p><input type="text" style="width:140px" name="email" id="tlemail" /></p><input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe" /><p><a href="https://tinyletter.com" target="_blank"></a></p></form>
+* Erzeuge einen Farbverlauf, der an den Sonnenuntergang bei William Turner erinnert.
+
+* Animiere einen Übergang zwischen Sonnenaufgang und Sonnenuntergang mit Hilfe von ```u_time```.
+
+* Kannst Du mit Hilfe des bislang Erlernten einen Regenbogen entstehen lassen?
+
+* Nutze die ```step()```-Funktion, um eine farbenfrohe Flagge zu erzeugen.
+
+### HSB
+
+Beim Thema „Farben“ kommen wir nicht an dem Konzept der „Farbräume“ vorbei. Wie Du vielleicht weißt, gibt es unterschiedliche Möglichkeiten, Farben zu beschreiben, jenseits ihrer Auftrennung in *Rot-*, *Grün-* und *Blau-Anteile* (sprich: Kanäle). 
+
+[HSB](https://de.wikipedia.org/wiki/HSV-Farbraum) steht für *Hue* (dt. Farbwert), *Saturation* (dt. Farbsättigung) und *Brightness* (dt. absolute Helligkeit). Dieses Farbsystem ist intuitiver und in vielen Fällen auch praktischer, wenn es um die Festlegung von Farben geht. Nimm Dir einen Moment Zeit, um die Konvertierungsfunktionen ```rgb2hsv()``` und ```hsv2rgb()``` im folgenden Programmcode zu studieren. 
+
+Indem wir die Position auf der *X-Achse* auf den Farbwert und die Position auf der *Y-Achse* auf die Helligkeit abbilden, erhalten wir ein hübsches Spektralbild. Diese räumliche Verteilung der Farben kann sehr praktisch sei, wenn es um die Auswahl einer Farbe für einen bestimmten Zweck geht.
+
+<div class="codeAndCanvas" data="hsb.frag"></div>
+
+### HSB in Polarkoordinaten
+
+Das *HSB-Farbmodell* wurde ursprünglich entwickelt, um in Polarkoordinaten (bestehend aus einem *Winkel* und einem *Radius*) ausgedrückt zu werden und nicht für kartesische Koordinaten (bestehend aus einer *X-* und einer *Y-Ordinate*). Um unsere ```HSB```-Funktion mit Polarkoordinaten arbeiten zu lassen, müssen wir den Winkel und die Entfernung des jeweiligen Bildpunktes von der Mitte der Zeichenfläche berechnen. Dafür nutzen wir die [```length()```](../glossary/?search=length)-Funktion, sowie die Funktion [```atan(y,x)```](../glossary/?search=atan) (das ist die GLSL-Variante der in vielen Programmiersprachen verfügbaren Funktion ```atan2(y,x)``` zur Berechnung des Arkustangens).  
+
+Bei der Nutzung von Vektor- und Trigonometrie-Funktionen werden Variablen der Datentypen ```vec2```, ```vec3``` und ```vec4``` wie Vektoren behandelt, auch wenn sie tatsächlich Farben verkörpern. Wir beginnen hier also, Farben und Vektoren gleichermaßen zu bearbeiten - eine Flexibilität, die sich noch als äußerst praktisch und weitreichend erweisen wird. 
+
+**Hinweis:** Nur, falls Du Dich fragst: Abgesehen von [```length```](../glossary/?search=length) gibt es noch viele weitere geometrische Funktionen. Dazu gehören beisielsweise: [```distance()```](../glossary/?search=distance), [```dot()```](../glossary/?search=dot), [```cross```](../glossary/?search=cross), [```normalize()```](../glossary/?search=normalize), [```faceforward()```](../glossary/?search=fraceforward), [```reflect()```](../glossary/?search=reflect) und [```refract()```](../glossary/?search=refract). 
+
+Außerdem bietet GLSL vergleichende Funktionen für Vektoren wie [```lessThan()```](../glossary/?search=lessThan), [```lessThanEqual()```](../glossary/?search=lessThanEqual), [```greaterThan()```](../glossary/?search=greaterThan), [```greaterThanEqual()```](../glossary/?search=greaterThanEqual), [```equal()```](../glossary/?search=equal) und [```notEqual()```](../glossary/?search=notEqual).
+
+Nachdem wir den Winkel und die Entfernung (Länge) berechnet haben, müssen wir diese Werte normalisieren, indem wir sie auf den Wertebereich zwischen ```0.0``` und ```1.0``` abbilden. In der *Programmzeile 27* liefert der Aufruf von [```atan(y,x)```](../glossary/?search=atan) den Winkel als Bogenmaß zwischen *-PI* und *PI* (```-3.14``` bis ```3.14```) zurück. Deshalb müssen wir dieses Ergebnis durch ```TWO_PI``` (Zweimal *PI*, als Konstante oben im Programm definiert) teilen. Wir erhalten dadurch Werte zwischen ```-0.5``` und ```0.5```, die wir durch einfache Addition von ```0.5``` auf den benötigten Wertebereich zwischen ```0.0``` und ```1.0``` abbilden. Allerdings werden wir hier als Ergebnis immer maximal ```0.5``` erhalten, weil wir ja die Entfernung von der Mitte der Zeichenfläche berechnen. Deshalb müssen wir dieses Ergebnis noch mit ```2``` multiplizieren, damit wir maximal auf den Wert von ```1.0``` kommen.
+
+Wie Du siehst, dreht sich also auch hier das ganze Spiel darum, Werte zwischen ```0.0``` und ```1.0``` zu erzielen, mit denen wir so gerne arbeiten.
+
+<div class="codeAndCanvas" data="hsb-colorwheel.frag"></div>
+
+Probiere die folgenden Übungen aus:
+
+* Verändere das obige Programmbeispiel so, dass sich das Farbrad dreht, wie der Mauszeiger bei einer länger währenden Operation. 
+
+* Nutze eine formgebende Funktion in Verbindung mit der Konvertierungsfunktion von *HSB* nach *RGB*, um einen bestimmten Farbwert in den Vordergrund zu rücken und die anderen Farben „klein“ zu halten.
+
+![William Home Lizars - Das Rot-, Gelb- und Blau-Spektrum in Relation zum Spektrum des Sonnenlichts (1834)](spectrums.jpg)
+
+* Wenn Du Dir das Farbrad auf Farbauswahlfeldern (wie auf der folgenden Grafik) genau anschaust, erkennst Du, dass diese einen *RYB-Farbraum* repräsentieren. Die gegenüberliegende Farbe von Rot sollte z.B. Grün sein, doch in unserem obigen Beispielprogramm erscheint dort Zyan. Gelingt es Dir, einen Weg zu finden, damit unser Beispielprogramm das gleiche Farbbild liefert, wie auf der Abbildung unten? (Ein Tipp: Das ist der perfekte Moment, um eine passende formgebende Funktion zum Einsatz zu bringen.)
+
+![](colorwheel.png)
+
+* Lies [Josep's Alvers Buch: „Interaction of Color“](http://www.goodreads.com/book/show/111113.Interaction_of_Color) und klicke die folgenden Shader an, um aus deren Programmcode zu lernen.
+
+<div class="glslGallery" data="160505191155,160505193939,160505200330,160509131554,160509131509,160509131420,160509131240" data-properties="clickRun:editor,openFrameIcon:false,showAuthor:false"></div>
+
+#### Ein Hinweis zu Funktionen und ihren Argumenten
+
+Bevor wir zum nächsten Kapitel springen, lass und kurz anhalten und einen Schritt zurückgehen. Schau Dir noch einmal die Funktionen aus den letzten Beispielprogrammen an. Vielleicht fällt Dir das Schüsselwort ```in``` im Kopf einer Funktion vor dem jeweiligen Argument auf. Es handelt sich dabei um einen sogenannten [*qualifier*](http://www.shaderific.com/glsl-qualifiers/#inputqualifier), der in diesem Fall festlegt, dass der jeweilige Parameter von der Funktion nur ausgelesen und nicht überschrieben werden kann. In kommenden Programmbeispielen werden wir sehen, dass Parameter auch als ```out``` oder ```inout``` gekennzeichnet werden können. ```inout``` entspricht dabei der Übergabe eines Arguments „by reference“, so dass Änderungen an diesem Parameter auch an den Aufrufer und in die von ihm eingesetzte Variable zurückfließen.
+
+```glsl
+int newFunction(in vec4 aVec4,   // nur auslesbar
+                out vec3 aVec3,  // nicht initalisiert, nur beschreibbar 
+                inout int aInt); // lesen und schreiben, Aenderungen fliessen zum Aufrufer zurueck
+```
+
+Du hast vielleicht nicht damit gerechnet, aber jetzt haben wir bereits alle Elemente beisammen, um aufregende Grafiken zu erstellen. Im nächsten Kapitel werden wir lernen, wie man all unsere kleinen Tricks nutzen kann, um den Raum richtig in Wallung zu bringen. Ja, du hast richtig gehört. Genau darum geht's.
+
 
