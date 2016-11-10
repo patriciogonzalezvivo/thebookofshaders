@@ -1,48 +1,107 @@
-# Einstieg
-## Was ist ein Fragment-Shader?
+<canvas id="custom" class="canvas" data-fragment-url="src/moon/moon.frag" data-textures="src/moon/moon.jpg" width="350px" height="350px"></canvas>
 
-Im vorangegangenen Kapitel haben wir Fragment-Shader als eine Art Gutenbergsche Druckerpresse für Grafiken beschrieben. Nun, wie kommen wir darauf? Und vor allem: Was genau soll das sein, ein „Shader“? 
+# The Book of Shaders
+*von [Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) und [Jen Lowe](http://jenlowe.net/)*
 
-![Von Brief-für-Brief zu Seite-für-Seite. Rechts: William Blades (1891), links Rolt-Wheeler (1920).](print.png)
+Dies ist eine behutsame Schritt-für-Schritt-Einführung in die komplexe und vielfach abstrakte Welt der Fragment Shader.
 
-Falls Du schon Erfahrung mit der Erstellung von Computergrafiken gesammelt hast, kennst Du bestimmt die folgende Vorgehensweise: Man malt per Programmbefehl Kreise, Rechtecke, Dreiecke und Linien, damit auf dem Bildschirm nach und nach die gewünschte Grafik entsteht. Dieser Prozess erinnert stark an das Verfassen eines Dokuments per Hand, indem man einzelne Zeichen-Operationen Schritt für Schritt abarbeitet.
+<div class="header">
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B5FSVSHGEATCG" style="float: right;"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" alt=""></a>
+</div>
 
-Auch Shader verkörpern eine Abfolge von Operationen, doch hier werden diese Operationen gleichzeitig für jeden Bildpunkt (Pixel) auf der Zeichenfläche ausgeführt. Das hat zur Folge, dass der Programmcode des Shaders in Abhängigkeit von der Lage des jeweils bearbeiteten Bildpunktes unterschiedlich agieren muss. Der Shader arbeitet dabei als eine Funktion, die die Koordinaten des jeweiligen Bildpunktes erhält und als Ergebnis die Farbe für diesen Bildpunkt zurückliefert. Ist der Shader einmal kompiliert, läuft dieser Prozess unglaublich schnell und für sehr viele Bildpunkte gleichzeitig ab.
+## Inhalt
 
-![Verschiebbare Lettern mit Chinesischen Symbolen](typepress.jpg)
+* [Über dieses Buch](00/?lan=de)
 
-## Warum arbeiten Shader schnell?
+* Jetzt geht’s los
+    * [Was ist ein Shader?](01/?lan=de)
+    * [“Hallo Welt!”](02/?lan=de)
+    * [Uniforms](03/?lan=de)
+    * [Ausführung Deiner Shader](04/?lan=de)
 
-Diese Frage beantwortet sich, wenn wir uns das Prinzip der *parallelen Verarbeitung* anschauen. 
+* Algorithmisches Zeichnen
+    * [Formgebende Funktionen](05/?lan=de)
+    * [Farben](06/?lan=de)
+    * [Formen](07/?lan=de)
+    * [Matrizen](08/?lan=de)
+    * [Muster](09/?lan=de)
 
-Stelle Dir den Prozessor in Deinem Computer als eine große Pipeline vor und jede zu bearbeitende Aufgabe als etwas, das durch die Pipeline fließt - wie an einem Fließband innerhalb einer Fabrik. Einige Aufgaben sind größer als andere, weshalb ihre Abarbeitung mehr Zeit und mehr Energie in Anspruch nimmt. Wir sagen dann, diese Aufgaben benötigen mehr „Prozessorleistung“. Der Aufbau des Computers zwingt die verschiedenen Aufgaben dazu, eine nach der anderen durch die Pipeline zu strömen. Die nächste Aufgabe ist an der Reihe, sobald die vorangehende Aufgabe erfolgreich abgearbeitet wurde. Moderne Prozessoren verfügen in der Regel über mehrere Kerne (typischerweise zwei, vier oder acht), von denen jeder wie eine Pipeline arbeitet, so dass mehrere Ströme von Aufgaben (engl. „Threads“) gleichzeitig abgearbeitet werden können. 
+* Generative Designs
+    * [Zufall](10/?lan=de)
+    * [Rauschen](11/?lan=de)
+    * Zelluläres Rauschen
+    * Gebrochene Brownsche Bewegung
+    * Fraktale
 
-![CPU](00.jpeg)
+* Bildverarbeitung
+    * Texturen
+    * Bildbearbeitungsfunktionen
+    * Kernel Verwindungen
+    * Filter
+    * Weitere Effekte
 
-Videospiele und leistungsstarke Grafikanwendungen benötigen in der Regel wesentlich mehr Prozessorleistung als andere Computerprogramme. Weil sie grafikorientiert arbeiten, müssen diese Programme eine enorme Anzahl an Pixel-Operationen ausführen. Jeder einzelne Bildpunkt muss individuell berechnet werden, und bei 3D-Anwendungen kommen noch perspektivische Verzerrungen sowie das Spiel von Licht und Schatten hinzu.
+* Simulationen
+    * Pingpong
+    * Conway
+    * Wellen
+    * Wasserfarben
+    * Reaktionsausbreitung
 
-Kommen wir noch einmal auf das Bild einer Pipeline zurück. Jeder einzelne Bildpunkt verkörpert eine Rechenaufgabe, die durch die Pipeline abgearbeitet werden muss. Einzeln genommen macht das nicht viel Arbeit - der enorme Aufwand entsteht erst durch die schiere Masse an Pixeln auf dem Bildschirm. Schon bei einer Auflösung von 800 x 600 Bildpunkten müssen pro Bild 480.000 Pixels berechnet werden. Für eine flüssige Darstellung mit 30 Bildern pro Sekunde ergeben sich also bereits 14.400.000 Berechnungen pro Sekunde. Das ist eine Dimension, bei der auch moderne Prozessoren an ihre Grenzen stoßen. Und bei einem hochauflösenden Retina-Display mit 2880 x 1800 Bildpunkten und einer Wiederholrate von 60 Bildern pro Sekunde kommen sogar 311.040.000 Berechnungen pro Sekunde zusammen. Fragt sich also, wie ein Computersystem dies bewältigen kann?
+* 3D Grafiken
+    * Licht
+    * Normal Mapping
+    * Bump-Mapping
+    * Ray Marching
+    * Environmental-Maps (sphärisch und kubisch)
+    * Reflektionen und Ablenkungen
 
-![](03.jpeg)
+* [Anhang:](appendix/?lan=de) Weitere Wege zur Nutzung dieses Buches
+	* [Wie kann ich dieses Buch offline lesen?](appendix/00/?lan=de)
+	* [Wie lasse ich die Beispielprogramme auf einem RaspberryPi ablaufen?](appendix/01/?lan=de)
+	* [Wie drucke ich dieses Buch aus?](appendix/02/?lan=de)
+    * [Wie kann ich zu diesem Buch beitragen?](appendix/03/?lan=de)
+    * [Eine Einführung für alle, die von JavaScript kommen](appendix/04/?lan=de) von [Nicolas Barradeau](http://www.barradeau.com/) (Englisch)
 
-Hier kommt die gleichzeitige - parallele -  Berechnung möglichst vieler Bildpunkte ins Spiel. An die Stelle weniger großer und immens leistungsfähiger Pipelines (sprich: Mikroprozessoren) treten viele kleine, einfachere Prozessoren, die parallel arbeiten. Sie bilden den Kern einer sogenannten „Graphic Processing Unit“, kurz GPU.
+* [Beispielgalerien](examples/)
 
-![GPU](04.jpeg)
+* [Glossar](glossary/) (Englisch)
 
-Stelle Dir eine solche GPU wie ein Feld aus lauter Pipelines vor - eine neben der anderen. Jeder Bildpunkt entspricht einem Tischtennisball, der durch eine solche Pipeline hindurchmuss. 14.400.000 Bälle pro Sekunde sind wahrscheinlich zu viel für jede einzelne noch so dicke Pipeline. Hat man aber ein Feld aus 800 x 600 kleinen Pipelines, muss jede nur 30 Bälle pro Sekunde verarbeiten, damit man eine flüssige Darstellung auf dem Bildschirm erhält. Und das ist durchaus machbar. Gleiches gilt für höhere Auflösungen und größere Bildwiederholraten: Je mehr Pipelines parallel arbeiten, desto mehr Bildpunkte können sie pro Zeiteinheit bewältigen.
+## Über die Autoren
 
-Die enorme Leistung einer solchen GPU rührt aber auch aus einer anderen Quelle: Viele für die Grafikberechnung unverzichtbare mathematische Operationen lassen sich direkt in der Hardware, in jeder einzelnen Pipeline, parallel ausführen. Es wird also keine zusätzliche Software benötigt, um diese Berechnungen in mehreren Schritten aus einfachen Grundoperationen zusammenzusetzen. Das gilt beispielsweise für die wichtigen Trigonometrischen Funktionen und für Matrizenoperationen. Das bringt die Darstellung zusätzlich auf Trab. 
+[Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) (1982, Buenos Aires, Argentinien) ist ein Künstler und Entwickler, der in New York lebt. Er erforscht die Räume zwischen Organischem und Synthetischem, Analogem und Digitalem, Individuen und Kollektiven. In seinen Arbeiten nutzt er Programmcode als Ausdrucksform, um das Zusammenwirken von Menschen zu verbessern.
 
-## Was ist GLSL? 
+Patricio hat Psychotherapie studiert und praktiziert, außerdem kunstorientiertes Handeln, die sogenannte „Expressive Arts Therapy“. Er hat einen MFA-Abschluss in „Design & Technology“ von der „Parsons The New School“, wo er auch unterrichtet. Zur Zeit arbeitet Patricio als Grafikingenieur bei der Firma Mapzen und entwickelt dort Open Source Werkzeuge für die Computer-Kartographie.
+<div class="header"> <a href="http://patriciogonzalezvivo.com/" target="_blank">Webseite</a> - <a href="https://twitter.com/patriciogv" target="_blank">Twitter</a> - <a href="https://github.com/patriciogonzalezvivo" target="_blank">GitHub</a> - <a href="https://vimeo.com/patriciogv" target="_blank">Vimeo</a> - <a href="https://www.flickr.com/photos/106950246@N06/" target="_blank"> Flickr</a></div>
 
-GLSL ist die Abkürzung für „OpenGL Shading Language“, einem weit verbreiteten Standard für Shader-Programme, mit dem sich die folgenden Kapitel beschäftigen. Es gibt auch andere Arten von Shadern, je nach Grafikhardware und Betriebssystem. Wir orientieren uns hier an der wichtigen OpenGL-Spezifikation, die von der [Khronos Gruppe](https://www.khronos.org/opengl/) erarbeitet wurde. Wenn man die Geschichte von OpenGL kennt, kann man einige der teilweise etwas merkwürdigen Konstrukte und Konventionen besser verstehen. Allen Interessierten empfehle ich deshalb einen Blick auf [openglbook.com/chapter-0-preface-what-is-opengl.html](http://openglbook.com/chapter-0-preface-what-is-opengl.html). 
+[Jen Lowe](http://jenlowe.net/) ist eine unabhängige Datenwissenschaftlerin und Datenkommunikatorin bei der Firma Datatelling, wo sie Menschen, Zahlen und Sprache zusammenführt. Sie unterrichtet im Rahmen des „SVA Design for Social Innovation“-Programms, hat die Schule für „Poetic Computation“ mitbegründet, Mathematik für Künstler an der New Yorker ITP-Universität unterrichtet, Forschungen am „Spatial Information Design Lab“ der Columbia Universität durchgeführt und Beiträge für das „White House Office of Science and Technology“ geliefert, das den US-Präsidenten in Fragen des technischen Fortschritts berät. Als Sprecherin ist Jen auf Konferenzen wie der SXSW und der Eyeo aufgetreten. Von ihren Arbeiten hat unter anderem die New York Times, sowie das Magazin FastCompany berichtet. Ihre Forschungsarbeiten, Publikationen und Vorträge kreisen um die Versprechungen und Folgen von Daten und Technologien für die gesellschaftliche Entwicklung. Sie hat einen „Bachelor of Science“-Abschluss in angewandter Mathematik und einen Master-Abschluss in Informatik. Obwohl man angesichts dieser Biographie vielleicht etwas anderes vermuten könnte, schlägt sich Jen immer auf die Seite der Liebe.
+<div class="header"> <a href="http://jenlowe.net/" target="_blank">Webseite</a> - <a href="https://twitter.com/datatelling" target="_blank">Twitter</a> - <a href="https://github.com/datatelling" target="_blank">GitHub</a></div>
 
-## Warum sind Shader so anspruchsvoll?
+## Danksagungen
 
-Mein reicher Onkel Willi aus Amerika sagte früher immer zu mir: „Denk dran, Junge, unglaublich viel Power bedeutet immer auch unglaublich viel Verantwortung“. Dies gilt in gewisser Weise auch für das Feld des „Parallel Computings“. Die enorme Leistungsfähigkeit moderner GPUs erzeugt ihre eigenen Regeln und Abhängigkeiten. Und die wollen beachtet werden, damit wir nicht über das Ziel hinausschießen.
+Dank an [Scott Murray](http://alignedleft.com/) für die Inspirationen und Ratschläge.
 
-Damit jede Pipeline innerhalb der GPU parallel an ihrer Aufgabe arbeiten kann, muss sie unabhängig von den anderen Pipelines sein. Sie ist quasi blind dafür, was die anderen gerade tun. Dies bringt u.a. die Einschränkung mit sich, dass alle Daten nur in eine Richtung fließen können. Es ist praktisch unmöglich, auf die Ergebnisse einer anderen Pipeline einzugehen, deren Ergebnis abzurufen und damit eine dritte Pipeline zu füttern. 
+Dank an [Kenichi Yoneda (Kynd)](https://twitter.com/kyndinfo), [Nicolas Barradeau](https://twitter.com/nicoptere) und [Karim Naaji](http://karim.naaji.fr/) für ihre Unterstützung, Anregungen und Programmcode.
 
-Außerdem hält die GPU ihre zahlreichen Mikroprozessoren (Pipelines) ständig beschäftigt. Sobald eine Pipeline mit der Berechnung der Farbe für einen Bildpunkt fertig ist, wird sie auch schon mit dem nächsten Bildpunkt „gefüttert“. Aus Sicht des Shader-Programms gibt es quasi kein Vorher und Nachher, sondern immer nur den aktuell zu berechnenden Bildpunkt. Das Shader-Programm in jeder Pipeline ist also nicht nur blind für alle anderen, sondern auch ohne Erinnerung für das Gewesene. Das ist ein Teil der Herausforderung, die die Entwicklung von Shadern bei Programmieranfängern nicht unbedingt beliebt macht.
+Dank an [Kenichi Yoneda (Kynd)](https://twitter.com/kyndinfo) und [Sawako](https://twitter.com/sawakohome) für die [japanische Übersetzung des Textes (日本語訳)](?lan=jp)
 
-Aber keine Angst! In den folgenden Kapiteln werden wir uns Schritt für Schritt von einfachen Shadern hin zu komplexen Shadern voran arbeiten. Sofern Du diesen Text mit einem modernen Browser liest, wirst Du ganz einfach mit den zahlreichen interaktiven Beispielprogrammen experimentieren können. Also, lass uns gleich anfangen, indem Du auf die „Next“-Schaltfläche unten auf der Seite klickst.
+Dank an [Tong Li](https://www.facebook.com/tong.lee.9484) und [Yi Zhang](https://www.facebook.com/archer.zetta?pnref=story) für die [chinesische Übersetzung des Textes (中文版)](?lan=ch)
+
+Dank an [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) für die [koreanische Übersetzung des Textes (한국어)](?lan=kr)
+
+Dank an [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) für die 
+[spanische Übersetzung des Textes (español)](?lan=es)
+
+Dank an [Nicolas Barradeau](https://twitter.com/nicoptere) und [Karim Naaji](http://karim.naaji.fr/) für die [französische Übersetzung des Textes (français)](?lan=fr)
+
+Dank an [Andrea Rovescalli](https://www.earove.info) für die  [italienische Übersetzung des Textes (italiano)](?lan=it)
+
+Dank an [Michael Tischer](http://www.mitinet.de) für die [deutsche Übersetzung des Textes](?lan=de)
+
+Und natürlich Danke an alle, die an dieses Projekt geglaubt, dafür gespendet oder durch Hinweise und Korrekturen [daran mitgewirkt haben](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors).
+
+## Hol Dir die neuen Kapitel
+
+Melde Dich für den Newsletter an oder [folge uns auf Twitter](https://twitter.com/bookofshaders)
+
+ <form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://tinyletter.com/thebookofshaders" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/thebookofshaders', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"><a href="https://tinyletter.com/thebookofshaders"><p><label for="tlemail">Deine Email-Adresse</label></p></a><p><input type="text" style="width:140px" name="email" id="tlemail" /></p><input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe" /><p><a href="https://tinyletter.com" target="_blank"></a></p></form>
+
