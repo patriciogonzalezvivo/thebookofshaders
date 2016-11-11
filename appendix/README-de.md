@@ -2,7 +2,7 @@
 
 1. [Wie kann ich dieses Buch offline lesen?](00/?lan=de)
 
-2. [Wie kann ich die Beispielprogramme auf einem RaspberryPi ausführen?](01/?lan=de)
+2. [Wie kann ich die Beispielprogramme auf einem RaspberryPi ausfÃ¼hren?](01/?lan=de)
 
 3. [Wie kann ich dieses Buch ausdrucken?](02/?lan=de)
 

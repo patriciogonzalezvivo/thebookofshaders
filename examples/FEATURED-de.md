@@ -1,2 +1,2 @@
-## Ausgewählte Beispiel Shader
+## AusgewÃ¤hlte Beispiel Shader
 
