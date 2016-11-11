@@ -1,14 +1,46 @@
 ## シェーダーを使う
 
-そろそろ自分の得意なプラットフォームを使ってシェーダーを試してみたいところでしょう。以下ではこの本で使用するのと同じuniform変数を使えるよう、いくつかの一般的なフレームワークでシェーダーを設定する方法をお見せします。（[この章のGitHubレポジトリー](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04)には、この章で取り上げる3つのフレームワークに対応したソースコードが置いてあります）
+この本を書くに当たり自分自身の練習も兼ねて、シェーダーを書いて表示したり、シェアしたり、まとめたりする為のツールを作成しました。このツールはLinux Desktop、 MacOs、[RaspberryPi](https://www.raspberrypi.org/)やブラウザ上で同じように動作します。あなたのコードを書き換える必要はありません。
+
+**表示する**: この本のすべてのサンプルは[glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas)を使って表示されています。glslCanvasを使うとシェーダーを単体で、とても簡単に走らせることができます。
+
+```html
+<canvas class="glslCanvas" data-fragment-url=“yourShader.frag" data-textures=“yourInputImage.png” width="500" height="500"></canvas>
+```
+
+ご覧の通り、必要なのは  ```class="glslCanvas"``` を指定した ```canvas``` 要素に ```data-fragment-url```でシェーダーのURLを指定することだけです。詳しくは[こちら](https://github.com/patriciogonzalezvivo/glslCanvas)をご覧ください。
+
+もしあなたが私のような人だったら、コンソールから直接シェーダーを走らせたいと思うでしょう。その場合は[glslViewer](https://github.com/patriciogonzalezvivo/glslViewer)を試してみてください。このアプリケーションを利用すると[ImageMagic](http://www.imagemagick.org/script/index.php)を使うのと同じような方法で、シェーダーをbashスクリプトやUNIXパイプラインで使うことができます。[glslViewer](https://github.com/patriciogonzalezvivo/glslViewer)は[RaspberryPi](https://www.raspberrypi.org/)でシェーダーをコンパイルするのにとても便利なので、[openFrame.io](http://openframe.io/)でもglslViewerをシェーダーによる作品の表示に使っています。詳しくは[こちら](https://github.com/patriciogonzalezvivo/glslViewer)をご覧ください。
+
+```bash
+glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutputImage.png
+```
+
+**作成する**: シェーダーのコーディングを簡単にするため、[glslEditor](https://github.com/patriciogonzalezvivo/glslEditor)というオンラインのエディターを用意しました。このエディターはこの本のサンプルにも埋め込まれています。glslEditorには幾つもの便利なウィジェットが備わっていて、直接触って具体的に結果を見ることで、抽象的なglslのコーディングをより理解しやすくしてくれます。[editor.thebookofshaders.com/](http://editor.thebookofshaders.com/)から単体で使うこともできます。詳しくは[こちら](https://github.com/patriciogonzalezvivo/glslEditor)をご覧ください。
+
+![](glslEditor-01.gif)
+
+もしオフラインで[SublimeText](https://www.sublimetext.com/)を使って作業したい場合はこの[glslViewerのパッケージ](https://packagecontrol.io/packages/glslViewer)をインストールすることもできます。詳しくは[こちら](https://github.com/patriciogonzalezvivo/sublime-glslViewer)をご覧ください。
+
+![](glslViewer.gif)
+
+**シェアする**: オンラインのglslEditorを使うとあなたのシェーダーをシェアすることもできます。ページに埋め込まれたものもスタンドアローン版にもexportボタンがあり、あなたのシェーダーのURLを取得することができます。また、[openFrame.io](http://openframe.io/)に直接シェアすることもできます。
+
+![](glslEditor-00.gif)
+
+**まとめる**: コードをシェアしてあなたのシェーダーを作品として共有しましょう。[openFrame.io](http://openframe.io/)に書き出す以外にも、あなたのシェーダーをまとめてウェブサイトに埋め込むことのできるツールを用意しました。このツールは[glslGallery](https://github.com/patriciogonzalezvivo/glslGallery)と呼ばれています。詳しくは[こちら](https://github.com/patriciogonzalezvivo/glslGallery)をご覧ください.
 
 
-もしこれらのフレームワークを使わずにブラウザー以外でシェーダーを試したい場合は、[glslViewer](https://github.com/patriciogonzalezvivo/glslViewer)をダウンロードしてコンパイルしてください。
-このプログラムは本書のサンプルのために特別に設計されたもので、MacOSまたはRasberryPIの上でターミナルから直接実行することできます。
+![](glslGallery.gif)
+
+
+## 好みのフレームワークでシェーダーを実行する
+
+もし[Processing](https://processing.org/)、[Three.js](http://threejs.org/) 、[OpenFrameworks](http://openframeworks.cc/)などのフレームワークを使ったブログラミングの経験があるならば、慣れ親しんだ環境でシェーダーを試してみたいと思うでしょう。下記では人気のあるこれらのフレームワークで、この本で紹介するシェーダーを実行できるように設定する方法をお見せします（この本の[GitHubのリポジトリ](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04)にはこれら3つのフレームワークのためのソースコードが丸ごと置いてあります）。
 
 ### **Three.js**を使う
 
-謙虚で才気あふれる[Ricardo Cabello（MrDoob）](https://twitter.com/mrdoob)と[その他のメンバー](https://github.com/mrdoob/three.js/graphs/contributors)によって開発された[Three.js](http://threejs.org/)は、おそらく最もよく知られたWebGLのフレームワークのひとつです。このJavascriptのライブラリを使って3Dグラフィックを作る方法を学べる、サンプルやチュートリアル、本も沢山あります。
+謙虚で才気あふれる[Ricardo Cabello（MrDoob）](https://twitter.com/mrdoob)と[その他のメンバー](https://github.com/mrdoob/three.js/graphs/contributors)によって開発された[Three.js](http://threejs.org/)は、おそらく最も良く知られたWebGLのフレームワークのひとつです。このJavascriptのライブラリを使って3Dグラフィックを作る方法を学べる、サンプルやチュートリアル、本も沢山あります。
 
 下記はシェーダーをThree.jsで使うために必要なHTMLとJavascriptのサンプルです。```id="fragmentShader"```と書かれたスクリプトに注目してください。ここに、この本に登場するシェーダーをコピーして実行することができます。
 
@@ -50,7 +82,8 @@
 
             uniforms = {
                 u_time: { type: "f", value: 1.0 },
-                u_resolution: { type: "v2", value: new THREE.Vector2() }
+                u_resolution: { type: "v2", value: new THREE.Vector2() },
+                u_mouse: { type: "v2", value: new THREE.Vector2() }
             };
 
             var material = new THREE.ShaderMaterial( {
@@ -69,6 +102,11 @@
 
             onWindowResize();
             window.addEventListener( 'resize', onWindowResize, false );
+
+            document.onmousemove = function(e){
+              uniforms.u_mouse.value.x = e.pageX
+              uniforms.u_mouse.value.y = e.pageY
+            }
         }
 
         function onWindowResize( event ) {
@@ -94,7 +132,7 @@
 
 [Ben Fry](http://benfry.com/)と[Casey Reas](http://reas.com/)が2001年に開発を始めた[Processing](https://processing.org/) はコーディングを始めるのに最適な、驚くほどシンプルでパワフルな開発環境です（少なくとも私にとってはそうでした）。[Andres Colubri](https://codeanticode.wordpress.com/)はopenGLとビデオに関する重要なアップデートを行いました。これによってProcessingでのシェーダーの使用が今まで以上に簡単になりました。Processingのスケッチは ```data``` フォルダーからシェーダーを検索します。このフォルダーにサンプルコードをコピーして ```shader.frag``` と名前を付けてください。
 
-```processing
+```cpp
 PShader shader;
 
 void setup() {

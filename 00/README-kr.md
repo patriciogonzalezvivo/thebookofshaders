@@ -40,7 +40,7 @@ Fragment shader는 매우 빠른 속도로 스크린에 렌더되는 픽셀들�
 
 - [이책의 오프라인 버젼](https://thebookofshaders.com/appendix/)
 
-- [RaspberryPi에서 브라우져 없이 예제들 돌리기](https://thebookofshaders.com/appendix/)
+- [Raspberry Pi에서 브라우져 없이 예제들 돌리기](https://thebookofshaders.com/appendix/)
 
 - [이책의 PDF버젼 만들기](https://thebookofshaders.com/appendix/)
 

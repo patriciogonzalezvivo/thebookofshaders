@@ -2,7 +2,7 @@
 // PARSING
 //---------------------------------------------------------------
 
-//  Graph plotter function take from 
+//  Graph plotter function take from
 //  From http://blog.hvidtfeldts.net/index.php/2011/07/plotting-high-frequency-functions-using-a-gpu/
 var preFunction = "\n\
 #ifdef GL_ES\n\
@@ -114,9 +114,9 @@ function styleCodeBlocks() {
     // Highlight code blocks
     var list = document.getElementsByTagName("code");
     for(var i = 0; i < list.length; i++){
-        if (list[i].className == "language-glsl" || 
-            list[i].className == "language-bash" || 
-            list[i].className == "language-cpp" || 
+        if (list[i].className == "language-glsl" ||
+            list[i].className == "language-bash" ||
+            list[i].className == "language-cpp" ||
             list[i].className == "language-html" ||
             list[i].className == "language-processing" ){
             hljs.highlightBlock(list[i]);
@@ -130,7 +130,7 @@ function loadGlslElements() {
     var canvas = document.getElementsByClassName("canvas");
     for (var i = 0; i < canvas.length; i++){
         glslCanvas.push(new GlslCanvas(canvas[i]));
-    } 
+    }
 
     // parse EDITORS
 	var ccList = document.querySelectorAll(".codeAndCanvas");
@@ -150,7 +150,7 @@ function loadGlslElements() {
             var srcFile = sfList[i].getAttribute("data");
             glslGraphs.push(new GlslEditor(sfList[i], { canvas_width: 800, lineNumbers: false, canvas_height: 250, frag_header: preFunction, frag_footer: postFunction, tooltips: true }).open(srcFile));
         }
-    }    
+    }
 }
 
 function insertAfter(newElement,targetElement) {
@@ -163,15 +163,15 @@ function insertAfter(newElement,targetElement) {
 }
 
 function captionizeImages() {
-    if (!document.getElementsByTagName) 
+    if (!document.getElementsByTagName)
         return false;
 
-    if (!document.createElement) 
+    if (!document.createElement)
         return false;
-    
+
     var images = document.getElementsByTagName("img");
-    if (images.length < 1) 
-        return false; 
+    if (images.length < 1)
+        return false;
 
     for (var i = 0; i < images.length; i++) {
         var title = images[i].getAttribute("alt");
@@ -262,13 +262,13 @@ function nextPage() {
 	window.location.href =  url;
 }
 
-window.onload = function(){
+window.addEventListener("load", function(){
     window.scrollTo(0, 0);
     styleCodeBlocks();
-	loadGlslElements();
+    loadGlslElements();
     captionizeImages();
     window.scrollTo(0, 0);
     setTimeout(function () {
          window.scrollTo(0, 0);
     }, 500);
-};
+});

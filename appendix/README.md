@@ -2,7 +2,7 @@
 
 1. [How can I navigate this book off-line?](00/)
 
-2. [How to run the examples on a RaspberryPi?](01/)
+2. [How to run the examples on a Raspberry Pi?](01/)
 
 3. [How to print this book?](02/)
 
