@@ -1,4 +1,4 @@
-<canvas id="custom" class="canvas" data-fragment-url="src/moon/moon.frag" data-textures="src/moon/moon.jpg" width="350px" height="350px"></canvas>
+﻿<canvas id="custom" class="canvas" data-fragment-url="src/moon/moon.frag" data-textures="src/moon/moon.jpg" width="350px" height="350px"></canvas>
 
 # The Book of Shaders
 *von [Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) und [Jen Lowe](http://jenlowe.net/)*
@@ -29,8 +29,8 @@ Dies ist eine behutsame Schritt-für-Schritt-Einführung in die komplexe und vie
 * Generative Designs
     * [Zufall](10/?lan=de)
     * [Rauschen](11/?lan=de)
-    * Zelluläres Rauschen
-    * Gebrochene Brownsche Bewegung
+    * [Zelluläres Rauschen](12/?lan=de)
+    * [Gebrochene Brownsche Bewegung](13/?lan=de)
     * Fraktale
 
 * Bildverarbeitung
