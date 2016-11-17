@@ -1,7 +1,7 @@
 # Algorithmisches Zeichnen
 ## Modellierungsfunktionen
 
-Dieses Kapitel könnte auch die Überschrift „Mr. Miyagi's Zaun- Lektion“ tragen, in Anspielung auf den Film „Karate Kid“ aus dem Jahre 1984. Bislang haben wir die normalisierte Position von *x* und *y* auf den *roten* und *grünen* Farbkanal des jeweiligen Punktes abgebildet. Wir haben dazu eine Funktion gebaut, die im Wesentlichen einen zweidimensionalen Vektor (*X* und *Y*) entgegennimmt und einen vierdimensionalen Vektor (*Rot*, *Grün*, *Blau* und *Alpha*) zurückliefert. Aber bevor wir damit fortfahren, Daten zwischen verschiedenen Dimensionen zu transformieren, müssen wir mit einfacheren Aufgaben beginnen. Und zwar mit viel einfacheren Aufgaben. Ich meine damit das Verständnis eindimensionaler Funktionen. Desto mehr Zeit und Energie Du darauf verwendest, desto stärker wird dein Shader-Karate sein.  
+Dieses Kapitel könnte auch die Überschrift „Mr. Miyagi's Zaun- Lektion“ tragen, in Anspielung auf den Film „Karate Kid“ aus dem Jahre 1984. Bislang haben wir die normalisierte Position von *x* und *y* auf den *roten* und *grünen* Farbkanal des jeweiligen Punktes abgebildet. Wir haben dazu eine Funktion gebaut, die im Wesentlichen einen zweidimensionalen Vektor (*X* und *Y*) entgegennimmt und einen vierdimensionalen Vektor (*Rot*, *Grün*, *Blau* und *Alpha*) zurückliefert. Aber bevor wir damit fortfahren, Daten zwischen verschiedenen Dimensionen zu transformieren, müssen wir mit einfacheren Aufgaben beginnen. Und zwar mit viel einfacheren Aufgaben. Ich meine damit das Verständnis eindimensionaler Funktionen. Desto mehr Zeit und Energie Du darauf verwendest, desto stärker wird Dein Shader-Karate sein.  
 
 ![Ausschnitt aus dem Film "Karate Kid" (1984)](mr_miyagi.jpg)
 
@@ -57,7 +57,7 @@ Die Formel entspricht dem Vorgehen innerhalb der ```plot()```-Funktion. Sie symb
 
 Wenn man mathematische Funktionen nutzen möchte, um Grafiken zu animieren, in eine geschwungene Form zu bringen oder sanft ein- und auszublenden, gibt es nichts Besseres, als sich mit Sinus und Cosinus anzufreunden.
 
-Diese beiden trigonometrischen Funktionen sind so praktisch wie ein Schweizer Offiziersmesser, wenn es darum geht, Kreise zu konstruieren. Es ist wichtig zu verstehen, wie sich die beiden Funktionen einzeln verhalten und wie man sie gemeinsam nutzen kann. Kurz gesagt, bei einem gegebenen Winkel (in Form eines Bogenmaßes) liefern sie die korrekte *x*- ([*Cosinus*](../glossary/?search=cos)) und *y*- ([*Sinus*](../glossary/?search=sin)) Ordinate für die Position des zugehörigen Punktes auf einem Einheitskreis mit dem Radius ```1```. Weil sich die zurückgelieferten Funktionsergebnisse dabei immer dynamisch zwischen ```-1.0``` und ```1.0``` oszillieren, sind diese Funktionen ein ungeheuer praktisches Werkzeug für vielerlei Aufgaben.
+Diese beiden trigonometrischen Funktionen sind so praktisch wie ein Schweizer Offiziersmesser, wenn es darum geht, Kreise zu konstruieren. Es ist wichtig zu verstehen, wie sich die beiden Funktionen einzeln verhalten und wie man sie gemeinsam nutzen kann. Kurz gesagt, bei einem gegebenen Winkel (in Form eines Bogenmaßes) liefern sie die korrekte *x*- ([*Cosinus*](../glossary/?search=cos)) und *y*- ([*Sinus*](../glossary/?search=sin)) Ordinate für die Position des zugehörigen Punktes auf einem Einheitskreis mit dem Radius ```1```. Weil die zurückgelieferten Funktionsergebnisse dabei immer dynamisch zwischen ```-1.0``` und ```1.0``` oszillieren, sind diese Funktionen ein ungeheuer praktisches Werkzeug für vielerlei Aufgaben.
 
 ![](sincos.gif)
 
@@ -117,7 +117,7 @@ Am Ende der letzten Übung haben wir einige neue Funktionen eingeführt. Jetzt i
 
 <div class="glslGallery" data="160414041542,160414041933,160414041756" data-properties="clickRun:editor,hoverPreview:false"></div>
 
-Genau wie Küchenchefs Gewürze und exotische Zutaten sammeln, entwickeln Digitalkünstler und kreative Entwicker häufig eine Liebe für bestimmte formgebenden Funktionen. 
+Genau wie Küchenchefs Gewürze und exotische Zutaten sammeln, entwickeln Digitalkünstler und kreative Entwickler häufig eine Liebe für bestimmte formgebenden Funktionen. 
 
 [Inigo Quiles](http://www.iquilezles.org/) stellt eine großartige Auswahl an [nützlichen Funktionen](http://www.iquilezles.org/www/articles/functions/functions.htm) vor. Wenn Du [diesen Artikel](http://www.iquilezles.org/www/articles/functions/functions.htm) gelesen hast, dann werfe einen Blick auf die folgenden Übertragungen dieser Funktionen nach GLSL. Beobachte aufmerksam die kleinen, aber erforderlichen Anpassungen wie etwa den Punkt (".") bei Fließkommazahlen und die Umsetzung der Funktionsnamen von C auf GLSL; so heißt es in GLSL beispielsweise ```pow()``` statt ```powf()``` wie in C:   
 

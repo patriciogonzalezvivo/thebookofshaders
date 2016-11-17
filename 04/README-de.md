@@ -1,6 +1,6 @@
 ## Ausführung Deiner Shader
 
-Beim Schreiben dieses Buches und im Rahmen meiner künstlerischen Tätigkeit habe ich eine Sammlung von Tools entwickelt, mit deren Hilfe man Shader programmieren, anzeigen, teilen und kuratieren kann. Dieses Tools laufen auf Linux Desktops, Rechnern mit MacOS, dem [RaspberryPi](https://www.raspberrypi.org/) und auf Internet-Browsern. Sie sorgen dafür, dass Du Deine Shader dort nutzen kannst, ohne etwas an deren Programmcode verändern zu müssen.
+Beim Schreiben dieses Buches und im Rahmen meiner künstlerischen Tätigkeit habe ich eine Sammlung von Tools entwickelt, mit deren Hilfe man Shader programmieren, anzeigen, teilen und kuratieren kann. Dieses Tools laufen auf Linux Desktops, Rechnern mit MacOS, dem [Raspberry Pi](https://www.raspberrypi.org/) und auf Internet-Browsern. Sie sorgen dafür, dass Du Deine Shader dort nutzen kannst, ohne etwas an deren Programmcode verändern zu müssen.
 
 **Anzeige**: Alle Live-Beispiele in diesem Buch werden mit [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) angezeigt. Dieses Tool macht es unglaublich einfach, Shader ohne weitere Umstände im Internet-Browser auszuführen. 
 
@@ -10,7 +10,7 @@ Beim Schreiben dieses Buches und im Rahmen meiner künstlerischen Tätigkeit hab
 
 Wie Du oben siehst, benötigt man lediglich ein ```canvas``` HTML-Element mit der Klassenzuweisung ```class="glslCanvas"``` und eine URL als Verweis auf Deine Shader-Datei im Attribut ```data-fragment-url```. Mehr darüber kannst Du [hier](https://github.com/patriciogonzalezvivo/glslCanvas) erfahren.
 
-Vielleicht geht es Dir wie mir, und Du möchtest Deine Shader direkt aus der Kommandozeile starten. In diesem Fall solltest Du Dir einmal den [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) anschauen. Diese Anwendung ermöglicht es Dir, Shader aus ```bash```-Skripten oder aus der Unix-Pipeline heraus zu starten, ganz ähnlich wie dies mit [ImageMagick](http://www.imagemagick.org/script/index.php) möglich ist. Außerdem bietet der [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) eine großartige Möglichkeit, Shader auf Deinem [RaspberryPi](https://www.raspberrypi.org/) zu kompilieren. Das ist auch der Grund, warum das Projekt [openFrame.io](http://openframe.io/) dieses Tool für die Präsentation von Computerkunst nutzt. Mehr über diese Anwendung kannst Du [hier](https://github.com/patriciogonzalezvivo/glslViewer) erfahren.
+Vielleicht geht es Dir wie mir, und Du möchtest Deine Shader direkt aus der Kommandozeile starten. In diesem Fall solltest Du Dir einmal den [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) anschauen. Diese Anwendung ermöglicht es Dir, Shader aus ```bash```-Skripten oder aus der Unix-Pipeline heraus zu starten, ganz ähnlich wie dies mit [ImageMagick](http://www.imagemagick.org/script/index.php) möglich ist. Außerdem bietet der [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) eine großartige Möglichkeit, Shader auf Deinem [Raspberry Pi](https://www.raspberrypi.org/) zu kompilieren. Das ist auch der Grund, warum das Projekt [openFrame.io](http://openframe.io/) dieses Tool für die Präsentation von Computerkunst nutzt. Mehr über diese Anwendung kannst Du [hier](https://github.com/patriciogonzalezvivo/glslViewer) erfahren.
 
 ```bash
 glslViewer deinShader.frag deineEingabeGrafik.png -w 500 -h 500 -s 1 -o deineAusgabeGrafik.png
@@ -20,25 +20,25 @@ glslViewer deinShader.frag deineEingabeGrafik.png -w 500 -h 500 -s 1 -o deineAus
 
 ![](glslEditor-01.gif)
 
-Wenn Du lieber offline statt online mit [SublimeText](https://www.sublimetext.com/) arbeitest, kannst Du dieses [Paket für den glslViewer](https://packagecontrol.io/packages/glslViewer) installieren. Mehr darüber erfährst Du [hier](https://github.com/patriciogonzalezvivo/sublime-glslViewer)
+Wenn Du lieber offline statt online mit [SublimeText](https://www.sublimetext.com/) arbeitest, kannst Du dieses [Paket für den glslViewer](https://packagecontrol.io/packages/glslViewer) installieren. Mehr darüber erfährst Du [hier](https://github.com/patriciogonzalezvivo/sublime-glslViewer).
 
 ![](glslViewer.gif)
 
-**Teilen**: Direkt aus dem Online-Editor ([editor.thebookofshaders.com/](http://editor.thebookofshaders.com/)) heraus kannst Du Deine Shader mit anderen teilen. Sowohl die eingebettete als auch die eigenständige Variante des Editors verfügen über eine Export-Schaltfläche. Sie liefert Dir eine einzigartige URL als Referenz auf Deinen Shader. Diese URL kannst Du dann an andere weitergeben. Außerdem bietet der Editor die Möglichkeit, Deine Shader zur Veröffentlichung direkt an das Projekt [openFrame.io](http://openframe.io/) zu senden.
+**Teilen**: Du kannst Deine Shader direkt aus dem Online-Editor ([editor.thebookofshaders.com/](http://editor.thebookofshaders.com/)) heraus mit anderen teilen. Sowohl die eingebettete als auch die eigenständige Variante des Editors verfügen über eine *Export*-Schaltfläche. Sie liefert Dir eine einzigartige URL als Referenz auf Deinen Shader. Diese URL kannst Du dann an andere weitergeben. Außerdem bietet der Editor die Möglichkeit, Deine Shader zur Veröffentlichung direkt an das Projekt [openFrame.io](http://openframe.io/) zu senden.
 
 ![](glslEditor-00.gif)
 
-**Kuratieren**: Deinen Shader-Code mit anderen zu teilen ist nur der Anfang. Du kannst Deine Shader auch als Werke der Computerkunst veröffentlichen. Jenseits der Weitergabe an das Projekt [openFrame.io](http://openframe.io/), habe ich ein Tool entwickelt, mit dem man Shader-Programme in eine Galerie innerhalb einer Webseite integrieren kann. Der Name dieses Tools lautet passenderweise [glslGallery](https://github.com/patriciogonzalezvivo/glslGallery). Mehr darüber erfährst Du [hier](https://github.com/patriciogonzalezvivo/glslGallery).
+**Kuratieren**: Deinen Shader-Code mit anderen zu teilen ist nur der Anfang. Du kannst Deine Shader auch als Werke der Computerkunst veröffentlichen. Jenseits der Weitergabe an das Projekt [openFrame.io](http://openframe.io/), habe ich ein Tool entwickelt, mit dem man Shader-Programme in eine Galerie innerhalb einer Webseite einbetten kann. Der Name dieses Tools lautet passenderweise [glslGallery](https://github.com/patriciogonzalezvivo/glslGallery). Mehr darüber erfährst Du [hier](https://github.com/patriciogonzalezvivo/glslGallery).
 
 ![](glslGallery.gif)
 
 ## Ausführen von Shadern in Deiner bevorzugten Umgebung
 
-Falls Du bereits Erfahrung mit der Programmierung in einer Umgebung wie [Processing](https://processing.org/), [Three.js](http://threejs.org/) oder [OpenFrameworks](http://openframeworks.cc/) gesammelt hast, möchtest Du Deine Shader vielleicht in dieser Umgebung ausführen lassen. Die folgenden Codebeispiele zeigen Dir, wie man Shader unter Verwendung der gleichen Uniforms, die wir in diesem Buch verwenden, in diesen Umgebungen ausführen kann. (In der [GitHub-Ablage dieses Kapitels](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04) findest Du den gesamten Sourcecode für die Einbindung von Shadern unter den drei genannten Umgebungen.)
+Falls Du bereits Erfahrung mit der Programmierung in einer Umgebung wie [Processing](https://processing.org/), [three.js](http://threejs.org/) oder [OpenFrameworks](http://openframeworks.cc/) gesammelt hast, möchtest Du Deine Shader vielleicht in dieser Umgebung ausführen lassen. Die folgenden Codebeispiele zeigen Dir, wie man Shader unter Verwendung der gleichen Uniforms, die wir in diesem Buch verwenden, in diesen Umgebungen ausführen kann. (In der [GitHub-Ablage dieses Kapitels](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04) findest Du den gesamten Sourcecode für die Einbindung von Shadern unter den drei genannten Umgebungen.)
 
-### Ausführung unter **Three.js**
+### Ausführung unter **three.js**
  
-Der brillante und äußerst bescheidene Ricardo Cabello (aka [MrDoob](https://twitter.com/mrdoob) ) hat zusammen mit [Gleichgesinnten](https://github.com/mrdoob/three.js/graphs/contributors) eines der wahrscheinlich populärsten Frameworks für WebGL mit dem Namen [Three.js](http://threejs.org/) entwickelt. Du findest dort viele Beispiele, Tutorials und Bücher, die Dir zeigen, wie Du diese JavaScript-Bibliothek zur Erstellung cooler 3D-Grafiken nutzen kannst.
+Der brillante und äußerst bescheidene Ricardo Cabello (aka [MrDoob](https://twitter.com/mrdoob) ) hat zusammen mit [Gleichgesinnten](https://github.com/mrdoob/three.js/graphs/contributors) eines der wahrscheinlich populärsten Frameworks für WebGL mit dem Namen [three.js](http://threejs.org/) entwickelt. Du findest dort viele Beispiele, Tutorials und Bücher, die Dir zeigen, wie Du diese JavaScript-Bibliothek zur Erstellung cooler 3D-Grafiken nutzen kannst.
 
 Hier folgt ein Beispiel für den HTML- und JS-Code, den Du für Deine ersten Experimente mit Shadern unter *three.js* benötigst. Bitte beachte das Script unter dem HTML-Tag ```id="fragmentShader"```. Dort kannst Du Deine Shader aus dem vorliegenden Buch einfügen.
 
@@ -128,7 +128,7 @@ Hier folgt ein Beispiel für den HTML- und JS-Code, den Du für Deine ersten Exp
 
 ### In **Processing**
 
-Ursprünglich im Jahre 2001 von [Ben Fry](http://benfry.com/) und [Casey Reas](http://reas.com/) entwickelt, verkörpert [Processing](https://processing.org/) eine unglaublich einfache und gleichzeitig leistungsfähige Umgebung für Deinen Einstieg in das Thema "Programmierung". (Auch ich habe so angefangen.) [Andres Colubri](https://codeanticode.wordpress.com/) hat wichtige Erweiterungen für die Einbeziehung von openGL und Videofunktionen in Processing entwickelt. Sie machen es ganz einfach, in dieser Umgebung mit GLSL-Shadern zu arbeiten. Processing sucht dazu einfach nach einem Shader mit dem Namen ```shader.frag``` in dem Unterverzeichnis ```data``` Deines Zeichenblocks („sketch“). Stelle einfach sicher, dass Du die Beispiele aus dem vorliegenden Buch unter diesem Dateinamen in dem genannten Verzeichnis ablegst.
+Ursprünglich im Jahre 2001 von [Ben Fry](http://benfry.com/) und [Casey Reas](http://reas.com/) entwickelt, verkörpert [Processing](https://processing.org/) eine unglaublich einfache und gleichzeitig leistungsfähige Umgebung für Deinen Einstieg in das Thema „Programmierung“. (Auch ich habe so angefangen.) [Andres Colubri](https://codeanticode.wordpress.com/) hat wichtige Erweiterungen für die Einbeziehung von openGL und Videofunktionen in Processing entwickelt. Sie machen es ganz einfach, in dieser Umgebung mit GLSL-Shadern zu arbeiten. Processing sucht dazu einfach nach einem Shader mit dem Namen ```shader.frag``` in dem Unterverzeichnis ```data``` Deines Zeichenblocks („sketch“). Stelle einfach sicher, dass Du die Beispiele aus dem vorliegenden Buch unter diesem Dateinamen in dem genannten Verzeichnis ablegst.
 
 ```cpp
 PShader shader;

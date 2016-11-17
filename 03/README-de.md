@@ -26,7 +26,7 @@ Aber nun genug geredet. Lass uns die Uniforms in Aktion betrachten. Der folgende
 
 <div class="codeAndCanvas" data="time.frag"></div>
 
-Wie Du siehst, hält GLSL noch einige Überraschungen bereit. Die GPU unterstützt in der Hardware realisierte Winkel-, Trigonometrie- und Exponential-Funktionen. Hier einige dieser Funktionen im Überblick: [```sin()```](../glossary/?search=sin), [```cos()```](../glossary/?search=cos), [```tan()```](../glossary/?search=tan), [```asin()```](../glossary/?search=asin), [```acos()```](../glossary/?search=acos), [```atan()```](../glossary/?search=atan), [```pow()```](../glossary/?search=pow), [```exp()```](../glossary/?search=exp), [```log()```](../glossary/?search=log), [```sqrt()```](../glossary/?search=sqrt), [```abs()```](../glossary/?search=abs), [```sign()```](../glossary/?search=sign), [```floor()```](../glossary/?search=floor), [```ceil()```](../glossary/?search=ceil), [```fract()```](../glossary/?search=fract), [```mod()```](../glossary/?search=mod), [```min()```](../glossary/?search=min), [```max()```](../glossary/?search=max) sowie [```clamp()```](../glossary/?search=clamp).
+Wie Du siehst, hält GLSL noch einige Überraschungen bereit. Die GPU unterstützt in der Hardware realisierte Winkel-, Trigonometrie- und Exponential-Funktionen. Hier einige dieser Funktionen in der Übersicht: [```sin()```](../glossary/?search=sin), [```cos()```](../glossary/?search=cos), [```tan()```](../glossary/?search=tan), [```asin()```](../glossary/?search=asin), [```acos()```](../glossary/?search=acos), [```atan()```](../glossary/?search=atan), [```pow()```](../glossary/?search=pow), [```exp()```](../glossary/?search=exp), [```log()```](../glossary/?search=log), [```sqrt()```](../glossary/?search=sqrt), [```abs()```](../glossary/?search=abs), [```sign()```](../glossary/?search=sign), [```floor()```](../glossary/?search=floor), [```ceil()```](../glossary/?search=ceil), [```fract()```](../glossary/?search=fract), [```mod()```](../glossary/?search=mod), [```min()```](../glossary/?search=min), [```max()```](../glossary/?search=max) sowie [```clamp()```](../glossary/?search=clamp).
 
 Nun ist es an der Zeit, mit dem obigen Shader zu experimentieren.
 
@@ -38,11 +38,11 @@ Nun ist es an der Zeit, mit dem obigen Shader zu experimentieren.
 
 ## gl_FragCoord
 
-So, wie GLSL das Resultat eines Shader-Durchlaufs standardmäßig in der Variable ```vec4 gl_FragColor``` erwartet, liefert es uns auch standardmäßig einen Eingabewert: Die Koordinate des jeweils zu bearbeitenden Bildpunkts in der Variable ```vec4 gl_FragCoord```. Im Englischen spricht man in diesem Zusammenhang auch von einem *screen fragment*. Diese Variable kann man nicht als ```uniform``` bezeichnen, weil ihr Inhalt bzw. Wert mit jedem Shader-Durchlauf variiert. Man spricht deshalb auch von einem *varying*.
+So, wie GLSL das Resultat eines Shader-Durchlaufs standardmäßig in der Variable ```vec4 gl_FragColor``` erwartet, liefert es uns auch standardmäßig einen Eingabewert: Die Koordinate des jeweils zu bearbeitenden Bildpunkts in der Variable ```vec4 gl_FragCoord```. Im Englischen spricht man in diesem Zusammenhang auch von einem *screen fragment*, weil es sich nur um einen kleinen Teil der Zeichenfläche handelt, eben ein „Fragment“. Diese Variable kann man nicht als ```uniform``` bezeichnen, weil ihr Inhalt bzw. ihr Wert mit jedem Shader-Durchlauf variiert. Man spricht deshalb auch von einem *varying*.
 
 <div class="codeAndCanvas" data="space.frag"></div>
 
-Im obigen Programmcode *normalisieren* wir zunächst die Koordinate des zu bearbeitenden Fragments, indem wir sie durch die Auflösung der Zeichenfläche teilen. Auf diese Weise bilden wir die *X-* und *Y-Ordinate* jeweils auf den Wertebereich zwischen ```0.0``` und ```1.0``` ab. Das erleichtert es uns, diese Ordinaten auf Farbwerte für den Rot- und den Grün-Kanal zu übertragen. Schließlich müssen sich diese auch immer jeweils zwischen ```0.0``` und ```1.0``` bewegen.
+Im obigen Programmcode *normalisieren* wir zunächst die Koordinate des zu bearbeitenden Fragments, indem wir sie durch die Auflösung der Zeichenfläche teilen. Auf diese Weise bilden wir die *X-* und *Y-Ordinate* jeweils auf den Wertebereich zwischen ```0.0``` und ```1.0``` ab. Das erleichtert es uns, diese Ordinaten auf Farbwerte für den Rot- und den Grün-Kanal zu übertragen. Schließlich müssen sich diese Farbwerte in GLSL auch immer jeweils zwischen ```0.0``` und ```1.0``` bewegen.
 
 In der Welt der Shader-Programmierung haben wir nicht so viele Möglichkeiten zum Debugging, abgesehen davon, dass wir dem gerade berechneten Bildpunkt intensive Farbtöne zuweisen können. Das entstehende Bild lässt dann Rückschlüsse auf die Abläufe innerhalb des Shaders zu. Du wirst im Laufe dieses Buches entdecken, dass die Shader-Programmierung manchmal dem Versuch gleicht, ein Modellschiff in eine Flasche zu pressen. Denn das ist gleichermaßen schwierig, aber auch schön anzusehen und in jedem Fall lohnend.
 
@@ -54,7 +54,7 @@ Jetzt ist es an der Zeit für eine kleine Herausforderung in Bezug auf das Verst
 
 * Und wo liegen wohl die Koordinaten ```(1.0,0.0)```, ```(0.0,1.0)```, ```(0.5,0.5)``` und ```(1.0,1.0)```? Die Farben der jeweiligen Bildpunkte verraten es Dir!
 
-* Gelingt es Dir, die aktuelle Mausposition aus dem Uniform ```u_mouse``` einzubeziehen? Denke daran, dass sich die Angaben in dieser Uniform auf Pixel beziehen und zunächst nicht normalisiert sind. Kannst Du den Programmcode so gestalten, dass die erzeugten Farben auf die Mausbewegung reagieren? 
+* Gelingt es Dir, die aktuelle Mausposition aus dem Uniform ```u_mouse``` einzubeziehen? Denke daran, dass sich die Angaben in diesem Uniform auf Pixel beziehen und zunächst nicht normalisiert sind. Kannst Du den Programmcode so gestalten, dass die erzeugten Farben auf die Mausbewegung reagieren? 
 
 * Fällt Dir ein Weg ein, wie man die Farbgestaltung auf interessante Weise durch die Einbeziehung von ```u_time``` und ```u_mouse``` dynamisieren kann?
 

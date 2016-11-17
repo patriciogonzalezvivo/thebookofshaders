@@ -1,4 +1,4 @@
-![Paul Klee - Color Chart (1931)](klee.jpg)
+![Paul Klee – Farbkarte (1931)](klee.jpg)
 
 ## Farben
 
@@ -13,7 +13,7 @@ red.y = 0.0;
 red.z = 0.0; 
 ```
 
-Die Festlegung von Farben über die Komponenten *x*, *y* und *z* wirkt zunächst etwas merkwürdig, nicht wahr? Aus diesem Grund gibt es weitere Möglichkeiten, um auf diese Elemente zuzugreifen. Die Inhalte von ```.x```, ```.y``` und ```.z``` können auch als ```.r```, ```.g``` und ```.b```, sowie als ```.s```, ```.t``` und ```.p``` angesprochen werden (```.s```, ```.t``` und ```.p``` werden typischerweise für die Raumkoordinaten von Texturen genutzt, wie wir in späteren Kapiteln noch sehen werden). Darüber hinaus lassen sich die Elemente eines Vektors auch über ihre Index-Position als ```[0]```, ```[1]``` und ```[2]``` ansprechen.
+Die Festlegung von Farben über die Komponenten *x*, *y* und *z* wirkt auf den ersten Blick etwas merkwürdig, nicht wahr? Aus diesem Grund gibt es weitere Möglichkeiten, um auf diese Elemente zuzugreifen. Die Inhalte von ```.x```, ```.y``` und ```.z``` können auch als ```.r```, ```.g``` und ```.b```, sowie als ```.s```, ```.t``` und ```.p``` angesprochen werden (```.s```, ```.t``` und ```.p``` werden typischerweise für die Raumkoordinaten von Texturen genutzt, wie wir in späteren Kapiteln noch sehen werden). Darüber hinaus lassen sich die Elemente eines Vektors auch über ihre Index-Position als ```[0]```, ```[1]``` und ```[2]``` ansprechen.
 
 Die folgenden Programmzeilen zeigen die unterschiedlichen Ansätze, um jeweils auf die gleichen Vektorinhalte zuzugreifen:
 
@@ -72,9 +72,9 @@ Die [```mix()```](../glossary/?search=mix)-Funktion hat noch mehr zu bieten. Ans
 
 ![](mix-vec.jpg)
 
-Werfe nun einen Blick auf das folgende Beispiel. Wie schon bei den Beispielen im letzten Kapitel verbinden wir den Übergang auch hier mit dem normalisierten Wert der *X-Ordinate* und visualisieren ihn als eine Linie. Im ersten Schritt folgen die Übergänge in allen drei Farbkanälen derselben Linie. 
+Wirf nun einen Blick auf das folgende Beispiel. Wie schon bei den Beispielen im letzten Kapitel verbinden wir den Übergang auch hier mit dem normalisierten Wert der *X-Ordinate* und visualisieren ihn als eine Linie. Im ersten Schritt folgen die Übergänge in allen drei Farbkanälen derselben Linie. 
 
-Lösche jetzt die Kommentarzeichen aus der *Programmzeile 25*, damit diese ebenfalls ausgeführt wird, und schau, was daraufhin geschieht. Dann entferne auch die Kommentarzeichen vor den *Zeilen 26 und 27*. Achte darauf, dass diese drei Zeilen jeweils das Mischverhältnis für die *Rot-*, *Grün*, und *Blau-Kanäle* zwischen den Farben aus den Variablen ```colorA``` und ```colorB``` festlegen.
+Lösche jetzt die Kommentarzeichen aus der *Programmzeile 25*, damit diese ebenfalls ausgeführt wird. Dann schau, was daraufhin geschieht. Entferne anschließend auch die Kommentarzeichen vor den *Zeilen 26 und 27*. Achte darauf, dass diese drei Zeilen jeweils das Mischverhältnis für die *Rot-*, *Grün*, und *Blau-Kanäle* zwischen den Farben aus den Variablen ```colorA``` und ```colorB``` festlegen.
 
 <div class="codeAndCanvas" data="gradient.frag"></div>
 
@@ -102,7 +102,7 @@ Indem wir die Position auf der *X-Achse* auf den Farbwert und die Position auf d
 
 ### HSB in Polarkoordinaten
 
-Das *HSB-Farbmodell* wurde ursprünglich entwickelt, um in Polarkoordinaten (bestehend aus einem *Winkel* und einem *Radius*) ausgedrückt zu werden und nicht für kartesische Koordinaten (bestehend aus einer *X-* und einer *Y-Ordinate*). Um unsere ```HSB```-Funktion mit Polarkoordinaten arbeiten zu lassen, müssen wir den Winkel und die Entfernung des jeweiligen Bildpunktes von der Mitte der Zeichenfläche berechnen. Dafür nutzen wir die [```length()```](../glossary/?search=length)-Funktion, sowie die Funktion [```atan(y,x)```](../glossary/?search=atan) (das ist die GLSL-Variante der in vielen Programmiersprachen verfügbaren Funktion ```atan2(y,x)``` zur Berechnung des Arkustangens).  
+Das *HSB-Farbmodell* wurde ursprünglich entwickelt, um Farben in Polarkoordinaten (bestehend aus einem *Winkel* und einem *Radius*) auszudrücken und nicht als kartesische Koordinaten (bestehend aus einer *X-* und einer *Y-Ordinate*). Um unsere ```HSB```-Funktion mit Polarkoordinaten arbeiten zu lassen, müssen wir den Winkel und die Entfernung des jeweiligen Bildpunktes von der Mitte der Zeichenfläche berechnen. Dafür nutzen wir die [```length()```](../glossary/?search=length)-Funktion, sowie die Funktion [```atan(y,x)```](../glossary/?search=atan) (das ist die GLSL-Variante der in vielen Programmiersprachen verfügbaren Funktion ```atan2(y,x)``` zur Berechnung des Arkustangens).  
 
 Bei der Nutzung von Vektor- und Trigonometrie-Funktionen werden Variablen der Datentypen ```vec2```, ```vec3``` und ```vec4``` wie Vektoren behandelt, auch wenn sie tatsächlich Farben verkörpern. Wir beginnen hier also, Farben und Vektoren gleichermaßen zu bearbeiten - eine Flexibilität, die sich noch als äußerst praktisch und weitreichend erweisen wird. 
 
@@ -124,7 +124,7 @@ Probiere die folgenden Übungen aus:
 
 ![William Home Lizars - Das Rot-, Gelb- und Blau-Spektrum in Relation zum Spektrum des Sonnenlichts (1834)](spectrums.jpg)
 
-* Wenn Du Dir das Farbrad auf Farbauswahlfeldern (wie auf der folgenden Grafik) genau anschaust, erkennst Du, dass diese einen *RYB-Farbraum* repräsentieren. Die gegenüberliegende Farbe von Rot sollte z.B. Grün sein, doch in unserem obigen Beispielprogramm erscheint dort Zyan. Gelingt es Dir, einen Weg zu finden, damit unser Beispielprogramm das gleiche Farbbild liefert, wie auf der Abbildung unten? (Ein Tipp: Das ist der perfekte Moment, um eine passende formgebende Funktion zum Einsatz zu bringen.)
+* Wenn Du Dir das Farbrad auf Farbauswahlfeldern (wie in der folgenden Abbildung) genau anschaust, erkennst Du, dass diese einen *RYB-Farbraum* repräsentieren. Die gegenüberliegende Farbe von Rot sollte z.B. Grün sein, doch in unserem obigen Beispielprogramm erscheint dort Zyan. Gelingt es Dir, einen Weg zu finden, damit unser Beispielprogramm das gleiche Farbbild liefert, wie auf der Abbildung unten? (Ein Tipp: Das ist der perfekte Moment, um eine passende formgebende Funktion zum Einsatz zu bringen.)
 
 ![](colorwheel.png)
 
@@ -134,7 +134,7 @@ Probiere die folgenden Übungen aus:
 
 #### Ein Hinweis zu Funktionen und ihren Argumenten
 
-Bevor wir zum nächsten Kapitel springen, lass und kurz anhalten und einen Schritt zurückgehen. Schau Dir noch einmal die Funktionen aus den letzten Beispielprogrammen an. Vielleicht fällt Dir das Schüsselwort ```in``` im Kopf einer Funktion vor dem jeweiligen Argument auf. Es handelt sich dabei um einen sogenannten [*qualifier*](http://www.shaderific.com/glsl-qualifiers/#inputqualifier), der in diesem Fall festlegt, dass der jeweilige Parameter von der Funktion nur ausgelesen und nicht überschrieben werden kann. In kommenden Programmbeispielen werden wir sehen, dass Parameter auch als ```out``` oder ```inout``` gekennzeichnet werden können. ```inout``` entspricht dabei der Übergabe eines Arguments „by reference“, so dass Änderungen an diesem Parameter auch an den Aufrufer und in die von ihm eingesetzte Variable zurückfließen.
+Bevor wir zum nächsten Kapitel springen, lass und kurz innehalten und einen Schritt zurückgehen. Schau Dir noch einmal die Funktionen aus den letzten Beispielprogrammen an. Vielleicht fällt Dir das Schüsselwort ```in``` im Kopf einer Funktion vor dem jeweiligen Argument auf. Es handelt sich dabei um einen sogenannten [*qualifier*](http://www.shaderific.com/glsl-qualifiers/#inputqualifier), der in diesem Fall festlegt, dass der jeweilige Parameter von der Funktion nur ausgelesen und nicht überschrieben werden kann. In kommenden Programmbeispielen werden wir sehen, dass Parameter auch als ```out``` oder ```inout``` gekennzeichnet werden können. ```inout``` entspricht dabei der Übergabe eines Arguments „by reference“, so dass Änderungen an diesem Parameter auch an den Aufrufer und in die von ihm eingesetzte Variable zurückfließen.
 
 ```glsl
 int newFunction(in vec4 aVec4,   // nur auslesbar
@@ -142,6 +142,6 @@ int newFunction(in vec4 aVec4,   // nur auslesbar
                 inout int aInt); // lesen und schreiben, Aenderungen fliessen zum Aufrufer zurueck
 ```
 
-Du hast vielleicht nicht damit gerechnet, aber jetzt haben wir bereits alle Elemente beisammen, um aufregende Grafiken zu erstellen. Im nächsten Kapitel werden wir lernen, wie man all unsere kleinen Tricks nutzen kann, um den Raum richtig in Wallung zu bringen. Ja, du hast richtig gehört. Genau darum geht's.
+Du hast vielleicht nicht damit gerechnet, aber jetzt haben wir bereits alle Elemente beisammen, um aufregende Grafiken zu erstellen. Im nächsten Kapitel werden wir lernen, wie man alle unsere kleinen Tricks nutzen kann, um den Raum richtig in Wallung zu bringen. Ja, du hast richtig gehört. Genau darum geht's.
 
 

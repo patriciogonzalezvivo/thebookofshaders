@@ -1,4 +1,4 @@
-﻿<canvas id="custom" class="canvas" data-fragment-url="src/moon/moon.frag" data-textures="src/moon/moon.jpg" width="350px" height="350px"></canvas>
+<canvas id="custom" class="canvas" data-fragment-url="src/moon/moon.frag" data-textures="src/moon/moon.jpg" width="350px" height="350px"></canvas>
 
 # The Book of Shaders
 *von [Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) und [Jen Lowe](http://jenlowe.net/)*
@@ -57,7 +57,7 @@ Dies ist eine behutsame Schritt-für-Schritt-Einführung in die komplexe und vie
 
 * [Anhang:](appendix/?lan=de) Weitere Wege zur Nutzung dieses Buches
 	* [Wie kann ich dieses Buch offline lesen?](appendix/00/?lan=de)
-	* [Wie lasse ich die Beispielprogramme auf einem RaspberryPi ablaufen?](appendix/01/?lan=de)
+	* [Wie lasse ich die Beispielprogramme auf einem Raspberry Pi ablaufen?](appendix/01/?lan=de)
 	* [Wie drucke ich dieses Buch aus?](appendix/02/?lan=de)
     * [Wie kann ich zu diesem Buch beitragen?](appendix/03/?lan=de)
     * [Eine Einführung für alle, die von JavaScript kommen](appendix/04/?lan=de) von [Nicolas Barradeau](http://www.barradeau.com/) (Englisch)
@@ -70,7 +70,7 @@ Dies ist eine behutsame Schritt-für-Schritt-Einführung in die komplexe und vie
 
 [Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) (1982, Buenos Aires, Argentinien) ist ein Künstler und Entwickler, der in New York lebt. Er erforscht die Räume zwischen Organischem und Synthetischem, Analogem und Digitalem, Individuen und Kollektiven. In seinen Arbeiten nutzt er Programmcode als Ausdrucksform, um das Zusammenwirken von Menschen zu verbessern.
 
-Patricio hat Psychotherapie studiert und praktiziert, außerdem kunstorientiertes Handeln, die sogenannte „Expressive Arts Therapy“. Er hat einen MFA-Abschluss in „Design & Technology“ von der „Parsons The New School“, wo er auch unterrichtet. Zur Zeit arbeitet Patricio als Grafikingenieur bei der Firma Mapzen und entwickelt dort Open Source Werkzeuge für die Computer-Kartographie.
+Patricio hat Psychologie studiert, außerdem kunstorientiertes Handeln, die sogenannte „Expressive Arts Therapy“. Er hat einen MFA-Abschluss in „Design & Technology“ von der „Parsons The New School“, wo er auch unterrichtet. Zur Zeit arbeitet Patricio als Grafikingenieur bei der Firma Mapzen und entwickelt dort Open Source Werkzeuge für die Computer-Kartographie.
 <div class="header"> <a href="http://patriciogonzalezvivo.com/" target="_blank">Webseite</a> - <a href="https://twitter.com/patriciogv" target="_blank">Twitter</a> - <a href="https://github.com/patriciogonzalezvivo" target="_blank">GitHub</a> - <a href="https://vimeo.com/patriciogv" target="_blank">Vimeo</a> - <a href="https://www.flickr.com/photos/106950246@N06/" target="_blank"> Flickr</a></div>
 
 [Jen Lowe](http://jenlowe.net/) ist eine unabhängige Datenwissenschaftlerin und Datenkommunikatorin bei der Firma Datatelling, wo sie Menschen, Zahlen und Sprache zusammenführt. Sie unterrichtet im Rahmen des „SVA Design for Social Innovation“-Programms, hat die Schule für „Poetic Computation“ mitbegründet, Mathematik für Künstler an der New Yorker ITP-Universität unterrichtet, Forschungen am „Spatial Information Design Lab“ der Columbia Universität durchgeführt und Beiträge für das „White House Office of Science and Technology“ geliefert, das den US-Präsidenten in Fragen des technischen Fortschritts berät. Als Sprecherin ist Jen auf Konferenzen wie der SXSW und der Eyeo aufgetreten. Von ihren Arbeiten hat unter anderem die New York Times, sowie das Magazin FastCompany berichtet. Ihre Forschungsarbeiten, Publikationen und Vorträge kreisen um die Versprechungen und Folgen von Daten und Technologien für die gesellschaftliche Entwicklung. Sie hat einen „Bachelor of Science“-Abschluss in angewandter Mathematik und einen Master-Abschluss in Informatik. Obwohl man angesichts dieser Biographie vielleicht etwas anderes vermuten könnte, schlägt sich Jen immer auf die Seite der Liebe.
