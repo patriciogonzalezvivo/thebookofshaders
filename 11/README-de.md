@@ -2,9 +2,9 @@
 
 ## Rauschen
 
-Im letzten Kapitel haben wir mit Zufallsfunktionen gearbeitet, die wie weißes Rauschen auf dem Fernsehbildschirm wirkten. Nach so vielen Shader-Funktionen auf einmal dreht sich Dir bestimmt der Kopf und vielleicht sind auch Deine Augen etwas müde. Jetzt ist ein guter Moment, um einen kleinen Spaziergang zu unternehmen und ein wenig nach Luft zu schnappen.
+Im letzten Kapitel haben wir mit Zufallsfunktionen gearbeitet, die wie weißes Rauschen auf dem Fernsehbildschirm wirken. Nach so vielen Shader-Funktionen auf einmal dreht sich Dir bestimmt der Kopf und vielleicht sind auch Deine Augen etwas müde. Jetzt ist ein guter Moment, um einen kleinen Spaziergang zu unternehmen und ein wenig nach Luft zu schnappen.
 
-Draußen im Freien spüren wir den Luftzug auf unserer Haut und die Sonne in unserem Gesicht. Die Welt ist ein so lebendiger und vielgestaltiger Ort voller Farben, Texturen und Klängen. Während wir uns in der Natur bewegen, können wir gar nicht anders, als die unterschiedlichen Oberflächen von Straßen, Gestein, Bäumen und Wolken wahrzunehmen. 
+Draußen im Freien spüren wir den Luftzug auf unserer Haut und die Sonne in unserem Gesicht. Die Erde ist ein so lebendiger und vielgestaltiger Ort voller Farben, Texturen und Klängen. Während wir uns in der Natur bewegen, können wir gar nicht anders, als die unterschiedlichen Oberflächen von Straßen, Gestein, Bäumen und Wolken wahrzunehmen. 
 
 ![](texture-00.jpg)
 ![](texture-01.jpg)
@@ -14,9 +14,9 @@ Draußen im Freien spüren wir den Luftzug auf unserer Haut und die Sonne in uns
 ![](texture-05.jpg)
 ![](texture-06.jpg)
 
-Die Unvorhersehbarkeit dieser Texturen könnte man als „zufällig“ auffassen. Dabei wirken sie so gar nicht wie die Zufallsstrukturen, mit denen wir uns im letzten Kapitel befasst haben. Die „echte Welt“ ist ein so komplexer Ort! Wir kann es uns gelingen, ihr Antlitz mit Hilfe von Algorithmen nachzuahmen?
+Die Unvorhersehbarkeit dieser Texturen könnte man als „zufällig“ auffassen. Dabei wirken sie so gar nicht wie die Zufallsstrukturen, mit denen wir uns im letzten Kapitel befasst haben. Die Wirklichkeit ist ein so komplexer Ort! Wir kann es uns gelingen, ihr Antlitz mit Hilfe von Algorithmen nachzuahmen?
 
-Diese Frage beschäftigte [Ken Perlin](https://mrl.nyu.edu/~perlin/) in den frühen 1980er Jahren, als er den Auftrag erhielt, realistische Texturen für den Hollywood-Film „Tron“ zu erschaffen. Er entwickelte damals eine elegante Vorgehensweise, die als „Noise Algorithmus“ bekannt wurde und sogar einen Oskar erhielt (kein Witz).
+Diese Frage beschäftigte [Ken Perlin](https://mrl.nyu.edu/~perlin/) in den frühen 1980er Jahren, als er den Auftrag erhielt, realistische Texturen für den Hollywood-Film „Tron“ zu erschaffen. Er entwickelte damals eine elegante Vorgehensweise, die als „Noise Algorithmus“ bekannt und sogar mit einem Oskar prämiert wurde (kein Witz).
 
 ![Disney - Tron (1982)](tron.jpg)
 
@@ -53,7 +53,7 @@ float u = f * f * (3.0 - 2.0 * f ); // kubische Verlaufskurve
 y = mix(rand(i), rand(i + 1.0), u); // angewandt auf die Interpolation
 ```
 
-Diese *sanfte Zufälligkeit* ist das entscheidende Merkmal, auf das es vielen Grafikkünstlern ankommt. Erst dadurch wird es möglich, geometrische Formen und Bilder zu erstellen, die so organisch wirken, als kämen sie direkt aus der Natur. Perlin's Noise-Algorithmus wurde seit seiner Veröffentlichung immer wieder in ganz unterschiedlichen Programmiersprachen und für verschiedene Dimensionen implementiert. Er hat Grafiker und Grafikkünstler auf der ganzen Welt bei ihren Arbeiten unterstützt.
+Diese *sanfte Zufälligkeit* ist das entscheidende Merkmal, auf das es vielen Grafikkünstlern ankommt. Erst dadurch wird es möglich, geometrische Formen und Bilder zu erstellen, die so organisch wirken, als kämen sie direkt aus der Natur. Perlins Noise-Algorithmus wurde seit seiner Veröffentlichung immer wieder in ganz unterschiedlichen Programmiersprachen und für verschiedene Dimensionen implementiert. Er hat Grafiker und Grafikkünstler auf der ganzen Welt bei ihren Arbeiten unterstützt.
 
 ![Robert Hodgin - Written Images (2010)](robert_hodgin.jpg)
 
@@ -65,7 +65,7 @@ Und nun bist Du dran:
 
 * Erstelle eine animierte Komposition aus mehreren Formen, die „miteinander“ tanzen, indem Du auf Noise-Funktionen zurückgreifst.
 
-* Baue organisch-wirkende Formen mit Hilfe der Noise-Funktion.
+* Baue organisch wirkende Formen mit Hilfe der Noise-Funktion.
 
 * Sobald Du auf diese Weise eine eigene „Kreatur“ erschaffen hast, versuche ihr Lebendigkeit einzuhauchen, indem Du sie auf ganz charakteristische Weise bewegst.
 
@@ -77,11 +77,11 @@ Jetzt, wo wir wissen, wie man Rauschen in einer Dimension erzeugt, können wir u
 
 ![](01.png)
 
-In ähnlicher Weise müssen wir im dreidimensionalen Raum vorgehen. Hier sind es die acht Ecken eines Kubus, zwischen denen es zu interpolieren gilt. Dabei dreht sich alles um die Interpolation von Zufallswerten (engl. random values), weshalb man dabei auch in diesem Zusammenhang auch von **Value Noise** spricht.
+In ähnlicher Weise müssen wir im dreidimensionalen Raum vorgehen. Hier sind es die acht Ecken eines Kubus, zwischen denen es zu interpolieren gilt. Dabei dreht sich alles um die Interpolation von Zufallswerten (engl. random values), weshalb man in diesem Zusammenhang auch von **Value Noise** spricht.
 
 ![](04.jpg)
 
-Wie schon bei unserem Beispiel für den eindimensionalen Raum, erfolgt die Interpolation nicht linear, sondern kubisch, damit ein sanfter Verlauf zwischen allen Punkten des viereckigen Rasters entsteht.
+Wie schon bei unserem Beispiel für den eindimensionalen Raum, erfolgt die Interpolation auch hier nicht linear, sondern kubisch, damit ein sanfter Verlauf zwischen allen Punkten des viereckigen Rasters entsteht.
 
 ![](05.jpg)
 
@@ -89,11 +89,11 @@ Schau Dir die folgende Noise-Funktion an.
 
 <div class="codeAndCanvas" data="2d-noise.frag"></div>
 
-Wir „blasen“ den Raum zunächst auf das Fünffache auf (*Programmzeile 45*), damit wir die Interpolation zwischen den einzelnen Elementen unseres Rasters besser erkennen können. Innerhalb der Noise-Funktion erfolgt dann die Einteilung des Raumes in einzelne Zellen. Wir speichern die Integer-Position der Zelle, ebenso den Nachkommateil für die Position innerhalb der Zelle. Die Integer-Position nutzen wir, um einen Zufallswert für alle vier Eckpunkte der Zelle zu erhalten (*Programmzeilen 23-26*). Schließlich interpolieren wir in *Programmzeile 35* zwischen den vier zufällig gewählten Eckpunkten auf Basis des Nachkommateils, den wir zuvor gespeichert haben.
+Wir „blasen“ den Raum zunächst auf das Fünffache auf (*Programmzeile 45*), damit wir die Interpolation zwischen den einzelnen Elementen unseres Rasters besser erkennen können. Innerhalb der Noise-Funktion erfolgt dann die Einteilung des Raumes in einzelne Zellen. Wir speichern die Integer-Position der Zelle, ebenso den Nachkommateil für die Position innerhalb der Zelle. Die Integer-Position nutzen wir, um einen Zufallswert für alle vier Eckpunkte der Zelle zu erhalten (*Programmzeilen 23-26*). Schließlich interpolieren wir in der *Programmzeile 35* zwischen den vier zufällig gewählten Eckpunkten auf Basis des Nachkommateils, den wir zuvor gespeichert haben.
 
 Jetzt bist Du wieder dran. Versuche Dich an den folgenden Aufgaben:
 
-* Ändere den Multiplikationsfaktor in *Programmezeile 45*. Versuche ihn zu animieren.
+* Ändere den Multiplikationsfaktor in *Programmzeile 45*. Versuche ihn zu animieren.
 
 * Versuche herauszufinden, ab welcher Vergrößerungsstufe das Rauschen wieder vollkommen zufällig und unzusammenhängend (chaotisch) wirkt.
 
@@ -107,7 +107,7 @@ Jetzt bist Du wieder dran. Versuche Dich an den folgenden Aufgaben:
 
 ![Mark Rothko - Three (1950)](rothko.jpg)
 
-## Rauschen und seine Verwendung für Generative Designs
+## Rauschen und seine Verwendung für generative Designs
 
 Noise-Algorithmen wurden ursprünglich entwickelt, um digitalen Texturen ein natürliches Aussehen zu verleihen. Die ein- und zweidimensionale Implementation, die wir bislang betrachtet haben, verwendet dafür Interpolationen zwischen Zufallswerten (engl. *random values*), weshalb sie als **Value Noise** bezeichnet wird. Doch es gibt noch andere Verfahren, um Rauschen zu erzeugen.
 
@@ -119,13 +119,13 @@ Wie die vorangegangenen Abschnitte gezeigt haben, tendiert *Value Noise* zur Erz
 
 Nimm Dir einen Moment Zeit, um die beiden folgenden Beispiele von [Inigo Quilez](http://www.iquilezles.org/) zu studieren und richte Deine Aufmerksamkeit dabei besonders auf die Unterschiede zwischen [*Value Noise*](https://www.shadertoy.com/view/lsf3WH) und [*Gradient Noise*](https://www.shadertoy.com/view/XdXGW8).
 
-Wie ein Maler, der genau weiß, wie die Farben auf seiner Staffelei interagieren, werden auch wir die Noise-Funktionen umso besser nutzen können, je mehr wir deren Vorgehensweise verstehen. Wenn wir beispielsweise eine zweidimensionale Noise-Funktion nutzen, um den Raum zu drehen, während wir gerade Linien zeichnen, entsteht der folgende Dreheffekt, der stark an die Maserung von Holz erinnert. Auch hier kannst Du wieder auf die Grafik klicken, um der den Shader-Code dahinter anzuschauen. 
+Wie ein Maler, der genau weiß, wie die Farben auf seiner Staffelei miteinander harmonieren, werden auch wir die Noise-Funktionen umso besser nutzen können, je mehr wir deren Vorgehensweise verstehen. Wenn wir beispielsweise eine zweidimensionale Noise-Funktion nutzen, um den Raum zu drehen, während wir gerade Linien zeichnen, entsteht der folgende Dreheffekt, der stark an die Maserung von Holz erinnert. Auch hier kannst Du wieder auf die Grafik klicken, um der den Shader-Code dahinter anzuschauen. 
 
 [ ![Holzmaserung](wood-long.png) ](../edit.php#11/wood.frag)
 
 ```glsl
     pos = rotate2d( noise(pos) ) * pos; // drehe den Raum
-    pattern = lines(pos,.5); // zeichne Linien
+    pattern = lines(pos,.5);            // zeichne Linien
 ```
 
 Ein anderer Weg zur Erzeugung interessanter Muster mit Hilfe von Noise-Funktionen besteht in ihrer Behandlung als Distanzfeld und der Anwendung einiger Tricks, die wir im [Kapitel über Formen](../07/) kennengelernt haben.
@@ -134,7 +134,7 @@ Ein anderer Weg zur Erzeugung interessanter Muster mit Hilfe von Noise-Funktione
 
 ```glsl
     color += smoothstep(.15,.2,noise(st*10.)); // schwarze Spritzer
-    color -= smoothstep(.35,.4,noise(st*10.)); // Löscher in den Spritzern
+    color -= smoothstep(.35,.4,noise(st*10.)); // Löcher in den Spritzern
 ```
 
 Ein dritter Weg basiert auf der Modulation einer Form mit Hilfe einer Noise-Funktion. Auch dabei kommen einige der Techniken zum Einsatz, die wir im [Kapitel über Formen](../07/) kennengelernt haben.
@@ -143,13 +143,13 @@ Ein dritter Weg basiert auf der Modulation einer Form mit Hilfe einer Noise-Funk
 
 Empfohlene Übungen:
 
-* Welche anderen Generativen Designs fallen Dir ein? Was ist mit Granitgestein? Marmor? Magma? Wasser? Suche Dir drei Fotos entsprechender Materialien und entwickle die zugehörigen Algorithmen unter Einbeziehung von Noise-Funktionen.
+* Welche anderen generativen Designs fallen Dir ein? Was ist mit Granitgestein? Marmor? Magma? Wasser? Suche Dir drei Fotos entsprechender Materialien und entwickle die zugehörigen Algorithmen unter Einbeziehung von Noise-Funktionen.
 
 * Nutze Noise-Funktionen, um eine Form zu modulieren.
 
 * Wie steht es um die Nutzung von Noise-Funktionen für Bewegungsabläufe? Schlage noch einmal im [Kapitel über Matrizenoperationen](../08/) nach. Nutze das dortige Beispiel, in welchem das Kreuz über die Zeichenfläche bewegt wird, und füge dem Ganzen etwas Zufall und Noise hinzu.
 
-* Erzeuge ein generatives Design wie bei Jackson Pollock’s Bildern.
+* Erzeuge ein generatives Design wie bei Jackson Pollocks Bildern.
 
 ![Jackson Pollock - Number 14 gray (1948)](pollock.jpg)
 
@@ -157,7 +157,7 @@ Empfohlene Übungen:
 
 Eine Verbesserung von Perlin an seinem ursprünglichen **Non-Simplex Noise**-Algorithmus hin zu einem **Simplex Noise** ist der Ersatz der kubischen Hermite-Funktionn ( _f(x) = 3x^2-2x^3_, die der [```smoothstep()```](.../glossary/?search=smoothstep)-Funktion in GLSL entspricht) durch eine quintische Interpolationsfunktion ( _f(x) = 6x^5-15x^4+10x^3_ ).
 
-Diese lässt die Interpolationskurve an ihren Enden flacher werden, so dass sie nahtloser in die nächste Interpolationskurve übergeht. Man erhält dadurch kontinuierlichere Übergänge zwischen den einzelnen Zellen. Du kannst Dir davon ein Bild machen, indem Du die Kommentare an der zweiten Formel in dem folgenden Graphen entfernt. [Beide Graphen in einem Bild siehst Du auch hier](https://www.desmos.com/calculator/2xvlk5xp8b)). Entscheidend ist wie immer der Bereich zwischen ```0.0``` und ```1.0``` auf der *x-Achse*.
+Diese lässt die Interpolationskurve an ihren Enden flacher werden, so dass sie nahtloser in die nächste Interpolationskurve übergeht. Man erhält dadurch kontinuierlichere Übergänge zwischen den einzelnen Zellen. Du kannst Dir ein Bild davon machen, indem Du die Kommentare an der zweiten Formel in dem folgenden Graphen entfernst. ([Beide Graphen in einem Bild siehst Du auch hier](https://www.desmos.com/calculator/2xvlk5xp8b)). Entscheidend ist wie immer der Bereich zwischen ```0.0``` und ```1.0``` auf der *x-Achse*.
 
 
 <div class="simpleFunction" data="
@@ -167,7 +167,7 @@ y = x*x*(3.0-2.0*x);
 //y = x*x*x*(x*(x*6.-15.)+10.);
 "></div>
 
-Beachte, wie die beiden unterschiedlichen Kurven an ihren Endbereichen voneinander abweichen. Mehr dazu erfährst du in [Ken's eigenen Worten hier](http://mrl.nyu.edu/~perlin/paper445.pdf).
+Beachte, wie die beiden unterschiedlichen Kurven an ihren Endbereichen voneinander abweichen. Mehr dazu erfährst du in [Ken s eigenen Worten hier](http://mrl.nyu.edu/~perlin/paper445.pdf).
 
 ## Simplex Noise
 
@@ -199,9 +199,9 @@ Doch wie wird dieses vereinfachte Gitternetz aufgebaut? In einem weiteren brilla
 
 ![](simplex-grid-02.png)
 
-Anschließend fahren wir fort, wie es [Stefan Gustavson in seinen Ausführungen beschreibt](http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf): "*...indem wir uns die ganzzahligen Anteile der transformierten Koordinaten (x,y) des zu berechnenden Punktes anschauen, denn darüber können wir leicht feststellen, zu welchen zwei Dreiecken der Punkt gehört. Indem wir die Werte von x und y vergleichen, erfahren wir, ob sich der Punkt in dem oberen oder in dem unteren Dreieck befindet. So können wir die drei korrekten Eckpunkte in die Berechnung einbeziehen.*“ 
+Anschließend fahren wir fort, wie es [Stefan Gustavson in seinen Ausführungen beschreibt](http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf): "*... indem wir uns die ganzzahligen Anteile der transformierten Koordinaten (x,y) des zu berechnenden Punktes anschauen, denn darüber können wir leicht feststellen, zu welchen zwei Dreiecken der Punkt gehört. Indem wir die Werte von x und y vergleichen, erfahren wir, ob sich der Punkt in dem oberen oder in dem unteren Dreieck befindet. So können wir die drei korrekten Eckpunkte in die Berechnung einbeziehen.*“ 
 
-Im folgenden Programmcode kannst Du die Kommentarzeichen aus *Programmzeile 44* entfernen, um zu sehen, wie das Gitternetz gezerrt wird. Und sobald Du die Kommentierung von *Zeile 47* aufhebst, erkennst Du die Aufteilung der Fläche in gleichschenklige Dreiecke. Beachte, wie wir in *Zeile 22* das verzerrte Rechteck einfach in zwei gleichseitige Dreiecke aufteilen, indem wir testen, ob ```x > y``` ist („unteres“ Dreieck) oder ```y > x``` („oberes“ Dreieck).
+Im folgenden Programmcode kannst Du die Kommentarzeichen aus der *Programmzeile 44* entfernen, um zu sehen, wie das Gitternetz gezerrt wird. Und sobald Du die Kommentierung von *Zeile 47* aufhebst, erkennst Du die Aufteilung der Fläche in gleichschenklige Dreiecke. Beachte, wie wir in *Zeile 22* das verzerrte Rechteck einfach in zwei gleichseitige Dreiecke aufteilen, indem wir testen, ob ```x > y``` ist („unteres“ Dreieck) oder ```y > x``` („oberes“ Dreieck).
 
 <div class="codeAndCanvas" data="simplex-grid.frag"></div>
 
@@ -223,7 +223,7 @@ Nun aber genug der technischen Spitzfindigkeiten. Es ist an der Zeit, dass Du de
 
 In diesem Kapitel haben wir versucht, Kontrolle über das Chaos zu erlangen. Das war keine leichte Aufgabe. Es braucht seine Zeit, um ein Meister des Rauschens und der Raumkrümmung zu werden.
 
-In den folgenden Kapiteln werden wir einige bekannte Techniken aufgreifen, mit Denen Du deine Fähigkeiten weiter verbessern kannst. Bis dahin genieße ein wenig Zeit draußen an der frischen Luft und lasse Dich von den Mustern und Strukturen der Natur inspirieren. Denn Deine Fähigkeiten zur Beobachtung müssen ähnlich gut entwickelt sein, wie Deine Programmierfähigkeiten. Vielleicht sogar besser. Genieße die wertvolle Zeit abseits des Computers!
+In den folgenden Kapiteln werden wir einige bekannte Techniken aufgreifen, mit Denen Du deine Fähigkeiten weiter verbessern kannst. Bis dahin genieße ein wenig Zeit draußen an der frischen Luft und lasse Dich von den Mustern und Strukturen der Natur inspirieren. Denn Deine Fähigkeiten zur Beobachtung müssen ähnlich gut entwickelt sein, wie Deine Programmierfähigkeiten. Vielleicht sogar noch besser. Genieße die wertvolle Zeit abseits des Computers!
 
 <p style="text-align:center; font-style: italic;">"Sprich mit den Bäumen und werdet Freunde." Bob Ross
 </p> 

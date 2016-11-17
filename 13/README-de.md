@@ -1,4 +1,4 @@
-﻿![Due East over Shadequarter Mountain - Matthew Rangel (2005) ](rangel.jpg)
+![Due East over Shadequarter Mountain - Matthew Rangel (2005) ](rangel.jpg)
 
 ## Gebrochene Brownsche Bewegung
 

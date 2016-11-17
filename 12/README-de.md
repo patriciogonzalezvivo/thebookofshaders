@@ -1,4 +1,4 @@
-﻿![](dragonfly.jpg)
+![](dragonfly.jpg)
 
 ## Zelluläres Rauschen
 
@@ -55,7 +55,7 @@ Weil die Farbe für jeden Pixel in einem eigenen Thread berechnet wird, können 
 
 Um Anomalien an den Schnittflächen zwischen den Zellen zu vermeiden, müssen wir jeweils die Entfernung zum Bezugspunkt der benachbarten Zellen überprüfen. Das ist im Wesentlichen die brillante Idee hinter dem [Ansatz von Steven Worley](http://www.rhythmiccanvas.com/research/papers/worley.pdf). 
 
-Letztendlich muss jeder Pixel nur die Entfernung zu neun Bezugspunkten berechnen: Den seiner eigenen Zelle und jene der acht umliegenden Zellen. Alle anderen Zellen sind zu weit entfernt.
+Letztendlich muss jeder Pixel nur die Entfernung zu neun Bezugspunkten berechnen: Dem seiner eigenen Zelle und jene der acht umliegenden Zellen. Alle anderen Zellen sind zu weit entfernt.
 
 Wir haben bereits in den Kapiteln über [Muster](../09/?lan=de), [Generative Designs](../10/?lan=de) und [Rauschen](../11/?lan=de) gesehen, wie man die Zeichenfläche in einzelne Zellen unterteilt, von daher bist Du mit diesem Prinzip wahrscheinlich schon vertraut. 
 
@@ -124,9 +124,9 @@ Dann bleibt nur noch, die Entfernung vom aktuell zu zeichnenden Punkt zu dem jew
 
 Der obige Programmcode wurde durch einen [Artikel von Inigo Quilez](http://www.iquilezles.org/www/articles/smoothvoronoi/smoothvoronoi.htm) inspiriert. Dort schreibt er:
 
-„ ... es ist vielleicht interessant darauf hinzuweisen, dass in dem obigen Code ein netter Trick steckt. Die meisten Implementationen dieses Algorithmus leiden unter einer schlechten Präzision der Berechnungen, weil sie die zufälligen Bezugspunkte auf den gesamten Koordinatenraum beziehen, so dass die Koordinaten sehr weit vom Ursprung entfernt sind. Man kann dagegen ansteuern, indem man Variablentypen mit besonders hoher Genauigkeit verwendet, was sich jedoch negativ auf die Geschwindigkeit der Berechnungen auswirkt. Oder man macht es etwas cleverer, indem man die Koordinaten nicht auf den gesamten Koordinatenraum bezieht, sondern auf die Ebene der einzelnen Zellen: Sobald der ganzzahlige Teil und der Nachkommateil des zu zeichnenden Punktes berechnet sind und dadurch die Zelle feststeht, in der sich der Punkt befindet, beschäftigen wir uns nur noch damit, was um diese Zelle herum geschieht. Dadurch müssen wir uns nicht mehr um den ganzzahligen Teil der Koordinaten kümmern, wodurch man viele Bits bei den weiteren Berechnungen einspart. Tatsächlich steuern bei herkömmlichen Voronoi-Implementierungen die ganzzahligen Anteile der Punktkoordinaten ebenfalls dem Wert 0 entgegen, sobald die zufälligen Bezugspunkte der Zellen vom aktuell zu zeichnenden Punkt abgezogen werden. In der obigen Implementation lassen wir es gar nicht erst so weit kommen, weil wir alle Koordinatenberechnungen auf den Raum der Zellen beziehen. Mit diesem Trick kann man sogar einen ganzen Planeten mit derartig geformten Voronoi-Zellen überziehen, indem man die Punktkoordinaten einfach in doppelter Fließkommagenauigkeit darstellt, die Berechnungen von ```floor()``` und ```fract()``` durchführt, und dann mit einfacher Fließkommagenauigkeit fortfährt. So erspart man sich den (Zeit-) Aufwand, die gesamte Berechnung mit doppelter Fließkommagenauigkeit auszuführen. Natürlich kann man diesen Trick auch auf Perlins Noise-Algorithmus anwenden (allerdings habe ich noch nie ein solche Implementation gesehen). “
+„... es ist vielleicht interessant darauf hinzuweisen, dass in dem obigen Code ein netter Trick steckt. Die meisten Implementationen dieses Algorithmus leiden unter einer schlechten Präzision der Berechnungen, weil sie die zufälligen Bezugspunkte auf den gesamten Koordinatenraum beziehen, so dass die Koordinaten sehr weit vom Ursprung entfernt sind. Man kann dagegen ansteuern, indem man Variablentypen mit besonders hoher Genauigkeit verwendet, was sich jedoch negativ auf die Geschwindigkeit der Berechnungen auswirkt. Oder man macht es etwas cleverer, indem man die Koordinaten nicht auf den gesamten Koordinatenraum bezieht, sondern auf die Ebene der einzelnen Zellen: Sobald der ganzzahlige Teil und der Nachkommateil des zu zeichnenden Punktes berechnet sind und dadurch die Zelle feststeht, in der sich der Punkt befindet, beschäftigen wir uns nur noch damit, was um diese Zelle herum geschieht. Dadurch müssen wir uns nicht mehr um den ganzzahligen Teil der Koordinaten kümmern, wodurch man viele Bits bei den weiteren Berechnungen einspart. Tatsächlich steuern bei herkömmlichen Voronoi-Implementierungen die ganzzahligen Anteile der Punktkoordinaten ebenfalls dem Wert 0 entgegen, sobald die zufälligen Bezugspunkte der Zellen vom aktuell zu zeichnenden Punkt abgezogen werden. In der obigen Implementation lassen wir es gar nicht erst so weit kommen, weil wir alle Koordinatenberechnungen auf den Raum der Zellen beziehen. Mit diesem Trick kann man sogar einen ganzen Planeten mit derartig geformten Voronoi-Zellen überziehen, indem man die Punktkoordinaten einfach in doppelter Fließkommagenauigkeit darstellt, die Berechnungen von ```floor()``` und ```fract()``` durchführt, und dann mit einfacher Fließkommagenauigkeit fortfährt. So erspart man sich den (Zeit-) Aufwand, die gesamte Berechnung mit doppelter Fließkommagenauigkeit auszuführen. Natürlich kann man diesen Trick auch auf Perlins Noise-Algorithmus anwenden (allerdings habe ich noch nie ein solche Implementation gesehen). “
 
-Um es noch einmal zusammenzufassen: Wir unterteilen den Raum in einzelne Zellen. Für jeden zu zeichnenden Punkt berechnen wir die kleinste Entfernung zum Bezugspunkt seiner Zelle bzw. zu den Bezugspunkten der umliegenden acht Zellen. Als Ergebnis erhalten wir ein Distanzfeld, so wie in dem folgenden Beispiel: 
+Um es noch einmal zusammenzufassen: Wir unterteilen den Raum in einzelne Zellen. Für jeden zu zeichnenden Punkt berechnen wir die kleinste Entfernung zum Bezugspunkt seiner Zelle bzw. zu den Bezugspunkten der acht umliegenden Zellen. Als Ergebnis erhalten wir ein Distanzfeld, so wie in dem folgenden Beispiel: 
 
 <div class="codeAndCanvas" data="cellnoise-02.frag"></div>
 
@@ -138,7 +138,7 @@ Experimentiere damit, indem Du:
 - über andere Wege nachdenkst, um das Distanzfeld zu berechnen, abseits von ```m_dist = min(m_dist, dist);```.
 - untersuchst, welche anderen interessanten Muster sich über dieses Distanzfeld erzeugen lassen.
 
-Man kann diesen Algorithmus nicht nur aus der Perspektive der jeweils zu zeichnenden Pixel betrachten, sondern auch aus Sicht der Bezugspunkte. In diesem Fall lässt sich der Algorithmus so beschreiben: Jeder Bezugspunkt wächst aus seiner Mitte heraus, bis er an die Grenzen eines anderen wachsenden Bezugspunktes stößt. Das spiegelt das Wachstum biologischer Zellen in der Natur wieder. Lebendige Organismen werden von dieser Spannung zwischen dem inneren Antrieb zum Wachstum und äußeren Beschränkungen geformt. Der klassische Algorithmus, der dieses Verhalten nachahmt, ist nach [Georgi Feodosjewitsch Woronoi, engl „Georgy Voronoi“](https://de.wikipedia.org/wiki/Voronoi-Diagramm) benannt.
+Man kann diesen Algorithmus nicht nur aus der Perspektive der jeweils zu zeichnenden Pixel betrachten, sondern auch aus Sicht der Bezugspunkte. In diesem Fall lässt sich der Algorithmus so beschreiben: Jeder Bezugspunkt wächst aus seiner Mitte heraus, bis er an die Grenzen eines anderen wachsenden Bezugspunktes stößt. Das spiegelt das Wachstum biologischer Zellen in der Natur wieder. Lebendige Organismen werden von dieser Spannung zwischen dem inneren Antrieb zum Wachstum und äußeren Begrenzungen geformt. Der klassische Algorithmus, der dieses Verhalten nachahmt, ist nach [Georgi Feodosjewitsch Woronoi, engl „Georgy Voronoi“](https://de.wikipedia.org/wiki/Voronoi-Diagramm) benannt.
 
 ![](monokot_root.jpg)
 
@@ -179,7 +179,7 @@ Sobald Du die Funktionsweise dieses Algorithmus verstanden hast, kannst Du über
 
 ### Verbesserung des Voronoi-Algorithmus
 
-Im Jahre 2011 hat [Stefan Gustavson eine Optimierung von Steven Worley‘s Algorithmus für GPUs](http://webstaff.itn.liu.se/~stegu/GLSL-cellular/GLSL-cellular-notes.pdf) vorgeschlagen, bei der nur noch eine 2x2 Matrix benachbarter Zellen untersucht wird, an Stelle der bisherigen 3x3 Matrix. Das reduziert den Rechenaufwand für jeden Punkt deutlich, kann aber zur Artefakten durch unsaubere Übergänge an den Grenzen der Zellen führen. Schau Dir die folgenden Beispiele an.
+Im Jahre 2011 hat [Stefan Gustavson eine Optimierung von Steven Worleys Algorithmus für GPUs](http://webstaff.itn.liu.se/~stegu/GLSL-cellular/GLSL-cellular-notes.pdf) vorgeschlagen, bei der nur noch eine 2x2 Matrix benachbarter Zellen untersucht wird, an Stelle der bisherigen 3x3 Matrix. Das reduziert den Rechenaufwand für jeden Punkt deutlich, kann aber zur Artefakten durch unsaubere Übergänge an den Grenzen der Zellen führen. Schau Dir die folgenden Beispiele an.
 
 
 <div class="glslGallery" data="12/2d-cnoise-2x2,12/2d-cnoise-2x2x2,12/2d-cnoise,12/3d-cnoise" data-properties="clickRun:editor,openFrameIcon:false"></div>
@@ -188,7 +188,7 @@ Im Jahre 2012 präsentierte [Inigo Quilez einen interessanten Artikel über die 
 
 <a href="../edit.php#12/2d-voronoi.frag"><img src="2d-voronoi.gif"  width="520px" height="200px"></img></a>
  
-Inigos Experimente zu diesem Thema hörten damit nicht auf. Im Jahr 2014 verfasste er einen schönen Beitrag über das, was er als [Voro-Noise, dt. „Voro-Rauschen“](http://www.iquilezles.org/www/articles/voronoise/voronoise.htm) bezeichnet  eine Funktion, die einen graduellen Übergang zwischen normalem Rauschen und Voronoi-Rauschen ermöglicht. Er schrieb:
+Inigos Experimente zu diesem Thema hörten damit nicht auf. Im Jahr 2014 verfasste er einen schönen Beitrag über das, was er als [Voro-Noise, dt. „Voro-Rauschen“](http://www.iquilezles.org/www/articles/voronoise/voronoise.htm) bezeichnet - eine Funktion, die einen graduellen Übergang zwischen normalem Rauschen und Voronoi-Rauschen ermöglicht. Er schrieb:
 
 „Abgesehen von ihrer Ähnlichkeit ist es entscheidend, dass das Raster aus Zellen in beiden Mustern unterschiedlich verwendet wird. Interpoliertes Rauschen mit Zufallswerten (wie bei Value-Noise) oder mit Gradienten (wie bei Gradient-Noise) unterscheidet sich von Voronoi, wo es auf die Entfernung zum nächstgelegenen Bezugspunkt ankommt. Schließlich sind die bilineare Interpolation und die Minima-Berechnung zwei ganz unterschiedliche Operationen, nicht wahr? Doch vielleicht kann man sie in einem größeren Rahmen vereinigen? Sollte das möglich sein, könnte man sowohl Rauschmuster als auch Voronoi-Muster als Spezialfälle eines allgemeineren rasterbasierten Mustergenerators betrachten.“
 

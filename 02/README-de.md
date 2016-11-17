@@ -26,7 +26,7 @@ Obwohl diese wenigen, einfachen Programmzeilen noch nicht nach viel aussehen, k�
 
 ```glsl
 void main() {
-	gl_FragColor = vec4(1,0,0,1);	// FEHLERQUELLE!
+	gl_FragColor = vec4(1,0,0,1);	// potenzielle Fehlerquelle!
 }
 ```
 
@@ -50,4 +50,4 @@ vec4 red(){
 vec4 color = vec4(vec3(1.0,0.0,1.0),1.0);
 ```
 
-Obwohl dieses „Hello world!“-Programm noch nicht so wahnsinnig aufregend daherkommt, ist es doch das simpelste Beispiel aus der Welt der Shader. Wir beeinflussen damit die Farbe aller Bildpunkte innerhalb unserer Zeichenfläche. In den nun folgenden Kapiteln werden wir die Farbe der einzelnen Bildpunkte aufgrund von zwei unterschiedlichen Arten von Eingabewerten steuern: Ihrer Position (d.h die Lage eines zu bearbeitenden Pixels innerhalb der Zeichenfläche) und der Zeit (d.h. der Zeitspanne, die seit dem Laden einer Seite vergangen ist). 
+Obwohl dieses „Hello world!“-Programm noch nicht so wahnsinnig aufregend daherkommt, ist es doch das simpelste Beispiel aus der Welt der Shader. Wir beeinflussen damit die Farbe aller Bildpunkte innerhalb unserer Zeichenfläche. In den nun folgenden Kapiteln werden wir die Farbe der einzelnen Bildpunkte aufgrund von zwei unterschiedlichen Arten von Eingabewerten steuern: Ihrer Position (d.h. die Lage des zu bearbeitenden Pixels innerhalb der Zeichenfläche) und der Zeit (d.h. der Zeitspanne, die seit dem Laden einer Seite vergangen ist). 

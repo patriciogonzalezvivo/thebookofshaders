@@ -46,13 +46,13 @@ Weil jeder „Unterraum“ und jede Gitterzelle eine verkleinerte Fassung des no
 
 [![](diamondtiles-long.png)](../edit.php#09/diamondtiles.frag)
 
-* Vereine unterschiedliche Schichten von Mustern, um Dein eigenes [für schottische Tartans typisches Karomuster](http://de.wikipedia.org/wiki/Tartan_(Muster)) entstehen zu lassen.
+* Vereine unterschiedliche Schichten von Mustern, um Dein eigenes Karomuster entstehen zu lassen, wie es [für schottische Tartans typisch ist](http://de.wikipedia.org/wiki/Tartan_(Muster)).
 
 [ ![Vektormuster eines schottischen Tartans von Kavalenkava](tartan.jpg) ](http://graphicriver.net/item/vector-pattern-scottish-tartan/6590076)
 
 ### Versetzte Muster
 
-Sagen wir einmal, wir wollten ein Mauerwerk zeichnen. Beim Blick auf eine solche Wand fällt sofort auf, dass die Steine in jeder Reihe jeweils um eine halbe Steinlänge versetzt sind. Stellt sich natürlich die Frage, wie wir so etwas per Programmcode umsetzen können?
+Sagen wir einmal, wir wollen ein Mauerwerk zeichnen. Beim Blick auf eine solche Wand fällt sofort auf, dass die Steine in jeder Reihe jeweils um eine halbe Steinlänge versetzt sind. Stellt sich natürlich die Frage, wie wir so etwas per Programmcode umsetzen können?
 
 ![](brick.jpg)
 
@@ -82,11 +82,11 @@ Entferne jetzt die Kommentarzeichen in der *Programmzeile 32*, wodurch das Seite
 
 ## Truchet-Kacheln
 
-Jetzt, wo wir gelernt haben festzustellen, ob sich die zu zeichnende Gitterzelle in einer geraden oder ungeraden Zeile bzw. Spalte befindet, können wir ein einzelnes Designelement in Abhängigkeit seiner Position wiederverwenden. Wirf einen Blick auf die sogenannten [Truchet-Kacheln](http://en.wikipedia.org/wiki/Truchet_tiles), bei denen eine einzelne Form in vier unterschiedlichen Anordnungen dargestellt wird:
+Wir haben nun gelernt, wie man feststellt, ob sich die zu zeichnende Gitterzelle in einer geraden oder ungeraden Zeile bzw. Spalte befindet, Auf Basis dieser Information können wir ein einzelnes Designelement in Abhängigkeit seiner Position wiederverwenden. Wirf einen Blick auf die sogenannten [Truchet-Kacheln](http://en.wikipedia.org/wiki/Truchet_tiles), bei denen eine einzelne Form in vier unterschiedlichen Anordnungen dargestellt wird:
 
 ![](truchet-00.png)
 
-Indem wir die Anordnung des Musters von Kachel zu Kachel variieren, können wir eine grenzenlose Zahl von Designs erzeugen. 
+Indem wir die Anordnung des Musters von Kachel zu Kachel variieren, können wir eine unendliche Menge von Designs erzeugen. 
 
 ![](truchet-01.png)
 
@@ -108,9 +108,9 @@ Schaue Die die Funktion ```rotateTilePattern()``` genau an. Sie unterteilt den R
 
 ## Erschaffe Deine eigenen Regeln
 
-Prozedurale, sich wiederholende Muster zu kreieren, ist eine interessante Übung für den Geist. Es geht darum, den minimalen Satz an Elementen zu finden, die sich wiederholen müssen, um ein größeres komplexeres Ganzes zu erschaffen. Diese Vorgehensweise ist sehr alt. Die Menschheit benutzt Muster und Gitternetze schon seit tausenden von Jahren, um Wände und Böden, Textilien und andere Objekte zu verzieren. Angefangen von mäandernden Mustern im alten Griechenland bis hin zu chinesischen Gitterfenstern, ist es immer wieder das Spiel aus Wiederholung bei gleichzeitiger Variation, die unsere Fantasie anregt. Nimm Dir ein wenig Zeit, um diese Art von [Dekorationen](https://archive.org/stream/traditionalmetho00chririch#page/130/mode/2up) und [Mustern](https://www.pinterest.com/patriciogonzv/paterns/) zu studieren. Von geometrischen Mustern aus Arabien bis hin zu prachtvollen Stoffmustern aus dem afrikanischem Kulturkreis eröffnet sich Dir ein ganzes Universum an Mustern, von denen Du lernen kannst. 
+Prozedurale, sich wiederholende Muster zu kreieren, ist eine interessante Übung für den Geist. Es geht darum, den minimalen Satz an Elementen zu finden, die sich wiederholen müssen, um ein größeres komplexes Ganzes zu erschaffen. Diese Vorgehensweise ist sehr alt. Die Menschheit benutzt Muster und Gitternetze schon seit tausenden von Jahren, um Wände und Böden, Textilien und andere Objekte zu verzieren. Angefangen von mäandernden Mustern im alten Griechenland bis hin zu chinesischen Gitterfenstern, ist es immer wieder das Spiel aus Wiederholung bei gleichzeitiger Variation, die unsere Fantasie anregt. Nimm Dir ein wenig Zeit, um diese Art von [Dekorationen](https://archive.org/stream/traditionalmetho00chririch#page/130/mode/2up) und [Mustern](https://www.pinterest.com/patriciogonzv/paterns/) zu studieren. Von geometrischen Mustern aus Arabien bis hin zu prachtvollen Stoffmustern aus dem afrikanischem Kulturkreis eröffnet sich Dir ein ganzes Universum an Mustern, von denen Du lernen kannst. 
 
 ![Franz Sales Meyer – Handbuch der Ornamentik (1920)](geometricpatters.png)
 
-Mit diesem Kapitel enden die Abschnitte zum algorithmischen Malen. In den folgenden Kapiteln werden wir sehen, wie man ein wenig mehr Zufall in unsere Shader bringt, um die Natur nachzuempfinden.
+Mit diesem Kapitel enden die Abschnitte zum algorithmischen Zeichnen. In den folgenden Kapiteln werden wir sehen, wie man ein wenig mehr Zufall in unsere Shader bringt, um die Natur nachzuempfinden.
 

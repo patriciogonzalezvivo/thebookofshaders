@@ -4,11 +4,11 @@
 
 ### Verschieben
 
-Im letzten Kapitel haben wir gesehen, wie man unterschiedliche Formen zeichnet. Der Trick, um diese Formen auf der Zeichenfläche beliebig zu positionieren, besteht nun darin, das Koordinatensystem „unterhalb“ dieser Formen zu verschieben. Wir erreichen dies, indem wir einfach einen Vektor zur ```st```-Variable addieren, die die Lage des jeweiligen Objekts beim Zeichnen bestimmt. Dadurch verschiebt sich das gesamte Koordinatensystem. 
+Im letzten Kapitel haben wir gesehen, wie man unterschiedliche Formen zeichnet. Der Trick, um diese Formen auf der Zeichenfläche beliebig zu positionieren, besteht nun darin, das Koordinatensystem „unterhalb“ dieser Formen zu verschieben. Wir erreichen dies, indem wir einfach einen Vektor zu der ```st```-Variable addieren, die die Lage des jeweiligen Objekts beim Zeichnen bestimmt. Dadurch verschiebt sich das gesamte Koordinatensystem. 
 
 ![](translate.jpg)
 
-Es ist vermutlich einfacher, das Verfahren in der Praxis nachzuvollziehen, als es in der Theorie zu beschreiben. Schau einfach selbst:
+Es ist vermutlich einfacher, das Verfahren in der Praxis nachzuvollziehen, als es in der Theorie zu studieren. Schau einfach selbst:
 
 * Entferne die Kommentarzeichen in der *Programmzeile 35*, und Du wirst sehen, wie sich das Zeichenobjekt gemeinsam mit dem darunterliegenden Koordinatenraum bewegt. 
 
@@ -43,7 +43,7 @@ mat2 rotate2d(float _angle){
 }
 ```
 
-In Bezug auf die Art und Weise, wie wir Formen bislang gezeichnet haben, ist das noch nicht ganz das, was wir benötigen. Unser Kreuz wird in der Mitte der Zeichenfläche dargestellt, was dem Punkt ```vec2(0.5)``` entspricht. Vor der Rotation müssen wir die Form deshalb von der Mitte des Koordinatensystem zum ```vec2(0.0)``` verschieben, anschließend die Drehung ausführen und das Objekt dann wieder an seinen ursprünglichen Platz bringen.
+In Bezug auf die Art und Weise, wie wir Formen bislang gezeichnet haben, ist das noch nicht ganz das, was wir benötigen. Unser Kreuz wird auf der Mitte der Zeichenfläche generiert, ausgehend vom Punkt ```vec2(0.5)```. Vor der Rotation müssen wir die Form deshalb von der Mitte des Koordinatensystem zum ```vec2(0.0)``` verschieben, anschließend die Drehung ausführen und das Objekt dann wieder an seinen ursprünglichen Platz bringen.
 
 ![](rotate.jpg)
 
@@ -61,7 +61,7 @@ Probiere die folgenden Übungen aus:
 
 ### Skalieren
 
-Wir haben gesehen, wie man die Verschiebung und Rotation von Objekten realisiert, indem man mit Matrizen auf den Koordinatenraum einwirkt. Falls Du bereits mit 3D-Modellierungssoftware oder den Matrizenfunktionen in Procesing gearbeitet hast, weißt Du wahrscheinlich, dass man Matrizen auch für die Skalierung von Objekten verwenden kann. 
+Wir haben gesehen, wie man die Verschiebung und die Rotation von Objekten realisiert, indem man mit Matrizen auf den Koordinatenraum einwirkt. Falls Du bereits mit 3D-Modellierungssoftware oder den Matrizenfunktionen in Procesing gearbeitet hast, weißt Du wahrscheinlich, dass man Matrizen auch für die Skalierung von Objekten verwenden kann. 
 
 ![](scale.png)
 
@@ -90,7 +90,7 @@ Probiere die folgenden Übungen aus, um noch besser zu verstehen, wie das Ganze 
 
 ### Ein anderes Einsatzgebiet für Matrizen: YUV-Farben
 
-[*YUV*](https://de.wikipedia.org/wiki/YUV-Farbmodell) ist ein Farbmodell, das für die analoge Kodierung von Fotos und Videos verwendet wird. Das Modell berücksichtigt die Grenzen der menschlichen Farbwahrnehmung und nutzt dies für die Beschränkung der Bandbreite bei der Kodierung der Farbigkeit (Chrominanz).
+[*YUV*](https://de.wikipedia.org/wiki/YUV-Farbmodell) ist ein Farbmodell, das für die analoge Kodierung von Fotos und Videos verwendet wird. Das Modell berücksichtigt die Grenzen der menschlichen Farbwahrnehmung und nutzt dies für die Beschränkung der Bandbreite (der benötigten Bits) bei der Kodierung der Farbigkeit (Chrominanz).
 
 Der folgende Programmcode zeigt eine interessante Einsatzmöglichkeit für den Einsatz von Matrizenfunktionen zur Konvertierung von Farben zwischen zwei Farbräumen bzw. Farbsystemen.
 

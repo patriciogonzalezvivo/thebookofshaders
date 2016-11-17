@@ -12,7 +12,7 @@ Stell dir vor, Du hast ein Millimeterpapier vor Dir, wie man es zuweilen im Math
 
 Vielleicht würdest Du einfach die gesamte Fläche ausfüllen und dabei nur die erste und die letzte Zeile auslassen, ebenso wie die erste und die letzte Spalte. So käme das gewünschte Quadrat sehr einfach zustande.
 
-Wie hängt das nun mit Shadern zusammen? Jedes kleine Quadrat auf unserem Millimeterpapier können wir uns als ein Pixel, d.h. einem parallel ausgeführten *Thread*, vorstellen. Und jedes dieser Quadrate (*jeder Thread*) kennt seine Koordinate, wie bei einem Schachbrett. In den vorangegangenen Kapiteln haben wir die *x-* und die *y-Ordinate* jeweils auf den *roten* und *grünen* Farbkanal des Punktes abgebildet. Wir haben gelernt, wie wir den schmalen zweidimensionalen Bereich zwischen ```0.0``` und ```1.0``` bearbeiten. Wie können wir das nun umsetzen, um in der Mitte unserer Zeichenfläche ein zentriertes weißes Quadrat zu malen?
+Wie hängt das nun mit Shadern zusammen? Jedes kleine Quadrat auf unserem Millimeterpapier können wir uns als ein Pixel, d.h. einen parallel ausgeführten *Thread*, vorstellen. Und jedes dieser Quadrate (*jeder Thread*) kennt seine Koordinate, wie bei einem Schachbrett. In den vorangegangenen Kapiteln haben wir die *x-* und die *y-Ordinate* jeweils auf den *roten* und *grünen* Farbkanal des Punktes abgebildet. Wir haben gelernt, wie wir den schmalen zweidimensionalen Bereich zwischen ```0.0``` und ```1.0``` bearbeiten. Wie können wir dieses Wissen nun anwenden, um in der Mitte unserer Zeichenfläche ein zentriertes weißes Quadrat zu malen?
 
 Lass uns mit etwas Pseudocode beginnen, der mit ```if```-Befehlen auf die Lage des zu bearbeitenden Pixels innerhalb der Zeichenfläche eingeht. Das Vorgehen ähnelt dabei in bemerkenswerte Weise dem oben skizzierten beim Malen auf Millimeterpapier.
 
@@ -23,7 +23,7 @@ Lass uns mit etwas Pseudocode beginnen, der mit ```if```-Befehlen auf die Lage d
         male schwarz
 ```
 
-Jetzt, wo wir eine Idee haben, wie das funktionieren könnte, lass uns den ```if```-Befehl durch einen Aufruf der [```step()```](../glossary/?search=step)-Funktion ersetzen, und anstelle der Maße *10 x 10* normalisierte Werte zwischen ```0.0``` und ```1.0``` bearbeiten:
+Jetzt, wo wir eine Idee haben, wie die Lösung aussehen könnte, lass uns den ```if```-Befehl durch einen Aufruf der [```step()```](../glossary/?search=step)-Funktion ersetzen, und anstelle der Maße *10 x 10* normalisierte Werte zwischen ```0.0``` und ```1.0``` bearbeiten:
 
 ```glsl
 uniform vec2 u_resolution;
@@ -43,7 +43,7 @@ void main(){
 }
 ```
 
-Die [```step()```](../glossary/?search=step)-Funktion setzt jeden Pixel unterhalb von ```0.1``` auf Schwarz (```vec3(0.0)```) und alle anderen auf Weiß (```vec3(1.0)```). Die Multiplikation von ```left``` und ```bottom``` arbeitet wie eine logische *UND-Verknüpfung*, weil nur dann nicht ```0.0```, sondern ```1.0``` herauskommt, wenn beide Variablen auf ```1.0``` stehen. So entstehen zwei schwarze Linien, eine am linken und eine am unteren Rand der Zeichenfläche. Der Rest wird weiß.
+Die [```step()```](../glossary/?search=step)-Funktion setzt jedes Pixel unterhalb von ```0.1``` auf Schwarz (```vec3(0.0)```) und alle anderen auf Weiß (```vec3(1.0)```). Die Multiplikation von ```left``` und ```bottom``` arbeitet wie eine logische *UND-Verknüpfung*, weil nur dann nicht ```0.0```, sondern ```1.0``` herauskommt, wenn beide Variablen auf ```1.0``` stehen. So entstehen zwei schwarze Linien, eine am linken und eine am unteren Rand der Zeichenfläche. Der Rest wird weiß.
 
 ![](rect-01.jpg)
 
@@ -70,7 +70,7 @@ Beachte außerdem, dass in den *Zeilen 18 und 22* die Ergebnisse von ```step()``
     color = vec3(bl.x * bl.y * tr.x * tr.y);  //UND-Verknuepfung
 ```
 
-Interessant, nicht wahr? Wir nutzen für diese Technik also [```step()```](../glossary/?search=step) zum Vergleichen, eine Subtraktion zur Drehung der Koordinaten und die Multiplikation als logische *UND*-Verknüpfung.
+Interessant, nicht wahr? Wir nutzen für diese Technik also [```step()```](../glossary/?search=step) zum Vergleichen, eine Subtraktion für die Drehung der Koordinaten und die Multiplikation als logische *UND*-Verknüpfung.
 
 Bevor wir weitermachen, probiere bitte die folgenden Übungen aus:
 
@@ -92,7 +92,7 @@ Bevor wir weitermachen, probiere bitte die folgenden Übungen aus:
 
 Es ist nicht schwer, Quadrate auf Millimeterpapier zu zeichnen und Rechtecke mit Hilfe kartesischer Koordinaten zu konstruieren. Kreise verlangen jedoch einen anderen Ansatz, zumal wie hier einen Pixel-orientierten Algorithmus benötigen. Eine Lösung besteht darin, die Koordinaten zu transformieren, damit wir beim Zeichnen die [```step()```](../glossary/?search=step)-Funktion nutzen können.
 
-Doch wie soll das funktionieren? Lasse uns noch einmal zum Mathematikunterricht und dem Millimeterpapier zurückkehren. In der Schule haben die meisten von uns vermutlich gelernt, wie man mit dem Zirkel einen Kreis malt: Über das Drehrad stellt man den jeweiligen Radius ein, platziert den Zirkel im Mittelpunkt des gewünschten Kreises und schwingt das Zeichengerät anschließend mit einer eleganten Drehung über das Papier.
+Doch wie soll das funktionieren? Lasse uns noch einmal zum Mathematikunterricht und dem Millimeterpapier zurückkehren. In der Schule haben die meisten von uns vermutlich gelernt, wie man mit dem Zirkel einen Kreis malt: Über das Drehrad stellt man zunächst den gewünschten Radius ein, platziert den Zirkel im Mittelpunkt des zu zeichnenden Kreises und schwingt das Zeichengerät anschließend mit einer eleganten Drehung über das Papier.
 
 ![](compass.jpg)
 
@@ -164,7 +164,7 @@ Im Hinblick auf die erforderliche Rechenleistung kann die [```sqrt()```](../glos
 
 ![Zen garden](zen-garden.jpg)
 
-Distanzfelder lassen sich nutzen, um beinahe jede Art von Form zu zeichnen. Je komplexer die gewünschte Form, desto komplexer fällt in der Regel auch die dafür benötigte Distanzformel aus. Doch sobald Du die benötigte Distanzformel beisammenhast, wird es sehr einfach, gewünschte Effekte darauf anzuwenden, beispielweise weiche Kanten oder mehrfache Umrisse. Aus diesem Grund sind Distanzfelder u.a. bei der Schriftenerzeugung sehr populär, nachzulesen etwa bei [Mapbox GL Labels](https://www.mapbox.com/blog/text-signed-distance-fields/), bei [Matt DesLauriers](https://twitter.com/mattdesl), und bei [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu).
+Distanzfelder lassen sich nutzen, um beinahe jede Art von Form zu zeichnen. Je komplexer die gewünschte Form, desto komplexer fällt in der Regel auch die dafür benötigte Distanzformel aus. Doch sobald Du die benötigte Distanzformel beisammenhast, wird es sehr einfach, gewünschte Effekte darauf anzuwenden, beispielweise weiche Kanten oder mehrfache Umrisse. Aus diesem Grund sind Distanzfelder u.a. bei der Schriftenerzeugung sehr populär, nachzulesen etwa bei [Mapbox GL Labels](https://www.mapbox.com/blog/text-signed-distance-fields/), bei [Matt DesLauriers](https://twitter.com/mattdesl) und bei [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu).
 
 Schau Dir den folgenden Programmcode an.
 
@@ -196,7 +196,7 @@ Einige dieser Formeln haben wir auch am Anfang dieses Kapitels genutzt, als es d
 
 Diese Technik unterliegt gewissen Beschränkungen, ist dafür aber sehr simpel und leistungsfähig. Sie beruht darauf, den Radius eines Kreises in Abhängigkeit des jeweiligen Winkels zu verändern, um unterschiedliche Formen zu erschaffen. Wie genau läuft diese Modulierung ab? Nun, Du hast es vielleicht schon erraten: Mit formgebenden Funktionen. 
 
-Unten findest Du verschiedene Funktionen jeweils zwei Mal: einmal als Verlaufskurve in einem kartesischen Koordinatensystem und dann als Shader-Programmcode in einem polaren Koordinatensystem. Dort stehen die verschiedenen formgebenden Funktionen in den *Programmzeilen 21 bis 25*. Entferne nun Schritt für Schritt die Kommentarzeilen und vergleiche die jeweiligen Funktionsgraphen im kartesischen Koordinatensystem und sein Äquivalent beim Zeichnen innerhalb eines Polarkoordinatensystem mit GLSL.
+Unten findest Du verschiedene Funktionen jeweils zwei Mal: einmal als Verlaufskurve in einem kartesischen Koordinatensystem und dann als Shader-Programmcode in einem polaren Koordinatensystem. Dort stehen die verschiedenen formgebenden Funktionen in den *Programmzeilen 21 bis 25*. Entferne nun Schritt für Schritt die Kommentarzeilen und vergleiche den jeweiligen Funktionsgraphen im kartesischen Koordinatensystem mit seinem Äquivalent beim Zeichnen innerhalb eines Polarkoordinatensystem mit GLSL.
 
 <div class="simpleFunction" data="y = cos(x*3.);
 //y = abs(cos(x*3.));
