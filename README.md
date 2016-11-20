@@ -96,6 +96,8 @@ Thanks [Nicolas Barradeau](https://twitter.com/nicoptere) and [Karim Naaji](http
 
 Thanks [Andrea Rovescalli](https://www.earove.info) for the Italian [translation (italiano)](?lan=it)
 
+Thanks [Michael Tischer](http://www.mitinet.de) for the German [translation (deutsch)](?lan=de)
+
 Thanks to everyone who has believed in this project and [contributed with fixes](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) or donations.
 
 ## Get new chapters
