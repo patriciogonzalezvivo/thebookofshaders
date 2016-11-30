@@ -45,7 +45,7 @@ In the above code, one of the points is assigned to the mouse position. Play wit
 
 ### Tiling and iteration
 
-You probably notice that ```for``` loops and *arrays* are not very good friends with GLSL. Like we said before, loops don't accept dynamic limits on their exit condition. Also, iterating through a lot of instances reduces the performance of your shader significantly, because loops can't exit early - they always have to run to completion. That means we can't use this direct approach for large amounts on points. We need to find another strategy, one that takes advantage of the parallel processing archeture of the GPU.
+You probably notice that ```for``` loops and *arrays* are not very good friends with GLSL. Like we said before, loops don't accept dynamic limits on their exit condition. Also, iterating through a lot of instances reduces the performance of your shader significantly. That means we can't use this direct approach for large amounts on points. We need to find another strategy, one that takes advantage of the parallel processing architecture of the GPU.
 
 ![](cell-01.png)
 
