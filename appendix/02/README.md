@@ -26,12 +26,7 @@ On **Raspberry Pi** you need to do:
 ```bash
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install git-core
-cd ~ 
-git clone http://github.com/patriciogonzalezvivo/glslViewer.git
-cd glslViewer
-make
-make install
+sudo apt-get install git-core glslviewer
 ```
 
 #### Installing Latex Engine and Pandoc
