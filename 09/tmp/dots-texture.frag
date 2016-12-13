@@ -13,7 +13,7 @@ float rows = 100.0;
 
 vec2 brickTile(vec2 _st, float _zoom){
   _st *= _zoom;
-  if (fract(_st.y * 0.5) > 0.5){
+  if (fract(_st.y * 0.5) > 0.5) {
       _st.x += 0.5;
   }
   return fract(_st);
@@ -28,13 +28,20 @@ float circle(vec2 _st, float _radius){
 void main(){
 
   vec2 st = gl_FragCoord.xy/u_resolution.xy;
+  st = (st-.5)*1.02+.5;
   st.x *= u_resolution.x/u_resolution.y;
+
   vec2 pos = st;
+  float grid = 50.;
 
-  st = brickTile(st,500.);
+  st *= grid;
+  if (fract(st.y * 0.5) > 0.5){
+      st.x += 0.5;
+      pos.x += 0.5/grid;
+  }
   
-  float pattern = texture2D(u_tex0,pos).r;
-  pattern = circle(st, pattern);
+  float pattern = texture2D(u_tex0,clamp(floor(pos*grid)/grid+vec2(.5,.5)/grid,vec2(0.),vec2(1.))).r;
+  pattern = circle(fract(st), smoothstep(0.1,1.,pattern));
 
-  gl_FragColor = vec4(1.-vec3(pattern),1.0);
+  gl_FragColor = vec4(pattern,0.,0.,pattern);
 }

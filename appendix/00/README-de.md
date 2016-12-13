@@ -17,7 +17,7 @@ Auf einem **RaspberryPi** gibst Du folgendes ein:
 ```bash
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install git-core
+sudo apt-get install git-core glslviewer
 ```
 
 Hast Du alles beisammen, musst Du lediglich folgende Befehle aufrufen, um das *Book of Shaders* per GIT auf Deinen Rechner zu laden und den Server zur Anzeige des Inhalts zu starten:

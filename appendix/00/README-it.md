@@ -17,7 +17,7 @@ Su **Raspberry Pi** è necessario fare:
 ```bash
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install git-core
+sudo apt-get install git-core glslviewer
 ```
 
 Una volta che avete installato tutto, non vi resta che fare:

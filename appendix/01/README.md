@@ -11,12 +11,7 @@ To install and set this all up on the Raspberry Pi after installing the OS and l
 ```bash
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install git-core
-cd ~ 
-git clone http://github.com/patriciogonzalezvivo/glslViewer.git
-cd glslViewer
-make
-make install
+sudo apt-get install git-core glslviewer
 cd ~
 git clone https://github.com/patriciogonzalezvivo/thebookofshaders.git
 cd thebookofshaders
