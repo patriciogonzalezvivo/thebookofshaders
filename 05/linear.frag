@@ -7,9 +7,9 @@ uniform vec2 u_mouse;
 uniform float u_time;
 
 // Plot a line on Y using a value between 0.0-1.0
-float plot(vec2 st, float pct){
-  return  smoothstep( pct-0.02, pct, st.y) - 
-          smoothstep( pct, pct+0.02, st.y);
+float plot(float x, float y){
+  return  smoothstep( x-0.02, x, y) - 
+          smoothstep( x, x+0.02, y);
 }
 
 void main() {
@@ -18,8 +18,7 @@ void main() {
     vec3 color = vec3(st.x);
     
     // Plot a line
-    float y = st.x;
-    float pct = plot(st,y);
+    float pct = plot(st.x, st.y);
     color = (1.0-pct)*color+pct*vec3(0.0,1.0,0.0);
     
 	gl_FragColor = vec4(color,1.0);
