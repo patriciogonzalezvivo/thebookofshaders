@@ -13,13 +13,12 @@ float plot(vec2 st, float pct){
 }
 
 void main() {
-	vec2 st = gl_FragCoord.xy/u_resolution;
+    vec2 st = gl_FragCoord.xy/u_resolution;
 
-    float y = st.x;
-
-    vec3 color = vec3(y);
+    vec3 color = vec3(st.x);
     
     // Plot a line
+    float y = st.x;
     float pct = plot(st,y);
     color = (1.0-pct)*color+pct*vec3(0.0,1.0,0.0);
     
