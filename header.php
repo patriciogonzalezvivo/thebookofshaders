@@ -57,6 +57,9 @@
 
         <!-- GlslEditor -->
 <?php
+    // echo '
+    // <link type="text/css" rel="stylesheet" href="http://localhost:9966/build/glslEditor.css"> 
+    // <script type="application/javascript" src="http://localhost:9966/build/glslEditor.js"></script>';
     if (file_exists($path."/src/glslEditor/build/glslEditor.js")) {
         echo '
         <link type="text/css" rel="stylesheet" href="'.$path.'/src/glslEditor/build/glslEditor.css"> 

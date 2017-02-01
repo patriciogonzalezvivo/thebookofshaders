@@ -26,7 +26,7 @@ void main(){
 
   float pct = 0.0;
   vec2 st_i = floor(st*10.);
-  pct += step(0.5,abs(mod(st_i.x,2.)-mod(st_i.y+1.,2.)));
+  pct += abs(mod(st_i.x,2.)-mod(st_i.y,2.));
 
   gl_FragColor = vec4(vec3(pct),1.0);
 }

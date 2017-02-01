@@ -7,8 +7,10 @@
 
         <!-- GLSL Canvas -->
         <script type='text/javascript' src='https://thebookofshaders.com/glslCanvas/GlslCanvas.js'></script>
-        <link type='text/css' rel='stylesheet' href='https://thebookofshaders.com/glslEditor/glslEditor.css'>
-        <script type='application/javascript' src='https://thebookofshaders.com/glslEditor/glslEditor.js'></script>
+<!--         <link type='text/css' rel='stylesheet' href='https://thebookofshaders.com/glslEditor/glslEditor.css'>
+        <script type='application/javascript' src='https://thebookofshaders.com/glslEditor/glslEditor.js'></script> -->
+        <link type="text/css" rel="stylesheet" href="http://localhost:9966/build/glslEditor.css"> 
+        <script type="application/javascript" src="http://localhost:9966/build/glslEditor.js"></script>
         
         <style>
             body {
@@ -169,11 +171,14 @@ void main(){\n\
             window.glslEditor = new GlslEditor('#glsl_editor', {
                                                                     canvas_width: 900,
                                                                     canvas_height: 300,
+                                                                    canvas_follow: true,
+                                                                    canvas_float: false,
                                                                     lineNumbers: false, 
                                                                     frag_header: preFunction, 
                                                                     frag_footer: postFunction,
+                                                                    frag: funct,
                                                                     multipleBuffers: true
-                                                                }).open(funct);
+                                                                });
         }
     </script>
     <script>
