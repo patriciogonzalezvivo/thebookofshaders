@@ -54,7 +54,6 @@
     //     <meta name="twitter:image:width" content="500">
     //     <meta name="twitter:image:height" content="500">';
 ?>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<style>
 			body {
 				height: 100%;
