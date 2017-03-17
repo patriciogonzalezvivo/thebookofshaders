@@ -9,7 +9,7 @@ In **MacOSX** be sure to have [homebrew](http://brew.sh/) installed and then on 
 ```bash
 brew update
 brew upgrade
-brew install git 
+brew install git
 ```
 
 On **Raspberry Pi** you need to do:
@@ -26,7 +26,7 @@ Once you have everything installed you just need to do:
 cd ~
 git clone --recursive https://github.com/patriciogonzalezvivo/thebookofshaders.git
 cd thebookofshaders
-git submodule foreach git pull
+git submodule foreach git submodule init && git submodule update
 php -S localhost:8000
 ```
 

@@ -26,7 +26,7 @@ Hast Du alles beisammen, musst Du lediglich folgende Befehle aufrufen, um das *B
 cd ~
 git clone --recursive https://github.com/patriciogonzalezvivo/thebookofshaders.git
 cd thebookofshaders
-git submodule foreach git pull
+git submodule foreach git submodule init && git submodule update
 php -S localhost:8000
 ```
 
