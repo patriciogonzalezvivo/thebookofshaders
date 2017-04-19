@@ -74,7 +74,7 @@ This technique is commonly used to construct procedural landscapes. The self-sim
 
 ![Blackout - Dan Holdsworth (2010)](holdsworth.jpg)
 
-Using more or less the same technique, is also possible to obtain other effects like what is known as **turbulence**. It's essentially an fBm, but constructed from the absolute value of a signed noise to create sharp valleys in the function.
+Using more or less the same technique, it is also possible to obtain other effects like what is known as **turbulence**. It's essentially an fBm, but constructed from the absolute value of a signed noise to create sharp valleys in the function.
 
 ```glsl
 for (int i = 0; i < OCTAVES; i++) {
