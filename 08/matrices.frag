@@ -7,7 +7,7 @@ precision mediump float;
 #define PI_4 0.785398163397448309616
 #define PI180 .017453293
 
-float PHI = (1.0+sqrtf(5.0))/2.0;
+float PHI = (1.0+sqrt(5.0))/2.0;
 float sind(float a){return sin(a * PI180);}
 float cosd(float a){return cos(a * PI180);}
 
