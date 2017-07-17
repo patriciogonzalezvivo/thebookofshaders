@@ -1,7 +1,7 @@
 ![](dragonfly.jpg)
 
 ## Bruit Cellulaire
-En 1996, seize ans après Le *Bruit de Perlin* et cinq ans avant le *Bruit Simplexe*, [Steven Worley a publié un papier: “Une function pour les textures cellulaires”](http://www.rhythmiccanvas.com/research/papers/worley.pdf).
+En 1996, seize ans après Le *Bruit de Perlin* et cinq ans avant le *Bruit Simplex*, [Steven Worley a publié un papier: “Une function pour les textures cellulaires”](http://www.rhythmiccanvas.com/research/papers/worley.pdf).
 Il y décrit une technique de texture procédurale amplement utilisée de nos jours pas la communauté des développeurs graphiques.
 
 Pour comprendre le principe qui sous-tend l'algorithme, nous devons réfléchir en termes d'itérations.
@@ -9,8 +9,8 @@ Pour comprendre le principe qui sous-tend l'algorithme, nous devons réfléchir 
 ### Un champ de distances pour quelques points
 
 Imaginons que nous voulions faire un champ de distance à quatre points.
-De quoi aurions besoin? pour faire court, **pour chaque pixel, trouver la distance au point le plus proche**.
-Ce qui signifie qu'il va nous falloir itérer sur tous les points et conserver la daistance au point le plus proche.
+De quoi aurions nous besoin? pour faire court, **pour chaque pixel, trouver la distance au point le plus proche**.
+Ce qui signifie qu'il va nous falloir itérer sur tous les points et conserver la distance au point le plus proche.
 
 ![](cell-00.png)
 
@@ -36,7 +36,7 @@ Jouez avec pour vous donner une meilleure idée de comment ça marche puis essay
 
 ### Pavage et itérations
 
-vous avez sans doute remarqué que les boucles `for` et les *tableaux* ne sont pas bien amicaux en GLSL.
+vous avez sans doute remarqué que les boucles `for` et l'utilisation de *tableaux* n'est pas recommandée en GLSL.
 Les boucles n'accpetent pas d'arguments dynamiques, itérer sur un grand nombre d'entrées ralentit considérablement l'exécution du shader, nous devons donc changer de stratégie.
 
 ![](cell-01.png)
@@ -45,14 +45,13 @@ Une façon d'aborder le problème est de diviser l'espace en *tuiles* (**tiles**
 Au fond, tous les pixels n'ont pas besoin de tester l'ensemble des points n'est ce pas?
 Ils ont simplement besoin de vérifier les points qui sont proches d'eux.
 C'est l'idée principale [de la publication de Steven Worley](http://www.rhythmiccanvas.com/research/papers/worley.pdf).
-Nous avons déjà subdivisé l'espace en cellules au chapitres des,
-We already subdivide the space into cells in the chapters about: [motifs](../09/?lan=fr), de [l'aléatoire](../10/?lan=fr) et du [bruit](../11/?lan=fr).
+Nous avons déjà subdivisé l'espace en cellules au chapitres des [motifs](../09/?lan=fr), de [l'aléatoire](../10/?lan=fr) et du [bruit](../11/?lan=fr).
 Vous devriez être un peu plus familier avec cette technique.
 
 ```glsl
     // échelle (nombre de cellules)
     st *= 3.;
-    
+
     // variables utilisées pour paver le plan
     vec2 i_st = floor(st);
     vec2 f_st = fract(st);
@@ -66,7 +65,7 @@ Donc chaque cellule contiendra un point à une position aléatoire dans la cellu
     vec2 point = random2(i_st);
 ```
 
-A l'intérieur de chaque cellule, tous les fragments (à l'aide de la partie factorielle de ```f_st```, `fract( st )` ) vont mesurer la distance à ce point.
+A l'intérieur de chaque cellule, tous les fragments (à l'aide de la partie fractionelle de ```f_st```, `fract( st )` ) vont mesurer la distance à ce point.
 
 ```glsl
     vec2 diff = point - f_st;
@@ -75,12 +74,12 @@ A l'intérieur de chaque cellule, tous les fragments (à l'aide de la partie fac
 
 Ca ressemblera à:
 
-<a href="../edit.php#12/cellnoise-01.frag"><img src="cellnoise.png"  width="520px" height="200px"></img></a> 
+<a href="../edit.php#12/cellnoise-01.frag"><img src="cellnoise.png"  width="520px" height="200px"></img></a>
 
 Nous devons également calculer la distance aux points des cellules adjacentes ;
 en effet, il se pourrait que le point le plus proche du fragment en cours d'évaluation se trouves dans une cellule voisine.
 Pour cela, nous allons itérer sur les cellules voisines, pas toutes les cellules, juste les cellules adjacentes.
-Soit de ```-1``` (gauche) à ```1``` (droite) cellule en ```x``` et de ```-1``` (bas) à ```1``` (haut) en ```y```.
+Soit de ```-1``` (gauche) à ```1``` (droite) cellules en ```x``` et de ```-1``` (bas) à ```1``` (haut) en ```y```.
 Ce qu'on appelle un *kernel de 3x3*, sur lequel on peut itérer grâce à deux boucles `for` imbriquées telle que celle-ci.
 
 ```glsl
@@ -110,7 +109,7 @@ Pour le reste, il suffit de calculer la distance entre ce point et le fragment e
 ```glsl
         ...
         vec2 diff = neighbor + point - f_st;
-        
+
         // Distance au point
         float dist = length(diff);
 
@@ -139,7 +138,7 @@ Explorez en essayant les choses suivantes:
 Cet algorithme peut également être interprété du point de vue des points au lieu des pixels.
 Dans ce cas, on peut le décrire comme: chaque point grossit jusqu'à ce qu'il recouvre le rayon d'un autre point.
 Ce qui reflète certaines règles de croissance de la nature, les formes de vie sont formées par la tension entre une force intérieure d'expansion et des forces contraires venues de l'extérieur.
-L'algorithm canonique de ce genre de formes a été trouvé par [Georgy Voronoi](https://en.wikipedia.org/wiki/Georgy_Voronoy), et porte maintenant son nom.
+L'algorithm canonique de ce genre de formes a été trouvé par [Georgy Voronoi](https://en.wikipedia.org/wiki/Georgy_Voronoy) et porte maintenant son nom.
 
 ![](monokot_root.jpg)
 
@@ -162,7 +161,7 @@ Pourquoi? Parce que nous avons besoin de modifier la référence au point le plu
 
 <div class="codeAndCanvas" data="vorono-00.frag"></div>
 
-Notes également que la couleur de la cellule (branchée sur la position de la souris) change en fonction de sa position.
+Notez également que la couleur de la cellule (branchée sur la position de la souris) change en fonction de sa position.
 C'est parce que la couleur est déterminée par la valeur (la position) du point le plus proche.
 
 Pour aller plus loin, nous pouvons à présent ré-utiliser l'algorithme de [Steven Worley](http://www.rhythmiccanvas.com/research/papers/worley.pdf).
