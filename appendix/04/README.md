@@ -445,4 +445,4 @@ The textures coordinates follow this rule which might be counter-intuitive at fi
 Of course we could have gone deeper into the various concepts but as mentioned earlier, this is meant to give a BIG HUG to the newcomers.
 It's a quite a lot to ingest but with patience and practice, this will become more and more natural.
 
-I hope you found some of this useful, now [what about starting your journey through the book?]("https://www.thebookofshaders.com/")
+I hope you found some of this useful, now what about starting your journey through the book?
