@@ -26,33 +26,33 @@ Ceci est un guide étape-par-étape à travers le monde abstrait et complexe des
     * [Les matrices](08/?lan=fr)
     * [Les motifs](09/?lan=fr)
 
-* La conception générative
-    * [Le hasard](10/?lan=fr)
+* Le design génératif
+    * [L'aléatoire](10/?lan=fr)
     * [Le bruit](11/?lan=fr)
-    * Fractional Brownian Motion
-    * Fractals
+    * [Le bruit cellulaire](12/?lan=fr)
+    * [Fractional Brownian Motion](13/?lan=fr)
+    * Les Fractals
 
-* Image processing:
+* Traitement d'image:
     * Textures
-    * Image operations
-    * Kernel convolutions
-    * Filters
-    * Others effects
+    * Convolution
+    * Filtres
+    * Effets
 
 * Simulation
     * Pingpong
     * Conway
-    * Ripples
-    * Water color
-    * Reaction diffusion
+    * Ondes
+    * Aquarelle
+    * Réaction-Diffusion
 
 * 3D graphics
-    * Lights
-    * Normal-maps
-    * Bump-maps
+    * Lumières
+    * Normales
+    * Environment-maps (spherical and cube)
+    * Bump
     * Ray marching
-    * Environmental-maps (spherical and cube)
-    * Reflect and refract
+    * Réflection & réfraction
 
 * [Appendice:](appendix/) Autres manières d'utiliser ce livre
 	* [Comment puis-je consulter ce livre hors-ligne?](appendix/)
