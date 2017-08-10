@@ -215,7 +215,7 @@ Lorsqu'on utilise des vecteurs avec des fonctions trigonométriques les variable
 Nous commencerons à traiter les couleurs et les vecteurs géométriques de façon similaire, en fait, vous devriez comprendre assez vite que cette flexibilité d'utilisation est une force.
 
 **Note:** Si vous vous demandez s'il existe d'autres fonctions géométriques que [```length```](../glossary/?search=length)
-comme: [```distance()```](../glossary/?search=distance), [```dot()```](../glossary/?search=dot), [```cross```](../glossary/?search=cross), [```normalize()```](../glossary/?search=normalize), [```faceforward()```](../glossary/?search=fraceforward), [```reflect()```](../glossary/?search=reflect) et [```refract()```](../glossary/?search=refract), la réponse est oui.
+comme: [```distance()```](../glossary/?search=distance), [```dot()```](../glossary/?search=dot), [```cross```](../glossary/?search=cross), [```normalize()```](../glossary/?search=normalize), [```faceforward()```](../glossary/?search=faceforward), [```reflect()```](../glossary/?search=reflect) et [```refract()```](../glossary/?search=refract), la réponse est oui.
 GLSL expose également des méthodes pour comparer les vecteurs entres eux: [```lessThan()```](../glossary/?search=lessThan), [```lessThanEqual()```](../glossary/?search=lessThanEqual), [```greaterThan()```](../glossary/?search=greaterThan), [```greaterThanEqual()```](../glossary/?search=greaterThanEqual), [```equal()```](../glossary/?search=equal) et [```notEqual()```](../glossary/?search=notEqual).
 
 Une fois que nous avons récupéré l'angle entre le centre et le fragment en cours, nous devons le normaliser.

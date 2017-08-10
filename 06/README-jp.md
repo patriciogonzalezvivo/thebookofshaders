@@ -116,7 +116,7 @@ HSBはもともとデカルト座標（xとy）ではなく、極座標（中心
 - [```dot()```](../glossary/?search=dot)
 - [```cross```](../glossary/?search=cross)
 - [```normalize()```](../glossary/?search=normalize)
-- [```faceforward()```](../glossary/?search=fraceforward)
+- [```faceforward()```](../glossary/?search=faceforward)
 - [```reflect()```](../glossary/?search=reflect)
 - [```refract()```](../glossary/?search=refract)
 
