@@ -29,7 +29,7 @@ sudo apt-get upgrade
 sudo apt-get install git-core glslviewer
 ```
 
-#### Installing Latex Engine and Pandoc
+#### Installing Python 2.7, Latex Engine and Pandoc
 
 For parsing the Markdown chapters into Latex and then into a PDF file we will use Xetex Latex Engine and Pandoc.
 
@@ -38,13 +38,13 @@ In **MacOSX**:
 Download and Install [basictex & MacTeX-Additions](http://www.tug.org/mactex/morepackages.html) and then install [Pandoc](http://johnmacfarlane.net/pandoc/) by:
  
 ```bash
-brew install pandoc
+brew install pandoc python2.7
 ```
 
 On **Raspberry Pi** (Raspbian):
 
 ```bash
-sudo apt-get install texlive-xetex pandoc
+sudo apt-get install texlive-xetex pandoc python2.7
 ```
 
 #### Compile the book into a pdf and print it
