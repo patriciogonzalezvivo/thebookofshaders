@@ -1,3 +1,5 @@
+#! /usr/bin/python2
+
 import glob, os, re, subprocess
 
 d='..'
