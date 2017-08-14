@@ -5,7 +5,7 @@ Let’s say you don’t want to navigate or interact with the examples and you j
 
 #### Installing glslViewer
 
-For printing this book you need first to parse it. For that you will need [```glslViewer```](https://github.com/patriciogonzalezvivo/glslViewer) a console shader tool that will compile and transform the shader examples into images.
+For printing this book you need first to parse it. For that you will need [`glslViewer`](https://github.com/patriciogonzalezvivo/glslViewer) a console shader tool that will compile and transform the shader examples into images.
 
 In **MacOSX** get sure to have [homebrew](http://brew.sh/) installed and then on your terminal do:
 
@@ -21,7 +21,7 @@ make
 make install
 ```
 
-On **Raspberry Pi** you need to do:
+On **Raspberry Pi** you need to get [Raspbian](https://www.raspberrypi.org/downloads/raspbian/), a Debian-based Linux distribution made for Raspberry Pi and then do:
 
 ```bash
 sudo apt-get update
@@ -41,7 +41,7 @@ Download and Install [basictex & MacTeX-Additions](http://www.tug.org/mactex/mor
 brew install pandoc
 ```
 
-On **Raspberry Pi**:
+On **Raspberry Pi** (Raspbian):
 
 ```bash
 sudo apt-get install texlive-xetex pandoc
@@ -60,4 +60,4 @@ cd thebookofshaders
 make
 ```
 
-If everything goes well, you will see a ```book.pdf``` file which you can read on your favorite device or print. 
+If everything goes well, you will see a `book.pdf` file which you can read on your favorite device or print. 
