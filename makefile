@@ -6,4 +6,4 @@ clean:
 	rm -rf book.*
 
 all:
-	python src/parseBook.py
+	python2 src/parseBook.py
