@@ -35,7 +35,7 @@ For parsing the Markdown chapters into Latex and then into a PDF file we will us
 
 In **MacOSX**:
 
-Download and Install [basictex & MacTeX-Additions](http://www.tug.org/mactex/morepackages.html) and then install [Pandoc](http://johnmacfarlane.net/pandoc/) by:
+Download and Install [basictex & MacTeX-Additions](http://www.tug.org/mactex/morepackages.html) and then install [Pandoc](http://johnmacfarlane.net/pandoc/) and Python by:
  
 ```bash
 brew install pandoc python2.7
