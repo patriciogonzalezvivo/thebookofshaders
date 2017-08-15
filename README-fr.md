@@ -54,7 +54,7 @@ Ceci est un guide étape-par-étape à travers le monde abstrait et complexe des
     * Ray marching
     * Réflection & réfraction
 
-* [Annexes :](appendix/) Autres manières d'utiliser ce livre
+* [Annexes :](appendix/?lan=fr) Autres manières d'utiliser ce livre
 	* [Comment puis-je consulter ce livre hors-ligne ?](appendix/00/?lan=fr)
 	* [Comment exécuter les exemples sur un Raspberry Pi ?](appendix/01/?lan=fr)
 	* [Comment imprimer ce livre ?](appendix/02/?lan=fr)
