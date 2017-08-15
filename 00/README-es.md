@@ -18,7 +18,7 @@ En los próximos capítulos descubrirás cuán increíblemente rápida y poderos
 
 Este libro está escrito para creative coders, desarrolladores de videojuegos e ingenieros que tengan alguna experiencia con la programación, un conocimiento básico de álgebra lineal y trigonometría, y que quieran llevar su trabajo a un nuevo y emocionante nivel gráfico. (Si te interesa aprender a programar, te recomiendo comenzar con [Processing](https://processing.org/) y volver cuando te sientas cómodo).
 
-Este libro te enseñará a integrar shaders en tus proyectos, mejorando la performance y la calidad gráfica. Como los shaders GLSL (OpenGL Shading Language) se pueden compilar y correr en diferentes plataformas, podrás aplicar lo que aprendas aquí en cualquier entorno que que use OpenGL, OpenGL ES o WebGL. En otras palabras podrás utilizarlo en sketches de [Processing](https://processing.org/), aplicaciones de [openFrameworks](http://openframeworks.cc/), instalaciones interactivas con [Cinder](http://libcinder.org/), incluso en web o en juegos iOS/Android con [Three.js](http://threejs.org/).
+Este libro te enseñará a integrar shaders en tus proyectos, mejorando la performance y la calidad gráfica. Como los shaders [GLSL (OpenGL Shading Language)](https://es.wikipedia.org/wiki/GLSL) se pueden compilar y correr en diferentes plataformas, podrás aplicar lo que aprendas aquí en cualquier entorno que que use OpenGL, OpenGL ES o WebGL. En otras palabras podrás utilizarlo en sketches de [Processing](https://processing.org/), aplicaciones de [openFrameworks](http://openframeworks.cc/), instalaciones interactivas con [Cinder](http://libcinder.org/), incluso en web o en juegos iOS/Android con [Three.js](http://threejs.org/).
 
 
 ## ¿Qué temas se tratan en este libro?

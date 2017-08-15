@@ -18,7 +18,7 @@ Fragment shader는 매우 빠른 속도로 스크린에 렌더되는 픽셀들�
 
 이 책은 삼각함수와 선형대수학에 대한 기본이해가 있고 작업에 있어 그래픽 요소를 극대화 시키려는 creative coder, 게임 개발자, 그래픽 엔지니어들을 위한 책이다. (만약 본인이 코딩입문자라면 이 링크를 보고, [Processing](https://processing.org/) 코딩이 익숙해졌을때쯤 다시 돌아와 이책을 보길 권한다.)
 
-이책은 독자들에게 쉐이더를 프로젝트에 어떻게 쓰는지와, 이를 통한 퍼포먼스 향상과 퀄리티를 높이는 방법들을 보여줄것이다. GLSL (OpenGL Shading Language) 쉐이더들은 OpenGL, OpenGL ES 혹은 WebGL을 가진 환경에서 컴파일되고 실행될것이다. 한마디로, 이것에 대한 기술을 [Processing](https://processing.org/) 스켓치파일들, [openFrameworks](http://openframeworks.cc/) 어플들, [Cinder](http://libcinder.org/) 설치미술들, [Three.js](http://threejs.org/) 웹사이트들 또는 iOS/Android 게임들에 적용할수 있다는 것이다.
+이책은 독자들에게 쉐이더를 프로젝트에 어떻게 쓰는지와, 이를 통한 퍼포먼스 향상과 퀄리티를 높이는 방법들을 보여줄것이다. [GLSL (OpenGL Shading Language)](https://ko.wikipedia.org/wiki/GLSL) 쉐이더들은 OpenGL, OpenGL ES 혹은 WebGL을 가진 환경에서 컴파일되고 실행될것이다. 한마디로, 이것에 대한 기술을 [Processing](https://processing.org/) 스켓치파일들, [openFrameworks](http://openframeworks.cc/) 어플들, [Cinder](http://libcinder.org/) 설치미술들, [Three.js](http://threejs.org/) 웹사이트들 또는 iOS/Android 게임들에 적용할수 있다는 것이다.
 
 ## 어떤 내용들을 다루나?
 

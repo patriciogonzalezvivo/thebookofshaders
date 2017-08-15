@@ -19,7 +19,7 @@
 
 この本はプログラムの経験と基本的な線形代数や三角関数の知識があり、ワンランク上のグラフィックを目指すクリエイティブコーダー、ゲームデベロッパーなどの開発者に向けて書かれています。もしコーディングについて学びたい場合は[Processing](https://processing.org/)をまず勉強して戻ってくることをお勧めします。
 
-この本ではフラグメントシェーダーをプロジェクトに組み込む方法、パフォーマンスやグラフィックのクオリティを改善する方法を学ぶことができます。GLSL (OpenGL Shading Language, OpenGLシェーダー言語)は様々なプラットフォーム上でコンパイルして走らせることができるので、ここで学習したことはOpenGL、OpenGL ESまたはWebGLが使えるのできるどんな環境でも生かすことができます。
+この本ではフラグメントシェーダーをプロジェクトに組み込む方法、パフォーマンスやグラフィックのクオリティを改善する方法を学ぶことができます。[GLSL (OpenGL Shading Language](https://ja.wikipedia.org/wiki/GLSL), OpenGLシェーダー言語)は様々なプラットフォーム上でコンパイルして走らせることができるので、ここで学習したことはOpenGL、OpenGL ESまたはWebGLが使えるのできるどんな環境でも生かすことができます。
 
 たとえば、[Processing](https://processing.org/)のスケッチ、 [openFrameworks](http://openframeworks.cc/)で作ったアプリケーション、 [Cinder](http://libcinder.org/)で作ったインスタレーション、 [Three.js](http://threejs.org/)を用いたウェブサイトやiOS/Androidのゲームなどが対象です。
 
