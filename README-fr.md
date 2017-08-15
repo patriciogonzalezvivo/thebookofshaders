@@ -54,10 +54,12 @@ Ceci est un guide étape-par-étape à travers le monde abstrait et complexe des
     * Ray marching
     * Réflection & réfraction
 
-* [Appendice:](appendix/) Autres manières d'utiliser ce livre
-	* [Comment puis-je consulter ce livre hors-ligne?](appendix/)
-	* [Comment exécuter les exemples sur un Raspberry Pi?](appendix/)
-	* [Comment imprimer ce livre?](appendix/)
+* [Annexes :](appendix/) Autres manières d'utiliser ce livre
+	* [Comment puis-je consulter ce livre hors-ligne ?](appendix/00/?lan=fr)
+	* [Comment exécuter les exemples sur un Raspberry Pi ?](appendix/01/?lan=fr)
+	* [Comment imprimer ce livre ?](appendix/02/?lan=fr)
+	* [Comment puis-je contribuer à ce livre?](appendix/03/?lan=fr)
+	* [Une introduction pour ceux qui viennent de JS](appendix/04/?lan=fr) de [Nicolas Barradeau](http://www.barradeau.com/)
 
 * [Galerie d'exemples](examples/)
 
