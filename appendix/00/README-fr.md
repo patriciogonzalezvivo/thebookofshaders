@@ -1,4 +1,4 @@
-## Comment lire ce livre hors ligne ?
+## Comment puis-je consulter ce livre hors-ligne ?
 
 Disons que vous vous préparez à partir pour un long voyage et que vous souhaitez le mettre à profit pour apprendre quelques shaders. Dans ce cas, pourquoi pas créer une copie locale de ce livre sur votre ordinateur et lancer un serveur local.
 
