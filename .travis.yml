@@ -2,7 +2,7 @@ language: python
 python:
   - 2.7
 install:
-  - sudo apt-get install cmake xorg-dev libglu1-mesa-dev texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended pandoc
+  - sudo apt-get install cmake xorg-dev libglu1-mesa-dev texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended pandoc imagemagick
   - # Install glfw
   - git clone https://github.com/glfw/glfw.git ~/glfw
   - cd ~/glfw

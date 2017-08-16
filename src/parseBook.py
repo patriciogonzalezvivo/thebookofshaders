@@ -41,6 +41,14 @@ def injectShaderBlocks( _folder, _text ):
             print shaderCommand
             returnCode = subprocess.call(shaderCommand, shell=True)
             rta += "![]("+shaderImage+")\n"
+        elif line.find('.gif') >= 0:
+            gifPath = re.sub(r'\!\[.*\]\((.*\.gif)\)', r'\1', line.rstrip())
+            gifName, gifExt = os.path.splitext(gifPath)
+            pngImage = gifName + ".png"
+            convertCommand = "convert " + gifPath + " " + pngImage
+            print convertCommand
+            returnCode = subprocess.call(convertCommand, shell=True)
+            rta += re.sub(r'\!\[(.*)\]\((.*)\.gif\)', r'![\1](\2-0.png)', line) + '\n'
         else:
             rta += line+'\n'
     return rta
