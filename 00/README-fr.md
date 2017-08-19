@@ -1,4 +1,4 @@
-﻿# Introduction
+# Introduction
 
 <canvas id="custom" class="canvas" data-fragment-url="cmyk-halftone.frag" data-textures="vangogh.jpg" width="700px" height="320px"></canvas>
 
