@@ -38,7 +38,7 @@
 
         function init() {
             container = document.getElementById( 'container' );
-            
+
             camera = new THREE.Camera();
             camera.position.z = 1;
 
@@ -63,7 +63,7 @@
 
             renderer = new THREE.WebGLRenderer();
             renderer.setPixelRatio( window.devicePixelRatio );
-            
+
             container.appendChild( renderer.domElement );
 
             onWindowResize();

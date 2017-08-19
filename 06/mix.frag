@@ -13,9 +13,9 @@ void main() {
 
     float pct = abs(sin(u_time));
 
-    // Mix uses pct (a value from 0-1) to 
+    // Mix uses pct (a value from 0-1) to
     // mix the two colors
-    color = mix(colorA, colorB, pct); 
+    color = mix(colorA, colorB, pct);
 
     gl_FragColor = vec4(color,1.0);
 }

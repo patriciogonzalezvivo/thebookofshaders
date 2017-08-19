@@ -86,7 +86,7 @@ void main() {
     float t = u_time*.1;
     color.r = shapeBorder(st,vec2(0.1,t),0.8,0.02);
     color.g = shapeBorder(st,vec2(0.2,t),0.8,0.02);
-    color.b = shapeBorder(st,vec2(0.3,t),0.8,0.02); 
+    color.b = shapeBorder(st,vec2(0.3,t),0.8,0.02);
 
 	gl_FragColor = vec4( color, 1.0 );
 }

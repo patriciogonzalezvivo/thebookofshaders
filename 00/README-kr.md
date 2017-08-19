@@ -45,4 +45,3 @@ Fragment shader는 매우 빠른 속도로 스크린에 렌더되는 픽셀들�
 - [이책의 PDF버젼 만들기](https://thebookofshaders.com/appendix/)
 
 - 또는 [온라인 리포](https://github.com/patriciogonzalezvivo/thebookofshaders) 이슈들을 답하거나, 올려주세요.
-

@@ -21,30 +21,30 @@ Die hier genutzte Eins-zu-Eins-Abbildung zwischen *x* und *y* (in diesem Fall al
 
 Interessant, nicht wahr? Versuche einfach einmal, in der *Zeile 22* andere Exponenten wie beispielsweise ```20.0```, ```2.0```, ```1.0```, ```0.0```, ```0.2``` und ```0.02``` einzusetzen. Das Verständnis zwischen dem Exponenten und den daraus resultierenden Werten wird Dir sicher weiterhelfen. Schließlich ist es der geschickte Einsatz dieser und anderer mathematischer Funktionen, die Dir bei der Shader-Programmierung unglaubliche Möglichkeiten eröffnen.
 
-[```pow()```](../glossary/?search=pow) ist eine eingebaute mathematische Funktion von GLSL. Daneben gibt es noch viele weitere. Die meisten davon können sehr schnell in der Hardware der Grafikkarte ausgeführt werden. Ihr geschickter Einsatz beschleunigt deshalb die Ausführung Deiner Shader. 
+[```pow()```](../glossary/?search=pow) ist eine eingebaute mathematische Funktion von GLSL. Daneben gibt es noch viele weitere. Die meisten davon können sehr schnell in der Hardware der Grafikkarte ausgeführt werden. Ihr geschickter Einsatz beschleunigt deshalb die Ausführung Deiner Shader.
 
 Ersetze die Funktion *pow* in der *Zeile 22* durch eine andere Funktion und beobachte das Resultat. Probiere zum Beispiel die folgenden Funktionen aus: [```exp()```](../glossary/?search=exp), [```log()```](../glossary/?search=log) und [```sqrt()```](../glossary/?search=sqrt). Einige dieser Funktionen erzeugen interessantere Ergebnisse, wenn man sie in Verbindung mit einem Vielfachen oder einem Bruchteil der Kreiszahl *pi* nutzt. In der *Programmzeile 8* findest Du deshalb ein Makro, dass das Symbol ```PI``` innerhalb des Programmcodes durch den zugehörigen Wert ```3.14159265359``` ersetzt.
- 
+
 ### Step und Smoothstep
 
-GLSL bringt auch einige einzigartige Interpolationsfunktionen mit, die durch die Hardware beschleunigt werden. 
+GLSL bringt auch einige einzigartige Interpolationsfunktionen mit, die durch die Hardware beschleunigt werden.
 
-Die Interpolationsfunktion [```step()```](../glossary/?search=step) nimmt zwei Argumente entgegen: Das erste verkörpert den Schwellenwert, während das zweite Argument den Wert darstellt, der mit diesem Schwellenwert verglichen werden soll. Liegt dieser Wert unterhalb des Schwellenwerts, liefert die Funktion ```0.0``` zurück, bei jedem Wert größer oder gleich dem Schwellenwert hingegen ```1.0```. 
+Die Interpolationsfunktion [```step()```](../glossary/?search=step) nimmt zwei Argumente entgegen: Das erste verkörpert den Schwellenwert, während das zweite Argument den Wert darstellt, der mit diesem Schwellenwert verglichen werden soll. Liegt dieser Wert unterhalb des Schwellenwerts, liefert die Funktion ```0.0``` zurück, bei jedem Wert größer oder gleich dem Schwellenwert hingegen ```1.0```.
 
-Ändere im folgenden Programmcode doch einfach einmal den Schwellenwert in *Zeile 20* und beobachte, was dann passiert. 
+Ändere im folgenden Programmcode doch einfach einmal den Schwellenwert in *Zeile 20* und beobachte, was dann passiert.
 
 <div class="codeAndCanvas" data="step.frag"></div>
 
-Die zweite eingebaute Interpolationsfunktion trägt den Namen [```smoothstep()```](../glossary/?search=smoothstep). Sie interpoliert einen Wert, sofern sich dieser innerhalb eines angegebenen Wertbereichs befindet. Die ersten zwei Argumente stellen dabei die untere und die obere Schwelle dieses Wertebereichs dar, während das dritte Argument den zu interpolierenden Wert verkörpert. 
+Die zweite eingebaute Interpolationsfunktion trägt den Namen [```smoothstep()```](../glossary/?search=smoothstep). Sie interpoliert einen Wert, sofern sich dieser innerhalb eines angegebenen Wertbereichs befindet. Die ersten zwei Argumente stellen dabei die untere und die obere Schwelle dieses Wertebereichs dar, während das dritte Argument den zu interpolierenden Wert verkörpert.
 
-Die Funktion liefert ```0.0``` zurück, wenn der zu interpolierende Wert unterhalb des genannten Schwellenwerts liegt, also kleiner als das erste Argument ist. Analog dazu liefert sie ```1.0``` zurück, wenn der zu interpolierende Wert größer als der obere Schwellenwert 
+Die Funktion liefert ```0.0``` zurück, wenn der zu interpolierende Wert unterhalb des genannten Schwellenwerts liegt, also kleiner als das erste Argument ist. Analog dazu liefert sie ```1.0``` zurück, wenn der zu interpolierende Wert größer als der obere Schwellenwert
 ist. Befindet sich der zu interpolierende Wert jedoch innerhalb der gegebenen Spanne, wird ein Wert zwischen ```0.0``` und ```1.0``` zurückgeliefert, je nachdem wie nahe sich der Wert am oberen oder unteren Ende der Spanne befindet. Genau in der Mitte lautet das Ergebnis ```0.5```.
 
 Wie das folgende Programm zeigt, ist das Ergebnis jedoch nicht vollständig linear, sondern am oberen und unteren Ende des Wertebereichs etwas „abgerundet“. Dadurch wird in den Randbereichen bewusst ein etwas weicherer Übergang erzielt, falls sich weitere interpolierte Werte anschließen.
 
 <div class="codeAndCanvas" data="smoothstep.frag"></div>
 
-Im obigen Beispiel nutzen wir die ```smoothstep()```-Funktion innerhalb der ```plot()```-Funktion, um die grüne Linie zu erzeugen, die die Ergebnisse aus der Y-Berechnung in *Zeile 20* darstellt. Siehst Du, wie diese grüne Linie nach oben und unten jeweils ein wenig ausfedert und sanft in den Hintergrund übergeht? Das erreichen wir, indem wir in *Zeile 12 und 13* zwei Aufrufe von [```smoothstep()```](../glossary/?search=smoothstep) miteinander verbinden. Schau Dir die folgende Berechnung an und setze sie in die *Zeile 20* ein. 
+Im obigen Beispiel nutzen wir die ```smoothstep()```-Funktion innerhalb der ```plot()```-Funktion, um die grüne Linie zu erzeugen, die die Ergebnisse aus der Y-Berechnung in *Zeile 20* darstellt. Siehst Du, wie diese grüne Linie nach oben und unten jeweils ein wenig ausfedert und sanft in den Hintergrund übergeht? Das erreichen wir, indem wir in *Zeile 12 und 13* zwei Aufrufe von [```smoothstep()```](../glossary/?search=smoothstep) miteinander verbinden. Schau Dir die folgende Berechnung an und setze sie in die *Zeile 20* ein.
 
 ```glsl
     float y = smoothstep(0.2,0.5,st.x) - smoothstep(0.5,0.8,st.x);
@@ -65,7 +65,7 @@ Es ist nicht ganz leicht, alle Zusammenhänge zwischen trigonometrischen Funktio
 
 <div class="simpleFunction" data="y = sin(x);"></div>
 
-Schau Dir die Sinuswelle genau an und beobachte, wie der daraus abgeleitete Wert für die Y-Ordinate auf dem Einheitskreis sanft zwischen ```+1``` und ```-1``` oszilliert. Und mit der Cosinuswelle erzeugen wir die zugehörige X-Ordinate. 
+Schau Dir die Sinuswelle genau an und beobachte, wie der daraus abgeleitete Wert für die Y-Ordinate auf dem Einheitskreis sanft zwischen ```+1``` und ```-1``` oszilliert. Und mit der Cosinuswelle erzeugen wir die zugehörige X-Ordinate.
 
 Wie wir in dem zeitbasierten Beispiel im vorangegangenen Kapitel gesehen haben, lässt sich dieses rhythmische Verhalten von [```sin()```](../glossary/?search=sin) gut nutzen, um bestimmte Werte und Eigenschaften zu animieren. Wenn Du diesen Text in einem Internet-Browser liest, wirst du feststellen, dass Du die obige Formel *y=sin(x);* editieren kannst, um zu sehen, wie sich die Funktionskurve dadurch ändert. (Hinweis: Bitte nicht das Semikolon am Ende der Zeile vergessen, sonst gibt es einen Syntaxfehler.)
 
@@ -77,7 +77,7 @@ Probiere die folgenden Übungen aus und beobachte, was daraufhin geschieht:
 
 * Multipliziere die Zeit (```u_time```) mit *x*, bevor Du daraus den ```sin``` berechnest. Du wirst sehen, wie die einzelnen Wellen so weit zusammengedrückt werden, dass das Ergebnis wie ein unidentifizierbares Rauschen wirkt.
 
-* Addiere den Wert ```1.0``` zum Ergebnis von [```sin(x)```](../glossary/?search=sin) hinzu und beobachte, wie sich die Welle dadurch nach oben verschiebt und jeweils zwischen den Werten von ```0.0``` und ```2.0``` oszilliert. 
+* Addiere den Wert ```1.0``` zum Ergebnis von [```sin(x)```](../glossary/?search=sin) hinzu und beobachte, wie sich die Welle dadurch nach oben verschiebt und jeweils zwischen den Werten von ```0.0``` und ```2.0``` oszilliert.
 
 * Multipliziere [```sin(x)```](../glossary/?search=sin) mit ```2.0```. Du wirst feststellen, dass sich die Amplitude der Schwingung (die Minimal- und Maximalwerte) verdoppelt.
 
@@ -105,7 +105,7 @@ Am Ende der letzten Übung haben wir einige neue Funktionen eingeführt. Jetzt i
 
 ### Fortgeschrittene formgebende Funktionen
 
-[Golan Levin](http://www.flong.com/) hat eine großartige Dokumentation über komplexe formgebende Funktionen verfasst, die für unsere Zwecke extrem hilfreich ist. Indem Du einen Teil dieser Funktionen nach GLSL portierst, schaffst Du Dir eine wertvolle Sammlung an Codeschnipseln. 
+[Golan Levin](http://www.flong.com/) hat eine großartige Dokumentation über komplexe formgebende Funktionen verfasst, die für unsere Zwecke extrem hilfreich ist. Indem Du einen Teil dieser Funktionen nach GLSL portierst, schaffst Du Dir eine wertvolle Sammlung an Codeschnipseln.
 
 * [Polynomische formgebende Funktionen: www.flong.com/texts/code/shapers_poly](http://www.flong.com/texts/code/shapers_poly/)
 
@@ -117,7 +117,7 @@ Am Ende der letzten Übung haben wir einige neue Funktionen eingeführt. Jetzt i
 
 <div class="glslGallery" data="160414041542,160414041933,160414041756" data-properties="clickRun:editor,hoverPreview:false"></div>
 
-Genau wie Küchenchefs Gewürze und exotische Zutaten sammeln, entwickeln Digitalkünstler und kreative Entwickler häufig eine Liebe für bestimmte formgebenden Funktionen. 
+Genau wie Küchenchefs Gewürze und exotische Zutaten sammeln, entwickeln Digitalkünstler und kreative Entwickler häufig eine Liebe für bestimmte formgebenden Funktionen.
 
 [Inigo Quiles](http://www.iquilezles.org/) stellt eine großartige Auswahl an [nützlichen Funktionen](http://www.iquilezles.org/www/articles/functions/functions.htm) vor. Wenn Du [diesen Artikel](http://www.iquilezles.org/www/articles/functions/functions.htm) gelesen hast, dann werfe einen Blick auf die folgenden Übertragungen dieser Funktionen nach GLSL. Beobachte aufmerksam die kleinen, aber erforderlichen Anpassungen wie etwa den Punkt (".") bei Fließkommazahlen und die Umsetzung der Funktionsnamen von C auf GLSL; so heißt es in GLSL beispielsweise ```pow()``` statt ```powf()``` wie in C:   
 

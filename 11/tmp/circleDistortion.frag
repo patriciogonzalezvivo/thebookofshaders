@@ -90,7 +90,7 @@ float shapeBorder(vec2 st, float radius, float width) {
 
 void main() {
 	vec2 st = gl_FragCoord.xy/u_resolution.xy;
-	
+
     vec3 color = vec3(0.0);
     vec3 normals = nNoise(st*6.+u_time);
     color = vec3(1.) * shapeBorder(st,0.8,0.02);

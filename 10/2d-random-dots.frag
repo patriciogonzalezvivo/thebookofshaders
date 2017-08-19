@@ -21,7 +21,7 @@ float random(in vec2 st){ return fract(sin(dot(st.xy ,vec2(12.9898,78.233))) * 4
 void main(){
   vec2 st = gl_FragCoord.xy/u_resolution.xy;
   st.x *= u_resolution.x/u_resolution.y;
-  
+
   st *= 10.0;
   // Offset every other row
   st.x -= step(1., mod(st.y,2.0)) * 0.5;

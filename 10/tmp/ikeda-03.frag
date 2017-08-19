@@ -26,10 +26,10 @@ void main() {
     }
     vec2 grid = vec2(100.0,50.);
     st *= grid;
-    
+
     vec2 ipos = floor(st);  // integer
     vec2 fpos = fract(st);  // fraction
-    
+
     vec2 vel = vec2(u_time*2.*max(grid.x,grid.y)); // time
     vel *= vec2(-1.,0.0) * random(1.0+ipos.y); // direction
 

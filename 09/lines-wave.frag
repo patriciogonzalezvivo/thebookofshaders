@@ -27,7 +27,7 @@ float line(vec2 st, float width) {
 void main(){
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     st.x *= u_resolution.x/u_resolution.y;
-   
+
    	st *= 10.;
    	st = wave(st, 3.);
     vec3 color = vec3(line(st,.5));

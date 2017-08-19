@@ -42,7 +42,7 @@ ce que ce livre n'est pas:
 * ce *n'est pas* livre sur l'openGL ou le webGL. OpenGL/webGL dépasse de loin le GLSL ou les shaders. si vous voulez en savoir plus, les liens suivants vous aideront [OpenGL Introduction](https://open.gl/introduction), [the 8th edition of the OpenGL Programming Guide](http://www.amazon.com/OpenGL-Programming-Guide-Official-Learning/dp/0321773039/ref=sr_1_1?s=books&ie=UTF8&qid=1424007417&sr=1-1&keywords=open+gl+programming+guide) (alias "the red book") ou [WebGL: Up and Running](http://www.amazon.com/WebGL-Up-Running-Tony-Parisi/dp/144932357X/ref=sr_1_4?s=books&ie=UTF8&qid=1425147254&sr=1-4&keywords=webgl)
 
 * ce *n'est pas* un livre de maths. Même si le livre contient un certain nombre de notions et d'algorithmes nécessitant des connaissances en algèbre et en trigonométrie, nous ne rentrerons pas dans le détail. Pour toute question relative aux maths, vous pouvez choisir un de ces livres et le garder près de vous : [3rd Edition of Mathematics for 3D Game Programming and computer Graphics](http://www.amazon.com/Mathematics-Programming-Computer-Graphics-Third/dp/1435458869/ref=sr_1_1?ie=UTF8&qid=1424007839&sr=8-1&keywords=mathematics+for+games) ou [2nd Edition of Essential Mathematics for Games and Interactive Applications](http://www.amazon.com/Essential-Mathematics-Games-Interactive-Applications/dp/0123742978/ref=sr_1_1?ie=UTF8&qid=1424007889&sr=8-1&keywords=essentials+mathematics+for+developers).
- 
+
 
 ## bien démarrer
 
@@ -57,4 +57,3 @@ Cela étant et selon ce que vous voulez faire de ce livre, vous pouvez :
 - [créer un PDF du livre pour l'imprimer](https://thebookofshaders.com/appendix/)
 
 - vous servir du [repo online](https://github.com/patriciogonzalezvivo/thebookofshaders) pour contribuer ou nous aider à débugger.
-

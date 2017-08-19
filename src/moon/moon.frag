@@ -18,11 +18,11 @@ float speedMoon = 0.01;
 float speedSun = 0.25;
 
 vec3 sphereNormals(in vec2 uv) {
-    uv = fract(uv)*2.0-1.0; 
+    uv = fract(uv)*2.0-1.0;
     vec3 ret;
     ret.xy = sqrt(uv * uv) * sign(uv);
     ret.z = sqrt(abs(1.0 - dot(ret.xy,ret.xy)));
-    ret = ret * 0.5 + 0.5;    
+    ret = ret * 0.5 + 0.5;
     return mix(vec3(0.0), ret, smoothstep(1.0,0.98,dot(uv,uv)) );
 }
 
@@ -57,13 +57,13 @@ vec4 sphereTexture(in sampler2D _tex, in vec2 _uv) {
 void main(){
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     vec3 color = vec3(1.0);
-  
+
     color *= sphereTexture(u_tex0, st).rgb;
 
     // Calculate sun direction
     vec3 sunPos = normalize(vec3(cos(u_time*speedSun-HALF_PI),0.0,sin(speedSun*u_time-HALF_PI)));
     vec3 surface = normalize(sphereNormals(st)*2.0-1.0);
-   
+
     // Add Shadows
     color *= dot(sunPos,surface);
 

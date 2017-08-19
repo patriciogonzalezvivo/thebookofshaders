@@ -1,5 +1,5 @@
 ## 形状
- 
+
 
 ![Alice Hubbard, Providence, United States, ca. 1892. Photo: Zindman/Freemont.](froebel.jpg)
 
@@ -20,7 +20,7 @@
 ```glsl
     if ( (X GREATER THAN 1) AND (Y GREATER THAN 1) )
         paint white
-    else 
+    else
         paint black
 ```
 
@@ -32,13 +32,13 @@ uniform vec2 u_resolution;
 void main(){
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     vec3 color = vec3(0.0);
-    
+
     // Each result will return 1.0 (white) or 0.0 (black).
     float left = step(0.1,st.x);   // Similar to ( X greater than 0.1 )
     float bottom = step(0.1,st.y); // Similar to ( Y greater than 0.1 )
 
     // The multiplication of left*bottom will be similar to the logical AND.
-    color = vec3( left * bottom ); 
+    color = vec3( left * bottom );
 
     gl_FragColor = vec4(color,1.0);
 }
@@ -51,7 +51,7 @@ step（）函数会让没每一个小于0.1的像素变成黑色（vec3（0.0）
 在前一例代码中我们重复每个像素的结构（左边和底边）。我们可以把原来的一个值换成两个值直接给step（）来精减代码。就像这样：
 
 ```glsl
-    vec2 borders = step(vec2(0.1),st); 
+    vec2 borders = step(vec2(0.1),st);
     float pct = borders.x * borders.y;
 ```
 
@@ -131,7 +131,7 @@ There are several ways to calculate that distance. The easiest one uses the [```
 其实我们是通过“空间距离”来重新解释什么是图形。这种技巧被称之为“距离场”，从字体轮廓到3D图形被广泛应用。
 
 来小试下牛刀：
- 
+
 * 用[```step()```](../glossary/?search=step)函数把所有大于0.5的像素点变成白色，并把小于的变成黑色（0.0）。
 
 * 反转前景色和背景色。
@@ -229,7 +229,7 @@ pct = pow(distance(st,vec2(0.4)),distance(st,vec2(0.6)));
 
 * 用这个例子，改造一个输入位置，指定图形（形状）的顶点数来返回一个距离场（的值）。
 
-* 结合使用 [```min()```](../glossary/?search=min) 和 [```max()```](../glossary/?search=max) 函数混合距离场。 
+* 结合使用 [```min()```](../glossary/?search=min) 和 [```max()```](../glossary/?search=max) 函数混合距离场。
 
 * 用距离场画个自己感兴趣的logo。
 

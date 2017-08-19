@@ -6,7 +6,7 @@ Grazie al [progetto Raspberry Pi](http://www.raspberrypi.org/) una nuova generaz
 
 Facendo una copia locale del repository di questo libro (vedi paragrafo precedente) e con [```glslViewer``` installato](https://github.com/patriciogonzalezvivo/glslViewer), gli utenti possono eseguire gli esempi con ```glslviewer```. Inoltre usando il flag ```-l``` si può visualiizare l'esempio in un angolo dello schermo mentre lo si modifica con un qualsiasi editor di testo (come ```nano```, ```pico```, ```vi```, ```vim``` or ```emacs```). Questo funziona anche quando l'utente è collegato tramite ssh/sftp.
 
-Per installare e configurare tutto ciò sul Raspberry Pi, dopo l'installazione del sistema operativo e il login, digitate i seguenti comandi: 
+Per installare e configurare tutto ciò sul Raspberry Pi, dopo l'installazione del sistema operativo e il login, digitate i seguenti comandi:
 
 ```bash
 sudo apt-get update

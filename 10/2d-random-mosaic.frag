@@ -9,9 +9,9 @@ uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
 
-float random (vec2 st) { 
+float random (vec2 st) {
     return fract(sin(dot(st.xy,
-                         vec2(12.9898,78.233)))* 
+                         vec2(12.9898,78.233)))*
         43758.5453123);
 }
 
@@ -23,7 +23,7 @@ void main() {
     vec2 fpos = fract(st);  // get the fractional coords
 
     // Assign a random value based on the integer coord
-    vec3 color = vec3(random( ipos )); 
+    vec3 color = vec3(random( ipos ));
 
     // Uncomment to see the subdivided grid
     // color = vec3(fpos,0.0);

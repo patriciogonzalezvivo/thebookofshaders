@@ -21,13 +21,13 @@ void main() {
     st *= grid;
 
     vec2 ipos = floor(st);  // integer
-    
+
     vec2 vel = floor(vec2(u_time*10.)); // time
     vel *= vec2(-1.,0.); // direction
 
     vel *= (step(1., mod(ipos.y,2.0))-0.5)*2.; // Oposite directions
     vel *= random(ipos.y); // random speed
-    
+
     // 100%
     float totalCells = grid.x*grid.y;
     float t = mod(u_time*max(grid.x,grid.y)+floor(1.0+u_time*u_mouse.y),totalCells);

@@ -74,7 +74,7 @@ mat2 scale(vec2 _scale){
 }
 ```
 
-<div class="codeAndCanvas" data="cross-scale.frag"></div> 
+<div class="codeAndCanvas" data="cross-scale.frag"></div>
 
 Provate i seguenti esercizi per capirne il funzionamento.
 

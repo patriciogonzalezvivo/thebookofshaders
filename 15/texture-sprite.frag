@@ -22,16 +22,16 @@ void main () {
     // Resolution of one frame
     vec2 fRes = u_tex0Resolution/vec2(float(col),float(row));
 
-    // Normalize value of the frame resolution 
+    // Normalize value of the frame resolution
     vec2 nRes = u_tex0Resolution/fRes;
 
     // Scale the coordenates to a single frame
     st = st/nRes;
 
     // Calculate the offset in cols and rows
-    float timeX = u_time*15.; 
+    float timeX = u_time*15.;
     float timeY = floor(timeX/float(col));
-    vec2 offset = vec2( floor(timeX)/nRes.x, 
+    vec2 offset = vec2( floor(timeX)/nRes.x,
                         1.0-(floor(timeY)/nRes.y) );
     st = fract(st+offset);
 

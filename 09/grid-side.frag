@@ -29,8 +29,8 @@ float X(vec2 _st, float _width){
 void main(void){
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     st = tile(st,10.0);
-    
+
     vec3 color = vec3(X(st,0.03));
 
-    gl_FragColor = vec4(color,1.0);    
+    gl_FragColor = vec4(color,1.0);
 }

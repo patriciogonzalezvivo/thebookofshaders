@@ -16,13 +16,13 @@ void main(){
     // a. The DISTANCE from the pixel to the center
     pct = distance(st,vec2(0.5));
 
-    // b. The LENGTH of the vector 
-    //    from the pixel to the center 
+    // b. The LENGTH of the vector
+    //    from the pixel to the center
     // vec2 toCenter = vec2(0.5)-st;
     // pct = length(toCenter);
 
-    // c. The SQUARE ROOT of the vector 
-    //    from the pixel to the center 
+    // c. The SQUARE ROOT of the vector
+    //    from the pixel to the center
     // vec2 tC = vec2(0.5)-st;
     // pct = sqrt(tC.x*tC.x+tC.y*tC.y);
 

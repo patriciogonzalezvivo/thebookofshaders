@@ -31,7 +31,7 @@ void main(){
   vec3 color = vec3(0.0);
 
   st = mirrorTile(st,10.);
-  float x = st.x*2.; 
+  float x = st.x*2.;
   float a = floor(1.+sin(x*3.14));
   float b = floor(1.+sin((x+1.)*3.14));
   float f = fract(x);

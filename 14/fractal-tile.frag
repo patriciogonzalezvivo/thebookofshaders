@@ -54,7 +54,7 @@ void main() {
     vec3 color = vec3(0.0);
 
     st = tileFractal(st,3,2);
-    
+
    	float pct = 0.;
     pct = circle(st,.999);
    	// pct = box(st,vec2(.95));

@@ -17,17 +17,17 @@ void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     st.x *= u_resolution.x/u_resolution.y;
     vec3 color = vec3(.0);
-    
-    // Scale 
+
+    // Scale
     st *= 3.;
-    
+
     // Tile the space
     vec2 i_st = floor(st);
     vec2 f_st = fract(st);
 
     vec2 point = random2(i_st);
     vec2 diff = point - f_st;
-    
+
     float dist = length(diff);
 
     // Draw the min distance (distance field)
@@ -35,12 +35,12 @@ void main() {
 
     // Draw cell center
     color += 1.-step(.02, dist);
-    
+
     // Draw grid
     color.r += step(.98, f_st.x) + step(.98, f_st.y);
-    
+
     // Show isolines
     // color -= step(.7,abs(sin(27.0*dist)))*.5;
-    
+
     gl_FragColor = vec4(color,1.0);
 }

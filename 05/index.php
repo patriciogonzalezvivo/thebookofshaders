@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	$path = "..";
 	$subtitle = ": Shaping functions";
@@ -19,7 +19,7 @@
 	include($path."/src/parsedown/Parsedown.php");
 	$Parsedown = new Parsedown();
 	echo $Parsedown->text(file_get_contents($README.'.md'));
-	
+
 	echo '
 	</div>
 	<hr>
@@ -29,5 +29,5 @@
 		<li class="navigationBar" onclick="nextPage()">Next &gt; &gt;</li>
 	</ul>';
 
-	include($path."/footer.php"); 
+	include($path."/footer.php");
 ?>

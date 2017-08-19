@@ -9,7 +9,7 @@ Unter **MacOSX** benötigst Du dafür [homebrew](http://brew.sh/). Sobald das Pa
 ```bash
 brew update
 brew upgrade
-brew install git 
+brew install git
 ```
 
 Auf einem **RaspberryPi** gibst Du folgendes ein:

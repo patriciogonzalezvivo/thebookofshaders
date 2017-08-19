@@ -1,5 +1,5 @@
 // Author @patriciogv - 2015
-// Title: Truchet - 10 print 
+// Title: Truchet - 10 print
 
 #ifdef GL_ES
 precision mediump float;
@@ -11,9 +11,9 @@ uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
 
-float random (in vec2 _st) { 
+float random (in vec2 _st) {
     return fract(sin(dot(_st.xy,
-                         vec2(12.9898,78.233)))* 
+                         vec2(12.9898,78.233)))*
         43758.5453123);
 }
 

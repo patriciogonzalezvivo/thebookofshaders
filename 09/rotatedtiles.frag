@@ -26,7 +26,7 @@ vec2 tile (vec2 _st, float _zoom) {
 vec2 rotateTile(vec2 _st){
     _st *= 2.0;
 
-    float index = 0.0;    
+    float index = 0.0;
     if (fract(_st.x * 0.5) > 0.5){
         index += 1.0;
     }
@@ -48,8 +48,8 @@ vec2 rotateTile(vec2 _st){
 }
 
 // Based on https://www.shadertoy.com/view/4sSSzG
-float triangle (vec2 _st, 
-                vec2 _p0, vec2 _p1, vec2 _p2, 
+float triangle (vec2 _st,
+                vec2 _p0, vec2 _p1, vec2 _p2,
                 float _smoothness) {
   vec3 e0, e1, e2;
 
@@ -65,8 +65,8 @@ float triangle (vec2 _st,
   float b = max(0.0, dot(e1.xy, _st) - e1.z);
   float c = max(0.0, dot(e2.xy, _st) - e2.z);
 
-  return smoothstep(_smoothness * 2.0, 
-                    1e-7, 
+  return smoothstep(_smoothness * 2.0,
+                    1e-7,
                     length(vec3(a, b, c)));
 }
 
@@ -75,17 +75,17 @@ void main (void) {
 
     st = tile(st,3.0);
     st = rotateTile(st);
-    
+
     float pattern = 0.0;
 
     st = rotate2D(st,-PI*u_time*0.25);
-    pattern =   triangle(st, 
-                         vec2(0.30,-0.5), 
-                         vec2(0.70,0.-0.5), 
-                         vec2(0.5,1.0), 
+    pattern =   triangle(st,
+                         vec2(0.30,-0.5),
+                         vec2(0.70,0.-0.5),
+                         vec2(0.5,1.0),
                          0.01);
 
     vec3 color = vec3(pattern);
 
-    gl_FragColor = vec4(color,1.0);    
+    gl_FragColor = vec4(color,1.0);
 }

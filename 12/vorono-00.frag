@@ -22,7 +22,7 @@ void main() {
     point[2] = vec2(0.28,0.64);
     point[3] =  vec2(0.31,0.26);
     point[4] = u_mouse/u_resolution;
-    
+
     float m_dist = 1.;  // minimun distance
     vec2 m_point;        // minimum position
 
@@ -38,17 +38,17 @@ void main() {
         }
     }
 
-    // Add distance field to closest point center 
+    // Add distance field to closest point center
     color += m_dist*2.;
 
     // tint acording the closest point position
     color.rg = m_point;
-    
+
     // Show isolines
     color -= abs(sin(80.0*m_dist))*0.07;
-    
+
     // Draw point center
     color += 1.-step(.02, m_dist);
-    
+
     gl_FragColor = vec4(color,1.0);
 }

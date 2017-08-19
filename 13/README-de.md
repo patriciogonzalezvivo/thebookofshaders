@@ -32,7 +32,7 @@ y += sin(x*frequenz*3.1122+ t*4.269)*2.5;
 y *= amplitude*0.06;
 "></div>
 
-* Experimentiere mit Veränderungen der Amplitude und der Frequenz bei den hinzuaddierten Wellen. 
+* Experimentiere mit Veränderungen der Amplitude und der Frequenz bei den hinzuaddierten Wellen.
 * Gelingt es Dir, zwei Wellen zu erschaffen, die sich gegenseitig aufheben? Wie würde das aussehen?
 * Ist es möglich, Wellen auf eine bestimmte Art und Weise zu addieren, so dass sie sich gegenseitig verstärken?
 
@@ -70,15 +70,15 @@ Der folgende Programmcode liefert ein Beispiel dafür, wie man eine fBm in zwei 
 
 <div class='codeAndCanvas' data='2d-fbm.frag'></div>
 
-* Reduziere die Anzahl der Oktaven, indem Du den Wert der Konstanten in *Zeile 37* änderst. 
+* Reduziere die Anzahl der Oktaven, indem Du den Wert der Konstanten in *Zeile 37* änderst.
 * Ändere die Porosität der fBm in *Zeile 47*.
 * Untersuche die Auswirkungen, wenn Du die Verstärkung in *Zeile 48* veränderst.
 
-Diese Technik wird in der Computergrafik häufig angewandt, um auf prozedurale Weise künstliche Landschaften zu erzeugen. Die Selbstähnlichkeit als Merkmal einer fBm ist perfekt für die Erzeugung von Bergen, Bergketten und ihren Tälern geeignet. Schließlich erzeugt die Erosion, die diese Strukturen in der Natur hervorbringt, ebenfalls eine Selbstähnlichkeit in mehreren unterschiedlichen Größenordnungen – im Großen wie im Kleinen. Falls Dich das Thema interessiert, empfehle ich Dir diesen [hervorragenden Beitrag von Inigo Quiles über hochentwickeltes Rauschen](http://www.iquilezles.org/www/articles/morenoise/morenoise.htm). 
+Diese Technik wird in der Computergrafik häufig angewandt, um auf prozedurale Weise künstliche Landschaften zu erzeugen. Die Selbstähnlichkeit als Merkmal einer fBm ist perfekt für die Erzeugung von Bergen, Bergketten und ihren Tälern geeignet. Schließlich erzeugt die Erosion, die diese Strukturen in der Natur hervorbringt, ebenfalls eine Selbstähnlichkeit in mehreren unterschiedlichen Größenordnungen – im Großen wie im Kleinen. Falls Dich das Thema interessiert, empfehle ich Dir diesen [hervorragenden Beitrag von Inigo Quiles über hochentwickeltes Rauschen](http://www.iquilezles.org/www/articles/morenoise/morenoise.htm).
 
 ![Blackout - Dan Holdsworth (2010)](holdsworth.jpg)
 
-Mit mehr oder weniger derselben Technik lassen sich auch andere Effekte nachahmen, beispielsweise **Turbulenzen**. Dies geschieht mit einer fBm, wobei allerdings der Absolutwert einer vorzeichenbehafteten Rauschfunktion genutzt wird, um starke Täler zu erzeugen. 
+Mit mehr oder weniger derselben Technik lassen sich auch andere Effekte nachahmen, beispielsweise **Turbulenzen**. Dies geschieht mit einer fBm, wobei allerdings der Absolutwert einer vorzeichenbehafteten Rauschfunktion genutzt wird, um starke Täler zu erzeugen.
 
 ```glsl
 for (int i = 0; i < OKTAVEN; i++) {
@@ -88,7 +88,7 @@ for (int i = 0; i < OKTAVEN; i++) {
 }
 ```
 
-<a href="../edit.php#13/turbulence.frag"><img src="turbulence-long.png"  width="520px" height="200px"></img></a> 
+<a href="../edit.php#13/turbulence.frag"><img src="turbulence-long.png"  width="520px" height="200px"></img></a>
 
 Ein weiteres Mitglied aus dieser Familie von Funktionen ist der **Bergrücken**, bei dem die tiefen Täler nach oben gekehrt werden, um scharfe Bergrücken bzw. Bergkämme zu erzeugen:
 
@@ -98,15 +98,15 @@ Ein weiteres Mitglied aus dieser Familie von Funktionen ist der **Bergrücken**,
     n = n * n;      // intensiviere die Ausbuchtung
 ```
 
-<a href="../edit.php#13/ridge.frag"><img src="ridge-long.png"  width="520px" height="200px"></img></a> 
+<a href="../edit.php#13/ridge.frag"><img src="ridge-long.png"  width="520px" height="200px"></img></a>
 
 Eine andere Variante dieses Verfahrens mit interessanten Ergebnissen besteht in der Multiplikation der einzelnen Rauschelemente anstelle der Addition. Man kann außerdem die Skalierung nicht gleichförmig mit jeder Detailebene (jedem Schleifendurchlauf) fortsetzen, sondern von den Ergebnissen vorheriger Schleifendurchläufe abhängig machen. Damit verlässt man allerdings die Welt klassischer Fraktale und dringt in das noch wenig erforschte Feld der „Multifraktale“ vor. Diese sind mathematisch nicht streng definiert, aber das macht sie für die Computergrafik nicht weniger nützlich. Tatsächlich werden Multifraktale bereits vielfältig in Software für die künstliche Erzeugung von Landschaftsstrukturen eingesetzt.
 
-Falls Dich dieses Thema interessiert, kannst Du darüber z.B. in Kapitel 16 des Buches „Texturing and Modeling: a Procedural Approach“ (dritte Auflage) von Kenton Musgrave, mehr erfahren. Leider ist das Buch seit einigen Jahren vergriffen, aber man findet es noch in Bibliotheken und auf dem Gebrauchtmarkt. (Eine PDF-Version der ersten Auflage wird im Internet verkauft, aber die stammt von 1994 und enthält leider noch nicht die hier empfohlenen Kapitel.) 
+Falls Dich dieses Thema interessiert, kannst Du darüber z.B. in Kapitel 16 des Buches „Texturing and Modeling: a Procedural Approach“ (dritte Auflage) von Kenton Musgrave, mehr erfahren. Leider ist das Buch seit einigen Jahren vergriffen, aber man findet es noch in Bibliotheken und auf dem Gebrauchtmarkt. (Eine PDF-Version der ersten Auflage wird im Internet verkauft, aber die stammt von 1994 und enthält leider noch nicht die hier empfohlenen Kapitel.)
 
 ### Raumkrümmung
 
-[Inigo Quiles hat einen weiteren faszinierenden Artikel](http://www.iquilezles.org/www/articles/warp/warp.htm) darüber verfasst, wie man ein fBm einsetzen kann, um einen Raum aus fBm zu verzerren. Abgefahren, nicht wahr? Das ist wie ein Traum über einen Traum, in dem es richtig rundgeht. 
+[Inigo Quiles hat einen weiteren faszinierenden Artikel](http://www.iquilezles.org/www/articles/warp/warp.htm) darüber verfasst, wie man ein fBm einsetzen kann, um einen Raum aus fBm zu verzerren. Abgefahren, nicht wahr? Das ist wie ein Traum über einen Traum, in dem es richtig rundgeht.
 
 ![ f(p) = fbm( p + fbm( p + fbm( p ) ) ) - Inigo Quiles (2002)](quiles.jpg)
 

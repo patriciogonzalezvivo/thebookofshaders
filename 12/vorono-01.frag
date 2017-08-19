@@ -17,17 +17,17 @@ void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     st.x *= u_resolution.x/u_resolution.y;
     vec3 color = vec3(.0);
-    
-    // Scale 
+
+    // Scale
     st *= 5.;
-    
+
     // Tile the space
     vec2 i_st = floor(st);
     vec2 f_st = fract(st);
 
     float m_dist = 10.;  // minimun distance
     vec2 m_point;        // minimum point
-    
+
     for (int j=-1; j<=1; j++ ) {
         for (int i=-1; i<=1; i++ ) {
             vec2 neighbor = vec2(float(i),float(j));
@@ -45,18 +45,18 @@ void main() {
 
     // Assign a color using the closest point position
     color += dot(m_point,vec2(.3,.6));
-    
-    // Add distance field to closest point center 
+
+    // Add distance field to closest point center
     // color.g = m_dist;
 
     // Show isolines
     color -= abs(sin(40.0*m_dist))*0.07;
-    
+
     // Draw cell center
     color += 1.-step(.05, m_dist);
-    
+
     // Draw grid
     color.r += step(.98, f_st.x) + step(.98, f_st.y);
-    
+
     gl_FragColor = vec4(color,1.0);
 }

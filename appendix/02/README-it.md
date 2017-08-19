@@ -1,7 +1,7 @@
 ## Come posso stampare questo libro?
 
 Diciamo che non si vuole navigare o interagire con gli esempi e si desidera solo un buon vecchio libro di testo che si può leggere sulla spiaggia o sul vostro tragitto verso la città. In questo caso è possibile stampare questo libro.
- 
+
 #### Installare glslViewer
 
 Per la stampa di questo libro è necessario in primo luogo trasformarlo. Per questo è necessario [```glslViewer```](https://github.com/patriciogonzalezvivo/glslViewer) uno strumento console per gli shader che compilerà e trasformare gli esempi in immagini.
@@ -13,7 +13,7 @@ brew update
 brew upgrade
 brew tap homebrew/versions
 brew install glfw3
-cd ~ 
+cd ~
 git clone http://github.com/patriciogonzalezvivo/glslViewer.git
 cd glslViewer
 make
@@ -35,7 +35,7 @@ Per trasformare i capitoli Markdown in Latex e poi in un file PDF useremo Xetex 
 Su  **MacOSX**:
 
 Scarica e Installa [basictex & MacTeX-Additions](http://www.tug.org/mactex/morepackages.html) e poi installa [Pandoc](http://johnmacfarlane.net/pandoc/) facendo:
- 
+
 ```bash
 brew install pandoc
 ```

@@ -39,7 +39,7 @@ void main(){
       st.x += 0.5;
       pos.x += 0.5/grid;
   }
-  
+
   float pattern = texture2D(u_tex0,clamp(floor(pos*grid)/grid+vec2(.5,.5)/grid,vec2(0.),vec2(1.))).r;
   pattern = circle(fract(st), smoothstep(0.1,1.,pattern));
 

@@ -91,7 +91,7 @@ Notez bien la balise de script appelée ```id="fragmentShader"```, c'est là qu'
 
         function init() {
             container = document.getElementById( 'container' );
-            
+
             camera = new THREE.Camera();
             camera.position.z = 1;
 
@@ -116,12 +116,12 @@ Notez bien la balise de script appelée ```id="fragmentShader"```, c'est là qu'
 
             renderer = new THREE.WebGLRenderer();
             renderer.setPixelRatio( window.devicePixelRatio );
-            
+
             container.appendChild( renderer.domElement );
 
             onWindowResize();
             window.addEventListener( 'resize', onWindowResize, false );
-            
+
             document.onmousemove = function(e){
               uniforms.u_mouse.value.x = e.pageX
               uniforms.u_mouse.value.y = e.pageY
@@ -162,7 +162,7 @@ PShader shader;
 void setup() {
   size(640, 360, P2D);
   noStroke();
-  
+
   shader = loadShader("shader.frag");
 }
 
@@ -203,12 +203,12 @@ Chacun a sa zone de confort, pour moi, ça reste [la communité openFrameworks](
 Ce framework C++ intègre OpenGL et d'autres librairies C++ open source.
 C'est très proche de Processing à ceci près que c'est un langage compilé et qu'il vaut donc mieux être habitué aux compilateurs C++.
 Comme Processing, openFrameworks va chercher le fichier du shader dans la dossier data, donc n'oubliez pas de créer un fichier ```.frag```, d'y coller le contenu du shader et de spécifier le nom de ce fichier dans votre programme OF.
- 
+
 ```cpp
 void ofApp::draw(){
     ofShader shader;
     shader.load("","shader.frag");
-    
+
     shader.begin();
     shader.setUniform1f("u_time", ofGetElapsedTimef());
     shader.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());

@@ -74,7 +74,7 @@
     <script type='application/javascript' src='https://thebookofshaders.com/glslEditor/glslEditor.js'></script>
     <script type='text/javascript'>
         var glslEditor = {};
-        
+
         function loadjscssfile(filename, filetype, callback){
             if (filetype=="js") { //if filename is a external JavaScript file
                 var fileref = document.createElement('script')
@@ -95,7 +95,7 @@
                 document.getElementsByTagName("head")[0].appendChild(fileref)
             }
         }
-        
+
         window.onload = function() {
             // if ()
             if (window.GlslEditor && window.GlslEditor) {
@@ -111,7 +111,7 @@
         };
 
         function init() {
-            glslEditor = new GlslEditor('#glsl_editor', { 
+            glslEditor = new GlslEditor('#glsl_editor', {
                                                                     canvas_size: 500,
                                                                     canvas_draggable: true,
                                                                     theme: 'monokai',
@@ -120,9 +120,9 @@
                                                                     fileDrops: true,
                                                                     menu: true
                                                                 });
-            document.body.style.backgroundColor = window.getComputedStyle(glslEditor.editor.getWrapperElement(),null).getPropertyValue('background-color'); 
+            document.body.style.backgroundColor = window.getComputedStyle(glslEditor.editor.getWrapperElement(),null).getPropertyValue('background-color');
         }
-        
+
     </script>
     <script>
         (function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){

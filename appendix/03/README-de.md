@@ -45,7 +45,7 @@ Starte auf Deinem lokalen Rechner einen PHP-Server innerhalb des Verzeichnisses,
 php -S localhost:8000
 ```
 
-Rufe dann in Deinem Internet-Browser die URL ```localhost:8000``` auf. Klicke Dich bis zu dem Kapitel durch, an dem Du gerade arbeitest. Füge der angezeigten URL in der Adresszeile des Browsers den Zusatz ```?lan=``` hinzu, gefolgt von dem Sprachenkürzel, das Du bei der Benennung der jeweiligen Datei verwendet hast. 
+Rufe dann in Deinem Internet-Browser die URL ```localhost:8000``` auf. Klicke Dich bis zu dem Kapitel durch, an dem Du gerade arbeitest. Füge der angezeigten URL in der Adresszeile des Browsers den Zusatz ```?lan=``` hinzu, gefolgt von dem Sprachenkürzel, das Du bei der Benennung der jeweiligen Datei verwendet hast.
 
 Um ein Beispiel zu nennen: Wenn Du gerade das Kapitel ```03``` ins Französische übersetzt und dabei mit der Datei ```03/README-fr.md``` arbeitest, kannst Du diese Datei anzeigen, indem Du folgende URL eingibst: ```http://localhost:8000/03/?lan=fr```
 
@@ -59,7 +59,5 @@ Irren ist menschlich! Wenn Dir ein Fehler auffällt, bereinige die Stelle und se
 
 ### Teile Deine Shader mit Anderen
 
-Du wirst im Quelltext des Buches bei den Beispielen viele Verweise auf den [Online-Editor](http://editor.thebookofshaders.com/) sehen. 
+Du wirst im Quelltext des Buches bei den Beispielen viele Verweise auf den [Online-Editor](http://editor.thebookofshaders.com/) sehen.
 Sobald Du einen Shader entwickelt hast, auf den Du stolz bist, klicke auf die „Export“-Schaltfläche (bzw. das ```⇪```-Symbol) und kopiere anschließend die im Editor angezeigte „URL to code...“. Sende diese URL an [@bookofshaders](https://twitter.com/bookofshaders) oder an [@kyndinfo](https://twitter.com/kyndinfo). Wir freuen uns auf tolle Shader und werden diese gerne unserer [Galerie mit Beispielen](https://thebookofshaders.com/examples/) hinzufügen.
-
-

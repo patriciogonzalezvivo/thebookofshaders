@@ -41,11 +41,11 @@ void main() {
     // gl_FragCoord.xy = vec2(0.0,0.0);
     //                          / /
     //                   vec2(500.0,500.0);
-    
+
     vec2 st = gl_FragCoord.xy/u_resolution;
-    
+
     // ST -> vec2(0.0,0.0) to vec2(1.0,1.0)
-    
+
     //                  RED   GREEN   BLUE  ALPHA
     gl_FragColor = vec4(st.x, st.y,   0.0,  1.0);
 }
@@ -64,4 +64,3 @@ which holds the screen coordinates of the *pixel* or *screen fragment* that the 
 
 * I've stressed the fact that gl_FragCoord is implicitly declared so that people don't panic when they don't find it in the new code sample :)
     also those are reserved names, so I stressed the fact that you can't use them as var names in your custom code.
-

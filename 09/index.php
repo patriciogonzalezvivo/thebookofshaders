@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	$path = "..";
 	$subtitle = ": Patterns";
@@ -29,6 +29,5 @@
 		<li class="navigationBar" onclick="nextPage()">Next &gt; &gt;</li>
 	</ul>';
 
-	include($path."/footer.php"); 
+	include($path."/footer.php");
 ?>
-

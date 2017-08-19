@@ -18,7 +18,7 @@ float aastep(float threshold, float value) {
     return smoothstep(threshold-afwidth, threshold+afwidth, value);
   #else
     return step(threshold, value);
-  #endif  
+  #endif
 }
 vec2 brickTile(vec2 st, float zoom){
   st *= zoom;
@@ -53,7 +53,7 @@ void main(){
 
     vec2 IN = st;
     vec2 OUT = st*2.;
-    
+
     float pct = 1.0-fract(u_mouse.y/u_resolution.y);
     pct = pow(pct,6.);
 

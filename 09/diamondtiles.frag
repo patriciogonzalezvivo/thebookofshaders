@@ -1,4 +1,4 @@
-// Author @patriciogv ( patriciogonzalezvivo.com ) - 2015 
+// Author @patriciogv ( patriciogonzalezvivo.com ) - 2015
 // Title: Diamond Tiles
 
 #ifdef GL_ES
@@ -38,13 +38,13 @@ vec2 offset(vec2 _st, vec2 _offset){
         uv.x = _st.x - 0.5;
     } else {
         uv.x = _st.x + 0.5;
-    } 
+    }
 
     if(_st.y>0.5){
         uv.y = _st.y - 0.5;
     } else {
         uv.y = _st.y + 0.5;
-    } 
+    }
 
     return uv;
 }
@@ -61,5 +61,5 @@ void main(void){
 
     vec3 color = vec3( box(offsetSt,vec2(0.95),0.01) - box(st,vec2(0.3),0.01) + 2.*box(st,vec2(0.2),0.01) );
 
-    gl_FragColor = vec4(color,1.0);    
+    gl_FragColor = vec4(color,1.0);
 }

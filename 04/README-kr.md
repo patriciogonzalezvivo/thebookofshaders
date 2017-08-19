@@ -7,7 +7,7 @@
 **Note 2**: 만약 WebGL에서 쉐이더를 구동하고, 다른 프레임워크를 따로 쓰고 싶지 않다면, [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas)를 이용해서 할수 있다. 이 웹 툴은 이 책에 최적화 되어 있고, 실제로 저자가 프로젝트마다 사용하는 툴이기도 하다.
 
 ### **Three.js** 에서
- 
+
 Ricardo Cabello (aka [MrDoob](https://twitter.com/mrdoob) ) 가 다른 참여자[참여자](https://github.com/mrdoob/three.js/graphs/contributors)들과 개발한 WebGL을 이용한 프레임 워크인 [Three.js](http://threejs.org/). 많은 예제와, 튜토리얼, 책들이 존재하고, 이를 이용해 여러 3D graphics데모를 만들어 볼수 있다.
 
 아래는 HTML과 JS를 이용해 three.js를 구동하는 예제이다. ```id="fragmentShader"```부분을 보면, 쉐이더가 어디에서 적용되는지 볼수 있다.
@@ -40,7 +40,7 @@ Ricardo Cabello (aka [MrDoob](https://twitter.com/mrdoob) ) 가 다른 참여자
 
         function init() {
             container = document.getElementById( 'container' );
-            
+
             camera = new THREE.Camera();
             camera.position.z = 1;
 
@@ -64,7 +64,7 @@ Ricardo Cabello (aka [MrDoob](https://twitter.com/mrdoob) ) 가 다른 참여자
 
             renderer = new THREE.WebGLRenderer();
             renderer.setPixelRatio( window.devicePixelRatio );
-            
+
             container.appendChild( renderer.domElement );
 
             onWindowResize();
@@ -100,7 +100,7 @@ PShader shader;
 void setup() {
   size(640, 360, P2D);
   noStroke();
-  
+
   shader = loadShader("shader.frag");
 }
 
@@ -141,7 +141,7 @@ void main() {
 void ofApp::draw(){
     ofShader shader;
     shader.load("","shader.frag");
-    
+
     shader.begin();
     shader.setUniform1f("u_time", ofGetElapsedTimef());
     shader.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());

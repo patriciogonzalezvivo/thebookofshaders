@@ -4,7 +4,7 @@
 
 Im letzten Kapitel haben wir mit Zufallsfunktionen gearbeitet, die wie weißes Rauschen auf dem Fernsehbildschirm wirken. Nach so vielen Shader-Funktionen auf einmal dreht sich Dir bestimmt der Kopf und vielleicht sind auch Deine Augen etwas müde. Jetzt ist ein guter Moment, um einen kleinen Spaziergang zu unternehmen und ein wenig nach Luft zu schnappen.
 
-Draußen im Freien spüren wir den Luftzug auf unserer Haut und die Sonne in unserem Gesicht. Die Erde ist ein so lebendiger und vielgestaltiger Ort voller Farben, Texturen und Klängen. Während wir uns in der Natur bewegen, können wir gar nicht anders, als die unterschiedlichen Oberflächen von Straßen, Gestein, Bäumen und Wolken wahrzunehmen. 
+Draußen im Freien spüren wir den Luftzug auf unserer Haut und die Sonne in unserem Gesicht. Die Erde ist ein so lebendiger und vielgestaltiger Ort voller Farben, Texturen und Klängen. Während wir uns in der Natur bewegen, können wir gar nicht anders, als die unterschiedlichen Oberflächen von Straßen, Gestein, Bäumen und Wolken wahrzunehmen.
 
 ![](texture-00.jpg)
 ![](texture-01.jpg)
@@ -36,7 +36,7 @@ Dahinter folgen zwei Programmzeilen, die zunächst auskommentiert sind. Die Erst
 
 ```glsl
 y = mix(rand(i), rand(i + 1.0), f);
-``` 
+```
 
 Fahre fort, indem Du die Kommentarzeichen für diese Zeile entfernst und Dir das Ergebnis anschaust.
 
@@ -46,7 +46,7 @@ An diesem Punkt unseres kleinen GLSL-Kurses wissen wir bereits, dass es noch etw
 y = mix(rand(i), rand(i + 1.0), smoothstep(0.,1.,f));
 ```
 
-Sobald Du die Kommentarzeichen aus dieser Zeile entfernt hast, erscheint ein anderes Ergebnis. In einigen Implementationen für Rausch-Funktionen verwenden die Autoren lieber ihre eigenen kubischen Kurven an Stelle von [```smoothstep()```](.../glossary/?search=smoothstep), wie etwa im folgenden Beispiel. 
+Sobald Du die Kommentarzeichen aus dieser Zeile entfernt hast, erscheint ein anderes Ergebnis. In einigen Implementationen für Rausch-Funktionen verwenden die Autoren lieber ihre eigenen kubischen Kurven an Stelle von [```smoothstep()```](.../glossary/?search=smoothstep), wie etwa im folgenden Beispiel.
 
 ```glsl
 float u = f * f * (3.0 - 2.0 * f ); // kubische Verlaufskurve
@@ -85,7 +85,7 @@ Wie schon bei unserem Beispiel für den eindimensionalen Raum, erfolgt die Inter
 
 ![](05.jpg)
 
-Schau Dir die folgende Noise-Funktion an. 
+Schau Dir die folgende Noise-Funktion an.
 
 <div class="codeAndCanvas" data="2d-noise.frag"></div>
 
@@ -119,7 +119,7 @@ Wie die vorangegangenen Abschnitte gezeigt haben, tendiert *Value Noise* zur Erz
 
 Nimm Dir einen Moment Zeit, um die beiden folgenden Beispiele von [Inigo Quilez](http://www.iquilezles.org/) zu studieren und richte Deine Aufmerksamkeit dabei besonders auf die Unterschiede zwischen [*Value Noise*](https://www.shadertoy.com/view/lsf3WH) und [*Gradient Noise*](https://www.shadertoy.com/view/XdXGW8).
 
-Wie ein Maler, der genau weiß, wie die Farben auf seiner Staffelei miteinander harmonieren, werden auch wir die Noise-Funktionen umso besser nutzen können, je mehr wir deren Vorgehensweise verstehen. Wenn wir beispielsweise eine zweidimensionale Noise-Funktion nutzen, um den Raum zu drehen, während wir gerade Linien zeichnen, entsteht der folgende Dreheffekt, der stark an die Maserung von Holz erinnert. Auch hier kannst Du wieder auf die Grafik klicken, um der den Shader-Code dahinter anzuschauen. 
+Wie ein Maler, der genau weiß, wie die Farben auf seiner Staffelei miteinander harmonieren, werden auch wir die Noise-Funktionen umso besser nutzen können, je mehr wir deren Vorgehensweise verstehen. Wenn wir beispielsweise eine zweidimensionale Noise-Funktion nutzen, um den Raum zu drehen, während wir gerade Linien zeichnen, entsteht der folgende Dreheffekt, der stark an die Maserung von Holz erinnert. Auch hier kannst Du wieder auf die Grafik klicken, um der den Shader-Code dahinter anzuschauen.
 
 [ ![Holzmaserung](wood-long.png) ](../edit.php#11/wood.frag)
 
@@ -139,7 +139,7 @@ Ein anderer Weg zur Erzeugung interessanter Muster mit Hilfe von Noise-Funktione
 
 Ein dritter Weg basiert auf der Modulation einer Form mit Hilfe einer Noise-Funktion. Auch dabei kommen einige der Techniken zum Einsatz, die wir im [Kapitel über Formen](../07/) kennengelernt haben.
 
-<a href="../edit.php#11/circleWave-noise.frag"><canvas id="custom" class="canvas" data-fragment-url="circleWave-noise.frag"  width="300px" height="300"></canvas></a> 
+<a href="../edit.php#11/circleWave-noise.frag"><canvas id="custom" class="canvas" data-fragment-url="circleWave-noise.frag"  width="300px" height="300"></canvas></a>
 
 Empfohlene Übungen:
 
@@ -179,11 +179,11 @@ Für Ken Perlin war der Erfolg seines ersten Noise-Algorithmus noch nicht genug.
 
 * Ein Rauschen ohne sichtbare Richtungsartefakte.
 
-* Ein Rauschen mit sauber definierten und nahtlosen Übergangen, das sich einfach berechnen lässt. 
+* Ein Rauschen mit sauber definierten und nahtlosen Übergangen, das sich einfach berechnen lässt.
 
 * Ein Algorithmus, der auch in der Hardware einfach zu implementieren ist.
 
-Ich weiß, was Du jetzt denkst... „Wow, wer ist dieser Mann?“ Ja, seine Leistungen sind wirklich großartig. Aber mal ganz im Ernst, wie ist es ihm gelungen, seinen Algorithmus zu verbessern? Nun, wir haben gesehen, dass er zur Berechnung des Rauschens in zwei Dimensionen zwischen den vier Eckpunkten eines Vierecks interpoliert. Man darf deshalb zurecht davon ausgehen, dass er für die Berechnung in drei Dimensionen ([eine Implementierung in GLSL findest Du hier](../edit.php#11/3d-noise.frag)) und vier Dimensionen zwischen 8 bzw. 16 einzelnen Eckpunkten interpolieren muss. Korrekt? 
+Ich weiß, was Du jetzt denkst... „Wow, wer ist dieser Mann?“ Ja, seine Leistungen sind wirklich großartig. Aber mal ganz im Ernst, wie ist es ihm gelungen, seinen Algorithmus zu verbessern? Nun, wir haben gesehen, dass er zur Berechnung des Rauschens in zwei Dimensionen zwischen den vier Eckpunkten eines Vierecks interpoliert. Man darf deshalb zurecht davon ausgehen, dass er für die Berechnung in drei Dimensionen ([eine Implementierung in GLSL findest Du hier](../edit.php#11/3d-noise.frag)) und vier Dimensionen zwischen 8 bzw. 16 einzelnen Eckpunkten interpolieren muss. Korrekt?
 
 In anderen Worten: Für die Berechnung des Rauschens in N Dimensionen muss man zwischen *2 hoch N* (_2^N_) verschiedenen Punkten interpolieren. Ken war jedoch aufgefallen, dass die offensichtliche „Bauweise“ für eine flächenfüllende Form zwar fraglos ein Viereck darstellt, die einfachste Form der Abdeckung jedoch mit gleichseitigen Dreiecken erzielt wird. Deshalb ersetzte er das rechtwinklige Gitternetz durch ein Netz aus gleichseitigen Dreiecken.
 
@@ -199,7 +199,7 @@ Doch wie wird dieses vereinfachte Gitternetz aufgebaut? In einem weiteren brilla
 
 ![](simplex-grid-02.png)
 
-Anschließend fahren wir fort, wie es [Stefan Gustavson in seinen Ausführungen beschreibt](http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf): "*... indem wir uns die ganzzahligen Anteile der transformierten Koordinaten (x,y) des zu berechnenden Punktes anschauen, denn darüber können wir leicht feststellen, zu welchen zwei Dreiecken der Punkt gehört. Indem wir die Werte von x und y vergleichen, erfahren wir, ob sich der Punkt in dem oberen oder in dem unteren Dreieck befindet. So können wir die drei korrekten Eckpunkte in die Berechnung einbeziehen.*“ 
+Anschließend fahren wir fort, wie es [Stefan Gustavson in seinen Ausführungen beschreibt](http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf): "*... indem wir uns die ganzzahligen Anteile der transformierten Koordinaten (x,y) des zu berechnenden Punktes anschauen, denn darüber können wir leicht feststellen, zu welchen zwei Dreiecken der Punkt gehört. Indem wir die Werte von x und y vergleichen, erfahren wir, ob sich der Punkt in dem oberen oder in dem unteren Dreieck befindet. So können wir die drei korrekten Eckpunkte in die Berechnung einbeziehen.*“
 
 Im folgenden Programmcode kannst Du die Kommentarzeichen aus der *Programmzeile 44* entfernen, um zu sehen, wie das Gitternetz gezerrt wird. Und sobald Du die Kommentierung von *Zeile 47* aufhebst, erkennst Du die Aufteilung der Fläche in gleichschenklige Dreiecke. Beachte, wie wir in *Zeile 22* das verzerrte Rechteck einfach in zwei gleichseitige Dreiecke aufteilen, indem wir testen, ob ```x > y``` ist („unteres“ Dreieck) oder ```y > x``` („oberes“ Dreieck).
 
@@ -215,16 +215,15 @@ Nun aber genug der technischen Spitzfindigkeiten. Es ist an der Zeit, dass Du de
 
 * Entwickle einen Shader, der die Illusion einer Strömung von Flüssigkeiten erweckt. Etwa wie bei einer Lava-Lampe, Tintentropfen, Wasser etc.
 
-<a href="../edit.php#11/lava-lamp.frag"><canvas id="custom" class="canvas" data-fragment-url="lava-lamp.frag"  width="520px" height="200px"></canvas></a> 
+<a href="../edit.php#11/lava-lamp.frag"><canvas id="custom" class="canvas" data-fragment-url="lava-lamp.frag"  width="520px" height="200px"></canvas></a>
 
 * Nutze den Simplex Noise-Algorithmus um Deinen bisherigen Arbeiten mehr Textur zu verleihen.
 
-<a href="../edit.php#11/iching-03.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-03.frag"  width="520px" height="520px"></canvas></a> 
+<a href="../edit.php#11/iching-03.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-03.frag"  width="520px" height="520px"></canvas></a>
 
 In diesem Kapitel haben wir versucht, Kontrolle über das Chaos zu erlangen. Das war keine leichte Aufgabe. Es braucht seine Zeit, um ein Meister des Rauschens und der Raumkrümmung zu werden.
 
 In den folgenden Kapiteln werden wir einige bekannte Techniken aufgreifen, mit Denen Du deine Fähigkeiten weiter verbessern kannst. Bis dahin genieße ein wenig Zeit draußen an der frischen Luft und lasse Dich von den Mustern und Strukturen der Natur inspirieren. Denn Deine Fähigkeiten zur Beobachtung müssen ähnlich gut entwickelt sein, wie Deine Programmierfähigkeiten. Vielleicht sogar noch besser. Genieße die wertvolle Zeit abseits des Computers!
 
 <p style="text-align:center; font-style: italic;">"Sprich mit den Bäumen und werdet Freunde." Bob Ross
-</p> 
-
+</p>

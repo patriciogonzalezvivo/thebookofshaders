@@ -1,7 +1,7 @@
 #ifdef GL_ES
 precision highp float;
 #endif
-                                   
+
 uniform sampler2D u_tex0;
 uniform vec2 u_tex0Resolution;
 

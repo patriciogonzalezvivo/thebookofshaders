@@ -1,8 +1,8 @@
 # Generative Designs
 
-Nachdem wir in den vorangegangenen Kapiteln so viel über Wiederholungen und wohlgeformte Ordnungen gelernt haben, ist es nur konsequent, nun eine kleine Exkursion in das Reich des Chaotischen zu unternehmen. 
+Nachdem wir in den vorangegangenen Kapiteln so viel über Wiederholungen und wohlgeformte Ordnungen gelernt haben, ist es nur konsequent, nun eine kleine Exkursion in das Reich des Chaotischen zu unternehmen.
 
-## Zufall 
+## Zufall
 
 [![Ryoji Ikeda – Testmuster (2008) ](ryoji-ikeda.jpg) ](http://www.ryojiikeda.com/project/testpattern/#testpattern_live_set)
 
@@ -18,7 +18,7 @@ Spätestens, wenn Du bei ```100000.0``` angekommen bist (und die Formel so aussi
 
 ## Wir steuern das
 
-Zufälligkeit für die Shader-Programmierung nutzbar zu machen, kann ganz schön kompliziert sein. Manchmal ist der Zufall zu chaotisch, dann wieder nicht zufällig genug. Schau Dir den folgenden Funktionsgraphen an.  Wir haben ihn mit Hilfe der ```rand()```-Funktion konstruiert, die nach eben jenem Prinzip aufgebaut ist, das wir eben beschrieben haben. 
+Zufälligkeit für die Shader-Programmierung nutzbar zu machen, kann ganz schön kompliziert sein. Manchmal ist der Zufall zu chaotisch, dann wieder nicht zufällig genug. Schau Dir den folgenden Funktionsgraphen an.  Wir haben ihn mit Hilfe der ```rand()```-Funktion konstruiert, die nach eben jenem Prinzip aufgebaut ist, das wir eben beschrieben haben.
 
 Bei einem genauen Blick erkennst Du, dass die [```sin()```](../glossary/?search=sin)-Funktion ihren Scheitel bei ```-1.5707``` und ```1.5707``` hat. Ich wette, Du ahnst bereits warum – weil dort das Maximum und Minimum einer Sinuswelle liegt, nämlich bei *PI /2.0*.
 
@@ -33,7 +33,7 @@ Vor einiger Zeit hat der Autor mit dem Pseudonym [Pixelero](https://pixelero.wor
 
 Wenn Du den bereits zitierten Artikel von [Pixelero](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/) liest, darfst Du nicht vergessen, das unsere ```rand()```-Funktionen deterministische Zufallswerte erzeugt, die als „pseudo-zufällig“ bezeichnet werden. Damit ist unter anderem gemeint, das beispielsweise ```rand(1.)``` immer den gleichen Wert zurückliefern wird. Pixelero geht in seinem Artikel auch auf die Funktion ```Math.random()```unter *ActionScript* ein, die beispielsweise nicht-deterministisch ist. Jeder Aufruf mit einem gegebenen Wert als Funktionsargument liefert bei ihr andere Werte zurück.
 
-## 2D-Zufall 
+## 2D-Zufall
 
 Mit diesem vertieften Verständnis von Zufall im Gepäck ist es an der Zeit, den Zufall in zwei Dimensionen wirken zu lassen – entlang der *x-Achse* und der *y-Achse*. Dafür müssen wir einen zweidimensionalen Vektor in einen eindimensionalen Fließkommawert verwandeln. Man kann dies auf verschiedenen Wegen erreichen, aber die Nutzung der [```dot()```](../glossary/?search=dot)-Funktion ist in diesem Fall besonders hilfreich. Sie liefert einen Fließkommawert zwischen ```0.0``` und ```1.0``` zurück, je nachdem wie die beiden Vektoren, deren Skalarprodukt sie bildet, zueinander stehen.
 
@@ -65,7 +65,7 @@ Schau Dir einmal die GLSL-Portierung des berühmten Labyrinth-Generators in BASI
 
 Hier nutze ich die Zufallswerte der Zellen, um innerhalb der Zellen eine Linie mal in die eine, mal in die andere Richtung zu zeichnen. Ich setze dafür die ```truchetPattern()```-Funktion aus dem vorangehenden Kapitel ein (es geht um die *Programmzeilen 41 bis 47*).
 
-Du erhältst ein sehenswertes animiertes Muster, wenn Du die Kommentarzeichen aus den *Programmzeilen 35 und 36* entfernst. 
+Du erhältst ein sehenswertes animiertes Muster, wenn Du die Kommentarzeichen aus den *Programmzeilen 35 und 36* entfernst.
 
 ## Meister des Zufalls
 
@@ -90,4 +90,3 @@ Schau Dir die Arbeiten von [Ikeda](http://www.ryojiikeda.com/) an und versuche D
 Zufallswerte auf ästhetische Art und Weise einzusetzen, kann schwierig sein, besonders wenn man Simulationen erstellen möchten, die die Natur nachahmen. Zufall ist einfach zu chaotisch und nur sehr wenige Dinge ums uns herum entstehen wirklich komplett zufällig. Wenn Du Dir beispielsweise das Muster von Regentropfen oder den Verlauf eines Aktienkurses anschaust – zwei Vorgänge, die Beide sicherlich eine Menge mit Zufall zu tun haben – wirst Du eben doch kein Chaos, sondern komplexe Strukturen und Abhängigkeiten erkennen. Schließlich sind hier jenseits des Zufälligen immer auch systemabhängige Korrelationen und ein Bezug auf vorherige Systemzustände am Werk.
 
 Das nächste Kapitel beschäftigt sich deshalb mit Rauschen, dem sanften und der Natur nachempfunden Weg, um Dinge dynamisch und innerhalb des Chaotischen auch ein wenig strukturiert wirken zu lassen.
-

@@ -2,7 +2,7 @@
 
 ## Colors
 
-We haven't much of a chance to talk about GLSL vector types. Before going further it's important to learn more about these variables and the subject of colors is a great way to find out more about them. 
+We haven't much of a chance to talk about GLSL vector types. Before going further it's important to learn more about these variables and the subject of colors is a great way to find out more about them.
 
 If you are familiar with object oriented programming paradigms you've probably noticed that we have been accessing the data inside the vectors like any regular C-like ```struct```.
 
@@ -10,7 +10,7 @@ If you are familiar with object oriented programming paradigms you've probably n
 vec3 red = vec3(1.0,0.0,0.0);
 red.x = 1.0;
 red.y = 0.0;
-red.z = 0.0; 
+red.z = 0.0;
 ```
 
 Defining color using an *x*, *y* and *z* notation can be confusing and misleading, right? That's why there are other ways to access this same information, but with different names. The values of ```.x```, ```.y``` and ```.z``` can also be called ```.r```, ```.g``` and ```.b```, and ```.s```, ```.t``` and ```.p```. (```.s```, ```.t``` and ```.p``` are usually used for spatial coordinates of a texture, which we'll see in a later chapter.) You can also access the data in a vector by using the index position, ```[0]```, ```[1]``` and ```[2]```.
@@ -25,14 +25,14 @@ vector[2] = vector.b = vector.z = vector.p;
 vector[3] = vector.a = vector.w = vector.q;
 ```
 
-These different ways of pointing to the variables inside a vector are just nomenclatures designed to help you write clear code. This flexibility embedded in shading language is a door for you to start thinking interchangably about color and space coordinates. 
+These different ways of pointing to the variables inside a vector are just nomenclatures designed to help you write clear code. This flexibility embedded in shading language is a door for you to start thinking interchangably about color and space coordinates.
 
 Another great feature of vector types in GLSL is that the properties can be combined in any order you want, which makes it easy to cast and mix values. This ability is called *swizzle*.
 
 ```glsl
 vec3 yellow, magenta, green;
 
-// Making Yellow 
+// Making Yellow
 yellow.rg = vec2(1.0);  // Assigning 1. to red and green channels
 yellow[2] = 0.0;        // Assigning 0. to blue channel
 
@@ -40,7 +40,7 @@ yellow[2] = 0.0;        // Assigning 0. to blue channel
 magenta = yellow.rbg;   // Assign the channels with green and blue swapped
 
 // Making Green
-green.rgb = yellow.bgb; // Assign the blue channel of Yellow (0) to red and blue channels 
+green.rgb = yellow.bgb; // Assign the blue channel of Yellow (0) to red and blue channels
 ```
 
 #### For your toolbox
@@ -58,7 +58,7 @@ Now that you know how colors are defined, it's time to integrate this with our p
 
 ![](mix-f.jpg)
 
-Check the following code at line 18 and see how we are using the absolute values of a sin wave over time to mix ```colorA``` and ```colorB```. 
+Check the following code at line 18 and see how we are using the absolute values of a sin wave over time to mix ```colorA``` and ```colorB```.
 
 <div class="codeAndCanvas" data="mix.frag"></div>
 
@@ -66,13 +66,13 @@ Show off your skills by:
 
 * Make an expressive transition between colors. Think of a particular emotion. What color seems most representative of it? How does it appear? How does it fade away? Think of another emotion and the matching color for it. Change the beginning and ending color of the above code to match those emotions. Then animate the transition using shaping functions. Robert Penner developed a series of popular shaping functions for computer animation known as [easing functions](http://easings.net/), you can use [this example](../edit.php#06/easing.frag) as research and inspiration but the best result will come from making your own transitions.
 
-### Playing with gradients 
+### Playing with gradients
 
 The [```mix()```](../glossary/?search=mix) function has more to offer. Instead of a single ```float```, we can pass a variable type that matches the two first arguments, in our case a ```vec3```. By doing that we gain control over the mixing percentages of each individual color channel, ```r```, ```g``` and ```b```.
 
 ![](mix-vec.jpg)
 
-Take a look at the following example. Like the examples in the previous chapter, we are hooking the transition to the normalized *x* coordinate and visualizing it with a line. Right now all the channels go along the same line. 
+Take a look at the following example. Like the examples in the previous chapter, we are hooking the transition to the normalized *x* coordinate and visualizing it with a line. Right now all the channels go along the same line.
 
 Now, uncomment line number 25 and watch what happens. Then try uncommenting lines 26 and 27. Remember that the lines visualize the amount of ```colorA``` and ```colorB``` to mix per channel.
 
@@ -92,9 +92,9 @@ You probably recognize the three shaping functions we are using on lines 25 to 2
 
 ### HSB
 
-We can't talk about color without speaking about color space. As you probably know there are different ways to organize color besides by red, green and blue channels. 
+We can't talk about color without speaking about color space. As you probably know there are different ways to organize color besides by red, green and blue channels.
 
-[HSB](http://en.wikipedia.org/wiki/HSL_and_HSV) stands for Hue, Saturation and Brightness (or Value) and is a more intuitive and useful organization of colors. Take a moment to read the ```rgb2hsv()``` and ```hsv2rgb()``` functions in the following code. 
+[HSB](http://en.wikipedia.org/wiki/HSL_and_HSV) stands for Hue, Saturation and Brightness (or Value) and is a more intuitive and useful organization of colors. Take a moment to read the ```rgb2hsv()``` and ```hsv2rgb()``` functions in the following code.
 
 By mapping the position on the x axis to the Hue and the position on the y axis to the Brightness, we obtain a nice spectrum of visible colors. This spatial distribution of color can be very handy; it's more intuitive to pick a color with HSB than with RGB.
 
@@ -104,7 +104,7 @@ By mapping the position on the x axis to the Hue and the position on the y axis 
 
 HSB was originally designed to be represented in polar coordinates (based on the angle and radius) instead of cartesian coordinates (based on x and y). To map our HSB function to polar coordinates we need to obtain the angle and distance from the center of the billboard to the pixel coordinate. For that we will use the [```length()```](../glossary/?search=length) function and [```atan(y,x)```](../glossary/?search=atan) (which is the GLSL version of the commonly used ```atan2(y,x)```).  
 
-When using vector and trigonometric functions, ```vec2```, ```vec3``` and ```vec4``` are treated as vectors even when they represent colors. We will start treating colors and vectors similarly, in fact you will come to find this conceptual flexibility very empowering. 
+When using vector and trigonometric functions, ```vec2```, ```vec3``` and ```vec4``` are treated as vectors even when they represent colors. We will start treating colors and vectors similarly, in fact you will come to find this conceptual flexibility very empowering.
 
 **Note:** If you were wondering, there are more geometric functions besides [```length```](../glossary/?search=length) like: [```distance()```](../glossary/?search=distance), [```dot()```](../glossary/?search=dot), [```cross```](../glossary/?search=cross), [```normalize()```](../glossary/?search=normalize), [```faceforward()```](../glossary/?search=faceforward), [```reflect()```](../glossary/?search=reflect) and [```refract()```](../glossary/?search=refract). Also GLSL has special vector relational functions such as: [```lessThan()```](../glossary/?search=lessThan), [```lessThanEqual()```](../glossary/?search=lessThanEqual), [```greaterThan()```](../glossary/?search=greaterThan), [```greaterThanEqual()```](../glossary/?search=greaterThanEqual), [```equal()```](../glossary/?search=equal) and [```notEqual()```](../glossary/?search=notEqual).
 
@@ -135,11 +135,9 @@ Try the following exercises:
 Before jumping to the next chapter let’s stop and rewind. Go back and take look at the functions in previous examples. You will notice ```in``` before the type of the arguments. This is a [*qualifier*](http://www.shaderific.com/glsl-qualifiers/#inputqualifier) and in this case it specifies that the variable is read only. In future examples we will see that it is also possible to define arguments as ```out``` or ```inout```. This last one, ```inout```, is conceptually similar to passing an argument by reference which will give us the possibility to modify a passed variable.
 
 ```glsl
-int newFunction(in vec4 aVec4,   // read-only 
+int newFunction(in vec4 aVec4,   // read-only
                 out vec3 aVec3,    // write-only
                 inout int aInt);   // read-write
 ```
 
 You may not believe it but now we have all the elements to make cool drawings. In the next chapter we will learn how to combine all our tricks to make geometric forms by *blending* the space. Yep... *blending* the space.
-
-

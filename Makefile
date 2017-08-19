@@ -1,6 +1,6 @@
 default: clean all
 
-clean: 
+clean:
 	rm -rf */tmp.md
 	rm -rf */tmp*.png
 	rm -rf book.*

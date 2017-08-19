@@ -19,7 +19,7 @@ Lass uns mit etwas Pseudocode beginnen, der mit ```if```-Befehlen auf die Lage d
 ```glsl
     if ( (X GROESSER ALS 1) UND (Y GROESSER ALS 1) )
         male weiss
-    else 
+    else
         male schwarz
 ```
 
@@ -31,13 +31,13 @@ uniform vec2 u_resolution;
 void main(){
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     vec3 color = vec3(0.0);
-    
+
     // diese Berechnungen liefern jeweils 1.0 (weiss) oder 0.0 (schwarz).
     float left = step(0.1,st.x);   // entspricht X groesser als 0.1
     float bottom = step(0.1,st.y); // entspricht Y groesser als 0.1
 
     // die Multiplikation von left*bottom entspricht der logischen Verknüpfung durch UND
-    color = vec3( left * bottom ); 
+    color = vec3( left * bottom );
 
     gl_FragColor = vec4(color,1.0);
 }
@@ -50,7 +50,7 @@ Die [```step()```](../glossary/?search=step)-Funktion setzt jedes Pixel unterhal
 Im obigen Programmcode wiederholen wir die gleiche Vorgehensweise für beide Ränder (links und unten). Wir können das noch etwas kompakter formulieren, indem wir in einem Aufruf zwei Testwerte in Form eines zweidimensionalen Vektors an [```step()```](../glossary/?search=step) übergeben. Das sieht dann so aus:
 
 ```glsl
-    vec2 borders = step(vec2(0.1),st); 
+    vec2 borders = step(vec2(0.1),st);
     float pct = borders.x * borders.y;
 ```
 
@@ -58,7 +58,7 @@ Bis jetzt haben wir nur zwei Kanten unseres Rechtecks bearbeitet. Jetzt kommen a
 
 <div class="codeAndCanvas" data="rect-making.frag"></div>
 
-Entferne die Kommentarzeichen aus den *Zeilen 21-22* und beobachte, wie wir die Koordinaten auf den linken und unteren Rand abbilden (```1-st```), damit wir sie wieder mit der [```step()```](../glossary/?search=step) Funktion und dem Wert von ```0.1``` vergleichen können. Aus der oberen rechten Ecke (```vec2(1.0,1.0)```) wird so für unsere Berechnungen quasi die untere linke Ecke ```vec2(0.0,0.0)```. Das ist so, als würden wir die Zeichenfläche einfach um 180 Grad drehen und den Test dann wie zuvor wiederholen. 
+Entferne die Kommentarzeichen aus den *Zeilen 21-22* und beobachte, wie wir die Koordinaten auf den linken und unteren Rand abbilden (```1-st```), damit wir sie wieder mit der [```step()```](../glossary/?search=step) Funktion und dem Wert von ```0.1``` vergleichen können. Aus der oberen rechten Ecke (```vec2(1.0,1.0)```) wird so für unsere Berechnungen quasi die untere linke Ecke ```vec2(0.0,0.0)```. Das ist so, als würden wir die Zeichenfläche einfach um 180 Grad drehen und den Test dann wie zuvor wiederholen.
 
 ![](rect-02.jpg)
 
@@ -96,7 +96,7 @@ Doch wie soll das funktionieren? Lasse uns noch einmal zum Mathematikunterricht 
 
 ![](compass.jpg)
 
-Will man diese Vorgehensweise auf ein Shader-Programm übertragen, bei dem jedes kleine Feld auf dem Millimeterpapier einem Pixel entspricht, muss man jedes Pixel (bzw. Thread) *fragen*, ob es zum Kreis gehört. Das machen wir, indem wir die Entfernung des Pixels zum Mittelpunkt des gewünschten Kreises berechnen. 
+Will man diese Vorgehensweise auf ein Shader-Programm übertragen, bei dem jedes kleine Feld auf dem Millimeterpapier einem Pixel entspricht, muss man jedes Pixel (bzw. Thread) *fragen*, ob es zum Kreis gehört. Das machen wir, indem wir die Entfernung des Pixels zum Mittelpunkt des gewünschten Kreises berechnen.
 
 ![](circle.jpg)
 
@@ -112,7 +112,7 @@ Man kann wahlweise die [```distance()```](../glossary/?search=distance)-Funktion
 
 In dem obigen Beispiel bilden wir die Entfernung zum Mittelpunkt der Zeichenfläche auf die Helligkeit der Pixel ab. Je näher sich ein Pixel beim Mittelpunkt befindet, desto geringer (dunkler) ist sein Farbwert. Beachte bitte, dass die Pixel auch zum Rand hin nicht allzu hell werden, weil die Entfernung vom Mittelpunkt ( ```vec2(0.5, 0.5)``` ) zu den Rändern maximal ```0.5``` beträgt. Denke ein wenig über die Abbildung nach und überlege Dir:
 
-* Was kannst Du daraus ableiten? 
+* Was kannst Du daraus ableiten?
 
 * Wie kannst Du all dies nutzen, um einen Kreis zu malen?
 
@@ -124,17 +124,17 @@ Man kann sich das obige Beispiel auch als eine Art Höhenprofil vorstellen, bei 
 
 ![](distance-field.jpg)
 
-Im Prinzip nutzen wir also eine Neuinterpretation des Raumes (ausgehend vom Abstand zur Mitte), um eine bestimmte Form zu kreieren. Diese Technik ist als „Distanzfeld“ bekannt und wird bei der Erstellung von 3D-Grafiken auf vielfältige Weise genutzt. 
+Im Prinzip nutzen wir also eine Neuinterpretation des Raumes (ausgehend vom Abstand zur Mitte), um eine bestimmte Form zu kreieren. Diese Technik ist als „Distanzfeld“ bekannt und wird bei der Erstellung von 3D-Grafiken auf vielfältige Weise genutzt.
 
 Versuche Dich doch einmal an folgenden Übungen:
- 
+
 * Nutze die [```step()```](../glossary/?search=step)-Funktion, um alle Punkte größer als ```0.5``` weiß zu malen und alles darunter schwarz.
 
 * Invertiere die Farben von Vordergrund und Hintergrund.
 
 * Setze [```smoothstep()```](../glossary/?search=smoothstep) ein und experimentiere mit verschiedenen Grenzwerten, um angenehm sanfte Übergänge am Rand Deines Kreises zu erzeugen.
 
-* Sobald Dir die Implementierung gefällt, baue daraus eine Funktion, die Du in zukünftigen Projekten einsetzen kannst. 
+* Sobald Dir die Implementierung gefällt, baue daraus eine Funktion, die Du in zukünftigen Projekten einsetzen kannst.
 
 * Fülle den Kreis mit einer Farbe.
 
@@ -194,7 +194,7 @@ Im Kapitel über die Verwendung von Farben haben wir kartesische Koordinaten auf
 
 Einige dieser Formeln haben wir auch am Anfang dieses Kapitels genutzt, als es darum ging, Kreise zu zeichnen. Wir berechneten die Entfernung zum Kreismittelpunkt mit Hilfe der [```length()```](../glossary/?search=length)-Funktion. Jetzt, wo wir Distanzfelder kennengelernt haben, öffnet sich uns ein weiterer Weg zum Zeichnen komplexer Formen mithilfe von Polarkoordinaten.
 
-Diese Technik unterliegt gewissen Beschränkungen, ist dafür aber sehr simpel und leistungsfähig. Sie beruht darauf, den Radius eines Kreises in Abhängigkeit des jeweiligen Winkels zu verändern, um unterschiedliche Formen zu erschaffen. Wie genau läuft diese Modulierung ab? Nun, Du hast es vielleicht schon erraten: Mit formgebenden Funktionen. 
+Diese Technik unterliegt gewissen Beschränkungen, ist dafür aber sehr simpel und leistungsfähig. Sie beruht darauf, den Radius eines Kreises in Abhängigkeit des jeweiligen Winkels zu verändern, um unterschiedliche Formen zu erschaffen. Wie genau läuft diese Modulierung ab? Nun, Du hast es vielleicht schon erraten: Mit formgebenden Funktionen.
 
 Unten findest Du verschiedene Funktionen jeweils zwei Mal: einmal als Verlaufskurve in einem kartesischen Koordinatensystem und dann als Shader-Programmcode in einem polaren Koordinatensystem. Dort stehen die verschiedenen formgebenden Funktionen in den *Programmzeilen 21 bis 25*. Entferne nun Schritt für Schritt die Kommentarzeilen und vergleiche den jeweiligen Funktionsgraphen im kartesischen Koordinatensystem mit seinem Äquivalent beim Zeichnen innerhalb eines Polarkoordinatensystem mit GLSL.
 
@@ -218,7 +218,7 @@ Versuche doch einmal:
 
 Wir haben gelernt, den Radius einer Kreisform mit Hilfe der [```atan()```](../glossary/?search=atan)-Funktion in Abhängigkeit des Winkels für das Zeichnen unterschiedlicher Formen zu nutzen. Nun können wir ```atan()``` auch mit Distanzfeldern einsetzen, um ganz unterschiedliche Effekte zu erzielen.
 
-Unser Trick nutzt die gegebene Anzahl der Seiten eines Polygons, um das benötigte Distanzfeld mit Hilfe von Polarkoordinaten zu erzeugen. Schau Dir dazu auch den [folgenden Programmcode](http://thndl.com/square-shaped-shaders.html) von [Andrew Baldwin](https://twitter.com/baldand) an. 
+Unser Trick nutzt die gegebene Anzahl der Seiten eines Polygons, um das benötigte Distanzfeld mit Hilfe von Polarkoordinaten zu erzeugen. Schau Dir dazu auch den [folgenden Programmcode](http://thndl.com/square-shaped-shaders.html) von [Andrew Baldwin](https://twitter.com/baldand) an.
 
 <div class="codeAndCanvas" data="shapes.frag"></div>
 
@@ -231,4 +231,3 @@ Unser Trick nutzt die gegebene Anzahl der Seiten eines Polygons, um das benötig
 Herzlichen Glückwunsch! Du hast Dich durch schwieriges Fahrwasser gekämpft. Nimm eine kleine Pause, damit sich das Erlernte setzen kann. Das Zeichnen komplexer Formen im Land der Shader ist wahrlich nicht ganz trivial, das kann durchaus ein wenig erschöpfen.
 
 Da Du nun weißt, wie man unterschiedliche Formen zeichnet, kommen Dir bestimmt viele interessante Ideen in den Sinn. In den folgenden Kapiteln lernen wir, wie man Formen verschieben, skalieren und rotieren kann. Das wird Dir ermöglichen, komplexe Kompositionen zu erstellen.
-

@@ -4,16 +4,16 @@
 
 ### Verschieben
 
-Im letzten Kapitel haben wir gesehen, wie man unterschiedliche Formen zeichnet. Der Trick, um diese Formen auf der Zeichenfläche beliebig zu positionieren, besteht nun darin, das Koordinatensystem „unterhalb“ dieser Formen zu verschieben. Wir erreichen dies, indem wir einfach einen Vektor zu der ```st```-Variable addieren, die die Lage des jeweiligen Objekts beim Zeichnen bestimmt. Dadurch verschiebt sich das gesamte Koordinatensystem. 
+Im letzten Kapitel haben wir gesehen, wie man unterschiedliche Formen zeichnet. Der Trick, um diese Formen auf der Zeichenfläche beliebig zu positionieren, besteht nun darin, das Koordinatensystem „unterhalb“ dieser Formen zu verschieben. Wir erreichen dies, indem wir einfach einen Vektor zu der ```st```-Variable addieren, die die Lage des jeweiligen Objekts beim Zeichnen bestimmt. Dadurch verschiebt sich das gesamte Koordinatensystem.
 
 ![](translate.jpg)
 
 Es ist vermutlich einfacher, das Verfahren in der Praxis nachzuvollziehen, als es in der Theorie zu studieren. Schau einfach selbst:
 
-* Entferne die Kommentarzeichen in der *Programmzeile 35*, und Du wirst sehen, wie sich das Zeichenobjekt gemeinsam mit dem darunterliegenden Koordinatenraum bewegt. 
+* Entferne die Kommentarzeichen in der *Programmzeile 35*, und Du wirst sehen, wie sich das Zeichenobjekt gemeinsam mit dem darunterliegenden Koordinatenraum bewegt.
 
 <div class="codeAndCanvas" data="cross-translate.frag"></div>
- 
+
 Jetzt versuche Dich an der folgenden Aufgabe:
 
 * Nutze ```u_time``` in Verbindung mit einer formgebenden Funktion, um das kleine Kreuz auf interessante Weise über die Zeichenfläche zu bewegen. Das Vorbild dafür kann durchaus aus der realen Welt stammen, beispielsweise eine Wellenbewegung, das Schwingen eines Pendels, ein springender Ball, ein beschleunigendes Auto oder ein stoppendes Fahrrad.
@@ -30,11 +30,11 @@ Darauf basierend, wie Matrizen funktionieren, kann man Matrizen mit einem bestim
 
 ![](3dtransmat.png)
 
-Noch interessanter wird es, wenn wir eine Matrix zur Drehung des Koordinatensystems verwenden: 
+Noch interessanter wird es, wenn wir eine Matrix zur Drehung des Koordinatensystems verwenden:
 
 ![](rotmat.png)
 
-Schau Dir den folgenden Programmcode an, der die benötigte Matrix für eine Rotation des Koordinatensystems um einen vorgegebenen Winkel produziert. Diese Funktion folgt der obigen Formel für zweidimensionale Vektoren, um die Koordinaten um einen ```vec2(0.0)```-Punkt rotieren zu lassen. 
+Schau Dir den folgenden Programmcode an, der die benötigte Matrix für eine Rotation des Koordinatensystems um einen vorgegebenen Winkel produziert. Diese Funktion folgt der obigen Formel für zweidimensionale Vektoren, um die Koordinaten um einen ```vec2(0.0)```-Punkt rotieren zu lassen.
 
 ```glsl
 mat2 rotate2d(float _angle){
@@ -57,11 +57,11 @@ Probiere die folgenden Übungen aus:
 
 * Kommentiere das Verschieben vor und nach der Rotation in den *Zeilen 37 und 39* aus und beobachte die Konsequenzen.
 
-* Nutze Rotationen, um die Animation zu verbessern, die Du beim Beispiel zum Verschieben erstellt hast. 
+* Nutze Rotationen, um die Animation zu verbessern, die Du beim Beispiel zum Verschieben erstellt hast.
 
 ### Skalieren
 
-Wir haben gesehen, wie man die Verschiebung und die Rotation von Objekten realisiert, indem man mit Matrizen auf den Koordinatenraum einwirkt. Falls Du bereits mit 3D-Modellierungssoftware oder den Matrizenfunktionen in Procesing gearbeitet hast, weißt Du wahrscheinlich, dass man Matrizen auch für die Skalierung von Objekten verwenden kann. 
+Wir haben gesehen, wie man die Verschiebung und die Rotation von Objekten realisiert, indem man mit Matrizen auf den Koordinatenraum einwirkt. Falls Du bereits mit 3D-Modellierungssoftware oder den Matrizenfunktionen in Procesing gearbeitet hast, weißt Du wahrscheinlich, dass man Matrizen auch für die Skalierung von Objekten verwenden kann.
 
 ![](scale.png)
 
@@ -74,7 +74,7 @@ mat2 scale(vec2 _scale){
 }
 ```
 
-<div class="codeAndCanvas" data="cross-scale.frag"></div> 
+<div class="codeAndCanvas" data="cross-scale.frag"></div>
 
 Probiere die folgenden Übungen aus, um noch besser zu verstehen, wie das Ganze funktioniert.
 

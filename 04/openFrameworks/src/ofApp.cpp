@@ -4,7 +4,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    
+
     //  Load and compile the shader
     //
     shader.load("","shader.frag");
@@ -12,30 +12,30 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    
+
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    
+
     // Replace the pipeline with our shader
     shader.begin();
-    
+
     // Send uniforms
     shader.setUniform1f("u_time", ofGetElapsedTimef());
     shader.setUniform2f("u_mouse", mouseX, mouseY);
     shader.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());
-    
+
     // make a billboard
     ofRect(0,0,ofGetWidth(), ofGetHeight());
-    
+
     // Default shader pipeline
     shader.end();
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-    
+
     //  Reload everytime you press a key
     //
     shader.load("","shader.frag");
@@ -77,6 +77,6 @@ void ofApp::gotMessage(ofMessage msg){
 }
 
 //--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
+void ofApp::dragEvent(ofDragInfo dragInfo){
 
 }

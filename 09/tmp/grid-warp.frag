@@ -29,5 +29,5 @@ void main(void){
     vec2 xy = st-vec2(.5);
     float grid = 1.0-X(tile(xy,10.+20.0*dot(xy,xy)),0.05);
 
-    gl_FragColor = vec4(vec3(grid),1.0);    
+    gl_FragColor = vec4(vec3(grid),1.0);
 }
