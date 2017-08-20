@@ -55,7 +55,7 @@ While it's difficult to describe all the relationships between trigonometric fun
 
 <div class="simpleFunction" data="y = sin(x);"></div>
 
-Take a careful look at this sine wave. Note how the *y* values flow smoothly between +1 and -1. As we saw in the time example in the previous chapter, you can use this rhythmic behavior of [```sin()```](../glossary/?search=sin) to animate properties. If you are reading this example in a browser you will see that the you can change the code in the formula above to watch how the wave changes. (Note: don't forget the semicolon at the end of the lines.)
+Take a careful look at this sine wave. Note how the *y* values flow smoothly between +1 and -1. As we saw in the time example in the previous chapter, you can use this rhythmic behavior of [```sin()```](../glossary/?search=sin) to animate properties. If you are reading this example in a browser you will see that you can change the code in the formula above to watch how the wave changes. (Note: don't forget the semicolon at the end of the lines.)
 
 Try the following exercises and notice what happens:
 
