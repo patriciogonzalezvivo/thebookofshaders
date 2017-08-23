@@ -4,7 +4,7 @@
 #ifdef GL_ES
 precision mediump float;
 #endif
-                
+
 uniform vec2 u_resolution;
 uniform float u_time;
 
@@ -59,15 +59,15 @@ float char(vec2 st, float n){
 
     n = floor(mod(n,10.));
     float digit = 0.0;
-    if (n < 1. ) { digit = 31600.; } 
-    else if (n < 2. ) { digit = 9363.0; } 
-    else if (n < 3. ) { digit = 31184.0; } 
-    else if (n < 4. ) { digit = 31208.0; } 
-    else if (n < 5. ) { digit = 23525.0; } 
-    else if (n < 6. ) { digit = 29672.0; } 
-    else if (n < 7. ) { digit = 29680.0; } 
-    else if (n < 8. ) { digit = 31013.0; } 
-    else if (n < 9. ) { digit = 31728.0; } 
+    if (n < 1. ) { digit = 31600.; }
+    else if (n < 2. ) { digit = 9363.0; }
+    else if (n < 3. ) { digit = 31184.0; }
+    else if (n < 4. ) { digit = 31208.0; }
+    else if (n < 5. ) { digit = 23525.0; }
+    else if (n < 6. ) { digit = 29672.0; }
+    else if (n < 7. ) { digit = 29680.0; }
+    else if (n < 8. ) { digit = 31013.0; }
+    else if (n < 9. ) { digit = 31728.0; }
     else if (n < 10. ) { digit = 31717.0; }
     float pct = bin(ipos, digit);
 
@@ -108,7 +108,7 @@ float cross(in vec2 st, vec2 size){
 void main(){
     vec2 st = gl_FragCoord.st/u_resolution.xy;
     float aspect = u_resolution.x/u_resolution.y;
-    
+
     vec2 grain_st = st-.5;
     vec3 color = vec3(0.0);
     float grain = 0.0;
@@ -153,7 +153,7 @@ void main(){
     // Digits
     vec2 digits_st = mod(st*60.,20.);
     vec2 digits_st_i = floor(digits_st);
-    float digits_n = ceil(block*5.); 
+    float digits_n = ceil(block*5.);
     offset *= 10.;
     if (block > 0.0 &&
         digits_st_i.y == 1. &&

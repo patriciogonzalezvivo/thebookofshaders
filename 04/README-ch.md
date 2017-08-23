@@ -42,7 +42,7 @@
 
         function init() {
             container = document.getElementById( 'container' );
-            
+
             camera = new THREE.Camera();
             camera.position.z = 1;
 
@@ -66,7 +66,7 @@
 
             renderer = new THREE.WebGLRenderer();
             renderer.setPixelRatio( window.devicePixelRatio );
-            
+
             container.appendChild( renderer.domElement );
 
             onWindowResize();
@@ -102,7 +102,7 @@ PShader shader;
 void setup() {
   size(640, 360, P2D);
   noStroke();
-  
+
   shader = loadShader("shader.frag");
 }
 
@@ -139,12 +139,12 @@ void main() {
 ### **openFrameworks**
 
 每个人都有自己的舒适区，我的则是[openFrameworks community](http://openframeworks.cc/)。这个 C++ 框架打包了 OpenGL 和其他开源 C++ 库。在很多方面它和 Processing 非常像，但是明显和 C++ 编译器打交道一定比较麻烦。和 Processing 很像地，openFrameworks 会在你的 data 文件夹里寻找 shader 文件，所以不要忘记把你的后缀 ```.frag``` 的文件拷进去，加载的时候记得改名。
- 
+
 ```cpp
 void ofApp::draw(){
     ofShader shader;
     shader.load("","shader.frag");
-    
+
     shader.begin();
     shader.setUniform1f("u_time", ofGetElapsedTimef());
     shader.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());

@@ -17,10 +17,10 @@ float noise (in vec3 p) {
 
     vec3 i = floor(p);
     vec3 f = fract(p);
- 
-    // For performance, compute the base input to a 
-    // 1D random from the integer part of the 
-    // argument and the incremental change to the 
+
+    // For performance, compute the base input to a
+    // 1D random from the integer part of the
+    // argument and the incremental change to the
     // 1D based on the 3D -> 1D wrapping
     float n = dot(i, step);
 
@@ -30,7 +30,7 @@ float noise (in vec3 p) {
                         u.x),
                     mix(random(n + dot(step, vec3(0,1,0))),
                         random(n + dot(step, vec3(1,1,0))),
-                        u.x), 
+                        u.x),
                 u.y),
                 mix(mix(random(n + dot(step, vec3(0,0,1))),
                         random(n + dot(step, vec3(1,0,1))),

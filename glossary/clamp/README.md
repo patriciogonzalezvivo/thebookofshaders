@@ -10,7 +10,7 @@ vec4 clamp(vec4 x, vec4 minVal, vec4 maxVal)
 
 vec2 clamp(vec2 x, float minVal, float maxVal)  
 vec3 clamp(vec3 x, float minVal, float maxVal)  
-vec4 clamp(vec4 x, float minVal, float maxVal) 
+vec4 clamp(vec4 x, float minVal, float maxVal)
 ```
 
 ### Parameters

@@ -39,7 +39,7 @@ void main(){
   st.x *= u_resolution.x/u_resolution.y;
   vec3 color = vec3(0.0);
   float d = 0.0;
-  
+
   d = min(shape(st,3),shape(st+vec2(0.,0.19),4));
 
   gl_FragColor = vec4(vec3(1.0-aastep(.2,d)),1.0);

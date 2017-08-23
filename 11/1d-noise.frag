@@ -10,7 +10,7 @@ uniform vec2 u_mouse;
 uniform float u_time;
 
 float plot(vec2 st, float pct){
-  return  smoothstep( pct-0.01, pct, st.y) - 
+  return  smoothstep( pct-0.01, pct, st.y) -
           smoothstep( pct, pct+0.01, st.y);
 }
 
@@ -21,7 +21,7 @@ float random (in float x) {
 float noise (in float x) {
     float i = floor(x);
     float f = fract(x);
-    
+
     // Cubic Hermine Curve
     float u = f * f * (3.0 - 2.0 * f);
 

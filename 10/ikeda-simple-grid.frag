@@ -4,7 +4,7 @@
 #ifdef GL_ES
 precision mediump float;
 #endif
-                
+
 uniform vec2 u_resolution;
 uniform float u_time;
 
@@ -37,7 +37,7 @@ void main(){
     st.x *= u_resolution.x/u_resolution.y;
 
     vec3 color = vec3(0.0);
-    
+
     // Grid
     vec2 grid_st = st*300.;
     color += vec3(0.5,0.,0.)*grid(grid_st,0.01);

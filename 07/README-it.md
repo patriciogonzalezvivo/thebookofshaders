@@ -19,7 +19,7 @@ Iniziamo facendo uno pseudocodice che usi la dichiarazione ```if```  sul campo d
 ```glsl
     if ( (X più grande di 1) AND (Y più grande di 1) )
         colora di bianco
-    else 
+    else
         colora di nero
 ```
 
@@ -31,13 +31,13 @@ uniform vec2 u_resolution;
 void main(){
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     vec3 color = vec3(0.0);
-    
+
     // per ogni valore restituirà 1.0 (bianco) o 0.0 (nero).
     float left = step(0.1,st.x);   // Simile a ( X più grande di 0.1 )
     float bottom = step(0.1,st.y); // Simile a ( Y più grande di 0.1 )
 
     // La moltiplicazione di left*bottom sarà simile alla porta logica AND.
-    color = vec3( left * bottom ); 
+    color = vec3( left * bottom );
 
     gl_FragColor = vec4(color,1.0);
 }
@@ -50,7 +50,7 @@ La funzione [```step()```](../glossary/?search=step) trasformerà ogni pixel al 
 Nel codice precedente abbiamo ripetuto la struttura per ciascun asse (sinistra e base). Possiamo risparmiare alcune linee di codice passando due valori, invece di uno, direttamente a [```step()```](../glossary/?search=step) Ecco com’è:
 
 ```glsl
-    vec2 borders = step(vec2(0.1),st); 
+    vec2 borders = step(vec2(0.1),st);
     float pct = borders.x * borders.y;
 ```
 
@@ -213,7 +213,7 @@ Provate a:
 
 ### Unire i poteri
 
-Ora che abbiamo imparato come modulare il raggio di una circonferenza in relazione all’angolo, usando la funzione [```atan()```](../glossary/?search=atan) per disegnare diverse forme, possiamo imparare come usare ```atan()``` con i campi di distanza e applicare tutti i trucchi e gli effetti possibili con i campi di distanza. 
+Ora che abbiamo imparato come modulare il raggio di una circonferenza in relazione all’angolo, usando la funzione [```atan()```](../glossary/?search=atan) per disegnare diverse forme, possiamo imparare come usare ```atan()``` con i campi di distanza e applicare tutti i trucchi e gli effetti possibili con i campi di distanza.
 
 Il nostro trucco userà il numero di lati di un poligono per costruire il campo di distanza, usando le coordinate polari. Controllate [il seguente codice](http://thndl.com/square-shaped-shaders.html) di [Andrew Baldwin](https://twitter.com/baldand).
 

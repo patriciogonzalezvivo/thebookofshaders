@@ -89,4 +89,4 @@ Date un'occhiata al lavoro di [Ikeda](http://www.ryojiikeda.com/) e provate i se
 
 L'utilizzo del random può essere problematico dal punto di vista estetico, soprattutto se si vuole creare simulazioni che sembrano naturali. Il random è semplicemente troppo caotico e poche cose nella vita di tutti i giorni sembrano ```random()```. Se si considera un pattern generato dalla pioggia o un grafico azionario, che sono entrambi abbastanza casuali, questi non assomigliano per niente al pattern random che abbiamo fatto all'inizio di questo capitolo. La ragione? Beh, i valori random non hanno alcuna correlazione tra di loro e la maggior parte dei motivi naturali conserva una certa memoria dello stato precedente.
 
-Nel prossimo capitolo impareremo di più a proposito del rumore, una maniera semplice e dall'*aspetto naturale* di creare il caos computazionale. 
+Nel prossimo capitolo impareremo di più a proposito del rumore, una maniera semplice e dall'*aspetto naturale* di creare il caos computazionale.

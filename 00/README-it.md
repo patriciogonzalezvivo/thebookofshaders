@@ -47,4 +47,3 @@ In alternativa, in base a ciò di cui avete bisogno, è possibile:
 - [Fare un PDF del libro da stampare](https://thebookofshaders.com/appendix/)
 
 - Utilizzare la [repository on-line](https://github.com/patriciogonzalezvivo/thebookofshaders) per aiutare a risolvere i problemi e per condividere il codice.
-

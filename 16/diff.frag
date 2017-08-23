@@ -19,6 +19,6 @@ void main (void) {
     vec3 colorB = texture2D(u_tex1,st).rgb;
 
     vec3 color = abs(colorA-colorB);
-    
+
     gl_FragColor = vec4(color,1.0);
 }

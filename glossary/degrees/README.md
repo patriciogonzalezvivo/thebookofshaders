@@ -8,7 +8,7 @@ vec2 degrees(vec2 radians)
 vec3 degrees(vec3 radians)  
 vec4 degrees(vec4 radians)
 ```
- 
+
 ### Parameters
 ```radians``` specify the quantity, in radians, to be converted to degrees.
 

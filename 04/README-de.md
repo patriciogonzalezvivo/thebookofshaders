@@ -2,7 +2,7 @@
 
 Beim Schreiben dieses Buches und im Rahmen meiner künstlerischen Tätigkeit habe ich eine Sammlung von Tools entwickelt, mit deren Hilfe man Shader programmieren, anzeigen, teilen und kuratieren kann. Dieses Tools laufen auf Linux Desktops, Rechnern mit MacOS, dem [Raspberry Pi](https://www.raspberrypi.org/) und auf Internet-Browsern. Sie sorgen dafür, dass Du Deine Shader dort nutzen kannst, ohne etwas an deren Programmcode verändern zu müssen.
 
-**Anzeige**: Alle Live-Beispiele in diesem Buch werden mit [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) angezeigt. Dieses Tool macht es unglaublich einfach, Shader ohne weitere Umstände im Internet-Browser auszuführen. 
+**Anzeige**: Alle Live-Beispiele in diesem Buch werden mit [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) angezeigt. Dieses Tool macht es unglaublich einfach, Shader ohne weitere Umstände im Internet-Browser auszuführen.
 
 ```html
 <canvas class="glslCanvas" data-fragment-url="yourShader.frag" data-textures="yourInputImage.png" width="500" height="500"></canvas>
@@ -37,7 +37,7 @@ Wenn Du lieber offline statt online mit [SublimeText](https://www.sublimetext.co
 Falls Du bereits Erfahrung mit der Programmierung in einer Umgebung wie [Processing](https://processing.org/), [three.js](http://threejs.org/) oder [OpenFrameworks](http://openframeworks.cc/) gesammelt hast, möchtest Du Deine Shader vielleicht in dieser Umgebung ausführen lassen. Die folgenden Codebeispiele zeigen Dir, wie man Shader unter Verwendung der gleichen Uniforms, die wir in diesem Buch verwenden, in diesen Umgebungen ausführen kann. (In der [GitHub-Ablage dieses Kapitels](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04) findest Du den gesamten Sourcecode für die Einbindung von Shadern unter den drei genannten Umgebungen.)
 
 ### Ausführung unter **three.js**
- 
+
 Der brillante und äußerst bescheidene Ricardo Cabello (aka [MrDoob](https://twitter.com/mrdoob) ) hat zusammen mit [Gleichgesinnten](https://github.com/mrdoob/three.js/graphs/contributors) eines der wahrscheinlich populärsten Frameworks für WebGL mit dem Namen [three.js](http://threejs.org/) entwickelt. Du findest dort viele Beispiele, Tutorials und Bücher, die Dir zeigen, wie Du diese JavaScript-Bibliothek zur Erstellung cooler 3D-Grafiken nutzen kannst.
 
 Hier folgt ein Beispiel für den HTML- und JS-Code, den Du für Deine ersten Experimente mit Shadern unter *three.js* benötigst. Bitte beachte das Script unter dem HTML-Tag ```id="fragmentShader"```. Dort kannst Du Deine Shader aus dem vorliegenden Buch einfügen.
@@ -70,7 +70,7 @@ Hier folgt ein Beispiel für den HTML- und JS-Code, den Du für Deine ersten Exp
 
         function init() {
             container = document.getElementById( 'container' );
-            
+
             camera = new THREE.Camera();
             camera.position.z = 1;
 
@@ -95,12 +95,12 @@ Hier folgt ein Beispiel für den HTML- und JS-Code, den Du für Deine ersten Exp
 
             renderer = new THREE.WebGLRenderer();
             renderer.setPixelRatio( window.devicePixelRatio );
-            
+
             container.appendChild( renderer.domElement );
 
             onWindowResize();
             window.addEventListener( 'resize', onWindowResize, false );
-            
+
             document.onmousemove = function(e){
               uniforms.u_mouse.value.x = e.pageX
               uniforms.u_mouse.value.y = e.pageY
@@ -136,7 +136,7 @@ PShader shader;
 void setup() {
   size(640, 360, P2D);
   noStroke();
-  
+
   shader = loadShader("shader.frag");
 }
 
@@ -173,12 +173,12 @@ Mehr Informationen über den Einsatz von Shadern in Processing findest Du auch i
 ### In **openFrameworks**
 
 Jeder hat einen Platz, an dem er oder sie sich besonders wohl fühlt. Bei mir ist das die [openFrameworks Gemeinschaft](http://openframeworks.cc/). Diese C++-Umgebung ermöglicht die bequeme Einbindung von OpenGL und weiteren Open Source C++-Bibliotheken. In vielerlei Hinsicht ähnelt sie der Arbeit mit Processing, nur dass man es hier mit C++ und C++-Compilern zu tun hat. Genau wie Processing sucht *openFrameworks* nach Deinen Shader-Dateien im ```DATA```-Unterverzeichnis. Deshalb vergiss nicht, Deine ```.frag```-Dateien dorthin zu kopieren und den Dateinamen entsprechend anzupassen, wenn Du diese Dateien ausführen willst.
- 
+
 ```cpp
 void ofApp::draw(){
     ofShader shader;
     shader.load("","shader.frag");
-    
+
     shader.begin();
     shader.setUniform1f("u_time", ofGetElapsedTimef());
     shader.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());

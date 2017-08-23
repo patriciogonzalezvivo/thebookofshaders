@@ -190,13 +190,13 @@ Cela amoindrit la charge de manière significative mais peut créer des artefact
 Plus tard, en 2012 [Inigo Quilez a écrit un article expliquant comment trouver des frontières précises](http://www.iquilezles.org/www/articles/voronoilines/voronoilines.htm).
 
 <a href="../edit.php#12/2d-voronoi.frag"><img src="2d-voronoi.gif"  width="520px" height="200px"></img></a>
- 
+
 Inigio ne s'est pas arrété là et en 2014, il a écrit un article sur ce qu'il a appelé le [voro-noise](http://www.iquilezles.org/www/articles/voronoise/voronoise.htm) ; une exploration combinant bruit et cellules de Voronoi.
 Je cite:
 
 *"Despite this similarity, the fact is that the way the grid is used in both patterns is different. Noise interpolates/averages random values (as in value noise) or gradients (as in gradient noise), while Voronoi computes the distance to the closest feature point. Now, smooth-bilinear interpolation and minimum evaluation are two very different operations, or... are they? Can they perhaps be combined in a more general metric? If that was so, then both Noise and Voronoi patterns could be seen as particular cases of a more general grid-based pattern generator?"*
 
-<a href="../edit.php#12/2d-voronoise.frag"><canvas id="custom" class="canvas" data-fragment-url="2d-voronoise.frag"  width="520px" height="200px"></canvas></a> 
+<a href="../edit.php#12/2d-voronoise.frag"><canvas id="custom" class="canvas" data-fragment-url="2d-voronoise.frag"  width="520px" height="200px"></canvas></a>
 
 Il est temps de revenir à la nature, d'être inspiré par elle et de trouver votre propre voie au travers de cette technique.
 

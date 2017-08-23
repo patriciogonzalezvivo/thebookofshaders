@@ -11,7 +11,7 @@
 vec3 red = vec3(1.0,0.0,0.0);
 red.x = 1.0;
 red.y = 0.0;
-red.z = 0.0; 
+red.z = 0.0;
 ```
 
 以x,y,z定义颜色是不是有些奇怪？正因如此，我们有其他方法访问这些变量——以不同的名字。```.x```, ```.y```, ```.z```也可以被写作```.r```, ```.g```, ```.b``` 和 ```.s```, ```.t```, ```.p```。（```.s```, ```.t```, ```.p```通常被用做后面章节提到的贴图空间坐标）你也可以通过使用索引位置```[0]```, ```[1]``` 和 ```[2]```来访问向量.
@@ -34,7 +34,7 @@ GLSL中向量类型的另一大特点是可以用你需要的任意顺序简单�
 ```glsl
 vec3 yellow, magenta, green;
 
-// Making Yellow 
+// Making Yellow
 yellow.rg = vec2(1.0);  // Assigning 1. to red and green channels
 yellow[2] = 0.0;        // Assigning 0. to blue channel
 
@@ -42,7 +42,7 @@ yellow[2] = 0.0;        // Assigning 0. to blue channel
 magenta = yellow.rbg;   // Assign the channels with green and blue swapped
 
 // Making Green
-green.rgb = yellow.bgb; // Assign the blue channel of Yellow (0) to red and blue channels 
+green.rgb = yellow.bgb; // Assign the blue channel of Yellow (0) to red and blue channels
 ```
 
 #### 个人工具箱
@@ -97,9 +97,9 @@ green.rgb = yellow.bgb; // Assign the blue channel of Yellow (0) to red and blue
 * 用 ```step（）``` 函数在做一个五彩的旗子。
 
 ### HSB
- 
+
 我们不能脱离色彩空间来谈论颜色。正如你所知，除了rgb值，有其他不同的方法去描述定义颜色。
- 
+
 [HSB](http://en.wikipedia.org/wiki/HSL_and_HSV) 代表色相，饱和度和亮度（或称为值）。这更符合直觉也更有利于组织颜色。稍微花些时间阅读下面的 ```rgb2hsv()``` 和 ```hsv2rgb()``` 函数。
 
 将x坐标（位置）映射到Hue值并将y坐标映射到明度，我们就得到了五彩的可见光光谱。这样的色彩空间分布实现起来非常方便，比起RGB，用HSB来拾取颜色更直观。
@@ -137,12 +137,10 @@ HSB原本是在极坐标下产生的（以半径和角度定义）而并非在�
 在进入下一章之前让我们停下脚步回顾下。复习下之前例子的函数。你会注意到变量类型之前有个限定符 ```in```，在这个 [*qualifier*](http://www.shaderific.com/glsl-qualifiers/#inputqualifier) (限定符)例子中它特指这个变量是只读的。在之后的例子中我们会看到可以定义一个 ```out``` 或者 ```inout```变量。最后这个 ```inout```，再概念上类似于参照输入一个变量，这意味着我们有可能修改一个传入的变量。
 
 ```glsl
-int newFunction(in vec4 aVec4,   // read-only 
+int newFunction(in vec4 aVec4,   // read-only
                 out vec3 aVec3,    // write-only
                 inout int aInt);   // read-write
-``` 
+```
 
 
 或许你还不相信我们可以用所有这些元素来画一些炫酷的东西。下一章我们会学习如何结合所有这些技巧通过融合 (*blending*) 空间来创造几何形状。没错。。。融合(*blending*) 空间。
-
-

@@ -18,7 +18,7 @@ bool grid(vec2 _pos, float _res){
 void main(){
     vec2 st = gl_FragCoord.xy/u_resolution.xy-vec2(.5);
     st.x *= u_resolution.x/u_resolution.y;
-  
+
     vec3 color = vec3(0.0);
 
     if(grid(st,0.01)) color += vec3(0.25);

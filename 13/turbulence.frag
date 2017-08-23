@@ -19,21 +19,21 @@ vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
 //      Author : Ian McEwan, Ashima Arts
 //  Maintainer : ijm
 //     Lastmod : 20110822 (ijm)
-//     License : 
+//     License :
 //  Copyright (C) 2011 Ashima Arts. All rights reserved.
 //  Distributed under the MIT License. See LICENSE file.
 //  https://github.com/ashima/webgl-noise
-// 
+//
 float snoise(vec2 v) {
 
     // Precompute values for skewed triangular grid
     const vec4 C = vec4(0.211324865405187,
                         // (3.0-sqrt(3.0))/6.0
-                        0.366025403784439,  
+                        0.366025403784439,
                         // 0.5*(sqrt(3.0)-1.0)
-                        -0.577350269189626,  
+                        -0.577350269189626,
                         // -1.0 + 2.0 * C.x
-                        0.024390243902439); 
+                        0.024390243902439);
                         // 1.0 / 41.0
 
     // First corner (x0)
@@ -54,17 +54,17 @@ float snoise(vec2 v) {
                 + i.x + vec3(0.0, i1.x, 1.0 ));
 
     vec3 m = max(0.5 - vec3(
-                        dot(x0,x0), 
-                        dot(x1,x1), 
+                        dot(x0,x0),
+                        dot(x1,x1),
                         dot(x2,x2)
                         ), 0.0);
 
     m = m*m ;
     m = m*m ;
 
-    // Gradients: 
+    // Gradients:
     //  41 pts uniformly over a line, mapped onto a diamond
-    //  The ring size 17*17 = 289 is close to a multiple 
+    //  The ring size 17*17 = 289 is close to a multiple
     //      of 41 (41*7 = 287)
 
     vec3 x = 2.0 * fract(p * C.www) - 1.0;

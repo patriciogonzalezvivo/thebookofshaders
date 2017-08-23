@@ -10,8 +10,8 @@ uniform float u_time;
 // License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 // http://iquilezles.org/www/articles/voronoise/voronoise.htm
 vec3 hash3( vec2 p ) {
-    vec3 q = vec3( dot(p,vec2(127.1,311.7)), 
-                   dot(p,vec2(269.5,183.3)), 
+    vec3 q = vec3( dot(p,vec2(127.1,311.7)),
+                   dot(p,vec2(269.5,183.3)),
                    dot(p,vec2(419.2,371.9)) );
     return fract(sin(q)*43758.5453);
 }
@@ -19,9 +19,9 @@ vec3 hash3( vec2 p ) {
 float iqnoise( in vec2 x, float u, float v ) {
     vec2 p = floor(x);
     vec2 f = fract(x);
-        
+
     float k = 1.0+63.0*pow(1.0-v,4.0);
-    
+
     float va = 0.0;
     float wt = 0.0;
     for (int j=-2; j<=2; j++) {
@@ -35,7 +35,7 @@ float iqnoise( in vec2 x, float u, float v ) {
             wt += ww;
         }
     }
-    
+
     return va/wt;
 }
 

@@ -14,7 +14,7 @@ vec2 tile (vec2 st, float _zoom) {
 
 vec2 seamlessTile(vec2 st){
     st *= 2.0;
-    float index = 0.0;    
+    float index = 0.0;
     index += step(1., mod(st.x,2.0));
     index += step(1., mod(st.y,2.0))*2.0;
     st = fract(st);
@@ -36,6 +36,6 @@ void main (void) {
 
 
     // step(st.x,st.y) just makes a b&w triangles
-    // but you can use whatever design you want.  
+    // but you can use whatever design you want.
     gl_FragColor = vec4(vec3(step(st.x,st.y)),1.0);
 }

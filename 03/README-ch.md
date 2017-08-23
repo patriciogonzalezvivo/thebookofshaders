@@ -11,7 +11,7 @@ precision mediump float;
 
 uniform vec2 u_resolution; // 画布尺寸（宽，高）
 uniform vec2 u_mouse;      // 鼠标位置（在屏幕上哪个像素）
-uniform float u_time;	  // 时间（加载后的秒数） 
+uniform float u_time;	  // 时间（加载后的秒数）
 ```
 
 你可以把 uniforms 想象成连通 GPU 和 CPU 的许多小的桥梁。虽然这些 uniforms 的名字千奇百怪，但是在这一系列的例子中我一直有用到：```u_time``` （时间）, ```u_resolution``` （画布尺寸）和 ```u_mouse``` （鼠标位置）。按业界传统应在 uniform 值的名字前加 ```u_``` ，这样一看即知是 uniform。尽管如此你也还会见到各种各样的名字。比如[ShaderToy.com](https://www.shadertoy.com/)就用了如下的名字：

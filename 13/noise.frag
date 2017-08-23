@@ -15,9 +15,9 @@ float random (in float x) {
     return fract(sin(x)*1e4);
 }
 
-float random (in vec2 _st) { 
+float random (in vec2 _st) {
     // return fract(sin(dot(_st.xy ,vec2(12.9898,78.233))) * 43758.5453123);
-    return fract( 1e4 * sin(17.0 * _st.x + _st.y * 0.1) * (0.1 + abs(sin(_st.y * 13.0 + _st.x)))); 
+    return fract( 1e4 * sin(17.0 * _st.x + _st.y * 0.1) * (0.1 + abs(sin(_st.y * 13.0 + _st.x))));
 }
 
 float noise (in float x) {
@@ -53,8 +53,8 @@ float noise (in vec3 _p) {
 
     vec3 i = floor(_p);
     vec3 f = fract(_p);
- 
-    // For performance, compute the base input to a 1D random from the integer part of the argument and the 
+
+    // For performance, compute the base input to a 1D random from the integer part of the argument and the
     // incremental change to the 1D based on the 3D -> 1D wrapping
     float n = dot(i, step);
 

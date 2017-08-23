@@ -1,6 +1,6 @@
 ## Muster
 
-Weil Shader-Programme Bildpunkt für Bildpunkt ausgeführt werden, spielt es keine große Rolle, wie oft man ein bestimmtes Muster innerhalb der Zeichenfläche wiederholt – die Anzahl der Berechnungen bleibt gleich. Aus diesem Grund eignen sich Fragment-Shader ganz hervorragend für die Erzeugung sich wiederholender Kachelmuster. 
+Weil Shader-Programme Bildpunkt für Bildpunkt ausgeführt werden, spielt es keine große Rolle, wie oft man ein bestimmtes Muster innerhalb der Zeichenfläche wiederholt – die Anzahl der Berechnungen bleibt gleich. Aus diesem Grund eignen sich Fragment-Shader ganz hervorragend für die Erzeugung sich wiederholender Kachelmuster.
 
 [ ![Nina Warmerdam – Das IMPRINT Projekt (2013)](warmerdam.jpg) ](../edit.php#09/dots5.frag)
 
@@ -86,7 +86,7 @@ Wir haben nun gelernt, wie man feststellt, ob sich die zu zeichnende Gitterzelle
 
 ![](truchet-00.png)
 
-Indem wir die Anordnung des Musters von Kachel zu Kachel variieren, können wir eine unendliche Menge von Designs erzeugen. 
+Indem wir die Anordnung des Musters von Kachel zu Kachel variieren, können wir eine unendliche Menge von Designs erzeugen.
 
 ![](truchet-01.png)
 
@@ -108,9 +108,8 @@ Schaue Die die Funktion ```rotateTilePattern()``` genau an. Sie unterteilt den R
 
 ## Erschaffe Deine eigenen Regeln
 
-Prozedurale, sich wiederholende Muster zu kreieren, ist eine interessante Übung für den Geist. Es geht darum, den minimalen Satz an Elementen zu finden, die sich wiederholen müssen, um ein größeres komplexes Ganzes zu erschaffen. Diese Vorgehensweise ist sehr alt. Die Menschheit benutzt Muster und Gitternetze schon seit tausenden von Jahren, um Wände und Böden, Textilien und andere Objekte zu verzieren. Angefangen von mäandernden Mustern im alten Griechenland bis hin zu chinesischen Gitterfenstern, ist es immer wieder das Spiel aus Wiederholung bei gleichzeitiger Variation, die unsere Fantasie anregt. Nimm Dir ein wenig Zeit, um diese Art von [Dekorationen](https://archive.org/stream/traditionalmetho00chririch#page/130/mode/2up) und [Mustern](https://www.pinterest.com/patriciogonzv/paterns/) zu studieren. Von geometrischen Mustern aus Arabien bis hin zu prachtvollen Stoffmustern aus dem afrikanischem Kulturkreis eröffnet sich Dir ein ganzes Universum an Mustern, von denen Du lernen kannst. 
+Prozedurale, sich wiederholende Muster zu kreieren, ist eine interessante Übung für den Geist. Es geht darum, den minimalen Satz an Elementen zu finden, die sich wiederholen müssen, um ein größeres komplexes Ganzes zu erschaffen. Diese Vorgehensweise ist sehr alt. Die Menschheit benutzt Muster und Gitternetze schon seit tausenden von Jahren, um Wände und Böden, Textilien und andere Objekte zu verzieren. Angefangen von mäandernden Mustern im alten Griechenland bis hin zu chinesischen Gitterfenstern, ist es immer wieder das Spiel aus Wiederholung bei gleichzeitiger Variation, die unsere Fantasie anregt. Nimm Dir ein wenig Zeit, um diese Art von [Dekorationen](https://archive.org/stream/traditionalmetho00chririch#page/130/mode/2up) und [Mustern](https://www.pinterest.com/patriciogonzv/paterns/) zu studieren. Von geometrischen Mustern aus Arabien bis hin zu prachtvollen Stoffmustern aus dem afrikanischem Kulturkreis eröffnet sich Dir ein ganzes Universum an Mustern, von denen Du lernen kannst.
 
 ![Franz Sales Meyer – Handbuch der Ornamentik (1920)](geometricpatters.png)
 
 Mit diesem Kapitel enden die Abschnitte zum algorithmischen Zeichnen. In den folgenden Kapiteln werden wir sehen, wie man ein wenig mehr Zufall in unsere Shader bringt, um die Natur nachzuempfinden.
-

@@ -3,7 +3,7 @@
 # The Book of Shaders
 *by [Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/)*
 
-이것은 황량하게 넓고 복잡한 Fragment Shader의 세계를 한단계씩 살펴보는 지침서입니다. 
+이것은 황량하게 넓고 복잡한 Fragment Shader의 세계를 한단계씩 살펴보는 지침서입니다.
 
 ## 번역에 대하여
 

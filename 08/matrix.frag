@@ -4,7 +4,7 @@
 #ifdef GL_ES
 precision mediump float;
 #endif
-                
+
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
@@ -31,7 +31,7 @@ vec3 matrix(in vec2 st){
 
     ipos += vec2(.0,floor(u_time*20.*random(ipos.x)));
 
-    
+
     vec2 fpos = fract(st*rows);
     vec2 center = (.5-fpos);
 

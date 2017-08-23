@@ -31,10 +31,10 @@ void main(){
 
   vec2 st = gl_FragCoord.xy/u_resolution.xy;
   st.x *= u_resolution.x/u_resolution.y;
-  
+
   st = brickMirrorTile(st,5.);
-  vec3 color = vec3(circle(st+vec2(0.,0.05), 0.007)+ 
-                    circle(st+vec2(0.075,-0.07), 0.007)+ 
+  vec3 color = vec3(circle(st+vec2(0.,0.05), 0.007)+
+                    circle(st+vec2(0.075,-0.07), 0.007)+
                     circle(st+vec2(-0.075,-0.07), 0.007));
 
   gl_FragColor = vec4(color,1.0);

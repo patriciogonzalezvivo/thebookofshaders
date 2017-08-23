@@ -34,7 +34,7 @@ Provate alcuni dei seguenti esercizi per capire meglio:
 
 * Suddividete lo spazio in 3 righe e 3 colonne. Trovate un modo di sapere in quale colonna e quale riga si trova il thread e usatelo per cambiare la forma che è mostrata. Provate a creare una griglia per il tris.
 
-### Applicare le matrici all'interno dei motivi 
+### Applicare le matrici all'interno dei motivi
 
 Siccome ciascuna suddivisione, o cella, è una versione più piccola del sistema normalizzato di coordinate che abbiamo già usato, possiamo applicarle una trasformazione matrice per traslare, ruotare o ridimensionare lo spazio interno.
 

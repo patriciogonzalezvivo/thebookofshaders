@@ -16,7 +16,7 @@ float aastep(float threshold, float value) {
     return smoothstep(threshold-afwidth, threshold+afwidth, value);
   #else
     return step(threshold, value);
-  #endif  
+  #endif
 }
 
 float stripes(vec2 st, float width){
@@ -26,7 +26,7 @@ float stripes(vec2 st, float width){
 void main(){
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     st.x *= u_resolution.x/u_resolution.y;
-   
+
    	vec2 pos = st;
     pos.y += sin(pos.x*30.)*.01;
     vec3 color = vec3(stripes(pos*92.,.4));

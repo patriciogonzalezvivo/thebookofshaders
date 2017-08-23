@@ -16,7 +16,7 @@ float aastep(float threshold, float value) {
     return smoothstep(threshold-afwidth, threshold+afwidth, value);
   #else
     return step(threshold, value);
-  #endif  
+  #endif
 }
 
 mat2 rotate2d(float angle){
@@ -32,7 +32,7 @@ float stripes(vec2 st){
 void main(){
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     st.x *= u_resolution.x/u_resolution.y;
-   
+
     vec3 color = vec3(stripes(st));
     gl_FragColor = vec4(color, 1.0);
 }

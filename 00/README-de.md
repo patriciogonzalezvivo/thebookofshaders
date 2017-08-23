@@ -2,9 +2,9 @@
 
 <canvas id="custom" class="canvas" data-fragment-url="cmyk-halftone.frag" data-textures="vangogh.jpg" width="700px" height="320px"></canvas>
 
-Die oben abgebildeten Grafiken wurden auf ganz unterschiedliche Weise erstellt. Die linke Abbildung stammt aus den Händen des Malers Van Gogh, der die Farben in stundenlanger Arbeit Schicht für Schicht mit einem Pinsel aufgetragen hat. Die rechte Abbildung wurde dagegen innerhalb von Sekundenbruchteilen mit Hilfe von vier Punktmatrizen erzeugt: eine für Cyan, eine für Magenta, eine für Gelb und eine für Schwarz. Der entscheidende Unterschied: Das zweite Bild wurde nicht seriell erstellt, d.h. Strich für Strich, sondern parallel, alle Punkte zur gleichen Zeit. 
+Die oben abgebildeten Grafiken wurden auf ganz unterschiedliche Weise erstellt. Die linke Abbildung stammt aus den Händen des Malers Van Gogh, der die Farben in stundenlanger Arbeit Schicht für Schicht mit einem Pinsel aufgetragen hat. Die rechte Abbildung wurde dagegen innerhalb von Sekundenbruchteilen mit Hilfe von vier Punktmatrizen erzeugt: eine für Cyan, eine für Magenta, eine für Gelb und eine für Schwarz. Der entscheidende Unterschied: Das zweite Bild wurde nicht seriell erstellt, d.h. Strich für Strich, sondern parallel, alle Punkte zur gleichen Zeit.
 
-Dieses Buch handelt von einer Computertechnik mit Namen *Fragment Shader*, die die digitale Erzeugung von Bildern revolutioniert und zu neuen Höhen geführt hat. Man kann ihre Erfindung ein wenig vergleichen mit dem Schritt von der manuellen Vervielfältigung einzelner Grafiken und Dokumente hin zur massenhaften Replikation durch Gutenbergs Druckerpresse. 
+Dieses Buch handelt von einer Computertechnik mit Namen *Fragment Shader*, die die digitale Erzeugung von Bildern revolutioniert und zu neuen Höhen geführt hat. Man kann ihre Erfindung ein wenig vergleichen mit dem Schritt von der manuellen Vervielfältigung einzelner Grafiken und Dokumente hin zur massenhaften Replikation durch Gutenbergs Druckerpresse.
 
 ![Gutenbergs Druckerpresse](gutenpress.jpg)
 
@@ -18,7 +18,7 @@ Die folgenden Kapitel wollen Dir zeigen, wie unglaublich schnell und leistungsf�
 
 Dieses Buch wendet sich an kreative Programmierer, Spieleentwickler und Ingenieure, die bereits über eine gewisse Programmiererfahrung, sowie grundlegende Kenntnisse aus den Bereichen der linearen Algebra und der Trigonometrie verfügen. (Falls Du erst noch Programmieren lernen möchtest, empfehle ich Dir, mit [Processing](https://processing.org/) zu beginnen und anschließend mit diesem Buch fortzufahren.)
 
-Die folgenden Kapitel werden Dir zeigen, wie Du Shader in Deinen Projekten einsetzen kannst, um die Qualität und die Geschwindigkeit bei der Erzeugung von Grafiken zu verbessern. GLSL-Shader (GLSL steht für „OpenGL Shading Language“) lassen sich auf einer Vielzahl von Hardwareplattformen und Betriebssystemen kompilieren und ausführen. Dadurch kannst Du das erlernte Wissen in jeder Umgebung einsetzen, die OpenGL, OpenGL ES oder WebGL unterstützt. 
+Die folgenden Kapitel werden Dir zeigen, wie Du Shader in Deinen Projekten einsetzen kannst, um die Qualität und die Geschwindigkeit bei der Erzeugung von Grafiken zu verbessern. GLSL-Shader (GLSL steht für „OpenGL Shading Language“) lassen sich auf einer Vielzahl von Hardwareplattformen und Betriebssystemen kompilieren und ausführen. Dadurch kannst Du das erlernte Wissen in jeder Umgebung einsetzen, die OpenGL, OpenGL ES oder WebGL unterstützt.
 
 In anderen Worten, Du kannst Dein Know-how u.a. beim Malen mit [Processing](https://processing.org/), bei Anwendungen für [openFrameworks](http://openframeworks.cc/), interaktiven Installationen mit [Cinder](http://libcinder.org/), Webseiten mit [Three.js](http://threejs.org/) oder bei Spielen für iOS/Android nutzen.
 
@@ -47,4 +47,3 @@ Alternativ kannst Du auch:
 - [Eine PDF-Datei mit diesem Buch erzeugen, um es auszudrucken](https://thebookofshaders.com/appendix/?lan=de)
 
 - Die [Online-Ablage dieses Buches](https://github.com/patriciogonzalezvivo/thebookofshaders) bei GitHub nutzen, um Fehler zu melden und Programmcode mit anderen Lesern zu teilen.
-

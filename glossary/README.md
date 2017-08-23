@@ -160,13 +160,13 @@
 [distance()](./?search=distance)
 [dot()](./?search=dot)
 
-* E 
+* E
 
 [equal()](./?search=equal)
 [exp()](./?search=exp)
 [exp2()](./?search=exp2)
 
-* F 
+* F
 
 [faceforward()](./?search=faceforward)
 [float](./?search=float)
@@ -214,7 +214,7 @@
 [log2()](./?search=log2)
 [lowp](./?search=lowp)
 
-* M 
+* M
 
 [matrixCompMult()](./?search=matrixCompMult)
 [mat2](./?search=mat2)

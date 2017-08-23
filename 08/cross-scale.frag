@@ -26,14 +26,14 @@ float box(in vec2 _st, in vec2 _size){
 }
 
 float cross(in vec2 _st, float _size){
-    return  box(_st, vec2(_size,_size/4.)) + 
+    return  box(_st, vec2(_size,_size/4.)) +
             box(_st, vec2(_size/4.,_size));
 }
 
 void main(){
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     vec3 color = vec3(0.0);
-        
+
     st -= vec2(0.5);
     st = scale( vec2(sin(u_time)+1.0) ) * st;
     st += vec2(0.5);

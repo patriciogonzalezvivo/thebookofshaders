@@ -14,7 +14,7 @@ Si vous connaissez la Programmation Orientée Objet, vous aurez remarqué que no
 vec3 red = vec3(1.0,0.0,0.0);
 red.x = 1.0;
 red.y = 0.0;
-red.z = 0.0; 
+red.z = 0.0;
 ```
 
 Dans l'exemple ci dessus, *x*, *y* et *z* permettent d'**accéder** aux 3 valeurs contenues dans l'objet ```red``` de type ```vec3```, ce sont les **accesseurs** aux propriétés de ```red```.
@@ -259,10 +259,7 @@ Cette dernière, ```inout```, est équivalente à passer un argument *par réfé
 int newFunction(in vec4 aVec4,   // lecture seule
                 out vec3 aVec3,    // écriture seule
                 inout int aInt);   // lecture / écriture
-``` 
+```
 
 Vous ne le savez pas encore et vous pourriez ne pas le croire mais nous avons à présent tout ce qu'il nous faut pour dessiner à peu près n'importe quoi.
 Au prochain chapitre, nous verrons comment combiner ces techniques pour *mélanger* l'espace. Oui... *mélanger* l'espace.
-
-
-

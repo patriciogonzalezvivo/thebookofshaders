@@ -1,8 +1,8 @@
 # Algorithmic drawing
 ## Shaping functions
 
-이번 챕터는 "미야기씨의 울타리 수업"이라고 표현할수 있겠다. 전에는, 노멀라이즈된 ,*x*와 *y*를 *red*와 *green*채널들에 적용해 보았다. 
-원래는 2차원 벡터(x and y)를 받아, 4차원 벡터(r, g, b and a)를 리턴하는 함수가 좀더 자연스럽니다. 하지만 지금 이런문제를 해결하기 전에, 간단한것부터 시작해보자... 훨씬더 간단한것부터. 이말은 1차원 함수에 대한 정의에서부터 시작한다. 시간과 에너지를 많이 투자하고 배우고 마스터하려고 하다보면, 우리는 더욱더 강한 쉐이더 카라테를 배울수 있을것이다. 
+이번 챕터는 "미야기씨의 울타리 수업"이라고 표현할수 있겠다. 전에는, 노멀라이즈된 ,*x*와 *y*를 *red*와 *green*채널들에 적용해 보았다.
+원래는 2차원 벡터(x and y)를 받아, 4차원 벡터(r, g, b and a)를 리턴하는 함수가 좀더 자연스럽니다. 하지만 지금 이런문제를 해결하기 전에, 간단한것부터 시작해보자... 훨씬더 간단한것부터. 이말은 1차원 함수에 대한 정의에서부터 시작한다. 시간과 에너지를 많이 투자하고 배우고 마스터하려고 하다보면, 우리는 더욱더 강한 쉐이더 카라테를 배울수 있을것이다.
 
 ![베스트 키드 (1985)](mr_miyagi.jpg)
 
@@ -23,7 +23,7 @@
 [```pow()```](../glossary/?search=pow) 는 GLSL의 내장형 함수이고 GLSL은 이런 수학함수를 많이 제공한다. 거의 모든 함수들은 하드웨어 레벨에서 구동되도록 '가속화' 되어 있다. 다시말해, 이런 이점을 잘 활용하면 굉장히 빠른 코드를 쓸수 있게 된다.
 
 라인 19의 power 함수를 다른 함수로 교체해보자.: [```exp()```](../glossary/?search=exp), [```log()```](../glossary/?search=log), [```sqrt()```](../glossary/?search=sqrt). 어떤함수들은 인자로 PI값을 넣었을때 재밌는 결과를 내기도 한다. 라인 5에 ```PI```값을 ```3.14159265359```로 define해 둔것을 알수 있다.
- 
+
 ### Step and Smoothstep
 
 GLSL에는 하드웨어 가속화된 내장 보간법 함수들이 존재한다.
@@ -34,7 +34,7 @@ GLSL에는 하드웨어 가속화된 내장 보간법 함수들이 존재한다.
 
 <div class="codeAndCanvas" data="step.frag"></div>
 
-또 하나의 잘 알려진 함수중 하나는 [```smoothstep()```](../glossary/?search=smoothstep)이다. 두값의 레인지를 주고, 그 사이의 값으로 보간시켜주는 방법이다. 처음 두개의 인자는 레인지의 시작점과 끝점이고, 세번째 인자는 두 점사이에서 보간되고 리턴되는 값이다. 
+또 하나의 잘 알려진 함수중 하나는 [```smoothstep()```](../glossary/?search=smoothstep)이다. 두값의 레인지를 주고, 그 사이의 값으로 보간시켜주는 방법이다. 처음 두개의 인자는 레인지의 시작점과 끝점이고, 세번째 인자는 두 점사이에서 보간되고 리턴되는 값이다.
 
 <div class="codeAndCanvas" data="smoothstep.frag"></div>
 
@@ -94,7 +94,7 @@ GLSL에는 하드웨어 가속화된 내장 보간법 함수들이 존재한다.
 
 ### 고급 쉐이핑 함수들
 
-[Golan Levin](http://www.flong.com/) 는 제법 복잡하지만 굉장히 유용한 쉐이핑 함수들을 잘 정리해 두었다. 이들을 GLSL로 포팅하는것또한 굉장히 유용한 공부방법일 것이다. 자신만의 쉐이핑 펑션 라이브러리를 개설해보자. 
+[Golan Levin](http://www.flong.com/) 는 제법 복잡하지만 굉장히 유용한 쉐이핑 함수들을 잘 정리해 두었다. 이들을 GLSL로 포팅하는것또한 굉장히 유용한 공부방법일 것이다. 자신만의 쉐이핑 펑션 라이브러리를 개설해보자.
 
 * [Polynomial Shaping Functions: www.flong.com/texts/code/shapers_poly](http://www.flong.com/texts/code/shapers_poly/)
 
@@ -106,7 +106,7 @@ GLSL에는 하드웨어 가속화된 내장 보간법 함수들이 존재한다.
 
 요리사가 자신만의 요리재료와 소스 노하우를 모으듯, digital artist들이나, creative coder들 역시 그들만의 쉐이핑 펑션을 만드는 버릇을 가져야 할것이다.
 
-[Iñigo Quiles](http://www .iquilezles.org/)가 가지고 있는 [useful functions](http://www.iquilezles.org/www/articles/functions/functions.htm)정리는 매우 유용하다. [이 글](http://www.iquilezles.org/www/articles/functions/functions.htm)을 읽고, GLSL로 번역해보는 작업도 해볼수 있다. 조심해야 될 점들은, "."(점)을 실수 뒤에 꼭 넣어야 한다는 점이다. 함수의 이름이 ```powf()``` 에서 ```pow()```등으로 바뀌어 구현되는 점등이다. 
+[Iñigo Quiles](http://www .iquilezles.org/)가 가지고 있는 [useful functions](http://www.iquilezles.org/www/articles/functions/functions.htm)정리는 매우 유용하다. [이 글](http://www.iquilezles.org/www/articles/functions/functions.htm)을 읽고, GLSL로 번역해보는 작업도 해볼수 있다. 조심해야 될 점들은, "."(점)을 실수 뒤에 꼭 넣어야 한다는 점이다. 함수의 이름이 ```powf()``` 에서 ```pow()```등으로 바뀌어 구현되는 점등이다.
 
 * [Impulse](../edit.php#05/impulse.frag)
 * [Cubic Pulse](../edit.php#05/cubicpulse.frag)

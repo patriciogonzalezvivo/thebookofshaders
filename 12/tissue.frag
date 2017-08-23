@@ -31,7 +31,7 @@ vec3 voronoi( in vec2 x, float rnd ) {
             vec2 o = random2( n + g )*rnd;
             #ifdef ANIMATE
             o = 0.5 + 0.5*sin( u_time + 6.2831*o );
-            #endif  
+            #endif
             vec2 r = g + o - f;
             float d = dot(r,r);
 
@@ -51,7 +51,7 @@ vec3 voronoi( in vec2 x, float rnd ) {
             vec2 o = random2(n + g)*rnd;
             #ifdef ANIMATE
             o = 0.5 + 0.5*sin( u_time + 6.2831*o );
-            #endif  
+            #endif
             vec2 r = g + o - f;
 
             if( dot(mr-r,mr-r)>0.00001 )
@@ -72,11 +72,11 @@ void main() {
         st.x -= (u_resolution.x*.5-u_resolution.y*.5)/u_resolution.y;
     }
     vec3 color = vec3(0.0);
-    
+
     float d = dot(st-.5,st-.5);
     vec3 c = voronoi( 20.*st, pow(d,.4) );
 
-    // borders  
+    // borders
     color = mix( vec3(1.0), color, smoothstep( 0.01, 0.02, c.x ) );
     // feature points
     float dd = length( c.yz );

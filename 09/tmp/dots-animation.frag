@@ -28,11 +28,11 @@ void main(){
 
   vec2 st = gl_FragCoord.xy/u_resolution.xy;
   st.x *= u_resolution.x/u_resolution.y;
-  
+
   vec2 pos = vec2(0.5)-st;
 
   st = brickTile(st,20.);
-  
+
   float t = u_time*.5;
   float r = dot(pos,pos)*4.;
 

@@ -70,7 +70,7 @@ Di seguito è riportato un esempio di codice HTML e JS per iniziare con gli shad
 
         function init() {
             container = document.getElementById( 'container' );
-            
+
             camera = new THREE.Camera();
             camera.position.z = 1;
 
@@ -95,12 +95,12 @@ Di seguito è riportato un esempio di codice HTML e JS per iniziare con gli shad
 
             renderer = new THREE.WebGLRenderer();
             renderer.setPixelRatio( window.devicePixelRatio );
-            
+
             container.appendChild( renderer.domElement );
 
             onWindowResize();
             window.addEventListener( 'resize', onWindowResize, false );
-            
+
             document.onmousemove = function(e){
               uniforms.u_mouse.value.x = e.pageX
               uniforms.u_mouse.value.y = e.pageY
@@ -136,7 +136,7 @@ PShader shader;
 void setup() {
   size(640, 360, P2D);
   noStroke();
-  
+
   shader = loadShader("shader.frag");
 }
 
@@ -173,12 +173,12 @@ Per ulteriori informazioni sugli shader in Processing controllate questo [tutori
 ### In **openFrameworks**
 
 Ognuno ha un luogo in cui sentirsi a proprio agio e, nel mio caso, è ancora la [comunità di openFrameworks](http://openframeworks.cc/). Questo framework C++ integra OpenGL e altre librerie C++ open source. Per molti aspetti è molto simile a Processing, ma con le ovvie complicazioni dovute ai compilatori C++. Allo stesso modo di Processing, openFrameworks cercherà i tuoi file shader nella cartella dati, quindi non dimenticate di copiare i file ```.frag``` che si desiderano utilizzare e modificate il nome quando li si carica.
- 
+
 ```cpp
 void ofApp::draw(){
     ofShader shader;
     shader.load("","shader.frag");
-    
+
     shader.begin();
     shader.setUniform1f("u_time", ofGetElapsedTimef());
     shader.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());

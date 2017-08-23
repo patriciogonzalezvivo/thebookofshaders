@@ -25,7 +25,7 @@ float box(in vec2 _st, in vec2 _size){
 }
 
 float cross(in vec2 _st, float _size){
-    return  box(_st, vec2(_size*0.5,_size*0.125)) + 
+    return  box(_st, vec2(_size*0.5,_size*0.125)) +
             box(_st, vec2(_size*0.125,_size*0.5));
 }
 

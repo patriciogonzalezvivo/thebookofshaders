@@ -88,7 +88,7 @@ Dank an [Tong Li](https://www.facebook.com/tong.lee.9484) und [Yi Zhang](https:/
 
 Dank an [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) für die [koreanische Übersetzung des Textes (한국어)](?lan=kr)
 
-Dank an [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) für die 
+Dank an [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) für die
 [spanische Übersetzung des Textes (español)](?lan=es)
 
 Dank an [Nicolas Barradeau](https://twitter.com/nicoptere) und [Karim Naaji](http://karim.naaji.fr/) für die [französische Übersetzung des Textes (français)](?lan=fr)
@@ -104,4 +104,3 @@ Und natürlich Danke an alle, die an dieses Projekt geglaubt, dafür gespendet o
 Melde Dich für den Newsletter an oder [folge uns auf Twitter](https://twitter.com/bookofshaders)
 
  <form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://tinyletter.com/thebookofshaders" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/thebookofshaders', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"><a href="https://tinyletter.com/thebookofshaders"><p><label for="tlemail">Deine Email-Adresse</label></p></a><p><input type="text" style="width:140px" name="email" id="tlemail" /></p><input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe" /><p><a href="https://tinyletter.com" target="_blank"></a></p></form>
-

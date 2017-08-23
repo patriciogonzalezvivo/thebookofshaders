@@ -114,7 +114,7 @@ for (int i = 0; i < OCTAVES; i++) {
 }
 ```
 
-<a href="../edit.php#13/turbulence.frag"><img src="turbulence-long.png"  width="520px" height="200px"></img></a> 
+<a href="../edit.php#13/turbulence.frag"><img src="turbulence-long.png"  width="520px" height="200px"></img></a>
 
 Une seconde variante dite *ridge noise* (bruit de *crête* ou d'*arête*) consiste à inverser les vallées:
 
@@ -124,7 +124,7 @@ Une seconde variante dite *ridge noise* (bruit de *crête* ou d'*arête*) consis
     n = n * n;      // sharpen creases
 ```
 
-<a href="../edit.php#13/ridge.frag"><img src="ridge-long.png"  width="520px" height="200px"></img></a> 
+<a href="../edit.php#13/ridge.frag"><img src="ridge-long.png"  width="520px" height="200px"></img></a>
 
 Une autre variante consiste à multiplier les valeurs de bruit au lieu de les additionner.
 Il est intéressant de modifier l'échelle d'une itération de bruit en fonction du bruit de l'itération precédente.

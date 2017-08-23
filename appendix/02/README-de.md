@@ -1,7 +1,7 @@
 ## Wie kann ich dieses Buch ausdrucken?
 
 Nehmen wir einmal an, Du willst gar nicht mit den Beispielprogrammen in diesem Buch interagieren, sondern den Text wie ein gutes altes Buch im Urlaub oder auf dem täglichen Weg zur Arbeit lesen. In diesem Fall kannst Du Dir den Text einfach ausdrucken.
- 
+
 
 #### Installation des glslViewer
 
@@ -14,7 +14,7 @@ brew update
 brew upgrade
 brew tap homebrew/versions
 brew install glfw3
-cd ~ 
+cd ~
 git clone http://github.com/patriciogonzalezvivo/glslViewer.git
 cd glslViewer
 make
@@ -36,7 +36,7 @@ Für den Ausdruck müssen die einzelnen Kapitel zunächst aus dem vorliegenden T
 Unter **MacOSX**:
 
 Lade und installiere zunächst [basictex inkl. der  MacTeX-Erweiterungen](http://www.tug.org/mactex/morepackages.html) und installiere anschließend [Pandoc](http://johnmacfarlane.net/pandoc/), indem Du folgende Kommandos eingibst:
- 
+
 ```bash
 brew install pandoc
 ```
@@ -61,4 +61,3 @@ make
 ```
 
 Wenn alles funktioniert hat, findest Du anschließend die Datei ```book.pdf``` vor, die Du auf Deinem bevorzugten Gerät lesen oder ausdrucken kannst.
-

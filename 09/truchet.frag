@@ -24,15 +24,15 @@ vec2 tile (vec2 _st, float _zoom) {
 
 vec2 rotateTilePattern(vec2 _st){
 
-    //  Scale the coordinate system by 2x2 
+    //  Scale the coordinate system by 2x2
     _st *= 2.0;
 
     //  Give each cell an index number
     //  according to its position
-    float index = 0.0;    
+    float index = 0.0;
     index += step(1., mod(_st.x,2.0));
     index += step(1., mod(_st.y,2.0))*2.0;
-    
+
     //      |
     //  2   |   3
     //      |
@@ -72,6 +72,6 @@ void main (void) {
     // st = rotate2D(st,PI*u_time*0.25);
 
     // step(st.x,st.y) just makes a b&w triangles
-    // but you can use whatever design you want.  
+    // but you can use whatever design you want.
     gl_FragColor = vec4(vec3(step(st.x,st.y)),1.0);
 }

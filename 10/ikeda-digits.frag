@@ -4,7 +4,7 @@
 #ifdef GL_ES
 precision mediump float;
 #endif
-                
+
 uniform vec2 u_resolution;
 uniform float u_time;
 
@@ -34,15 +34,15 @@ float char(vec2 st, float n){
 
     n = floor(mod(n,10.));
     float digit = 0.0;
-    if (n < 1. ) { digit = 31600.; } 
-    else if (n < 2. ) { digit = 9363.0; } 
-    else if (n < 3. ) { digit = 31184.0; } 
-    else if (n < 4. ) { digit = 31208.0; } 
-    else if (n < 5. ) { digit = 23525.0; } 
-    else if (n < 6. ) { digit = 29672.0; } 
-    else if (n < 7. ) { digit = 29680.0; } 
-    else if (n < 8. ) { digit = 31013.0; } 
-    else if (n < 9. ) { digit = 31728.0; } 
+    if (n < 1. ) { digit = 31600.; }
+    else if (n < 2. ) { digit = 9363.0; }
+    else if (n < 3. ) { digit = 31184.0; }
+    else if (n < 4. ) { digit = 31208.0; }
+    else if (n < 5. ) { digit = 23525.0; }
+    else if (n < 6. ) { digit = 29672.0; }
+    else if (n < 7. ) { digit = 29680.0; }
+    else if (n < 8. ) { digit = 31013.0; }
+    else if (n < 9. ) { digit = 31728.0; }
     else if (n < 10. ) { digit = 31717.0; }
     float pct = bin(ipos, digit);
 

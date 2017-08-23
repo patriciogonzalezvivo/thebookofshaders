@@ -22,22 +22,22 @@ void main() {
     point[2] = vec2(0.28,0.64);
     point[3] =  vec2(0.31,0.26);
     point[4] = u_mouse/u_resolution;
-    
+
     float m_dist = 1.;  // minimun distance
 
     // Iterate through the points positions
     for (int i = 0; i < 5; i++) {
         float dist = distance(st, point[i]);
-        
+
         // Keep the closer distance
         m_dist = min(m_dist, dist);
     }
-    
+
     // Draw the min distance (distance field)
     color += m_dist;
 
     // Show isolines
     // color -= step(.7,abs(sin(50.0*m_dist)))*.3;
-    
+
     gl_FragColor = vec4(color,1.0);
 }
