@@ -1,7 +1,7 @@
 <canvas id="custom" class="canvas" data-fragment-url="examples/moon.frag" data-textures="examples/images/moon-texture.jpg" width="350px" height="350px"></canvas>
 
 # The Book of Shaders
-*par [Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/)*
+*par [Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) et [Jen Lowe](http://jenlowe.net/)*
 
 Ceci est un guide étape-par-étape à travers le monde abstrait et complexe des Fragment Shaders.
 
