@@ -1,0 +1,25 @@
+language: python
+python:
+  - 2.7
+install:
+  - sudo apt-get install cmake xorg-dev libglu1-mesa-dev texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended pandoc imagemagick
+  - # Install glfw
+  - git clone https://github.com/glfw/glfw.git ~/glfw
+  - cd ~/glfw
+  - cmake .
+  - make
+  - sudo make install
+  - cd -
+  - # Install glslViewer
+  - git clone http://github.com/patriciogonzalezvivo/glslViewer ~/glslViewer
+  - cd ~/glslViewer
+  - make
+  - sudo make install
+  - cd -
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sleep 3 # give xvfb some time to start
+  - rm -rf 12 13 14 15 16 17 18 # ugly ...
+script:
+  - make && [ -e book.pdf ]

@@ -14,3 +14,10 @@ for folder in folders:
         shaderCommand = "glslViewer " + shaderPath + " " + \
                             " -s 0.5 -o " + shaderImage
         returnCode = subprocess.call(shaderCommand, shell=True)
+
+    for filename in glob.glob(folder + '/*.gif'):
+        gifPath = filename;
+        gifName, gifExt = os.path.splitext(filename)
+        pngImage = gifName + ".png"
+        convertCommand = "convert " + gifPath + " " + pngImage
+        returnCode = subprocess.call(convertCommand, shell=True)
