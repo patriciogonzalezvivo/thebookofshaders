@@ -38,10 +38,10 @@ Not much! If you have a modern browser that can do WebGL (like Chrome, Firefox o
 
 Alternatively, based on what you have or what you need from this book you can:
 
-- [Make an off-line version of this book](https://thebookofshaders.com/appendix/)
+- [Make an off-line version of this book](https://thebookofshaders.com/appendix/00/)
 
-- [Run the examples on a Raspberry Pi without a browser](https://thebookofshaders.com/appendix/)
+- [Run the examples on a Raspberry Pi without a browser](https://thebookofshaders.com/appendix/01/)
 
-- [Make a PDF of the book to print](https://thebookofshaders.com/appendix/)
+- [Make a PDF of the book to print](https://thebookofshaders.com/appendix/02/)
 
-- Use the [on-line repository](https://github.com/patriciogonzalezvivo/thebookofshaders) to help resolve issues and share code.
+- Check the [GitHub repository](https://github.com/patriciogonzalezvivo/thebookofshaders) of this book to help resolve issues and share code.
