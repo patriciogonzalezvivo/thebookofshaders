@@ -14,16 +14,16 @@ You'd paint everything except the first and last rows and the first and last col
 
 How does this relate to shaders? Each little square of our grid paper is a thread (a pixel). Each little square knows its position, like the coordinates of a chess board. In previous chapters we mapped *x* and *y* to the *red* and *green* color channels, and we learned how to use the narrow two dimensional territory between 0.0 and 1.0. How can we use this to draw a centered square in the middle of our billboard?
 
-Let's start by sketching pseudocode that uses ```if``` statements over the spatial field. The principles to do this are remarkably similar to how we think of the grid paper scenario.
+Let's start by sketching pseudocode that uses `if` statements over the spatial field. The principles to do this are remarkably similar to how we think of the grid paper scenario.
 
 ```glsl
-    if ( (X GREATER THAN 1) AND (Y GREATER THAN 1) )
-        paint white
-    else
-        paint black
+if ( (X GREATER THAN 1) AND (Y GREATER THAN 1) )
+    paint white
+else
+    paint black
 ```
 
-Now that we have a better idea of how this will work, let’s replace the ```if``` statement with [```step()```](../glossary/?search=step), and instead of using 10x10 let’s use normalized values between 0.0 and 1.0:
+Now that we have a better idea of how this will work, let’s replace the `if` statement with [`step()`](../glossary/?search=step), and instead of using 10x10 let’s use normalized values between 0.0 and 1.0:
 
 ```glsl
 uniform vec2 u_resolution;
@@ -43,42 +43,42 @@ void main(){
 }
 ```
 
-The [```step()```](../glossary/?search=step) function will turn every pixel below 0.1 to black (```vec3(0.0)```) and the rest to white (```vec3(1.0)```) . The multiplication between ```left``` and ```bottom``` works as a logical ```AND``` operation, where both must be 1.0 to return 1.0 . This draws two black lines, one on the bottom and the other on the left side of the canvas.
+The [`step()`](../glossary/?search=step) function will turn every pixel below 0.1 to black (`vec3(0.0)`) and the rest to white (`vec3(1.0)`) . The multiplication between `left` and `bottom` works as a logical `AND` operation, where both must be 1.0 to return 1.0 . This draws two black lines, one on the bottom and the other on the left side of the canvas.
 
 ![](rect-01.jpg)
 
-In the previous code we repeat the structure for each axis (left and bottom). We can save some lines of code by passing two values directly to [```step()```](../glossary/?search=step) instead of one. That looks like this:
+In the previous code we repeat the structure for each axis (left and bottom). We can save some lines of code by passing two values directly to [`step()`](../glossary/?search=step) instead of one. That looks like this:
 
 ```glsl
-    vec2 borders = step(vec2(0.1),st);
-    float pct = borders.x * borders.y;
+vec2 borders = step(vec2(0.1),st);
+float pct = borders.x * borders.y;
 ```
 
 So far, we’ve only drawn two borders (bottom-left) of our rectangle. Let's do the other two (top-right). Check out the following code:
 
 <div class="codeAndCanvas" data="rect-making.frag"></div>
 
-Uncomment *lines 21-22* and see how we invert the ```st``` coordinates and repeat the same [```step()```](../glossary/?search=step) function. That way the ```vec2(0.0,0.0)``` will be in the top right corner. This is the digital equivalent of flipping the page and repeating the previous procedure.
+Uncomment *lines 21-22* and see how we invert the `st` coordinates and repeat the same [`step()`](../glossary/?search=step) function. That way the `vec2(0.0,0.0)` will be in the top right corner. This is the digital equivalent of flipping the page and repeating the previous procedure.
 
 ![](rect-02.jpg)
 
 Take note that in *lines 18 and 22* all of the sides are being multiplied together. This is equivalent to writing:
 
 ```glsl
-    vec2 bl = step(vec2(0.1),st);       // bottom-left
-    vec2 tr = step(vec2(0.1),1.0-st);   // top-right
-    color = vec3(bl.x * bl.y * tr.x * tr.y);
+vec2 bl = step(vec2(0.1),st);       // bottom-left
+vec2 tr = step(vec2(0.1),1.0-st);   // top-right
+color = vec3(bl.x * bl.y * tr.x * tr.y);
 ```
 
-Interesting right? This technique is all about using [```step()```](../glossary/?search=step) and multiplication for logical operations and flipping the coordinates.
+Interesting right? This technique is all about using [`step()`](../glossary/?search=step) and multiplication for logical operations and flipping the coordinates.
 
 Before going forward, try the following exercises:
 
 * Change the size and proportions of the rectangle.
 
-* Experiment with the same code but using [```smoothstep()```](../glossary/?search=smoothstep) instead of [```step()```](../glossary/?search=step). Note that by changing values, you can go from blurred edges to elegant smooth borders.
+* Experiment with the same code but using [`smoothstep()`](../glossary/?search=smoothstep) instead of [`step()`](../glossary/?search=step). Note that by changing values, you can go from blurred edges to elegant smooth borders.
 
-* Do another implementation that uses [```floor()```](../glossary/?search=floor).
+* Do another implementation that uses [`floor()`](../glossary/?search=floor).
 
 * Choose the implementation you like the most and make a function of it that you can reuse in the future. Make your function flexible and efficient.
 
@@ -90,7 +90,7 @@ Before going forward, try the following exercises:
 
 ### Circles
 
-It's easy to draw squares on grid paper and rectangles on cartesian coordinates, but circles require another approach, especially since we need a "per-pixel" algorithm. One solution is to *re-map* the spatial coordinates so that we can use a [```step()```](../glossary/?search=step) function to draw a circle.
+It's easy to draw squares on grid paper and rectangles on cartesian coordinates, but circles require another approach, especially since we need a "per-pixel" algorithm. One solution is to *re-map* the spatial coordinates so that we can use a [`step()`](../glossary/?search=step) function to draw a circle.
 
 How? Let's start by going back to math class and the grid paper, where we opened a compass to the radius of a circle, pressed one of the compass points at the center of the circle and then traced the edge of the circle with a simple spin.
 
@@ -100,17 +100,17 @@ Translating this to a shader where each square on the grid paper is a pixel impl
 
 ![](circle.jpg)
 
-There are several ways to calculate that distance. The easiest one uses the [```distance()```](../glossary/?search=distance) function, which internally computes the [```length()```](../glossary/?search=length) of the difference between two points (in our case the pixel coordinate and the center of the canvas). The ```length()``` function is nothing but a shortcut of the [hypotenuse equation](http://en.wikipedia.org/wiki/Hypotenuse) that uses square root ([```sqrt()```](../glossary/?search=sqrt)) internally.
+There are several ways to calculate that distance. The easiest one uses the [`distance()`](../glossary/?search=distance) function, which internally computes the [`length()`](../glossary/?search=length) of the difference between two points (in our case the pixel coordinate and the center of the canvas). The `length()` function is nothing but a shortcut of the [hypotenuse equation](http://en.wikipedia.org/wiki/Hypotenuse) that uses square root ([`sqrt()`](../glossary/?search=sqrt)) internally.
 
 ![](hypotenuse.png)
 
-You can use [```distance()```](../glossary/?search=distance), [```length()```](../glossary/?search=length) or [```sqrt()```](../glossary/?search=sqrt) to calculate the distance to the center of the billboard. The following code contains these three functions and the non-surprising fact that each one returns exactly same result.
+You can use [`distance()`](../glossary/?search=distance), [`length()`](../glossary/?search=length) or [`sqrt()`](../glossary/?search=sqrt) to calculate the distance to the center of the billboard. The following code contains these three functions and the non-surprising fact that each one returns exactly same result.
 
 * Comment and uncomment lines to try the different ways to get the same result.
 
 <div class="codeAndCanvas" data="circle-making.frag"></div>
 
-In the previous example we map the distance to the center of the billboard to the color brightness of the pixel. The closer a pixel is to the center, the lower (darker) value it has. Notice that the values don't get too high because from the center ( ```vec2(0.5, 0.5)``` ) the maximum distance barely goes over 0.5. Contemplate this map and think:
+In the previous example we map the distance to the center of the billboard to the color brightness of the pixel. The closer a pixel is to the center, the lower (darker) value it has. Notice that the values don't get too high because from the center ( `vec2(0.5, 0.5)` ) the maximum distance barely goes over 0.5. Contemplate this map and think:
 
 * What you can infer from it?
 
@@ -128,11 +128,11 @@ Basically we are using a re-interpretation of the space (based on the distance t
 
 Try the following exercises:
 
-* Use [```step()```](../glossary/?search=step) to turn everything above 0.5 to white and everything below to 0.0.
+* Use [`step()`](../glossary/?search=step) to turn everything above 0.5 to white and everything below to 0.0.
 
 * Inverse the colors of the background and foreground.
 
-* Using [```smoothstep()```](../glossary/?search=smoothstep), experiment with different values to get nice smooth borders on your circle.
+* Using [`smoothstep()`](../glossary/?search=smoothstep), experiment with different values to get nice smooth borders on your circle.
 
 * Once you are happy with an implementation, make a function of it that you can reuse in the future.
 
@@ -156,7 +156,7 @@ pct = pow(distance(st,vec2(0.4)),distance(st,vec2(0.6)));
 
 #### For your tool box
 
-In terms of computational power the [```sqrt()```](../glossary/?search=sqrt) function - and all the functions that depend on it - can be expensive. Here is another way to create a circular distance field by using [```dot()```](../glossary/?search=dot) product.
+In terms of computational power the [`sqrt()`](../glossary/?search=sqrt) function - and all the functions that depend on it - can be expensive. Here is another way to create a circular distance field by using [`dot()`](../glossary/?search=dot) product.
 
 <div class="codeAndCanvas" data="circle.frag"></div>
 
@@ -170,13 +170,13 @@ Take a look at the following code.
 
 <div class="codeAndCanvas" data="rect-df.frag"></div>
 
-We start by moving the coordinate system to the center and shrinking it in half in order to remap the position values between -1 and 1. Also on *line 24* we are visualizing the distance field values using a [```fract()```](../glossary/?search=fract) function making it easy to see the pattern they create. The distance field pattern repeats over and over like rings in a Zen garden.
+We start by moving the coordinate system to the center and shrinking it in half in order to remap the position values between -1 and 1. Also on *line 24* we are visualizing the distance field values using a [`fract()`](../glossary/?search=fract) function making it easy to see the pattern they create. The distance field pattern repeats over and over like rings in a Zen garden.
 
-Let’s take a look at the distance field formula on *line 19*. There we are calculating the distance to the position on ```(.3,.3)``` or ```vec3(.3)``` in all four quadrants (that’s what [```abs()```](../glossary/?search=abs) is doing there).
+Let’s take a look at the distance field formula on *line 19*. There we are calculating the distance to the position on `(.3,.3)` or `vec3(.3)` in all four quadrants (that’s what [`abs()`](../glossary/?search=abs) is doing there).
 
-If you uncomment *line 20*, you will note that we are combining the distances to these four points using the [```min()```](../glossary/?search=min) to zero. The result produces an interesting new pattern.
+If you uncomment *line 20*, you will note that we are combining the distances to these four points using the [`min()`](../glossary/?search=min) to zero. The result produces an interesting new pattern.
 
-Now try uncommenting *line 21*; we are doing the same but using the [```max()```](../glossary/?search=max) function. The result is a rectangle with rounded corners. Note how the rings of the distance field get smoother the further away they get from the center.
+Now try uncommenting *line 21*; we are doing the same but using the [`max()`](../glossary/?search=max) function. The result is a rectangle with rounded corners. Note how the rings of the distance field get smoother the further away they get from the center.
 
 Finish uncommenting *lines 27 to 29* one by one to understand the different uses of a distance field pattern.
 
@@ -187,12 +187,12 @@ Finish uncommenting *lines 27 to 29* one by one to understand the different uses
 In the chapter about color we map the cartesian coordinates to polar coordinates by calculating the *radius* and *angles* of each pixel with the following formula:
 
 ```glsl
-    vec2 pos = vec2(0.5)-st;
-    float r = length(pos)*2.0;
-    float a = atan(pos.y,pos.x);
+vec2 pos = vec2(0.5)-st;
+float r = length(pos)*2.0;
+float a = atan(pos.y,pos.x);
 ```
 
-We use part of this formula at the beginning of the chapter to draw a circle. We calculated the distance to the center using [```length()```](../glossary/?search=length). Now that we know about distance fields we can learn another way of drawing shapes using polar coordinates.
+We use part of this formula at the beginning of the chapter to draw a circle. We calculated the distance to the center using [`length()`](../glossary/?search=length). Now that we know about distance fields we can learn another way of drawing shapes using polar coordinates.
 
 This technique is a little restrictive but very simple. It consists of changing the radius of a circle depending on the angle to achieve different shapes. How does the modulation work? Yes, using shaping functions!
 
@@ -210,11 +210,11 @@ Try to:
 
 * Animate these shapes.
 * Combine different shaping functions to *cut holes* in the shape to make flowers, snowflakes and gears.
-* Use the ```plot()``` function we were using in the *Shaping Functions Chapter* to draw just the contour.
+* Use the `plot()` function we were using in the *Shaping Functions Chapter* to draw just the contour.
 
 ### Combining powers
 
-Now that we've learned how to modulate the radius of a circle according to the angle using the [```atan()```](../glossary/?search=atan) to draw different shapes, we can learn how use ```atan()``` with distance fields and apply all the tricks and effects possible with distance fields.
+Now that we've learned how to modulate the radius of a circle according to the angle using the [`atan()`](../glossary/?search=atan) to draw different shapes, we can learn how use `atan()` with distance fields and apply all the tricks and effects possible with distance fields.
 
 The trick will use the number of edges of a polygon to construct the distance field using polar coordinates. Check out [the following code](http://thndl.com/square-shaped-shaders.html) from [Andrew Baldwin](https://twitter.com/baldand).
 
@@ -222,7 +222,7 @@ The trick will use the number of edges of a polygon to construct the distance fi
 
 * Using this example, make a function that inputs the position and number of corners of a desired shape and returns a distance field value.
 
-* Mix distance fields together using [```min()```](../glossary/?search=min) and [```max()```](../glossary/?search=max).
+* Mix distance fields together using [`min()`](../glossary/?search=min) and [`max()`](../glossary/?search=max).
 
 * Choose a geometric logo to replicate using distance fields.
 
