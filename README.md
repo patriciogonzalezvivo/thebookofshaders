@@ -33,7 +33,7 @@ This is a gentle step-by-step guide through the abstract and complex universe of
     * [Fractional brownian motion](13/)
     * Fractals
 
-* Image processing:
+* Image processing
     * Textures
     * Image operations
     * Kernel convolutions
