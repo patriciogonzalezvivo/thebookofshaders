@@ -60,7 +60,7 @@
     * [Как запустить примеры на Raspberry Pi?](appendix/01/?lan=ru)
     * [Как напечатать книгу?](appendix/02/?lan=ru)
     * [Как принять участие в создании книги?](appendix/03/?lan=ru)
-    * [Введение для людей, пишущих на JS](appendix/04/) ([Николя Баррадо](http://www.barradeau.com/))
+    * [Введение для JavaScript-программистов](appendix/04/?lan=ru) ([Николя Баррадо](http://www.barradeau.com/))
 
 * [Примеры](examples/)
 
