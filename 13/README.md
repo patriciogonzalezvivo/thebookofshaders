@@ -11,7 +11,7 @@ y = amplitude * sin(x * frequency);
 "></div>
 
 * Try changing the values of the frequency and amplitude to understand how they behave.
-* Using shaping functions, try changing the amplitud over time.
+* Using shaping functions, try changing the amplitude over time.
 * Using shaping functions, try changing the frequency over time.
 
 By doing the last two exercises you have managed to "modulate" a sine wave, and you just created AM (amplitude modulated) and FM (frequency modulated) waves. Congratulations!
