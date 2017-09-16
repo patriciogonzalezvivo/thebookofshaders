@@ -27,7 +27,7 @@
 
 GLSLには多くのネイティブ関数が用意されており、[```pow()```](../glossary/?search=pow) はその中の1つです。ほとんどのネイティブ関数はハードウェアのレベルで高速に処理されるので、適切に使えばより速いコードを書くことができます。
 
-19行目の指数関数を [```exp(st.x) - 1.0```](../glossary/?search=exp), [```log(st.x - 1.0)```](../glossary/?search=log), [```sqrt(st.x)```](../glossary/?search=sqrt) など他の関数で置き換えてみましょう。
+22行目のべき関数を [```exp(st.x) - 1.0```](../glossary/?search=exp), [```log(st.x - 1.0)```](../glossary/?search=log), [```sqrt(st.x)```](../glossary/?search=sqrt) など他の関数で置き換えてみましょう。
 
 ### StepとSmoothstep
 
