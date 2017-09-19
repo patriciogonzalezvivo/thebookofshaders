@@ -19,7 +19,7 @@ Man kann sich Uniforms als eine Brücke zwischen der CPU und der GPU vorstellen.
 ```glsl
 uniform vec3 iResolution;   // Groesse der Malflaeche
 uniform vec4 iMouse;        // Mausposition
-uniform float iGlobalTime;  // Zeit seit dem Start
+uniform float iTime;        // Zeit seit dem Start
 ```
 
 Aber nun genug geredet. Lass uns die Uniforms in Aktion betrachten. Der folgende Programmcode nutzt ```u_time``` - die Anzahl der Sekunden, seitdem der Shader gestartet wurde - in Verbindung mit einer Sinus-Funktion, um die Intensität der Rotfärbung der Malfläche pulsieren zu lassen.

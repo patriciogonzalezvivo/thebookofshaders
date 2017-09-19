@@ -19,7 +19,7 @@ uniform float u_time;	  // Time in seconds since load
 ```glsl
 uniform vec3 iResolution;   // viewport resolution (in pixels)
 uniform vec4 iMouse;        // mouse pixel coords. xy: current, zw: click
-uniform float iGlobalTime;  // shader playback time (in seconds)
+uniform float iTime;        // shader playback time (in seconds)
 ```
 
 거두철미하고, 유니폼이 실제로 구현되는 부분을 보자. 아래 코드에서 ```u_time``` - 쉐이더가 구동된후 초 - 를 sine 함수에 인자로 넣어, 빨간색값을 조절하고 있는것을 볼수 있다.
