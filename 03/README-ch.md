@@ -19,7 +19,7 @@ uniform float u_time;	  // 时间（加载后的秒数）
 ```glsl
 uniform vec3 iResolution;   // 视口分辨率（以像素计）
 uniform vec4 iMouse;        // 鼠标坐标 xy： 当前位置, zw： 点击位置
-uniform float iGlobalTime;  // shader 运行时间（以秒计）
+uniform float iTime;        // shader 运行时间（以秒计）
 ```
 
 好了说的足够多了，我们来看看实际操作中的 uniform 吧。在下面的代码中我们使用  ```u_time``` 加上一个 sin 函数，来展示图中红色的动态变化。

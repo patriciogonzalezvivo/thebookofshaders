@@ -19,7 +19,7 @@ You can picture the uniforms like little bridges between the CPU and the GPU. Th
 ```glsl
 uniform vec3 iResolution;   // viewport resolution (in pixels)
 uniform vec4 iMouse;        // mouse pixel coords. xy: current, zw: click
-uniform float iGlobalTime;  // shader playback time (in seconds)
+uniform float iTime;        // shader playback time (in seconds)
 ```
 
 Enough talking, let's see the uniforms in action. In the following code we use `u_time` - the number of seconds since the shader started running - together with a sine function to animate the transition of the amount of red in the billboard.

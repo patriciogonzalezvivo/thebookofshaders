@@ -19,7 +19,7 @@ Podemos imaginar que los uniforms son como pequeños puentes entra la CPU y la G
 ```glsl
 uniform vec3 iResolution;   // viewport resolution (in pixels)
 uniform vec4 iMouse;        // mouse pixel coords. xy: current, zw: click
-uniform float iGlobalTime;  // shader playback time (in seconds)
+uniform float iTime;        // shader playback time (in seconds)
 ```
 
 Ya hemos hablado mucho, vamos a ver los uniforms en acción. En el código siguiente usamos ```u_time``` - el número de segundos desde que el shader comenzó a ejecutarse - junto con una función del seno para animar en transición la cantidad de rojo en la pantalla.
