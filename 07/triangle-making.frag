@@ -10,7 +10,7 @@ uniform vec2 u_mouse;
 uniform float u_time;
 
 // Based on https://www.shadertoy.com/view/4sSSzG
-float triangleDF(vec2 st, 
+float triangleDF(vec2 st,
                 vec2 p0, vec2 p1, vec2 p2){
   vec3 e0, e1, e2;
 
@@ -34,9 +34,9 @@ void main(){
   vec3 color = vec3(0.0);
 
   // Distance Field in 3 channels
-  float df = triangleDF(st, 
-                       vec2(0.40,0.45), 
-                       vec2(0.60,0.45), 
+  float df = triangleDF(st,
+                       vec2(0.40,0.45),
+                       vec2(0.60,0.45),
                        vec2(0.5,0.60));
   color = vec3(df);
 

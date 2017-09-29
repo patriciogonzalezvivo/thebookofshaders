@@ -21,7 +21,7 @@ float box(in vec2 st, in vec2 size){
 }
 
 float cross(in vec2 st, float size){
-    return  box(st, vec2(size,size/4.)) + 
+    return  box(st, vec2(size,size/4.)) +
             box(st, vec2(size/4.,size));
 }
 

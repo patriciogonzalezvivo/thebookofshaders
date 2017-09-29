@@ -18,13 +18,13 @@ vec2 movingTiles(vec2 _st, float _zoom, float _speed){
             _st.x += fract(time)*2.0;
         } else {
             _st.x -= fract(time)*2.0;
-        } 
+        }
     } else {
         if (fract( _st.x * 0.5) > 0.5){
             _st.y += fract(time)*2.0;
         } else {
             _st.y -= fract(time)*2.0;
-        } 
+        }
     }
     return fract(_st);
 }

@@ -70,7 +70,7 @@ Questa è una guida passo passo attraverso l'universo astratto e complesso dei F
 
 [Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) (1982, Buenos Aires, Argentina) è un artista e sviluppatore con sede a New York. Esplora lo spazio interstiziale fra organico e sintetico, analogico e digitale, individuale e collettivo. Nel suo lavoro usa il codice come un linguaggio espressivo con l'intenzione di creare un migliore vivere insieme.
 
-Patricio studiò e praticò la psicoterapia e l'arteterapia. Ha conseguito un MFA in Design e Tecnologia alla Parsons The New School dove ora insegna. Attualmente lavora come Ingegnere Grafico alla Mapzen realizzando strumenti cartografici openSource. 
+Patricio studiò e praticò la psicoterapia e l'arteterapia. Ha conseguito un MFA in Design e Tecnologia alla Parsons The New School dove ora insegna. Attualmente lavora come Ingegnere Grafico alla Mapzen realizzando strumenti cartografici openSource.
 
 <div class="header"> <a href="http://patriciogonzalezvivo.com/" target="_blank">WebSite</a> - <a href="https://twitter.com/patriciogv" target="_blank">Twitter</a> - <a href="https://github.com/patriciogonzalezvivo" target="_blank">GitHub</a> - <a href="https://vimeo.com/patriciogv" target="_blank">Vimeo</a> - <a href="https://www.flickr.com/photos/106950246@N06/" target="_blank"> Flickr</a></div>
 

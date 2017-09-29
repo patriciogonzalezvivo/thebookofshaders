@@ -18,9 +18,9 @@ By the time you get to ```100000.0``` ( and the equation looks like this: ```y =
 
 ## Controlling chaos
 
-Using random can be hard; it is both too chaotic and sometimes not random enough. Take a look at the following graph. To make it, we are using a ```rand()``` function which is implemented exactly like we describe above. 
+Using random can be hard; it is both too chaotic and sometimes not random enough. Take a look at the following graph. To make it, we are using a ```rand()``` function which is implemented exactly like we describe above.
 
-Taking a closer look, you can see the [```sin()```](../glossary/?search=sin) wave crest at ```-1.5707``` and ```1.5707```. I bet you now understand why - it's where the maximum and minimum of the sine wave happens. 
+Taking a closer look, you can see the [```sin()```](../glossary/?search=sin) wave crest at ```-1.5707``` and ```1.5707```. I bet you now understand why - it's where the maximum and minimum of the sine wave happens.
 
 If look closely at the random distribution, you will note that the there is some concentration around the middle compared to the edges.
 
@@ -41,7 +41,7 @@ Now that we have a better understanding of randomness, it's time to apply it in 
 
 Take a look at lines 13 to 15 and notice how we are comparing the ```vec2 st``` with another two dimensional vector ( ```vec2(12.9898,78.233)```).
 
-* Try changing the values on lines 14 and 15. See how the random pattern changes and think about what we can learn from this. 
+* Try changing the values on lines 14 and 15. See how the random pattern changes and think about what we can learn from this.
 
 * Hook this random function to the mouse interaction (```u_mouse```) and time (```u_time```) to understand better how it works.
 
@@ -65,7 +65,7 @@ Take a look at this GLSL port of the famouse ```10 PRINT CHR$(205.5+RND(1)); : G
 
 Here I'm using the random values of the cells to draw a line in one direction or the other using the ```truchetPattern()``` function from the previous chapter (lines 41 to 47).
 
-You can get another interesting pattern by uncommenting the block of lines between 50 to 53, or animate the pattern by uncommenting lines 35 and 36. 
+You can get another interesting pattern by uncommenting the block of lines between 50 to 53, or animate the pattern by uncommenting lines 35 and 36.
 
 ## Master Random
 
@@ -87,6 +87,6 @@ Take a look at [Ikeda](http://www.ryojiikeda.com/)'s work and try the following 
 
 <a href="../edit.php#10/ikeda-04.frag"><canvas id="custom" class="canvas" data-fragment-url="ikeda-04.frag"  width="520px" height="200px"></canvas></a>
 
-Using random aesthetically can be problematic, especially if you want to make natural-looking simulations. Random is simply too chaotic and very few things look ```random()``` in real life. If you look at a rain pattern or a stock chart, which are both quite random, they are nothing like the random pattern we made at the begining of this chapter. The reason? Well, random values have no correlation between them what so ever, but most natural patterns have some memory of the previous state. 
+Using random aesthetically can be problematic, especially if you want to make natural-looking simulations. Random is simply too chaotic and very few things look ```random()``` in real life. If you look at a rain pattern or a stock chart, which are both quite random, they are nothing like the random pattern we made at the begining of this chapter. The reason? Well, random values have no correlation between them what so ever, but most natural patterns have some memory of the previous state.
 
-In the next chapter we will learn about noise, the smooth and *natural looking* way of creating computational chaos. 
+In the next chapter we will learn about noise, the smooth and *natural looking* way of creating computational chaos.

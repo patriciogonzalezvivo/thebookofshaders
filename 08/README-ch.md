@@ -75,7 +75,7 @@ mat2 scale(vec2 _scale){
 }
 ```
 
-<div class="codeAndCanvas" data="cross-scale.frag"></div> 
+<div class="codeAndCanvas" data="cross-scale.frag"></div>
 
 
 试试下面的练习，尝试深入理解矩阵的工作机制：

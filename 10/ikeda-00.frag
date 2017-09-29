@@ -13,7 +13,7 @@ float random (in float x) {
     return fract(sin(x)*1e4);
 }
 
-float random (in vec2 st) { 
+float random (in vec2 st) {
     return fract(sin(dot(st.xy, vec2(12.9898,78.233)))* 43758.5453123);
 }
 
@@ -24,7 +24,7 @@ float randomSerie(float x, float freq, float t) {
 void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     st.x *= u_resolution.x/u_resolution.y;
-    
+
     vec3 color = vec3(0.0);
 
     float cols = 2.;

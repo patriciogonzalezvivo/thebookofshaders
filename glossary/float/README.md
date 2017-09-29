@@ -8,7 +8,7 @@ float bFloat = float(aBool);
 float cFloat = float(aInt);
 ```
 
-### Description 
+### Description
 ```float``` is used for floating point values.
 
 ### See Also

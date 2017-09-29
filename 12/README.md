@@ -52,9 +52,9 @@ You probably notice that ```for``` loops and *arrays* are not very good friends 
 One way to approach this problem is to divide the space into tiles. Not every pixel needs to check the distance to every single point, right? Given the fact that each pixel runs in its own thread, we can subdivide the space into cells, each one with one unique point to watch. Also, to avoid aberrations at the edges between cells we need to check for the distances to the points on the neighboring cells. That's the main brillant idea of [Steven Worley's paper](http://www.rhythmiccanvas.com/research/papers/worley.pdf). At the end, each pixel needs to check only nine positions: their own cell's point and the points in the 8 cells around it. We already subdivide the space into cells in the chapters about: [patterns](../09/), [random](../10/) and [noise](../11/), so hopefully you are familiar with this technique by now.
 
 ```glsl
-    // Scale 
+    // Scale
     st *= 3.;
-    
+
     // Tile the space
     vec2 i_st = floor(st);
     vec2 f_st = fract(st);
@@ -66,7 +66,7 @@ So, what's the plan? We will use the tile coordinates (stored in the integer coo
     vec2 point = random2(i_st);
 ```
 
-Each pixel inside that tile (stored in the float coordinate, ```f_st```) will check their distance to that random point. 
+Each pixel inside that tile (stored in the float coordinate, ```f_st```) will check their distance to that random point.
 
 ```glsl
     vec2 diff = point - f_st;
@@ -75,7 +75,7 @@ Each pixel inside that tile (stored in the float coordinate, ```f_st```) will ch
 
 The result will look like this:
 
-<a href="../edit.php#12/cellnoise-01.frag"><img src="cellnoise.png"  width="520px" height="200px"></img></a> 
+<a href="../edit.php#12/cellnoise-01.frag"><img src="cellnoise.png"  width="520px" height="200px"></img></a>
 
 We still need to check the distances to the points in the surrounding tiles, not just the one in the current tile. For that we need to **iterate** through the neighbor tiles. Not all tiles, just the ones immediately around the current one. That means from ```-1``` (left) to ```1``` (right) tile in ```x``` axis and ```-1``` (bottom) to ```1``` (top) in ```y``` axis. A 3x3 region of 9 tiles can be iterated through using a double ```for``` loop like this one:
 
@@ -105,7 +105,7 @@ The rest is all about calculating the distance to that point and store the close
 ```glsl
         ...
         vec2 diff = neighbor + point - f_st;
-        
+
         // Distance to the point
         float dist = length(diff);
 
@@ -147,11 +147,11 @@ Constructing Voronoi diagrams from cellular noise is less hard that what it migh
     ...
 ```
 
-Note that in the following code that we are not longer using ```min``` to calculate the closest distance, but a regular ```if``` statement. Why? Because we actually want to do something more every time a new closer point appears, namely store its position (lines 32 to 37). 
+Note that in the following code that we are not longer using ```min``` to calculate the closest distance, but a regular ```if``` statement. Why? Because we actually want to do something more every time a new closer point appears, namely store its position (lines 32 to 37).
 
 <div class="codeAndCanvas" data="vorono-00.frag"></div>
 
-Note how the color of the moving cell (bound to the mouse position) changes color according to its position. That's because the color is assigned using the value (position) of the closest point. 
+Note how the color of the moving cell (bound to the mouse position) changes color according to its position. That's because the color is assigned using the value (position) of the closest point.
 
 Like we did before, now is the time to scale this up, switching to [Steven Worley's paper approach](http://www.rhythmiccanvas.com/research/papers/worley.pdf). Try implementing it yourself. You can use the help of the following example by clicking on it. Note that Steven Worley's original approach uses a variable number of feature points for each tile, more than one in most tiles. In his software implementation in C, this is used to speed up the loop by making early exits. GLSL loops don't allow variable number of iterations, so you probably want to stick to one feature point per tile.
 
@@ -176,12 +176,12 @@ In 2011, [Stefan Gustavson optimized Steven Worley's algorithm to GPU](http://we
 Later in 2012 [Inigo Quilez wrote an article on how to make precise Voronoi borders](http://www.iquilezles.org/www/articles/voronoilines/voronoilines.htm).
 
 <a href="../edit.php#12/2d-voronoi.frag"><img src="2d-voronoi.gif"  width="520px" height="200px"></img></a>
- 
+
 Inigo's experiments with Voronoi didn't stop there. In 2014 he wrote this nice article about what he calls [voro-noise](http://www.iquilezles.org/www/articles/voronoise/voronoise.htm), an function that allows a gradual blend between regular noise and voronoi. In his words:
 
 *"Despite this similarity, the fact is that the way the grid is used in both patterns is different. Noise interpolates/averages random values (as in value noise) or gradients (as in gradient noise), while Voronoi computes the distance to the closest feature point. Now, smooth-bilinear interpolation and minimum evaluation are two very different operations, or... are they? Can they perhaps be combined in a more general metric? If that was so, then both Noise and Voronoi patterns could be seen as particular cases of a more general grid-based pattern generator?"*
 
-<a href="../edit.php#12/2d-voronoise.frag"><canvas id="custom" class="canvas" data-fragment-url="2d-voronoise.frag"  width="520px" height="200px"></canvas></a> 
+<a href="../edit.php#12/2d-voronoise.frag"><canvas id="custom" class="canvas" data-fragment-url="2d-voronoise.frag"  width="520px" height="200px"></canvas></a>
 
 Now it's time for you to look closely at things, be inspired by nature and find your own take on this technique!
 

@@ -37,7 +37,7 @@ y = rand(i); //rand() 在之前的章节提过
 
 ```glsl
 y = mix(rand(i), rand(i + 1.0), f);
-``` 
+```
 
 试试取消这句的注释，看一下会变成什么样子。注意我们储存在 `f` 中的 [```fract()```](.../glossary/?search=fract) 值[```mix()```](.../glossary/?search=mix)了两个随机值。
 
@@ -140,7 +140,7 @@ Noise 算法的设计初衷是将难以言说的自然质感转化成数字图�
 
 第三种方法是用 noise 函数来变换一个形状。这个也需要我们在[第七章](../07/)学到的技术。
 
-<a href="../edit.php#11/circleWave-noise.frag"><canvas id="custom" class="canvas" data-fragment-url="circleWave-noise.frag"  width="300px" height="300"></canvas></a> 
+<a href="../edit.php#11/circleWave-noise.frag"><canvas id="custom" class="canvas" data-fragment-url="circleWave-noise.frag"  width="300px" height="300"></canvas></a>
 
 给你的练习：
 
@@ -205,11 +205,11 @@ y = x*x*(3.0-2.0*x);
 
 * 做一个 shader 来表现流体的质感。比如像[熔岩灯](https://en.wikipedia.org/wiki/Lava_lamp?oldformat=true)，墨水滴，水，等等。
 
-<a href="../edit.php#11/lava-lamp.frag"><canvas id="custom" class="canvas" data-fragment-url="lava-lamp.frag"  width="520px" height="200px"></canvas></a> 
+<a href="../edit.php#11/lava-lamp.frag"><canvas id="custom" class="canvas" data-fragment-url="lava-lamp.frag"  width="520px" height="200px"></canvas></a>
 
 * 用 Simplex Noise 给你现在的作品添加更多的材质效果。
 
-<a href="../edit.php#11/iching-03.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-03.frag"  width="520px" height="520px"></canvas></a> 
+<a href="../edit.php#11/iching-03.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-03.frag"  width="520px" height="520px"></canvas></a>
 
 在本章我们介绍了一些操控混沌的方法。这并不是一件简单的工作！成为 noise 超级大师需要时间和努力。
 
@@ -217,4 +217,4 @@ y = x*x*(3.0-2.0*x);
 
 <p style="text-align:center; font-style: italic;">
 “和树聊聊天吧，和它交个朋友。” Bob Ross
-</p> 
+</p>

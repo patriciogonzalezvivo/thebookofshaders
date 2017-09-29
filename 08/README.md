@@ -4,7 +4,7 @@
 
 ### Translate
 
-In the previous chapter we learned how to make some shapes - the trick to moving those shapes is to move the coordinate system itself. We can achieve that by simply adding a vector to the ```st``` variable that contains the location of each fragment. This causes the whole space coordinate system to move. 
+In the previous chapter we learned how to make some shapes - the trick to moving those shapes is to move the coordinate system itself. We can achieve that by simply adding a vector to the ```st``` variable that contains the location of each fragment. This causes the whole space coordinate system to move.
 
 ![](translate.jpg)
 
@@ -13,7 +13,7 @@ This is easier to see than to explain, so to see for yourself:
 * Uncomment line 35 of the code below to see how the space itself moves around.
 
 <div class="codeAndCanvas" data="cross-translate.frag"></div>
- 
+
 Now try the following exercise:
 
 * Using ```u_time``` together with the shaping functions move the small cross around in an interesting way. Search for a specific quality of motion you are interested in and try to make the cross move in the same way. Recording something from the "real world" first might be useful - it could be the coming and going of waves, a pendulum movement, a bouncing ball, a car accelerating, a bicycle stopping.
@@ -30,11 +30,11 @@ Based on how matrices behave it's possible to construct matrices to produce spec
 
 ![](3dtransmat.png)
 
-More interestingly, we can use a matrix to rotate the coordinate system: 
+More interestingly, we can use a matrix to rotate the coordinate system:
 
 ![](rotmat.png)
 
-Take a look at the following code for a function that constructs a 2D rotation matrix. This function follows the above [formula](http://en.wikipedia.org/wiki/Rotation_matrix) for two dimentional vectors to rotate the coordinates around the ```vec2(0.0)``` point. 
+Take a look at the following code for a function that constructs a 2D rotation matrix. This function follows the above [formula](http://en.wikipedia.org/wiki/Rotation_matrix) for two dimentional vectors to rotate the coordinates around the ```vec2(0.0)``` point.
 
 ```glsl
 mat2 rotate2d(float _angle){
@@ -57,11 +57,11 @@ Try the following exercises:
 
 * Comment the translations before and after the rotation, on lines 37 and 39, and observe the consequences.
 
-* Use rotations to improve the animation you simulated in the translation exercise. 
+* Use rotations to improve the animation you simulated in the translation exercise.
 
 ### Scale
 
-We've seen how matrices are used to translate and rotate objects in space. (Or more precisely to transform the coordinate system to rotate and move the objects.) If you've used 3D modeling software or the push and pop matrix functions in Processing, you will know that matrices can also be used to scale the size of an object. 
+We've seen how matrices are used to translate and rotate objects in space. (Or more precisely to transform the coordinate system to rotate and move the objects.) If you've used 3D modeling software or the push and pop matrix functions in Processing, you will know that matrices can also be used to scale the size of an object.
 
 ![](scale.png)
 
@@ -74,7 +74,7 @@ mat2 scale(vec2 _scale){
 }
 ```
 
-<div class="codeAndCanvas" data="cross-scale.frag"></div> 
+<div class="codeAndCanvas" data="cross-scale.frag"></div>
 
 Try the following exercises to understand more deeply how this works.
 

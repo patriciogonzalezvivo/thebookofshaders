@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	$path = "..";
 	$subtitle = ": Random";
@@ -27,8 +27,8 @@
 		<li class="navigationBar" onclick="previusPage()">&lt; &lt; Previous</li>
 		<li class="navigationBar" onclick="homePage()"> Home </li>
 		<li class="navigationBar" onclick="nextPage()">Next &gt; &gt;</li>
-		
+
 	</ul>';
 
-	include($path."/footer.php"); 
+	include($path."/footer.php");
 ?>

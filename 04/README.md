@@ -1,16 +1,16 @@
 ## Running your shader
 
-As part of the construction of this book and my art practice I made an ecosystem of tools to create, display, share and curate shaders. This tools works consistently across Linux Desktops, MacOS, [Raspberry Pi](https://www.raspberrypi.org/) and browsers without the need of changing your code.
+As part of the construction of this book and my art practice I made an ecosystem of tools to create, display, share and curate shaders. These tools work consistently across Linux Desktops, MacOS, [Raspberry Pi](https://www.raspberrypi.org/) and browsers without the need of changing your code.
 
-**Display**: all live examples in this book are displayed using [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) which makes the process of running standalone shader incredible easy. 
+**Display**: all live examples in this book are displayed using [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) which makes the process of running standalone shader incredible easy.
 
 ```html
 <canvas class="glslCanvas" data-fragment-url=“yourShader.frag" data-textures=“yourInputImage.png” width="500" height="500"></canvas>
 ```
 
-As you can see, it just needs a ```canvas``` element with ```class="glslCanvas"``` and the url to your shader in the ```data-fragment-url```. Learn more about it [here](https://github.com/patriciogonzalezvivo/glslCanvas).
+As you can see, it just needs a `canvas` element with `class="glslCanvas"` and the url to your shader in the `data-fragment-url`. Learn more about it [here](https://github.com/patriciogonzalezvivo/glslCanvas).
 
-If you are like me, you will probably want to run shaders directly from the console, in that case you should check out [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). This application allows you to incorporate shaders into your ```bash``` scripts or unix pipelines and use it in a similar way that [ImageMagick](http://www.imagemagick.org/script/index.php). Also [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) is a great way to compile shaders on your [Raspberry Pi](https://www.raspberrypi.org/), reason why [openFrame.io](http://openframe.io/) use it to display shader artwork. Learn more about this application [here](https://github.com/patriciogonzalezvivo/glslViewer).
+If you are like me, you will probably want to run shaders directly from the console, in that case you should check out [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). This application allows you to incorporate shaders into your `bash` scripts or unix pipelines and use it in a similar way that [ImageMagick](http://www.imagemagick.org/script/index.php). Also [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) is a great way to compile shaders on your [Raspberry Pi](https://www.raspberrypi.org/), reason why [openFrame.io](http://openframe.io/) use it to display shader artwork. Learn more about this application [here](https://github.com/patriciogonzalezvivo/glslViewer).
 
 ```bash
 glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutputImage.png
@@ -37,10 +37,10 @@ If you prefer to work offline using [SublimeText](https://www.sublimetext.com/) 
 In case you already have experience programming in a framework like: [Processing](https://processing.org/), [Three.js](http://threejs.org/) or [OpenFrameworks](http://openframeworks.cc/), you're probably excited to try shaders on this platforms you feel comfortable with. The following are examples of how to set shaders in some popular frameworks with the same uniforms that we are going to use throughout this book. (In the [GitHub repository for this chapter](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), you'll find the full source code for these three frameworks.)
 
 ### In **Three.js**
- 
-The brilliant and very humble Ricardo Cabello (aka [MrDoob](https://twitter.com/mrdoob) ) has been developing along with other [contributors](https://github.com/mrdoob/three.js/graphs/contributors) probably one of the most famous frameworks for WebGL, called [Three.js](http://threejs.org/). You will find a lot of examples, tutorials and books that teach you how to use this JavaScript library to make cool 3D graphics. 
 
-Below is an example of the HTML and JS you need to get started with shaders in three.js. Pay attention to the ```id="fragmentShader"``` script, here is where you can copy the shaders you find in this book.
+The brilliant and very humble Ricardo Cabello (aka [MrDoob](https://twitter.com/mrdoob) ) has been developing along with other [contributors](https://github.com/mrdoob/three.js/graphs/contributors) probably one of the most famous frameworks for WebGL, called [Three.js](http://threejs.org/). You will find a lot of examples, tutorials and books that teach you how to use this JavaScript library to make cool 3D graphics.
+
+Below is an example of the HTML and JS you need to get started with shaders in three.js. Pay attention to the `id="fragmentShader"` script, here is where you can copy the shaders you find in this book.
 
 ```html
 <body>
@@ -70,7 +70,7 @@ Below is an example of the HTML and JS you need to get started with shaders in t
 
         function init() {
             container = document.getElementById( 'container' );
-            
+
             camera = new THREE.Camera();
             camera.position.z = 1;
 
@@ -95,12 +95,12 @@ Below is an example of the HTML and JS you need to get started with shaders in t
 
             renderer = new THREE.WebGLRenderer();
             renderer.setPixelRatio( window.devicePixelRatio );
-            
+
             container.appendChild( renderer.domElement );
 
             onWindowResize();
             window.addEventListener( 'resize', onWindowResize, false );
-            
+
             document.onmousemove = function(e){
               uniforms.u_mouse.value.x = e.pageX
               uniforms.u_mouse.value.y = e.pageY
@@ -128,7 +128,7 @@ Below is an example of the HTML and JS you need to get started with shaders in t
 
 ### In **Processing**
 
-Started by [Ben Fry](http://benfry.com/) and [Casey Reas](http://reas.com/) in 2001, [Processing](https://processing.org/) is an extraordinarily simple and powerful environment in which to take your first steps in code (it was for me at least). [Andres Colubri](https://codeanticode.wordpress.com/) has made important updates to the openGL and video in Processing, making it easier than ever to use and play with GLSL shaders in this friendly environment. Processing will search for the shader named ```"shader.frag"``` in the ```data``` folder of the sketch. Be sure to copy the examples you find here into that folder and rename the file.
+Started by [Ben Fry](http://benfry.com/) and [Casey Reas](http://reas.com/) in 2001, [Processing](https://processing.org/) is an extraordinarily simple and powerful environment in which to take your first steps in code (it was for me at least). [Andres Colubri](https://codeanticode.wordpress.com/) has made important updates to the openGL and video in Processing, making it easier than ever to use and play with GLSL shaders in this friendly environment. Processing will search for the shader named `"shader.frag"` in the `data` folder of the sketch. Be sure to copy the examples you find here into that folder and rename the file.
 
 ```cpp
 PShader shader;
@@ -136,7 +136,7 @@ PShader shader;
 void setup() {
   size(640, 360, P2D);
   noStroke();
-  
+
   shader = loadShader("shader.frag");
 }
 
@@ -149,7 +149,7 @@ void draw() {
 }
 ```
 
-In order for the shader to work on versions previous to 2.1, you need to add the following line at the beginning of your shader: ```#define PROCESSING_COLOR_SHADER```. So that it looks like this:
+In order for the shader to work on versions previous to 2.1, you need to add the following line at the beginning of your shader: `#define PROCESSING_COLOR_SHADER`. So that it looks like this:
 
 ```glsl
 #ifdef GL_ES
@@ -172,13 +172,13 @@ For more information about shaders in Processing check out this [tutorial](https
 
 ### In **openFrameworks**
 
-Everybody has a place where they feel comfortable, in my case, that’s still the [openFrameworks community](http://openframeworks.cc/). This C++ framework wraps around OpenGL and other open source C++ libraries. In many ways it's very similar to Processing, but with the obvious complications of dealing with C++ compilers. In the same way as Processing, openFrameworks will search for your shader files in the data folder, so don’t forget to copy the ```.frag``` files you want to use and change the name when you load them.
- 
+Everybody has a place where they feel comfortable, in my case, that’s still the [openFrameworks community](http://openframeworks.cc/). This C++ framework wraps around OpenGL and other open source C++ libraries. In many ways it's very similar to Processing, but with the obvious complications of dealing with C++ compilers. In the same way as Processing, openFrameworks will search for your shader files in the data folder, so don’t forget to copy the `.frag` files you want to use and change the name when you load them.
+
 ```cpp
 void ofApp::draw(){
     ofShader shader;
     shader.load("","shader.frag");
-    
+
     shader.begin();
     shader.setUniform1f("u_time", ofGetElapsedTimef());
     shader.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());

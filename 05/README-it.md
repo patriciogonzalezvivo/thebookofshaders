@@ -9,7 +9,7 @@ La seguente struttura di codice sarà la nostra recinzione. In questa visualizzi
 
 <div class="codeAndCanvas" data="linear.frag"></div>
 
-**Nota veloce**: il costruttore di tipo ```vec3``` "capisce" che vuoi assegnare i tre canali di colori allo stesso valore, mentre ```vec4``` capisce che vuoi costruire un vettore a quattro dimensioni con tre unidimensionali più un quarto valore (in questo caso il valore che controlla l’alfa o l’opacità). Guarda, ad esempio, le righe 20 e 26 qui sopra. 
+**Nota veloce**: il costruttore di tipo ```vec3``` "capisce" che vuoi assegnare i tre canali di colori allo stesso valore, mentre ```vec4``` capisce che vuoi costruire un vettore a quattro dimensioni con tre unidimensionali più un quarto valore (in questo caso il valore che controlla l’alfa o l’opacità). Guarda, ad esempio, le righe 20 e 26 qui sopra.
 
 Questo codice è il tuo recinto; è importante osservarlo e capirlo. Tornerai spesso in questo spazio tra *0.0* e *1.0*. Imparerai l’arte di combinare e modellare questa linea.
 
@@ -22,7 +22,7 @@ Interessante, vero? Alla riga 22 prova esponenti diversi, per esempio: 20.0, 2.0
 [```pow()```](../glossary/?search=pow) è una funzione nativa il GLSL e ce ne sono molte altre. La maggior parte di queste sono accelerate al livello dell’hardware; ciò significa che se esse sono usate in modo appropriato e con discrezione, renderanno il tuo codice molto più veloce.
 
 Sostituisci la funzione alla riga 22. Provane altre, come: [```exp()```](../glossary/?search=exp), [```log()```](../glossary/?search=log) e [```sqrt()```](../glossary/?search=sqrt). Alcune di queste funzioni sono più interessanti quando le si utilizza con PI.  Puoi vedere alla riga 8, che ho definito un macro che sostituisce qualsiasi chiamata a ```PI``` con valore ```3.14159265359```.
- 
+
 ### Step e Smoothstep
 
 GLSL ha anche alcune funzioni interpolanti native uniche che sono accelerate dall’hardware.
@@ -84,7 +84,7 @@ AAl termine dell’ultimo esercizio abbiamo presentato alcune nuove funzioni. È
 <div class="simpleFunction" data="y = mod(x,0.5); // restituisce il modulo di 0.5
 //y = fract(x); // restituisce solo la parte frazionale di un numero
 //y = ceil(x);  // il numero intero più vicino che sia più grande o uguale a x
-//y = floor(x); // il numero intero più vicino che sia più piccolo o uguale a x 
+//y = floor(x); // il numero intero più vicino che sia più piccolo o uguale a x
 //y = sign(x);  // estrae il segno di x
 //y = abs(x);   // restituisce il valore assoluto di x
 //y = clamp(x,0.0,1.0); // costringe x a restare fra 0.0 e 1.0
@@ -93,7 +93,7 @@ AAl termine dell’ultimo esercizio abbiamo presentato alcune nuove funzioni. È
 
 ### Funzioni di forma avanzate
 
-[Golan Levin](http://www.flong.com/) possiede un’ampia documentazione molto utile sulle funzioni di forma complesse. Trasportare queste funzioni in GLSL è un ottimo modo per incominciare a costruire la propria cassetta degli attrezzi per creare codici. 
+[Golan Levin](http://www.flong.com/) possiede un’ampia documentazione molto utile sulle funzioni di forma complesse. Trasportare queste funzioni in GLSL è un ottimo modo per incominciare a costruire la propria cassetta degli attrezzi per creare codici.
 
 * [Polynomial Shaping Functions: www.flong.com/texts/code/shapers_poly](http://www.flong.com/texts/code/shapers_poly/)
 

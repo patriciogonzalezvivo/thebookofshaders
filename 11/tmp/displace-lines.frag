@@ -67,10 +67,10 @@ vec3 nNoise(vec2 st) {
     float topRight   = snoise(vec2(st.x + offset.x, st.y - offset.y));
     float right      = snoise(vec2(st.x + offset.x, st.y));
     float bottomRight= snoise(vec2(st.x + offset.x, st.y + offset.y));
-    
+
     float dX = topRight + 2.0 * right + bottomRight - topLeft - 2.0 * left - bottomLeft;
     float dY = bottomLeft + 2.0 * bottom + bottomRight - topLeft - 2.0 * top - topRight;
-    
+
     return normalize(vec3( dX, dY, 0.01))*.5+.5;
 }
 
@@ -82,6 +82,6 @@ void main(){
 
     st += nNoise(st).xy*.1*sin(u_time);
     float df = sin(fract(st.y)*10.);
-    
+
     gl_FragColor= vec4(vec3(1.0-smoothstep(.9,.99,df)),1.);
 }

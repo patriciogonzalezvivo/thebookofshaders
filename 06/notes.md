@@ -94,7 +94,7 @@ or you can instead, use a single ```vec4``` which ```.xy``` **accessor** will re
 
 [/NICO]
 
-These different ways of pointing to the variables inside a vector are just nomenclatures designed to help you write clear code. This flexibility embedded in shading language is a door for you to start thinking interchangably about color and space coordinates. 
+These different ways of pointing to the variables inside a vector are just nomenclatures designed to help you write clear code. This flexibility embedded in shading language is a door for you to start thinking interchangably about color and space coordinates.
 
 [NICO]
 

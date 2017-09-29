@@ -2,7 +2,7 @@
 
 ## Farben
 
-Wir hatten bislang noch wenig Gelegenheit, um über die Vektortypen von GLSL zu sprechen. Bevor es mit anderen Inhalten weitergeht, ist es wichtig, mehr über diese Variablentypen zu erfahren. Das Thema „Farben“ bietet sich dafür an. 
+Wir hatten bislang noch wenig Gelegenheit, um über die Vektortypen von GLSL zu sprechen. Bevor es mit anderen Inhalten weitergeht, ist es wichtig, mehr über diese Variablentypen zu erfahren. Das Thema „Farben“ bietet sich dafür an.
 
 Falls Du mit den Konzepten der objektorientierten Programmierung vertraut bist, ist Dir vielleicht schon aufgefallen, dass wir die verschiedenen Elemente innerhalb eines Vektors wie eine gewöhnliche ```struct``` in C ansprechen.
 
@@ -10,7 +10,7 @@ Falls Du mit den Konzepten der objektorientierten Programmierung vertraut bist, 
 vec3 red = vec3(1.0,0.0,0.0);
 red.x = 1.0;
 red.y = 0.0;
-red.z = 0.0; 
+red.z = 0.0;
 ```
 
 Die Festlegung von Farben über die Komponenten *x*, *y* und *z* wirkt auf den ersten Blick etwas merkwürdig, nicht wahr? Aus diesem Grund gibt es weitere Möglichkeiten, um auf diese Elemente zuzugreifen. Die Inhalte von ```.x```, ```.y``` und ```.z``` können auch als ```.r```, ```.g``` und ```.b```, sowie als ```.s```, ```.t``` und ```.p``` angesprochen werden (```.s```, ```.t``` und ```.p``` werden typischerweise für die Raumkoordinaten von Texturen genutzt, wie wir in späteren Kapiteln noch sehen werden). Darüber hinaus lassen sich die Elemente eines Vektors auch über ihre Index-Position als ```[0]```, ```[1]``` und ```[2]``` ansprechen.
@@ -58,7 +58,7 @@ Jetzt, wo Du weißt, wie man Farben definiert, wird es Zeit, dies mit unserem bi
 
 ![](mix-f.jpg)
 
-Lenke Dein Augenmerk im folgenden Programm besonders auf die *Zeile 18*. Schau Dir genau an, wie hier die absoluten Werte aus einer *Sinusfunktion* genutzt werden, um zeitabhängig und mit unterschiedlichen Verhältnissen die Farben aus den Variablen ```colorA``` und ```colorB``` zu mischen. 
+Lenke Dein Augenmerk im folgenden Programm besonders auf die *Zeile 18*. Schau Dir genau an, wie hier die absoluten Werte aus einer *Sinusfunktion* genutzt werden, um zeitabhängig und mit unterschiedlichen Verhältnissen die Farben aus den Variablen ```colorA``` und ```colorB``` zu mischen.
 
 <div class="codeAndCanvas" data="mix.frag"></div>
 
@@ -66,13 +66,13 @@ Jetzt zeige Deine Fähigkeiten, indem Du:
 
 * Einen ausdrucksstarken Übergang zwischen den Farben konstruierst. Denke an ein bestimmtes Gefühl, eine impulsive menschliche Regung. Welche Farbe vermag dieses Gefühl wohl am besten auszudrücken? Und wie soll sich diese Farbe entwickeln, um anschließend wieder zu verschwinden? Animiere den Übergang mit Hilfe formgebender Funktionen. Robert Penner hat eine Reihe populärer Übergangsfunktionen für Computeranimationen entwickelt, die als [easing functions](http://easings.net/) bekannt sind. Du kannst für Deine Nachforschungen und als Inspiration auf [dieses Beispiel](../edit.php#06/easing.frag) zurückgreifen. Aber die besten Ergebnisse erzielst Du natürlich, wenn Du Deine ganz eigenen Übergänge kreierst.
 
-### Das Spiel mit Farbverläufen 
+### Das Spiel mit Farbverläufen
 
 Die [```mix()```](../glossary/?search=mix)-Funktion hat noch mehr zu bieten. Anstelle eines einzelnen Werts vom Typ ```float```, können wir auch einen Datentyp übergeben, der zu den ersten beiden Argumenten passt. In unserem Fall ist das ein ```vec3```. Dadurch gewinnen wir die Kontrolle über das Mischen in allen drei Farbkanälen *Rot*, *Grün* und *Blau* (```r```, ```g``` und ```b```).
 
 ![](mix-vec.jpg)
 
-Wirf nun einen Blick auf das folgende Beispiel. Wie schon bei den Beispielen im letzten Kapitel verbinden wir den Übergang auch hier mit dem normalisierten Wert der *X-Ordinate* und visualisieren ihn als eine Linie. Im ersten Schritt folgen die Übergänge in allen drei Farbkanälen derselben Linie. 
+Wirf nun einen Blick auf das folgende Beispiel. Wie schon bei den Beispielen im letzten Kapitel verbinden wir den Übergang auch hier mit dem normalisierten Wert der *X-Ordinate* und visualisieren ihn als eine Linie. Im ersten Schritt folgen die Übergänge in allen drei Farbkanälen derselben Linie.
 
 Lösche jetzt die Kommentarzeichen aus der *Programmzeile 25*, damit diese ebenfalls ausgeführt wird. Dann schau, was daraufhin geschieht. Entferne anschließend auch die Kommentarzeichen vor den *Zeilen 26 und 27*. Achte darauf, dass diese drei Zeilen jeweils das Mischverhältnis für die *Rot-*, *Grün*, und *Blau-Kanäle* zwischen den Farben aus den Variablen ```colorA``` und ```colorB``` festlegen.
 
@@ -92,9 +92,9 @@ Vielleicht erkennst Du die drei formgebenden Funktionen in den *Zeilen 25 bis 27
 
 ### HSB
 
-Beim Thema „Farben“ kommen wir nicht an dem Konzept der „Farbräume“ vorbei. Wie Du vielleicht weißt, gibt es unterschiedliche Möglichkeiten, Farben zu beschreiben, jenseits ihrer Auftrennung in *Rot-*, *Grün-* und *Blau-Anteile* (sprich: Kanäle). 
+Beim Thema „Farben“ kommen wir nicht an dem Konzept der „Farbräume“ vorbei. Wie Du vielleicht weißt, gibt es unterschiedliche Möglichkeiten, Farben zu beschreiben, jenseits ihrer Auftrennung in *Rot-*, *Grün-* und *Blau-Anteile* (sprich: Kanäle).
 
-[HSB](https://de.wikipedia.org/wiki/HSV-Farbraum) steht für *Hue* (dt. Farbwert), *Saturation* (dt. Farbsättigung) und *Brightness* (dt. absolute Helligkeit). Dieses Farbsystem ist intuitiver und in vielen Fällen auch praktischer, wenn es um die Festlegung von Farben geht. Nimm Dir einen Moment Zeit, um die Konvertierungsfunktionen ```rgb2hsv()``` und ```hsv2rgb()``` im folgenden Programmcode zu studieren. 
+[HSB](https://de.wikipedia.org/wiki/HSV-Farbraum) steht für *Hue* (dt. Farbwert), *Saturation* (dt. Farbsättigung) und *Brightness* (dt. absolute Helligkeit). Dieses Farbsystem ist intuitiver und in vielen Fällen auch praktischer, wenn es um die Festlegung von Farben geht. Nimm Dir einen Moment Zeit, um die Konvertierungsfunktionen ```rgb2hsv()``` und ```hsv2rgb()``` im folgenden Programmcode zu studieren.
 
 Indem wir die Position auf der *X-Achse* auf den Farbwert und die Position auf der *Y-Achse* auf die Helligkeit abbilden, erhalten wir ein hübsches Spektralbild. Diese räumliche Verteilung der Farben kann sehr praktisch sei, wenn es um die Auswahl einer Farbe für einen bestimmten Zweck geht.
 
@@ -104,9 +104,9 @@ Indem wir die Position auf der *X-Achse* auf den Farbwert und die Position auf d
 
 Das *HSB-Farbmodell* wurde ursprünglich entwickelt, um Farben in Polarkoordinaten (bestehend aus einem *Winkel* und einem *Radius*) auszudrücken und nicht als kartesische Koordinaten (bestehend aus einer *X-* und einer *Y-Ordinate*). Um unsere ```HSB```-Funktion mit Polarkoordinaten arbeiten zu lassen, müssen wir den Winkel und die Entfernung des jeweiligen Bildpunktes von der Mitte der Zeichenfläche berechnen. Dafür nutzen wir die [```length()```](../glossary/?search=length)-Funktion, sowie die Funktion [```atan(y,x)```](../glossary/?search=atan) (das ist die GLSL-Variante der in vielen Programmiersprachen verfügbaren Funktion ```atan2(y,x)``` zur Berechnung des Arkustangens).  
 
-Bei der Nutzung von Vektor- und Trigonometrie-Funktionen werden Variablen der Datentypen ```vec2```, ```vec3``` und ```vec4``` wie Vektoren behandelt, auch wenn sie tatsächlich Farben verkörpern. Wir beginnen hier also, Farben und Vektoren gleichermaßen zu bearbeiten - eine Flexibilität, die sich noch als äußerst praktisch und weitreichend erweisen wird. 
+Bei der Nutzung von Vektor- und Trigonometrie-Funktionen werden Variablen der Datentypen ```vec2```, ```vec3``` und ```vec4``` wie Vektoren behandelt, auch wenn sie tatsächlich Farben verkörpern. Wir beginnen hier also, Farben und Vektoren gleichermaßen zu bearbeiten - eine Flexibilität, die sich noch als äußerst praktisch und weitreichend erweisen wird.
 
-**Hinweis:** Nur, falls Du Dich fragst: Abgesehen von [```length```](../glossary/?search=length) gibt es noch viele weitere geometrische Funktionen. Dazu gehören beisielsweise: [```distance()```](../glossary/?search=distance), [```dot()```](../glossary/?search=dot), [```cross```](../glossary/?search=cross), [```normalize()```](../glossary/?search=normalize), [```faceforward()```](../glossary/?search=faceforward), [```reflect()```](../glossary/?search=reflect) und [```refract()```](../glossary/?search=refract). 
+**Hinweis:** Nur, falls Du Dich fragst: Abgesehen von [```length```](../glossary/?search=length) gibt es noch viele weitere geometrische Funktionen. Dazu gehören beisielsweise: [```distance()```](../glossary/?search=distance), [```dot()```](../glossary/?search=dot), [```cross```](../glossary/?search=cross), [```normalize()```](../glossary/?search=normalize), [```faceforward()```](../glossary/?search=faceforward), [```reflect()```](../glossary/?search=reflect) und [```refract()```](../glossary/?search=refract).
 
 Außerdem bietet GLSL vergleichende Funktionen für Vektoren wie [```lessThan()```](../glossary/?search=lessThan), [```lessThanEqual()```](../glossary/?search=lessThanEqual), [```greaterThan()```](../glossary/?search=greaterThan), [```greaterThanEqual()```](../glossary/?search=greaterThanEqual), [```equal()```](../glossary/?search=equal) und [```notEqual()```](../glossary/?search=notEqual).
 
@@ -118,7 +118,7 @@ Wie Du siehst, dreht sich also auch hier das ganze Spiel darum, Werte zwischen `
 
 Probiere die folgenden Übungen aus:
 
-* Verändere das obige Programmbeispiel so, dass sich das Farbrad dreht, wie der Mauszeiger bei einer länger währenden Operation. 
+* Verändere das obige Programmbeispiel so, dass sich das Farbrad dreht, wie der Mauszeiger bei einer länger währenden Operation.
 
 * Nutze eine formgebende Funktion in Verbindung mit der Konvertierungsfunktion von *HSB* nach *RGB*, um einen bestimmten Farbwert in den Vordergrund zu rücken und die anderen Farben „klein“ zu halten.
 
@@ -138,10 +138,8 @@ Bevor wir zum nächsten Kapitel springen, lass und kurz innehalten und einen Sch
 
 ```glsl
 int newFunction(in vec4 aVec4,   // nur auslesbar
-                out vec3 aVec3,  // nicht initalisiert, nur beschreibbar 
+                out vec3 aVec3,  // nicht initalisiert, nur beschreibbar
                 inout int aInt); // lesen und schreiben, Aenderungen fliessen zum Aufrufer zurueck
 ```
 
 Du hast vielleicht nicht damit gerechnet, aber jetzt haben wir bereits alle Elemente beisammen, um aufregende Grafiken zu erstellen. Im nächsten Kapitel werden wir lernen, wie man alle unsere kleinen Tricks nutzen kann, um den Raum richtig in Wallung zu bringen. Ja, du hast richtig gehört. Genau darum geht's.
-
-

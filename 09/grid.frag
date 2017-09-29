@@ -23,7 +23,7 @@ void main(void){
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     vec3 color = vec3(0.0);
 
-    // Repat the space 
+    // Repat the space
     st = tile(st,10.0);
 
     // Draw a rectangle in each one
@@ -32,5 +32,5 @@ void main(void){
     // Show the space coordinates
     // color = vec3(st,0.0);
 
-    gl_FragColor = vec4(color,1.0);    
+    gl_FragColor = vec4(color,1.0);
 }

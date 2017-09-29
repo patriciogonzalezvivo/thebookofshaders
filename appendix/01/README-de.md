@@ -1,8 +1,8 @@
 ## Wie kann ich die Beispielprogramme auf einem RaspberryPi ausführen?
 
-Vor wenigen Jahren konnte man noch nicht davon ausgehen, dass jedermann über einen Computer mit einer GPU verfügt. Heutzutage gilt das nicht mehr. Doch im Bereich von Schulen, Universitäten und anderen Weiterbildungseichrichtungen ist dies immer noch eine hohe Anforderung. 
+Vor wenigen Jahren konnte man noch nicht davon ausgehen, dass jedermann über einen Computer mit einer GPU verfügt. Heutzutage gilt das nicht mehr. Doch im Bereich von Schulen, Universitäten und anderen Weiterbildungseichrichtungen ist dies immer noch eine hohe Anforderung.
 
-Durch das [Raspberry Projekt](http://www.raspberrypi.org/) hat mittlerweile eine neue Generation kleiner und billiger Computer (das Stück ab ca. 40 Euro) ihren Weg in viele Klassenzimmer gefunden. Vor allem verfügt der [RaspberryPi](http://www.raspberrypi.org/) über einen ansehnlichen Grafikchip mit GPU, der direkt aus der Kommandozeile angesprochen werden kann. 
+Durch das [Raspberry Projekt](http://www.raspberrypi.org/) hat mittlerweile eine neue Generation kleiner und billiger Computer (das Stück ab ca. 40 Euro) ihren Weg in viele Klassenzimmer gefunden. Vor allem verfügt der [RaspberryPi](http://www.raspberrypi.org/) über einen ansehnlichen Grafikchip mit GPU, der direkt aus der Kommandozeile angesprochen werden kann.
 
 Ich habe ein flexibles Werkzeug für die Programmierung von GLSL-Shadern entwickelt, den [**glslViewer**](https://github.com/patriciogonzalezvivo/glslViewer). Damit können alle Beispiele aus diesem Buch ausgeführt werden. Sobald man Veränderungen am aktuellen Shader-Programmcode abspeichert, kompiliert das Programm den Shader erneut und bringt ihn zur Ausführung. Auf dem Bildschirm erscheint daraufhin die aktualisierte Anzeige des Shaders.
 

@@ -14,7 +14,7 @@ precision mediump float;
 #define SST 0.888
 #define SSQ 0.288
 
-uniform sampler2D u_tex0; 
+uniform sampler2D u_tex0;
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
@@ -72,7 +72,7 @@ void main() {
         mat2 mm = rotm(R+D2R(75.0));
         mat2 my = rotm(R);
         mat2 mk = rotm(R+D2R(45.0));
-        
+
         float k = halftone(fc,mk).a;
         vec4 c = cmyki2rgb(ss(vec4(
             halftone(fc,mc).r,
@@ -86,6 +86,6 @@ void main() {
         st = vec2(st.x,st.y*0.5)*2.0;
         gl_FragColor = texture2D(u_tex0,st);
     }
-    
-    
+
+
 }

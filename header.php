@@ -34,7 +34,7 @@
         <meta name="twitter:image:width" content="500">
         <meta name="twitter:image:height" content="500">
 
-        
+
         <link href="/favicon.gif" rel="shortcut icon"/>
 
         <!-- Highlight -->
@@ -59,11 +59,11 @@
 <?php
     if (file_exists($path."/src/glslEditor/build/glslEditor.js")) {
         echo '
-        <link type="text/css" rel="stylesheet" href="'.$path.'/src/glslEditor/build/glslEditor.css"> 
+        <link type="text/css" rel="stylesheet" href="'.$path.'/src/glslEditor/build/glslEditor.css">
         <script type="application/javascript" src="'.$path.'/src/glslEditor/build/glslEditor.js"></script>';
     } else {
         echo '
-        <link type="text/css" rel="stylesheet" href="https://thebookofshaders.com/glslEditor/glslEditor.css"> 
+        <link type="text/css" rel="stylesheet" href="https://thebookofshaders.com/glslEditor/glslEditor.css">
         <script type="application/javascript" src="https://thebookofshaders.com/glslEditor/glslEditor.js"></script>';
     }
 ?>
@@ -72,11 +72,11 @@
 <?php
     if (file_exists($path."/src/glslGallery/build/glslGallery.js")) {
         echo '
-        <link type="text/css" rel="stylesheet" href="'.$path.'/src/glslGallery/build/glslGallery.css"> 
+        <link type="text/css" rel="stylesheet" href="'.$path.'/src/glslGallery/build/glslGallery.css">
         <script type="application/javascript" src="'.$path.'/src/glslGallery/build/glslGallery.js"></script>';
     } else {
         echo '
-        <link type="text/css" rel="stylesheet" href="https://thebookofshaders.com/glslGallery/glslGallery.css"> 
+        <link type="text/css" rel="stylesheet" href="https://thebookofshaders.com/glslGallery/glslGallery.css">
         <script type="application/javascript" src="https://thebookofshaders.com/glslGallery/glslGallery.js"></script>';
     }
 ?>

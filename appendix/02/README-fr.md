@@ -13,7 +13,7 @@ brew update
 brew upgrade
 brew tap homebrew/versions
 brew install glfw3
-cd ~ 
+cd ~
 git clone http://github.com/patriciogonzalezvivo/glslViewer.git
 cd glslViewer
 make
@@ -35,7 +35,7 @@ Pour analyser les chapitres Markdown dans Latex, puis dans un fichier PDF, nous 
 Sous **MacOSX**:
 
 Téléchargez et installez [basictex & MacTeX-Additions](http://www.tug.org/mactex/morepackages.html), puis installez [Pandoc](http://johnmacfarlane.net/pandoc/) et Python avec :
- 
+
 ```bash
 brew install pandoc python2.7
 ```

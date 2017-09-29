@@ -59,7 +59,7 @@ void main(void) {
 	n = step(pct,F.x*2.);
 
 	vec2 p = vec2(2./u_resolution.xy);
-	
+
 	float avg = 0.0;
 	avg += getIntensity(st+vec2(p.x,0.0));
 	avg += getIntensity(st+vec2(-p.x,0.0));

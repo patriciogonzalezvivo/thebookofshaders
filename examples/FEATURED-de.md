@@ -1,2 +1,1 @@
 ## Ausgewählte Beispiel Shader
-

@@ -1,7 +1,7 @@
-<?php 
+<?php
 
 	$path = "..";
-	if(!empty($_GET)) 
+	if(!empty($_GET))
 		$subtitle = ": ".$_GET['search'];
 
 	include($path."/header.php");
@@ -13,16 +13,16 @@
 	<hr>
 	<div id="content">
 
-<?php 
+<?php
 	$Parsedown = new Parsedown();
-	if(empty($_GET)) 
+	if(empty($_GET))
 		echo $Parsedown->text(file_get_contents ('README.md'));
-	else 
+	else
 		echo $Parsedown->text(file_get_contents ( $_GET['search'].'/README.md' ));
 
 	echo '
 	</div>
 	<hr>';
 
-	include($path."/footer.php"); 
+	include($path."/footer.php");
 ?>

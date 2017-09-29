@@ -26,7 +26,7 @@ vec3 voronoi( in vec2 x ) {
             vec2 g = vec2(float(i),float(j));
             vec2 o = random2( n + g );
             o = 0.5 + 0.5*sin( u_time + 6.2831*o );
-  
+
             vec2 r = g + o - f;
             float d = dot(r,r);
 
@@ -61,13 +61,13 @@ void main() {
     st.x *= u_resolution.x/u_resolution.y;
     vec3 color = vec3(0.);
 
-    // Scale 
+    // Scale
     st *= 3.;
     vec3 c = voronoi(st);
 
     // isolines
     color = c.x*(0.5 + 0.5*sin(64.0*c.x))*vec3(1.0);
-    // borders  
+    // borders
     color = mix( vec3(1.0), color, smoothstep( 0.01, 0.02, c.x ) );
     // feature points
     float dd = length( c.yz );

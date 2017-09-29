@@ -11,7 +11,7 @@ precision mediump float;
 
 uniform vec2 u_resolution; // dimensione del Canvas (larghezza, altezza)
 uniform vec2 u_mouse;      // posizione del mouse (x,y) in pixels
-uniform float u_time;	  // tempo in secondi da quando lo shader è iniziato 
+uniform float u_time;	  // tempo in secondi da quando lo shader è iniziato
 ```
 
 È possibile immaginare gli uniforms come piccoli ponti tra la CPU e la GPU. I nomi variano da applicazione ad applicazione, ma in questa serie di esempi userò: ```u_time``` (tempo in secondi da quando lo shader è iniziato), ```u_resolution``` (la dimensione della finestra in cui lo shader è in corso d'elaborazione) e ```u_mouse``` (la posizione in pixel del mouse all'interno della finestra). Seguirò la convenzione di mettere ```u_``` prima del nome degli uniforms per essere espliciti sulla natura di questa variabile, ma incontrerete varie nomenclature per gli uniforms. Per esempio [ShaderToy.com](https://www.shadertoy.com/) utilizza gli stessi uniforms, ma con i seguenti nomi:
@@ -19,7 +19,7 @@ uniform float u_time;	  // tempo in secondi da quando lo shader è iniziato
 ```glsl
 uniform vec3 iResolution;   // dimensione del Canvas (in pixels)
 uniform vec4 iMouse;        // posizione del mouse in pixels. xy: corrente, zw: click
-uniform float iGlobalTime;  // tempo (in secondi) da quando lo shader è iniziato
+uniform float iTime;        // tempo (in secondi) da quando lo shader è iniziato
 ```
 
 Ma ora basta chiacchiere, vediamo gli uniforms in azione. Nel seguente codice utilizziamo ```u_time``` - il numero di secondi da quando lo shader è iniziato - insieme ad una funzione seno per animare con una transizione la quantità di rosso sullo schermo.

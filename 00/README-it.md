@@ -24,7 +24,7 @@ Questo libro vi insegnerà come utilizzare e integrare shader nei vostri progett
 
 ## Di che cosa tratta questo libro?
 
-Questo libro si concentrerà su l'uso dei pixel shaders GLSL. Per prima cosa definiremo cosa sono gli shaders; poi impareremo come fare, grazie a loro, forme procedurali, motivi, texture e animazioni. Imparerete le basi del linguaggio shading ed ad applicarlo a scenari più utili, quali: l'elaborazione di immagini (operazioni di immagine, circonvoluzioni di matrice, sfocature, filtri colorati, tabelle di associazione e altri effetti) e simulazioni (il gioco della vita di Conway, la reazione-diffusione di Gray-Scott, le increspature d'acqua, gli effetti acquerello, le celle di Voronoi, etc.). Verso la fine del libro vedremo un insieme di tecniche avanzate basate sul Ray Marching.
+Questo libro si concentrerà su l'uso dei pixel shaders GLSL. Per prima cosa definiremo cosa sono gli shaders; poi impareremo come fare, grazie a loro, forme procedurali, motivi, texture e animazioni. Imparerete le basi del linguaggio shading ed ad applicarlo a scenari più utili, quali: l'elaborazione di immagini (operazioni di immagine, convoluzioni di matrici, sfocature, filtri colorati, tabelle di associazione e altri effetti) e simulazioni (il gioco della vita di Conway, la reazione-diffusione di Gray-Scott, le increspature d'acqua, gli effetti acquerello, le celle di Voronoi, etc.). Verso la fine del libro vedremo un insieme di tecniche avanzate basate sul Ray Marching.
 
 *In ogni capitolo, ci sono degli esempi interattivi per imparare divertendosi. * Quando si modifica il codice, vedrete immediatamente sullo schermo i cambiamenti. I concetti possono essere astratti e confusi, perciò gli esempi interattivi sono essenziali per aiutarvi a capire gli argomenti trattati. Più velocemente i concetti si mettono in pratica e più facilmente si imparerà.
 
@@ -47,4 +47,3 @@ In alternativa, in base a ciò di cui avete bisogno, è possibile:
 - [Fare un PDF del libro da stampare](https://thebookofshaders.com/appendix/)
 
 - Utilizzare la [repository on-line](https://github.com/patriciogonzalezvivo/thebookofshaders) per aiutare a risolvere i problemi e per condividere il codice.
-

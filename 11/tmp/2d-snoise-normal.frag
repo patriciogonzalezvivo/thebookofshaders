@@ -58,11 +58,11 @@ float snoise(vec2 v) {
 
 void main(){
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
-    
+
     float scale = 10.0;
     st += vec2(u_time*0.1);
     st *= scale;
-    
+
     vec2 offset = vec2(1.)/u_resolution.xy;
     float center     = snoise(vec2(st.x, st.y));
     float topLeft    = snoise(vec2(st.x - offset.x, st.y - offset.y));
@@ -73,10 +73,10 @@ void main(){
     float topRight   = snoise(vec2(st.x + offset.x, st.y - offset.y));
     float right      = snoise(vec2(st.x + offset.x, st.y));
     float bottomRight= snoise(vec2(st.x + offset.x, st.y + offset.y));
-    
+
     float dX = topRight + 2.0 * right + bottomRight - topLeft - 2.0 * left - bottomLeft;
     float dY = bottomLeft + 2.0 * bottom + bottomRight - topLeft - 2.0 * top - topRight;
-    
+
     vec3 N = normalize(vec3( dX, dY, 0.01))*.5+.5;
 
     gl_FragColor= vec4(N,1.);

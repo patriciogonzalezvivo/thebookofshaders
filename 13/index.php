@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	$path = "..";
 	$subtitle = ": Fractal Brownian Motion";
@@ -28,7 +28,7 @@
 		<li class="navigationBar" onclick="homePage()"> Home </li>
 	</ul>';
 
-	include($path."/footer.php"); 
+	include($path."/footer.php");
 ?>
 
 <!-- <li class="navigationBar" onclick="nextPage()">Next &gt; &gt;</li> -->

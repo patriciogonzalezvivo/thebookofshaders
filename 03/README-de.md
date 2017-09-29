@@ -1,6 +1,6 @@
 ## Uniforms
 
-Wir haben bereits gesehen, wie die GPU eine große Anzahl von parallelen Aufgaben (engl. *Threads*) verwaltet. Jeder Thread übernimmt die Berechnung des Farbwerts für einen Pixel, also für einen kleinen Teil der gesamten Grafik. Obwohl er dabei blind für die anderen Threads ist, muss es einen Weg geben, wie die CPU bestimmte Daten an alle Threads übermitteln kann. Aufgrund der Architektur einer Grafikkarte müssen diese Daten für alle ausgeführten Threads einheitlich (engl. *uniform*) und nur lesbar (engl. *read-only*) sein. Jeder Thread erhält also die gleichen Daten, die er nicht verändern kann. 
+Wir haben bereits gesehen, wie die GPU eine große Anzahl von parallelen Aufgaben (engl. *Threads*) verwaltet. Jeder Thread übernimmt die Berechnung des Farbwerts für einen Pixel, also für einen kleinen Teil der gesamten Grafik. Obwohl er dabei blind für die anderen Threads ist, muss es einen Weg geben, wie die CPU bestimmte Daten an alle Threads übermitteln kann. Aufgrund der Architektur einer Grafikkarte müssen diese Daten für alle ausgeführten Threads einheitlich (engl. *uniform*) und nur lesbar (engl. *read-only*) sein. Jeder Thread erhält also die gleichen Daten, die er nicht verändern kann.
 
 Man bezeichnet diese Daten deshalb als ```uniform```. Es gibt sie in den wichtigsten Datentypen, die GLSL unterstützt: ```float```, ```vec2```, ```vec3```, ```vec4```, ```mat2```, ```mat3```, ```mat4```, ```sampler2D``` und ```samplerCube```. Uniforms werden gemeinsam mit ihrem jeweiligen Datentyp am Anfang eines Shader-Programms definiert, sofern man darauf Bezug nehmen möchte. Dies geschieht in der Regel gleich nachdem man die gewünschte Genauigkeit für alle Fließkommaoperationen in dem Programm festgelegt hat.
 
@@ -19,7 +19,7 @@ Man kann sich Uniforms als eine Brücke zwischen der CPU und der GPU vorstellen.
 ```glsl
 uniform vec3 iResolution;   // Groesse der Malflaeche
 uniform vec4 iMouse;        // Mausposition
-uniform float iGlobalTime;  // Zeit seit dem Start
+uniform float iTime;        // Zeit seit dem Start
 ```
 
 Aber nun genug geredet. Lass uns die Uniforms in Aktion betrachten. Der folgende Programmcode nutzt ```u_time``` - die Anzahl der Sekunden, seitdem der Shader gestartet wurde - in Verbindung mit einer Sinus-Funktion, um die Intensität der Rotfärbung der Malfläche pulsieren zu lassen.
@@ -48,13 +48,13 @@ In der Welt der Shader-Programmierung haben wir nicht so viele Möglichkeiten zu
 
 ![](08.png)
 
-Jetzt ist es an der Zeit für eine kleine Herausforderung in Bezug auf das Verständnis des obigen Programmcodes. 
+Jetzt ist es an der Zeit für eine kleine Herausforderung in Bezug auf das Verständnis des obigen Programmcodes.
 
 * Kannst du ausmachen, wo sich die Koordinate ```(0.0,0.0)``` innerhalb unserer Zeichenfläche befindet?
 
 * Und wo liegen wohl die Koordinaten ```(1.0,0.0)```, ```(0.0,1.0)```, ```(0.5,0.5)``` und ```(1.0,1.0)```? Die Farben der jeweiligen Bildpunkte verraten es Dir!
 
-* Gelingt es Dir, die aktuelle Mausposition aus dem Uniform ```u_mouse``` einzubeziehen? Denke daran, dass sich die Angaben in diesem Uniform auf Pixel beziehen und zunächst nicht normalisiert sind. Kannst Du den Programmcode so gestalten, dass die erzeugten Farben auf die Mausbewegung reagieren? 
+* Gelingt es Dir, die aktuelle Mausposition aus dem Uniform ```u_mouse``` einzubeziehen? Denke daran, dass sich die Angaben in diesem Uniform auf Pixel beziehen und zunächst nicht normalisiert sind. Kannst Du den Programmcode so gestalten, dass die erzeugten Farben auf die Mausbewegung reagieren?
 
 * Fällt Dir ein Weg ein, wie man die Farbgestaltung auf interessante Weise durch die Einbeziehung von ```u_time``` und ```u_mouse``` dynamisieren kann?
 

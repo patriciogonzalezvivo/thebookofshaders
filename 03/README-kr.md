@@ -1,6 +1,6 @@
 ## Uniforms
 
-우리는 여태것 GPU가 병렬처리에 왜 유리한지, 또 GPU의 각 Thread가 한 이미지의 각 부분을 어떻게 다루는지 또한 살펴보았다. 병렬처리 Thread들이 서로에 대해 데이터를 공유할수 없더라도, CPU에서 인풋을 받을수 있다. 그리고 이 인풋들은 모든 Thread들에 있어서 일정(*uniform*)하고 *read only*이다. 즉, 읽을순 있어도 변경할수 없다는 뜻이다. 
+우리는 여태것 GPU가 병렬처리에 왜 유리한지, 또 GPU의 각 Thread가 한 이미지의 각 부분을 어떻게 다루는지 또한 살펴보았다. 병렬처리 Thread들이 서로에 대해 데이터를 공유할수 없더라도, CPU에서 인풋을 받을수 있다. 그리고 이 인풋들은 모든 Thread들에 있어서 일정(*uniform*)하고 *read only*이다. 즉, 읽을순 있어도 변경할수 없다는 뜻이다.
 
 이런 인풋들을 ```uniform```이라고 하고, ```float```, ```vec2```, ```vec3```, ```vec4```, ```mat2```, ```mat3```, ```mat4```, ```sampler2D```, ```samplerCube``` 등의 데이터 타입을 지원한다. 유니폼 값들은 보통 floating pont precision설정이 끝난후 선언된다.
 
@@ -11,7 +11,7 @@ precision mediump float;
 
 uniform vec2 u_resolution; // Canvas size (width,height)
 uniform vec2 u_mouse;      // mouse position in screen pixels
-uniform float u_time;	  // Time in seconds since load 
+uniform float u_time;	  // Time in seconds since load
 ```
 
 유니폼은 CPU와 GPU사이에 다리라고 봐도 좋을것이다. 유니폼 값들의 이름은 구현마다 다 다르지만 여기서는: ```u_time``` (쉐이더 연산이 시작된후부터의 초), ```u_resolution``` (쉐이더가 그려지고 있는 빌보드의 사이즈) and ```u_mouse``` (그려지는 빌보드내에서 마우스의 현재 픽셀 위치값) 등으로 나타내겠다. ```u_``` 를 변수앞에 붙혀서, 유니폼이라고 명시한다는 점도 유의하기 바란다. 더 많은 예제는 [ShaderToy.com](https://www.shadertoy.com/) 에서 찾아볼수 있지만, 변수이름이 약간 다르니 살펴보기 바란다:
@@ -19,7 +19,7 @@ uniform float u_time;	  // Time in seconds since load
 ```glsl
 uniform vec3 iResolution;   // viewport resolution (in pixels)
 uniform vec4 iMouse;        // mouse pixel coords. xy: current, zw: click
-uniform float iGlobalTime;  // shader playback time (in seconds)
+uniform float iTime;        // shader playback time (in seconds)
 ```
 
 거두철미하고, 유니폼이 실제로 구현되는 부분을 보자. 아래 코드에서 ```u_time``` - 쉐이더가 구동된후 초 - 를 sine 함수에 인자로 넣어, 빨간색값을 조절하고 있는것을 볼수 있다.
@@ -39,7 +39,7 @@ GLSL의 재미를 약간 맛볼수 있었다. GPU는 전에도 설명했듯이, 
 
 ## gl_FragCoord
 
-비슷한 원리로, GLSL은 내장 아웃풋 값들을 가진다. ```vec4 gl_FragColor```, 또한 내장 인풋 값도 있다, *screen fragment*상에서 *pixel*의 위치를 가지고 있는 ```vec4 gl_FragCoord```. ```vec4 gl_FragCoord```로 각 쓰레드가 빌보드의 어느 부분을 작업하고 있는지 알수 있다. 그래서 이값은 ```uniform```값과는 조금다르다. 각 쓰레드마다 값이 다른 *varying*타입이기 때문이다. 
+비슷한 원리로, GLSL은 내장 아웃풋 값들을 가진다. ```vec4 gl_FragColor```, 또한 내장 인풋 값도 있다, *screen fragment*상에서 *pixel*의 위치를 가지고 있는 ```vec4 gl_FragCoord```. ```vec4 gl_FragCoord```로 각 쓰레드가 빌보드의 어느 부분을 작업하고 있는지 알수 있다. 그래서 이값은 ```uniform```값과는 조금다르다. 각 쓰레드마다 값이 다른 *varying*타입이기 때문이다.
 In the same way GLSL gives us a default output, ```vec4 gl_FragColor```, it also gives us a default input, ```vec4 gl_FragCoord```, which holds the screen coordinates of the *pixel* or *screen fragment* that the active thread is working on. With ```vec4 gl_FragCoord```, we know where a thread is working inside the billboard. In this case we don't call it ```uniform``` because it will be different from thread to thread, instead ```gl_FragCoord``` is called a *varying*.
 
 <div class="codeAndCanvas" data="space.frag"></div>

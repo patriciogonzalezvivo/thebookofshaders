@@ -46,7 +46,7 @@ Après quoi, vous voyez deux lignes commentées, la première fait une interpola
 
 ```glsl
 y = mix(rand(i), rand(i + 1.0), f);
-``` 
+```
 
 Décommentez cette ligne pour voir ce que ça donne.
 Nous utilisons la partie fractionnelle `f` pour mélanger ([```mix()```](.../glossary/?search=mix)) les deux valeurs aléatoires.
@@ -160,7 +160,7 @@ Une autre approche pour créer des motifs consiste à les considérer comme des 
 
 Une troisième approche consiste consiste à moduler une forme. Cela fait également appel aux techniques vues au [chapitre des formes](../07/?lan=fr).
 
-<a href="../edit.php#11/circleWave-noise.frag"><canvas id="custom" class="canvas" data-fragment-url="circleWave-noise.frag"  width="300px" height="300"></canvas></a> 
+<a href="../edit.php#11/circleWave-noise.frag"><canvas id="custom" class="canvas" data-fragment-url="circleWave-noise.frag"  width="300px" height="300"></canvas></a>
 
 Entraînement:
 
@@ -243,11 +243,11 @@ Que voyez vous? qu'est ce que ça vous rappelle? quelles utilisations potentiell
 
 * Créez un shader qui donne l'illusion d'un flux ; une lava-lamp, des goutes d'encre, de l'eau, etc.
 
-<a href="../edit.php#11/lava-lamp.frag"><canvas id="custom" class="canvas" data-fragment-url="lava-lamp.frag"  width="520px" height="200px"></canvas></a> 
+<a href="../edit.php#11/lava-lamp.frag"><canvas id="custom" class="canvas" data-fragment-url="lava-lamp.frag"  width="520px" height="200px"></canvas></a>
 
 * Utilisez le bruit simplexe pour texturer un de vos exercices précédents.
 
-<a href="../edit.php#11/iching-03.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-03.frag"  width="520px" height="520px"></canvas></a> 
+<a href="../edit.php#11/iching-03.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-03.frag"  width="520px" height="520px"></canvas></a>
 
 Dans ce chapitre, nous avons appris à contrôler le chaos et ce n'était pas chose aisée! Devenir maître du Bruit demande temps et énergie.
 
@@ -258,4 +258,4 @@ La capacité d'observation est au moins aussi importante (sinon plus) que la cap
 Sortez et profitez du reste de votre journée!
 
 <p style="text-align:center; font-style: italic;">"Parler à l'arbre, s'en faire un ami." Bob Ross
-</p> 
+</p>

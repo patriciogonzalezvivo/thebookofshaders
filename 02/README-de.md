@@ -5,7 +5,7 @@ Beim Erlernen einer neuen Programmiersprache beginnt man häufig mit dem berühm
 In der Welt der Shader-Programmierung ist die Textausgabe eine zu komplizierte Angelegenheit, um gleich damit zu beginnen. Stattdessen wollen wir eine leuchtende Farbe als Willkommensgruß auf den Bildschirm zaubern.
 
 <div class="codeAndCanvas" data="hello_world.frag"></div>
- 
+
 Falls Du dieses Buch in einem Internet-Browser liest, ist der obige Programmcode interaktiv. Du kannst in das Listing hineinklicken und jeden Teil des Programmcodes ändern. Deine Änderungen werden sofort innerhalb der Zeichenfläche sichtbar, weil der Shader-Code automatisch kompiliert und ausgeführt wird. Versuche es doch einfach einmal, indem Du die Zahlenwerte in der *Programmzeile 6* änderst.
 
 Obwohl diese wenigen, einfachen Programmzeilen noch nicht nach viel aussehen, können wir daraus bereits einige Erkenntnisse gewinnen:
@@ -16,7 +16,7 @@ Obwohl diese wenigen, einfachen Programmzeilen noch nicht nach viel aussehen, k�
 
 3. Die stark von C beeinflusste Programmiersprache für Shader verfügt über eingebaute *Variablen* (so wie ```gl_FragColor```), *Funktionen* und *Datentypen*. Im obigen Beispiel sehen wir bereits den Datentyp ```vec4```, der einen vierdimensionalen Vektor aus Fließkommazahlen repräsentiert. Im weiteren Verlauf des Buches werden wir noch die Typen ```vec3``` und ```vec2``` kennen lernen, ebenso die wichtigen Typen ```float```, ```int``` und ```bool```.
 
-4. Wenn wir uns den ```vec4``` Datentyp im obigen Beispiel genau anschauen, können wir bereits erahnen, dass die vier Zahlenwerte für die Farbkanäle Rot, Grün, Blau und Alpha (ein Maß für die Deckkraft) stehen. Außerdem erkennen wir, dass diese Werte offensichtlich normalisiert sind, sich also zwischen ```0.0``` und ```1.0``` bewegen. Später werden wir noch sehen, dass es uns diese Normalisierung vereinfacht, die Inhalte von Variablen auf Farbwerte *abzubilden*. 
+4. Wenn wir uns den ```vec4``` Datentyp im obigen Beispiel genau anschauen, können wir bereits erahnen, dass die vier Zahlenwerte für die Farbkanäle Rot, Grün, Blau und Alpha (ein Maß für die Deckkraft) stehen. Außerdem erkennen wir, dass diese Werte offensichtlich normalisiert sind, sich also zwischen ```0.0``` und ```1.0``` bewegen. Später werden wir noch sehen, dass es uns diese Normalisierung vereinfacht, die Inhalte von Variablen auf Farbwerte *abzubilden*.
 
 5. Eine weiteres aus C bekanntes Element sind die Präprozessor-Makros, die auch in unserem obigen Beispiel auftauchen. Mit ihrer Hilfe lassen sich Konstanten definieren (```#define```) und konditionale Festlegungen treffen (mit ```#ifdef``` und ```#endif```). Alle diese Makrobefehle beginnen mit einer Raute (```#```). Ihre Auswertung erfolgt als erster Schritt noch vor der eigentlichen Kompilierung des Shaders. Das Ergebnis dieser Auswertung bestimmt jeweils, welche Zeilen und Ausdrücke tatsächlich in den Programmcode einfließen, der anschließend kompiliert wird. In unserem obigen Beispiel wird die *Programmzeile 2* beispielsweise nur dann übernommen, wenn das Symbol ```GL_ES``` definiert ist. Dies ist in der Regel nur in Umgebungen auf mobilen Geräten der Fall, d.h. wenn das obige Programm beispielsweise auf einem Smartphone kompiliert wird, ist die Zeile 2 darin vorhanden und wirkt sich entsprechend aus. Beim Kompilieren auf einem Laptop oder PC taucht die Zeile 2 aber gar nicht auf, weil dort auch das Symbol ```GL_ES``` nicht definiert ist.
 
@@ -50,4 +50,4 @@ vec4 red(){
 vec4 color = vec4(vec3(1.0,0.0,1.0),1.0);
 ```
 
-Obwohl dieses „Hello world!“-Programm noch nicht so wahnsinnig aufregend daherkommt, ist es doch das simpelste Beispiel aus der Welt der Shader. Wir beeinflussen damit die Farbe aller Bildpunkte innerhalb unserer Zeichenfläche. In den nun folgenden Kapiteln werden wir die Farbe der einzelnen Bildpunkte aufgrund von zwei unterschiedlichen Arten von Eingabewerten steuern: Ihrer Position (d.h. die Lage des zu bearbeitenden Pixels innerhalb der Zeichenfläche) und der Zeit (d.h. der Zeitspanne, die seit dem Laden einer Seite vergangen ist). 
+Obwohl dieses „Hello world!“-Programm noch nicht so wahnsinnig aufregend daherkommt, ist es doch das simpelste Beispiel aus der Welt der Shader. Wir beeinflussen damit die Farbe aller Bildpunkte innerhalb unserer Zeichenfläche. In den nun folgenden Kapiteln werden wir die Farbe der einzelnen Bildpunkte aufgrund von zwei unterschiedlichen Arten von Eingabewerten steuern: Ihrer Position (d.h. die Lage des zu bearbeitenden Pixels innerhalb der Zeichenfläche) und der Zeit (d.h. der Zeitspanne, die seit dem Laden einer Seite vergangen ist).

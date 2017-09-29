@@ -1,4 +1,4 @@
-## Inversesqrt 
+## Inversesqrt
 Return the inverse of the square root of the parameter
 
 ### Declaration

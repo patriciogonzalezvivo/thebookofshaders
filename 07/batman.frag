@@ -10,7 +10,7 @@ uniform vec2 u_mouse;
 uniform float u_time;
 
 float plot (float y, float pct){
-  return  smoothstep( pct-0.01, pct, y) - 
+  return  smoothstep( pct-0.01, pct, y) -
           smoothstep( pct, pct+0.01, y);
 }
 

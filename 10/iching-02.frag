@@ -72,7 +72,7 @@ void main(){
     st *= 10.0;
     vec2 fpos = fract(st);
     vec2 ipos = floor(st);
-    
+
     float t = u_time*5.0;
     float df = 1.0;
     df = hex(fpos,ipos.x+ipos.y+t*random(ipos))+(1.0-rect(fpos,vec2(0.7)));

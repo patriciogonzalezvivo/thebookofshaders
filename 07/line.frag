@@ -6,10 +6,10 @@ uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
 
-float line( vec2 _st, 
-            vec2 _p1, vec2 _p2, 
+float line( vec2 _st,
+            vec2 _p1, vec2 _p2,
             float _width, float _spread){
-    
+
     _width = 1.0 / _width;
     vec2 p2p1 = _p1 - _p2;
     vec2 p1p2 = -(p2p1);
@@ -22,8 +22,8 @@ float line( vec2 _st,
     float pr2 = dot(p1p2, p1p);
 
     if(pr1 > 0.0 && pr2 > 0.0) {
-        return pow(1.0 / abs(proj * _width), _spread);    
-    } else {    
+        return pow(1.0 / abs(proj * _width), _spread);
+    } else {
         return 0.0;
     }
 }

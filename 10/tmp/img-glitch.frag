@@ -4,7 +4,7 @@
 #ifdef GL_ES
 precision mediump float;
 #endif
-                
+
 uniform sampler2D u_tex;
 uniform vec2 u_resolution;
 uniform float u_time;
@@ -41,7 +41,7 @@ float fbm( in vec2 p ){
 void main(){
     vec2 st = gl_FragCoord.st/u_resolution.xy;
     float aspect = u_resolution.x/u_resolution.y;
-    
+
     vec2 grain_st = st-.5;
     float grain = 0.0;
     grain = mix(1., 0.9, dot(grain_st,grain_st) + (fbm(gl_FragCoord.xy*0.6)*0.1) );

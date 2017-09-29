@@ -37,7 +37,7 @@ Dopo di che si osservino le due righe commentate. La prima interpola ogni valore
 
 ```glsl
 y = mix(rand(i), rand(i + 1.0), f);
-``` 
+```
 
 Andate avanti e rimuovete il commento di questa linea per vedere che cosa succede. Utilizziamo la parte frazionale `f` per mischiare ([```mix()```](../glossary/?search=mix)) i due valori random.
 
@@ -141,7 +141,7 @@ Un altro modo per ottenere dal rumore dei pattern interessanti è quello di trat
 
 Un terzo modo di utilizzare la funzione di rumore è di modulare una forma. Questo richiede anche alcune delle tecniche che abbiamo imparato nel [capitolo sulle figure](../07/).
 
-<a href="../edit.php#11/circleWave-noise.frag"><canvas id="custom" class="canvas" data-fragment-url="circleWave-noise.frag"  width="300px" height="300"></canvas></a> 
+<a href="../edit.php#11/circleWave-noise.frag"><canvas id="custom" class="canvas" data-fragment-url="circleWave-noise.frag"  width="300px" height="300"></canvas></a>
 
 Per la vostra pratica:
 
@@ -203,15 +203,15 @@ Beh... direi che abbiamo avuto abbastanza tecnicismi, è il momento d'utilizzare
 
 * Fate uno shader che crea l'illusione di un flusso. Come una lampada di lava, gocce d'inchiostro, dell'acqua, ecc.
 
-<a href="../edit.php#11/lava-lamp.frag"><canvas id="custom" class="canvas" data-fragment-url="lava-lamp.frag"  width="520px" height="200px"></canvas></a> 
+<a href="../edit.php#11/lava-lamp.frag"><canvas id="custom" class="canvas" data-fragment-url="lava-lamp.frag"  width="520px" height="200px"></canvas></a>
 
 * Utilizzate il rumore simplesso per aggiungere delle texture a dei lavori precedenti.
 
-<a href="../edit.php#11/iching-03.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-03.frag"  width="520px" height="520px"></canvas></a> 
+<a href="../edit.php#11/iching-03.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-03.frag"  width="520px" height="520px"></canvas></a>
 
 In questo capitolo abbiamo preso controllo sul caos. Non è stato un lavoro facile! Diventare un maestro del rumore richiede tempo e impegno.
 
 Nei capitoli seguenti vedremo alcune tecniche ben note per perfezionare le proprie competenze e ottenere di più dal vostro rumore per progettare del contenuto generativo di qualità. Fino ad allora godetevi un po' di tempo all'aria aperta, contemplate la natura e i suoi pattern complicati. La capacità d'osservazione è altrettanto importante (se non di più) rispetto a quella di creare dei pattern. Andate fuori e godetevi il resto della giornata!
 
 <p style="text-align:center; font-style: italic;">"Parla con l'albero, per farsi un amico." Bob Ross
-</p> 
+</p>

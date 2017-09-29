@@ -32,7 +32,7 @@ y *= amplitude*0.06;
 
 * Experiment by changing the frequency and amplitude for the additional waves.
 * Is it possible to make two waves cancel each other out? What will that look like?
-* Is it possible to add waves in such a way that they will amplify each other? 
+* Is it possible to add waves in such a way that they will amplify each other?
 
 In music, each note is associated with a specific frequency. The frequencies for these notes follow a pattern which we call a scale, where a doubling or halving of the frequency corresponds to a jump of one octave.
 
@@ -70,7 +70,7 @@ The following code is an example of how fBm could be implemented in two dimensio
 * Modify the lacunarity of the fBm on line 47
 * Explore by changing the gain on line 48
 
-This technique is commonly used to construct procedural landscapes. The self-similarity of the fBm is perfect for mountains, because the erosion processes that create mountains work in a manner that yields this kind of self-similarity across a large range of scales. If you are interested in this, use you should definitly read [this great article by Inigo Quiles about advance noise](http://www.iquilezles.org/www/articles/morenoise/morenoise.htm). 
+This technique is commonly used to construct procedural landscapes. The self-similarity of the fBm is perfect for mountains, because the erosion processes that create mountains work in a manner that yields this kind of self-similarity across a large range of scales. If you are interested in this, use you should definitly read [this great article by Inigo Quiles about advance noise](http://www.iquilezles.org/www/articles/morenoise/morenoise.htm).
 
 ![Blackout - Dan Holdsworth (2010)](holdsworth.jpg)
 
@@ -84,7 +84,7 @@ for (int i = 0; i < OCTAVES; i++) {
 }
 ```
 
-<a href="../edit.php#13/turbulence.frag"><img src="turbulence-long.png"  width="520px" height="200px"></img></a> 
+<a href="../edit.php#13/turbulence.frag"><img src="turbulence-long.png"  width="520px" height="200px"></img></a>
 
 Another member of this family of algorithms is the **ridge**, where the sharp valleys are turned upside down to create sharp ridges instead:
 
@@ -94,13 +94,13 @@ Another member of this family of algorithms is the **ridge**, where the sharp va
     n = n * n;      // sharpen creases
 ```
 
-<a href="../edit.php#13/ridge.frag"><img src="ridge-long.png"  width="520px" height="200px"></img></a> 
+<a href="../edit.php#13/ridge.frag"><img src="ridge-long.png"  width="520px" height="200px"></img></a>
 
 Another variant which can create useful variations is to multiply the noise components together instead of adding them. It's also interesting to scale subsequent noise functions with something that depends on the previous terms in the loop. When we do things like that, we are moving away from the strict definition of a fractal and into the relatively unknown field of "multifractals". Multifractals are not as strictly defined mathematically, but that doesn't make them less useful for graphics. In fact, multifractal simulations are very common in modern commercial software for terrain generation. For further reading, you could read chapter 16 of the book "Texturing and Modeling: a Procedural Approach" (3rd edition), by Kenton Musgrave. Sadly, that book is out of print since a few years back, but you can still find it in libraries and on the second hand market. (There's a PDF version of the 1st edition available for purchase online, but don't buy that - it's a waste of money. It's from 1994, and it doesn't contain any of the terrain modeling stuff from the 3rd edition.)
 
 ### Domain Warping
 
-[Inigo Quiles wrote this other fascinating article](http://www.iquilezles.org/www/articles/warp/warp.htm) about how it's possible to use fBm to warp a space of a fBm. Mind blowing, Right? It's like the dream inside the dream of Inception. 
+[Inigo Quiles wrote this other fascinating article](http://www.iquilezles.org/www/articles/warp/warp.htm) about how it's possible to use fBm to warp a space of a fBm. Mind blowing, Right? It's like the dream inside the dream of Inception.
 
 ![ f(p) = fbm( p + fbm( p + fbm( p ) ) ) - Inigo Quiles (2002)](quiles.jpg)
 

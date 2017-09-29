@@ -1,7 +1,7 @@
 #ifdef GL_ES
 precision highp float;
 #endif
-                                   
+
 uniform sampler2D u_tex0;
 uniform sampler2D u_tex1;
 
@@ -15,7 +15,7 @@ uniform float u_time;
 #define LUT_NO_CLAMP
 #define LUT_FLIP_Y
 
-vec4 lookup(in vec4 textureColor, in sampler2D lookupTable) {    
+vec4 lookup(in vec4 textureColor, in sampler2D lookupTable) {
     #ifndef LUT_NO_CLAMP
         textureColor = clamp(textureColor, 0.0, 1.0);
     #endif
@@ -57,6 +57,6 @@ void main(){
    vec2 st = gl_FragCoord.st/u_resolution.xy;
    vec4 srcColor = texture2D(u_tex0, st);
    vec3 dstcolor = lookup(srcColor,u_tex1).rgb;
-   
+
    gl_FragColor = vec4( dstcolor , 1.0);
 }

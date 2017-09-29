@@ -5,7 +5,7 @@ Di solito l'esempio "Ciao Mondo!" è il primo passo per imparare un nuovo lingua
 Nel mondo GPU rendere un testo è un esercizio troppo complicato per un primo passo, perciò sceglieremo un colore brillante di benvenuto per mostrare il nostro entusiasmo!
 
 <div class="codeAndCanvas" data="hello_world.frag"></div>
- 
+
 Se stai leggendo questo libro in un navigatore, noterai che il precedente blocco di codice è interattivo. Ciò significa che è possibile fare click e modificare qualsiasi parte del codice per capire come funziona. Le modifiche verranno aggiornate immediatamente grazie all'architettura GPU che compila e sostituisce gli shaders *al volo*. Prova per esempio a cambiare i valori della linea 6.
 
 Anche se queste semplici righe di codice non sembrano essere molto importanti, possiamo trarre molte informazioni:

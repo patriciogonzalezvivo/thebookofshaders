@@ -78,8 +78,8 @@ float luma(vec4 color) {
 //  https://github.com/mattdesl/glsl-blend-soft-light/blob/master/index.glsl
 vec3 blendSoftLight(vec3 base, vec3 blend) {
     return mix(
-        sqrt(base) * (2.0 * blend - 1.0) + 2.0 * base * (1.0 - blend), 
-        2.0 * base * blend + base * base * (1.0 - 2.0 * blend), 
+        sqrt(base) * (2.0 * blend - 1.0) + 2.0 * base * (1.0 - blend),
+        2.0 * base * blend + base * base * (1.0 - 2.0 * blend),
         step(base, vec3(0.5))
     );
 }
@@ -88,7 +88,7 @@ void main (void) {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     vec3 color = texture2D(u_tex0,st).rgb;
     vec3 grain = vec3( grain(st,u_resolution/7.) );
-    
+
     color = blendSoftLight(color,grain);
 
     float luminance = luma(color);

@@ -23,7 +23,7 @@ float stripes(vec2 st){
 void main(){
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     st.x *= u_resolution.x/u_resolution.y;
-   
+
     vec3 color = vec3(stripes(st));
     gl_FragColor = vec4(color, 1.0);
 }
