@@ -30,9 +30,9 @@ Randomness is a maximal expression of entropy. How can we generate randomness in
 //y = pow(rand(x),5.);"></div>
 
 
-不久前 [Pixelero](https://pixelero.wordpress.com) 出版了 [interesting article about random distribution](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/)。 我添加了些前几张图所有的函数来供你试验，看看如何改变分布。取消函数的注释，看看发生什么变化。
+不久前 [Pixelero](https://pixelero.wordpress.com) 发表了一篇[关于随机分布的有意思的文章](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/)。 我添加了些前几张图所有的函数来供你试验，看看如何改变分布。取消函数的注释，看看发生什么变化。
 
-如果你读下 [Pixelero's article](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/)，一定谨记我们用的 ```rand()``` 是确定性随机，也被称作是伪随机。这就意味着， 就 ```rand(1.)``` 为例，总会返回相同的值。[Pixelero](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/) 用 ActionSript 函数做了些参考，```Math.random()```，一个非确定性随机；每次调用都返回不同的值。
+如果你读下 [Pixelero 的文章](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/)，一定谨记我们用的 ```rand()``` 是确定性随机，也被称作是伪随机。这就意味着， 就 ```rand(1.)``` 为例，总会返回相同的值。[Pixelero](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/) 用 ActionSript 函数做了些参考，```Math.random()```，一个非确定性随机；每次调用都返回不同的值。
 
 ## 2D 随机
 
@@ -84,10 +84,10 @@ Randomness is a maximal expression of entropy. How can we generate randomness in
 
 <a href="../edit.php#10/ikeda-03.frag"><canvas id="custom" class="canvas" data-fragment-url="ikeda-03.frag"  width="520px" height="200px"></canvas></a>
 
-* 创早其他有趣的效果。
+* 创造其他有趣的效果。
 
 <a href="../edit.php#10/ikeda-04.frag"><canvas id="custom" class="canvas" data-fragment-url="ikeda-04.frag"  width="520px" height="200px"></canvas></a>
 
-优雅的使用随机是困难的，尤其是你希望创作自然的模拟。随机仅仅是过于混乱了，真实生活中很少有东西看上去如此 ```random()```。如果观察（玻璃床上）雨滴的肌理或是股票的曲线 — 这两个都挺随机的 — 但是他们和我们在章开始的随机图案看起来不是同一对爹妈生的。原因？嗯，随机值是没有因果关系的，而大多数自然图案（肌理）都对前一个状态有所记忆（基于前一个状态）。
+完美地掌握随机之美是困难的，尤其是你想要让作品看起来很自然。随机仅仅是过于混乱了，真实生活中很少有东西看上去如此 ```random()```。如果观察（玻璃床上）雨滴的肌理或是股票的曲线——这两个都挺随机的——但他们和本章开始的随机图案看起来不是同一对爹妈生的。原因？嗯，随机值之间没有什么相关性，而大多数自然图案（肌理）都对前一个状态有所记忆（基于前一个状态）。
 
-下一章我们将学习噪波，一种光滑 和 *自然的* 创作计算机混沌的方式。
+下一章我们将学习噪声，一种光滑 和 *自然的* 创作计算机混沌的方式。
