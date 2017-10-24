@@ -80,7 +80,7 @@ for (int i = 0; i < octaves; i++) {
 for (int i = 0; i < OCTAVES; i++) {
     value += amplitude * abs(snoise(st));
     st *= 2.;
-    amplitud *= .5;
+    amplitude *= .5;
 }
 ```
 
