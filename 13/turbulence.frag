@@ -87,14 +87,14 @@ float snoise(vec2 v) {
 float turbulence (in vec2 st) {
     // Initial values
     float value = 0.0;
-    float amplitud = .5;
+    float amplitude = .5;
     float frequency = 0.;
     //
     // Loop of octaves
     for (int i = 0; i < OCTAVES; i++) {
-        value += amplitud * abs(snoise(st));
+        value += amplitude * abs(snoise(st));
         st *= 2.;
-        amplitud *= .5;
+        amplitude *= .5;
     }
     return value;
 }
