@@ -24,7 +24,7 @@ glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutput
 
 ![](glslViewer.gif)
 
-**Публикация**: онлайн-редактор ([editor.thebookofshaders.com/](http://editor.thebookofshaders.com/)) может опубликовать ваш шейдер! Как встраиваемая, так и отдельная версия содержат кнопку "экспорт", которая выдаёт уникальные URL каждому шейдеру. Так же есть возможность выгружать шейдеры сразу на [openFrame.io](http://openframe.io/).
+**Публикация**: онлайн-редактор ([editor.thebookofshaders.com/](http://editor.thebookofshaders.com/)) может опубликовать ваш шейдер! Как встраиваемая, так и отдельная версия содержат кнопку «экспорт», которая выдаёт уникальные URL каждому шейдеру. Так же есть возможность выгружать шейдеры сразу на [openFrame.io](http://openframe.io/).
 
 ![](glslEditor-00.gif)
 
@@ -128,7 +128,7 @@ glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutput
 
 ### **Processing**
 
-[Processing](https://processing.org/) - необычайная простая и мощная среда, созданная [Беном Фраем](http://benfry.com/) и [Кэси Рис](http://reas.com/) в 2001 году. Она хорошо подходит для того, чтобы сделать ваши первые шаги в программировании (по крайней мере, так было у меня). [Андре Колубри](https://codeanticode.wordpress.com/) добавил в Processing поддержку OpenGL и видео, из-за чего играть с шейдерами в ней стало проще простого. Processing ищет файл с именем `"shader.frag"` в папке `data` вашего скетча. Таким образом, вы можете просто скопировать пример отсюда и переименовать файл.
+[Processing](https://processing.org/) - необычайная простая и мощная среда, созданная [Беном Фраем](http://benfry.com/) и [Кэси Рис](http://reas.com/) в 2001 году. Она хорошо подходит для того, чтобы сделать ваши первые шаги в программировании (по крайней мере, так было у меня). [Андре Колубри](https://codeanticode.wordpress.com/) добавил в Processing поддержку OpenGL и видео, из-за чего играть с шейдерами в ней стало проще простого. Processing ищет файл с именем `shader.frag` в папке `data` вашего скетча. Таким образом, вы можете просто скопировать пример отсюда и переименовать файл.
 
 ```cpp
 PShader shader;
