@@ -28,7 +28,7 @@ Par exemple [ShaderToy.com](https://www.shadertoy.com/) utilise les mêmes unifo
 ```glsl
 uniform vec3 iResolution;   // taille du canvas (en pixels)
 uniform vec4 iMouse;        // position de la souris. xy: courant, zw: au click
-uniform float iGlobalTime;  // temps écoulé depuis le lancement du shader (en secondes)
+uniform float iTime;        // temps écoulé depuis le lancement du shader (en secondes)
 ```
 
 Notez qu'ils utilisent un `i` au lieu de notre `u_`.

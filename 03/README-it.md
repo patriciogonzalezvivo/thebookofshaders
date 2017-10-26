@@ -19,7 +19,7 @@ uniform float u_time;	  // tempo in secondi da quando lo shader è iniziato
 ```glsl
 uniform vec3 iResolution;   // dimensione del Canvas (in pixels)
 uniform vec4 iMouse;        // posizione del mouse in pixels. xy: corrente, zw: click
-uniform float iGlobalTime;  // tempo (in secondi) da quando lo shader è iniziato
+uniform float iTime;        // tempo (in secondi) da quando lo shader è iniziato
 ```
 
 Ma ora basta chiacchiere, vediamo gli uniforms in azione. Nel seguente codice utilizziamo ```u_time``` - il numero di secondi da quando lo shader è iniziato - insieme ad una funzione seno per animare con una transizione la quantità di rosso sullo schermo.

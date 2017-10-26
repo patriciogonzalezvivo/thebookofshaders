@@ -1,6 +1,6 @@
 ## Running your shader
 
-As part of the construction of this book and my art practice I made an ecosystem of tools to create, display, share and curate shaders. This tools works consistently across Linux Desktops, MacOS, [Raspberry Pi](https://www.raspberrypi.org/) and browsers without the need of changing your code.
+As part of the construction of this book and my art practice I made an ecosystem of tools to create, display, share and curate shaders. These tools work consistently across Linux Desktops, MacOS, [Raspberry Pi](https://www.raspberrypi.org/) and browsers without the need of changing your code.
 
 **Display**: all live examples in this book are displayed using [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) which makes the process of running standalone shader incredible easy.
 

@@ -22,7 +22,7 @@ uniform変数はCPUとGPUの間の小さな架け橋だと考えることがで�
 ```glsl
 uniform vec3 iResolution;   // viewport resolution (in pixels)
 uniform vec4 iMouse;        // mouse pixel coords. xy: current, zw: click
-uniform float iGlobalTime;  // shader playback time (in seconds)
+uniform float iTime;        // shader playback time (in seconds)
 ```
 
 （訳注：uniform変数は開発者が自由に名前を決めることができ、上で挙げられている用途以外にも自由に使うことができます。C、JavascriptなどのCPUで走るプログラムからは、シェーダー側で決めた変数の名前を指定して値を渡すことができます）
