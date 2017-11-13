@@ -20,7 +20,7 @@ glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutput
 
 ![](glslEditor-01.gif)
 
-If you prefer to work offline using [SublimeText](https://www.sublimetext.com/) you can install this [package for glslViewer](https://packagecontrol.io/packages/glslViewer). Learn more about it [here](https://github.com/patriciogonzalezvivo/sublime-glslViewer)
+If you prefer to work offline using [SublimeText](https://www.sublimetext.com/) you can install this [package for glslViewer](https://packagecontrol.io/packages/glslViewer). Learn more about it [here](https://github.com/patriciogonzalezvivo/sublime-glslViewer).
 
 ![](glslViewer.gif)
 

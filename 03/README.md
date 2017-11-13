@@ -50,7 +50,7 @@ In shader-land we don’t have too many resources for debugging besides assignin
 
 Now it is time to try and challenge our understanding of this code.
 
-* Can you tell where the coordinate `(0.0,0 .0)` is in our canvas?
+* Can you tell where the coordinate `(0.0, 0.0)` is in our canvas?
 
 * What about `(1.0, 0.0)`, `(0.0, 1.0)`, `(0.5, 0.5)` and `(1.0, 1.0)`?
 
@@ -58,4 +58,4 @@ Now it is time to try and challenge our understanding of this code.
 
 * Can you imagine an interesting way of changing this color pattern using `u_time` and `u_mouse` coordinates?
 
-After doing these exercises you might wonder where else you can try your new shader-powers. In the following chapter we will see  how to make your own shader tools in three.js, Processing, and openFrameworks.
+After doing these exercises you might wonder where else you can try your new shader-powers. In the following chapter we will see how to make your own shader tools in three.js, Processing, and openFrameworks.

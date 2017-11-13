@@ -65,11 +65,7 @@ Try the following exercises and notice what happens:
 
 * Multiply time (`u_time`) by *x* before computing the `sin`. See how the **frequency** between phases becomes more and more compressed. Note that u_time may have already become very large, making the graph hard to read.
 
-<<<<<<< Updated upstream
-* Add 1.0 to [```sin(x)```](../glossary/?search=sin). See how all the wave is **displaced** up and now all values are between 0.0 and 2.0.
-=======
 * Add 1.0 to [`sin(x)`](../glossary/?search=sin). See how all the wave is **displaced** up and now all values are between 0.0 and 2.0.
->>>>>>> Stashed changes
 
 * Multiply [`sin(x)`](../glossary/?search=sin) by 2.0. See how the **amplitude** doubles in size.
 

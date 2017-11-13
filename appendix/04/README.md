@@ -48,7 +48,7 @@ SO! ready?
 
 off we go!
 
-### strong types
+### Strong types
 ![first search result for 'strong type' on Google Image, on the 2016/05/20](strong_type.jpg)
 
 When you come from JS or any untyped language, **typing** your variables is an alien concept, making **typing** the hardest step to take towards GLSL.
@@ -202,7 +202,7 @@ And the clever bunny you are already noticed three things:
 
 So depending on whether you're manipulating 2D or 3D coordinates, a color with or without an alpha value or simply some random variables, you can pick the most suited **vector** type and size.
 Typically 2D coordinates and vectors (in the geometric sense) are stored as a `vec2`, `vec3` or `vec4`, colors as `vec3` or `vec4` if you need opacity but there is no restriction on how to use the vectors.
-For instance, if you want to store only one boolean value in a `bvce4`, it's possible, it's just a waste of memory.
+For instance, if you want to store only one boolean value in a `bvec4`, it's possible, it's just a waste of memory.
 
 **note**: in a shader, color values (`R`, `G`, `B` & `A`) are normalised, they range from 0 to 1 and not from 0 to 0xFF, so you'd rather use a Float `vec4` than an Integer `ivec4` to store them.
 
@@ -417,7 +417,7 @@ banana( value );
 console.log( value );// > 0 ; the changes are not taken into account outside the function
 ```
 
-With arguments qualifiers, you can specify the behaviour of the the arguments:
+With arguments qualifiers, you can specify the behaviour of the arguments:
   * ```in``` will be read-only ( default )
   * ```out```  write-only: you can't read the value of this argument but you can set it
   * ```inout```  read-write: you can both get and set the value of this variable
