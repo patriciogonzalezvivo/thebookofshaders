@@ -62,7 +62,7 @@
     * [Как принять участие в создании книги?](appendix/03/?lan=ru)
     * [Введение для JavaScript-программистов](appendix/04/?lan=ru) ([Николя Баррадо](http://www.barradeau.com/))
 
-* [Примеры](examples/)
+* [Примеры](examples/?lan=ru)
 
 * [Глоссарий](glossary/)
 
