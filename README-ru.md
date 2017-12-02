@@ -98,6 +98,8 @@
 
 Спасибо [Майклу Тишеру](http://www.mitinet.de) за [немецкий перевод (deutsch)](?lan=de)
 
+Спасибо [Сергею Карчевскому](https://www.facebook.com/sergey.karchevsky.3) за [русский перевод](?lan=ru)
+
 Спасибо всем кто поверил в этот проект и поддержал его [исправлениями](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) или пожертвованиями.
 
 ## Новые параграфы
