@@ -1,5 +1,5 @@
 ## Normalize
-Calculate the normalize product of two vectors
+Calculate the unit vector in the same direction as the input vector
 
 ### Declaration
 ```glsl
@@ -10,10 +10,10 @@ vec4 normalize(vec4 x)
 ```
 
 ### Parameters
-```v``` specifies the vector to normalize.
+```x``` specifies the vector to normalize.
 
 ### Description
-```normalize()``` returns a vector with the same direction as its parameter, v, but with length 1.
+```normalize()``` returns a vector with the same direction as its parameter, ```x```, but with length 1.
 
 ### See Also
 
