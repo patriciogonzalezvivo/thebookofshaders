@@ -47,7 +47,7 @@ Par exemple : `sin(st.x * PI)`, produira une parabole, `pow(sin(st.x * PI), 5.)`
 
 ### Step et Smoothstep
 
-GLSL propose également des fonctions d'interpolation natives et accélrées matériellement.
+GLSL propose également des fonctions d'interpolation natives et accélérées matériellement.
 
 La fonction [`step()`](../glossary/?search=step) prend 2 paramètres, le premier est une *limite* ou un *seuil* et le second est la valeur à tester.
 Toute valeur inférieure au *seuil* renverra `0.0` tandis que toute valeur supérieure au *seuil* renverra `1.0`.
