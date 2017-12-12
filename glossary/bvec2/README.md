@@ -1,5 +1,5 @@
 ## Bvec2
-2 dimentional boolean vector
+2 dimensional boolean vector
 
 ### Declaration
 ```glsl

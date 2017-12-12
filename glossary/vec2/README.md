@@ -1,5 +1,5 @@
 ## Vec2
-2 dimentional float point vector
+2 dimensional floating point vector
 
 ### Declaration
 ```glsl

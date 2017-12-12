@@ -1,5 +1,5 @@
 ## Vec4
-4 dimentional floating point vector
+4 dimensional floating point vector
 
 ### Declaration
 ```glsl

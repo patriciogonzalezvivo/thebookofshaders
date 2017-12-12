@@ -1,5 +1,5 @@
 ## Bvec3
-3 dimentional boolean vector
+3 dimensional boolean vector
 
 ### Declaration
 ```glsl
