@@ -11,7 +11,7 @@ bvec2 dIvec2 = ivec2(aIvec3.x, aIvec3.y);
 ```
 
 ### Description
-```ivec2``` is a integer vectors with two components. Can be initialize by:
+```ivec2``` is an integer vector with two components. It can be initialized by:
 
 - Providing a scalar value for each component.
 - Providing one scalar value. This value is used for all components.
