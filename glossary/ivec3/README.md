@@ -14,7 +14,7 @@ vec3 fIvec3 = ivec3(aIvec2.x, aIvec2.y, aInt);
 ```
 
 ### Description
-```ivec3``` is a integer vectors with three components. Can be initialize by:
+```ivec3``` is an integer vector with three components. It can be initialized by:
 
 - Providing a scalar value for each component.
 - Providing one scalar value. This value is used for all components.

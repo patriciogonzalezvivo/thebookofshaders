@@ -14,7 +14,7 @@ vec3 fBvec3 = bvec3(aBvec2.x, aBvec2.y, aBool);
 ```
 
 ### Description
-```bvec3``` is a boolean vectors with three components. Can be initialize by:
+```bvec3``` is a boolean vector with three components. It can be initialized by:
 
 - Providing a scalar value for each component.
 - Providing one scalar value. This value is used for all components.

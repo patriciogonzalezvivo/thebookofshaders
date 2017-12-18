@@ -14,7 +14,7 @@ vec3 fVec3 = vec3(aVec2.x, aVec2.y, aFloat);
 ```
 
 ### Description
-```bvec3``` is a floating point vectors with three components. Can be initialize by:
+```vec3``` is a floating point vector with three components. It can be initialized by:
 
 - Providing a scalar value for each component.
 - Providing one scalar value. This value is used for all components.

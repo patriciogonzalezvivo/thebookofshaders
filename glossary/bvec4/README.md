@@ -11,7 +11,7 @@ vec4 dBvec4 = bvec4(aBvec2.x, aBvec2.y, aBool, aBvec3.x);
 ```
 
 ### Description
-```bvec4``` is a boolean vectors with four components. Can be initialize by:
+```bvec4``` is a boolean vector with four components. It can be initialized by:
 
 - Providing a scalar value for each component.
 - Providing one scalar value. This value is used for all components.

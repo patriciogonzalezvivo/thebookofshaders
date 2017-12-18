@@ -11,7 +11,7 @@ vec2 dVec2 = vec2(aVec3.x, aVec3.y);
 ```
 
 ### Description
-```vec2``` is a float point vectors with two components. Can be initialize by:
+```vec2``` is a floating point vector with two components. It can be initialized by:
 
 - Providing a scalar value for each component.
 - Providing one scalar value. This value is used for all components.

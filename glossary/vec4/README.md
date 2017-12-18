@@ -3,15 +3,15 @@
 
 ### Declaration
 ```glsl
-vec4 aBvec4 = bvec4(true, true, true, true);
-vec4 bBvec4 = bvec4(true);
+vec4 aVec4 = vec4(1.0, 1.0, 1.0, 1.0);
+vec4 bVec4 = vec4(1.0);
 
-vec4 cBvec4 = bvec4(aBvec2, aBool, aBvec3);
-vec4 dBvec4 = bvec4(aBvec2.x, aBvec2.y, aBool, aBvec3.x);
+vec4 cVec4 = vec4(aVec2, aFloat, aVec3);
+vec4 dVec4 = vec4(aBvec2.x, aBvec2.y, aFloat, aBvec3.x);
 ```
 
 ### Description
-```bvec4``` is a floating point vectors with four components. Can be initialize by:
+```vec4``` is a floating point vector with four components. It can be initialized by:
 
 - Providing a scalar value for each component.
 - Providing one scalar value. This value is used for all components.

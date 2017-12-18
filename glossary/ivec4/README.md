@@ -11,7 +11,7 @@ vec4 dIvec4 = ivec4(aIvec2.x, aIvec2.y, aInt, aIvec3.x);
 ```
 
 ### Description
-```ivec4``` is a integer vectors with four components. Can be initialize by:
+```ivec4``` is an integer vector with four components. It can be initialized by:
 
 - Providing a scalar value for each component.
 - Providing one scalar value. This value is used for all components.

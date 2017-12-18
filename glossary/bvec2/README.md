@@ -11,7 +11,7 @@ bvec2 dBvec2 = bvec2(aBvec3.x, aBvec3.y);
 ```
 
 ### Description
-```bvec2``` is a boolean vectors with two components. Can be initialize by:
+```bvec2``` is a boolean vector with two components. It can be initialized by:
 
 - Providing a scalar value for each component.
 - Providing one scalar value. This value is used for all components.
