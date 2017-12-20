@@ -1,5 +1,5 @@
 ## Vec3
-3 dimentional floating point vector
+3 dimensional floating point vector
 
 ### Declaration
 ```glsl

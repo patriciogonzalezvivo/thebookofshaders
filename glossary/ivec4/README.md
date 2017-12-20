@@ -1,5 +1,5 @@
 ## Ivec4
-4 dimentional integer vector
+4 dimensional integer vector
 
 ### Declaration
 ```glsl

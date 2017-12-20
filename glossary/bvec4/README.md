@@ -1,5 +1,5 @@
 ## Bvec4
-4 dimentional boolean vector
+4 dimensional boolean vector
 
 ### Declaration
 ```glsl

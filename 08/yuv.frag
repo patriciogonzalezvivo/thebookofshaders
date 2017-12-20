@@ -27,7 +27,7 @@ void main(){
     st *= 2.0;  // becomes -1.0 to 1.0
 
     // we pass st as the y & z values of
-    // a three dimentional vector to be
+    // a three dimensional vector to be
     // properly multiply by a 3x3 matrix
     color = yuv2rgb * vec3(0.5, st.x, st.y);
 

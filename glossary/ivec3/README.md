@@ -1,5 +1,5 @@
 ## Ivec3
-3 dimentional integer vector
+3 dimensional integer vector
 
 ### Declaration
 ```glsl

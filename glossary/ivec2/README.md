@@ -1,5 +1,5 @@
 ## Ivec2
-2 dimentional integer vector
+2 dimensional integer vector
 
 ### Declaration
 ```glsl

@@ -34,7 +34,7 @@ More interestingly, we can use a matrix to rotate the coordinate system:
 
 ![](rotmat.png)
 
-Take a look at the following code for a function that constructs a 2D rotation matrix. This function follows the above [formula](http://en.wikipedia.org/wiki/Rotation_matrix) for two dimentional vectors to rotate the coordinates around the ```vec2(0.0)``` point.
+Take a look at the following code for a function that constructs a 2D rotation matrix. This function follows the above [formula](http://en.wikipedia.org/wiki/Rotation_matrix) for two dimensional vectors to rotate the coordinates around the ```vec2(0.0)``` point.
 
 ```glsl
 mat2 rotate2d(float _angle){
