@@ -32,7 +32,7 @@ glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutput
 
 ![](glslGallery.gif)
 
-## Запуск шейдера в вашем любимом ферймворке
+## Запуск шейдера в вашем любимом фреймворке
 
 Если у вас уже есть опыт программирования на таких фреймворках, как [Processing](https://processing.org/), [Three.js](http://threejs.org/) или [OpenFrameworks](http://openframeworks.cc/), вы можете попробовать шейдеры прямо в них. Ниже показаны способы установки используемых в книге uniform-переменных на некоторых популярных фреймворках. В [репозитории](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04) этой главы на Гитхабе вы найдёте полный исходный код для этих трёх фреймворков.
 
