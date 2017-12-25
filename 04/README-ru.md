@@ -138,10 +138,10 @@ void setup() {
   noStroke();
 
   shader = loadShader("shader.frag");
+  shader.set("u_resolution", float(width), float(height));
 }
 
 void draw() {
-  shader.set("u_resolution", float(width), float(height));
   shader.set("u_mouse", float(mouseX), float(mouseY));
   shader.set("u_time", millis() / 1000.0);
   shader(shader);
