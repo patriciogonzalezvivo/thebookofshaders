@@ -216,6 +216,7 @@ code {
 
 .codeAndCanvas {
     height:auto;
+    min-height:250px;
     clear:both;
 }
 
