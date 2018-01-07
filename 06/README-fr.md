@@ -8,7 +8,7 @@ Aborder la couleur est un bon moyen de se pencher sur la question.
 
 Si vous connaissez la Programmation Orientée Objet, vous aurez remarqué que nous accédons aux données des vecteurs comme on le ferait avec des `struct` en C, grâce à des **accesseurs / mutateurs** (**getters / setters** en anglais).
 
-Bien que cette pratique soit méconnue, il es possible d'utiliser des `struct` en GLSL, [plus d'informations ici](https://github.com/KhronosGroup/WebGL/blob/master/sdk/tests/conformance/glsl/misc/shader-with-array-of-structs-uniform.html).
+Bien que cette pratique soit méconnue, il est possible d'utiliser des `struct` en GLSL, [plus d'informations ici](https://github.com/KhronosGroup/WebGL/blob/master/sdk/tests/conformance/glsl/misc/shader-with-array-of-structs-uniform.html).
 
 ```glsl
 vec3 red = vec3(1.0,0.0,0.0);
