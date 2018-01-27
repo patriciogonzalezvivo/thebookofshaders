@@ -1,0 +1,6 @@
+web:
+  image: php:7.0-apache
+  volumes:
+    - .:/var/www/html/
+  ports:
+    - "8000:80"
