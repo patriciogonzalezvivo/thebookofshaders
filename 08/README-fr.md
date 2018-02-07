@@ -9,47 +9,48 @@ Nous opérions cette translation en ajoutant un vecteur 2d à la variable ```st`
 
 ![](translate.jpg)
 
-Un exemple sera sans doute plus explicite:
+Un exemple sera sans doute plus explicite :
 
 * Décommentez la ligne 35 du code ci-dessous pour voir le système de coordonnées bouger.
 
 <div class="codeAndCanvas" data="cross-translate.frag"></div>
 
-Essayez l'exercice suivant:
+Essayez l'exercice suivant :
 
-* servez vous d'```u_time``` et des fonctions de formes pour déplacer la croix de façon intéressante.
-Pensez à un type de mouvement et tentez de l'appliquer à la croix. Prenez des exemples de la "vraie vie", ça aide. par exemple un mouvement de vagues, un pendule, une balle qui rebondit, un vélo qui freine...
+* Servez vous d'```u_time``` et des fonctions de formes pour déplacer la croix de façon intéressante.
+Pensez à un type de mouvement et tentez de l'appliquer à la croix. Prenez des exemples de la "vraie vie", ça aide! Par exemple, un mouvement de vagues, un pendule, une balle qui rebondit, un vélo qui freine, etc...
 
 ### Rotations
 
 Pour effectuer une rotation, nous devons transformer tout le système de coordonnées.
-Pour nous aider, nous allons utiliser un objet [matrix](http://en.wikipedia.org/wiki/Matrix_%28mathematics%29) qui permet de manipuler une matrice de transformation 2d.
+Pour nous aider, nous allons utiliser un objet [matrix](http://en.wikipedia.org/wiki/Matrix_%28mathematics%29) qui permet de manipuler une matrice de transformation 2D.
 Une matrice est un objet organisé en 'grille', elle se compose de colonnes et de rangées de chiffres.
-Lorsqu'on multiplie un Vecteur par une matrice, la matrice exécute une série d'opérations, dans un certain ordre et *transforme* le Vecteur en fonction des valeurs qu'elle contient.
+Lorsqu'on multiplie un vecteur par une matrice, la matrice exécute une série d'opérations, dans un certain ordre et *transforme* le vecteur en fonction des valeurs qu'elle contient.
 
-[NDT]C'est pourquoi on les appelle souvent des *matrices de transformations*, la plupart des APIs graphiques - tout support confondu - proposent une matrice de transformation 2D, 3D ou 4D.
- Les matrices permettent de stocker plusieurs types de transformations (souvent: translation, rotation et échelle) dans un objet compact et utilisable avec des vecteurs.[/NDT]
+C'est pourquoi on les appelle souvent des *matrices de transformations*, la plupart des APIs graphiques - tout support confondu - proposent une matrice de transformation 2D, 3D ou 4D.
+Les matrices permettent de stocker plusieurs types de transformations (le plus souvent : translation, rotation et échelle) dans un objet compact et utilisable sur des vecteurs.
 
-pour en savoir plus, référez vous à l'article Wikipédia sur les matrices: [![article Wikipédia sur les matrices](matrixes.png)](https://fr.wikipedia.org/wiki/Matrice_(math%C3%A9matiques))
+Pour en savoir plus, référez vous à l'article Wikipédia sur les matrices: [![Article Wikipédia sur les matrices](matrixes.png)](https://fr.wikipedia.org/wiki/Matrice_(math%C3%A9matiques))
 
 Le GLSL supporte nativement les matrices à deux, trois et quatre dimensions: [```mat2```](../glossary/?search=mat2) (2x2), [```mat3```](../glossary/?search=mat3) (3x3) et [```mat4```](../glossary/?search=mat4) (4x4).
 Le GLSL surcharge certains opérateurs, notamment la multiplication et offre des fonctions spécifiques comme [```matrixCompMult()```](../glossary/?search=matrixCompMult), qui effectue un produit scalaire des composants des matrices passées en argument.
 
 Les matrices sont très utiles et permettent d'obtenir des transformations et des comportements spécifiques.
-Par exemple, on peut utiliser une matrice pour appliquer une translation à un vecteur:
+Par exemple, on peut utiliser une matrice pour appliquer une translation à un vecteur :
 
 ![](3dtransmat.png)
-[NDT]la matrice est à gauche, les valeurs de translation *tx* et *ty* (la quantité de déplacement en x et en y) sont stockées à un endroit précis de la matrice (troisième colonne, rangées 1 et 2). le vecteur 2D que nous voulons transformer est au centre, le point entre les deux représente une multiplication et le résultat est à droite[/NDT]
 
-Une matrice permet également d'effectuer une rotation:
+La matrice est à gauche, les valeurs de translation *tx* et *ty* (la quantité de déplacement en x et en y) sont stockées à un endroit précis de la matrice (troisième colonne, rangées 1 et 2). le vecteur 2D que nous voulons transformer est au centre, le point entre les deux représente une multiplication et le résultat est à droite.
+
+Une matrice permet également d'effectuer une rotation :
 
 ![](rotmat.png)
 
-[NDT]Notez que les valeurs de rotations (*cos()* et *sin()*) sont décrites à un endroit (colonnes, rangées) différent des valeurs de translation (*tx* et *ty*).
-C'est ce qui permet de stocker plusieurs transformations dans la même matrice.[/NDT]
+Notez que les valeurs de rotations (*cos()* et *sin()*) sont décrites à un endroit (colonnes, rangées) différent des valeurs de translation (*tx* et *ty*).
+C'est ce qui permet de stocker plusieurs transformations dans la même matrice.
 
 Le code suivant montre comment construire une matrice de rotation 2D.
-Cette fonction s'appuie sur [la formule suivante](https://fr.wikipedia.org/wiki/Matrice_de_rotation) pour faire pivoter un vecteur 2D autour de l'origine du système d ecoordonnées ; le point ```vec2(0.0)```.
+Cette fonction s'appuie sur [la formule suivante](https://fr.wikipedia.org/wiki/Matrice_de_rotation) pour faire pivoter un vecteur 2D autour de l'origine du système de coordonnées : le point ```vec2(0.0)```.
 
 ```glsl
 mat2 rotate2d(float _angle){
@@ -58,9 +59,9 @@ mat2 rotate2d(float _angle){
 }
 ```
 
-Cett manière d'effectuer un rotation (autour de l'origine) ne marche pas avec l'approche que nous avons eu jusqu'à présent pour dessiner les formes.
-En effet notre croix est dessinée au centre du canvas (le point ```vec2(0.5)```) alors sque la rotation se fait autour de l'origine (le point ```vec2(0.0)```).
- Donc, avant d'effectuer la rotation, nous devons déplacer la forme du `centre` vers l'origine ```vec2(0.0)```, appliquer la rotation puis re-déplacer la forme au `centre` du canvas.
+Cette manière d'effectuer une rotation (autour de l'origine) ne marche pas avec l'approche que nous avons eu jusqu'à présent pour dessiner les formes.
+En effet notre croix est dessinée au centre du canvas (le point ```vec2(0.5)```) alors que la rotation se fait autour de l'origine (le point ```vec2(0.0)```).
+Donc, avant d'effectuer la rotation, nous devons déplacer la forme du `centre` vers l'origine ```vec2(0.0)```, appliquer la rotation puis re-déplacer la forme au `centre` du canvas.
 
 ![](rotate.jpg)
 
@@ -68,7 +69,7 @@ Le code ressemble à ça:
 
 <div class="codeAndCanvas" data="cross-rotate.frag"></div>
 
-Essayez les choses suivantes:
+Essayez les choses suivantes :
 
 * Décommentez la ligne 45 du code ci-dessus et observez ce qui se passse.
 
@@ -94,7 +95,7 @@ mat2 scale(vec2 _scale){
 
 <div class="codeAndCanvas" data="cross-scale.frag"></div>
 
-Pour mieux comprendre comment ça marche, essayez les choses suivantes:
+Pour mieux comprendre comment ça marche, essayez les choses suivantes :
 
 * Décommentez la ligne 42 du code ci-dessus pour visualiser la mise à l'échelle en couleur.
 
