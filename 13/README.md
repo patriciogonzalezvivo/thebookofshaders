@@ -70,7 +70,7 @@ The following code is an example of how fBm could be implemented in two dimensio
 * Modify the lacunarity of the fBm on line 47
 * Explore by changing the gain on line 48
 
-This technique is commonly used to construct procedural landscapes. The self-similarity of the fBm is perfect for mountains, because the erosion processes that create mountains work in a manner that yields this kind of self-similarity across a large range of scales. If you are interested in this, use you should definitly read [this great article by Inigo Quiles about advance noise](http://www.iquilezles.org/www/articles/morenoise/morenoise.htm).
+This technique is commonly used to construct procedural landscapes. The self-similarity of the fBm is perfect for mountains, because the erosion processes that create mountains work in a manner that yields this kind of self-similarity across a large range of scales. If you are interested in this, you should definitely read [this great article by Inigo Quiles about advanced noise](http://www.iquilezles.org/www/articles/morenoise/morenoise.htm).
 
 ![Blackout - Dan Holdsworth (2010)](holdsworth.jpg)
 

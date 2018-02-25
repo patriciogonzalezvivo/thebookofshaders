@@ -43,7 +43,7 @@ mat2 rotate2d(float _angle){
 }
 ```
 
-According to the way we've been drawing shapes, this is not exactly what we want. Our cross shape is drawn in the center of the canvas which corresponds to the position ```vec2(0.5)```. So, before we rotate the space we need to move shape from the `center` to the ```vec2(0.0)``` coordinate, rotate the space, then finally move it back to the original place.
+According to the way we've been drawing shapes, this is not exactly what we want. Our cross shape is drawn in the center of the canvas which corresponds to the position ```vec2(0.5)```. So, before we rotate the space we need to move the shape from the `center` to the ```vec2(0.0)``` coordinate, rotate the space, then finally move it back to the original place.
 
 ![](rotate.jpg)
 
@@ -53,9 +53,9 @@ That looks like the following code:
 
 Try the following exercises:
 
-* Uncomment line 45 of above code and pay attention to what happens.
+* Uncomment line 45 of the above code and pay attention to what happens.
 
-* Comment the translations before and after the rotation, on lines 37 and 39, and observe the consequences.
+* Comment the translations before and after the rotation, on lines 38 and 42, and observe the consequences.
 
 * Use rotations to improve the animation you simulated in the translation exercise.
 

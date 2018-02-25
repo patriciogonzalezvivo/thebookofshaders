@@ -22,14 +22,14 @@ Using random can be hard; it is both too chaotic and sometimes not random enough
 
 Taking a closer look, you can see the [```sin()```](../glossary/?search=sin) wave crest at ```-1.5707``` and ```1.5707```. I bet you now understand why - it's where the maximum and minimum of the sine wave happens.
 
-If look closely at the random distribution, you will note that the there is some concentration around the middle compared to the edges.
+If you look closely at the random distribution, you will note that the there is some concentration around the middle compared to the edges.
 
 <div class="simpleFunction" data="y = rand(x);
 //y = rand(x)*rand(x);
 //y = sqrt(rand(x));
 //y = pow(rand(x),5.);"></div>
 
-A while ago [Pixelero](https://pixelero.wordpress.com) published an [interesting article about random distribution](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/). I've added some of the functions he uses in the previous graph for you to play with and see how the distribution can be changed. Uncomment the functions and see what happens.
+A while ago [Pixelero](https://pixelero.wordpress.com) published an [interesting article about random distribution](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/). I've added some of the functions he uses in the previous graph for you to play with to see how the distribution can be changed. Uncomment the functions and see what happens.
 
 If you read [Pixelero's article](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/), it is important to keep in mind that our ```rand()``` function is a deterministic random, also known as pseudo-random. Which means for example ```rand(1.)``` is always going to return the same value. [Pixelero](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/) makes reference to the ActionScript function ```Math.random()``` which is non-deterministic; every call will return a different value.
 
@@ -47,7 +47,7 @@ Take a look at lines 13 to 15 and notice how we are comparing the ```vec2 st``` 
 
 ## Using the chaos
 
-Random in two dimensions looks a lot like TV noise, right? It's a hard raw material to use to compose images. Let's learn how to make use of it.
+Randomness in two dimensions looks a lot like TV noise, right? It's a hard raw material to use to compose images. Let's learn how to make use of it.
 
 Our first step is to apply a grid to it; using the [```floor()```](../glossary/?search=floor) function we will generate an integer table of cells. Take a look at the following code, especially lines 22 and 23.
 
@@ -59,7 +59,7 @@ Uncomment line 29 to see that we preserve the floating part of the coordinate, s
 
 Combining these two values - the integer part and the fractional part of the coordinate - will allow you to mix variation and order.
 
-Take a look at this GLSL port of the famouse ```10 PRINT CHR$(205.5+RND(1)); : GOTO 10``` maze generator.
+Take a look at this GLSL port of the famous ```10 PRINT CHR$(205.5+RND(1)); : GOTO 10``` maze generator.
 
 <div class="codeAndCanvas" data="2d-random-truchet.frag"></div>
 

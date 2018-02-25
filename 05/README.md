@@ -13,7 +13,7 @@ The following code structure is going to be our fence. In it, we visualize the n
 
 This code is your fence; it's important to observe and understand it. You will come back over and over to this space between *0.0* and *1.0*. You will master the art of blending and shaping this line.
 
-This one-to-one relationship between  *x* and *y* (or the brightness) is know as *linear interpolation*. From here we can use some mathematical functions to *shape* the line. For example we can raise *x* to the power of 5 to make a *curved* line.
+This one-to-one relationship between  *x* and *y* (or the brightness) is known as *linear interpolation*. From here we can use some mathematical functions to *shape* the line. For example we can raise *x* to the power of 5 to make a *curved* line.
 
 <div class="codeAndCanvas" data="expo.frag"></div>
 

@@ -3,7 +3,7 @@
 # The Book of Shaders
 *by [Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) and [Jen Lowe](http://jenlowe.net/)*
 
-This is a gentle step-by-step guide through the abstract and complex universe of Fragment Shaders.
+A gentle step-by-step guide through the abstract and complex universe of Fragment Shaders.
 
 <div class="header">
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B5FSVSHGEATCG" style="float: right;"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" alt=""></a>

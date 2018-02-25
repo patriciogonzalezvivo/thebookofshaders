@@ -5,7 +5,7 @@
 
 It's time for a break! We've been playing with random functions that look like TV white noise, our head is still spinning thinking about shaders, and our eyes are tired. Time to go out for a walk!
 
-We feel the air on our skin, the sun in our face. The world is such a vivid and rich place. Colors, textures, sounds. While we walk we can't avoid noticing the surface of the roads, rocks, trees and clouds.
+We feel the air on our skin, the sun on our face. The world is such a vivid and rich place. Colors, textures, sounds. While we walk we can't avoid noticing the surface of the roads, rocks, trees and clouds.
 
 ![](texture-00.jpg)
 ![](texture-01.jpg)
@@ -39,7 +39,7 @@ After that you see two commented lines. The first one interpolates each random v
 y = mix(rand(i), rand(i + 1.0), f);
 ```
 
-Go ahead and uncomment this line to see how this looks. We use the [```fract()```](../glossary/?search=fract) value store in `f` to [```mix()```](../glossary/?search=mix) the two random values.
+Go ahead and uncomment this line to see how this looks. We use the [```fract()```](../glossary/?search=fract) value stored in `f` to [```mix()```](../glossary/?search=mix) the two random values.
 
 At this point in the book, we've learned that we can do better than a linear interpolation, right?
 Now try uncommenting the following line, which uses a [```smoothstep()```](../glossary/?search=smoothstep) interpolation instead of a linear one.
@@ -202,7 +202,7 @@ All these improvements result in an algorithmic masterpiece known as **Simplex N
 
 Well... enough technicalities, it's time for you to use this resource in your own expressive way:
 
-* Contemplate how each noise implementation looks. Imagine them as a raw material, like a marble rock for a sculptor. What can you say about about the "feeling" that each one has? Squinch your eyes to trigger your imagination, like when you want to find shapes in a cloud. What do you see? What are you reminded of? What do you imagine each noise implementation could be made into? Following your guts and try to make it happen in code.
+* Contemplate how each noise implementation looks. Imagine them as a raw material, like a marble rock for a sculptor. What can you say about about the "feeling" that each one has? Squinch your eyes to trigger your imagination, like when you want to find shapes in a cloud. What do you see? What are you reminded of? What do you imagine each noise implementation could be made into? Follow your gut instinct and try to make it happen in code.
 
 * Make a shader that projects the illusion of flow. Like a lava lamp, ink drops, water, etc.
 

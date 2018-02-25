@@ -2,7 +2,7 @@
 
 ## Shapes
 
-Finally! We have been building skills for this moment! You have learned most of the GLSL foundations, types and functions. You have practiced your shaping equations over and over. Now is the time to put it all together. You are up for this challenge! In this chapter you'll learn how to draw simple shapes in a parallel procedural way.
+Finally! We have been building skills for this moment! You have learned most of the GLSL foundations, types and functions. You have practiced your shaping equations over and over. Now is the time to put it all together. Are you up for this challenge! In this chapter you'll learn how to draw simple shapes in a parallel procedural way.
 
 ### Rectangle
 
@@ -110,7 +110,7 @@ You can use [`distance()`](../glossary/?search=distance), [`length()`](../glossa
 
 <div class="codeAndCanvas" data="circle-making.frag"></div>
 
-In the previous example we map the distance to the center of the billboard to the color brightness of the pixel. The closer a pixel is to the center, the lower (darker) value it has. Notice that the values don't get too high because from the center ( `vec2(0.5, 0.5)` ) the maximum distance barely goes over 0.5. Contemplate this map and think:
+In the previous example we mapped the distance to the center of the billboard to the color brightness of the pixel. The closer a pixel is to the center, the lower (darker) value it has. Notice that the values don't get too high because from the center ( `vec2(0.5, 0.5)` ) the maximum distance barely goes over 0.5. Contemplate this map and think:
 
 * What you can infer from it?
 
@@ -130,7 +130,7 @@ Try the following exercises:
 
 * Use [`step()`](../glossary/?search=step) to turn everything above 0.5 to white and everything below to 0.0.
 
-* Inverse the colors of the background and foreground.
+* Invert the colors of the background and foreground.
 
 * Using [`smoothstep()`](../glossary/?search=smoothstep), experiment with different values to get nice smooth borders on your circle.
 

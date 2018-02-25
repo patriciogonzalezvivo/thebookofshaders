@@ -2,7 +2,7 @@
 
 ## Colors
 
-We haven't much of a chance to talk about GLSL vector types. Before going further it's important to learn more about these variables and the subject of colors is a great way to find out more about them.
+We haven't had much of a chance to talk about GLSL vector types. Before going further it's important to learn more about these variables and the subject of colors is a great way to find out more about them.
 
 If you are familiar with object oriented programming paradigms you've probably noticed that we have been accessing the data inside the vectors like any regular C-like `struct`.
 
@@ -25,7 +25,7 @@ vector[2] = vector.b = vector.z = vector.p;
 vector[3] = vector.a = vector.w = vector.q;
 ```
 
-These different ways of pointing to the variables inside a vector are just nomenclatures designed to help you write clear code. This flexibility embedded in shading language is a door for you to start thinking interchangably about color and space coordinates.
+These different ways of pointing to the variables inside a vector are just nomenclatures designed to help you write clear code. This flexibility embedded in the shading language is a door for you to start thinking interchangably about color and space coordinates.
 
 Another great feature of vector types in GLSL is that the properties can be combined in any order you want, which makes it easy to cast and mix values. This ability is called *swizzle*.
 

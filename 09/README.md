@@ -1,6 +1,6 @@
 ## Patterns
 
-Since shader programs are executed by pixel-by-pixel no matter how much you repeat a shape the number of calculations stays constant. This means that fragment shaders are particulary suitable for tile patterns.
+Since shader programs are executed pixel-by-pixel no matter how much you repeat a shape the number of calculations stays constant. This means that fragment shaders are particulary suitable for tile patterns.
 
 [ ![Nina Warmerdam - The IMPRINT Project (2013)](warmerdam.jpg) ](../edit.php#09/dots5.frag)
 
@@ -53,13 +53,11 @@ Since each subdivision or cell is a smaller version of the normalized coordinate
 
 ### Offset patterns
 
-So let's say we want to imitate a brick wall. Looking at the wall, you can see a half brick offset on x in every other row. How we can do that?
+So let's say we want to imitate a brick wall. Looking at the wall, you can see a half brick offset on x in every other row. How can we do that?
 
 ![](brick.jpg)
 
 As a first step we need to know if the row of our thread is an even or odd number, because we can use that to determine if we need to offset the x in that row.
-
-____we have to fix these next two paragraphs together____
 
 To determine if our thread is in an odd or even row, we are going to use [```mod()```](../glossary/?search=mod) of ```2.0``` and then see if the result is under ```1.0``` or not. Take a look at the following formula and uncomment the two last lines.
 
@@ -101,7 +99,7 @@ Pay close attention to the function ```rotateTilePattern()```, which subdivides 
 
 * Comment, uncomment and duplicate lines 69 to 72 to compose new designs.
 
-* Change the black and white triangle for another element like: half circles, rotated squares or lines.
+* Change the black and white triangle for another element: like half circles, rotated squares or lines.
 
 * Code other patterns where the elements are rotated according to their position.
 
