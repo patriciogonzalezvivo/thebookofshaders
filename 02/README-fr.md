@@ -32,7 +32,7 @@ Dans l'exemple ci-dessus, ligne 1, nous vérifions uniquement si `GL_ES` est dé
 
 6. le type `float` est vital dans les shaders, donc le niveau de *précision* des flotants est crucial.
 Une précision basse permet un rendu plus rapide mais une qualité moindre et inversement, une précision élevée permet un meilleur rendu au prix de performances réduites.
-On peut spécifier la précision de chaque variable se servant de, ligne 2, `precision mediump float;`, nous assignons la précision *medium* à tous les flotants de l'application.
+On peut spécifier la précision de chaque variable se servant de, ligne 2, `precision mediump float;`, nous assignons la précision *medium* à tous les flottants de l'application.
 Nous pourrions leur donner une valeur *low* (`precision lowp float;`) ou *high* (`precision highp float;`).
 
 7. la dernière remarque, probablement la plus importante, est que les spécifications GLSL ne garantissent pas que les variables seront *castées* automatiquement.
