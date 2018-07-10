@@ -1,6 +1,6 @@
 ## Uniforms
 
-Hasta ahora hemos vimos como la GPU maneja grandes números de threads en paralelo, cada uno responsable de asignar un color a una fracción de la pantalla. A pesar de que cada thread no conoce a los otros, necesitamos poder enviarle valores de entrada desde la CPU a todos los threads. Debido a la arquitectura de la GPU todos esos valores van a ser iguales (*uniform*) para todos los threads y de sólo lectura. En otras palabras, cada thread recibe las misma información y puede leerla pero no modificarla.
+Hasta ahora hemos visto como la GPU maneja grandes números de threads en paralelo, cada uno responsable de asignar un color a una fracción de la pantalla. A pesar de que cada thread no conoce a los otros, necesitamos poder enviarle valores de entrada desde la CPU a todos los threads. Debido a la arquitectura de la GPU todos esos valores van a ser iguales (*uniform*) para todos los threads y de sólo lectura. En otras palabras, cada thread recibe las misma información y puede leerla pero no modificarla.
 
 Estas entradas se llaman ```uniform``` y vienen en diferentes tipos: ```float```, ```vec2```, ```vec3```, ```vec4```, ```mat2```, ```mat3```, ```mat4```, ```sampler2D``` y ```samplerCube```. Los uniforms son definidos con sus correspondientes tipos, al principio del código, luego de definir la precisión del punto flotante.
 
