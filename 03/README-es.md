@@ -14,7 +14,7 @@ uniform vec2 u_mouse;      // mouse position in screen pixels
 uniform float u_time;	  // Time in seconds since load
 ```
 
-Podemos imaginar que los uniforms son como pequeños puentes entra la CPU y la GPU. Los nombres varían dependiendo de cada implementación, en esta serie de ejemplos estoy usando ```u_time``` (tiempo en segundos desde que shaders comenzó a correr), ```u_resolution``` (el tamaño de la ventana donde se esta dibujando el shader) y ```u_mouse``` (la posición del mouse dentro de la ventana en pixeles). Estoy siguiendo la convención de utilizar ```u_``` antes del nombre del uniform, para ser explícito respecto a la naturaleza de la variable, pero encontrarás diferentes nombre de uniforms. Por ejemplo [ShaderToy.com](https://www.shadertoy.com/) utiliza las mismas uniforms pero con los siguientes nombres:
+Podemos imaginar que los uniforms son como pequeños puentes entre la CPU y la GPU. Los nombres varían dependiendo de cada implementación, en esta serie de ejemplos estoy usando ```u_time``` (tiempo en segundos desde que shaders comenzó a correr), ```u_resolution``` (el tamaño de la ventana donde se esta dibujando el shader) y ```u_mouse``` (la posición del mouse dentro de la ventana en pixeles). Estoy siguiendo la convención de utilizar ```u_``` antes del nombre del uniform, para ser explícito respecto a la naturaleza de la variable, pero encontrarás diferentes nombre de uniforms. Por ejemplo [ShaderToy.com](https://www.shadertoy.com/) utiliza las mismas uniforms pero con los siguientes nombres:
 
 ```glsl
 uniform vec3 iResolution;   // viewport resolution (in pixels)
@@ -38,7 +38,7 @@ Es hora de jugar con el código de arriba:
 
 ## gl_FragCoord
 
-De la misma forma que GLSL nos da por default la variable reservada ```vec4 gl_FragColor```, también nos da ```vec4 gl_FragCoord``` que guarda la coordenada del *pixel* o *screen fragment* del thread actual. Con ```vec4 gl_FragCoord``` podemos saber el lugar en la pantalla en el que el thread esta actualmente trabajando. En este caso esta variable no es un ```uniform``` porque  será diferente en cada uno de los threads, las variables que cambian en cada thread ,como ```gl_FragCoord```, son *varying*.
+De la misma forma que GLSL nos da por default la variable reservada ```vec4 gl_FragColor```, también nos da ```vec4 gl_FragCoord``` que guarda la coordenada del *pixel* o *screen fragment* del thread actual. Con ```vec4 gl_FragCoord``` podemos saber el lugar en la pantalla en el que el thread esta actualmente trabajando. En este caso esta variable no es un ```uniform``` porque  será diferente en cada uno de los threads, las variables que cambian en cada thread, como ```gl_FragCoord```, son *varying*.
 
 <div class="codeAndCanvas" data="space.frag"></div>
 
@@ -54,7 +54,7 @@ Es hora de poner en práctica los conocimientos aprendidos.
 
 * ¿Y dónde está ```(1.0,0.0)```, ```(0.0,1.0)```, ```(0.5,0.5)``` y ```(1.0,1.0)```?
 
-* ¿Puedes imaginar cómo usar ```u_mouse``` sabiendo que los valores estan en pixeles no están normalizados? ¿Podrías usarlo para mover los colores?
+* ¿Puedes imaginar cómo usar ```u_mouse``` sabiendo que los valores están en pixeles y no están normalizados? ¿Podrías usarlo para mover los colores?
 
 * ¿Te imaginas alguna forma interesante de combinar ```u_time``` y ```u_mouse``` para generar patrones ?
 
