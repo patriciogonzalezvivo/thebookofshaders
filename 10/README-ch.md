@@ -1,18 +1,18 @@
 # 生成设计
 
-It is not a surprise that after so much repetition and order the author is forced to bring some chaos.
+在经历了众多的重复与秩序之后，笔者自然而然地开始着手创造一些混沌。
 
 ## 随机
 
 [![Ryoji Ikeda - test pattern (2008) ](ryoji-ikeda.jpg) ](http://www.ryojiikeda.com/project/testpattern/#testpattern_live_set)
 
-Randomness is a maximal expression of entropy. How can we generate randomness inside the seemingly predictable and rigid code environment?
+随机性是熵的最大表现。我们如何在看似可预测而且严苛的代码环境中生成随机性呢？
 
 让我们从分析下面的函数着手:
 
 <div class="simpleFunction" data="y = fract(sin(x)*1.0);"></div>
 
-以上，我们提取sin函数其波形的分数部分。[```sin()```](../glossary/?search=sin) 函数值在 ```-1.0``` 到 ```1.0``` 之间浮点分布，返回作业在 ```0.0``` 到 ```1.0``` 间的正值。（这里翻译有些奇怪）我们可以用这种效果通过把 [```sin(x)```](../glossary/?search=sin) 打散成小片段来得到一些伪随机数。如何实现？乘以大些的sin值。在上面函数的相应位置加些0.
+上面的例子中，我们提取了sin函数其波形的分数部分。值域为```-1.0``` 到 ```1.0``` 之间的[```sin()```](../glossary/?search=sin) 函数被取了小数点后的部分(这里实际是指模1))，返回```0.0``` 到 ```1.0``` 间的正值。我们可以用这种效果通过把正弦函数打散成小片段来得到一些伪随机数。如何实现呢？通过在[```sin(x)```](../glossary/?search=sin)的值上乘以大些的数。点击上面的函数，在1后面加些0。
 
 当你加到 ```100000.0``` （方程看起来是这样的：```y = fract(sin(x)*100000.0)``` ），你再也区分不出sin波了。小数部分的粒度将sine的循环变成了伪随机的混沌。
 
@@ -20,7 +20,7 @@ Randomness is a maximal expression of entropy. How can we generate randomness in
 
 使用随机会很难；它不是太混沌难测就是有时又不够混乱。看看下面的图例。要实现这样的效果，我们像之前描述的那样应用用 ```rand()``` 函数。
 
-细看，你可以看到 [```sin()```](../glossary/?search=sin) 在 ```-1.5707``` 和 ```1.5707``` 到拐点。？？？我打赌一定理解为什么——那就是sin最大值和最小值的地方。
+细看，你可以看到 [```sin()```](../glossary/?search=sin) 在 ```-1.5707``` 和 ```1.5707``` 上有较大波动。我打赌你现在一定理解这是为什么——那就是sin取得最大值和最小值的地方。
 
 如果你仔细观察随机分布，你会注意到相比边缘，中部更集中。
 
