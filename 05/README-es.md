@@ -21,7 +21,7 @@ Interesante ¿No? En la línea 19 puedes probar diferentes exponentes: 20.0, 2.0
 
 [```pow()```](../glossary/?search=pow) es una función nativa en GLSL y hay muchas mas. La mayoría de ellas son aceleradas por hardware, lo que significa que, usadas de la forma correcta, harán tu código mucho mas rápido.
 
-Reemplaza la función de la línea 19. Prueba otras como: [```exp()```](../glossary/?search=exp), [```log()```](../glossary/?search=log) y [```sqrt()```](../glossary/?search=sqrt). Algunas de estas funciones son mucho mas interesantes cuando las usamos con PI. En la línea 5 definí un macro que reemplaza cualquier llamado a ```PI``` por el valor  ```3.14159265359```.
+Reemplaza la función de la línea 19. Prueba otras como: [```exp()```](../glossary/?search=exp), [```log()```](../glossary/?search=log) y [```sqrt()```](../glossary/?search=sqrt). Algunas de estas funciones son mucho mas interesantes cuando las usamos con PI. En la línea 8 definí un macro que reemplaza cualquier llamado a ```PI``` por el valor  ```3.14159265359```.
 
 ### Step y Smoothstep
 
@@ -37,7 +37,7 @@ La otra función única es el [```smoothstep()```](../glossary/?search=smoothste
 
 <div class="codeAndCanvas" data="smoothstep.frag"></div>
 
-En el anterior ejemplo, en la línea 12, hemos usado smoothstep para dibujar una línea verde en la función ```plot()```. Por cada posición en el eje x esta función crea una salto en un valor particular de y. ¿Cómo? Conectando dos [```smoothstep()```](../glossary/?search=smoothstep) juntos. Observa la siguiente función y reemplaza la línea 20 por esta, y piensa en ella como un corte vertical. El fondo de parece a una línea ¿No?
+En el anterior ejemplo, en la línea 12, hemos usado smoothstep para dibujar una línea verde en la función ```plot()```. Por cada posición en el eje x esta función crea una salto en un valor particular de y. ¿Cómo? Conectando dos [```smoothstep()```](../glossary/?search=smoothstep) juntos. Observa la siguiente función y reemplaza la línea 20 por esta, y piensa en ella como un corte vertical. El fondo se parece a una línea ¿No?
 
 ```glsl
     float y = smoothstep(0.2,0.5,st.x) - smoothstep(0.5,0.8,st.x);
@@ -77,7 +77,7 @@ Completa los siguientes ejercicios y presta atención a lo que sucede:
 
 ### Otras funciones útiles
 
-Al final del último ejercicio hemos introducido algunas funciones nuevas. Ahora es el momento de experimentar con cada una descomentenando las siguientes lineas, de a una. Es importante entender estas funciones y estudiar como se comportan. Ya lo sé ¿Para qué? Si buscas rápidamente en Google "Arte Generativo" vas a entender el porque. Ten en cuenta que estas funciones son nuestra cerca. Estamos dominando el movimiento en una sola dimensión, arriba y abajo. ¡Pronto, será el momento de agregar la segunda, la tercera y la cuarta dimensión!
+Al final del último ejercicio hemos introducido algunas funciones nuevas. Ahora es el momento de experimentar con cada una descomentenando las siguientes lineas, de a una. Es importante entender estas funciones y estudiar como se comportan. Ya lo sé ¿Para qué? Si buscas rápidamente en Google "Arte Generativo" vas a entender el por qué. Ten en cuenta que estas funciones son nuestra cerca. Estamos dominando el movimiento en una sola dimensión, arriba y abajo. ¡Pronto, será el momento de agregar la segunda, la tercera y la cuarta dimensión!
 
 ![Anthony Mattox (2009)](anthony-mattox-ribbon.jpg)
 
