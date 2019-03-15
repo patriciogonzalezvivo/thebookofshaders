@@ -128,7 +128,7 @@ Probiere die folgenden Übungen aus:
 
 ![](colorwheel.png)
 
-* Lies [Josep's Alvers Buch: „Interaction of Color“](http://www.goodreads.com/book/show/111113.Interaction_of_Color) und klicke die folgenden Shader an, um aus deren Programmcode zu lernen.
+* Lies [Josef Albers Buch: „Interaction of Color“](http://www.goodreads.com/book/show/111113.Interaction_of_Color) und klicke die folgenden Shader an, um aus deren Programmcode zu lernen.
 
 <div class="glslGallery" data="160505191155,160505193939,160505200330,160509131554,160509131509,160509131420,160509131240" data-properties="clickRun:editor,openFrameIcon:false,showAuthor:false"></div>
 

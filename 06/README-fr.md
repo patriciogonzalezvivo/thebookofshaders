@@ -241,7 +241,7 @@ Pouvez vous trouver un moyen d'arranger ça de manière à obtenir exactement le
 
 ![](colorwheel.png)
 
-* Lisez [le livre de Josep's Alvers : L'Interaction des Couleurs](http://www.goodreads.com/book/show/111113.Interaction_of_Color) et servez vous des exemples suivants pour vous entraîner à reproduire ses exemples.
+* Lisez [le livre de Josef Albers : L'Interaction des Couleurs](http://www.goodreads.com/book/show/111113.Interaction_of_Color) et servez vous des exemples suivants pour vous entraîner à reproduire ses exemples.
 
 <div class="glslGallery" data="160505191155,160505193939,160505200330,160507154604,160507160421" data-properties="clickRun:editor,openFrameIcon:false,showAuthor:false"></div>
 
