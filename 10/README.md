@@ -59,7 +59,7 @@ Uncomment line 29 to see that we preserve the floating part of the coordinate, s
 
 Combining these two values - the integer part and the fractional part of the coordinate - will allow you to mix variation and order.
 
-Take a look at this GLSL port of the famouse ```10 PRINT CHR$(205.5+RND(1)); : GOTO 10``` maze generator.
+Take a look at this GLSL port of the famous ```10 PRINT CHR$(205.5+RND(1)); : GOTO 10``` maze generator.
 
 <div class="codeAndCanvas" data="2d-random-truchet.frag"></div>
 
