@@ -19,7 +19,7 @@ Este é um guia passo a passo através do universo complexo e abstrato dos Fragm
     * [Uniformes](03/)
 	* [Executando seu shader](04/)
 
-* Algorithmic drawing
+* Desenho algorítmico
     * [Shaping functions](05/)
     * [Colors](06/)
     * [Shapes](07/)
