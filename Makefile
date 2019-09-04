@@ -1,3 +1,5 @@
+.PHONY: default clean all epub pdf tex
+
 default: clean all
 
 clean:
@@ -6,4 +8,13 @@ clean:
 	rm -rf book.*
 
 all:
-	python2.7 src/parseBook.py
+	python2.7 src/parseBook.py  -f tex -f pdf -f epub
+
+epub:
+	python2.7 src/parseBook.py -f epub
+
+pdf:
+	python2.7 src/parseBook.py -f pdf
+
+tex:
+	python2.7 src/parseBook.py -f tex

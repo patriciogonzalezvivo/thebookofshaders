@@ -10,15 +10,7 @@ For printing this book you need first to parse it. For that you will need [`glsl
 In **MacOSX** get sure to have [homebrew](http://brew.sh/) installed and then on your terminal do:
 
 ```bash
-brew update
-brew upgrade
-brew tap homebrew/versions
-brew install glfw3
-cd ~
-git clone http://github.com/patriciogonzalezvivo/glslViewer.git
-cd glslViewer
-make
-make install
+brew install glslviewer
 ```
 
 On **Raspberry Pi** you need to get [Raspbian](https://www.raspberrypi.org/downloads/raspbian/), a Debian-based Linux distribution made for Raspberry Pi and then do:
@@ -35,16 +27,16 @@ For parsing the Markdown chapters into Latex and then into a PDF file we will us
 
 In **MacOSX**:
 
-Download and Install [basictex & MacTeX-Additions] by:
+Download and Install MacTeX by:
 
 ```bash
 brew cask install mactex-no-gui
 ```
 
-and then install [Pandoc](http://johnmacfarlane.net/pandoc/), Python 2 & glslViewer by:
+and then install [Pandoc](http://johnmacfarlane.net/pandoc/) and Python 2 by:
 
 ```bash
-brew install pandoc python@2 glslviewer
+brew install pandoc python@2
 ```
 
 On **Raspberry Pi** (Raspbian):
@@ -63,7 +55,18 @@ For that open your terminal once again and type:
 cd ~
 git clone https://github.com/patriciogonzalezvivo/thebookofshaders.git
 cd thebookofshaders
-make
+make clean pdf
 ```
 
 If everything goes well, you will see a `book.pdf` file which you can read on your favorite device or print.
+
+#### Compile the book into an epub for use with an e-reader
+
+```bash
+cd ~
+git clone https://github.com/patriciogonzalezvivo/thebookofshaders.git
+cd thebookofshaders
+make clean epub
+```
+
+The generated `book.epub` can be used directly, or converted to a `.mobi` file for use with Kindle by using a converter, for example Calibre.
