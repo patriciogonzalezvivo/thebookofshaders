@@ -42,7 +42,7 @@ def injectShaderBlocks(_folder, _text):
             shaderImage = folder + "/tmp-" + shaderName + ".png"
             shaderCommand = "glslViewer " + shaderPath + " " + \
                             " ".join(shaderTexturePaths) + \
-                            " -s 0.5 -o " + shaderImage
+                            " -s 0.5 --headless -o " + shaderImage
             print shaderCommand
             returnCode = subprocess.call(shaderCommand, shell=True)
             rta += "![](" + shaderImage + ")\n"
@@ -83,9 +83,9 @@ for folder in folders:
 
 # Set up the appropriate options for the pandoc command
 inputOptions = chapters
-generalOptions = ["-N", "--smart", "--no-tex-ligatures", "--toc", "--standalone",
-                  "--preserve-tabs", "-V documentclass=scrbook", "-V papersize=a4", "-V links-as-note", "-S"]
-latexOptions = ["--latex-engine=" + latexEngine]
+generalOptions = ["-N", "--toc", "--standalone",
+                  "--preserve-tabs", "-V documentclass=scrbook", "-V papersize=a4", "-V links-as-note"]
+latexOptions = ["--pdf-engine=" + latexEngine]
 outputOptions = ["--output={0}".format(pdfBookPath)]
 pandocCommand = ["pandoc"] + outputOptions + \
     inputOptions + generalOptions + latexOptions
