@@ -34,7 +34,7 @@ Now that we've described the most relevant elements of our "hello world!" progra
 
 * Try replacing the floats with integers, your graphic card may or may not tolerate this behavior.
 
-* Try commenting out line 6 and not assigning any pixel value to the function.
+* Try commenting out line 8 and not assigning any pixel value to the function.
 
 * Try making a separate function that returns a specific color and use it inside `main()`. As a hint, here is the code for a function that returns a red color:
 
