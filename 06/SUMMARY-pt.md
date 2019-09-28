@@ -1,0 +1,1 @@
+Familiarize-se com o modo de se expressar em cores nos shaders. Os exemplos cobrem a maneira de misturar cores e animá-las lindamente ao longo do tempo, bem como a conversão entre dois modelos diferentes (RGB e HSB). Em GLSL, as cores são simplesmente como vetores, o que quer dizer que você pode facilmente aplicar os conceitos e técnicas que aprender aqui para outros.
