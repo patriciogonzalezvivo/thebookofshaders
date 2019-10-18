@@ -34,13 +34,13 @@ O que esse livro não abrange:
 
 ## O que você precisa para começar?
 
-Nada demais! Se você tem um browser moderno com WebGL (como Chrome, Firefox ou Safari) e conexão à internet, clique em "Next" no fim desta página para começar.
+Nada demais! Se você tem um navegador moderno com WebGL (como Chrome, Firefox ou Safari) e conexão à internet, clique em "Next" no fim desta página para começar.
 
 Alternativamente, baseado no que você tem ou precisa nesse livro, você pode:
 
 - [Fazer uma versão offline deste livro](https://thebookofshaders.com/appendix/00/)
 
-- [Executar os emplos em um Raspberry Pi sem um browser](https://thebookofshaders.com/appendix/01/)
+- [Executar os exemplos em um Raspberry Pi sem um navegador](https://thebookofshaders.com/appendix/01/)
 
 - [Fazer um PDF do livro para impressão](https://thebookofshaders.com/appendix/02/)
 
