@@ -1,5 +1,5 @@
 # Algoritmos de desenho
-## Funções de modelagem
+## Modelagem de funções
 
 Este capítulo poderia se chamar "Lição de pintar a cerca com o Sr. Miyagi". Anteriormente, nós mapeamos as posições normalizadas de *x* e *y* para os canais *red* e *green*. Essencialmente, nós criamos uma função que recebe um vetor bidimensional (x e y) e retornamos um com quatro dimensões (vermelho, verde, azul e alpha). Mas antes de irmos além de transformações dos dados entre as dimensões, precisamos fazer algo mais simples... muito mais simples: entender como criar uma função unidimensional. Quanto mais energia e tempo que você gastar dominando isso, mais forte seu karatê de shader será.
 
@@ -91,9 +91,9 @@ No final do último exercício nós apresentamos algumas novas funções. Agora 
 //y = min(0.0,x);   // return the lesser of x and 0.0
 //y = max(0.0,x);   // return the greater of x and 0.0 "></div>
 
-### Funções avançadas de modelagem
+### Modelando funções avançadas
 
-[Golan Levin](http://www.flong.com/) tem uma ótima documentação de funções de modelagem complexas que são de extraordinária ajuda. Portá-las para GLSL é uma excelente forma para começar seu próprio banco de trechos de códigos.
+[Golan Levin](http://www.flong.com/) tem uma ótima documentação de modelagem de funções complexas que são de extraordinária ajuda. Portá-las para GLSL é uma excelente forma para começar seu próprio banco de trechos de códigos.
 
 * [Polynomial Shaping Functions: www.flong.com/texts/code/shapers_poly](http://www.flong.com/texts/code/shapers_poly/)
 
@@ -105,13 +105,13 @@ No final do último exercício nós apresentamos algumas novas funções. Agora 
 
 <div class="glslGallery" data="160414041542,160414041933,160414041756" data-properties="clickRun:editor,hoverPreview:false"></div>
 
-Como chefs que coletam temperos e ingredientes exóticos, artistas digitais e programadores criativos tem um amor único por trabalhar nas suas próprias funções de modelagem.
+Como chefs que coletam temperos e ingredientes exóticos, artistas digitais e programadores criativos tem um amor único por trabalhar nas suas próprias funções.
 
 [Iñigo Quiles](http://www.iquilezles.org/) tem uma grande coleção de [funções úteis](http://www.iquilezles.org/www/articles/functions/functions.htm). Depois de ler [este artigo](http://www.iquilezles.org/www/articles/functions/functions.htm), dê uma olhada na seguinte na seguinte tradução destas funções para GLSL. Preste atenção nas pequenas mudanças necessárias, como colocar o "." (ponto) nos números de ponto flutuantes ou usar o nome em GLSL para as *Funções em C*; por exemplo, em vez de `powf()`, usamos `pow()`:
 
 <div class="glslGallery" data="05/impulse,05/cubicpulse,05/expo,05/expstep,05/parabola,05/pcurve" data-properties="clickRun:editor,hoverPreview:false"></div>
 
-Para mantermos sua motivação lá em cima, aqui temos um exemplo elegante (feito por [Danguafer](https://www.shadertoy.com/user/Danguafer)) em masterizar o karatê das funções de modelagem.
+Para mantermos sua motivação lá em cima, aqui temos um exemplo elegante (feito por [Danguafer](https://www.shadertoy.com/user/Danguafer)) em masterizar o karatê das funções.
 
 <iframe width="800" height="450" frameborder="0" src="https://www.shadertoy.com/embed/XsXXDn?gui=true&t=10&paused=true" allowfullscreen></iframe>
 
