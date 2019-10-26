@@ -2,7 +2,7 @@
 
 ## Cores
 
-Ainda não tivemos a chance de conversar sobre os tipos de vetores em GLSL. Mas antes de seguirmos adiante, é importante aprender mais sobre estas variáveis e o tópico de cores é uma ótima forma de os estendermos melhor.
+Ainda não tivemos a chance de conversar sobre os tipos de vetores em GLSL. Mas antes de seguirmos adiante, é importante aprender mais sobre estas variáveis e o tópico de cores é uma ótima forma de os entendermos melhor.
 
 Se você está familiarizado com os paradigmas de programação orientada a objetos, você provavelmente tenha percebido que estamos acessando dados dentro de vetores como qualquer `struct` em C.
 
@@ -13,7 +13,7 @@ red.y = 0.0;
 red.z = 0.0;
 ```
 
-Definir cores usando a notação *x*, *y* and *z* pode ser confuso, certo? Por esta razão, existem outras formas de acessar esta mesma informação mas com nomes diferentes. Os valores de `.x`, `.y` e `.z` podem também ser chamados de `.r`, `.g` e `.b`, e também, .`s`, `.t` e `.p`. (.`s`, `.t` e `.p`. normalmente são usados para coordenadas espaciais de uma textura, na qual veremos mais tarde em outro capítulo). Você pode também acessar os dados de um vetor usando o índice de posição: `[0]`, `[1]` e `[2]`.
+Definir cores usando a notação *x*, *y* e *z* pode ser confuso, certo? Por esta razão, existem outras formas de acessar esta mesma informação mas com nomes diferentes. Os valores de `.x`, `.y` e `.z` podem também ser chamados de `.r`, `.g` e `.b`, e também, .`s`, `.t` e `.p`. (.`s`, `.t` e `.p`. normalmente são usados para coordenadas espaciais de uma textura, na qual veremos mais tarde em outro capítulo). Você pode também acessar os dados de um vetor usando o índice de posição: `[0]`, `[1]` e `[2]`.
 
 As próximas linhas mostram todas as formas de acessar os mesmos dados:
 
@@ -25,7 +25,7 @@ vector[2] = vector.b = vector.z = vector.p;
 vector[3] = vector.a = vector.w = vector.q;
 ```
 
-Essas formas diferentes de apontar para variáveis dentro de vetores são apenas nomenclaturas criados para ajudar você a criar um código mais limpo. Esta flexibilidade embutida em linguagem de shader é a porta para começar a pensar alternadamente em cores e coordenadas espaciais.
+Essas formas diferentes de apontar para variáveis dentro de vetores são apenas nomenclaturas criadas para ajudar você a criar um código mais limpo. Esta flexibilidade embutida em linguagem de shader é a porta para começar a pensar alternadamente em cores e coordenadas espaciais.
 
 Outro ótima característica dos tipos vetoriais em GLSL é que as propriedades podem ser combinadas em qualquer ordem, o que facilita a manipulação dos valores. Esta habilidade é chamada de *swizzle*.
 
@@ -64,8 +64,7 @@ Dê uma olhada na linha 18 do código a seguir e veja se nós conseguimos usar v
 
 Mostre suas habilidades ao:
 
-* Fazer uma transição expressiva entre as cores. Pense em uma emoção em particular, qual cor parece representá-la melhor? Como ela aparece? Como ela se esvai? Pense em outra emoção e determine uma cor para ela. Mude as cores do início de do final no código acima para corresponder aquelas emoções. Então, anime a transição usando funções.
-Robert Penner desenvolveu uma série sobre funções populares para animação computacional conhecido como [funções de suavização](http://easings.net/). você pode usar [este exemplo](../edit.php#06/easing.frag) como pesquisa e inspiração mas os melhores resultados virão das suas próprias funções.
+* Fazer uma transição expressiva entre as cores. Pense em uma emoção em particular, qual cor parece representá-la melhor? Como ela aparece? Como ela se esvai? Pense em outra emoção e determine uma cor para ela. Mude as cores do início de do final no código acima para corresponder aquelas emoções. Então, anime a transição usando funções. Robert Penner desenvolveu uma série sobre funções populares para animação computacional conhecido como [funções de suavização](http://easings.net/). você pode usar [este exemplo](../edit.php#06/easing.frag) como pesquisa e inspiração mas os melhores resultados virão das suas próprias funções.
 
 ### Experimentando com degradês
 
@@ -97,13 +96,13 @@ Nós não podemos falar sobre cores sem mencionar o espaço de cores. Como você
 
 [HSB](http://en.wikipedia.org/wiki/HSL_and_HSV) vem de Hue(Matiz), Saturation(Saturação) e Brightness (Brilho ou Valor) e é uma forma muito mais intuitiva e útil de organizar cores. Pare um momento para ler as funções  `rgb2hsv()` e `hsv2rgb()` no código a seguir.
 
-Mapeando a posição no eixo x para a matiz e a posição no eixo y para brilho, nós obtemos um lindo espectro de cores visíveis. Esta distribuição espacial de cores pode ser muito útil; é muito mais intuítivo para escolher uma cor com HSB do que com RGB
+Mapeando a posição no eixo x para a matiz e a posição no eixo y para brilho, nós obtemos um lindo espectro de cores visíveis. Esta distribuição espacial de cores pode ser muito útil; é muito mais intuitivo para escolher uma cor com HSB do que com RGB
 
 <div class="codeAndCanvas" data="hsb.frag"></div>
 
 ### HSB em coordenadas populares
 
-HSB foi originalmente criada para ser representada em coordenadas polares (baseada em ângulo e raio) ao invés de coordenadas catesianas (baseadas em x e y). Para mapear nossa função de HSB em coordenadas polares, precisamos obter o ângulo e a distância do centro da tela para a coordenada do píxel. Para isso, nós vamos usar a função [`length()`](../glossary/?search=length) e [`atan(y,x)`](../glossary/?search=atan) (que é uma versão GLSL da comumente usada `atan2(y,x)`).  
+HSB foi originalmente criada para ser representada em coordenadas polares (baseada em ângulo e raio) ao invés de coordenadas cartesianas (baseadas em x e y). Para mapear nossa função de HSB em coordenadas polares, precisamos obter o ângulo e a distância do centro da tela para a coordenada do píxel. Para isso, usaremos a função [`length()`](../glossary/?search=length) e [`atan(y,x)`](../glossary/?search=atan) (que é uma versão GLSL da comumente usada `atan2(y,x)`).  
 
 Ao utilizar vetores e funções trigonométricas, `vec2`, `vec3` e `vec4` são tratados como vetores mesmo quando elas representam cores. Nós começaremos a tratar cores e vetores de forma similar e você verá que esta flexibilidade conceitual é muito poderosa.
 
@@ -123,7 +122,7 @@ Tente os seguintes exercícios:
 
 ![William Home Lizars - Red, blue and yellow spectra, with the solar spectrum (1834)](spectrums.jpg)
 
-* Se você olhar de perto na roda de cores usada em seletores de cor (veja a imagem abaixo), elas usam um diferente espectro de acordo com o espaço de cores em RYB. Por exemplo, a cor oposta ao vermelho deve ser verde, mas no nosso exemplo é ciano. Você consegue encontrar um jeito de consertar isso para parecer exatamente com a imagem a paixo? [Dica: este é um grande momento para usar modelagem de funções.]
+* Se você olhar de perto na roda de cores usada em seletores de cor (veja a imagem abaixo), elas usam um diferente espectro de acordo com o espaço de cores em RYB. Por exemplo, a cor oposta ao vermelho deve ser verde, mas no nosso exemplo é ciano. Você consegue encontrar um jeito de consertar isso para parecer exatamente com a imagem a baixo? [Dica: este é um grande momento para usar modelagem de funções.]
 
 ![](colorwheel.png)
 
