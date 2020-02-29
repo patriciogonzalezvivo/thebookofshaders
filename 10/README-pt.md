@@ -1,22 +1,22 @@
 # Designs Generativos
 
-It is not a surprise that after so much repetition and order the author is forced to bring some chaos.
+Não é uma surpresa que, depois de tanta repetição e ordem, o autor seja forçado a trazer algum caos. 
 
-## Random
+## Aleatoriedade
 
 [![Ryoji Ikeda - test pattern (2008) ](ryoji-ikeda.jpg) ](http://www.ryojiikeda.com/project/testpattern/#testpattern_live_set)
 
-Randomness is a maximal expression of entropy. How can we generate randomness inside the seemingly predictable and rigid code environment?
+Aleatoriedade é uma expressão máxima da entropia. Como podemos gerar aleatoriedade dentro de um ambiente de código tão rídigo e, aparentemente, previsível? 
 
-Let's start by analyzing the following function:
+Vamos começar, analisando a seguinte função:
 
 <div class="simpleFunction" data="y = fract(sin(x)*1.0);"></div>
 
-Above we are extracting the fractional content of a sine wave. The [```sin()```](../glossary/?search=sin) values that fluctuate between ```-1.0``` and ```1.0``` have been chopped behind the floating point, returning all positive values between ```0.0``` and ```1.0```. We can use this effect to get some pseudo-random values by "breaking" this sine wave into smaller pieces. How? By multiplying the resultant of [```sin(x)```](../glossary/?search=sin) by larger numbers. Go ahead and click on the function above and start adding some zeros.
+Acima, estamos extraindo o conteúdo fracionário de uma onda de seno. Os valores de [```sin()```](../glossary/?search=sin) que flutuam entre ```-1.0``` e ```1.0``` foram cortados depois do ponto flutuante, retornando todos valores positivos entre ```0.0``` e ```1.0```. Podemos usar esse efeito para obter algums valores pseudo-aleatórios, quebrando essa onda de seno em pedaços menores. Como? Multiplicando o resultante de [```sin(x)```](../glossary/?search=sin) por números maiores. Vá em frente e clique na função acima e comece a adicionar alguns zeros.
 
-By the time you get to ```100000.0``` ( and the equation looks like this: ```y = fract(sin(x)*100000.0)``` ) you aren't able to distinguish the sine wave any more. The granularity of the fractional part has corrupted the flow of the sine wave into pseudo-random chaos.
+Quando você chegar lá pelo ```100000.0``` ( e a equação parecer com isso: ```y = fract(sin(x)*100000.0)``` ) você não vai mais ser capaz de distinguir a onda do seno. A granularidade da parte fracionária corrompeu o fluxo da onda em um caos pseudo-aleatório.
 
-## Controlling chaos
+## Controlando o caos
 
 Using random can be hard; it is both too chaotic and sometimes not random enough. Take a look at the following graph. To make it, we are using a ```rand()``` function which is implemented exactly like we describe above.
 
