@@ -1,50 +1,48 @@
 # Começando
-## O que é um shader?
+## O que é um fragment shader?
 
-No capítlo anterior, nós descrevemos shaders como o equivalente da imprensa de Gutenberg para os gráficos. Por quê? E mais importante: o que é um shader?
+No capítulo anterior descrevemos shaders como o equivalente dos avanços trazidos pela prensa de Gutenberg. Por que? E mais importante: o que é um shader?
 
-![From Letter-by-Letter, Right: William Blades (1891). To Page-by-page, Left: Rolt-Wheeler (1920).](print.png)
+![De letra-por-letra, Right: William Blades (1891). À página-por-página, Left: Rolt-Wheeler (1920).](print.png)
 
-Se você já tem experiência em desenhar com computadores, já sabe que nesse processo você desenha um círculo, depois um retângulo, uma linha, alguns triângulos, até compor a imagem que você quer. Esse processo é muito similar a escrever uma carta ou livro à mão - é um conjunto de instruções em que se faz uma tarefa depois da outra.
+Se você já tem experiência em desenhar em computadores, você sabe que nesse processo você desenha um círculo, depois um retângulo, uma linha, alguns triângulos até você finalmente compor a imagem desejada. O processo é muito similar a escrever uma carta ou livro à mão, um conjunto de instruções que executam uma tarefa atrás de outra.
 
-Shaders também são um conjunto de instruções, mas as instruções são executadas todas de uma vez só para cada pixel na tela. Isso quer dizer que o código que você escreve tem que se comportar de modo diferente dependendo da posição do pixel na tela. Como um tipo na imprensa, seu programa vai funcionar como uma função que recebe uma posição e retorna uma cor, e quando é compilado, vai rodar extraordinariamente rápido.
+Shaders são também um conjunto de instruções, mas as instruções são executadas todas ao mesmo tempo para cada pixel da tela. Isso significa que o código que você escreve têm que se comportar de maneira diferente, dependendo da posição do pixel na tela. Como uma prensa tipográfica, seu programa funcionará como uma função que recebe uma posição e retorna a respectiva cor, e, quando esse programa é compilado, ele será executado extraordinariamente rápido.
 
-![Chinese movable type](typepress.jpg)
+![Prensa tipográfica móvel chinesa](typepress.jpg)
 
-## Por que os shaders são rápidos?
+## Por que shaders são rápidos?
 
-Para responder isso, eu lhe apresento as maravilhas do *processamento paralelo*.
+Para responder essa pergunta, eu apresento as maravilhas do *processamento paralelo*.
 
-Imagine a CPU do seu computador como uma grande esteira ou tubo industrial, e cada tarefa como algo que passa por ela - como uma linha de produção. Algumas tarefas são maiores que outras, o que significa que requerem mais tempo e energia para se lidar com elas. Dizemos assim que elas requerem mais poder de processamento. Por causa da arquitetura dos computadores, os trabalhos são forçados a serem executados em série; cada tarefa tem que ser terminada uma de cada vez. Computadores modernos geralmente têm grupos de quatro processadores que trabalham como essas linhas de produção, completando tarefas uma após a outra para manter as coisas rodando suavemente. Cada esteira é conhecida como *thread*.
+Imagine a CPU do seu computador como um grande tubo (ou ducto) industrial, e cada tarefa como algo que passa por ele - como uma linha de produção. Algumas tarefas são maiores que outras, o que signica que elas requerem mais tempo e energia que as outras. Digamos que elas requerem mais poder de processamento. Por causa da arquitetura dos computadores, as tarefas são forçadas a serem executadas em série; cada tarefa é finalizada uma de cada vez. Computadores modernos geralmente tem grupos de quatro processadores para trabalhar com tais tubos, completando as tarefas sequencialmente  e mantendo a linha de produção em movimento. Cada tubo é também conhecido como *thread*.
 
 ![CPU](00.jpeg)
 
-Videogames e outras aplicações gráficas requerem muito mais poder de processamento que outros programas. Por causa de seu conteúdo gráfico, eles têm que fazer um número gigantesco de operações pixel-a-pixel. Cada pixel na tela precisa ser calculado, e em jogos 3D as geometrias e perspectivas precisam ser calculadas também.
+Video games e outras aplicações gráficas requerem muito mais poder de processamento que outros programas. Por causa de seu conteúdo gráfico, eles precisam fazer um número enorme de operações pixel-por-pixel. Cada pixel da tela precisa ser computado, e em jogos em 3D geometrias e perspectivas também precisam ser calculadas.
 
-Vamos voltar à nossa metáfora de tubos e tarefas. Cada pixel na tela representa uma pequena tarefa simples. Individualmente, cada tarefa de pixel não é uma grande questão para a CPU, mas (e esse é o problema) as pequenas tarefas têm que ser feitas em cada pixel na tela. Isso significa, em uma tela antiga em 800x600, que 480.000 pixels têm que ser processados por frame, o que significa 14.400.000 cálculos por segundo! Sim! Isso é um problema grande o suficiente para sobrecarregar um microprocessador. Em uma tela moderna retina 2880x1800, rodando a 60 frames por segundom esse cálculo daria até mais 311.040.000 cálculos por segundo. Como os engenheiros gráficos resolveram esse problema?
+Vamos voltar para a nossa metáfora de tubos e tarefas. Cada pixel da tela representa uma tarefa pequena e simples. Individualmente, cada tarefa deste tipo não é um problema para o CPU, mas (e aqui mora o perigo) a pequena tarefa precisa ser repetida para cada pixel na tela! Isso significa que em uma tela antiga de 800x600, 480.000 pixels precisam ser processados pada cada frame, o que totaliza em 14.400.000 cálculos por segundo! Sim! Isso é um problema grande o suficiente para sobrecarregar um microprocessador. Em uma tela moderna com retina display medindo 2880x1800, executando a 60 frames por segundo, esse cálculo resulta em até 311.040.000 cálculos por segundo. Como engenheiros gráficos resolvem esse problema?
 
 ![](03.jpeg)
 
-É aí que o processamento paralelo se torna uma boa solução. Ao invés de ter uma dupla de microprocessadores grandes e poderosos, ou *tubos*, é mais inteligente ter um monte de pequenos microprocessadores rodando em paralelo ao mesmo tempo. É isso que é uma GPU - Unidade de Processamento Gráfico.
+Neste caso, processamento em paralelo se torna uma boa solução. Em vez de ter alguns microprocessadores grandes e poderosos, ou *tubos*, é mais inteligente ter um monte de minúsculos microprocessadores rodando em paralelo ao mesmo tempo. Isso é o que a Unidade de Processamento Gráfico (Graphic Processor Unit ou GPU) é.
 
 ![GPU](04.jpeg)
 
-Imagine os minúsculos processadores como uma mesa de tubos, e os dados de cada pixel como sendo uma bola de ping-pong. 14.400.000 bolas de ping-pong por segundo podem obstruir quase qualquer tubo. Mas uma mesa de 800x600 pequenos tubos recebendo 30 ondas de 480.000 pixels por segundo pode ser manuseado suavemente. Isso funciona do mesmo jeito para resoluções mais altas - quanto mais hardware paralelo você tem, maior o stream que ele pode gerenciar.
+Imagine os minúsculos microprocessadores como uma mesa de tubos, e os dados de cada pixel como uma bola de ping-pong. 14.400.000 bolas de ping-pong por segundo podem obstruir quase qualquer tubo. Mas a mesa com 800x600 pequenos tubos recebendo 30 ondas de 480.000 pixels por segundo pode manejar esse fluxo tranquilamente. Funciona do mesmo jeito em resoluções maiores - quanto mais hardware em paralelo você tem, maior o fluxo que eles podem manejar.
 
-Um outro "super poder" da GPU são funções especiais matemáticas aceleradas via hardware, de modo que operações matemáticas complicadas são resolvidas diretamente pelos microchips ao invés de serem por software. Isso significa operações trigonométricas e de matrix extra rápidas - tanto quanto a eletricidade pode ir.
+Outro "super poder" da GPU são funções matemáticas especiais aceleradas via hardware, logo operações matemáticas mais complicadas são resolvidas diretamente pelos microchips em vez do software. Isso resulta em operações trigonométricas e matriciais extra rápidas - tão rápidas quanto a eletricidade.
 
 ## O que é GLSL?
 
+GLSL é a sigla de openGL Shading Language, o que é o padrão específico de shader que você verá nos próximos capítulos. Existem outros tipos de shaders, dependendo do hardware ou sistemas operacionais. Aqui trabalharemos com as specificações do openGL, reguladas por [Khronos Group](https://www.khronos.org/opengl/). Entender a história do OpenGL pode ser útil se compreender a maior parte das estranhas convenções, para isso eu te recomendo a dar uma olhada em: [openglbook.com/chapter-0-preface-what-is-opengl.html](http://openglbook.com/chapter-0-preface-what-is-opengl.html)
 
-GLSL significa "openGL Shading Language", que é o padrão específico dos programas shader que você vai ver nos próximos capítulos. Existem outros tipos de shaders, dependendo do hardware and Sistema Operacional. Aqui vamos trabalhar com as especificações openGL reguladas pelo [Khronos Group](https://www.khronos.org/opengl/). Entender a história do OpenGL pode ser de muita ajuda para entender a maioria das convenções estranhas que ele tem, e para isso eu recomendo dar uma olhada em: [openglbook.com/chapter-0-preface-what-is-opengl.html](http://openglbook.com/chapter-0-preface-what-is-opengl.html)
+## Por que shaders têm uma má reputação?
 
-## Por que os shaders são tão dolorosos?
+Como disse o Tio Ben “com grandes poderes vêm grandes responsabilidades” e computação em paralelo segue essa regra; o poderoso design aquitetônico da GPU vem com suas próprias limitações e restrições.
 
-Como o Tio Ben disse, “com grandes poderes vêm grandes responsabilidades,” e computação paralela segue essa regra; o design arquitetural poderoso da GPU vem com suas restrições e dificuldades.
+Para cada tubo - ou thread - ser executado em paralelo, eles têm que ser independentes de outras threads. Podemos dizer que threads são *cegas* com relação ao que as outras threads estão fazendo. Essa restrição faz com que todos os dados devem fluir na mesma direção. Deste modo é impossível checar o resultado de outra thread, modificar o input de dados ou passar o resultado de uma thread para outra. Permitir comunicação entre as threads coloca a integridade dos dados em risco.
 
-Para rodar em paralelo, cada tubo, ou thread, precisa ser independente dos demais. Digamos que as threads são *cegas* para o que o resto das threads está fazendo. Esta restrição implica em que todo o dado deve fluir na mesma direção. Então, é impossível checar o resultado de outra thread, modificar os dados de entrada, ou passar a saída de uma thread para outra. Permitir comunicação entre threads coloca a integridade dos dados em risco.
+Além disso, a GPU mantém os microprocessadores (os tubos) constantemente ocupados; assim que eles ficam livres eles recebem novas informações para serem processadas. É impossível para uma thread saber o que ela estava fazendo num momento anterior. Isso poderia ser desenhar um botão para a UI do sistema operacional, depois renderizar uma porção do céu em um jogo, seguido de mostrar o texto de um email. Cada thread não é só **cega** como **sem memória**. Apesar da abstração requerida para programar uma função genérica que muda o resultado pixel por pixel dependendo da posição do mesmo, as limitações desta cegueira e falta de memória faz com que os shaders não sejam muito populares entre programadores iniciantes.
 
-
-Além disso, a GPU mantém o microprocessador (os tubos) constantemente ocupado; assim que ficam livres, já recebem nova informação para processar. É impossível para uma thread saber o que ela estava fazendo no momento anterior. Ela poderia estar desenhando um botão da UI do Sistema Operacional, então renderizar uma parte do céu num jogo, e depois mostrar o texto de um email. Cada thread não é apenas **cega** mas também **sem memória**. Além da abstração requerida para codificar uma função geral que muda o resultado pixel a pixel dependendo de sua posição, as restrições de cegueira e falta de memória tornam os shaders pouco populares entre os programadores principiantes.
-
-Não se preocupe! Nos capítulos seguintes, vamos aprender passo a passo como sair de um nível simples ao avançado nas computações de shaders. Se você está lendo isso com um browser moderno, vai poder brincar com exemplos interativos. Então, não vamos mais demorar com a diversão, e aperte *Próximo >>* para pular para o código!
+Não se preocupe! Nos capítulos seguintes aprenderemos passo-a-passo a trabalhar com shaders com exemplos que vão de simples a avançados. Se você está lendo este livro em um navegador moderno, você pode poderá brincar com os exemplos interativos. Então clique em *Next >>* e mãos à obra!

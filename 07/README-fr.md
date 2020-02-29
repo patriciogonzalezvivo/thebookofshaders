@@ -288,5 +288,7 @@ Faites une pause et laissez décanter ces nouveaux concepts.
 Dessiner des formes dans une API de dessin, c'est facile mais ici c'est une autre histoire.
 Au pays des shaders, dessiner des formes géométriques est un peu tordu et s'imposer la disciple nécessaire à la compréhension de ce paradigme est épuisant.
 
+À la fin de ce chapitre, vous trouverez un lien vers [PixelSpirit Deck] (https://patriciogonzalezvivo.github.io/PixelSpiritDeck/). Ce jeu de cartes vous aidera à apprendre les nouvelles fonctions SDF, à les composer dans vos conceptions et à les utiliser. sur vos shaders. La plate-forme a une courbe d’apprentissage prégressive, aussi prendre une carte par jour et travailler dessus vous poussera et mettra au défi vos compétences pendant des mois.
+
 Maintenant que vous savez comment dessiner des formes, je suis sûr que ça va vous donner des idées.
 Au prochain chapitre, nous apprendrons à déplacer, à appliquer des rotations et à changer d'échelle pour créer des compositions !

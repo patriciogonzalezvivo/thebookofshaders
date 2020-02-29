@@ -1,42 +1,42 @@
-## Hello World
+## Olá mundo
 
-Geralmente, o exemplo do "Hello world!" é o primeiro passo para aprender uma nova linguagem. É um programa simples de uma linha, que exibe uma mensagem alegre de boas-vindas.
+Geralmente o exemplo "Olá mundo" é o primeiro passo ao aprender uma nova linguagem. É um programa de uma linha de código que retorna uma entusiástica mensagem de boas vindas e declara as oportunidades que nos aguarda.
 
-No mundo da GPU, renderizar texto é uma tarefa complicada demais para um primeiro passo, então, ao invés, vamos escolher uma cor brilhante para mostrar nosso entusiasmo!
+No mundo da GPU, renderizar texto é uma tarefa muito complicada para ser o primeiro passo, portanto usaremos uma cor brilhante cor de boas-vindas para representar nosso entusiasmo!
 
 <div class="codeAndCanvas" data="hello_world.frag"></div>
 
-Se você está lendo este livro num browser, o bloco de código antetior é interativo. Isso significa que você pode clicar e mudar qualquer pedaço do código que quiser explorar. Mudanças serão atualizadas imediatamente graças à arquitetura da GPU, que compila e substitui os shaders *on the fly*. Faça uma tentativa, mude os valores da linha 6.
+Se você está lendo este livro em um navegador, o bloco de código acima é interativo. Isso significa que você pode clicar e modificar qualquer parte do código em que você quiser explorar sua funcionalidade. As mudanças serão atualizadas imediatamente graças à arquitetura da GPU que compila e substitui os shaders *instantaneamente*. Experimente modificar os valores da linha 8.
 
-Embora essas simples linhas de código não se pareçam muito, podemos inferir um conhecimento substancial delas:
+Embora essas simples linhas de código não parecem ser tão interessantes, podemos inferir muita coisa sobre elas:
 
-1. Shader Language tem uma única função `main` que retorna uma cor no fim. Isso é similar ao C.
+1. Linguagem de shader Shader Language possui uma função principal - `main` - que retorna uma cor. Isto é similar a C.
 
-2. A cor final do pixel é associada à variável global reservada `gl_FragColor`.
+2. A cor final do pixel é atribuída pela variável global reservada `gl_FragColor`.
 
-3. Essa linguagem, do estilo do C, tem *variáveis* internas já construídas (como `gl_FragColor`), *funções* and *tipos*. Neste caso, acabamos ser apresentados ao `vec4` que é um vetor de quatro dimensões de precisão de ponto flutuante. Mais tarde vamos ver mais tipos como `vec3` e `vec2` juntos com os populares:`float`, `int` e `bool`.
+3. Essa linguagem similar a C tem *variáveis* nativas (como `gl_FragColor`), *funções* e *tipos*. Nesse caso fomos vemos `vec4`, que representa um vetor em quatro dimensões com precisão de ponto flutuante. Mais adiante veremos outros tipos como `vec3` e `vec2` além dos populares: `float`, `int` and `bool`.
 
-4. Se olharmos de perto o tipo `vec4` podemos inferir que os quatro argumentos correpondem aos canais RED (vermelho), GREEN (verde), BLUE (azul) e ALPHA. Podemos também ver que esses valores são *normalizados*, o que significa que eles vão de `0.0` a `1.0`. Depois vamos aprender como a normalização faz com que fique mais fácil *mapear* valores entre variáveis.
+4. Se observarmos o tipo `vec4` podemos inferir que os quatro argumentos correspondem aos canais RED (vermelho), GREEN (verde), BLUE (azul) e ALPHA (alfa). Também vemos que esses valores são *normalizados*, ou seja, eles vão de `0.0` a `1.0`. Mais tarde aprenderemos como normalizar valores facilitam o seu *mapeamento* entre variáveis.
 
-5. Outra *característica do C* importante que podemos ver nesse exemplo  é a presença de macros de preprocessador. Macros são parte de um passo da pré-compilação. Com elas, é possível definir (`#define`) variáveis globais e fazer algumas operações condicionais básicas (com `#ifdef` e `#endif`). Todos os comandos de macro começam com hashtag (`#`). A pré-compilação acontece logo antes de compilar e copia todas as chamadas a `#defines` e checa as condicionais  `#ifdef` (é definido) e `#ifndef` (não é definido). No nosso "hello world!", só inserimos a linha 2 se `GL_ES` estiver definida, o que geralmente acontece quando o código é compilado em dispositivos móveis e browsers.
+5. Outra importante *característica de C* que podemos ver neste exemplo é a presença de macros de preprocessador. Macros são parte do passo de pré-compilação. Com eles podemos definir variáveis globais (com `#define`) e fazer operações condicionais básicas (com `#ifdef` e `#endif`). Todos os comandos de macros começam com uma hashtag (`#`). A pré-compilação acontece logo antes da compilação e copia todas as chamadas para condicionais `#define` e checa` #ifdef` (está definido) e` #ifndef` (não está definido). Em nosso exemplo "Olá mundo" acima nós inserimos na linha 2 se `GL_ES` for definido, o que provavelmente acontece quando o código é compilado em celulares e navegadores.
 
-6. Tipos float são vitais em shaders, então o nível de *precisão* é crucial. Precisão mais baixa significa renderização mais rápida, ao custo da qualidade. Você pode ser detalhista e especificar a precisão de cada variável que usa ponto flutuante. Na primeira linha (`precision mediump float;`) estamos setando todos os floats para precisão média. Mas podemos escolher setar para baixa precisão (`precision lowp float;`) ou alta (`precision highp float;`).
+6. Tipos float são vitais em shaders, então o nível de *precisão* é crucial. Menor precisão maior a velocidade de renderização, porém a qualidade é afetada. Você pode ser meticuloso e especificar a precisão para cada variável que usa ponto flutuante. Na primeira linha (`precision mediump float;`) estamos ajustando todos os floats para precisão média. Mas podemos ajustá-las para baixa (`precision lowp float;`) ou alta (`precision highp float;`) também.
 
-7. Por fim, e talvez mais importantem o detalhe é que specs GLSL não garantem que as variáveis serão convertidas automaticamente. O que isso quer dizer? Os fabricantes têm diferentes abordagens para acelerar os gráficos que o cartão processa mas eles são forçados a garantir specs mínimas. Conversão automática não é uma delas. Em nosso exemplo “hello world!” o `vec4` tem precisão de ponto flutuante e para isso, ele espera que seja associado com valores `floats`. Se você quiser fazer um código bom e consistente e não gastar horas debugando telas em branco, acostume-se a colocar o ponto (`.`) em seus floats. Esse tipo de código não vai funcionar sempre:
+7. O final, e talvez mais importante detalhe é que a especificação da GLSL não garante que as variáveis serão automaticamente convertidas. O que isso significa? Fabricantes têm soluções para acelerar a os processos da placa gráfica mas eles são forçados a garantir as especificações mínimas. Conversão automática não está entre delas. Em nosso exemplo "olá mundo!" `vec4` tem precisão de ponto flutuante e por isso ele espera ser convertido com `floats`. Se você quiser escrever código de maneira consistente e não gastar horas not spend hours investigando telas em branco, se acostume a colocar um ponto (`.`) em seus flutuantes (floats). Esse tipo de código às vezes não funcionará:
 
 ```glsl
 void main() {
-    gl_FragColor = vec4(1,0,0,1);	// ERRO
+    gl_FragColor = vec4(1,0,0,1);	// ERROR
 }
 ```
 
-Agora que descrevemos os elementos mais relevantes do nosso programa "hello world!", é hora de clicar  no blodo de código e começar a desafiar com tudo o que aprendemos. Você vai notar que em caso de erros, o programa vai falhar a compilação, mostrando uma tela em branco. Existem algumas coisas legais que você pode tentar, por exemplo:
+Agora que descrevemos os elementos mais relevantes em nosso programa "Olá mundo!", chegou a hora de clicar no bloco de código e começar a aplicar o que aprendemos até agora. Você notará que, quando houver um erro, o programa não compilará e renderizará uma tela em branco. Têm algumas coisas interessantes que você pode tentar, por exemplo:
 
-* Tente substituir os floats com inteiros, sua placa gráfica pode ou não tolerar esse comportamento.
+* Tente substituir flutuantes (floats) por números inteiros (integers), pode ser que a sua placa gráfica não ofeça suporte.
 
-* tente descomentar a linha 6 e não definir um valor de pixel na função.
+* Tente comentar a linha 8 e não atribuir nenhum valor nessa função.
 
-* Tente fazer uma função separada que retorne uma cor específica e use a função dentro do `main()`. Como dica, aqui está o código para uma função que retorna a cor vermelha:
+* Tente escrever outra função à parte que retorna uma cor específica e a utilize em `main()`. Dica: aqui está o código para uma função que retorna a cor vermelho:
 
 ```glsl
 vec4 red(){
@@ -44,10 +44,10 @@ vec4 red(){
 }
 ```
 
-* Há vários modos de contruit tipos `vec4`, tente descobrir outras formas. O seguinte é uma delas:
+* Existem múltiplas maneiras diferentes para construir tipos `vec4`, tente descobrir outras maneiras. Este é um deles:
 
 ```glsl
 vec4 color = vec4(vec3(1.0,0.0,1.0),1.0);
 ```
 
-Embora esse exemplo não seja muito excitante, é o exemplo mais básico - estamos mudando todos os pixels dentro do canvas para exatamente a mesma cor. No próximo capítulo, vamos ver como mudar a cor do pixel usando dois tipos de entrada: espaço (o lugar do pixel na tela) e tempo (o número de segundos desde que a página foi carregada).
+Apesar deste exemplo não ser tão empolgante, ele é o exemplo mais básico - estamos modificando todos os pixels da tela ao mesmo tempo e atribuindo a eles a mesma cor. No próximo capítulo veremos como mudar as cores dos pixels usando dois tipos de entrada (input): espaço (a posição do pixel na tela) e tempo (o número de segundos desde que a página foi carregada).

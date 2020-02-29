@@ -118,5 +118,5 @@ Fazer padrões procedurais é um exercício mentar para encontrar elementos mín
 
 ![Franz Sales Meyer - A handbook of ornament (1920)](geometricpatters.png)
 
-Com este capítulo, terminamos a seção sobre Desenho Algorítmico. Nos capítulos seguintes vamos aprender como trazer alguma entropia para nossos shaders e produzir designs geradores.
+Com este capítulo, terminamos a seção sobre Desenho Algorítmico. Nos capítulos seguintes vamos aprender como trazer alguma entropia para nossos shaders e produzir designs generativos.
 

@@ -2,10 +2,9 @@
 
 ## Cores
 
-Não tivemos muita chance de conversar sobre os tipos de vetores GLSL. Antes de avançar, é importante aprender mais sobre essas variáveis e o assunto das cores é uma boa forma de descobrir mais sobre eles.
+Ainda não tivemos a chance de conversar sobre os tipos de vetores em GLSL. Mas antes de seguirmos adiante, é importante aprender mais sobre estas variáveis e o tópico de cores é uma ótima forma de os entendermos melhor.
 
-Se você é familiar com os paradigmas da programação orientada a objetos, provavelmente notou que estamos acessando os dados dentro dos vetores como qualquer `struct` regular do C.
-
+Se você está familiarizado com os paradigmas de programação orientada a objetos, você provavelmente tenha percebido que estamos acessando dados dentro de vetores como qualquer `struct` em C.
 
 ```glsl
 vec3 red = vec3(1.0,0.0,0.0);
@@ -14,9 +13,9 @@ red.y = 0.0;
 red.z = 0.0;
 ```
 
-Definir uma cor usando uma notação *x*, *y* e *z* pode ser confuso e levar a erros, certo? É por isso que existem outras formar de acessar essa mesma informação, mas com nomes diferentes. Os valores de `.x`, `.y` e `.z` podem ser chamados de `.r`, `.g` e `.b`, e `.s`, `.t` and `.p`. (`.s`, `.t` e `.p` geralmente são usados para coordenadas espaciais de uma textura, o que vamos ver em um capítulo mais pra frente). Você também pode acessar os dados num vetor usando um índice de posições, `[0]`, `[1]` e `[2]`.
+Definir cores usando a notação *x*, *y* e *z* pode ser confuso, certo? Por esta razão, existem outras formas de acessar esta mesma informação mas com nomes diferentes. Os valores de `.x`, `.y` e `.z` podem também ser chamados de `.r`, `.g` e `.b`, e também, .`s`, `.t` e `.p`. (.`s`, `.t` e `.p`. normalmente são usados para coordenadas espaciais de uma textura, na qual veremos mais tarde em outro capítulo). Você pode também acessar os dados de um vetor usando o índice de posição: `[0]`, `[1]` e `[2]`.
 
-As seguintes linhas mostram todos os modos de acessar o mesmo dado:
+As próximas linhas mostram todas as formas de acessar os mesmos dados:
 
 ```glsl
 vec4 vector;
@@ -26,27 +25,27 @@ vector[2] = vector.b = vector.z = vector.p;
 vector[3] = vector.a = vector.w = vector.q;
 ```
 
-Essas maneiras diferentes de apontar para as variáveis dentro de um vetor são apenas nomenclaturas projetadas para te ajudar a escrever um código mais claro. Essa flexibilidade, embutida na linguagem, é uma porta para você começar a pensar em cores e coordenadas espaciais como intercambiáveis.
+Essas formas diferentes de apontar para variáveis dentro de vetores são apenas nomenclaturas criadas para ajudar você a criar um código mais limpo. Esta flexibilidade embutida em linguagem de shader é a porta para começar a pensar alternadamente em cores e coordenadas espaciais.
 
-Uma outra grande característica de tipos de vetores em GLSL é que as propriedades podem ser combinadas em qualquer forma que quiser, o que torna mais fácil realizar cast e misturar valores. Essa habilidade é chamada de *swizzle*.
+Outro ótima característica dos tipos vetoriais em GLSL é que as propriedades podem ser combinadas em qualquer ordem, o que facilita a manipulação dos valores. Esta habilidade é chamada de *swizzle*.
 
 ```glsl
 vec3 yellow, magenta, green;
 
-// Fazendo o Amarelo
-yellow.rg = vec2(1.0);  // Definindo 1. para os canais red e green 
-yellow[2] = 0.0;        // Definindo 0. para o blue 
+// Making Yellow
+yellow.rg = vec2(1.0);  // Assigning 1. to red and green channels
+yellow[2] = 0.0;        // Assigning 0. to blue channel
 
-// Fazendo o Magenta
-magenta = yellow.rbg;   // Definindo os canais com green e blue trocados
+// Making Magenta
+magenta = yellow.rbg;   // Assign the channels with green and blue swapped
 
-// Fazendo o Verde
-green.rgb = yellow.bgb; // Definindo o canal blue do  Yellow (0) para os canais red e blue 
+// Making Green
+green.rgb = yellow.bgb; // Assign the blue channel of Yellow (0) to red and blue channels
 ```
 
 #### Para sua caixa de ferramentas
 
-Você pode não ser acostumado a escolher cores com números - pode ser muito contra-intuitivo. Para sua sorte, há muitos programas que tornam esse um trabalho fácil. Encontre um que se encaixe às suas necessidades e então treine-o para entregar cores no formato `vec3` ou `vec4`. Por exemplo, aqui estão os templates que uso no [Spectrum](http://www.eigenlogik.com/spectrum/mac):
+Você pode não estar acostumado a escolher cores com números - isso pode ser bem não intuitivo. Felizmente, existem inúmeros excelentes programas que facilitarão seu trabalho. Encontre um que atende as suas necessidades e então pratique para conseguir entregar cores em `vec3` ou `vec4`. Por exemplo, aqui está os templates que uso no [Spectrum](http://www.eigenlogik.com/spectrum/mac):
 
 ```
 vec3({{rn}},{{gn}},{{bn}})
@@ -55,91 +54,90 @@ vec4({{rn}},{{gn}},{{bn}},1.0)
 
 ### Misturando cores
 
-Agora que você já sabe como as cores são definidas, é hora de integrar isso com o que já sabemos. Em GLSL, existe uma função muito útil, [`mix()`](../glossary/?search=mix), que te permite mixar dois valores em porcentagens. Adivinha qual é o range de valores para a porcentagem? Sim, valores entre 0.0 e 1.0! Isso é perfeito para você, depois daquelas horas todas praticando seus movimentos de karatê com a cerca - é hora de usá-los!
+Agora que você sabe como cores são definidas, chegou a hora de integrar isso com nosso conhecimento prévio. Em GLSL, existe uma função muito útil chamada [`mix()`](../glossary/?search=mix), que permite que você misture dois valores em porcentagens. Você consegue adivinhar em qual intervalo esta porcentagem é? Sim, estes valores vão de 0.0 a 1.0! O que é perfeito para você, depois destas longas horas praticando seus movimentos de karatê na cerca - É hora de usá-los!
 
 ![](mix-f.jpg)
 
-Verifique o seguinte código na linha 18, veja como estamos usando os valores absolutos de uma onda senóide ao longo do tempo para mixar `colorA` e `colorB`.
+Dê uma olhada na linha 18 do código a seguir e veja se nós conseguimos usar valores absolutos de uma onda seno pelo tempo para misturar `colorA` e `colorB`.
 
 <div class="codeAndCanvas" data="mix.frag"></div>
 
-Demonstre suas habilidades, fazendo isso:
+Mostre suas habilidades ao:
 
-* Faça uma transição expressiva entre as cores. Pense numa emoção particulas. Que cor parace mais representar isso? Como ela aparece? Como ela desaparece? Pense em outra emoção e cores que combinam. Mude a cor do início e do fim do código acima, para combinar com essas emoçoes. Então, anime a transição usando funções de forma. Robert Penner desenvolveu uma série de funções de forma populares para animação em computadores, conhecida como [facilitando funções](http://easings.net/), você pode usar [este exemplo](../edit.php#06/easing.frag) como pesquisa e inspiração mas o melhor resultado virá com você fazendo suas próprias transições.
+* Fazer uma transição expressiva entre as cores. Pense em uma emoção em particular, qual cor parece representá-la melhor? Como ela aparece? Como ela se esvai? Pense em outra emoção e determine uma cor para ela. Mude as cores do início de do final no código acima para corresponder aquelas emoções. Então, anime a transição usando funções. Robert Penner desenvolveu uma série sobre funções populares para animação computacional conhecido como [funções de suavização](http://easings.net/). você pode usar [este exemplo](../edit.php#06/easing.frag) como pesquisa e inspiração mas os melhores resultados virão das suas próprias funções.
 
-### Brincando com gradientes
+### Experimentando com degradês
 
-A função [`mix()`](../glossary/?search=mix) tem mais a oferecer. Ao invés de um único simples `float`, podemos passar um tipo de variável que combine com os dois primeiros argumentos, em nosso caso um `vec3`. Fazendo isso, ganhamos controle sobre as porcentagens de mistura de cada canal individualmente, `r`, `g` e `b`.
+A função [`mix()`](../glossary/?search=mix) tem mais a oferecer. Ao invés de passar um único `float`, nós podemos passar uma variável do tipo que correspondente aos dois primeiros argumentos, neste caso, uma `vec3`. Fazendo isso, nós ganhamos controle sobre a porcentagem de mesclagem para cada canal de cor individualmente, `r`, `g` e `b`.
 
 ![](mix-vec.jpg)
 
-Dê uma olhada no exemplo a seguir. Como nos exemplos do capítulo anterior, estamos ligando a transição Às coordenada *x* normalizada e visualizando-a com uma linha. Nesse momento, todos os canais vão na mesma linha.
+Dê uma olhada no exemplo a seguir. Como os exemplos no capítulo anterior, nós estamos encaixando a transição na coordenada *x* normalizada e a visualizando com uma linha. Agora todos os canais seguem esta mesma linha.
 
-Agora, descomente a linha 25 e veja o que acontece. Então, tente descomentar as linhas 26 e 27. Lembre que as linhas visualizam a quantidade de `colorA` e `colorB` para misturar por canal.
+Agora, descomente a linha de número 25 e veja o que acontece. Então tente descomentar as linhas 26 e 27. Lembre-se que as linhas representam a intensidade de `colorA` e `colorB` a serem misturar por canal.
 
 <div class="codeAndCanvas" data="gradient.frag"></div>
 
-Você deve ter reconheido as três funções de forma que estamos usando nas linhas 25 a 27. Brinque com elas! É hora de você explorar e exibir suas habilidades do capítulo anterior e fazer uns gradientes interessantes. Tente os seguintes exercícios:
+Você provavelmente reconheceu os três modelos de funções que estamos usando nas linhas 25 a 27. Explore com eles! Agora é hora para experimentar e exibir suas habilidades do capítulo anterior e criar gradientes interessantes. Tente os seguintes exercícios:
 
 ![William Turner - The Fighting Temeraire (1838)](turner.jpg)
 
-* Compor um gradiente que se pareça com o pôr do sol do William Turner 
+* Componha um gradiente que se assemelha com entardecer de William Turner
 
-* Animar uma transição entre um nascer e um pôr do sol, usando `u_time`.
+* Anime uma transição entre o nascer do sol e o pôr do sol usando `u_time`.
 
-* Você consegue fazer um arco-íris com o que aprendemos até agora?
+* Você consegue criar um arco-íris usando o que foi aprendido até agora?
 
 * Use a função `step()` para criar uma bandeira colorida.
 
 ### HSB
 
-Não podemos falar de cores sem falar no espaço de cores. Como você deve saber, existem modos diferentes de organizar as cores, além dos canais de vermelho, verde e azul.
+Nós não podemos falar sobre cores sem mencionar o espaço de cores. Como você provavelmente sabe, existem diferentes formas de organizar cores além de canais de vermelho, verde e azul.
 
-[HSB](http://en.wikipedia.org/wiki/HSL_and_HSV) significa Matix(Hue), Saturação e Brilho (ou Valor) e é uma organização mais intuitiva e útil para as cores. Tire um momento para ler as funções `rgb2hsv()` e  `hsv2rgb()` no código a seguir.
+[HSB](http://en.wikipedia.org/wiki/HSL_and_HSV) vem de Hue(Matiz), Saturation(Saturação) e Brightness (Brilho ou Valor) e é uma forma muito mais intuitiva e útil de organizar cores. Pare um momento para ler as funções  `rgb2hsv()` e `hsv2rgb()` no código a seguir.
 
-Mapeando a posição no eixo x para Matiz, e a posiçãono eixo y para o Brilho, obtemos um bom espectro de cores visíveis. Esta distribuição espacial da cor pode ser bem interessante de se ter à mão; é mais intuitivo pegar uma cor com HSB do que com RGB.
+Mapeando a posição no eixo x para a matiz e a posição no eixo y para brilho, nós obtemos um lindo espectro de cores visíveis. Esta distribuição espacial de cores pode ser muito útil; é muito mais intuitivo para escolher uma cor com HSB do que com RGB
 
 <div class="codeAndCanvas" data="hsb.frag"></div>
 
-### HSB em coordenadas polares
+### HSB em coordenadas populares
 
-O HSB foi projetado originalmente para ser representados em coordenadas polares (baseadas em ângulo e raio) em vez de coordenadas cartesianas (baseadas em x e y). Para mapear nossa função HSB para coordenadas polares, precisamos obter o ângulo e distância do centro da tela até a coordenada do pixel. Para isso, usamos as funções [`length()`](../glossary/?search=length) e [`atan(y,x)`](../glossary/?search=atan) (que é a versão GLSL da função comumente usada `atan2(y,x)`).  
+HSB foi originalmente criada para ser representada em coordenadas polares (baseada em ângulo e raio) ao invés de coordenadas cartesianas (baseadas em x e y). Para mapear nossa função de HSB em coordenadas polares, precisamos obter o ângulo e a distância do centro da tela para a coordenada do píxel. Para isso, usaremos a função [`length()`](../glossary/?search=length) e [`atan(y,x)`](../glossary/?search=atan) (que é uma versão GLSL da comumente usada `atan2(y,x)`).  
 
-Quando você usa funções de vetores e trigonométricas, `vec2`, `vec3` e `vec4` são tratados como vetores mesmo quando eles representam cores. Vamos começar a tratar cores e vetores de modo similar, e de fato você vai descobrir que essa flexibilidade conceitual traz muito poder.
+Ao utilizar vetores e funções trigonométricas, `vec2`, `vec3` e `vec4` são tratados como vetores mesmo quando elas representam cores. Nós começaremos a tratar cores e vetores de forma similar e você verá que esta flexibilidade conceitual é muito poderosa.
 
+**Nota:** Se você estiver se perguntando, existem mais funções geométricas além de [`length`](../glossary/?search=length), como [`distance()`](../glossary/?search=distance), [`dot()`](../glossary/?search=dot), [`cross`](../glossary/?search=cross), [`normalize()`](../glossary/?search=normalize), [`faceforward()`](../glossary/?search=faceforward), [`reflect()`](../glossary/?search=reflect) e [`refract()`](../glossary/?search=refract). Também em GLSL tem funções relacionais especiais para vetorais como: [`lessThan()`](../glossary/?search=lessThan), [`lessThanEqual()`](../glossary/?search=lessThanEqual), [`greaterThan()`](../glossary/?search=greaterThan), [`greaterThanEqual()`](../glossary/?search=greaterThanEqual), [`equal()`](../glossary/?search=equal) e [`notEqual()`](../glossary/?search=notEqual).
 
-**Nota:** Se você está se perguntando, existem mais funções geométricas além de [`length`](../glossary/?search=length) como: [`distance()`](../glossary/?search=distance), [`dot()`](../glossary/?search=dot), [`cross`](../glossary/?search=cross), [`normalize()`](../glossary/?search=normalize), [`faceforward()`](../glossary/?search=faceforward), [`reflect()`](../glossary/?search=reflect) e [`refract()`](../glossary/?search=refract). GLSL também tem funções relacionais especiais para vetores, como: [`lessThan()`](../glossary/?search=lessThan), [`lessThanEqual()`](../glossary/?search=lessThanEqual), [`greaterThan()`](../glossary/?search=greaterThan), [`greaterThanEqual()`](../glossary/?search=greaterThanEqual), [`equal()`](../glossary/?search=equal) e [`notEqual()`](../glossary/?search=notEqual).
+Uma vez que obtemos o ângulo e a tamanho, precisamos "normalizar" seus valores para o intervalo entre 0.0 e 1.0. Na linha 27, [`atan(y,x)`](../glossary/?search=atan) retornará um ângulo em radianos entre -PI e PI (-3.14 a 3.14), então precisamos dividir este número por `TWO_PI` (definido no topo do código) para obtermos valores entre -0.5 até 0.5, que, com uma simples adição, nós mudamos para o intervalo desejado de 0.0 a 1.0. O raio retornará um máximo de 0.5 (porque nós estamos calculando a distância a partir do centro da tela), então nós precisamos dobrar este intervalo (multiplicando por dois) para obter um máximo de 1.0.
 
-Uma vez que obtivemos o ângulo e tamanho, temos que "normalizar" os valores para o range entre 0.0 e 1.0. Na linha 27, [`atan(y,x)`](../glossary/?search=atan) vai retornar um ângulo em radianos, entre -PI e PI (-3.14 to 3.14), então temos que dividir esse número por `TWO_PI` (definido no início do código) para chegar a valores entre -0.5 e 0.5, que, por simples adição, mudamos para o range desejado de 0.0 a 1.0. O raio vai retornar um valor máximo de 0.5 (porque estamos calculando a distância do cento da tela), então precisamos dobrar esse range (multiplicando por dois) para ter o máximo de 1.0.
-
-Como pode ver, nosso jogo aqui é transformar e mapear ranges para o range de 0.0 a 1.0 que nós gostamos.
+Como você pode observar, nosso jogo aqui é sobre transformar e mapear intervalos para 0.0 a 1.0 que gostamos.
 
 <div class="codeAndCanvas" data="hsb-colorwheel.frag"></div>
 
 Tente os seguintes exercícios:
 
-* Modifique o exemplo polar para conseguir uma roda de cores girando, parecido com o ícone de espera do mouse.
+* Modifique o exemplo de coordenadas polares para obter uma roda de cores que gira, assim como o ícone de espera do mouse.
 
-* Use uma função de forma junto com a de conversão de HSB para RGB para expandir um valor de matiz particular e encolher o resto.
+* Use a modelagem de função junto com a função de conversão de HSB para RGB para expandir um valor da matiz em particular e comprimir o resto.
 
 ![William Home Lizars - Red, blue and yellow spectra, with the solar spectrum (1834)](spectrums.jpg)
 
-* Se você olhar bem de perto na roda de cores usada nos selecionadores (ver a imagem acima), eles usam um espectro diferente de acordo com o espaço de cores RYB. por exemplo, a cor oposta ao vermelho deveria ser o verde, mas no nosso exemplo é o ciano. Você consegue achar um jeito de consertar isso, de modo a ficar parecendo exatamente igual à imagem seguinte? [Dica: esse é um bom momento para usar funções de forma.]
+* Se você olhar de perto na roda de cores usada em seletores de cor (veja a imagem abaixo), elas usam um diferente espectro de acordo com o espaço de cores em RYB. Por exemplo, a cor oposta ao vermelho deve ser verde, mas no nosso exemplo é ciano. Você consegue encontrar um jeito de consertar isso para parecer exatamente com a imagem a baixo? [Dica: este é um grande momento para usar modelagem de funções.]
 
 ![](colorwheel.png)
 
-* Leia o [livro Interaction of Color do Josef Albers'](http://www.goodreads.com/book/show/111113.Interaction_of_Color) e use os seguintes exemplos de shaders como prática.
+* Leia [Josef Albers' book Interaction of Color](http://www.goodreads.com/book/show/111113.Interaction_of_Color) (EM INGLÊS) e use os seguintes exemplos de shader como prática.
 
 <div class="glslGallery" data="160505191155,160505193939,160505200330,160509131554,160509131509,160509131420,160509131240" data-properties="clickRun:editor,openFrameIcon:false,showAuthor:false"></div>
 
 #### Nota sobre funções e argumentos
 
-Antes de pular para o próximo capítulo, vamos parar e recapitular. Volte e dê uma olhada nas funções nos exemplos anteriores. Você vai notar o `in` antes do tipo dos argumentos. Isso é um [*qualificador*](http://www.shaderific.com/glsl-qualifiers/#inputqualifier) e nesse caso, ele especifica que a variável é somente de leitura. Em exemplos futuros, vamos ver que é possível definir argumentos como `out` ou `inout`. Esse último, `inout`, é conceitualmente similar a passar um argumento por referência, que vai nos dar a possibilidade de modificar uma variável passada.
+Antes de irmos para o próximo capítulo, vamos parar e rebobinar. Volte e dê uma olhada nas funções nos exemplos anteriores. Você vai perceber um `in` antes dos tipos de argumentos. Isso é um *qualificador*](http://www.shaderific.com/glsl-qualifiers/#inputqualifier) e neste caso, especifica que a variável é somente leitura. Em exemplos futuros, veremos que também é possível definir argumentos como `out` ou `inout`. Este último, `inout`, é conceitualmente similar a passar um argumento pela referência na qual nos dará a possibilidade de modificar uma variável passada.
 
 ```glsl
 int newFunction(in vec4 aVec4,      // read-only
                 out vec3 aVec3,     // write-only
                 inout int aInt);    // read-write
 ```
-Você pode não acreditar, mas agora temos todos os elementos para fazer desenhos legais. No próximo capítulo, vamos aprender como combinar todos os nossos truques para fazer formar geométricas fazendo um *blend* (misturando) o espaço. Sim... *blend* no espaço.
 
+Você pode não acreditar, mas agora nós temos todos os elementos para fazer desenhos legais. No próximo capítulo, aprenderemos como combinar todos os truques para criar formas geométricas *mesclando* o espaço. Isso mesmo... *mesclando* espaço. 

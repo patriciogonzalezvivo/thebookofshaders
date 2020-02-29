@@ -6,7 +6,7 @@ In GPU-land rendering text is an overcomplicated task for a first step, instead 
 
 <div class="codeAndCanvas" data="hello_world.frag"></div>
 
-If you are reading this book in a browser the previous block of code is interactive. That means you can click and change any part of the code you want to explore. Changes will be updated immediately thanks to the GPU architecture that compiles and replaces shaders *on the fly*. Give it a try by changing the values on line 6.
+If you are reading this book in a browser the previous block of code is interactive. That means you can click and change any part of the code you want to explore. Changes will be updated immediately thanks to the GPU architecture that compiles and replaces shaders *on the fly*. Give it a try by changing the values on line 8.
 
 Although these simple lines of code don't look like a lot, we can infer substantial knowledge from them:
 
@@ -34,7 +34,7 @@ Now that we've described the most relevant elements of our "hello world!" progra
 
 * Try replacing the floats with integers, your graphic card may or may not tolerate this behavior.
 
-* Try commenting out line 6 and not assigning any pixel value to the function.
+* Try commenting out line 8 and not assigning any pixel value to the function.
 
 * Try making a separate function that returns a specific color and use it inside `main()`. As a hint, here is the code for a function that returns a red color:
 

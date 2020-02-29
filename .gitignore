@@ -4,6 +4,7 @@ tmp.md
 tmp*.png
 book.tex
 book.pdf
+book.epub
 log/*
 /.idea
 .idea/
