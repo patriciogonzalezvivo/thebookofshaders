@@ -1,0 +1,2 @@
+Matriz é uma ferramenta poderosa para manipular vetores. Ser experiente com matrizes lhe permite a, livremente, transladar, escalar e rotacionar formas. Uma vez que a técnica pode ser aplicada igualmente para qualquer coisa expressada por vetores, vamos dar uma olhada em usos muito mais avançados depois, neste livro. Matrizes podem árecer complexas à primeira vista, mas você vai achá-las bem úteis depois que pegar o conceito. Vamos praticar aqui e aprender o básico com alguns exemplos simples.
+
