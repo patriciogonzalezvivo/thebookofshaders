@@ -23,7 +23,7 @@ void main() {
     point[3] =  vec2(0.31,0.26);
     point[4] = u_mouse/u_resolution;
 
-    float m_dist = 1.;  // minimun distance
+    float m_dist = 1.;  // minimum distance
 
     // Iterate through the points positions
     for (int i = 0; i < 5; i++) {
