@@ -28,7 +28,7 @@ void main () {
     float r = length(st);
     float a = atan(st.y, st.x);
 
-    // Repeat side acoriding to angle
+    // Repeat side according to angle
     float sides = 10.;
     float ma = mod(a, TWO_PI/sides);
     ma = abs(ma - PI/sides);
