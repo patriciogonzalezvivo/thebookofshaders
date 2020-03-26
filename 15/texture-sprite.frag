@@ -25,7 +25,7 @@ void main () {
     // Normalize value of the frame resolution
     vec2 nRes = u_tex0Resolution/fRes;
 
-    // Scale the coordenates to a single frame
+    // Scale the coordinates to a single frame
     st = st/nRes;
 
     // Calculate the offset in cols and rows
