@@ -12,81 +12,81 @@ Vamos começar, analisando a seguinte função:
 
 <div class="simpleFunction" data="y = fract(sin(x)*1.0);"></div>
 
-Acima, estamos extraindo o conteúdo fracionário de uma onda de seno. Os valores de [```sin()```](../glossary/?search=sin) que flutuam entre ```-1.0``` e ```1.0``` foram cortados depois do ponto flutuante, retornando todos valores positivos entre ```0.0``` e ```1.0```. Podemos usar esse efeito para obter algums valores pseudo-aleatórios, quebrando essa onda de seno em pedaços menores. Como? Multiplicando o resultante de [```sin(x)```](../glossary/?search=sin) por números maiores. Vá em frente e clique na função acima e comece a adicionar alguns zeros.
+Acima, estamos extraindo o conteúdo fracionário de uma onda senoide. Os valores de [```sin()```](../glossary/?search=sin) que flutuam entre ```-1.0``` e ```1.0``` foram cortados depois do ponto flutuante, retornando todos valores positivos entre ```0.0``` e ```1.0```. Podemos usar esse efeito para obter algums valores pseudo-aleatórios, quebrando essa onda de seno em pedaços menores. Como? Multiplicando o resultante de [```sin(x)```](../glossary/?search=sin) por números maiores. Vá em frente e clique na função acima e comece a adicionar alguns zeros.
 
 Quando você chegar lá pelo ```100000.0``` ( e a equação parecer com isso: ```y = fract(sin(x)*100000.0)``` ) você não vai mais ser capaz de distinguir a onda do seno. A granularidade da parte fracionária corrompeu o fluxo da onda em um caos pseudo-aleatório.
 
 ## Controlando o caos
 
-Using random can be hard; it is both too chaotic and sometimes not random enough. Take a look at the following graph. To make it, we are using a ```rand()``` function which is implemented exactly like we describe above.
+Usar o random pode ser difícil; é ao mesmo tempo caótico demais, e às vezes pouco aleatório. Dê uma olhada no gráfico a seguir. Para fazê-lo, estamos usando a função ```rand()``` que é implementada exatamente como descrevemos acima.
 
-Taking a closer look, you can see the [```sin()```](../glossary/?search=sin) wave crest at ```-1.5707``` and ```1.5707```. I bet you now understand why - it's where the maximum and minimum of the sine wave happens.
+Olhando mais de perto, você pode ver a crista da onda do [```sin()```](../glossary/?search=sin) em ```-1.5707``` e ```1.5707```. Eu aposto que agora você entende porque - é onde acontecem o máximo e o mínimo da onda de seno.
 
-If look closely at the random distribution, you will note that the there is some concentration around the middle compared to the edges.
+Se olhar bem de perto na distribuição aleatória, você vai notar que existe uma concentração em torno do meio, comparado com as bordas.
 
 <div class="simpleFunction" data="y = rand(x);
 //y = rand(x)*rand(x);
 //y = sqrt(rand(x));
 //y = pow(rand(x),5.);"></div>
 
-A while ago [Pixelero](https://pixelero.wordpress.com) published an [interesting article about random distribution](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/). I've added some of the functions he uses in the previous graph for you to play with and see how the distribution can be changed. Uncomment the functions and see what happens.
+Há um certo tempo, o [Pixelero](https://pixelero.wordpress.com) publicou um  [artigo interessante sobre distribuição aleatória](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/). Eu adicionei alguma das funções que ele usa no gráfico anterior, para você brincar com elas, e ver como a distribuição pode ser alterada. Descomente as funções e veja o que acontece.
 
-If you read [Pixelero's article](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/), it is important to keep in mind that our ```rand()``` function is a deterministic random, also known as pseudo-random. Which means for example ```rand(1.)``` is always going to return the same value. [Pixelero](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/) makes reference to the ActionScript function ```Math.random()``` which is non-deterministic; every call will return a different value.
+Se você ser o [artigo do Pixelero](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/), é importante ter em mente que nossa função ```rand()``` é um random determinístico, também conhecido como pseudo-random. Isso quer dizer que, por exemplo, ```rand(1.)``` vai sempre retornar o mesmo valor. [Pixelero](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/) faz referência à função ```Math.random()``` do ActionScriptm que é não-determinística; toda chamada vai retornar um valor diferente.
 
 ## 2D Random
 
-Now that we have a better understanding of randomness, it's time to apply it in two dimensions, to both the ```x``` and ```y``` axis. For that we need a way to transform a two dimensional vector into a one dimensional floating point value. There are different ways to do this, but the [```dot()```](../glossary/?search=dot) function is particulary helpful in this case. It returns a single float value between ```0.0``` and ```1.0``` depending on the alignment of two vectors.
+Agora que temos um entendimento melhor da aleatoriedade, é hora de aplicar isso em duas dimensões, tanto para o eixo ```x``` quanto o ```y```. Para isso, precisamos de uma maneira de transformar um vetor bi-dimensional em um valor de ponto flutuante, de uma dimensão. Existem formas diferentes de se fazer isso, mas a função [```dot()```](../glossary/?search=dot) é bem útil nesse caso. Ela retorna um valor float entre ```0.0``` e ```1.0``` dependendo do alinhamento dos vetores.
 
 <div class="codeAndCanvas" data="2d-random.frag"></div>
 
-Take a look at lines 13 to 15 and notice how we are comparing the ```vec2 st``` with another two dimensional vector ( ```vec2(12.9898,78.233)```).
+Veja as linhas 13 a 15 e note como estamos comparando o ```vec2 st``` com outro vetor bi-dimensional ( ```vec2(12.9898,78.233)```).
 
-* Try changing the values on lines 14 and 15. See how the random pattern changes and think about what we can learn from this.
+* Tente mudar os valores  nas linhas  14 e 15. Veja como o padrão do random muda e pense no que podemos aprender com isso.
 
-* Hook this random function to the mouse interaction (```u_mouse```) and time (```u_time```) to understand better how it works.
+* Junte essa função random à interação com o mouse (```u_mouse```) e tempo (```u_time```) para entender melhor como ela funciona.
 
-## Using the chaos
+## Usando o chaos
 
-Random in two dimensions looks a lot like TV noise, right? It's a hard raw material to use to compose images. Let's learn how to make use of it.
+A random em duas dimensões parece bastante com o ruído da TV, não é? É um material difícil para usar para compor imagens. Vamos aprender como fazer uso disso.
 
-Our first step is to apply a grid to it; using the [```floor()```](../glossary/?search=floor) function we will generate an integer table of cells. Take a look at the following code, especially lines 22 and 23.
+Nosso primeiro passo é aplicar um grid; usando a função [```floor()```](../glossary/?search=floor) vamos gerar uma tabela inteira de células. Dê uma olhada nesse código a seguir, em especial as linhas 22 e 23.
 
 <div class="codeAndCanvas" data="2d-random-mosaic.frag"></div>
 
-After scaling the space by 10 (on line 21), we separate the integers of the coordinates from the fractional part. We are familiar with this last operation because we have been using it to subdivide a space into smaller cells that go from ```0.0``` to ```1.0```. By obtaining the integer of the coordinate we isolate a common value for a region of pixels, which will look like a single cell. Then we can use that common integer to obtain a random value for that area. Because our random function is deterministic, the random value returned will be constant for all the pixels in that cell.
+Depois de escalar o espaço por 10 (na linha 21), nós separamos os inteiros das coordernadas da parte fracionária. Estamos familiares com essa última operação porque já vínhamos usando para subdividir um espaço em células menores, que vão de ```0.0``` a ```1.0```. Obtendo a parte inteira da coordenada, isolamos um valor comum para uma região de pixels, que vai parecer com uma célula simples. Então, podemos usar esse inteiro comum para obter um valor aleatório para essa área. Como nossa random é determinística, o valor aleatório retornado vai ser constante para todos os pixels naquela célula.
 
-Uncomment line 29 to see that we preserve the floating part of the coordinate, so we can still use that as a coordinate system to draw things inside each cell.
+Descomente a linha 29 e veja que nós preservamos a parte de ponto flutuante da coordenada, de modo que podemos ainda usar o sistema de coordenadas para desenhar coisas dentro de cada célula.
 
-Combining these two values - the integer part and the fractional part of the coordinate - will allow you to mix variation and order.
+Combinar esses dois valores - a parte inteira e a fracionária da coordenada - vai te permitir misturar variação e ordem.
 
-Take a look at this GLSL port of the famouse ```10 PRINT CHR$(205.5+RND(1)); : GOTO 10``` maze generator.
+Dê uma olhada nessa versão portada para GLSL do famoso gerador de labirintos ```10 PRINT CHR$(205.5+RND(1)); : GOTO 10```.
 
 <div class="codeAndCanvas" data="2d-random-truchet.frag"></div>
 
-Here I'm using the random values of the cells to draw a line in one direction or the other using the ```truchetPattern()``` function from the previous chapter (lines 41 to 47).
+Aqui, estou usando os valores aleatórios de células para desenhar uma linha em uma direção ou outra, usando a função ```truchetPattern()``` do capítulo anterior (linhas 41 a 47).
 
-You can get another interesting pattern by uncommenting the block of lines between 50 to 53, or animate the pattern by uncommenting lines 35 and 36.
+Você pode conseguir outro padrão interessante ao descomentar o bloco de linhas entre 50 e 53, ou animar o padrão ao descomentar as linhas 35 e 36.
 
-## Master Random
+## Seja Master no Random
 
-[Ryoji Ikeda](http://www.ryojiikeda.com/), Japanese electronic composer and visual artist, has mastered the use of random; it is hard not to be touched and mesmerized by his work. His use of randomness in audio and visual mediums is forged in such a way that it is not annoying chaos but a mirror of the complexity of our technological culture.
+[Ryoji Ikeda](http://www.ryojiikeda.com/), um japonês que é compositor eletrônico e artista visual, fez uso de mestre do random; é difícil não ser tocado e hipnotizado por seu trabalho. Seu uso da aleatoriedade em mídia visua e áudio é trabalhada de forma que não é vira um caos irritante, mas um espelho da complexidade de nossa cultura tecnológica.
 
 <iframe src="https://player.vimeo.com/video/76813693?title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-Take a look at [Ikeda](http://www.ryojiikeda.com/)'s work and try the following exercises:
+Veja o trabalho do [Ikeda](http://www.ryojiikeda.com/) e tente os seguintes exercícios:
 
-* Make rows of moving cells (in opposite directions) with random values. Only display the cells with brighter values. Make the velocity of the rows fluctuate over time.
+* Faça linhas de células se movendo (em direções opostas) com valores aleatórios. Exiba apenas as células com valores mais claros. Faça a velocidade das células mudar ao longo do tempo.
 
 <a href="../edit.php#10/ikeda-00.frag"><canvas id="custom" class="canvas" data-fragment-url="ikeda-00.frag"  width="520px" height="200px"></canvas></a>
 
-* Similarly make several rows but each one with a different speed and direction. Hook the position of the mouse to the threshold of which cells to show.
+* De modo similar, faça várias linhas, mas cada uma com velocidade e direção diferentes. Ligue a posição do mouse ao threshold de cada célula a exibir.
 
 <a href="../edit.php#10/ikeda-03.frag"><canvas id="custom" class="canvas" data-fragment-url="ikeda-03.frag"  width="520px" height="200px"></canvas></a>
 
-* Create other interesting effects.
+* Crie outros efeitos interessantes.
 
 <a href="../edit.php#10/ikeda-04.frag"><canvas id="custom" class="canvas" data-fragment-url="ikeda-04.frag"  width="520px" height="200px"></canvas></a>
 
-Using random aesthetically can be problematic, especially if you want to make natural-looking simulations. Random is simply too chaotic and very few things look ```random()``` in real life. If you look at a rain pattern or a stock chart, which are both quite random, they are nothing like the random pattern we made at the begining of this chapter. The reason? Well, random values have no correlation between them what so ever, but most natural patterns have some memory of the previous state.
+Usar uma estética aleatória pode ser problemática, especialmente se você quer fazer simulações que pareçam naturais. A random é simplesmente caótica demais, e bem poucas coisas parecem com ```random()``` na vida real. Se você olhar um padrão de chuva, ou gráfico de ações, que são bem aleatórios, eles não são nada como o padrão aleatório que fizemos no começo desse capítulo. A razão? Bem, valores aleatórios não têm correlação entre eles de qualquer modo, mas a maioria dos padrões naturais têm alguma memória do estado anterior.
 
-In the next chapter we will learn about noise, the smooth and *natural looking* way of creating computational chaos.
+No próximo capítulo vamos aprender sobre ruído, a forma suave e de *aparência natural* de criar caos computacional.
