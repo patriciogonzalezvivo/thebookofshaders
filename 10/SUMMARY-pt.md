@@ -1,0 +1,1 @@
+A vida é chata, se tudo é previsível. Embora nada seja realmente aleatório em computadores, podemos criar pseudo-aleatoriedade que pareça totalmente imprevisível usando truques simples para criar padrões e comportamentos mais interessantes.
