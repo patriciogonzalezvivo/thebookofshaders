@@ -16,7 +16,7 @@ Ce qui signifie qu'il va nous falloir itérer sur tous les points et conserver l
 ![](cell-00.png)
 
 ```glsl
-    float m_dist = 1.;  // distance minimun
+    float m_dist = 1.;  // distance minimum
     for (int i = 0; i < TOTAL_POINTS; i++) {
         float dist = distance(st, points[i]);
         m_dist = min(m_dist, dist);
