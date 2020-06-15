@@ -10,7 +10,7 @@ As part of the construction of this book and my art practice I made an ecosystem
 
 As you can see, it just needs a `canvas` element with `class="glslCanvas"` and the url to your shader in the `data-fragment-url`. Learn more about it [here](https://github.com/patriciogonzalezvivo/glslCanvas).
 
-If you are like me, you will probably want to run shaders directly from the console, in that case you should check out [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). This application allows you to incorporate shaders into your `bash` scripts or unix pipelines and use it in a similar way that [ImageMagick](http://www.imagemagick.org/script/index.php). Also [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) is a great way to compile shaders on your [Raspberry Pi](https://www.raspberrypi.org/), reason why [openFrame.io](http://openframe.io/) use it to display shader artwork. Learn more about this application [here](https://github.com/patriciogonzalezvivo/glslViewer).
+If you are like me, you will probably want to run shaders directly from the console, in that case you should check out [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). This application allows you to incorporate shaders into your `bash` scripts or unix pipelines and use it in a similar way to [ImageMagick](http://www.imagemagick.org/script/index.php). Also [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) is a great way to compile shaders on your [Raspberry Pi](https://www.raspberrypi.org/), reason why [openFrame.io](http://openframe.io/) uses it to display shader artwork. Learn more about this application [here](https://github.com/patriciogonzalezvivo/glslViewer).
 
 ```bash
 glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutputImage.png
@@ -24,7 +24,7 @@ If you prefer to work offline using [SublimeText](https://www.sublimetext.com/) 
 
 ![](glslViewer.gif)
 
-**Share**: the online editor ([editor.thebookofshaders.com/](http://editor.thebookofshaders.com/)) can share your shaders! Both the embedded and standalone version have an export button where you can get an unique URL's to your shader. Also have the ability to export directly to an [openFrame.io](http://openframe.io/).
+**Share**: the online editor ([editor.thebookofshaders.com/](http://editor.thebookofshaders.com/)) can share your shaders! Both the embedded and standalone version have an export button where you can get an unique URL's to your shader. Also it has the ability to export directly to an [openFrame.io](http://openframe.io/).
 
 ![](glslEditor-00.gif)
 
@@ -34,7 +34,7 @@ If you prefer to work offline using [SublimeText](https://www.sublimetext.com/) 
 
 ## Running your shaders on your favorite framework
 
-In case you already have experience programming in a framework like: [Processing](https://processing.org/), [Three.js](http://threejs.org/) or [OpenFrameworks](http://openframeworks.cc/), you're probably excited to try shaders on this platforms you feel comfortable with. The following are examples of how to set shaders in some popular frameworks with the same uniforms that we are going to use throughout this book. (In the [GitHub repository for this chapter](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), you'll find the full source code for these three frameworks.)
+In case you already have experience programming in a framework like: [Processing](https://processing.org/), [Three.js](http://threejs.org/) or [OpenFrameworks](http://openframeworks.cc/), you're probably excited to try shaders on these platforms you feel comfortable with. The following are examples of how to set shaders in some popular frameworks with the same uniforms that we are going to use throughout this book. (In the [GitHub repository for this chapter](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), you'll find the full source code for these three frameworks.)
 
 ### In **Three.js**
 
