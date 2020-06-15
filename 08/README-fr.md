@@ -18,7 +18,7 @@ Un exemple sera sans doute plus explicite :
 Essayez l'exercice suivant :
 
 * Servez vous d'```u_time``` et des fonctions de formes pour déplacer la croix de façon intéressante.
-Pensez à un type de mouvement et tentez de l'appliquer à la croix. Prenez des exemples de la "vraie vie", ça aide! Par exemple, un mouvement de vagues, un pendule, une balle qui rebondit, un vélo qui freine, etc...
+Pensez à un type de mouvement et tentez de l'appliquer à la croix. Prenez des exemples de la "vraie vie", ça aide! Par exemple, un mouvement de vagues, un pendule, une balle qui rebondit, un vélo qui freine, etc.
 
 ### Rotations
 
