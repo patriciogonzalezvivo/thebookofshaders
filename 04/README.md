@@ -1,6 +1,8 @@
 ## Running your shader
 
-As part of the construction of this book and my art practice I made an ecosystem of tools to create, display, share and curate shaders. These tools work consistently across Linux Desktops, MacOS, [Raspberry Pi](https://www.raspberrypi.org/) and browsers without the need of changing your code.
+As part of the construction of this book and my art practice I made an ecosystem of tools to create, display, share and curate shaders. These tools work consistently across Linux, MacOS, Windows and [Raspberry Pi](https://www.raspberrypi.org/) and browsers without the need of changing your code.
+
+## Running your shaders on the browser
 
 **Display**: all live examples in this book are displayed using [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) which makes the process of running standalone shader incredible easy.
 
@@ -187,4 +189,45 @@ void ofApp::draw(){
 }
 ```
 
+If you want to use the full set of uniforms contain on the specs of GlslViewer and GlslCanvas in a more simple way on OpenFrameworks I recomend using the [ofxShader](https://github.com/patriciogonzalezvivo/ofxshader) addon which will also have support for multiple buffers, material shaders, hotreload and automatic conversion for OpenGL ES in the Raspberry Pi. And your code will be as simple as doing
+
+```cpp
+//--------------------------------------------------------------
+void ofApp::setup(){
+    ofDisableArbTex();
+    
+    sandbox.allocate(ofGetWidth(), ofGetHeight());
+    sandbox.load("grayscott.frag");
+}
+
+//--------------------------------------------------------------
+void ofApp::draw(){
+    sandbox.render();
+    sandbox.draw(0, 0);
+}
+```
+
+
 For more information about shaders in openFrameworks go to this [excellent tutorial](http://openframeworks.cc/ofBook/chapters/shaders.html) made by [Joshua Noble](http://thefactoryfactory.com/).
+
+
+### In **Blender**
+
+[GlslTexture](https://github.com/patriciogonzalezvivo/glslTexture) it's an addon that allows you to programatically generate textures using GLSL Shaders and is fully compatible with the rest of the sandboxes on this chapter. How it works:
+
+
+1. Operator Search: `F3` (or `SpaceBar` depending on your setup). Type `GlslTexture`
+
+![](blender/00.png)
+
+2. Change `width` and `height` size and `Source` file (which can be a path to an external file). 
+
+![](blender/01.png)
+
+3. Use the Image on your materials. The Image name will be based on the name of the source file.
+
+![](blender/02.png)
+
+4. Go to the Text Editor (or an external editor if your source file is external) and edit the shader. It will hot reload.
+
+![](blender/03.png)
