@@ -25,7 +25,7 @@ Imaginez le CPU de votre ordinateur comme un *tuyau* et chacune des opérations 
 ![CPU](00.jpeg)
 
 Les jeux vidéos et autres applications graphiques demandent beaucoup plus de puissance de calcul que les autres programmes.
-Par nature, ils demandent de grandes quantités d'opérations au pixel, chaque changement d'image demande de recalculer l'ensemble des pixels de l'écran. Dans les applications 3D, on doit également mettre à jour les modèles, les textures, les transformations etc... ce qui rajoute encore plus de charge au CPU.
+Par nature, ils demandent de grandes quantités d'opérations au pixel, chaque changement d'image demande de recalculer l'ensemble des pixels de l'écran. Dans les applications 3D, on doit également mettre à jour les modèles, les textures, les transformations etc. ce qui rajoute encore plus de charge au CPU.
 
 Revenons à notre métaphore des tuyaux et des opérations. Chaque pixel à l'écran représente une simple petite opération. En soi, chaque le traitement d'une opération n'est pas un problème pour le CPU, mais (et c'est ici que se trouve le problème) il faut appliquer cette petite opération sur chaque pixel à l'écran ! Par exemple, sur un vieux moniteur ayant une résolution de 800x600, 480 000 pixels ont besoin d'être traités par *frame* ce qui équivaut à 14 600 000 calculs par seconde ! C’est une opération assez importante pour surcharger un microprocesseur. Sur un écran rétina moderne ayant une résolution de 2880x1800 cadencé à 60 *frames* par seconde, cela représente un total de 311 040 000 calculs par seconde. Comment les ingénieurs graphiques résolvent-ils ce problème?
 
