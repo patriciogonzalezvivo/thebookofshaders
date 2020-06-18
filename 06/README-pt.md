@@ -132,7 +132,7 @@ Tente os seguintes exercícios:
 
 #### Nota sobre funções e argumentos
 
-Antes de irmos para o próximo capítulo, vamos parar e rebobinar. Volte e dê uma olhada nas funções nos exemplos anteriores. Você vai perceber um `in` antes dos tipos de argumentos. Isso é um *qualificador*](http://www.shaderific.com/glsl-qualifiers/#inputqualifier) e neste caso, especifica que a variável é somente leitura. Em exemplos futuros, veremos que também é possível definir argumentos como `out` ou `inout`. Este último, `inout`, é conceitualmente similar a passar um argumento pela referência na qual nos dará a possibilidade de modificar uma variável passada.
+Antes de irmos para o próximo capítulo, vamos parar e rebobinar. Volte e dê uma olhada nas funções nos exemplos anteriores. Você vai perceber um `in` antes dos tipos de argumentos. Isso é um [*qualificador*](http://www.shaderific.com/glsl-qualifiers/#inputqualifier) e neste caso, especifica que a variável é somente leitura. Em exemplos futuros, veremos que também é possível definir argumentos como `out` ou `inout`. Este último, `inout`, é conceitualmente similar a passar um argumento pela referência na qual nos dará a possibilidade de modificar uma variável passada.
 
 ```glsl
 int newFunction(in vec4 aVec4,      // read-only
