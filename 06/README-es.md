@@ -2,7 +2,7 @@
 
 ![Paul Klee - Color Chart (1931)](klee.jpg)
 
-No hemos tenido oportunidad todavía de hablar sobre los tipos de vectores en GLSL. Antes de ir mas lejos, es importante entender cómo funcionan estas variables, hablar de colores es una buena forma de entenderlos.
+No hemos tenido oportunidad todavía de hablar sobre los tipos de vectores en GLSL. Antes de ir más lejos, es importante entender cómo funcionan estas variables, hablar de colores es una buena forma de entenderlos.
 
 Si te encuentras familiarizado con la programación orientada a objetos, probablemente te habrás dado cuenta que estamos accediendo a los valores de los vectores, como si fuese un ```struct``` de C.
 
@@ -25,7 +25,7 @@ vector[2] = vector.b = vector.z = vector.p;
 vector[3] = vector.a = vector.w = vector.q;
 ```
 
-Las diferentes formas de acceder a las variables son sólo nomenclaturas diseñadas para que el código sea mas claro. Esta flexibilidad de los shaders, es una puerta de entrada para poder relacionar el color con las coordenadas en el espacio.
+Las diferentes formas de acceder a las variables son sólo nomenclaturas diseñadas para que el código sea más claro. Esta flexibilidad de los shaders, es una puerta de entrada para poder relacionar el color con las coordenadas en el espacio.
 
 Otra estupenda funcionalidad de los vectores en GLSL, es que las propiedades se pueden combinar en el orden que quieras, lo que hace muy sencillo manipular y mezclar valores. Esta habilidad es conocida como  *swizzle*.
 
@@ -45,7 +45,7 @@ green.rgb = yellow.bgb; // Assign the blue channel of Yellow (0) to red and blue
 
 #### Para tu caja de herramientas
 
-Quizás no estás acostumbrado a seleccionar colores usando números - puede ser un poco confuso. Por suerte, hay muchísimos programas que nos hacen este trabajo mucho mas sencillo.  Encuentra el que mas se adapte a tus necesidades y úsalo para trabajar con colores en formato vec3 o vec4. Por ejemplo, estos son los templates que uso en [Spectrum](http://www.eigenlogik.com/spectrum/mac):
+Quizás no estás acostumbrado a seleccionar colores usando números - puede ser un poco confuso. Por suerte, hay muchísimos programas que nos hacen este trabajo mucho más sencillo.  Encuentra el que más se adapte a tus necesidades y úsalo para trabajar con colores en formato vec3 o vec4. Por ejemplo, estos son los templates que uso en [Spectrum](http://www.eigenlogik.com/spectrum/mac):
 
 ```
 	vec3({{rn}},{{gn}},{{bn}})
@@ -75,15 +75,15 @@ La función [```mix()```](../glossary/?search=mix) tiene mucho para ofrecer. En 
 
 Mira el siguiente ejemplo, como en los del capítulo anterior, estamos conectando la transición normalizada de la coordenada *x* y visualizándola con una línea. Ahora todos los canales van por la misma línea.
 
-Ahora descomenta la línea 25 y mira lo que sucede. Luego descomenta las lineas 26 y 27. Recuerda que con las lineas visualizamos la cantidad de ```colorA``` y ```colorB``` a mezclar por cada canal.
+Ahora descomenta la línea 25 y mira lo que sucede. Luego descomenta las líneas 26 y 27. Recuerda que con las líneas visualizamos la cantidad de ```colorA``` y ```colorB``` a mezclar por cada canal.
 
 <div class="codeAndCanvas" data="gradient.frag"></div>
 
-Probablemente reconoces las tres funciones de forma que usamos en las lineas 25 y 27. ¡Juega con ellas! Es hora de mezclar y explorar lo aprendido en el capítulo previo para crear gradientes interesantes. Prueba hacer los próximos ejercicios:
+Probablemente reconoces las tres funciones de forma que usamos en las líneas 25 y 27. ¡Juega con ellas! Es hora de mezclar y explorar lo aprendido en el capítulo previo para crear gradientes interesantes. Prueba hacer los próximos ejercicios:
 
 ![William Turner - The Fighting Temeraire (1838)](turner.jpg)
 
-* Crea un gradiente que se parezca a atardecer de William Turner.
+* Crea un gradiente que se parezca a un atardecer de William Turner.
 
 * Crea una transición entre el atardecer y el amanecer usando ```u_time```.
 
@@ -93,21 +93,21 @@ Probablemente reconoces las tres funciones de forma que usamos en las lineas 25 
 
 ### HSB
 
-No podemos hablar de color sin mencionar el espacio de color. Probablemente sabes que hay diferentes formas de organizar un color mas allá de usar los canales de rojo, verde y azul.
+No podemos hablar de color sin mencionar el espacio de color. Probablemente sabes que hay diferentes formas de organizar un color más allá de usar los canales de rojo, verde y azul.
 
-[HSB](http://en.wikipedia.org/wiki/HSL_and_HSV) significa Hue (tono), Saturation (saturación) y Brightness (brillo o valor), es una forma útil y mas intuitiva de organizar el color. Tomate un momento para leer las funciones ```rgb2hsv()``` y ```hsv2rgb()``` del código siguiente.
+[HSB](http://en.wikipedia.org/wiki/HSL_and_HSV) significa Hue (tono), Saturation (saturación) y Brightness (brillo o valor), es una forma útil y más intuitiva de organizar el color. Tomate un momento para leer las funciones ```rgb2hsv()``` y ```hsv2rgb()``` del código siguiente.
 
-Conectando la posición del eje x al tono y la posición del eje y al brillo podemos obtener este bonito espectro del color visible.  La distribución espacial del color puede sernos muy útil; es mas intuitivo seleccionar un color usando HSB que con RGB.
+Conectando la posición del eje x al tono y la posición del eje y al brillo podemos obtener este bonito espectro del color visible. La distribución espacial del color puede sernos muy útil; es más intuitivo seleccionar un color usando HSB que con RGB.
 
 <div class="codeAndCanvas" data="hsb.frag"></div>
 
 ### HSB en coordenadas polares
 
-HSB fue originalmente diseñado para ser representado en coordenadas polares (basadas en el ángulo y el radio) en vez de coordenadas cartesianas (basadas en x e y). Para asociar nuestra función HSB a coordenadas polares necesitamos obtener el ángulo y la distancia del centro de la ventana. para hacer eso usaremos la función [```length()```](../glossary/?search=length) y [```atan(y,x)```](../glossary/?search=atan) (que es la versión en GLSL del comunmente usado ```atan2(y,x)```).
+HSB fue originalmente diseñado para ser representado en coordenadas polares (basadas en el ángulo y el radio) en vez de coordenadas cartesianas (basadas en x e y). Para asociar nuestra función HSB a coordenadas polares necesitamos obtener el ángulo y la distancia del centro de la ventana. Para hacer eso usaremos la función [```length()```](../glossary/?search=length) y [```atan(y,x)```](../glossary/?search=atan) (que es la versión en GLSL del comunmente usado ```atan2(y,x)```).
 
 Cuando usamos vectores y funciones trigonométricas, ```vec2```, ```vec3``` y ```vec4``` son tratados como vectores, incluso cuando representan colores. Comenzaremos a tratar a los colores y a los vectores de una manera similar, de hecho te darás cuenta que es un concepto muy poderoso y flexible.
 
-**Nota:** Si te preguntabas si había mas funciones geométricas además de [```length```](../glossary/?search=length): [```distance()```](../glossary/?search=distance), [```dot()```](../glossary/?search=dot), [```cross```](../glossary/?search=cross), [```normalize()```](../glossary/?search=normalize), [```faceforward()```](../glossary/?search=faceforward), [```reflect()```](../glossary/?search=reflect) y [```refract()```](../glossary/?search=refract). También GLSL tiene funciones relacionadas a los vectores como: [```lessThan()```](../glossary/?search=lessThan), [```lessThanEqual()```](../glossary/?search=lessThanEqual), [```greaterThan()```](../glossary/?search=greaterThan), [```greaterThanEqual()```](../glossary/?search=greaterThanEqual), [```equal()```](../glossary/?search=equal) y [```notEqual()```](../glossary/?search=notEqual).
+**Nota:** Si te preguntabas si había más funciones geométricas además de [```length```](../glossary/?search=length): [```distance()```](../glossary/?search=distance), [```dot()```](../glossary/?search=dot), [```cross```](../glossary/?search=cross), [```normalize()```](../glossary/?search=normalize), [```faceforward()```](../glossary/?search=faceforward), [```reflect()```](../glossary/?search=reflect) y [```refract()```](../glossary/?search=refract). También GLSL tiene funciones relacionadas a los vectores como: [```lessThan()```](../glossary/?search=lessThan), [```lessThanEqual()```](../glossary/?search=lessThanEqual), [```greaterThan()```](../glossary/?search=greaterThan), [```greaterThanEqual()```](../glossary/?search=greaterThanEqual), [```equal()```](../glossary/?search=equal) y [```notEqual()```](../glossary/?search=notEqual).
 
 Una vez que obtenemos el ángulo y la longitud, necesitamos "normalizar" sus valores al rango de 0.0 a 1.0. En la línea 27, [```atan(y,x)```](../glossary/?search=atan) devolverá el angulo en radianes entre -PI y PI (-3.14 a 3.14), por lo que necesitamos dividir este número por ```TWO_PI``` (declarado arriba en nuestro código) para obtener valores de -0.5 a 0.5, que con una simple suma podemos transformar al rango deseado de 0.0 a 1.0. El radio devolverá un máximo de 0.5 (porque estamos calculando la distancia desde el centro del viewport) por lo tanto necesitamos duplicar este rango (multiplicándolo por dos) para obtener un máximo de 1.0.
 
@@ -123,7 +123,7 @@ Intenta resolver los próximos ejercicios:
 
 ![William Home Lizars - Red, blue and yellow spectra, with the solar spectrum (1834)](spectrums.jpg)
 
-* Si miras detenidamente el círculo cromático usado en los goteros de color (ver la imágen de abajo), usan un espectro diferente, se trata del RYB. Por ejemplo, el opuesto del color rojo, debería ser el verde, pero en nuestro ejemplo es el cyan. ¿Podrías encontras la forma de igualarlo para que luzca igual a la siguiente imágen? [Pista: este es un buen momento para usar funciones de forma.]
+* Si miras detenidamente el círculo cromático usado en los goteros de color (ver la imagen de abajo), usan un espectro diferente, se trata del RYB. Por ejemplo, el opuesto del color rojo, debería ser el verde, pero en nuestro ejemplo es el cyan. ¿Podrías encontrar la forma de igualarlo para que luzca igual a la siguiente imagen? [Pista: este es un buen momento para usar funciones de forma.]
 
 ![](colorwheel.png)
 
