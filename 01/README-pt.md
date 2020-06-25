@@ -35,7 +35,7 @@ Outro "super poder" da GPU são funções matemáticas especiais aceleradas via 
 
 ## O que é GLSL?
 
-GLSL é a sigla de openGL Shading Language, o que é o padrão específico de shader que você verá nos próximos capítulos. Existem outros tipos de shaders, dependendo do hardware ou sistemas operacionais. Aqui trabalharemos com as specificações do openGL, reguladas por [Khronos Group](https://www.khronos.org/opengl/). Entender a história do OpenGL pode ser útil se compreender a maior parte das estranhas convenções, para isso eu te recomendo a dar uma olhada em: [openglbook.com/chapter-0-preface-what-is-opengl.html](http://openglbook.com/chapter-0-preface-what-is-opengl.html)
+GLSL é a sigla de openGL Shading Language, o que é o padrão específico de shader que você verá nos próximos capítulos. Existem outros tipos de shaders, dependendo do hardware ou sistemas operacionais. Aqui trabalharemos com as especificações do openGL, reguladas por [Khronos Group](https://www.khronos.org/opengl/). Entender a história do OpenGL pode ser útil se compreender a maior parte das estranhas convenções, para isso eu te recomendo a dar uma olhada em: [openglbook.com/chapter-0-preface-what-is-opengl.html](http://openglbook.com/chapter-0-preface-what-is-opengl.html)
 
 ## Por que shaders têm uma má reputação?
 
