@@ -1,4 +1,4 @@
-## Wie kann ich die Beispielprogramme auf einem RaspberryPi ausführen?
+## Wie kann ich die Beispiele auf einem RaspberryPi ausführen?
 
 Vor wenigen Jahren konnte man noch nicht davon ausgehen, dass jedermann über einen Computer mit einer GPU verfügt. Heutzutage gilt das nicht mehr. Doch im Bereich von Schulen, Universitäten und anderen Weiterbildungseichrichtungen ist dies immer noch eine hohe Anforderung.
 

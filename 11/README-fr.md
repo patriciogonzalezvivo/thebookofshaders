@@ -241,7 +241,7 @@ Bon... assez parlé technique, il est temps d'utiliser cette ressource de façon
 Que pouvez-vous dire de l'impression que chacun "dégage" ? Plissez les yeux pour vous aider, comme quand vous regardez les nuages.
 Que voyez vous ? Qu'est ce que ça vous rappelle ? Quelles utilisations potentielles voyez vous pour chaque type de bruit ? Essayez de concrétiser ces idées.
 
-* Créez un shader qui donne l'illusion d'un flux ; une lava-lamp, des goutes d'encre, de l'eau, etc...
+* Créez un shader qui donne l'illusion d'un flux ; une lava-lamp, des goutes d'encre, de l'eau, etc.
 
 <a href="../edit.php#11/lava-lamp.frag"><canvas id="custom" class="canvas" data-fragment-url="lava-lamp.frag"  width="520px" height="200px"></canvas></a>
 

@@ -5,7 +5,7 @@
 Le bruit peut avoir plusieurs significations selon les personnes. Les musiciens le trouveront dérangeant, les communicants le considèrent comme une interférence et les astrophysiciens comme un rayonnement cosmique.
 
 Toutes ces qualifications, nous ramènent à l'ancrage *physique* du bruit dans notre environnement. Commençons toutefois par quelque chose de plus simple et de plus fondamental ; les ondes et leurs propriétés.
-Une onde peut être considérée comme la variation d'une propriété dans le temps ; le son est une variation de la pression de l'air au fil du temps, une onde électro-magnétique est la fluctuation dans le temps d'un champs électrique et magnétique, etc...
+Une onde peut être considérée comme la variation d'une propriété dans le temps ; le son est une variation de la pression de l'air au fil du temps, une onde électro-magnétique est la fluctuation dans le temps d'un champs électrique et magnétique, etc.
 Les deux caractéristiques importantes d'une onde sont sa *fréquence* et son *amplitude*.
 
 L'équation d'une onde à une dimension peut s'écrire comme suit :
