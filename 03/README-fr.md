@@ -67,7 +67,7 @@ Cette variable n'est pas une *uniform* puisqu'elle ne conserve pas la même vale
 La variable `gl_FragCoord` s'appelle *varying* puisqu'elle va *varier* d'un thread sur l'autre, c'est la seconde _famille_ de variables qu'on peut utiliser dans un shader.
 Cette variable est déclarée *implicitement* dans les _vertex-shader_ et passée systématiquement à notre *fragment-shader*, autrement dit, elle est toujours là mais inutile de la chercher dans le code ci dessous.
 
-Deuxième chose importante, `gl_FragColor`, `gl_FragCoord` et tous les noms de fonctions (`sin()`, `abs()`, etc...) sont des noms réservés ; on ne peut pas s'en servir pour créer nos variables.
+Deuxième chose importante, `gl_FragColor`, `gl_FragCoord` et tous les noms de fonctions (`sin()`, `abs()`, etc.) sont des noms réservés ; on ne peut pas s'en servir pour créer nos variables.
 
 <div class="codeAndCanvas" data="space.frag"></div>
 

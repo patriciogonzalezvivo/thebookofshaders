@@ -16,7 +16,7 @@ void main () {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     vec4 color = vec4(0.0);
 
-    // Fix the proportions by finding the aspect ration
+    // Fix the proportions by finding the aspect ratio
     float aspect = u_tex0Resolution.x/u_tex0Resolution.y;
     // st.y *= aspect;  // and then applying to it
 

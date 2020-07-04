@@ -227,4 +227,6 @@ Il nostro trucco userà il numero di lati di un poligono per costruire il campo 
 
 Congratulazioni! Avete affrontato la parte più complicata! Fate una pausa per poter assimilare questi concetti: disegnare delle semplici forme con Processing è facile, ma qui no. Nella “terra degli Shader”, disegnare le forme è contorto e può essere faticoso adattarsi al nuovo paradigma di codificazione.
 
+Alla fine di questo capitolo troverai un link a [PixelSpirit Deck] (https://patriciogonzalezvivo.github.io/PixelSpiritDeck/) questo mazzo di carte ti aiuterà ad apprendere nuove funzioni SDF, compilarle nei tuoi progetti e utilizzarle sui tuoi shader. Il mazzo ha una curva di apprendimento pregresiva, quindi prendere una carta al giorno e lavorarci su spingerà e metterà alla prova le tue abilità per mesi.
+
 Ora che sapete come disegnare le forme, sono sicuro che vi verranno in mente nuove idee. Nel capitolo successivo imparerete a spostare, ruotare e ridimensionare le forme. Questo vi permetterà di fare delle composizioni!

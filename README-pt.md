@@ -11,23 +11,23 @@ Este é um guia passo-a-passo pelo universo abstrato e complexo de Fragment Shad
 
 ## Conteúdo
 
-* [Sobre este livro](00/)
+* [Sobre este livro](00/?lan=pt)
 
 * Início
-    * [O que é um shader?](01/)
-    * [“Olá mundo!”](02/)
-    * [Uniforms](03/)
-	* [Executando seu shader](04/)
+    * [O que é um shader?](01/?lan=pt)
+    * [“Olá mundo!”](02/?lan=pt)
+    * [Uniforms](03/?lan=pt)
+	* [Executando seu shader](04/?lan=pt)
 
 * Desenho algorítmico
-    * [Funções de forma](05/)
-    * [Cores](06/)
-    * [Formas](07/)
-    * [Matrizes](08/)
-    * [Padrões](09/)
+    * [Funções de forma](05/?lan=pt)
+    * [Cores](06/?lan=pt)
+    * [Formas](07/?lan=pt)
+    * [Matrizes](08/?lan=pt)
+    * [Padrões](09/?lan=pt)
 
 * Design generativo
-    * [Aleatório](10/)
+    * [Aleatório](10/?lan=pt)
     * [Noise](11/)
     * [Cellular noise](12/)
     * [Movimento browniano fracionário](13/)

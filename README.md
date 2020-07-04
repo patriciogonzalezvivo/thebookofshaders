@@ -92,6 +92,8 @@ Thanks [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) for the Korean [transla
 
 Thanks [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) for the Spanish [translation (español)](?lan=es)
 
+Thanks [Raphaela Protásio](https://github.com/Rawphs) and [Lucas Mendonça](https://github.com/luuchowl) for the Portuguese [translation (portugues)](?lan=pt)
+
 Thanks [Nicolas Barradeau](https://twitter.com/nicoptere) and [Karim Naaji](http://karim.naaji.fr/) for the French [translation (français)](?lan=fr)
 
 Thanks [Andrea Rovescalli](https://www.earove.info) for the Italian [translation (italiano)](?lan=it)

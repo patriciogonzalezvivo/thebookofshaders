@@ -1,6 +1,6 @@
 ## Ejecutando tu shader
 
-En este punto seguro estás entusiasmado con poder probar shaders en las plataformas en las que te sientes cómodo. En los siguientes ejemplos veremos como agregarlos el algunos frameworks populares con las mismas uniforms con las que estamos trabajando en este libro. (En el [repositorio de GitHub de este capítulo](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04) encontrarás el código completo de estos ejemplos.)
+En este punto seguro estás entusiasmado con poder probar shaders en las plataformas en las que te sientes cómodo. En los siguientes ejemplos veremos como agregarlos en algunos frameworks populares con las mismas uniforms con las que estamos trabajando en este libro. (En el [repositorio de GitHub de este capítulo](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04) encontrarás el código completo de estos ejemplos.)
 
 **Nota 1**: En caso de que no quieras utilizar los shaders en los siguientes frameworks pero quieras hacerlo fuera del navegador, puedes descargar y compilar [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). Este programa corre en MacOS y en Raspberry Pi, permite ejecutar directamente los ejemplos desde la terminal.
 
@@ -10,7 +10,7 @@ En este punto seguro estás entusiasmado con poder probar shaders en las platafo
 
 El brillante y humilde Ricardo Cabello (también conocido como [MrDoob](https://twitter.com/mrdoob)) ha estado desarrollando junto con otros [contribuidores](https://github.com/mrdoob/three.js/graphs/contributors) probablemente el framework más conocido de WebGL, llamado [Three.js](http://threejs.org/). Encontrarás muchos ejemplos, libros y tutoriales para aprender a hacer cosas geniales en 3D con JavaScript.
 
-Aqui abajo hay un ejemplo del HTML y JS necesario para poder empezar a utilizar shaders con three.js. Presta atención al script```id="fragmentShader"```, aqui es donde puedes copiar los ejemplos de este libro.
+Aqui abajo hay un ejemplo del HTML y JS necesario para poder empezar a utilizar shaders con three.js. Presta atención al script```id="fragmentShader"```, aquí es donde puedes copiar los ejemplos de este libro.
 
 ```html
 <body>
@@ -98,7 +98,7 @@ Aqui abajo hay un ejemplo del HTML y JS necesario para poder empezar a utilizar 
 
 ### En **Processing**
 
-Iniciado por [Ben Fry](http://benfry.com/) y [Casey Reas](http://reas.com/) en 2001, [Processing](https://processing.org/) es un extraordinario y poderoso entorno en el que se puede aprender los primeros pasos con el código (al menos así fue para mí). [Andres Colubri](https://codeanticode.wordpress.com/) ha hecho importantes cambios a la parte de OpenGL y video, logrando que sea más fácil y amigable utilizar shaders GLSL. Processing buscará el archivo  ```"shader.frag"``` en la carpeta ```data``` del sketch. En ese archivo debes poner los ejemplos que encuentres en este libro.
+Iniciado por [Ben Fry](http://benfry.com/) y [Casey Reas](http://reas.com/) en 2001, [Processing](https://processing.org/) es un extraordinario y poderoso entorno en el que se puede aprender los primeros pasos con el código (al menos así fue para mí). [Andrés Colubri](https://codeanticode.wordpress.com/) ha hecho importantes cambios a la parte de OpenGL y video, logrando que sea más fácil y amigable utilizar shaders GLSL. Processing buscará el archivo  ```"shader.frag"``` en la carpeta ```data``` del sketch. En ese archivo debes poner los ejemplos que encuentres en este libro.
 
 ```processing
 PShader shader;
@@ -141,7 +141,7 @@ Para más información sobre shaders en processing puedes chequear este [tutoria
 
 ### En **openFrameworks**
 
-Todos tienen un lugar en el que se sienten mas cómodos, en mi caso, todavía sigue siendo [openFrameworks](http://openframeworks.cc/). Este framework en C++ engloba openGL y otras librerías open source. En muchos puntos es muy parecido a Processing, pero con las complicaciones obvias de trabajar con los compiladores de C++. De la misma forma que Processing, openFrameworks buscará tus shaders en archivos de la carpeta data, no te olvides de copiar los archivos ```.frag``` que quieres usar y cambiar el nombre cuando los cargas.
+Todos tienen un lugar en el que se sienten más cómodos, en mi caso, todavía sigue siendo [openFrameworks](http://openframeworks.cc/). Este framework en C++ engloba openGL y otras librerías open source. En muchos puntos es muy parecido a Processing, pero con las complicaciones obvias de trabajar con los compiladores de C++. De la misma forma que Processing, openFrameworks buscará tus shaders en archivos de la carpeta data, no te olvides de copiar los archivos ```.frag``` que quieres usar y cambiar el nombre cuando los cargas.
 
 ```cpp
 void ofApp::draw(){
@@ -156,4 +156,4 @@ void ofApp::draw(){
 }
 ```
 
-Para mas información sobre shaders en openFrameworks ve a este [excelente tutorial](http://openframeworks.cc/ofBook/chapters/shaders.html) creado por [Joshua Noble](http://thefactoryfactory.com/).
+Para más información sobre shaders en openFrameworks ve a este [excelente tutorial](http://openframeworks.cc/ofBook/chapters/shaders.html) creado por [Joshua Noble](http://thefactoryfactory.com/).

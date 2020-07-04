@@ -25,7 +25,7 @@ void main() {
     vec2 i_st = floor(st);
     vec2 f_st = fract(st);
 
-    float m_dist = 1.;  // minimun distance
+    float m_dist = 1.;  // minimum distance
     for (int j= -1; j <= 1; j++ ) {
         for (int i= -1; i <= 1; i++ ) {
             // Neighbor place in the grid

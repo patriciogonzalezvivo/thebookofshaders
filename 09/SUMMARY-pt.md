@@ -1,0 +1,1 @@
+Padrões repetitivos são um tema perfeito para desenho computacional. Diferente do modo convencional de desenhar, shaders te deixam desenhar tudo em paralelo de uma vez. Em vez de repetir o mesmo procedimento várias vezes, você vai empacotar e repetir o "espaço". Parece sci-fi? Vamos descobrir o que isso quer dizer de verdade.
