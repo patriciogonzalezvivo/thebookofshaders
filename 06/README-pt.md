@@ -27,7 +27,7 @@ vector[3] = vector.a = vector.w = vector.q;
 
 Essas formas diferentes de apontar para variáveis dentro de vetores são apenas nomenclaturas criadas para ajudar você a criar um código mais limpo. Esta flexibilidade embutida em linguagem de shader é a porta para começar a pensar alternadamente em cores e coordenadas espaciais.
 
-Outro ótima característica dos tipos vetoriais em GLSL é que as propriedades podem ser combinadas em qualquer ordem, o que facilita a manipulação dos valores. Esta habilidade é chamada de *swizzle*.
+Outra ótima característica dos tipos vetoriais em GLSL é que as propriedades podem ser combinadas em qualquer ordem, o que facilita a manipulação dos valores. Esta habilidade é chamada de *swizzle*.
 
 ```glsl
 vec3 yellow, magenta, green;

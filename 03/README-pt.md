@@ -1,6 +1,6 @@
 ## Uniforms
 
-Até agora, vimos como a GPU lida um grande número de threads em paralelo, cada uma sendo responsável por atribuir a cor a uma porção da imagem.Apesar de cada thread paralela não saber da existência das outras, precisamos ser capazes de enviá-las algumas entradas (inputs) da CPU. Devido à arquitetura das placas de vídeo, essas entradas serão iguais (*uniform*) para todas as threads e necessariamente determinadas como *somente leitura*. Em outras palavras, cada thread recebe os mesmos dados, os quais se podem ler mas não podem se alterar.
+Até agora, vimos como a GPU lida um grande número de threads em paralelo, cada uma sendo responsável por atribuir a cor a uma porção da imagem. Apesar de cada thread paralela não saber da existência das outras, precisamos ser capazes de enviá-las algumas entradas (inputs) da CPU. Devido à arquitetura das placas de vídeo, essas entradas serão iguais (*uniform*) para todas as threads e necessariamente determinadas como *somente leitura*. Em outras palavras, cada thread recebe os mesmos dados, os quais se podem ler mas não podem se alterar.
 
 Essas entradas são chamamadas de `uniform`  e podem ser de tipos diferentes, como: `float`, `vec2`, `vec3`, `vec4`, `mat2`, `mat3`, `mat4`, `sampler2D` e `samplerCube`. Uniformes são definidas com o tipo correspondente no começo do código, logo após atribuir a precisão padrão de pontos flutuantes,
 
