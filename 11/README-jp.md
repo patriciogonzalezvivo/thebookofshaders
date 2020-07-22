@@ -194,7 +194,7 @@ N次元に対して最も単純な形は N + 1 の頂点を持ちます。つま
 
 <div class="codeAndCanvas" data="simplex-grid.frag"></div>
 
-Ken Perlinがシンプレックスノイズで導入したもう1つの改善点は、3次エルミート曲線（f(x) = 3x^2-2x^3 これは [```smoothstep()```](.../glossary/?search=smoothstep)関数と同等です）を4次エルミート曲線（f(x) = 6x^5-15x^4+10x^3）で置き換えたことです。これによって曲線の両端がより平坦になり、隣の曲線に綺麗につながることで、マス目間の変化がより滑らかになります。下記のグラフの2つ目の式のコメントを外すと実際に見ることができます（もしくは[ここ](https://www.desmos.com/calculator/2xvlk5xp8b)で並べて比較することもできます）。
+Ken Perlinがシンプレックスノイズで導入したもう1つの改善点は、3次エルミート曲線（f(x) = 3x^2-2x^3 これは [```smoothstep()```](.../glossary/?search=smoothstep)関数と同等です）を5次式の曲線 （f(x) = 6x^5-15x^4+10x^3）で置き換えたことです。これによって曲線の両端がより平坦になり、隣の曲線に綺麗につながることで、マス目間の変化がより滑らかになります。下記のグラフの2つ目の式のコメントを外すと実際に見ることができます（もしくは[ここ](https://www.desmos.com/calculator/2xvlk5xp8b)で並べて比較することもできます）。
 
 
 <div class="simpleFunction" data="

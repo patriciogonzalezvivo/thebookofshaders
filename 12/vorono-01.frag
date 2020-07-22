@@ -25,7 +25,7 @@ void main() {
     vec2 i_st = floor(st);
     vec2 f_st = fract(st);
 
-    float m_dist = 10.;  // minimun distance
+    float m_dist = 10.;  // minimum distance
     vec2 m_point;        // minimum point
 
     for (int j=-1; j<=1; j++ ) {

@@ -13,7 +13,7 @@ vec4 cos(vec4 angle)
 ```angle``` specify the quantity, in radians, of which to return the cosine.
 
 ### Description
-```cos()``` returns the trigonometric sine of angle.
+```cos()``` returns the trigonometric cosine of angle.
 
 <div class="simpleFunction" data="y = cos(x); "></div>
 

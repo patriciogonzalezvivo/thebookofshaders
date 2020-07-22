@@ -230,4 +230,6 @@ Unser Trick nutzt die gegebene Anzahl der Seiten eines Polygons, um das benötig
 
 Herzlichen Glückwunsch! Du hast Dich durch schwieriges Fahrwasser gekämpft. Nimm eine kleine Pause, damit sich das Erlernte setzen kann. Das Zeichnen komplexer Formen im Land der Shader ist wahrlich nicht ganz trivial, das kann durchaus ein wenig erschöpfen.
 
+Unten am Ende dieses Kapitels finden Sie einen Link zu [PixelSpirit Deck] (https://patriciogonzalezvivo.github.io/PixelSpiritDeck/). Mit diesem Kartenspiel können Sie neue SDF-Funktionen erlernen, in Ihre Designs einfügen und verwenden auf deine Shader. Das Deck hat eine prägresive Lernkurve. Wenn Sie also eine Karte pro Tag nehmen und daran arbeiten, können Sie Ihre Fähigkeiten monatelang verbessern und herausfordern.
+
 Da Du nun weißt, wie man unterschiedliche Formen zeichnet, kommen Dir bestimmt viele interessante Ideen in den Sinn. In den folgenden Kapiteln lernen wir, wie man Formen verschieben, skalieren und rotieren kann. Das wird Dir ermöglichen, komplexe Kompositionen zu erstellen.

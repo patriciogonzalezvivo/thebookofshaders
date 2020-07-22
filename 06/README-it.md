@@ -127,7 +127,7 @@ Provate gli esercizi successivi:
 
 ![](colorwheel.png)
 
-* Leggete il [libro di Josep Alver "L'interazione dei colori”](http://www.goodreads.com/book/show/111113.Interaction_of_Color) e usate i seguenti esempi di shader come pratica.
+* Leggete il [libro di Josef Albers "L'interazione dei colori”](http://www.goodreads.com/book/show/111113.Interaction_of_Color) e usate i seguenti esempi di shader come pratica.
 
 <div class="glslGallery" data="160505191155,160505193939,160505200330,160509131554,160509131509,160509131420,160509131240" data-properties="clickRun:editor,openFrameIcon:false,showAuthor:false"></div>
 

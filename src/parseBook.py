@@ -4,6 +4,12 @@ import os
 import os.path
 import re
 import subprocess
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-f", "--format", action='append', choices=['tex', 'pdf', 'epub'], type=str.lower, required=True)
+parser.add_argument("--skip-image-generation", help="skip image generation", action="store_true")
+args = parser.parse_args()
 
 latexEngine = "xelatex"
 
@@ -12,11 +18,8 @@ outputPath = "."
 
 if not os.path.exists(outputPath):
     os.makedirs(outputPath)
-pdfBookPath = os.path.join(outputPath, "book.pdf")
-texBookPath = os.path.join(outputPath, "book.tex")
 
 chapters = []
-
 
 def injectShaderBlocks(_folder, _text):
     rta = ""
@@ -42,9 +45,10 @@ def injectShaderBlocks(_folder, _text):
             shaderImage = folder + "/tmp-" + shaderName + ".png"
             shaderCommand = "glslViewer " + shaderPath + " " + \
                             " ".join(shaderTexturePaths) + \
-                            " -s 0.5 -o " + shaderImage
+                            " -s 0.5 --headless -o " + shaderImage
             print shaderCommand
-            returnCode = subprocess.call(shaderCommand, shell=True)
+            if not args.skip_image_generation:
+                returnCode = subprocess.call(shaderCommand, shell=True)
             rta += "![](" + shaderImage + ")\n"
         elif line.find('.gif') >= 0:
             gifPath = re.sub(r'\!\[.*\]\((.*\.gif)\)', r'\1', line.rstrip())
@@ -52,7 +56,8 @@ def injectShaderBlocks(_folder, _text):
             pngImage = gifName + ".png"
             convertCommand = "convert " + gifPath + " " + pngImage
             print convertCommand
-            returnCode = subprocess.call(convertCommand, shell=True)
+            if not args.skip_image_generation:
+                returnCode = subprocess.call(convertCommand, shell=True)
             rta += re.sub(r'\!\[(.*)\]\((.*)\.gif\)',
                           r'![\1](\2-0.png)', line) + '\n'
         else:
@@ -83,36 +88,33 @@ for folder in folders:
 
 # Set up the appropriate options for the pandoc command
 inputOptions = chapters
-generalOptions = ["-N", "--smart", "--no-tex-ligatures", "--toc", "--standalone",
-                  "--preserve-tabs", "-V documentclass=scrbook", "-V papersize=a4", "-V links-as-note", "-S"]
-latexOptions = ["--latex-engine=" + latexEngine]
-outputOptions = ["--output={0}".format(pdfBookPath)]
-pandocCommand = ["pandoc"] + outputOptions + \
-    inputOptions + generalOptions + latexOptions
+generalOptions = ["-N", "--toc", "--standalone", 
+                  "--preserve-tabs", "-V documentclass=scrbook", 
+                  "-V papersize=a4", "-V links-as-note"]
+latexOptions = ["--pdf-engine=" + latexEngine]
 
-# Print out of the chapters being built and the flags being used
-print "Generating {0} from:".format(pdfBookPath)
-for chapter in inputOptions:
-    print "\t{0}".format(chapter)
-print "Using the following flags:"
-for flag in generalOptions + latexOptions:
-    print "\t{0}".format(flag)
+for outputFormat in args.format:
+    bookPath = os.path.join(outputPath, "book.{0}".format(outputFormat))
+    formatOutputOptions = []
 
-# For debugging purposes, it's a good idea to generate the .tex.  Errors
-# printed out through pandoc aren't as useful as those printed
-# directly from trying to build a PDF in TeXworks.
-texOutputOptions = ["--output={0}".format(texBookPath)]
-texPandocCommand = ["pandoc"] + texOutputOptions + \
-    inputOptions + generalOptions + latexOptions
-returnCode = subprocess.call(texPandocCommand)
-if returnCode == 0:
-    print "Successful building of {0}".format(texBookPath)
-else:
-    print "Error in building of {0}".format(texBookPath)
+    if outputFormat == 'epub':
+        formatOutputOptions = ["--epub-metadata=epub/metadata.xml", 
+                                "--epub-cover-image=epub/cover.png"]
 
-# Call pandoc
-returnCode = subprocess.call(pandocCommand)
-if returnCode == 0:
-    print "Successful building of {0}".format(pdfBookPath)
-else:
-    print "Error in building of {0}".format(pdfBookPath)
+    outputOptions = ["--output={0}".format(bookPath)] + formatOutputOptions
+    pandocCommand = ["pandoc"] + inputOptions + outputOptions \
+        + generalOptions + latexOptions
+
+    # Print out of the chapters being built and the flags being used
+    print "Generating {0} from:".format(bookPath)
+    for chapter in inputOptions:
+        print "\t{0}".format(chapter)
+    print "Using the following flags:"
+    for flag in outputOptions + generalOptions + latexOptions:
+        print "\t{0}".format(flag)
+
+    returnCode = subprocess.call(pandocCommand)
+    if returnCode == 0:
+        print "Successful building of {0}".format(bookPath)
+    else:
+        print "Error in building of {0}".format(bookPath)
