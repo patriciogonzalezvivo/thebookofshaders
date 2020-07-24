@@ -9,7 +9,7 @@ A estrutura do código a seguir será nossa cerca. Nela, nós visualizaremos os 
 
 <div class="codeAndCanvas" data="linear.frag"></div>
 
-**Nota rápida**: O construtor do tipo `vec3` "entende" que você quer atribuir o mesmo valor aos três canais de cores, enquanto `vec4` entende que você quer construir um vetor quadridimensional usando um vetor tridimensional e também um quarto valor (neste caso, o valor que controlará o alpha ou opacidade). Veja as linhas 20 e 26 acima por exemplo.
+**Nota rápida**: O construtor do tipo `vec3` "entende" que você quer atribuir o mesmo valor aos três canais de cores, enquanto `vec4` entende que você quer construir um vetor quadridimensional usando um vetor tridimensional e também um quarto valor (neste caso, o valor que controlará o alpha ou opacidade). Veja as linhas 19 e 25 acima por exemplo.
 
 Este código é a sua cerca: É importante observar e entendê-lo. Você voltará algumas vezes para este espaço entre *0.0* e *1.0*. Aprenderá a arte de mesclar e dar forma a esta linha.
 
