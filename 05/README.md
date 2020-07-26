@@ -21,7 +21,7 @@ Interesting, right? On line 22 try different exponents: 20.0, 2.0, 1.0, 0.0, 0.2
 
 [`pow()`](../glossary/?search=pow) is a native function in GLSL and there are many others. Most of them are accelerated at the level of the hardware, which means if they are used in the right way and with discretion they will make your code faster.
 
-Replace the power function on line 22. Try other ones like: [`exp()`](../glossary/?search=exp), [`log()`](../glossary/?search=log) and [`sqrt()`](../glossary/?search=sqrt). Some of these functions are more interesting when you play with them using PI. You can see on line 8 that I have defined a macro that will replace any call to `PI` with the value `3.14159265359`.
+Replace the power function on line 22. Try other ones like: [`exp()`](../glossary/?search=exp), [`log()`](../glossary/?search=log) and [`sqrt()`](../glossary/?search=sqrt). Some of these functions are more interesting when you play with them using PI. You can see on line 8 that I have defined a macro that will replace any use of `PI` with the value `3.14159265359`.
 
 ### Step and Smoothstep
 
