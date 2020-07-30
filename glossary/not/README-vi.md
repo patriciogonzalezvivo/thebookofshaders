@@ -1,5 +1,5 @@
 ## Not
-Logically invert a boolean vector
+Phép logic nghịch đảo.
 
 ### Các phiên bản
 ```glsl
@@ -9,10 +9,10 @@ bvec4 not(bvec4 x)
 ```
 
 ### Các tham số
-```x``` specifies the vector to be inverted.
+```x``` giá trị boolean cần đảo ngược.
 
 ### Mô tả
-```not()``` logically inverts the boolean vector ```x```. It returns a new boolean vector for which each element ```i``` is computed as ```!x[i]```.
+```not()``` đảo ngược ```x```. Kết quả là một vector boolean mà thành phần thứ ```i``` là kết quả của phép logic ```!x[i]```.
 
 ### Tham khảo thêm
 [any()](/glossary/?lan=vi&search=any), [all()](/glossary/?lan=vi&search=all)

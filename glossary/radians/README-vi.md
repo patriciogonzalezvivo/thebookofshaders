@@ -1,5 +1,5 @@
 ## Radians
-Convert a quantity in degrees to radians
+Chuyển đổi góc từ đơn vị độ sang radian.
 
 ### Các phiên bản
 ```glsl
@@ -10,10 +10,10 @@ vec4 radians(vec4 degrees)
 ```
 
 ### Các tham số
-```degrees``` specify the quantity, in degrees, to be converted to radians.
+```degrees``` góc tính bằng độ, cần quy đổi.
 
 ### Mô tả
-```radians()``` converts a quantity, specified in degrees into radians. That is, the return value is ```(PI * degrees)/180```.
+```radians()``` trả về góc (tính bằng radian) theo công thức ```(PI * degrees)/180```.
 
 ### Tham khảo thêm
 [degrees](/glossary/?lan=vi&search=degrees)

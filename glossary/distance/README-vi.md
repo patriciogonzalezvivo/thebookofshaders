@@ -10,7 +10,7 @@ float distance(vec4 p0, vec4 p1)
 ```
 
 ### Các tham số
-```p0``` Điểm đầu tiên
+```p0``` Điểm thứ nhất
 
 ```p1``` Điểm thứ hai
 
@@ -21,4 +21,4 @@ float distance(vec4 p0, vec4 p1)
 
 ### Tham khảo thêm
 
-[length()](/glossary/?lan=vi&search=length), [normalize()](/glossary/?lan=vi&search=normalize), [Chapter 07: Shapes](/07/)
+[length()](/glossary/?lan=vi&search=length), [normalize()](/glossary/?lan=vi&search=normalize), [Chương 7: Hình dạng](/07/?lan=vi)

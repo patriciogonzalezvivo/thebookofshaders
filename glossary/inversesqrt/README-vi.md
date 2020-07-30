@@ -1,5 +1,5 @@
 ## Inversesqrt
-Return the inverse of the square root of the parameter
+Phép nghịch đảo căn bậc 2.
 
 ### Các phiên bản
 ```glsl
@@ -10,10 +10,10 @@ vec4 inversesqrt(vec4 x)
 ```
 
 ### Các tham số
-```x``` specify the value of which to take the inverse of the square root.
+```x``` số cần tính nghịch đảo căn bậc 2.
 
 ### Mô tả
-```inversesqrt()``` returns the inverse of the square root of  ```x```.
+```inversesqrt()``` trả về kết quả của biểu thức ```1 / sqrt(x)```.
 
 <div class="simpleFunction" data="y = inversesqrt(x); "></div>
 

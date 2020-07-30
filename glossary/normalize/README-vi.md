@@ -1,5 +1,5 @@
 ## Normalize
-Calculate the unit vector in the same direction as the input vector
+Chuẩn hóa vector.
 
 ### Các phiên bản
 ```glsl
@@ -10,10 +10,10 @@ vec4 normalize(vec4 x)
 ```
 
 ### Các tham số
-```x``` specifies the vector to normalize.
+```x``` Vector cần chuẩn hóa.
 
 ### Mô tả
-```normalize()``` returns a vector with the same direction as its parameter, ```x```, but with length 1.
+```normalize()``` trả về một vector cùng chiều với ```x``` và có độ dài bằng 1.
 
 ### Tham khảo thêm
 

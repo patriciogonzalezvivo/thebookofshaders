@@ -1,5 +1,5 @@
 ## Faceforward
-Return a vector pointing in the same direction as another
+Tìm vector pháp tuyến cùng phía với vector tới so với một bề mặt.
 
 ### Các phiên bản
 ```glsl
@@ -10,14 +10,14 @@ vec4 faceforward(vec4 N, vec4 I, vec4 Nref)
 ```
 
 ### Các tham số
-```N``` specifies the vector to orient.
+```N``` vector pháp tuyến của bề mặt sẽ va chạm (hướng trả về sẽ trùng hướng này hoặc hướng ngược lại)
 
-```I``` specifies the incident vector.
+```I``` vector tới (hướng tới vị trí va chạm với bề mặt).
 
-```Nref``` specifies the reference vector.
+```Nref``` vector pháp tuyến của bề mặt cần kiểm tra.
 
 ### Mô tả
-```faceforward()``` orients a vector to point away from a surface as defined by its normal. ```If dot(Nref, I) < 0``` faceforward returns ```N```, otherwise it returns ```-N```.
+```faceforward()``` trả về hướng của bề mặt (vector pháp tuyến) tại vị trí va chạm với tia tới. Nếu ```dot(Nref, I) < 0``` trả về ```N```, ngược lại trả về ```-N```.
 
 ### Tham khảo thêm
 [reflect()](/glossary/?lan=vi&search=reflect), [refract()](/glossary/?lan=vi&search=refract)

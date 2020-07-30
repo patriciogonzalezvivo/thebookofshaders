@@ -1,5 +1,5 @@
 ## Max
-Return the greater of two values
+Tìm giá trị lớn hơn giữa 2 giá trị.
 
 ### Các phiên bản
 ```glsl
@@ -14,12 +14,12 @@ vec4 max(vec4 x, float y)
 ```
 
 ### Các tham số
-```x``` specify the first value to compare.
+```x``` Giá trị thứ nhất.
 
-```y``` specify the second value to compare.
+```y``` Giá trị thứ hai.
 
 ### Mô tả
-```max()``` returns the maximum of the two parameters. It returns ```y``` if ```y``` is greater than ```x```, otherwise it returns ```x```.
+```max()``` thực hiện phép so sánh giữa từng cặp giá trị trong hai vector ```x``` và ```y``` để chọn ra các số lớn hơn ở mỗi cặp giá trị.
 
 <div class="simpleFunction" data="y = max(x,0.5); "></div>
 

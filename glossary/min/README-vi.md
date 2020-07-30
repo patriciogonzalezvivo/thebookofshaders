@@ -1,5 +1,5 @@
 ## Min
-Return the lesser of two values
+Tìm giá trị nhỏ hơn giữa 2 giá trị.
 
 ### Các phiên bản
 ```glsl
@@ -14,12 +14,12 @@ vec4 min(vec4 x, float y)
 ```
 
 ### Các tham số
-```x``` specify the first value to compare.
+```x``` Giá trị thứ nhất.
 
-```y``` specify the second value to compare.
+```y``` Giá trị thứ hai.
 
 ### Mô tả
-```min()``` returns the minimum of the two parameters. It returns ```y``` if ```y``` is less than ```x```, otherwise it returns ```x```.
+```min()``` thực hiện phép so sánh giữa từng cặp giá trị trong hai vector ```x``` và ```y``` để chọn ra các số nhỏ hơn ở mỗi cặp giá trị.
 
 <div class="simpleFunction" data="y = min(x,0.5); "></div>
 

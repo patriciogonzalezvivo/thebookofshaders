@@ -1,5 +1,5 @@
 ## MatrixCompMult
-Perform a component-wise multiplication of two matrices
+Nhân từng cặp giá trị tương ứng giữa 2 ma trận.
 
 ### Các phiên bản
 ```glsl
@@ -9,12 +9,12 @@ mat4 matrixCompMult(mat4 x, mat4 y)
 ```
 
 ### Các tham số
-```x``` specifies the first matrix multiplicand.
+```x``` Ma trận thứ nhất.
 
-```y``` specifies the second matrix multiplicand.
+```y``` Ma trận thứ hai.
 
 ### Mô tả
-```matrixCompMult()``` performs a component-wise multiplication of two matrices, yielding a result matrix where each component, ```result[i][j]``` is computed as the scalar product of ```x[i][j]``` and ```y[i][j]```.
+```matrixCompMult()``` trả về ma trận kết quả, với từng thành phần ```result[i][j]``` là kết quả của phép tính ```x[i][j] * y[i][j]```.
 
 ### Tham khảo thêm
-[Chapter 08: Matrix](../08/)
+[Chương 08: Ma trận](../08/?lan=vi)

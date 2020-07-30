@@ -1,5 +1,5 @@
 ## Pow
-Return the value of the first parameter raised to the power of the second.
+Lũy thừa.
 
 ### Các phiên bản
 ```glsl
@@ -10,12 +10,12 @@ vec4 pow(vec4 x, vec4 y)
 ```
 
 ### Các tham số
-```x``` specify the value to raise to the power ```y```.
+```x``` cơ số.
 
-```y``` specify the power to which to raise ```x```.
+```y``` số mũ.
 
 ### Mô tả
-```pow()``` returns the value of ```x``` raised to the ```y``` power.
+```pow()``` trả về kết quả của phép toán ```x``` mũ ```y```
 
 <div class="simpleFunction" data="y = pow(x,3.0); "></div>
 

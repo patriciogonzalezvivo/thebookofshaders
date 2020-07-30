@@ -1,5 +1,5 @@
 ## Sign
-Extract the sign of the parameter
+Trả về dấu của một số.
 
 ### Các phiên bản
 ```glsl
@@ -10,10 +10,10 @@ vec4 sign(vec4 x)
 ```
 
 ### Các tham số
-```x``` specify the value from which to extract the sign.
+```x``` số cần kiểm tra dấu âm dương.
 
 ### Mô tả
-```sign()``` returns -1.0 if x is less than 0.0, 0.0 if x is equal to 0.0, and +1.0 if x is greater than 0.0.
+```sign()``` trả về -1.0 nếu x < 0.0, 0.0 nếu x = 0.0, và +1.0 nếu x > 0.0.
 
 <div class="simpleFunction" data="y = sign(x); "></div>
 

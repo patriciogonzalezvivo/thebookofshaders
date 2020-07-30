@@ -1,5 +1,5 @@
 ## Mod
-Compute value of one parameter modulo another
+Phép tính phần dư
 
 ### Các phiên bản
 ```glsl
@@ -14,11 +14,11 @@ vec4 mod(vec4 x, float y)
 ```
 
 ### Các tham số
-```x``` specify the value to evaluate.
-```y``` specify the value to obtain the modulo of.
+```x``` số bị chia.
+```y``` số chia.
 
 ### Mô tả
-```mod()``` returns the value of ```x``` modulo ```y```. This is computed as ```x - y * floor(x/y)```.
+```mod()``` trả về kết quả là phần dư của phép chia ```x``` cho ```y```, theo công thức ```x - y * floor(x/y)```.
 
 <div class="simpleFunction" data="y = mod(x,1.5); "></div>
 

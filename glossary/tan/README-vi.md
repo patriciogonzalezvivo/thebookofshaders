@@ -1,5 +1,5 @@
 ## Tan
-Return the tangent of the parameter
+Tính tan của một góc lượng giác (đơn vị radian)
 
 ### Các phiên bản
 ```glsl
@@ -10,10 +10,10 @@ vec4 tan(vec4 angle)
 ```
 
 ### Các tham số
-```angle``` specify the quantity, in radians, of which to return the tangent.
+```angle``` góc cần tính tan (đơn vị radian)
 
 ### Mô tả
-```tan()``` returns the trigonometric tangent of angle.
+```tan()``` tính tan của góc ```angle```
 
 <div class="simpleFunction" data="y = tan(x); "></div>
 

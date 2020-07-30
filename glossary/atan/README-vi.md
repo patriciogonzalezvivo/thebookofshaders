@@ -26,4 +26,4 @@ vec4 atan(vec4 y_over_x)
 Ở phiên bản thứ hai, ```atan()``` trả về góc lượng giác (đơn vị radian) ứng với tan bằng ```y_over_x```. Kết quả trả về trong trường hợp này sẽ nằm trong khoảng [-PI/2, PI/2].
 
 ### Tham khảo thêm
-[cos](/glossary/?lan=vi&search=cos), [acos](/glossary/?lan=vi&search=acos), [sin](/glossary/?lan=vi&search=sin), [asin](/glossary/?lan=vi&search=asin), [atan](/glossary/?lan=vi&search=atan), [Các hàm số cơ bản (Hàm hình dạng - Shape function)](/05/?lan=vi), [Chapter 06: Color](/06/)
+[cos](/glossary/?lan=vi&search=cos), [acos](/glossary/?lan=vi&search=acos), [sin](/glossary/?lan=vi&search=sin), [asin](/glossary/?lan=vi&search=asin), [atan](/glossary/?lan=vi&search=atan), [Các hàm số cơ bản (Hàm hình dạng - Shape function)](/05/?lan=vi), [Chương 6: Màu sắc](/06/?lan=vi)

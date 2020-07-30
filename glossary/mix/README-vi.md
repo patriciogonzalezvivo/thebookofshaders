@@ -1,5 +1,5 @@
 ## Mix
-Constrain a value to lie between two further values
+Nội suy tuyến tính giữa 2 giá trị
 
 ### Các phiên bản
 ```glsl
@@ -14,14 +14,14 @@ vec4 mix(vec4 x, vec4 y, float a)
 ```
 
 ### Các tham số
-```x``` Specify the start of the range in which to interpolate.
+```x``` Giá trị nhỏ hơn trong khoảng cần nội suy.
 
-```y``` Specify the end of the range in which to interpolate.
+```y``` Giá trị lớn hơn trong khoảng cần nội suy.
 
-```a``` Specify the value to use to interpolate between x and y.
+```a``` Tỉ lệ nội suy. 
 
 ### Mô tả
-```mix()``` performs a linear interpolation between ```x``` and ```y``` using ```a``` to weight between them. The return value is computed as ```x×(1−a)+y×a```.
+```mix()``` nội suy giá trị giữa ```x``` và ```y``` sử dụng ```a``` làm tỉ lệ nội suy / trọng số. Kết quả của phép tính ```x×(1−a)+y×a```.
 
 <div class="codeAndCanvas" data="../06/mix.frag"></div>
 
@@ -29,4 +29,4 @@ vec4 mix(vec4 x, vec4 y, float a)
 
 ### Tham khảo thêm
 
-[min](/glossary/?lan=vi&search=min), [max](/glossary/?lan=vi&search=max), [Chapter 06: Color](/06/)
+[min](/glossary/?lan=vi&search=min), [max](/glossary/?lan=vi&search=max), [Chương 6: Màu sắc](/06/?lan=vi)

@@ -1,5 +1,5 @@
 ## GreaterThanEqual
-Perform a component-wise greater-than-or-equal comparison of two vectors
+Thực hiện phép so sánh lớn-hơn-hoặc-bằng cho từng cặp giá trị giữa hai vector.
 
 ### Các phiên bản
 ```glsl
@@ -13,12 +13,12 @@ bvec4 greaterThanEqual(ivec4 x, ivec4 y)
 ```
 
 ### Các tham số
-```x``` specifies the first vector to be used in the comparison operation.
+```x``` Vector thứ nhất.
 
-```y``` specifies the second vector to be used in the comparison operation.
+```y``` Vector thứ hai.
 
 ### Mô tả
-```greaterThanEqual()``` returns a boolean vector in which each element ```i``` is computed as ```x[i] ≥ y[i]```.
+```greaterThanEqual()``` trả về một vector boolean mà thành phần thứ ```i``` là kết quả của phép so sánh ```x[i] ≥ y[i]```.
 
 ### Tham khảo thêm
 [lessThanEqual()](/glossary/?lan=vi&search=lessThanEqual), [lessThan()](/glossary/?lan=vi&search=lessThan), [greaterThan()](/glossary/?lan=vi&search=greaterThan), [equal()](/glossary/?lan=vi&search=equal), [notEqual()](/glossary/?lan=vi&search=notEqual), [any()](/glossary/?lan=vi&search=any), [all()](/glossary/?lan=vi&search=all), [not()](/glossary/?lan=vi&search=not)

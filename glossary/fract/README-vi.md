@@ -1,5 +1,5 @@
 ## Fract
-Compute the fractional part of the argument
+Tách phần thập phân của số thực.
 
 ### Các phiên bản
 ```glsl
@@ -10,10 +10,10 @@ vec4 fract(vec4 x)
 ```
 
 ### Các tham số
-```x``` specify the value to evaluate.
+```x``` số thực cần tách phần thập phân.
 
 ### Mô tả
-```fract()``` returns the fractional part of ```x```. This is calculated as ```x - floor(x)```.
+```fract()``` trả về phần thập phân của ```x``` theo công thức ```x - floor(x)```.
 
 <div class="simpleFunction" data="y = fract(x); "></div>
 

@@ -1,5 +1,5 @@
 ## Sin
-Return the sine of the parameter
+Hàm sin
 
 ### Các phiên bản
 ```glsl
@@ -10,10 +10,10 @@ vec4 sin(vec4 angle)
 ```
 
 ### Các tham số
-```angle``` specify the quantity, in radians, of which to return the sine.
+```angle``` góc cần tính sin (theo đơn vị radian)
 
 ### Mô tả
-```sin()``` returns the trigonometric sine of angle.
+```sin()``` trả về kết quả của biểu thức ```sin( angle )```
 
 <div class="simpleFunction" data="y = sin(x); "></div>
 

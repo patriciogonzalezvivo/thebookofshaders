@@ -1,5 +1,5 @@
 ## Floor
-Find the nearest integer less than or equal to the parameter
+Tìm số nguyên gần nhất nhỏ hơn hoặc bằng (Làm tròn xuống).
 
 ### Các phiên bản
 ```glsl
@@ -10,10 +10,10 @@ vec4 floor(vec4 x)
 ```
 
 ### Các tham số
-```x``` specify the value to evaluate.
+```x``` số cần làm tròn xuống
 
 ### Mô tả
-```floor()``` returns a value equal to the nearest integer that is less than or equal to ```x```.
+```floor()``` trả về số nguyên gần nhất nhỏ hơn hoặc bằng với ```x```.
 
 <div class="simpleFunction" data="y = floor(x); "></div>
 

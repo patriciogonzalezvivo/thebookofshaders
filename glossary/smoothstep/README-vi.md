@@ -1,5 +1,5 @@
 ## Smoothstep
-Perform Hermite interpolation between two values
+Thực hiện phép nội suy Hermitte giữa 0 và 1 theo tỉ lệ.
 
 ### Các phiên bản
 ```glsl
@@ -14,21 +14,21 @@ vec4 smoothstep(float edge0, float edge1, vec4 x)
 ```
 
 ### Các tham số
-```edge0``` specifies the value of the lower edge of the Hermite function.
+```edge0``` cận dưới trên trục hoành của hàm Hermitte
 
-```edge1``` specifies the value of the upper edge of the Hermite function.
+```edge1``` cận trên trên trục hoành của hàm Hermitte
 
-```x``` specifies the source value for interpolation.
+```x``` giá trị trên trục hoành
 
 ### Mô tả
-```smoothstep()``` performs smooth Hermite interpolation between ```0``` and ```1``` when ```edge0 < x < edge1```. This is useful in cases where a threshold function with a smooth transition is desired. ```smoothstep()``` is equivalent to:
+```smoothstep()``` thực hiện phép nội suy giữa ```0``` và ```1``` nếu ```edge0 < x < edge1```. Nếu ```x < edge0``` thì trả về ```0```, còn nếu ```x > edge1``` thì trả về ```1```. Hàm này hay dùng khi cần chuyển tiếp giữa 2 vùng mà không muốn đột ngột thay đổi giá trị. Hàm ```smoothstep()``` tương đương với:
 ```glsl
-    genType t;  /* Or genDType t; */
+    genType t;  /* Hoặc genDType t; */
     t = clamp((x - edge0) / (edge1 - edge0), 0.0, 1.0);
     return t * t * (3.0 - 2.0 * t);
 ```
 
-Results are undefined ```if edge0 ≥ edge1```.
+Nếu ```edge0 ≥ edge1``` thì kết quả không xác định được.
 
 <div class="simpleFunction" data="y = smoothstep(0.0,1.0,x); "></div>
 

@@ -1,5 +1,5 @@
 ## Log2
-Return the base 2 logarithm of the parameter
+Tính logarith cơ số 2.
 
 ### Các phiên bản
 ```glsl
@@ -10,10 +10,10 @@ vec4 log2(vec4 x)
 ```
 
 ### Các tham số
-```x``` specify the value of which to take the base 2 logarithm.
+```x``` giá trị cần tính logarith cơ số 2.
 
 ### Mô tả
-```log2()``` returns the base 2 logarithm of ```x```.
+```log2()``` trả về kết quả của hàm số logarith cơ số 2 của ```x```.
 
 <div class="simpleFunction" data="y = log2(x); "></div>
 

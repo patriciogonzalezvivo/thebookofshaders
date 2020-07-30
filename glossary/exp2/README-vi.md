@@ -1,5 +1,5 @@
 ## Exp2
-Return 2 raised to the power of the parameter
+Hàm 2 mũ x.
 
 ### Các phiên bản
 ```glsl
@@ -10,10 +10,10 @@ vec4 exp2(vec4 x)
 ```
 
 ### Các tham số
-```x``` specify the value of the power to which 2 will be raised.
+```x``` số mũ.
 
 ### Mô tả
-```exp2()``` returns 2 raised to the power of ```x```.
+```exp2()``` trả về kết quả của phép tính 2 mũ ```x```.
 
 <div class="simpleFunction" data="y = exp2(x); "></div>
 

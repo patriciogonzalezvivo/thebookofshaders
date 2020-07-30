@@ -1,5 +1,5 @@
 ## NotEqual
-Perform a component-wise not-equal-to comparison of two vectors
+Thực hiện phép so sánh không-bằng giữa các cặp giá trị của 2 vector.
 
 ### Các phiên bản
 ```glsl
@@ -13,12 +13,12 @@ bvec4 notEqual(ivec4 x, ivec4 y)
 ```
 
 ### Các tham số
-```x``` specifies the first vector to be used in the comparison operation.
+```x``` Vector thứ nhất.
 
-```y``` specifies the second vector to be used in the comparison operation.
+```y``` Vector thứ hai.
 
 ### Mô tả
-```notEqual()``` returns a boolean vector in which each element ```i``` is computed as ```x[i] != y[i]```.
+```notEqual()``` trả về một vector boolean mà thành phần thứ ```i``` là kết quả của phép so sánh ```x[i] != y[i]```.
 
 ### Tham khảo thêm
 [lessThanEqual()](/glossary/?lan=vi&search=lessThanEqual), [lessThan()](/glossary/?lan=vi&search=lessThan), [greaterThanEqual()](/glossary/?lan=vi&search=greaterThanEqual), [greaterThan()](/glossary/?lan=vi&search=greaterThan), [equal()](/glossary/?lan=vi&search=equal), [any()](/glossary/?lan=vi&search=any), [all()](/glossary/?lan=vi&search=all), [not()](/glossary/?lan=vi&search=not)

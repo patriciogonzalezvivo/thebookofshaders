@@ -1,5 +1,5 @@
 ## Exp
-Return the natural exponentiation of the parameter
+Tính lũy thừa tự nhiên của một số
 
 ### Các phiên bản
 ```glsl
@@ -10,10 +10,10 @@ vec4 exp(vec4 x)
 ```
 
 ### Các tham số
-```x``` specify the value to exponentiate.
+```x``` số cần tính lũy thừa tự nhiên.
 
 ### Mô tả
-```exp()``` returns the natural exponentiation of ```x```.
+```exp()``` trả về kết quả của phép tính e mũ ```x``` (e là cơ số của logarith tự nhiên, xấp xỉ 2.71828)
 
 <div class="simpleFunction" data="y = exp(x); "></div>
 

@@ -1,5 +1,5 @@
 ## Refract
-Calculate the refraction direction for an incident vector
+Tính vector khúc xạ khi tia tới va chạm với một bề mặt.
 
 ### Các phiên bản
 ```glsl
@@ -10,24 +10,23 @@ vec4 refract(vec4 I, vec4 N, float eta)
 ```
 
 ### Các tham số
-```I``` specifies the incident vector.
+```I``` Vector tới (incident vector), là vector chỉ hướng tia va chạm với bề mặt.
 
-```N``` specifies the normal vector.
+```N``` Vector pháp tuyến của bề mặt tại điểm va chạm, là vector vuông góc với bề mặt.
 
-```eta``` specifies the ratio of indices of refraction.
+```eta``` Tỉ lệ chiết suất giữa hai môi trường.
 
 ### Mô tả
-For a given incident vector ```I```, surface normal ```N``` and ratio of indices of refraction, ```eta```, refract returns the refraction vector, ```R```.
+Cho vector tới ```I```, vector pháp tuyến của bề mặt va chạm ```N``` và , vector khúc xạ chỉ hướng khúc xạ sẽ được tính theo công thức dưới đây và trả về:
 
-```R``` is calculated as:
 ```glsl
 k = 1.0 - eta * eta * (1.0 - dot(N, I) * dot(N, I));
 if (k < 0.0)
-    R = genType(0.0);       // or genDType(0.0)
+    R = genType(0.0);       // hoặc genDType(0.0)
 else
     R = eta * I - (eta * dot(N, I) + sqrt(k)) * N;
 ```
-The input parameters ```I``` and ```N``` should be normalized in order to achieve the desired result.
+```I``` và ```N``` nên được chuẩn hóa (normalize) để có kết quả chính xác nhất.
 
 ### Tham khảo thêm
 

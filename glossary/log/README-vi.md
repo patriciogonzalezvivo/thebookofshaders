@@ -1,5 +1,5 @@
 ## Log
-Return the natural logarithm of the parameter
+Tính logarith tự nhiên của một số
 
 ### Các phiên bản
 ```glsl
@@ -10,10 +10,10 @@ vec4 log(vec4 x)
 ```
 
 ### Các tham số
-```x``` specify the value of which to take the natural logarithm.
+```x``` số cần tính logarith
 
 ### Mô tả
-```log()``` returns the natural logarithm of ```x```.
+```log()``` trả về kết quả của phép tính ```log(x)```.
 
 <div class="simpleFunction" data="y = log(x); "></div>
 

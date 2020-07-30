@@ -1,5 +1,5 @@
-## Texture2D
-Retrieves texels from a texture
+## TextureCube
+Lấy màu của một vị trí bất kỳ trên texture có định dạng cube (6 mặt của khối lập phương).
 
 ### Các phiên bản
 ```glsl
@@ -8,18 +8,18 @@ vec4 textureCube(samplerCube sampler, vec3 coord, float bias)
 ```
 
 ### Các tham số
-```sampler``` specifies the sampler to which the texture from which texels will be retrieved is bound.
+```sampler``` là sampler đã khởi tạo với texture, sẽ giúp ta lấy được màu tại tọa độ mong muốn.
 
-```coord``` specifies the texture coordinates at which texture will be sampled.
+```coord``` tọa độ vị trí cần lấy màu trên texture.
 
-```bias``` specifies an optional bias to be applied during level-of-detail computation.
+```bias``` sai số cho phép nếu áp dụng cơ chế Level-Of-Detail.
 
 ### Mô tả
-The textureCube function returns a texel, i.e. the (color) value of the texture for the given coordinates. The function has one input parameter of the type samplerCube and one input parameter of the type vec3 : sampler, the uniform the texture is bound to, and coord, the 3-dimensional coordinates of the texel to look up.
+Kết quả của hàm là 1 texel, tức màu tại vị trí chỉ định trên texture. 
 
-There is an optional third input parameter of the type float: bias. After calculating the appropriate level of detail for a texture with mipmaps the bias is added before the actual texture lookup operation is executed.
+Tham số thứ ba không bắt buộc. Sau khi tính toán xong Level-Of-Detail phù hợp dựa trên các cấp mipmap, ```bias``` sẽ được dùng để tìm tọa độ trên texture.
 
-Side note: On iOS devices texture lookup functionality is only available in the fragment shader.
+Chú ý: Trên các thiết bị iOS, hàm này chỉ có thể dùng trong fragment shader.
 
 ### Tham khảo thêm
 [texture2D](/glossary/?lan=vi&search=texture2D)

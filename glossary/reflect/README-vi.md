@@ -1,5 +1,5 @@
 ## Reflect
-Calculate the reflection direction for an incident vector
+Tính vector phản xạ khi tia tới va chạm với một bề mặt.
 
 ### Các phiên bản
 ```glsl
@@ -10,14 +10,14 @@ vec4 reflect(vec4 I, vec4 N)
 ```
 
 ### Các tham số
-```I``` specifies the incident vector.
+```I``` Vector tới (incident vector), là vector chỉ hướng tia va chạm với bề mặt.
 
-```N``` specifies the normal vector.or.
+```N``` Vector pháp tuyến của bề mặt tại điểm va chạm, là vector vuông góc với bề mặt.
 
 ### Mô tả
-For a given incident vector ```I``` and surface normal ```N``` reflect returns the reflection direction calculated as ```I - 2.0 * dot(N, I) * N```.
+Cho vector tới ```I``` và vector pháp tuyến của bề mặt va chạm ```N```, vector phản xạ chỉ hướng phản xạ được tính theo công thức ```I - 2.0 * dot(N, I) * N```.
 
-```N``` should be normalized in order to achieve the desired result.
+```N``` nên được chuẩn hóa (normalize) để có kết quả chính xác nhất.
 
 ### Tham khảo thêm
 

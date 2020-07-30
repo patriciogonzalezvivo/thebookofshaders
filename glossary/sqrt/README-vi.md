@@ -1,5 +1,5 @@
 ## Sqrt
-Return the square root of the parameter
+Tính căn bậc hai của một số.
 
 ### Các phiên bản
 ```glsl
@@ -10,10 +10,10 @@ vec4 sqrt(vec4 x)
 ```
 
 ### Các tham số
-```x``` specify the value of which to take the square root.
+```x``` Số cần tính căn bậc 2.
 
 ### Mô tả
-```sqrt()``` returns the square root of ```x```.
+```sqrt()``` trả về căn bậc 2 của ```x```.
 
 <div class="simpleFunction" data="y = sqrt(x); "></div>
 

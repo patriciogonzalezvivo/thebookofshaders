@@ -1,5 +1,5 @@
 ## Step
-Generate a step function by comparing two values
+Kiểm tra một biến có nhỏ hơn ngưỡng nhất định không.
 
 ### Các phiên bản
 ```glsl
@@ -14,14 +14,14 @@ vec4 step(float edge, vec4 x)
 ```
 
 ### Các tham số
-```edge``` specifies the location of the edge of the step function.
+```edge``` ngưỡng cận biên.
 
-```x``` specify the value to be used to generate the step function.
+```x``` giá trị cần kiểm tra xem có nằm trong ngưỡng cận biên không.
 
 ### Mô tả
-```step()``` generates a step function by comparing ```x``` to ```edge```.
+```step()``` so sánh ```x``` với ```edge```.
 
-For element ```i``` of the return value, ```0.0``` is returned ```if x[i] < edge[i]```, and ```1.0``` is returned otherwise.
+Với mỗi thành phần thứ ```i``` trong vector kết quả, nó sẽ nhận giá trị ```0.0``` nếu ```x[i] < edge[i]```, và ngược lại nhận giá trị ```1.0```.
 
 <div class="simpleFunction" data="y = step(0.5,x); "></div>
 

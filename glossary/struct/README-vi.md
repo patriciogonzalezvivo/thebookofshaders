@@ -1,5 +1,5 @@
 ## Struct
-Structure variable type
+Kiểu dữ liệu cấu trúc - struct.
 
 ### Ví dụ
 ```glsl
@@ -17,4 +17,4 @@ newMaterial = matStruct(vec4(0.1, 0.1, 0.1, 1.0),
 ```
 
 ### Mô tả
-```struct``` declare a custom data structures based on standard types. A constructor for the structure with the same name is created automatically. The declaration of a variable (in this case "newMaterial") is optional.
+```struct``` là một kiểu dữ liệu tự do được tạo nên từ các biến dữ liệu có kiểu cơ bản. Với mỗi struct, một hàm tạo cùng tên sẽ được tạo tự động. Không nhất thiết phải khởi tạo các giá trị khi dùng hàm tạo.

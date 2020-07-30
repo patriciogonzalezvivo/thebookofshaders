@@ -1,12 +1,12 @@
 ## Mat4
-4x4 floating point matrix
+Ma trận số thực 4x4
 
 ### Các phiên bản
 ```glsl
-mat4 aMat4 = mat4(1.0, 0.0, 0.0, 0.0,  // 1. column
-                  0.0, 1.0, 0.0, 0.0,  // 2. column
-                  0.0, 0.0, 1.0, 0.0,  // 3. column
-                  0.0, 0.0, 0.0, 1.0); // 4. column
+mat4 aMat4 = mat4(1.0, 0.0, 0.0, 0.0,  // Cột thứ 1
+                  0.0, 1.0, 0.0, 0.0,  // Cột thứ 2
+                  0.0, 0.0, 1.0, 0.0,  // Cột thứ 3
+                  0.0, 0.0, 0.0, 1.0); // Cột thứ 4
 mat4 bMat4 = mat4(1.0);
 
 mat4 cMat4 = mat4(aVec4, bVec4, cVec4, dVec4);
@@ -14,15 +14,13 @@ mat4 dMat4 = mat4(aVec4, aVec3, bVec4, cVec4, aFloat);
 ```
 
 ### Mô tả
-```mat4``` data type is compose for a 4x4 matrix of floating point. As you can see above, can be initialize in different ways:
+```mat4``` là ma trận số thực gồm 4 hàng và 4 cột. Nó có thể được khởi tạo bằng các cách:
 
-- Providing a value for each component column by column.
+- Chỉ định giá trị của từng thành phần
+- Chỉ định 1 giá trị chung cho các thành phần trên đường chéo chính
+- Chỉ định giá trị từng cột, mỗi cột coi như một ```vec4```
 
-- Providing one value that is used for the components on the main diagonal.
-
-- Providing a combination of vectors and scalars.
-
-In the same way data can be accessed component-wise or column by column:
+Có thể lấy giá trị của từng thành phần trong ma trận hoặc lấy từng cột:
 
 ```glsl
 aMat4[3][3] = 1.0;
