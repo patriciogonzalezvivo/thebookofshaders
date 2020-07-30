@@ -1,6 +1,16 @@
 <?php
 
 	$path = "..";
+	$README = "README";
+	$language = "";
+	
+	if ( !empty($_GET['lan']) ) {
+		if (file_exists($README.'-'.$_GET['lan'].'.md')) {
+			$language = '-'.$_GET['lan'];
+			$README .= $language;
+		}
+	}
+
 	if(!empty($_GET))
 		$subtitle = ": ".$_GET['search'];
 
@@ -15,10 +25,10 @@
 
 <?php
 	$Parsedown = new Parsedown();
-	if(empty($_GET))
-		echo $Parsedown->text(file_get_contents ('README.md'));
+	if(empty($_GET['search']))
+		echo $Parsedown->text(file_get_contents($README.'.md'));
 	else
-		echo $Parsedown->text(file_get_contents ( $_GET['search'].'/README.md' ));
+		echo $Parsedown->text(file_get_contents ( $_GET['search'].'/'.$README.'.md' ));
 
 	echo '
 	</div>
