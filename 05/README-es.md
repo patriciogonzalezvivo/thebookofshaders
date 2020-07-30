@@ -9,7 +9,7 @@ El siguiente código va a ser nuestra cerca. Dentro del código visualizamos el 
 
 <div class="codeAndCanvas" data="linear.frag"></div>
 
-**Nota rápida**: el constructor de ```vec3``` "entiende" que quieres asignar tres colores con la misma variable, mientras que el ```vec4``` entiende que quieres crear un vector tridimensional con un cuarto valor (en este caso el que controla el alpha). Mira por ejemplo la línea 20 y la 26 de arriba.
+**Nota rápida**: el constructor de ```vec3``` "entiende" que quieres asignar tres colores con la misma variable, mientras que el ```vec4``` entiende que quieres crear un vector tridimensional con un cuarto valor (en este caso el que controla el alpha). Mira por ejemplo la línea 19 y la 25 de arriba.
 
 Este código es tu cerca; es importante observarlo y entenderlo. Volverás aquí una y otra vez, a este espacio entre el *0.0* y el *1.0*. Aprenderás el arte de doblar y dar forma a esta línea.
 

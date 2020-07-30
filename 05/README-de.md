@@ -11,7 +11,7 @@ Die folgende Codestruktur ist unser Zaun, an dem wir in Anlehnung an die Geschic
 
 **Ein kurzer Hinweis**: Der Konstruktor des ```vec3```-Datentyps „versteht“, wenn Du allen drei Farbkanälen durch die Angabe eines einzigen Parameters diesen einen gleichen Wert zuweisen willst. In diesem Fall erhält man immer einen Grauton zwischen Schwarz ```(0.0, 0.0, 0.0)``` und Weiß ```(1.0, 1.0, 1.0)```.
 
-Ebenso versteht der Konstruktor des ```vec4```-Datentyps, wenn Du einen vierdimensionalen Vektor aus einem dreidimensionalen Vektor erzeugen willst. Der dreidimensionale Vektor verkörpert in diesem Fall den *RGB-Farbwert*, der zusätzliche Parameter den Wert für den *Alpha-Kanal*, also die Deckkraft. Dies geschieht hier in den *Programmzeilen 20 und 26*.
+Ebenso versteht der Konstruktor des ```vec4```-Datentyps, wenn Du einen vierdimensionalen Vektor aus einem dreidimensionalen Vektor erzeugen willst. Der dreidimensionale Vektor verkörpert in diesem Fall den *RGB-Farbwert*, der zusätzliche Parameter den Wert für den *Alpha-Kanal*, also die Deckkraft. Dies geschieht hier in den *Programmzeilen 19 und 25*.
 
 Dieser Programmcode ist Dein Zaun, an dem Du das Streichen bzw. Malen üben kannst. Es ist wichtig, dass Du Dir den Code genau anschaust und ihn verstehst. Denn die darin enthaltenen Konzepte, wie etwa die Normalisierung von *x* und *y* auf Werte zwischen *0.0* und *1.0*, werden uns weiterhin begleiten.
 
