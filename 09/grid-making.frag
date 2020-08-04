@@ -19,7 +19,7 @@ void main() {
     vec3 color = vec3(0.0);
 
     st *= 3.0;      // Scale up the space by 3
-    st = fract(st); // Wrap arround 1.0
+    st = fract(st); // Wrap around 1.0
 
     // Now we have 3 spaces that goes from 0-1
 
