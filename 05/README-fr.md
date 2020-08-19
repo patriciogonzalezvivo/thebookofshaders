@@ -21,7 +21,7 @@ Ne vous focalisez pas trop sur la fonction `plot` pour l'instant, nous y reviend
 Il est donc possible d'ecrire `vec3 color = vec3(y);` pour construire un vecteur à 3 dimensions. Ce vecteur aura la valeur `y` assignée à chaque canal / dimension soit : `color.x = color.y = color.z = y` ou `color.r = color.g = color.b = y` (puisqu'on peut accéder aux variables du vecteur des 2 manières).
 Le constructeur du type `vec4` en revanche, "comprend" que vous allez le construire, soit en passant quatre valeurs dinstinctes : `vec4(0., 0.5, 1., 1.)`, soit en lui passant un `vec3` et un `float` (un nombre) : `vec4(color, 1.)`.
 Dans notre cas, la valeur du second paramètre (le `float`), permet de gérer l'*opacité* aussi appelé l'*alpha*.
-Référez vous aux lignes 20 et 26 dans l'exemple ci-dessus pour bien voir la différence de construction des 2 types.
+Référez vous aux lignes 19 et 25 dans l'exemple ci-dessus pour bien voir la différence de construction des 2 types.
 
 Ce code sera votre palissade ; il est important de bien l'observer et de bien le comprendre.
 Vous reviendrez souvent dans cet espace entre *0.0* et *1.0* pour maîtriser l'art de le transformer et de sculpter cette ligne.

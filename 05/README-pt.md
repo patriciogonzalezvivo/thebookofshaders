@@ -9,7 +9,7 @@ A estrutura do código a seguir será nossa cerca. Nela, nós visualizaremos os 
 
 <div class="codeAndCanvas" data="linear.frag"></div>
 
-**Nota rápida**: O construtor do tipo `vec3` "entende" que você quer atribuir o mesmo valor aos três canais de cores, enquanto `vec4` entende que você quer construir um vetor quadridimensional usando um vetor tridimensional *um* somado a um quarto valor (neste caso, o valor que controlará o alpha ou opacidade). Veja as linhas 20 e 26 acima por exemplo.
+**Nota rápida**: O construtor do tipo `vec3` "entende" que você quer atribuir o mesmo valor aos três canais de cores, enquanto `vec4` entende que você quer construir um vetor quadridimensional usando um vetor tridimensional e também um quarto valor (neste caso, o valor que controlará o alpha ou opacidade). Veja as linhas 19 e 25 acima por exemplo.
 
 Este código é a sua cerca: É importante observar e entendê-lo. Você voltará algumas vezes para este espaço entre *0.0* e *1.0*. Aprenderá a arte de mesclar e dar forma a esta linha.
 
@@ -27,7 +27,7 @@ Substitua a função de potência na linha 22. Tente outras como: [`exp()`](../g
 
 GLSL também tem algumas exclusivas funções nativas de interpolação que são aceleradas pelo hardware.
 
-A interpolação [`step()`](../glossary/?search=step) recebe dois parâmetros. O primeiro é para o limite ou limiar, enquanto o segundo é o valor que nós queremos passar.  Qualquer valor acima do limite retornará `0.0` e qualquer um acima do limite retornará `1.0`.
+A interpolação [`step()`](../glossary/?search=step) recebe dois parâmetros. O primeiro é para o limite ou limiar, enquanto o segundo é o valor que nós queremos passar.  Qualquer valor abaixo do limite retornará `0.0` e qualquer um acima do limite retornará `1.0`.
 
 Experimente mudar este valor de limiar na linha 20 do código a seguir.
 
@@ -37,7 +37,7 @@ A outra função exclusiva é conhecida como [`smoothstep()`](../glossary/?searc
 
 <div class="codeAndCanvas" data="smoothstep.frag"></div>
 
-No exemplo anterior, na linha 12, veja que estamos usando smoothstep para desenhar a linha verde na função `plot()`. Pra cada posição dentro do eixo *x*, esta função faz uma *marcação* num valor específico de *y*. Como? Conectando duas [`smoothstep()`](../glossary/?search=smoothstep) juntas. Dê uma olhada na seguinte função, troque a linha 20 acima por esta, e imagine-a como um corte vertical. O fundo se parece com uma linha, certo?
+No exemplo anterior, na linha 12, veja que estamos usando smoothstep para desenhar a linha verde na função `plot()`. Para cada posição dentro do eixo *x*, esta função faz uma *marcação* num valor específico de *y*. Como? Conectando duas [`smoothstep()`](../glossary/?search=smoothstep) juntas. Dê uma olhada na seguinte função, troque a linha 20 acima por esta, e imagine-a como um corte vertical. O fundo se parece com uma linha, certo?
 
 ```glsl
 float y = smoothstep(0.2,0.5,st.x) - smoothstep(0.5,0.8,st.x);

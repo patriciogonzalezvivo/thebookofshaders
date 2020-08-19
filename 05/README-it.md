@@ -9,7 +9,7 @@ La seguente struttura di codice sarà la nostra recinzione. In questa visualizzi
 
 <div class="codeAndCanvas" data="linear.frag"></div>
 
-**Nota veloce**: il costruttore di tipo ```vec3``` "capisce" che vuoi assegnare i tre canali di colori allo stesso valore, mentre ```vec4``` capisce che vuoi costruire un vettore a quattro dimensioni con tre unidimensionali più un quarto valore (in questo caso il valore che controlla l’alfa o l’opacità). Guarda, ad esempio, le righe 20 e 26 qui sopra.
+**Nota veloce**: il costruttore di tipo ```vec3``` "capisce" che vuoi assegnare i tre canali di colori allo stesso valore, mentre ```vec4``` capisce che vuoi costruire un vettore a quattro dimensioni con tre unidimensionali più un quarto valore (in questo caso il valore che controlla l’alfa o l’opacità). Guarda, ad esempio, le righe 19 e 25 qui sopra.
 
 Questo codice è il tuo recinto; è importante osservarlo e capirlo. Tornerai spesso in questo spazio tra *0.0* e *1.0*. Imparerai l’arte di combinare e modellare questa linea.
 
