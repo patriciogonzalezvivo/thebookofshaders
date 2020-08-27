@@ -240,7 +240,7 @@ So not only can you retrieve a subset of your data, but you can also specify the
 vec4 color = vec4( 0.2, 0.8, 0.0, 1.0 );
 
 //and retrieve the color components in the A,B,G,R order
-vec4 backwards = v4.abgr; // backwards = vec4( 1.0, 0.0, 0.8, 0.2 );
+vec4 backwards = color.abgr; // backwards = vec4( 1.0, 0.0, 0.8, 0.2 );
 ```
 And of course, you can ask the same component multiple times:
 ```glsl
@@ -248,7 +248,7 @@ And of course, you can ask the same component multiple times:
 vec4 color = vec4( 0.2, 0.8, 0.0, 1.0 );
 
 //and retrieve a GAG vec3 based on the G & A channels of the color
-vec3 GAG = v4.gag; // GAG = vec4( 0.8, 1.0, 0.8 );
+vec3 GAG = color.gag; // GAG = vec4( 0.8, 1.0, 0.8 );
 ```
 
 This is extremely handy to combine parts of vectors together, extract only the rgb channels of a RGBA color etc.
