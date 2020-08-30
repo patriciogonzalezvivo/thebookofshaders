@@ -1,5 +1,3 @@
-#! /usr/bin/python2.7
-
 import os
 import os.path
 import re
@@ -46,7 +44,7 @@ def injectShaderBlocks(_folder, _text):
             shaderCommand = "glslViewer " + shaderPath + " " + \
                             " ".join(shaderTexturePaths) + \
                             " -s 0.5 --headless -o " + shaderImage
-            print shaderCommand
+            print(shaderCommand)
             if not args.skip_image_generation:
                 returnCode = subprocess.call(shaderCommand, shell=True)
             rta += "![](" + shaderImage + ")\n"
@@ -55,7 +53,7 @@ def injectShaderBlocks(_folder, _text):
             gifName, gifExt = os.path.splitext(gifPath)
             pngImage = gifName + ".png"
             convertCommand = "convert " + gifPath + " " + pngImage
-            print convertCommand
+            print(convertCommand)
             if not args.skip_image_generation:
                 returnCode = subprocess.call(convertCommand, shell=True)
             rta += re.sub(r'\!\[(.*)\]\((.*)\.gif\)',
@@ -105,16 +103,16 @@ for outputFormat in args.format:
     pandocCommand = ["pandoc"] + inputOptions + outputOptions \
         + generalOptions + latexOptions
 
-    # Print out of the chapters being built and the flags being used
-    print "Generating {0} from:".format(bookPath)
+    # print(out of the chapters being built and the flags being used
+    print("Generating {0} from:".format(bookPath)
     for chapter in inputOptions:
-        print "\t{0}".format(chapter)
-    print "Using the following flags:"
+        print("\t{0}".format(chapter))
+    print("Using the following flags:")
     for flag in outputOptions + generalOptions + latexOptions:
-        print "\t{0}".format(flag)
+        print("\t{0}".format(flag))
 
     returnCode = subprocess.call(pandocCommand)
     if returnCode == 0:
-        print "Successful building of {0}".format(bookPath)
+        print("Successful building of {0}".format(bookPath))
     else:
-        print "Error in building of {0}".format(bookPath)
+        print("Error in building of {0}".format(bookPath))
