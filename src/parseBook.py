@@ -44,7 +44,7 @@ def injectShaderBlocks(_folder, _text):
             shaderCommand = "glslViewer " + shaderPath + " " + \
                             " ".join(shaderTexturePaths) + \
                             " -s 0.5 --headless -o " + shaderImage
-            print(shaderCommand
+            print(shaderCommand)
             if not args.skip_image_generation:
                 returnCode = subprocess.call(shaderCommand, shell=True)
             rta += "![](" + shaderImage + ")\n"
@@ -53,7 +53,7 @@ def injectShaderBlocks(_folder, _text):
             gifName, gifExt = os.path.splitext(gifPath)
             pngImage = gifName + ".png"
             convertCommand = "convert " + gifPath + " " + pngImage
-            print(convertCommand
+            print(convertCommand)
             if not args.skip_image_generation:
                 returnCode = subprocess.call(convertCommand, shell=True)
             rta += re.sub(r'\!\[(.*)\]\((.*)\.gif\)',
