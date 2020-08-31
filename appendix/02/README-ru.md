@@ -29,7 +29,7 @@ sudo apt-get upgrade
 sudo apt-get install git-core glslviewer
 ```
 
-#### Установка Python 2.7, Latex Engine и Pandoc
+#### Установка Python 3, Latex Engine и Pandoc
 
 Для разбора Markdown-разметки параграфов в Latex и затем в PDF, воспользуемся Xetex и Pandoc.
 

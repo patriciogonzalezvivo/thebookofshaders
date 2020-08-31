@@ -2,7 +2,7 @@
 
 Nehmen wir einmal an, Du gehst auf eine längere Reise und möchtest Dich unterwegs in die Shader-Programmierung einarbeiten. In diesem Fall könntest Du eine Kopie dieses Buches auf Deinen Rechner laden und diese über einen lokalen Server anzeigen lassen.
 
-Alles, was Du dafür benötigst, ist Python 2.6 und ein Client-Programm für GIT. Auf Computern mit MacOS und auf dem RaspberryPi ist Python standardmäßig bereits vorinstalliert. Dort musst Du lediglich den GIT-Client zusätzlich installieren.
+Alles, was Du dafür benötigst, ist Python 3 und ein Client-Programm für GIT. Auf Computern mit MacOS und auf dem RaspberryPi ist Python standardmäßig bereits vorinstalliert. Dort musst Du lediglich den GIT-Client zusätzlich installieren.
 
 Unter **MacOSX** benötigst Du dafür [homebrew](http://brew.sh/). Sobald das Paket installiert ist, kannst Du in einem Terminal-Fenster folgendes eingeben:
 

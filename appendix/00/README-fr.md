@@ -2,7 +2,7 @@
 
 Disons que vous vous préparez à partir pour un long voyage et que vous souhaitez le mettre à profit pour apprendre quelques shaders. Dans ce cas, pourquoi pas créer une copie locale de ce livre sur votre ordinateur et lancer un serveur local.
 
-Pour cela, vous n'avez besoin que de PHP, Python 2.6 et d'un client git. Sur les ordinateurs MacOS et Raspberry Pi, Python est installé par défaut, mais vous il vous reste à installer PHP et un client git. Pour cela :
+Pour cela, vous n'avez besoin que de PHP, Python 3 et d'un client git. Sur les ordinateurs MacOS et Raspberry Pi, Python est installé par défaut, mais vous il vous reste à installer PHP et un client git. Pour cela :
 
 Sous **MacOSX**, assurez-vous d'avoir [homebrew](http://brew.sh/) installé et ensuite dans votre terminal :
 

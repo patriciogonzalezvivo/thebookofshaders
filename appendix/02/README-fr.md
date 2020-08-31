@@ -28,7 +28,7 @@ sudo apt-get upgrade
 sudo apt-get install git-core glslviewer
 ```
 
-#### Installation de Python 2.7, Latex et Pandoc
+#### Installation de Python 3, Latex et Pandoc
 
 Pour analyser les chapitres Markdown dans Latex, puis dans un fichier PDF, nous utiliserons Xetex Latex Engine et Pandoc.
 

@@ -2,7 +2,7 @@
 
 Diciamo che si dispone di un lungo viaggio e si desidera usarlo per imparare da soli alcuni shaders. In questo caso è possibile effettuare una copia locale di questo libro sul computer ed eseguire un server locale.
 
-Per questo è necessario solo Python 2.6 e un client git. Sui computer MacOS e Raspberry Pi, Python è installato di default, ma è comunque necessario installare un client git. Per fare ciò:
+Per questo è necessario solo Python 3 e un client git. Sui computer MacOS e Raspberry Pi, Python è installato di default, ma è comunque necessario installare un client git. Per fare ciò:
 
 Su **MacOSX** siate sicuri di avere installato [homebrew](http://brew.sh/) e quindi sul terminale fate:
 
