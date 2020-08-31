@@ -104,7 +104,7 @@ for outputFormat in args.format:
         + generalOptions + latexOptions
 
     # print(out of the chapters being built and the flags being used
-    print("Generating {0} from:".format(bookPath)
+    print("Generating {0} from:".format(bookPath))
     for chapter in inputOptions:
         print("\t{0}".format(chapter))
     print("Using the following flags:")
