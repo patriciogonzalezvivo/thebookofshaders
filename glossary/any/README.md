@@ -1,29 +1,29 @@
-## All
-Check whether all elements of a boolean vector are true
+## Any
+Check whether any element of a boolean vector is true
 
 ### Declaration
 ```glsl
-bool any(bvec2 x)  
-bool any(bvec3 x)  
-bool any(bvec4 x)
+bool all(bvec2 x)  
+bool all(bvec3 x)  
+bool all(bvec4 x)
 ```
 
 ### Parameters
 ```x``` specifies the vector to be tested for truth.
 
 ### Description
-```all()``` returns true if all elements of ```x``` are ```true``` and ```false``` otherwise. It is functionally equivalent to:
+```any()``` returns true if any element of ```x``` is ```true``` and ```false``` otherwise. It is functionally equivalent to:
 
 ```glsl
-bool all(bvec x){       // bvec can be bvec2, bvec3 or bvec4
-    bool result = true;
+bool any(bvec x) {     // bvec can be bvec2, bvec3 or bvec4
+    bool result = false;
     int i;
-    for (i = 0; i < x.length(); ++i)
-    {
-        result &= x[i];
+    for (i = 0; i < x.length(); ++i) {
+        result |= x[i];
     }
     return result;
 }
 ```
+
 ### See Also
 [any()](/glossary/?search=any), [not()](/glossary/?search=not)
