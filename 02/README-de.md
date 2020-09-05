@@ -6,7 +6,7 @@ In der Welt der Shader-Programmierung ist die Textausgabe eine zu komplizierte A
 
 <div class="codeAndCanvas" data="hello_world.frag"></div>
 
-Falls Du dieses Buch in einem Internet-Browser liest, ist der obige Programmcode interaktiv. Du kannst in das Listing hineinklicken und jeden Teil des Programmcodes ändern. Deine Änderungen werden sofort innerhalb der Zeichenfläche sichtbar, weil der Shader-Code automatisch kompiliert und ausgeführt wird. Versuche es doch einfach einmal, indem Du die Zahlenwerte in der *Programmzeile 6* änderst.
+Falls Du dieses Buch in einem Internet-Browser liest, ist der obige Programmcode interaktiv. Du kannst in das Listing hineinklicken und jeden Teil des Programmcodes ändern. Deine Änderungen werden sofort innerhalb der Zeichenfläche sichtbar, weil der Shader-Code automatisch kompiliert und ausgeführt wird. Versuche es doch einfach einmal, indem Du die Zahlenwerte in der *Programmzeile 8* änderst.
 
 Obwohl diese wenigen, einfachen Programmzeilen noch nicht nach viel aussehen, können wir daraus bereits einige Erkenntnisse gewinnen:
 
