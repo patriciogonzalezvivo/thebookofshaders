@@ -117,7 +117,7 @@ Am Ende der letzten Übung haben wir einige neue Funktionen eingeführt. Jetzt i
 
 <div class="glslGallery" data="160414041542,160414041933,160414041756" data-properties="clickRun:editor,hoverPreview:false"></div>
 
-Genau wie Küchenchefs Gewürze und exotische Zutaten sammeln, entwickeln Digitalkünstler und kreative Entwickler häufig eine Liebe für bestimmte formgebenden Funktionen.
+Genau wie Küchenchefs Gewürze und exotische Zutaten sammeln, entwickeln Digitalkünstler und kreative Entwickler häufig eine Liebe für bestimmte formgebende Funktionen.
 
 [Inigo Quiles](http://www.iquilezles.org/) stellt eine großartige Auswahl an [nützlichen Funktionen](http://www.iquilezles.org/www/articles/functions/functions.htm) vor. Wenn Du [diesen Artikel](http://www.iquilezles.org/www/articles/functions/functions.htm) gelesen hast, dann werfe einen Blick auf die folgenden Übertragungen dieser Funktionen nach GLSL. Beobachte aufmerksam die kleinen, aber erforderlichen Anpassungen wie etwa den Punkt (".") bei Fließkommazahlen und die Umsetzung der Funktionsnamen von C auf GLSL; so heißt es in GLSL beispielsweise ```pow()``` statt ```powf()``` wie in C:   
 
