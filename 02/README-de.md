@@ -34,7 +34,7 @@ So, wo wir nun die wichtigen Elemente unseres kleinen „Hello world!“-Program
 
 * Versuche, die Fließkommazahlen durch Ganzzahlen zu ersetzen. Dann wirst Du unmittelbar feststellen, ob Deine aktuelle Umgebung/Grafikkarte damit umgehen kann.
 
-* Versuche, die *Programmzeile 6* auszukommentieren, und schau was passiert, wenn der Code dadurch keinen Farbwert zurückliefert.
+* Versuche, die *Programmzeile 8* auszukommentieren, und schau was passiert, wenn der Code dadurch keinen Farbwert zurückliefert.
 
 * Versuche, eine zusätzliche Funktion in den Programmcode einzufügen, die eine von Dir gewählte Farbe zurückliefert und rufe diese Funktion innerhalb von ```main()``` auf. Dazu ein Tipp: Hier folgt der Programmcode für eine Funktion, die Rot zurückliefert:
 
