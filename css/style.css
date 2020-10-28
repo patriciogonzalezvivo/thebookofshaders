@@ -10,8 +10,7 @@ body {
     padding: 0;
     color: #222;
     margin-bottom: 60px;
-    margin-left: 60px;
-	margin-right: 60px;
+    margin: 10vmin 5vw;
 }
 
 h1 {
@@ -92,7 +91,6 @@ img {
 .header {
     font-size: 16px;
     line-height: 16px;
-    margin-top: 60px;
     text-align: right;
     color: #999;
 }
