@@ -20,10 +20,10 @@
 	$Parsedown = new Parsedown();
 	echo $Parsedown->text(file_get_contents($README.'.md'));
 
-	echo '
-	<div id="product-component-1573172983507"></div>
+?>
+<div id="product-component-1573172983507"></div>
 <script type="text/javascript">
-/*<![CDATA[*/
+
 (function () {
   var scriptURL = "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js";
   if (window.ShopifyBuy) {
@@ -272,15 +272,12 @@
     });
   }
 })();
-/*]]>*/
-</script>
-	</div>
-	<hr>
-	<ul class="navigationBar" >
-		<li class="navigationBar" onclick="previusPage()">&lt; &lt; Previous</li>
-		<li class="navigationBar" onclick="homePage()"> Home </li>
-		<li class="navigationBar" onclick="nextPage()">Next &gt; &gt;</li>
-	</ul>';
 
+</script>
+</div>
+
+<?php
+	$show_previous = true;
+	$show_next = true;
 	include($path."/footer.php");
 ?>
