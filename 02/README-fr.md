@@ -6,7 +6,7 @@ Au pays du GPU, afficher du texte est une tâche extrêmement complexe pour une 
 
 <div class="codeAndCanvas" data="hello_world.frag"></div>
 
-Si vous lisez ceci dans un navigateur récent, le bloc précédent est interactif. Cela signifie que vous pouvez cliquer et éditer le code.Les modifications seront mises à jour immédiatement grâce à l'architecture GPU qui compile et remplace les shaders *à la volée*. Vous pouvez essayer de changer les valeurs de la ligne 6.
+Si vous lisez ceci dans un navigateur récent, le bloc précédent est interactif. Cela signifie que vous pouvez cliquer et éditer le code.Les modifications seront mises à jour immédiatement grâce à l'architecture GPU qui compile et remplace les shaders *à la volée*. Vous pouvez essayer de changer les valeurs de la ligne 8.
 
 Si ce programme paraît simple, nous pouvons déjà faire quelques observations intéressantes :
 
@@ -43,7 +43,7 @@ Vous remarquerez que le programme ne se recompilera pas tant qu'il restera des e
 
 * Essayez de remplacer les *float* par des *int* la carte graphique vous autorisera ou non à le faire.
 
-* Essayez de commenter (`//`) la ligne 6, ce qui n'assignera aucune valeur au pixel.
+* Essayez de commenter (`//`) la ligne 8, ce qui n'assignera aucune valeur au pixel.
 
 * Essayez de créer une fonction qui retourne une couleur en dehors de `main()` et essayez de l'utiliser pour assigner la valeur de `gl_FragColor` dans `main()`. Pour vous aider, voici le code d'une fonction qui une couleur rouge :
 
