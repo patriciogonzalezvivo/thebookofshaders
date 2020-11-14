@@ -208,7 +208,7 @@ Voici autre une technique permettant de créer un champ de distances basée sur 
 
 Les champs de distance permettent de dessiner à peu près n'importe quoi.
 Evidemment, plus la forme est complexe, plus l'équation sera complexe mais une fois qu'on a la formule d'une forme en particulier, il devient assez simple de la combiner avec d'autres et/ou de lui appliquer des effets comme des bords lissés, ou plusieurs contours.
-C'est pourquoi les champs de distances sont utilisés pour le rendu des polices de caractères: [Mapbox GL Labels](https://www.mapbox.com/blog/text-signed-distance-fields/), [Matt DesLauriers](https://twitter.com/mattdesl), [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu) et [comme expliqué au chapitre 7 de "iPhone 3D Programming", O’Reilly](http://chimera.labs.oreilly.com/books/1234000001814/ch07.html#ch07_id36000921).
+C'est pourquoi les champs de distances sont utilisés pour le rendu des polices de caractères: [Mapbox GL Labels](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817), [Matt DesLauriers](https://twitter.com/mattdesl), [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu) et [comme expliqué au chapitre 7 de "iPhone 3D Programming", O’Reilly](http://chimera.labs.oreilly.com/books/1234000001814/ch07.html#ch07_id36000921).
 
 Prenez le code suivant:
 

@@ -164,7 +164,7 @@ Em termos de poder computacional, a função [`sqrt()`](../glossary/?search=sqrt
 
 ![Zen garden](zen-garden.jpg)
 
-Campos de Distância podem ser usados para desenhar quase tudo. Obviamente, quanto mais complexa for uma forma, mais complicada vai ser a equação, mas uma vez que você tenha a fórmula para fazer um campo de distância de uma forma específica, é muito fácil combinar e/ou aplicar efeitos a ela, como bordas suaves, e múltiplos outlines. Por causa disso, os campos de distância são populares para rendereizar fontes, como [Mapbox GL Labels](https://www.mapbox.com/blog/text-signed-distance-fields/), [Matt DesLauriers](https://twitter.com/mattdesl) [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu) e [ como descrito no capítulo 7 do livro iPhone 3D Programming, O’Reilly](http://chimera.labs.oreilly.com/books/1234000001814/ch07.html#ch07_id36000921).
+Campos de Distância podem ser usados para desenhar quase tudo. Obviamente, quanto mais complexa for uma forma, mais complicada vai ser a equação, mas uma vez que você tenha a fórmula para fazer um campo de distância de uma forma específica, é muito fácil combinar e/ou aplicar efeitos a ela, como bordas suaves, e múltiplos outlines. Por causa disso, os campos de distância são populares para rendereizar fontes, como [Mapbox GL Labels](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817), [Matt DesLauriers](https://twitter.com/mattdesl) [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu) e [ como descrito no capítulo 7 do livro iPhone 3D Programming, O’Reilly](http://chimera.labs.oreilly.com/books/1234000001814/ch07.html#ch07_id36000921).
 
 Dê uma olhada no código a seguir.
 

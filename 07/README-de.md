@@ -164,7 +164,7 @@ Im Hinblick auf die erforderliche Rechenleistung kann die [```sqrt()```](../glos
 
 ![Zen garden](zen-garden.jpg)
 
-Distanzfelder lassen sich nutzen, um beinahe jede Art von Form zu zeichnen. Je komplexer die gewünschte Form, desto komplexer fällt in der Regel auch die dafür benötigte Distanzformel aus. Doch sobald Du die benötigte Distanzformel beisammenhast, wird es sehr einfach, gewünschte Effekte darauf anzuwenden, beispielweise weiche Kanten oder mehrfache Umrisse. Aus diesem Grund sind Distanzfelder u.a. bei der Schriftenerzeugung sehr populär, nachzulesen etwa bei [Mapbox GL Labels](https://www.mapbox.com/blog/text-signed-distance-fields/), bei [Matt DesLauriers](https://twitter.com/mattdesl) und bei [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu).
+Distanzfelder lassen sich nutzen, um beinahe jede Art von Form zu zeichnen. Je komplexer die gewünschte Form, desto komplexer fällt in der Regel auch die dafür benötigte Distanzformel aus. Doch sobald Du die benötigte Distanzformel beisammenhast, wird es sehr einfach, gewünschte Effekte darauf anzuwenden, beispielweise weiche Kanten oder mehrfache Umrisse. Aus diesem Grund sind Distanzfelder u.a. bei der Schriftenerzeugung sehr populär, nachzulesen etwa bei [Mapbox GL Labels](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817), bei [Matt DesLauriers](https://twitter.com/mattdesl) und bei [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu).
 
 Schau Dir den folgenden Programmcode an.
 
