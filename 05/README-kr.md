@@ -96,13 +96,13 @@ GLSL에는 하드웨어 가속화된 내장 보간법 함수들이 존재한다.
 
 [Golan Levin](http://www.flong.com/) 는 제법 복잡하지만 굉장히 유용한 쉐이핑 함수들을 잘 정리해 두었다. 이들을 GLSL로 포팅하는것또한 굉장히 유용한 공부방법일 것이다. 자신만의 쉐이핑 펑션 라이브러리를 개설해보자.
 
-* [Polynomial Shaping Functions: www.flong.com/texts/code/shapers_poly](http://www.flong.com/texts/code/shapers_poly/)
+* [Polynomial Shaping Functions: www.flong.com/archive/texts/code/shapers_poly](http://www.flong.com/archive/texts/code/shapers_poly/)
 
-* [Exponential Shaping Functions: www.flong.com/texts/code/shapers_exp](http://www.flong.com/texts/code/shapers_exp/)
+* [Exponential Shaping Functions: www.flong.com/archive/texts/code/shapers_exp](http://www.flong.com/archive/texts/code/shapers_exp/)
 
-* [Circular & Elliptical Shaping Functions: www.flong.com/texts/code/shapers_circ](http://www.flong.com/texts/code/shapers_circ/)
+* [Circular & Elliptical Shaping Functions: www.flong.com/archive/texts/code/shapers_circ](http://www.flong.com/archive/texts/code/shapers_circ/)
 
-* [Bezier and Other Parametric Shaping Functions: www.flong.com/texts/code/shapers_bez](http://www.flong.com/texts/code/shapers_bez/)
+* [Bezier and Other Parametric Shaping Functions: www.flong.com/archive/texts/code/shapers_bez](http://www.flong.com/archive/texts/code/shapers_bez/)
 
 요리사가 자신만의 요리재료와 소스 노하우를 모으듯, digital artist들이나, creative coder들 역시 그들만의 쉐이핑 펑션을 만드는 버릇을 가져야 할것이다.
 

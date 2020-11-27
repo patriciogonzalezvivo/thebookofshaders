@@ -95,13 +95,13 @@ float y = smoothstep(0.2,0.5,st.x) - smoothstep(0.5,0.8,st.x);
 
 [Голан Левин](http://www.flong.com/) написал отличный учебник по более сложным функциям, которые могут понадобиться. Начните собирать вашу собственную библиотеку полезных кусочков кода с портирования этих функций на GLSL.
 
-* Полиномиальные функции: [www.flong.com/texts/code/shapers_poly](http://www.flong.com/texts/code/shapers_poly/)
+* Полиномиальные функции: [www.flong.com/archive/texts/code/shapers_poly](http://www.flong.com/archive/texts/code/shapers_poly/)
 
-* Экспоненциальные функции: [www.flong.com/texts/code/shapers_exp](http://www.flong.com/texts/code/shapers_exp/)
+* Экспоненциальные функции: [www.flong.com/archive/texts/code/shapers_exp](http://www.flong.com/archive/texts/code/shapers_exp/)
 
-* Круги и эллипсы: [www.flong.com/texts/code/shapers_circ](http://www.flong.com/texts/code/shapers_circ/)
+* Круги и эллипсы: [www.flong.com/archive/texts/code/shapers_circ](http://www.flong.com/archive/texts/code/shapers_circ/)
 
-* Сплайны Безье и другие параметрические функции: [www.flong.com/texts/code/shapers_bez](http://www.flong.com/texts/code/shapers_bez/)
+* Сплайны Безье и другие параметрические функции: [www.flong.com/archive/texts/code/shapers_bez](http://www.flong.com/archive/texts/code/shapers_bez/)
 
 <div class="glslGallery" data="160414041542,160414041933,160414041756" data-properties="clickRun:editor,hoverPreview:false"></div>
 
