@@ -136,13 +136,13 @@ Bientôt, nous utiliserons, deux, trois et même quatre dimensions!
 [Golan Levin](http://www.flong.com/) a écrit quelques articles très instructifs sur des fonctions plus complexes.
 Les porter en GLSL est une bonne idée si vous souhaitez construire votre boîte à outils.
 
-* Fonctions Polynomiales : [www.flong.com/texts/code/shapers_poly](http://www.flong.com/texts/code/shapers_poly/)
+* Fonctions Polynomiales : [www.flong.com/archive/texts/code/shapers_poly](http://www.flong.com/archive/texts/code/shapers_poly/)
 
-* Fonctions Exponentielles : [www.flong.com/texts/code/shapers_exp](http://www.flong.com/texts/code/shapers_exp/)
+* Fonctions Exponentielles : [www.flong.com/archive/texts/code/shapers_exp](http://www.flong.com/archive/texts/code/shapers_exp/)
 
-* Fonctions Circulaires & Elliptiques : [www.flong.com/texts/code/shapers_circ](http://www.flong.com/texts/code/shapers_circ/)
+* Fonctions Circulaires & Elliptiques : [www.flong.com/archive/texts/code/shapers_circ](http://www.flong.com/archive/texts/code/shapers_circ/)
 
-* Fonctions de Bezier et autres fonctions paramétriques : [www.flong.com/texts/code/shapers_bez](http://www.flong.com/texts/code/shapers_bez/)
+* Fonctions de Bezier et autres fonctions paramétriques : [www.flong.com/archive/texts/code/shapers_bez](http://www.flong.com/archive/texts/code/shapers_bez/)
 
 Comme un chef qui collectionnerait les épices et autres ingrédients exotiques, les artistes digitaux et les codeurs créatifs en particulier aiment travailler leurs propres fonctions de forme.
 

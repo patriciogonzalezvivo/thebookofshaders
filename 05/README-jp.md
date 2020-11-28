@@ -105,13 +105,13 @@ GLSLには他にも、値を変化させるのに使うことができるネイ�
 
 [Golan Levin](http://www.flong.com/)（Golan Levin）が書いた、より複雑で非常に便利なシェイピング関数についての素晴らしいドキュメントがあります。自分のスニペット集を作るために、これらの関数をGLSLに移植してみると良いでしょう。
 
-* [Polynomial Shaping Functions: www.flong.com/texts/code/shapers_poly](http://www.flong.com/texts/code/shapers_poly/)
+* [Polynomial Shaping Functions: www.flong.com/archive/texts/code/shapers_poly](http://www.flong.com/archive/texts/code/shapers_poly/)
 
-* [Exponential Shaping Functions: www.flong.com/texts/code/shapers_exp](http://www.flong.com/texts/code/shapers_exp/)
+* [Exponential Shaping Functions: www.flong.com/archive/texts/code/shapers_exp](http://www.flong.com/archive/texts/code/shapers_exp/)
 
-* [Circular & Elliptical Shaping Functions: www.flong.com/texts/code/shapers_circ](http://www.flong.com/texts/code/shapers_circ/)
+* [Circular & Elliptical Shaping Functions: www.flong.com/archive/texts/code/shapers_circ](http://www.flong.com/archive/texts/code/shapers_circ/)
 
-* [Bezier and Other Parametric Shaping Functions: www.flong.com/texts/code/shapers_bez](http://www.flong.com/texts/code/shapers_bez/)
+* [Bezier and Other Parametric Shaping Functions: www.flong.com/archive/texts/code/shapers_bez](http://www.flong.com/archive/texts/code/shapers_bez/)
 
 スパイスや珍しい食材を集めるシェフのように、デジタルアーティストやクリエィティブコーダーは自らシェイピング関数に取り組むのが大好きです。
 

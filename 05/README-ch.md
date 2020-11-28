@@ -95,13 +95,13 @@ GLSL 还有一些独特的原生插值函数可以被硬件加速。
 
 [Golan Levin](http://www.flong.com/) 写过关于更加复杂的造型函数的文档，非常有帮助。把它们引入 GLSL 是非常明智的选择，这将是你的代码的广阔的素材库
 
-* [多项式造型函数（Polynomial Shaping Functions）: www.flong.com/texts/code/shapers_poly](http://www.flong.com/texts/code/shapers_poly/)
+* [多项式造型函数（Polynomial Shaping Functions）: www.flong.com/archive/texts/code/shapers_poly](http://www.flong.com/archive/texts/code/shapers_poly/)
 
-* [指数造型函数（Exponential Shaping Functions）: www.flong.com/texts/code/shapers_exp](http://www.flong.com/texts/code/shapers_exp/)
+* [指数造型函数（Exponential Shaping Functions）: www.flong.com/archive/texts/code/shapers_exp](http://www.flong.com/archive/texts/code/shapers_exp/)
 
-* [圆与椭圆的造型函数（Circular & Elliptical Shaping Functions）: www.flong.com/texts/code/shapers_circ](http://www.flong.com/texts/code/shapers_circ/)
+* [圆与椭圆的造型函数（Circular & Elliptical Shaping Functions）: www.flong.com/archive/texts/code/shapers_circ](http://www.flong.com/archive/texts/code/shapers_circ/)
 
-* [贝塞尔和其他参数化造型函数（Bezier and Other Parametric Shaping Functions）: www.flong.com/texts/code/shapers_bez](http://www.flong.com/texts/code/shapers_bez/)
+* [贝塞尔和其他参数化造型函数（Bezier and Other Parametric Shaping Functions）: www.flong.com/archive/texts/code/shapers_bez](http://www.flong.com/archive/texts/code/shapers_bez/)
 
 就像厨师自主选择辣椒和各种原料，数字艺术家和创意编程者往往钟情于使用他们自己的造型函数。
 

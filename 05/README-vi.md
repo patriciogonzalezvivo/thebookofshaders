@@ -95,13 +95,13 @@ Chúng tôi vừa mới giới thiệu cho các bạn 1 vài hàm mới. Giờ l
 
 [Golan Levin](http://www.flong.com/) có tài liệu mô tả rất chi tiết về các hàm phức tạp khác vô cùng hữu ích. Ứng dụng chúng vào GLSL sẽ là một bước đi thông minh để bắt đầu dựng nên thư viện code của chính bạn.
 
-* Các hàm đa thức: [www.flong.com/texts/code/shapers_poly](http://www.flong.com/texts/code/shapers_poly/)
+* Các hàm đa thức: [www.flong.com/archive/texts/code/shapers_poly](http://www.flong.com/archive/texts/code/shapers_poly/)
 
-* Các hàm luỹ thừa: [www.flong.com/texts/code/shapers_exp](http://www.flong.com/texts/code/shapers_exp/)
+* Các hàm luỹ thừa: [www.flong.com/archive/texts/code/shapers_exp](http://www.flong.com/archive/texts/code/shapers_exp/)
 
-* Các hàm mô phỏng đường tròn và elip: [www.flong.com/texts/code/shapers_circ](http://www.flong.com/texts/code/shapers_circ/)
+* Các hàm mô phỏng đường tròn và elip: [www.flong.com/archive/texts/code/shapers_circ](http://www.flong.com/archive/texts/code/shapers_circ/)
 
-* Đường cong Bezier và các hàm tương tự: [www.flong.com/texts/code/shapers_bez](http://www.flong.com/texts/code/shapers_bez/)
+* Đường cong Bezier và các hàm tương tự: [www.flong.com/archive/texts/code/shapers_bez](http://www.flong.com/archive/texts/code/shapers_bez/)
 
 <div class="glslGallery" data="160414041542,160414041933,160414041756" data-properties="clickRun:editor,hoverPreview:false"></div>
 
