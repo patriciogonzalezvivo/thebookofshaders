@@ -164,7 +164,7 @@ pct = pow(distance(st,vec2(0.4)),distance(st,vec2(0.6)));
 
 ![Дзенский сад](zen-garden.jpg)
 
-С помощью поля расстояний можно нарисовать что угодно. Очевидно, чем сложнее фигура, тем сложнее будет уравнение. Но при наличии формул для создания поля расстояний определённой формы, вы можете с лёгкостью комбинировать фигуры и применять к ним различные эффекты: сглаживание границ, рисование нескольких контуров и т.п. Поэтому поля расстояний находят широкое применение в рисовании шрифтов, например [Mapbox GL Labels](https://www.mapbox.com/blog/text-signed-distance-fields/), [шрифты Material Design](http://mattdesl.svbtle.com/material-design-on-the-gpu) от [Matt DesLauriers](https://twitter.com/mattdesl) и [7 глава книги iPhone 3D Programming, издательство O’Reilly](http://chimera.labs.oreilly.com/books/1234000001814/ch07.html#ch07_id36000921).
+С помощью поля расстояний можно нарисовать что угодно. Очевидно, чем сложнее фигура, тем сложнее будет уравнение. Но при наличии формул для создания поля расстояний определённой формы, вы можете с лёгкостью комбинировать фигуры и применять к ним различные эффекты: сглаживание границ, рисование нескольких контуров и т.п. Поэтому поля расстояний находят широкое применение в рисовании шрифтов, например [Mapbox GL Labels](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817), [шрифты Material Design](http://mattdesl.svbtle.com/material-design-on-the-gpu) от [Matt DesLauriers](https://twitter.com/mattdesl) и [7 глава книги iPhone 3D Programming, издательство O’Reilly](http://chimera.labs.oreilly.com/books/1234000001814/ch07.html#ch07_id36000921).
 
 Рассмотрим следующий код:
 

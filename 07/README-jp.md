@@ -163,7 +163,7 @@ pct = pow(distance(st,vec2(0.4)),distance(st,vec2(0.6)));
 
 ディスタンスフィールドを使うと、ほぼどんなものでも描くことができます。もちろん形が複雑なほどより計算式がもより複雑になりますが、一旦ある形のディスタンスフィールドを作り出すための式を手に入れれば、複数の形を組み合わせたり、縁をぼかしたり何重にも線を引いたり様々なエフェクトをかけたりすることはとても簡単にできます。そのため下記の例に見られるようにディスタンスフィールドはフォントのレンダリングによく使われています。
 
-* [Mapbox GL Labels](https://www.mapbox.com/blog/text-signed-distance-fields/)
+* [Mapbox GL Labels](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817)
 * [Matt DesLauriers](https://twitter.com/mattdesl)
 * [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu)
 * [Chapter 7 of iPhone 3D Programming, O’Reilly](http://chimera.labs.oreilly.com/books/1234000001814/ch07.html#ch07_id36000921)
