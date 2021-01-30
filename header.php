@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html>
+<?php
+    $html_attributes = "";
+    if ($_GET['lan'] == "fa") {
+        $html_attributes = 'dir="rtl" lang="fa"';
+    }
+    echo '
+<html '.$html_attributes.'>
     <head>
         <meta charset="utf-8">
-<?php
-    echo '
+
         <title>The Book of Shaders'.$subtitle.'</title>';
 ?>
 
