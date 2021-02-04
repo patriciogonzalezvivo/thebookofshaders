@@ -56,7 +56,7 @@
     * انعکاس و شکست
 
 * [ضمیمه:](appendix/) راه های دیگر استفاده ازین کتاب
-	* [چگونه بصورت آفلاین ازین کتاب استفاده کنم؟](appendix/00/)
+	* [چگونه بصورت آفلاین از این کتاب استفاده کنم؟](appendix/00/)
 	* [چگونه روی رزبری پای مثال ها را اجرا کنم؟](appendix/01/)
 	* [چگونه این کتاب را چاپ کنم؟](appendix/02/)
     * [چگونه مشارکت کنم؟](appendix/03/)
@@ -68,13 +68,13 @@
 
 ## درباره نویسندگان
 
-[Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) (1982, Buenos Aires, Argentina) یک آرتیست و توسعه دهنده اهل نیویورک است.او فضا های بینابینی را جستجو می‌کند، بین ارگانیک و مصنوعی، بین آنالوگ و دیجیتال، بین فردی و اجتماعی.او از کد بعنوان یک زبان رسا برای توسعه بهتر در کار خود استفاده می‌کند.
+[Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) (1982, Buenos Aires, Argentina) یک آرتیست و توسعه دهنده اهل نیویورک است. او فضا های بینابینی را جستجو می‌کند، بین ارگانیک و مصنوعی، بین آنالوگ و دیجیتال، بین فردی و اجتماعی. او از کد بعنوان یک زبان رسا برای توسعه بهتر در کار خود استفاده می‌کند.
 
-او دانش آموخته روان درمانی و expressive art therapy است. همچنین دارای مدرک MFA در زمینه طراحی و فناوری ار Parsons The new School هست و اکنون در آنجا تدریس می‌کند. هم اکنون بعنوان مهندس گرافیک در Mapzen مشغول ساخت ابزار نقشه برداری open Source هست. 
+او دانش آموخته روان درمانی و expressive art therapy است. همچنین دارای مدرک MFA در زمینه طراحی و فناوری از Parsons The new School هست و اکنون در آنجا تدریس می‌کند. هم اکنون بعنوان مهندس گرافیک در Mapzen مشغول ساخت ابزار نقشه برداری open Source هست. 
 
 <div class="header"> <a href="http://patriciogonzalezvivo.com/" target="_blank">WebSite</a> - <a href="https://twitter.com/patriciogv" target="_blank">Twitter</a> - <a href="https://github.com/patriciogonzalezvivo" target="_blank">GitHub</a> - <a href="https://vimeo.com/patriciogv" target="_blank">Vimeo</a> - <a href="https://www.flickr.com/photos/106950246@N06/" target="_blank"> Flickr</a></div>
 
-[Jen Lowe](http://jenlowe.net/) یک دانشمند و ارتباط دهنده داده مستقل در Datatelling است.جایی که افراد و اعداد و حروف را کنار هم جمع می‌کند. او همچنین طراحی SVA تدریس می‌کند، همچنین هم بنیانگذار دانشکده محاسبات شاعرانه است. همچنین در SXSW و Eyeo سخران است. کار های او توسط نیویورک تایمز و Fast Company پوشش داده شده است. تحقیق، نوشتار و گفتار او پیامد های داده و فناوری در جامعه را کاوش می‌کند. او دارای مدرک B.S در ریاضیات کاربردی و کارشناسی ارشد در علوم اطلاعات است. اغلب مخالف است و همیشه در کنار عشق.
+[Jen Lowe](http://jenlowe.net/) یک دانشمند و ارتباط دهنده داده مستقل در Datatelling است. جایی که افراد و اعداد و حروف را کنار هم جمع می‌کند. او همچنین طراحی SVA تدریس می‌کند، و هم بنیانگذار دانشکده محاسبات شاعرانه است. همچنین در SXSW و Eyeo سخنران است. کار های او توسط نیویورک تایمز و Fast Company پوشش داده شده است. تحقیق، نوشتار و گفتار او پیامد های داده و فناوری در جامعه را کاوش می‌کند. او دارای مدرک B.S در ریاضیات کاربردی و کارشناسی ارشد در علوم اطلاعات است. اغلب مخالف است و همیشه در کنار عشق.
 
 <div class="header"> <a href="http://jenlowe.net/" target="_blank">WebSite</a> - <a href="https://twitter.com/datatelling" target="_blank">Twitter</a> - <a href="https://github.com/datatelling" target="_blank">GitHub</a></div>
 
@@ -101,8 +101,6 @@
 ممنون از [Michael Tischer](http://www.mitinet.de) برای  German [translation (deutsch)](?lan=de)
 
 ممنون از [Sergey Karchevsky](https://www.facebook.com/sergey.karchevsky.3) برای Russian [translation (russian)](?lan=ru)
-
-ممنون از [Ahmad Erfani](https://twitter.com/ahmaderfani12) برای Persian [translation (Persian)](?lan=fa)
 
 ممنون از [Andy Stanton](https://andy.stanton.is/) برای اصلاح و بهبود [the pdf/epub export pipeline](https://thebookofshaders.com/appendix/02/)
 
