@@ -213,7 +213,7 @@ For more information about shaders in openFrameworks go to this [excellent tutor
 
 ### In **Blender**
 
-[GlslTexture](https://github.com/patriciogonzalezvivo/glslTexture) it's an addon that allows you to programatically generate textures using GLSL Shaders and is fully compatible with the rest of the sandboxes on this chapter. How it works:
+[GlslTexture](https://github.com/patriciogonzalezvivo/glslTexture) is an addon that allows you to programatically generate textures using GLSL Shaders and is fully compatible with the rest of the sandboxes on this chapter. How it works:
 
 
 1. Operator Search: `F3` (or `SpaceBar` depending on your setup). Type `GlslTexture`
