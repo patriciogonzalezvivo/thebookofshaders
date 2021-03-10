@@ -30,7 +30,7 @@ uniform float iTime;        // shader playback time (in seconds)
 
 همانطور که می‌بینید GLSL سورپرایز های بیشتری دارد. GPU دارای عملکرد های زاویه شتاب همچنین توابع نمایی و مثلثاتی هست. برخی ازین توابع عبارتند از: [`sin()`](../glossary/?search=sin), [`cos()`](../glossary/?search=cos), [`tan()`](../glossary/?search=tan), [`asin()`](../glossary/?search=asin), [`acos()`](../glossary/?search=acos), [`atan()`](../glossary/?search=atan), [`pow()`](../glossary/?search=pow), [`exp()`](../glossary/?search=exp), [`log()`](../glossary/?search=log), [`sqrt()`](../glossary/?search=sqrt), [`abs()`](../glossary/?search=abs), [`sign()`](../glossary/?search=sign), [`floor()`](../glossary/?search=floor), [`ceil()`](../glossary/?search=ceil), [`fract()`](../glossary/?search=fract), [`mod()`](../glossary/?search=mod), [`min()`](../glossary/?search=min), [`max()`](../glossary/?search=max) و [`clamp()`](../glossary/?search=clamp).
 
-اکنون زمان آن است که دوباره با کد با بازی کنیم.
+اکنون زمان آن است که دوباره با کد بازی کنیم.
 
 * فرکانس را کم کنید تا زمانی که تغییر رنگ نامحسوس شود.
 
@@ -46,7 +46,7 @@ uniform float iTime;        // shader playback time (in seconds)
 
 در مثال بالا ما با تقسیم gl_FragCoord بر u_resolution مختصات نرمالایز شده(بین 0 و 1) را در st ذخیره می‌کنیم. با این کار به راحتی میتوان مقادیر x را به قرمز و مقادیر y را به سبز مپ کرد.
 
-در شیدر نویسی ما منابع زیادی برای دیباگ کردن نداریم، خواهید فهمید که گاهی اوقات کد نویسی در GLSL مانند قراردادن کشتی در داخل بطری است. به همان اندازه سخت زیبا و خوشایند.
+در شیدر نویسی منابع زیادی برای دیباگ کردن نداریم، خواهید فهمید که گاهی اوقات کد نویسی در GLSL مانند قراردادن کشتی در داخل بطری است. به همان اندازه سخت زیبا و خوشایند.
 
 ![](08.png)
 

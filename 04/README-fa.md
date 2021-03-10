@@ -129,7 +129,7 @@ glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutput
 
 ### در **Processing**
 
-ساخته شده توسط [Ben Fry](http://benfry.com/) و [Casey Reas](http://reas.com/) in 2001, [Processing](https://processing.org/) یک محیط فوق العاده ساده و قدرتمند است که می‌توانید در آن اولین قدم های کد زنی خود را بردارید. (حداقل برای من اینگونه بود). [Andres Colubri](https://codeanticode.wordpress.com/) بروزرسانی های مهمی به OpenGl  و پردازش ویدئو آن اضافه کرده است, که استفاده از شیدر های GLSL را در این محیط دوستانه بسیار آسان می‌کند. این برنامه به دنبال فایل `"shader.frag"` در پوشه `data` داخل `sketch` می‌گردد. مطمئن شوید که نمونه هایی که از اینجا در آن پوشه کپی می‌کنید، تغییر نام دهید.
+[Processing](https://processing.org/) ساخته شده توسط [Ben Fry](http://benfry.com/) و [Casey Reas](http://reas.com/) ,  یک محیط فوق العاده ساده و قدرتمند است که می‌توانید در آن اولین قدم های کد زنی خود را بردارید. (حداقل برای من اینگونه بود). [Andres Colubri](https://codeanticode.wordpress.com/) بروزرسانی های مهمی به OpenGl  و پردازش ویدئو آن اضافه کرده است, که استفاده از شیدر های GLSL را در این محیط دوستانه بسیار آسان می‌کند. این برنامه به دنبال فایل `"shader.frag"` در پوشه `data` داخل `sketch` می‌گردد. مطمئن شوید که نمونه هایی که از اینجا در آن پوشه کپی می‌کنید، تغییر نام دهید.
 
 ```cpp
 PShader shader;
