@@ -3,7 +3,7 @@
 # The Book of Shaders
 *by [Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) and [Jen Lowe](http://jenlowe.net/)*
 
-این یک راهنمای گام به گام برای ورود به دنیای انتزاعی و پیچیده فرگمنت(خرد) شیدر هاست.
+این یک راهنمای گام به گام برای ورود به دنیای انتزاعی و پیچیده فرگمنت شیدر هاست.
 
 <div class="header">
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B5FSVSHGEATCG" style="float: right;"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" alt=""></a>
