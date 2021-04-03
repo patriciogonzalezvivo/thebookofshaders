@@ -45,5 +45,5 @@ Agar dapat berjalan secara paralel, setiap pipa, atau thread, harus independen d
 
 Juga GPU membuat mikro-prosesor paralel (pipa) terus-menerus sibuk; segera setelah mendapatkan bebas, mereka menerima informasi baru untuk diproses. Tidak mungkin untaian mengetahui apa yang dilakukannya di momen sebelumnya. Itu bisa berupa menggambar tombol dari UI sistem operasi, lalu merender sebagian langit dalam game, lalu menampilkan teks email. Setiap thread tidak hanya **buta** tetapi juga **tanpa memori**. Selain abstraksi yang diperlukan untuk mengkodekan fungsi umum yang mengubah hasil piksel demi piksel tergantung pada posisinya, batasan buta dan tanpa memori membuat shader tidak terlalu populer di kalangan programmer pemula.
 
-Jangan khawatir! Pada bab-bab berikut, kita akan mempelajari langkah demi langkah bagaimana beralih dari kompthreadi bayangan sederhana ke lanjutan. Jika Anda membaca ini dengan browser modern, Anda akan senang bermain dengan contoh interaktif. Jadi jangan tunda lagi keseruannya dan tekan *Next >>* untuk beralih ke kode!
+Jangan khawatir! Pada bab-bab berikut, kita akan mempelajari langkah demi langkah bagaimana beralih dari komputasi bayangan sederhana ke lanjutan. Jika Anda membaca ini dengan browser modern, Anda akan senang bermain dengan contoh interaktif. Jadi jangan tunda lagi keseruannya dan tekan *Next >>* untuk beralih ke kode!
 
