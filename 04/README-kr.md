@@ -32,7 +32,7 @@ Ricardo Cabello (aka [MrDoob](https://twitter.com/mrdoob) ) 가 다른 참여자
     </script>
     <script>
         var container;
-        var camera, scene, renderer;
+        var camera, scene, renderer, clock;
         var uniforms;
 
         init();
@@ -45,6 +45,7 @@ Ricardo Cabello (aka [MrDoob](https://twitter.com/mrdoob) ) 가 다른 참여자
             camera.position.z = 1;
 
             scene = new THREE.Scene();
+            clock = new THREE.Clock();
 
             var geometry = new THREE.PlaneBufferGeometry( 2, 2 );
 
@@ -83,7 +84,7 @@ Ricardo Cabello (aka [MrDoob](https://twitter.com/mrdoob) ) 가 다른 참여자
         }
 
         function render() {
-            uniforms.u_time.value += 0.05;
+            uniforms.u_time.value += clock.getDelta();
             renderer.render( scene, camera );
         }
     </script>
