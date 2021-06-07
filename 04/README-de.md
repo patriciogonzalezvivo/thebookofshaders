@@ -62,7 +62,7 @@ Hier folgt ein Beispiel für den HTML- und JS-Code, den Du für Deine ersten Exp
     </script>
     <script>
         var container;
-        var camera, scene, renderer;
+        var camera, scene, renderer, clock;
         var uniforms;
 
         init();
@@ -75,6 +75,7 @@ Hier folgt ein Beispiel für den HTML- und JS-Code, den Du für Deine ersten Exp
             camera.position.z = 1;
 
             scene = new THREE.Scene();
+            clock = new THREE.Clock();
 
             var geometry = new THREE.PlaneBufferGeometry( 2, 2 );
 
@@ -119,7 +120,7 @@ Hier folgt ein Beispiel für den HTML- und JS-Code, den Du für Deine ersten Exp
         }
 
         function render() {
-            uniforms.u_time.value += 0.05;
+            uniforms.u_time.value += clock.getDelta();
             renderer.render( scene, camera );
         }
     </script>

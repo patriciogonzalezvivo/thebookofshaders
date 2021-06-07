@@ -63,7 +63,7 @@ glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutput
     </script>
     <script>
         var container;
-        var camera, scene, renderer;
+        var camera, scene, renderer, clock;
         var uniforms;
 
         init();
@@ -76,6 +76,7 @@ glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutput
             camera.position.z = 1;
 
             scene = new THREE.Scene();
+            clock = new THREE.Clock();
 
             var geometry = new THREE.PlaneBufferGeometry( 2, 2 );
 
@@ -120,7 +121,7 @@ glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutput
         }
 
         function render() {
-            uniforms.u_time.value += 0.05;
+            uniforms.u_time.value += clock.getDelta();
             renderer.render( scene, camera );
         }
     </script>

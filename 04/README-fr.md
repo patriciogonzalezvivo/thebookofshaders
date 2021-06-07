@@ -81,7 +81,7 @@ Notez bien la balise de script appelée `id="fragmentShader"`, c'est là qu'il f
     </script>
     <script>
         var container;
-        var camera, scene, renderer;
+        var camera, scene, renderer, clock;
         var uniforms;
 
         init();
@@ -94,6 +94,7 @@ Notez bien la balise de script appelée `id="fragmentShader"`, c'est là qu'il f
             camera.position.z = 1;
 
             scene = new THREE.Scene();
+            clock = new THREE.Clock();
 
             var geometry = new THREE.PlaneBufferGeometry( 2, 2 );
 
@@ -138,7 +139,7 @@ Notez bien la balise de script appelée `id="fragmentShader"`, c'est là qu'il f
         }
 
         function render() {
-            uniforms.u_time.value += 0.05;
+            uniforms.u_time.value += clock.getDelta();
             renderer.render( scene, camera );
         }
     </script>

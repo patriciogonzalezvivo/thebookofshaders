@@ -64,7 +64,7 @@ Below is an example of the HTML and JS you need to get started with shaders in t
     </script>
     <script>
         var container;
-        var camera, scene, renderer;
+        var camera, scene, renderer, clock;
         var uniforms;
 
         init();
@@ -77,6 +77,7 @@ Below is an example of the HTML and JS you need to get started with shaders in t
             camera.position.z = 1;
 
             scene = new THREE.Scene();
+            clock = new THREE.Clock();
 
             var geometry = new THREE.PlaneBufferGeometry( 2, 2 );
 
@@ -121,7 +122,7 @@ Below is an example of the HTML and JS you need to get started with shaders in t
         }
 
         function render() {
-            uniforms.u_time.value += 0.05;
+            uniforms.u_time.value += clock.getDelta();
             renderer.render( scene, camera );
         }
     </script>
