@@ -30,9 +30,9 @@
 //y = sqrt(rand(x));
 //y = pow(rand(x),5.);"></div>
 
-A while ago [Pixelero](https://pixelero.wordpress.com) published an [interesting article about random distribution](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/). I've added some of the functions he uses in the previous graph for you to play with and see how the distribution can be changed. Uncomment the functions and see what happens.
+얼마 전 [Pixelero](https://pixelero.wordpress.com)는 [랜덤 분포에 대한 흥미로운 글](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/))을 출판했다. 이전 그래프에서 그가 사용하는 기능 중 일부를 추가해 여러분이 가지고 놀 수 있도록 했고, 분포가 어떻게 바뀔 수 있는지 알아보도록 했다. 함수의 주석을 해제해보며 어떻게 되는지 확인해보아라.
 
-If you read [Pixelero's article](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/), it is important to keep in mind that our ```rand()``` function is a deterministic random, also known as pseudo-random. Which means for example ```rand(1.)``` is always going to return the same value. [Pixelero](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/) makes reference to the ActionScript function ```Math.random()``` which is non-deterministic; every call will return a different value.
+[Pixelero's article](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/)를 읽어보면, `rand()`함수는, 결정론적 난수(의사난수라고도 알려진)임을 강조한다. 즉, 예를 들어 `rand(1.)`는 항상 동일한 값을 반환한다. [Pixelero](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/)는 모든 호출에 다른 값을 반환하는 비결정론적인 ActionScript 함수 `Math.random()`을 참고한다.
 
 ## 2차원 랜덤
 
