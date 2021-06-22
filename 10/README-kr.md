@@ -12,7 +12,7 @@
 
 <div class="simpleFunction" data="y = fract(sin(x)*1.0);"></div>
 
-위 함수는 사인파의 소수점이하를 추출하고 있다. `-1.0`~`1.0` 사잇값을 갖는 [`sin()`](../glossary/?search=sin)의 소수점이하를 자르면 0.0~1.0 사이의 양의 값이 반환된다. 이 현상을 이용하여 이 사인파를 더 작은 조각으로 "분할"함으로써 의사난수를 얻을 수 있다. 어떻게? [`sin(x)`](../glossary/?search=sin)의 결과에 더 큰 숫자를 곱한다. 위에 있는 함수를 클릭하고 0을 추가해보아라.
+위 함수는 사인파의 소수점이하를 추출하고 있다. `-1.0` 에서 `1.0` 사잇값을 갖는 [`sin()`](../glossary/?search=sin)의 소수점이하를 자르면 `0.0` 에서 `1.0` 사이의 양의 값이 반환된다. 이 현상을 이용하여 이 사인파를 더 작은 조각으로 "분할"함으로써 의사난수를 얻을 수 있다. 어떻게? [`sin(x)`](../glossary/?search=sin)의 결과에 더 큰 숫자를 곱한다. 위에 있는 함수를 클릭하고 0을 추가해보아라.
 
 `100000.0`에 도달할 때 쯤이면(식은 다음과 같을 것:`y = fract(sin(x)*100000.0)`), 사인파를 더 이상 구분할 수 없게된다. 사인파의 흐름이 부분 부분 세분화로 인해 혼돈의 카오스가 되어버렸다.
 
@@ -30,7 +30,7 @@
 //y = sqrt(rand(x));
 //y = pow(rand(x),5.);"></div>
 
-얼마 전 [Pixelero](https://pixelero.wordpress.com)는 [랜덤 분포에 대한 흥미로운 글](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/))을 출판했다. 이전 그래프에서 그가 사용하는 기능 중 일부를 추가해 여러분이 가지고 놀 수 있도록 했고, 분포가 어떻게 바뀔 수 있는지 알아보도록 했다. 함수의 주석을 해제해보며 어떻게 되는지 확인해보아라.
+얼마 전 [Pixelero](https://pixelero.wordpress.com)는 [랜덤 분포에 대한 흥미로운 글](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/)을 출판했다. 이전 그래프에서 그가 사용하는 기능 중 일부를 추가해 여러분이 가지고 놀 수 있도록 했고, 분포가 어떻게 바뀔 수 있는지 알아보도록 했다. 함수의 주석을 해제해보며 어떻게 되는지 확인해보아라.
 
 [Pixelero's article](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/)를 읽어보면, `rand()`함수는, 결정론적 난수(의사난수라고도 알려진)임을 강조한다. 즉, 예를 들어 `rand(1.)`는 항상 동일한 값을 반환한다. [Pixelero](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/)는 모든 호출에 다른 값을 반환하는 비결정론적인 ActionScript 함수 `Math.random()`을 참고한다.
 
