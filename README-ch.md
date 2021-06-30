@@ -80,7 +80,7 @@ Patricio 研习和实践精神疗法（psychotherapy）和表达性艺术治疗�
 
 ## 关于译者
 
-* [tornote](http://tornote.com/) 翻译 00-05 及第 11 章。
+* [tornote](https://github.com/tornoteli) 翻译 00-05 及第 11 章。
 
 * [Artrustee](https://github.com/Artrustee) 翻译 06-10 章。
 
