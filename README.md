@@ -88,7 +88,7 @@ Thanks [Kenichi Yoneda (Kynd)](https://twitter.com/kyndinfo) and [Sawako](https:
 
 Thanks [Tong Li](https://www.facebook.com/tong.lee.9484) and [Yi Zhang](https://www.facebook.com/archer.zetta?pnref=story) for the [Chinese translation (中文版)](?lan=ch)
 
-Thanks [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) for the Korean [translation (한국어)](?lan=kr)
+Thanks [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) and [June Kim](https://github.com/rlawns324) for the Korean [translation (한국어)](?lan=kr)
 
 Thanks [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) for the Spanish [translation (español)](?lan=es)
 
