@@ -30,7 +30,7 @@ If you prefer to work offline using [SublimeText](https://www.sublimetext.com/) 
 
 ![](glslEditor-00.gif)
 
-**Curate**: Sharing your code is the beginning of you sharing your shader as artwork! Beside the option to export to [openFrame.io](http://openframe.io/) I made a tool to curate your shaders into a gallery that can be embedded on any site, it’s name is [glslGallery](https://github.com/patriciogonzalezvivo/glslGallery). Learn more [here](https://github.com/patriciogonzalezvivo/glslGallery).
+**Curate**: Sharing your code is the beginning of you sharing your shader as artwork! Beside the option to export to [openFrame.io](http://openframe.io/) I made a tool to curate your shaders into a gallery that can be embedded on any site, its name is [glslGallery](https://github.com/patriciogonzalezvivo/glslGallery). Learn more [here](https://github.com/patriciogonzalezvivo/glslGallery).
 
 ![](glslGallery.gif)
 
