@@ -20,14 +20,9 @@
 	$Parsedown = new Parsedown();
 	echo $Parsedown->text(file_get_contents($README.'.md'));
 
-	echo '
-	</div>
-	<hr>
-	<ul class="navigationBar" >
-		<li class="navigationBar" onclick="previusPage()">&lt; &lt; Previous</li>
-		<li class="navigationBar" onclick="homePage()"> Home </li>
-		<li class="navigationBar" onclick="nextPage()">Next &gt; &gt;</li>
-	</ul>';
+	echo '</div>';
 
+	$show_previous = true;
+	$show_next = true;
 	include($path."/footer.php");
 ?>

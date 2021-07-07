@@ -1,6 +1,14 @@
-
-
         <footer>
+            <hr>
+            <ul class="navigationBar">
+            <?php if($show_previous): ?>
+                <li class="navigationBar" onclick="previusPage()">&lt;&nbsp;&lt;&nbsp;Previous</li>
+            <?php endif; ?>
+                <li class="navigationBar" onclick="homePage()">Home</li>
+            <?php if($show_next): ?>
+                <li class="navigationBar" onclick="nextPage()">Next&nbsp;&gt;&nbsp;&gt;</li>
+            <?php endif; ?>
+            </ul>
             <p> Copyright 2015 <a href="http://www.patriciogonzalezvivo.com" target="_blank">Patricio Gonzalez Vivo</a> </p>
         </footer>
 <?php
