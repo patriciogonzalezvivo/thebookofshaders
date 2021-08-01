@@ -102,6 +102,8 @@ Cảm ơn [Michael Tischer](http://www.mitinet.de) vì [Bản dịch tiếng Đ�
 
 Cảm ơn [Sergey Karchevsky](https://www.facebook.com/sergey.karchevsky.3) vì [Bản dịch tiếng Nga (russian)](?lan=ru)
 
+[Bản dịch tiếng Việt (Vietnamese)](?lan=vi) được cung cấp bởi [Vũ Phượng Hoàng](https://www.facebook.com/vuphuonghoang88).
+
 Cảm ơn [Andy Stanton](https://andy.stanton.is/) vì đã sửa lỗi và cải tiến [cách export quyển sách ra định dạng pdf/epub](https://thebookofshaders.com/appendix/02/?lan=vi)
 
 Cảm ơn tất cả mọi người đã tin tưởng, [cùng sửa lỗi](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) và quyên góp cho dự án này.
