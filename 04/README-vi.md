@@ -36,7 +36,7 @@ Nếu bạn thích làm việc offline bằng [SublimeText](https://www.sublimet
 
 ## Chạy shader trên framework yêu thích
 
-Trong trường hợp bạn đã có kinh nghiệm lập trình với các framework như: [Processing](https://processing.org/), [Three.js](http://threejs.org/) hay [OpenFrameworks](http://openframeworks.cc/), you có thể sẽ muốn thử shader trên các nền tảng đó. Dưới đây là hướng dẫn sử dụng shader trên các framework phổ biến với các uniform giống như shader được viết trong quyển sách này. (Trong [repository GitHub cho chương này](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), bạn có thể tìm thấy mã nguồn hoàn chỉnh của cả 3 framework này).
+Trong trường hợp bạn đã có kinh nghiệm lập trình với các framework như: [Processing](https://processing.org/), [Three.js](http://threejs.org/), [OpenFrameworks](http://openframeworks.cc/) hay [SFML](https://www.sfml-dev.org/), you có thể sẽ muốn thử shader trên các nền tảng đó. Dưới đây là hướng dẫn sử dụng shader trên các framework phổ biến với các uniform giống như shader được viết trong quyển sách này. (Trong [repository GitHub cho chương này](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), bạn có thể tìm thấy mã nguồn hoàn chỉnh của cả 3 framework này).
 
 ### Với **Three.js**
 
