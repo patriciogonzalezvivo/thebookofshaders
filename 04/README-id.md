@@ -35,7 +35,7 @@ Jika anda memilih untuk mengerjakannya offline menggunakan [SublimeText](https:/
 
 ## Menjalankan Shader pada Framework Favoritmu
 
-Dalam kasus kamu mempunyai pengalaman dalam pemrograman pada framework seperti: [Processing](https://processing.org/), [Three.js](http://threejs.org/) or [OpenFrameworks](http://openframeworks.cc/), anda mungkin tertarik untuk mencoba shader pada platform yang nyaman bagi anda. Contoh berikut adalah cara untuk menyetel shader pada beberapa framework terkenal denggan uniform yang sama yag akan kita gunakan di seluruh buku ini, (Dalan [Repositori Bithub Bab ini](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), anda akan menemukan kode sumber lengkap untuk 3 framework ini).
+Dalam kasus kamu mempunyai pengalaman dalam pemrograman pada framework seperti: [Processing](https://processing.org/), [Three.js](http://threejs.org/), [OpenFrameworks](http://openframeworks.cc/) or [SFML](https://www.sfml-dev.org/), anda mungkin tertarik untuk mencoba shader pada platform yang nyaman bagi anda. Contoh berikut adalah cara untuk menyetel shader pada beberapa framework terkenal denggan uniform yang sama yag akan kita gunakan di seluruh buku ini, (Dalan [Repositori Bithub Bab ini](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), anda akan menemukan kode sumber lengkap untuk 3 framework ini).
 
 ### Dan **Three.js**
 

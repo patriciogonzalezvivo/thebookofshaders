@@ -36,7 +36,7 @@ If you prefer to work offline using [SublimeText](https://www.sublimetext.com/) 
 
 ## Running your shaders on your favorite framework
 
-In case you already have experience programming in a framework like: [Processing](https://processing.org/), [Three.js](http://threejs.org/) or [OpenFrameworks](http://openframeworks.cc/), you're probably excited to try shaders on these platforms you feel comfortable with. The following are examples of how to set shaders in some popular frameworks with the same uniforms that we are going to use throughout this book. (In the [GitHub repository for this chapter](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), you'll find the full source code for these three frameworks.)
+In case you already have experience programming in a framework like: [Processing](https://processing.org/), [Three.js](http://threejs.org/), [OpenFrameworks](http://openframeworks.cc/) or [SFML](https://www.sfml-dev.org/), you're probably excited to try shaders on these platforms you feel comfortable with. The following are examples of how to set shaders in some popular frameworks with the same uniforms that we are going to use throughout this book. (In the [GitHub repository for this chapter](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), you'll find the full source code for these three frameworks.)
 
 ### In **Three.js**
 
@@ -211,10 +211,9 @@ void ofApp::draw(){
 
 For more information about shaders in openFrameworks go to this [excellent tutorial](http://openframeworks.cc/ofBook/chapters/shaders.html) made by [Joshua Noble](http://thefactoryfactory.com/).
 
-
 ### In **Blender**
 
-[GlslTexture](https://github.com/patriciogonzalezvivo/glslTexture) is an addon that allows you to programatically generate textures using GLSL Shaders and is fully compatible with the rest of the sandboxes on this chapter. How it works:
+[GlslTexture](https://github.com/patriciogonzalezvivo/glslTexture) is an addon that allows you to programmatically generate textures using GLSL Shaders and is fully compatible with the rest of the sandboxes on this chapter. How it works:
 
 
 1. Operator Search: `F3` (or `SpaceBar` depending on your setup). Type `GlslTexture`

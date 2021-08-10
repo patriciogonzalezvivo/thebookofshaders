@@ -34,7 +34,7 @@ Se si preferisce lavorare offline utilizzando [SublimeText](https://www.sublimet
 
 ## Eseguire i vostri shader nel vostro framework preferito
 
-Nel caso in cui si dispone già di esperienze di programmazione in framework quali: [Processing](https://processing.org/), [Three.js](http://threejs.org/) o [OpenFrameworks](http://openframeworks.cc/), probabilmente sarete ansiosi di provare gli shader sulle piattaforme su cui vi trovate bene. I seguenti sono esempi di come impostare gli shader in alcuni dei framework più popolari con le stesse uniforms che andremo ad utilizzare in questo libro. (Nella [repository GitHub per questo capitolo](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), troverete il codice sorgente completo per questi tre framework.)
+Nel caso in cui si dispone già di esperienze di programmazione in framework quali: [Processing](https://processing.org/), [Three.js](http://threejs.org/), [OpenFrameworks](http://openframeworks.cc/) o [SFML](https://www.sfml-dev.org/), probabilmente sarete ansiosi di provare gli shader sulle piattaforme su cui vi trovate bene. I seguenti sono esempi di come impostare gli shader in alcuni dei framework più popolari con le stesse uniforms che andremo ad utilizzare in questo libro. (Nella [repository GitHub per questo capitolo](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), troverete il codice sorgente completo per questi tre framework.)
 
 ### In **Three.js**
 

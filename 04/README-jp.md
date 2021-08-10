@@ -36,7 +36,7 @@ glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutput
 
 ## 好みのフレームワークでシェーダーを実行する
 
-もし[Processing](https://processing.org/)、[Three.js](http://threejs.org/) 、[OpenFrameworks](http://openframeworks.cc/)などのフレームワークを使ったブログラミングの経験があるならば、慣れ親しんだ環境でシェーダーを試してみたいと思うでしょう。下記では人気のあるこれらのフレームワークで、この本で紹介するシェーダーを実行できるように設定する方法をお見せします（この本の[GitHubのリポジトリ](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04)にはこれら3つのフレームワークのためのソースコードが丸ごと置いてあります）。
+もし[Processing](https://processing.org/)、[Three.js](http://threejs.org/)、[OpenFrameworks](http://openframeworks.cc/) 、[SFML](https://www.sfml-dev.org/)などのフレームワークを使ったブログラミングの経験があるならば、慣れ親しんだ環境でシェーダーを試してみたいと思うでしょう。下記では人気のあるこれらのフレームワークで、この本で紹介するシェーダーを実行できるように設定する方法をお見せします（この本の[GitHubのリポジトリ](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04)にはこれら3つのフレームワークのためのソースコードが丸ごと置いてあります）。
 
 ### **Three.js**を使う
 

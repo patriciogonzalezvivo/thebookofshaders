@@ -35,7 +35,7 @@ glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutput
 ![](glslGallery.gif)
 
 ## اجرا کردن شیدر هایتان در فریمورک ها دلخواهتان
-اگر تجربه کار با فریمورک هایی مثل: [Processing](https://processing.org/), [Three.js](http://threejs.org/) یا [OpenFrameworks](http://openframeworks.cc/) دارید, برای استفاده از آن ها برای شیدر نویسی هم هیجان زده خواهید شد. در ادامه نمونه هایی از چگونگی تنطیم فریمورک ها برای اجرای شیدر ها با همان چارچوب گفته شده در ان کتاب می‌پردازم. (در [GitHub repository for this chapter](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04) ,سورس کد کامل برای استفاده از این سه فریمورک را می‌یابید.)
+اگر تجربه کار با فریمورک هایی مثل: [Processing](https://processing.org/), [Three.js](http://threejs.org/),[OpenFrameworks](http://openframeworks.cc/) یا [SFML](https://www.sfml-dev.org/) دارید, برای استفاده از آن ها برای شیدر نویسی هم هیجان زده خواهید شد. در ادامه نمونه هایی از چگونگی تنطیم فریمورک ها برای اجرای شیدر ها با همان چارچوب گفته شده در ان کتاب می‌پردازم. (در [GitHub repository for this chapter](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04) ,سورس کد کامل برای استفاده از این سه فریمورک را می‌یابید.)
 
 ### در **Three.js**
 
