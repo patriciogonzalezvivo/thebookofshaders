@@ -2,7 +2,7 @@
 
 Thông thường thì ví dụ "Hello World!" sẽ là bước đầu tiên khi học một ngôn ngữ lập trình mới. Đó là một chương trình đơn giản, in ra 1 dòng chữ chào đón.
 
-Ở địa-bàn-của-GPU thì việc vẽ các ký tự chữ số là bước khởi đầu có phần quá phức tạp, thay vào đó chúng tôi chọn sẽ tô một màu tươi sáng lên màn hình để chào đón các bạn nồng nhiệt nhất!
+Ở địa-bàn-của-GPU thì việc vẽ các ký tự chữ số là bước khởi đầu có phần quá phức tạp, thay vào đó chúng tôi chọn sẽ tô một màu tươi sáng lên màn hình để chào đón các bạn một cách nồng nhiệt nhất!
 
 <div class="codeAndCanvas" data="hello_world.frag"></div>
 

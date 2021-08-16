@@ -68,7 +68,7 @@ Quyển sách này sẽ hướng dẫn người đọc khám phá dần vũ tr�
 
 ## Tác giả
 
-[Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) (sinh năm 1982 tại Buenos Aires, Argentina) là artist kiêm developer ở New York, Anh ấy khám phá sự giao thoa giữa hữu cơ và vô cơ, analog và kỹ thuật số, cá nhân và tập thể. Trong công việc, anh ấy dùng code như một cách đóng góp tạo nên những điều tốt đẹp hơn cho cộng đồng.
+[Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) (sinh năm 1982 tại Buenos Aires, Argentina) là artist kiêm developer ở New York。 Anh ấy khám phá sự giao thoa giữa hữu cơ và vô cơ, analog và kỹ thuật số, cá nhân và tập thể. Trong công việc, anh ấy dùng code như một cách đóng góp tạo nên những điều tốt đẹp hơn cho cộng đồng.
 
 Patricio đã học tập và công tác trong ngành tâm lý trị liệu và nghệ thuật biểu cảm. Anh ấy có bằng Thạc sỹ ngành Thiết kế và Công nghệ từ trường Parson The New School, cũng là nơi anh ấy đang giảng dạy. Hiện tại, anh ấy là Kỹ sư đồ hoạ tại Mapzen để phát triển các công cụ cho openSource.
 
@@ -80,7 +80,7 @@ Patricio đã học tập và công tác trong ngành tâm lý trị liệu và 
 
 ## Lời cảm ơn
 
-Cảm ơn [Scott Murray](http://alignedleft.com/) vì niềm cảm hứng và các video.
+Cảm ơn [Scott Murray](http://alignedleft.com/) vì niềm cảm hứng và những lời khuyên.
 
 Cảm ơn [Kenichi Yoneda (Kynd)](https://twitter.com/kyndinfo), [Nicolas Barradeau](https://twitter.com/nicoptere), [Karim Naaji](http://karim.naaji.fr/) vì đã hỗ trợ cả về ý tưởng lẫn code.
 
@@ -101,6 +101,8 @@ Cảm ơn [Andrea Rovescalli](https://www.earove.info) vì [Bản dịch tiếng
 Cảm ơn [Michael Tischer](http://www.mitinet.de) vì [Bản dịch tiếng Đức (deutsch)](?lan=de)
 
 Cảm ơn [Sergey Karchevsky](https://www.facebook.com/sergey.karchevsky.3) vì [Bản dịch tiếng Nga (russian)](?lan=ru)
+
+Cảm ơn [Vu Phuong Hoang](https://github.com/DancingPhoenix88) và [Minh-Phuc Bui](https://github.com/phucbm) vì [Bản dịch tiếng Việt](?lan=vi)
 
 Cảm ơn [Andy Stanton](https://andy.stanton.is/) vì đã sửa lỗi và cải tiến [cách export quyển sách ra định dạng pdf/epub](https://thebookofshaders.com/appendix/02/?lan=vi)
 
