@@ -1,7 +1,7 @@
 # Các thuật toán hình học
 ## Các hàm số cơ bản (Hàm hình dạng - Shape function)
 
-Chương này có thể đặt tên là "bài học sơn hàng rào của ngài Miyagi". Trước đó, ta đã ánh xạ toạ độ *x* và *y* sang các kênh *RED* và *GREEN*. Ta cũng đã tạo ra một hàm nhận một vector 2 chiều (x, y) làm tham số đầu vào và trả ra một vector 4 chiều (r, g, b, a). Nhưng trước khi đi sâu vào việc biến đổi dữ liệu giữa các kiểu thì ta cần bắt đầu từ những thứ đơn giản hơn ... rất nhiều. Đó là việc tạo ra các hàm chỉ xử lý vector 1 chiều. Càng bỏ thời gian và công sức học cho thuẩn thục kỹ năng này, võ karate-shader của bạn sẽ càng cao siêu.
+Chương này có thể đặt tên là "bài học sơn hàng rào của ngài Miyagi". Trước đó, ta đã ánh xạ toạ độ *x* và *y* sang các kênh *RED* và *GREEN*. Ta cũng đã tạo ra một hàm nhận một vector 2 chiều (x, y) làm tham số đầu vào và trả ra một vector 4 chiều (r, g, b, a). Nhưng trước khi đi sâu vào việc biến đổi dữ liệu giữa các kiểu thì ta cần bắt đầu từ những thứ đơn giản hơn... rất nhiều. Đó là việc tạo ra các hàm chỉ xử lý vector 1 chiều. Càng bỏ thời gian và công sức học cho thuần thục kỹ năng này, võ karate-shader của bạn sẽ càng cao siêu.
 
 ![The Karate Kid (1984)](mr_miyagi.jpg)
 
