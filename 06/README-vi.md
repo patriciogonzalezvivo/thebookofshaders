@@ -13,7 +13,7 @@ red.y = 0.0;
 red.z = 0.0;
 ```
 
-Định nghĩa một màu sử dụng các ký hiệu *x*, *y* và *z* có thể hơi khó hiểu nhỉ ? Đó cũng chính là lý do mà ta sẽ có nhiều cách khác để truy cập dữ liệu trong vector. Các ký hiệu `x`, `y` và `z` có thể thay thế bằng `.r`, `.g`, `.b`, hoặc `.s`, `.t`, `.p`. (`.s`, `.t` và `.p` sẽ được sử dụng ở các chương sau để truy cập các toạ độ trong không gian texture). Ngoài ra bạn cũng có thể truy cập các giá trị trong vector bằng vị trí trong array (`[0]`, `[1]` và `[2]`).
+Định nghĩa một màu sử dụng các ký hiệu *x*, *y* và *z* có thể hơi khó hiểu nhỉ? Đó cũng chính là lý do mà ta sẽ có nhiều cách khác để truy cập dữ liệu trong vector. Các ký hiệu `x`, `y` và `z` có thể thay thế bằng `.r`, `.g`, `.b`, hoặc `.s`, `.t`, `.p`. (`.s`, `.t` và `.p` sẽ được sử dụng ở các chương sau để truy cập các toạ độ trong không gian của texture). Ngoài ra bạn cũng có thể truy cập các giá trị trong vector bằng vị trí trong array (`[0]`, `[1]` và `[2]`).
 
 Mỗi dòng code dưới đây đều truy cập một giá trị giống nhau trong vector:
 
@@ -64,7 +64,7 @@ Hãy xem đoạn code dưới đây và chú ý vào dòng 18 vì tôi sẽ sử
 
 Thử xem bạn thuần thục môn võ karate-shader đến đâu rồi nào:
 
-* Hãy tạo một vùng chuyển tiếp mượt mà giữa 2 màu xem sao. Hãy sử dụng nó để diễn tả một cảm giác nào đó nhé. Màu gì thì diễn tả cảm giác đó tốt nhất ? Nó xuất hiện rồi biến mất như thế nào ? Rồi lại thử với một cảm giác khác. Sửa code để đổi 2 màu được chọn để trộn phía trên xem sao.
+* Hãy tạo một vùng chuyển tiếp mượt mà giữa 2 màu xem sao. Hãy sử dụng nó để diễn tả một cảm giác nào đó nhé. Màu gì thì diễn tả cảm giác đó tốt nhất? Nó xuất hiện rồi biến mất như thế nào? Rồi lại thử với một cảm giác khác. Sửa code để đổi 2 màu được chọn để trộn phía trên xem sao.
 * Thay vì dùng hàm sin, hãy thử các hàm khác mà ta đã học ở chương trước xem sao
 * Robert Penner đã phát triển một series các hàm số dùng trong animation rất nổi tiếng, chúng được gọi là các [easing functions](http://easings.net/), bạn có thể sử dụng [ví dụ này](../edit.php#06/easing.frag) để tham khảo và lấy cảm hứng nhưng tốt nhất là bạn tự tạo ra dải màu gradient của riêng mình.
 
@@ -124,7 +124,7 @@ Hãy thử sửa code sao cho:
 
 ![Quang phổ tổng hợp và tách riêng tần số đỏ, vàng, xanh - William Home Lizars (1834)](spectrums.jpg)
 
-* Nếu quan sát kỹ bánh xe màu được dùng để chọn màu (như hình dưới), bạn sẽ thấy các dải phổ của nó hơi khác một chút vì nó dùng không gian màu RYB. Ví dụ, màu ở vị trí đối diện với đỏ trên bánh xe là màu xanh lá, còn ở ví dụ trên thì ta lại thấy đó là màu xanh da trời (cyan). Bạn có thể sửa code để tạo ra bánh xe màu giống như hình này không ? (Gợi ý: hàm số)
+* Nếu quan sát kỹ bánh xe màu được dùng để chọn màu (như hình dưới), bạn sẽ thấy các dải phổ của nó hơi khác một chút vì nó dùng không gian màu RYB. Ví dụ, màu ở vị trí đối diện với đỏ trên bánh xe là màu xanh lá, còn ở ví dụ trên thì ta lại thấy đó là màu xanh da trời (cyan). Bạn có thể sửa code để tạo ra bánh xe màu giống như hình này không? (Gợi ý: hàm số)
 
 ![](colorwheel.png)
 

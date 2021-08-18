@@ -63,7 +63,7 @@ Hãy thử các thay đổi sau và xem điều gì xảy ra:
 
 * Nhân *x* với `PI` trước khi gọi hàm `sin`. Bạn sẽ thấy 2 chu kỳ bị **co lại** và lặp lại mỗi 2 đơn vị số nguyên.
 
-* Nhân `u_time`với *x* trước khi gọi hàm `sin`. Bạn sẽ thấy **tần số (frequency)** giữa các chu kỳ ngày càng ngắn lại. Chú ý rằng u_time càng lớn thì càng khó nhìn rõ đồ thị do các chu kỳ bị co lại rất nhiều.
+* Nhân `u_time` với *x* trước khi gọi hàm `sin`. Bạn sẽ thấy **tần số (frequency)** giữa các chu kỳ ngày càng ngắn lại. Chú ý rằng u_time càng lớn thì càng khó nhìn rõ đồ thị do các chu kỳ bị co lại rất nhiều.
 
 * Cộng 1.0 vào [`sin(x)`](../glossary/?lan=vi&search=sin). Và bạn sẽ thấy toàn bộ sóng được **nâng lên (displaced)** khiến cho giá trị nằm trong khoảng 0.0 và 2.0.
 
@@ -71,13 +71,13 @@ Hãy thử các thay đổi sau và xem điều gì xảy ra:
 
 * Tính giá trị tuyệt đối ([`abs()`](../glossary/?lan=vi&search=abs)) của hàm `sin(x)`. Trông đồ thị sẽ giống như đường đi của quả bóng nảy trên mặt đất.
 
-* Tách riêng phần thập phân bằng hàm [`fract()`](../glossary/?lan=vi&search=fract)từ kết quả của [`sin(x)`](../glossary/?lan=vi&search=sin).
+* Tách riêng phần thập phân bằng hàm [`fract()`](../glossary/?lan=vi&search=fract) từ kết quả của [`sin(x)`](../glossary/?lan=vi&search=sin).
 
 * Làm tròn lên bằng hàm [`ceil()`](../glossary/?lan=vi&search=ceil) và làm tròn xuống bằng hàm [`floor()`](../glossary/?lan=vi&search=floor) từ kết quả của [`sin(x)`](../glossary/?lan=vi&search=sin) để có được sóng điện tử của các giá trị 1 và -1.
 
 ### Các hàm hữu ích khác
 
-Chúng tôi vừa mới giới thiệu cho các bạn 1 vài hàm mới. Giờ là lúc thử nghiệm từng hàm một bằng cách uncomment từng dòng dưới đây một. Hãy làm quen với các hàm này. Tôi biết bạn đang thắc mắc ... tại sao ? Google nhanh với từ khoá "generative art" sẽ cho bạn câu trả lời. Hãy nhớ rằng các hàm này là hàng rào của chúng ta. Chúng ta đang dần thuần thục với các chuyển động 1 chiều, chỉ có lên và xuống. Sớm thôi, ta sẽ đụng tới các chiều thứ hai, ba và bốn!
+Chúng tôi vừa mới giới thiệu cho các bạn 1 vài hàm mới. Giờ là lúc thử nghiệm từng hàm một bằng cách uncomment từng dòng dưới đây một. Hãy làm quen với các hàm này. Tôi biết bạn đang thắc mắc... tại sao ? Google nhanh với từ khoá "generative art" sẽ cho bạn câu trả lời. Hãy nhớ rằng các hàm này là hàng rào của chúng ta. Chúng ta đang dần thuần thục với các chuyển động 1 chiều, chỉ có lên và xuống. Sớm thôi, ta sẽ đụng tới các chiều thứ hai, ba và bốn!
 
 ![Anthony Mattox (2009)](anthony-mattox-ribbon.jpg)
 
@@ -125,7 +125,7 @@ Hãy nhìn vào bảng các phương trình dưới đây, được tạo bởi 
 
 #### Một vài công cụ cho bạn
 
-Đây là một vài công cụu sẽ giúp bạn vẽ đồ thị các hàm 1 cách trực quan nhất.
+Đây là một vài công cụ sẽ giúp bạn vẽ đồ thị các hàm 1 cách trực quan nhất.
 
 * Grapher: Nếu bạn dùng máy Mac, gõ `grapher` trong Spotlight và bạn có thể dùng ngay công cụ siêu tiện ích này.
 
