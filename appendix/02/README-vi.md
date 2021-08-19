@@ -29,7 +29,7 @@ Trên **MacOSX**:
 Tải và cài đặt MacTeX bằng lệnh:
 
 ```bash
-brew cask install mactex-no-gui
+brew install --cask mactex-no-gui
 ```
 
 sau đó cài thêm [Pandoc](http://johnmacfarlane.net/pandoc/) và Python 2 bằng lệnh:
