@@ -15,7 +15,7 @@ Như bạn thấy, chỉ cần một thẻ `canvas` với `class="glslCanvas"` v
 Nếu bạn giống tôi, bạn có thể sẽ muốn preview shader ngay trong console, và trong trường hợp thì bạn nên ngó qua [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). Ứng dụng này cho phép bạn kết hợp shader với script `bash` hay bất kỳ công cụ dòng lệnh nào của Unix giống như cách mà [ImageMagick](http://www.imagemagick.org/script/index.php) hoạt động. Ngoài ra [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) cũng là một cách hay để biên dịch shader trên [Raspberry Pi](https://www.raspberrypi.org/), cũng chính là lí do mà [openFrame.io](http://openframe.io/) dùng nó để preview shader. Tìm hiểu thêm về công cụ này tại [đây](https://github.com/patriciogonzalezvivo/glslViewer).
 
 ```bash
-glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutputImage.png
+glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -E screenshot,yourOutputImage.png
 ```
 
 **Viết shader**: để chia sẻ kinh nghiệm code shader, tôi đã tạo một editor online gọi là [glslEditor](https://github.com/patriciogonzalezvivo/glslEditor). Editor này được nhúng vào các ví dụ trong quyển sách này, nó bổ sung các widget rất tiện cho việc viết code GLSL. Bạn cũng có thể chạy riêng nó như một ứng dụng web ở  [editor.thebookofshaders.com/](http://editor.thebookofshaders.com/). Tìm hiểu thêm tại [đây](https://github.com/patriciogonzalezvivo/glslEditor).

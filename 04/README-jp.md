@@ -13,7 +13,7 @@
 もしあなたが私のような人だったら、コンソールから直接シェーダーを走らせたいと思うでしょう。その場合は[glslViewer](https://github.com/patriciogonzalezvivo/glslViewer)を試してみてください。このアプリケーションを利用すると[ImageMagic](http://www.imagemagick.org/script/index.php)を使うのと同じような方法で、シェーダーをbashスクリプトやUNIXパイプラインで使うことができます。[glslViewer](https://github.com/patriciogonzalezvivo/glslViewer)は[RaspberryPi](https://www.raspberrypi.org/)でシェーダーをコンパイルするのにとても便利なので、[openFrame.io](http://openframe.io/)でもglslViewerをシェーダーによる作品の表示に使っています。詳しくは[こちら](https://github.com/patriciogonzalezvivo/glslViewer)をご覧ください。
 
 ```bash
-glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutputImage.png
+glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -E screenshot,yourOutputImage.png
 ```
 
 **作成する**: シェーダーのコーディングを簡単にするため、[glslEditor](https://github.com/patriciogonzalezvivo/glslEditor)というオンラインのエディターを用意しました。このエディターはこの本のサンプルにも埋め込まれています。glslEditorには幾つもの便利なウィジェットが備わっていて、直接触って具体的に結果を見ることで、抽象的なglslのコーディングをより理解しやすくしてくれます。[editor.thebookofshaders.com/](http://editor.thebookofshaders.com/)から単体で使うこともできます。詳しくは[こちら](https://github.com/patriciogonzalezvivo/glslEditor)をご覧ください。

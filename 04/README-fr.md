@@ -19,7 +19,7 @@ Cette application permet d'incorporer un shader dans un script `bash` ou un pipe
 Pour en savoir plus, [cliquez ici](https://github.com/patriciogonzalezvivo/glslViewer).
 
 ```bash
-glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutputImage.png
+glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -E screenshot,yourOutputImage.png
 ```
 
 **Création** : pour améliorer l'expérience de programmation des shaders, j'ai créé un éditeur disponible ici : [glslEditor](https://github.com/patriciogonzalezvivo/glslEditor).

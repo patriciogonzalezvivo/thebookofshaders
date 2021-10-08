@@ -13,7 +13,7 @@
 Если вы разделяете мой подход к разработке, вам возможно захочется запускать шейдеры напрямую из консоли, в чём вам поможет [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). Это приложение позволяет встраивать шейдеры в `bash`-скрипты или конвейер unix, и может использоваться по аналогии с [ImageMagick](http://www.imagemagick.org/script/index.php). Так же, [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) - отличный способ скомпилировать шейдеры на [Raspberry Pi](https://www.raspberrypi.org/), и поэтому он используется на [openFrame.io](http://openframe.io/) для демонстрации шейдеров. Подробнее с этим приложением можно познакомиться [здесь](https://github.com/patriciogonzalezvivo/glslViewer).
 
 ```bash
-glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutputImage.png
+glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -E screenshot,yourOutputImage.png
 ```
 
 **Создание**: чтобы сделать опыт создания шейдеров более ярким, я сделал онлайн-редактор [glslEditor](https://github.com/patriciogonzalezvivo/glslEditor). Этот редактор используется для демонстрации интерактивных примеров в книге и предоставляет набор виджетов, делающих абстрактный код на GLSL более осязаемым. Его так же можно запустить в отдельном веб-приложении по адресу [editor.thebookofshaders.com](http://editor.thebookofshaders.com/). Подробнее о редакторе [здесь](https://github.com/patriciogonzalezvivo/glslEditor).

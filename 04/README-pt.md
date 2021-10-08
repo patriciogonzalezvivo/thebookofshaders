@@ -13,7 +13,7 @@ Como você pode ver, só precisa de um elemento `canvas` com `class="glslCanvas"
 Se você é como eu, provavelmente vai querer rodar shaders diretamente da console, e nesse caso você deveria dar uma olhada no [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). Esta aplicação lhe permite incorporar shaders em seus scripts `bash` ou pipelines do unix e usá-los de modo similiar ao [ImageMagick](http://www.imagemagick.org/script/index.php). Também, o [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) é uma boa forma de compilar shaders no seu [Raspberry Pi](https://www.raspberrypi.org/), razão pela qual o [openFrame.io](http://openframe.io/) o utiliza para exibir artes em shader. Aprenda mais sobre essa aplicação [aqui](https://github.com/patriciogonzalezvivo/glslViewer).
 
 ```bash
-glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutputImage.png
+glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -E screenshot,yourOutputImage.png
 ```
 
 **Criar**: de modo a trazer mais luz para a experiência de codificação de shaders, eu fiz um editor online chamado [glslEditor](https://github.com/patriciogonzalezvivo/glslEditor). Este editor está embutido nos exemplos ao vivo do livro, e traz uma série de widgets bem convenientes para tornar mais tangível a experiência abstrata de trabalhar com código GLSL. Você também pode executá-lo como uma aplicação web standalone no endereço [editor.thebookofshaders.com/](http://editor.thebookofshaders.com/). Saiba mais sobre isso [aqui](https://github.com/patriciogonzalezvivo/glslEditor).
