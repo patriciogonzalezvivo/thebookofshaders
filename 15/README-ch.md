@@ -18,7 +18,7 @@ vec4 texture2D(sampler2D texture, vec2 coordinates)
 
 <div class="codeAndCanvas" data="texture.frag" data-textures="hokusai.jpg"></div>
 
-如果你注意观察，你会发现纹理的坐标是归一化的！这真的可以叫做“惊喜”，不是吗？纹理坐标和我们已然熟识的东西是一致的。它们的坐标总是在0.0和1.0之间。这意味着它和我们使用的归一化空间坐标完美吻合。
+如果你注意观察，你会发现纹理的坐标是归一化的！这真的是个惊喜，不是吗？纹理坐标和我们已然熟识的东西是一致的。它们的坐标总是在0.0和1.0之间。这意味着它和我们使用的归一化空间坐标完美吻合。
 
 现在既然你已经了解了如何正确的加载纹理，是时候来试验性地探索我们究竟能用这一技巧做些什么了。快试试下面这些：
 
@@ -32,13 +32,13 @@ vec4 texture2D(sampler2D texture, vec2 coordinates)
 
 最后，你可以让你的图像在边缘处重复。这样的话，在你获取坐标超出0.0到1.0这个归一化区间的值时，返回值会从另一边的边缘开始循环往复。
 
-All these features make your images more like an infinite spandex fabric. You can stretch and shrink your texture without noticing the grid of bytes they are originally composed of or the ends of it. To experience this take a look at the following code where we distort a texture using [the noise function we already made](../11/).
+所有这些功能会让你的图像越发像是无限循环往复的化纤面料。你可以拉扯、伸缩你的纹理而无需注意它们原初的数据究竟是什么样的。要体验这一点，看看下面的代码吧，其中我们使用[我们先前创建的噪声函数](../11/)来扭曲纹理。
 
 <div class="codeAndCanvas" data="texture-noise.frag" data-textures="hokusai.jpg"></div>
 
-## Texture resolution
+## 纹理分辨率
 
-Above examples play well with squared images, where both sides are equal and match our squared billboard. But for non-squared images things can be a little more tricky, and unfortunately centuries of pictorial art and photography found more pleasant to the eye non-squared proportions for images.
+上述的种种示例仅展现了长宽相等的方形图像匹配方形公告牌视窗的情形。但至于非正方形图像，事情就没那么简单了。不幸的是，几个世纪以来的绘画艺术和摄影艺术发现非正方形比例的图像更令人赏心悦目。
 
 ![Joseph Nicéphore Niépce (1826)](nicephore.jpg)
 
