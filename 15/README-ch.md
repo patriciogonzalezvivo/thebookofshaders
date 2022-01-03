@@ -42,9 +42,9 @@ vec4 texture2D(sampler2D texture, vec2 coordinates)
 
 ![Joseph Nicéphore Niépce (1826)](nicephore.jpg)
 
-我们该如何解决这个问题呢？我们需要知道这一图像的原始比例，好在放大或缩小纹理的时候正确地保持它原始的[*宽高比*](http://en.wikipedia.org/wiki/Aspect_ratio)。How we can solve this problem? Well we need to know the original proportions of the image to know how to stretch the texture correctly in order to have the original [*aspect ratio*](http://en.wikipedia.org/wiki/Aspect_ratio). For that the texture width and height are passed to the shader as an ```uniform```, which in our example framework are passed as an ```uniform vec2``` with the same name of the texture followed with proposition ```Resolution```. Once we have this information on the shader we can get the aspect ratio by dividing the ```width``` for the ```height``` of the texture resolution. Finally by multiplying this ratio to the coordinates on ```y``` we will shrink this axis to match the original proportions.
+我们该如何解决这个问题呢？我们需要知道这一图像的原始比例，好在放大或缩小纹理的时候正确地保持它原始的[*宽高比*](http://en.wikipedia.org/wiki/Aspect_ratio)。为此，纹理的宽和高是以```uniform```的形式传递进着色器的——在我们的示例框架里是以纹理名后跟```Resolution```的```uniform vec2```传递进来的。一旦着色器里有了这些信息，我们就可以通过将纹理分辨率的```宽度```除以```高度```来获得纹理的宽高比。最后，将这个比例乘上```y```坐标，我们将伸缩这根轴来让纹理匹配其原始比例。
 
-Uncomment line 21 of the following code to see this in action.
+取消 21 行的注释来实操一下吧。
 
 <div class="codeAndCanvas" data="texture-resolution.frag" data-textures="nicephore.jpg"></div>
 
