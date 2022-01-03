@@ -1,4 +1,4 @@
-f# 图像处理
+# 图像处理
 
 ## 纹理
 
@@ -26,11 +26,11 @@ vec4 texture2D(sampler2D texture, vec2 coordinates)
 * 把原前的纹理旋转90度。
 * 将鼠标位置赋值给纹理坐标来移动纹理。
 
-Why you should be excited about textures? Well first of all forget about the sad 255 values for channel; once your image is transformed into a ```uniform sampler2D``` you have all the values between 0.0 and 1.0 (depending on what you set the ```precision``` to ). That's why shaders can make really beautiful post-processing effects.
+为什么你要为纹理痴狂呢？首先请忘了通道那可悲的255值吧；一旦你的图像被转换成了一个```uniform sampler2D```，所有的值都会在0.0和1.0的区间范围内（小数精度取决于你把```precision```设置成了多少）。这就是着色器能创造出美轮美奂的后处理效果的原因。
 
-Second, the [```vec2()```](index.html#vec2.md) means you can get values even between pixels. As we said before the textures are a continuum. This means that if you set up your texture correctly you can ask for values all around the surface of your image and the values will smoothly vary from pixel to pixel with no jumps!
+其次，[```vec2()```](index.html#vec2.md)类型意味着你甚至可以获取到像素之间的值。如前所述，纹理是连续体（continuum）。也就是说，如果正确地设置好了你的纹理，你可以获取纹理图像上的任意值，而这些值在像素点之间是平滑过渡的！
 
-Finally, you can set up your image to repeat in the edges, so if you give values over or lower of the normalized 0.0 and 1.0, the values will wrap around starting over.
+最后，你可以让你的图像在边缘处重复。这样的话，在你获取坐标超出0.0到1.0这个归一化区间的值时，返回值会从另一边的边缘开始循环往复。
 
 All these features make your images more like an infinite spandex fabric. You can stretch and shrink your texture without noticing the grid of bytes they are originally composed of or the ends of it. To experience this take a look at the following code where we distort a texture using [the noise function we already made](../11/).
 
