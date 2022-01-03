@@ -1,30 +1,30 @@
-# 图像处理
+f# 图像处理
 
-## 材质
+## 纹理
 
 ![](01.jpg)
 
 显卡（GPU）有特殊的图像存储类型。在中央处理器（CPU）上，图像往往储存成字节数组，但在GPU上图像却往往储存成```sampler2D``` （二维采样器）。它们更像是一个由浮点向量组成的表格（或矩阵）。更有意思的是，这张*表格*中向量们的值是连续的。这意味着邻近像素点的值之间是用较低级别的插值出来的。
 
-为了用到这一特性，我们首先要把图像从CPU*上传*到GPU，然后再把材质的```id```（序列号）传给对应的[```uniform```](../05)。这一切流程发生在着色器之外。
+为了用到这一特性，我们首先要把图像从CPU*上传*到GPU，然后再把纹理的```id```（序列号）传给对应的[```uniform```](../05)。这一切流程发生在着色器之外。
 
-一旦材质加载好了并且链接上了一个有效的```uniform sampler2D```，你就可以用[```texture2D()```](index.html#texture2D.md)函数请求特定坐标（用二维向量[```vec2```](index.html#vec2.md)类型表示）对应的颜色值（用四维向量[```vec4```](index.html#vec4.md)类型表示）。
+一旦纹理（texture）加载好了并且链接上了一个有效的```uniform sampler2D```，你就可以用[```texture2D()```](index.html#texture2D.md)函数请求特定坐标（用二维向量[```vec2```](index.html#vec2.md)类型表示）对应的颜色值（用四维向量[```vec4```](index.html#vec4.md)类型表示）。
 
 ```glsl
 vec4 texture2D(sampler2D texture, vec2 coordinates)  
 ```
 
-Check the following code where we load Hokusai's Wave (1830) as ```uniform sampler2D u_tex0``` and we call every pixel of it inside the billboard:
+在下面的代码中，我们将《神奈川冲浪里》（1830）以```uniform sampler2D u_tex0```为类型和名字加载了进来，并且我们在显示平面中调用了它的每个像素：
 
 <div class="codeAndCanvas" data="texture.frag" data-textures="hokusai.jpg"></div>
 
-If you pay attention you will note that the coordinates for the texture are normalized! What a surprise right? Textures coordinates are consistent with the rest of the things we had seen and their coordinates are between 0.0 and 1.0 which match perfectly with the normalized space coordinates we have been using.
+如果你注意观察，你会发现纹理的坐标是归一化的！这真的可以叫做“惊喜”，不是吗？纹理坐标和我们已然熟识的东西是一致的。它们的坐标总是在0.0和1.0之间。这意味着它和我们使用的归一化空间坐标完美吻合。
 
-Now that you have seen how we correctly load a texture, it is time to experiment to discover what we can do with it, by trying:
+现在既然你已经了解了如何正确的加载纹理，是时候来试验性地探索我们究竟能用这一技巧做些什么了。快试试下面这些：
 
-* Scaling the previous texture by half.
-* Rotating the previous texture 90 degrees.
-* Hooking the mouse position to the coordinates to move it.
+* 把原前的纹理缩小到原先的一半。
+* 把原前的纹理旋转90度。
+* 将鼠标位置赋值给纹理坐标来移动纹理。
 
 Why you should be excited about textures? Well first of all forget about the sad 255 values for channel; once your image is transformed into a ```uniform sampler2D``` you have all the values between 0.0 and 1.0 (depending on what you set the ```precision``` to ). That's why shaders can make really beautiful post-processing effects.
 
