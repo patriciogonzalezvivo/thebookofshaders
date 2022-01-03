@@ -14,7 +14,7 @@
 vec4 texture2D(sampler2D texture, vec2 coordinates)  
 ```
 
-在下面的代码中，我们将《神奈川冲浪里》（1830）以```uniform sampler2D u_tex0```为类型和名字加载了进来，并且我们在显示平面中调用了它的每个像素：
+在下面的代码中，我们将《神奈川冲浪里》（1830）以```uniform sampler2D u_tex0```为类型和名字加载了进来，并且我们在显示平面（billboard）中调用了它的每个像素：
 
 <div class="codeAndCanvas" data="texture.frag" data-textures="hokusai.jpg"></div>
 
@@ -38,11 +38,11 @@ vec4 texture2D(sampler2D texture, vec2 coordinates)
 
 ## 纹理分辨率
 
-上述的种种示例仅展现了长宽相等的方形图像匹配方形公告牌视窗的情形。但至于非正方形图像，事情就没那么简单了。不幸的是，几个世纪以来的绘画艺术和摄影艺术发现非正方形比例的图像更令人赏心悦目。
+上述的种种示例仅展现了长宽相等的方形图像匹配方形显示平面（billboard）的情形。而至于非正方形图像，事情就没那么简单了。不幸的是，几个世纪以来的绘画艺术和摄影艺术发现非正方形比例的图像更令人赏心悦目。
 
 ![Joseph Nicéphore Niépce (1826)](nicephore.jpg)
 
-How we can solve this problem? Well we need to know the original proportions of the image to know how to stretch the texture correctly in order to have the original [*aspect ratio*](http://en.wikipedia.org/wiki/Aspect_ratio). For that the texture width and height are passed to the shader as an ```uniform```, which in our example framework are passed as an ```uniform vec2``` with the same name of the texture followed with proposition ```Resolution```. Once we have this information on the shader we can get the aspect ratio by dividing the ```width``` for the ```height``` of the texture resolution. Finally by multiplying this ratio to the coordinates on ```y``` we will shrink this axis to match the original proportions.
+我们该如何解决这个问题呢？我们需要知道这一图像的原始比例，好在放大或缩小纹理的时候正确地保持它原始的[*宽高比*](http://en.wikipedia.org/wiki/Aspect_ratio)。How we can solve this problem? Well we need to know the original proportions of the image to know how to stretch the texture correctly in order to have the original [*aspect ratio*](http://en.wikipedia.org/wiki/Aspect_ratio). For that the texture width and height are passed to the shader as an ```uniform```, which in our example framework are passed as an ```uniform vec2``` with the same name of the texture followed with proposition ```Resolution```. Once we have this information on the shader we can get the aspect ratio by dividing the ```width``` for the ```height``` of the texture resolution. Finally by multiplying this ratio to the coordinates on ```y``` we will shrink this axis to match the original proportions.
 
 Uncomment line 21 of the following code to see this in action.
 
