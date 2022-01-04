@@ -8,7 +8,7 @@
 
 为了用到这一特性，我们首先要把图像从CPU*上传*到GPU，然后再把纹理的```id```（序列号）传给对应的[```uniform```](../05)。这一切流程发生在着色器之外。
 
-一旦纹理（texture）加载好了并且链接上了一个有效的```uniform sampler2D```，你就可以用[```texture2D()```](index.html#texture2D.md)函数请求特定坐标（用二维向量[```vec2```](index.html#vec2.md)类型表示）对应的颜色值（用四维向量[```vec4```](index.html#vec4.md)类型表示）。
+一旦纹理（texture）加载好了并且链接上了一个有效的```uniform sampler2D```，你就可以用[```texture2D()```](index.html#texture2D.md)函数获取特定坐标（用二维向量[```vec2```](index.html#vec2.md)类型表示）对应的颜色值（用四维向量[```vec4```](index.html#vec4.md)类型表示）。
 
 ```glsl
 vec4 texture2D(sampler2D texture, vec2 coordinates)  
@@ -48,31 +48,31 @@ vec4 texture2D(sampler2D texture, vec2 coordinates)
 
 <div class="codeAndCanvas" data="texture-resolution.frag" data-textures="nicephore.jpg"></div>
 
-* What we need to do to center this image?
+* 如果要这张图片居中显示，我们应该怎么做呢？
 
-## Digital upholstery
+## 数字装潢（Digital upholstery）
 
 ![](03.jpg)
 
-You may be thinking that this is unnecessarily complicated... and you are probably right. Also this way of working with images leaves enough room to different hacks and creative tricks. Try to imagine that you are an upholster and by stretching and folding a fabric over a structure you can create better and new patterns and techniques.
+你可能会觉得这有些不必要地繁琐……呃，可能你是对的。但这种对待图像的方式给了“奇技淫巧”足够的发挥空间。试想，你是一名室内装潢师，通过拉伸和折叠织物结构，你可以创造出更好的新图案和新技巧。
 
 ![Eadweard's Muybridge study of motion](muybridge.jpg)
 
-This level of craftsmanship links back to some of the first optical experiments ever made. For example on games *sprite animations* are very common, and is inevitably to see on it reminiscence to phenakistoscope, zoetrope and praxinoscope.
+这种水平的工艺可以追溯到最早的一些光学实验。例如，游戏里很常见的*精灵动画*（*sprite animations*），你不可避免地会在它身上看到费纳奇镜（phenakistoscope）、西洋镜（zoetrope）和改良版西洋镜（praxinoscope）的影子。
 
-This could seem simple but the possibilities of modifying textures coordinates are enormous. For example:
+这看起来很简单，但修改纹理坐标可以带来巨大的可能性。例如：
 
 <div class="codeAndCanvas" data="texture-sprite.frag" data-textures="muybridge.jpg"></div>
 
-Now is your turn:
+现在轮到你了:
 
-* Can you make a kaleidoscope using what we have learned?
+* 你能活学活用，做出万花筒效果吗？
 
-* Way before Oculus or google cardboard, stereoscopic photography was a big thing. Could you code a simple shader to re-use these beautiful images?
+* 在Oculus和谷歌Cardboard之前，立体摄影是件大事。你能编写一个简单的着色器来重新使用这些美丽的图像吗?
 
 <a href=“../edit.php#10/ikeda-03.frag”><canvas id=“custom” class=“canvas” data-fragment-url=“ikeda-03.frag”  width=“520px” height=“200px”></canvas></a>
 
 
-* What other optical toys can you re-create using textures?
+* 你还可以使用纹理来再创造哪些其他的光学玩具吗?
 
-In the next chapters we will learn how to do some image processing using shaders. You will note that finally the complexity of shader makes sense, because it was in a big sense designed to do this type of process. We will start doing some image operations!
+在下一章中，我们将学习如何使用着色器进行一些图像处理。你会注意到着色器的复杂性最终是有意义的，因为它很大程度上是为这一过程而生的。我们将开始做一些图像操作!
