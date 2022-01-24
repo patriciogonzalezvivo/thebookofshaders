@@ -44,7 +44,7 @@ void main(){
 }
 ```
 
-step（）函数会让没每一个小于0.1的像素变成黑色（vec3（0.0））并将其余的变成白色（vec3（1.0））。```left``` 乘 ```bottom``` 效果相当于逻辑 AND —— 当 x y 都为 1.0 时乘积才能是 1.0。这样做的效果就是画了两条黑线，一个在画布的底边另一个在左边。
+step（）函数会让每一个小于0.1的像素变成黑色（vec3（0.0））并将其余的变成白色（vec3（1.0））。```left``` 乘 ```bottom``` 效果相当于逻辑 AND —— 当 x y 都为 1.0 时乘积才能是 1.0。这样做的效果就是画了两条黑线，一个在画布的底边另一个在左边。
 
 ![](rect-01.jpg)
 
@@ -136,7 +136,7 @@ There are several ways to calculate that distance. The easiest one uses the [```
 
 * 反转前景色和背景色。
 
-* 调戏下[```smoothstep()```](../glossary/?search=smoothstep)函数，用不同的值来试着做出一个边界顺滑的圆。
+* 使用[```smoothstep()```](../glossary/?search=smoothstep)函数，通过修改不同的值来试着做出一个边界顺滑的圆。
 
 * 一旦遇到令你满意的应用，把他写成一个函数，这样将来就可以调用了。
 
