@@ -90,7 +90,7 @@ Terima kasih kepada [Tong Li](https://www.facebook.com/tong.lee.9484) dan [Yi Zh
 
 Terima kasih kepada [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) untuk [terjemahan Bahasa Korea (한국어)](?lan=kr)
 
-Terima kasih kepada [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) untuk terjemahan [Bahasa Spanyol (español)](?lan=es)
+Terima kasih kepada Nahuel Coppero (Necsoft) untuk terjemahan [Bahasa Spanyol (español)](?lan=es)
 
 Terima kasih kepada [Raphaela Protásio](https://github.com/Rawphs) dan [Lucas Mendonça](https://github.com/luuchowl) untuk terjemahan [terjemahan Bahasa Portugis](?lan=pt)
 

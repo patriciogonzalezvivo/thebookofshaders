@@ -90,7 +90,7 @@ Grazie a [Tong Li](https://www.facebook.com/tong.lee.9484) e a [Yi Zhang](https:
 
 Grazie a [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) per la [traduzione (한국어)](?lan=kr) coreana
 
-Grazie a [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) per la [traduzione (español)](?lan=es) spagnola
+Grazie a Nahuel Coppero (Necsoft) per la [traduzione (español)](?lan=es) spagnola
 
 Grazie a [Nicolas Barradeau](https://twitter.com/nicoptere) e a [Karim Naaji](http://karim.naaji.fr/) per la [traduzione (français)](?lan=fr) francese
 

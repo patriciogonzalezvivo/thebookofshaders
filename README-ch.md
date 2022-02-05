@@ -98,7 +98,7 @@ Patricio 研习和实践精神疗法（psychotherapy）和表达性艺术治疗�
 
 感谢 [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) 的 [韩文版 (한국어)](?lan=kr) 翻译。
 
-感谢 [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) 的 [西班牙语(español)](?lan=es) 翻译。
+感谢 Nahuel Coppero (Necsoft) 的 [西班牙语(español)](?lan=es) 翻译。
 
 感谢 [Karim Naaji](http://karim.naaji.fr/) 在代码和想法上的支持和贡献。
 

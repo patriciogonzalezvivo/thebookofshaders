@@ -88,7 +88,7 @@ Dank an [Tong Li](https://www.facebook.com/tong.lee.9484) und [Yi Zhang](https:/
 
 Dank an [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) für die [koreanische Übersetzung des Textes (한국어)](?lan=kr)
 
-Dank an [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) für die
+Dank an Nahuel Coppero (Necsoft) für die
 [spanische Übersetzung des Textes (español)](?lan=es)
 
 Dank an [Nicolas Barradeau](https://twitter.com/nicoptere) und [Karim Naaji](http://karim.naaji.fr/) für die [französische Übersetzung des Textes (français)](?lan=fr)

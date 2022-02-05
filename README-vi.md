@@ -90,7 +90,7 @@ Cảm ơn [Tong Li](https://www.facebook.com/tong.lee.9484) và [Yi Zhang](https
 
 Cảm ơn [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) vì [Bản dịch tiếng Hàn (한국어)](?lan=kr)
 
-Cảm ơn [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) vì [Bản dịch tiếng Tây Ban Nha (español)](?lan=es)
+Cảm ơn Nahuel Coppero (Necsoft) vì [Bản dịch tiếng Tây Ban Nha (español)](?lan=es)
 
 Cảm ơn [Raphaela Protásio](https://github.com/Rawphs) và [Lucas Mendonça](https://github.com/luuchowl) vì [Bản dịch tiếng Bồ Đào Nha (portugues)](?lan=pt)
 

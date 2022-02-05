@@ -90,7 +90,7 @@
 
 ممنون از [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) برای  Korean [translation (한국어)](?lan=kr)
 
-ممنون از [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) برای Spanish [translation (español)](?lan=es)
+ممنون از Nahuel Coppero (Necsoft) برای Spanish [translation (español)](?lan=es)
 
 ممنون از [Raphaela Protásio](https://github.com/Rawphs) و [Lucas Mendonça](https://github.com/luuchowl) برای Portuguese [translation (portugues)](?lan=pt)
 

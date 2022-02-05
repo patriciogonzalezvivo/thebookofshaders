@@ -96,7 +96,7 @@ Patricio는 심리치료 및 표현예술을 공부했다. 그는 파슨스대�
 
 한국어 번역을 맡고 있는 [유재현](https://www.facebook.com/fkkcloud) 과  [김준](https://github.com/rlawns324) 에게 감사를 표합니다. [Korean translation (한국어)](?lan=kr)
 
-스페인어 번역을 맡고 있는 [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) 에게 감사를 표합니다. [Español translation](?lan=es)
+스페인어 번역을 맡고 있는 Nahuel Coppero (Necsoft) 에게 감사를 표합니다. [Español translation](?lan=es)
 
 포르투갈어 번역을 맡고 있는 [Raphaela Protásio](https://github.com/Rawphs) 와 [Lucas Mendonça](https://github.com/luuchowl) 에게 감사를 표합니다. [Portugues translation](?lan=pt)
 
