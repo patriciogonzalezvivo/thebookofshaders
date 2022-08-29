@@ -4,7 +4,7 @@ As part of the construction of this book and my art practice I made an ecosystem
 
 ## Running your shaders on the browser
 
-**Display**: all live examples in this book are displayed using [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) which makes the process of running standalone shader incredible easy.
+**Display**: all live examples in this book are displayed using [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) which makes the process of running standalone shader incredibly easy.
 
 ```html
 <canvas class="glslCanvas" data-fragment-url=“yourShader.frag" data-textures=“yourInputImage.png” width="500" height="500"></canvas>
