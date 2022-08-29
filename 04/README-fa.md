@@ -15,7 +15,7 @@
 اگر مثل من هستنید و دوست دارید مستیقا شیدر هارا را روی کنسول اجرا کنید, در اینضورت باید یک نگاهی به [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) بیاندازید. این برنامه این امکان را به شما می‌دهد که شیدر ها را در روی bash یا unix pipelines به روش مشابه [ImageMagick](http://www.imagemagick.org/script/index.php) استفاده کنید. همچنین [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) یک روش خوب برای کامپایل شیدر روی  [Raspberry Pi](https://www.raspberrypi.org/) است, به همین علت [openFrame.io](http://openframe.io/) از آن برای نمایش شیدر ها استفاده می‌کند. درمورد این نرم افزار بیشتر بدانید در  [اینجا](https://github.com/patriciogonzalezvivo/glslViewer).
 
 ```bash
-glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutputImage.png
+glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -E screenshot,yourOutputImage.png
 ```
 
 **ساخت**: برای تجربه برنامه نویسی شیدر ها، من یک ویرایشگر آنلاین  [glslEditor](https://github.com/patriciogonzalezvivo/glslEditor) ساختم. این ویرایشگر در مثال های این کتاب هم تعبیه شده است,  این مجموعه ابزارک های مفیدی را هم فراهم می‌کند تا تجربه کار با کد glsl را ملموس تر کند. همچنین آن را بعنوان یک برنامه وب مستقل هم می‌توانید در [editor.thebookofshaders.com/](http://editor.thebookofshaders.com/) استفاده کنید. اطلاعات بیشتر در [اینجا](https://github.com/patriciogonzalezvivo/glslEditor).
@@ -35,7 +35,7 @@ glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutput
 ![](glslGallery.gif)
 
 ## اجرا کردن شیدر هایتان در فریمورک ها دلخواهتان
-اگر تجربه کار با فریمورک هایی مثل: [Processing](https://processing.org/), [Three.js](http://threejs.org/) یا [OpenFrameworks](http://openframeworks.cc/) دارید, برای استفاده از آن ها برای شیدر نویسی هم هیجان زده خواهید شد. در ادامه نمونه هایی از چگونگی تنطیم فریمورک ها برای اجرای شیدر ها با همان چارچوب گفته شده در ان کتاب می‌پردازم. (در [GitHub repository for this chapter](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04) ,سورس کد کامل برای استفاده از این سه فریمورک را می‌یابید.)
+اگر تجربه کار با فریمورک هایی مثل: [Processing](https://processing.org/), [Three.js](http://threejs.org/),[OpenFrameworks](http://openframeworks.cc/) یا [SFML](https://www.sfml-dev.org/) دارید, برای استفاده از آن ها برای شیدر نویسی هم هیجان زده خواهید شد. در ادامه نمونه هایی از چگونگی تنطیم فریمورک ها برای اجرای شیدر ها با همان چارچوب گفته شده در ان کتاب می‌پردازم. (در [GitHub repository for this chapter](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04) ,سورس کد کامل برای استفاده از این سه فریمورک را می‌یابید.)
 
 ### در **Three.js**
 

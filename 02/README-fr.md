@@ -45,7 +45,7 @@ Vous remarquerez que le programme ne se recompilera pas tant qu'il restera des e
 
 * Essayez de commenter (`//`) la ligne 8, ce qui n'assignera aucune valeur au pixel.
 
-* Essayez de créer une fonction qui retourne une couleur en dehors de `main()` et essayez de l'utiliser pour assigner la valeur de `gl_FragColor` dans `main()`. Pour vous aider, voici le code d'une fonction qui une couleur rouge :
+* Essayez de créer une fonction qui retourne une couleur en dehors de `main()` et essayez de l'utiliser pour assigner la valeur de `gl_FragColor` dans `main()`. Pour vous aider, voici le code d'une fonction qui retourne une couleur rouge :
 
 ```glsl
 vec4 red() {
@@ -53,7 +53,7 @@ vec4 red() {
 }
 ```
 
-* On peut construire un `vec4` de plusieurs façons, essayez de découvrir d'autres manières'. Par exemple:
+* On peut construire un `vec4` de plusieurs façons, essayez de découvrir d'autres manières. Par exemple:
 
 ```glsl
 vec4 color = vec4(vec3(1.0,0.0,1.0),1.0);

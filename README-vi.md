@@ -68,7 +68,7 @@ Quyển sách này sẽ hướng dẫn người đọc khám phá dần vũ tr�
 
 ## Tác giả
 
-[Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) (sinh năm 1982 tại Buenos Aires, Argentina) là artist kiêm developer ở New York, Anh ấy khám phá sự giao thoa giữa hữu cơ và vô cơ, analog và kỹ thuật số, cá nhân và tập thể. Trong công việc, anh ấy dùng code như một cách đóng góp tạo nên những điều tốt đẹp hơn cho cộng đồng.
+[Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) (sinh năm 1982 tại Buenos Aires, Argentina) là artist kiêm developer ở New York。 Anh ấy khám phá sự giao thoa giữa hữu cơ và vô cơ, analog và kỹ thuật số, cá nhân và tập thể. Trong công việc, anh ấy dùng code như một cách đóng góp tạo nên những điều tốt đẹp hơn cho cộng đồng.
 
 Patricio đã học tập và công tác trong ngành tâm lý trị liệu và nghệ thuật biểu cảm. Anh ấy có bằng Thạc sỹ ngành Thiết kế và Công nghệ từ trường Parson The New School, cũng là nơi anh ấy đang giảng dạy. Hiện tại, anh ấy là Kỹ sư đồ hoạ tại Mapzen để phát triển các công cụ cho openSource.
 
@@ -80,7 +80,7 @@ Patricio đã học tập và công tác trong ngành tâm lý trị liệu và 
 
 ## Lời cảm ơn
 
-Cảm ơn [Scott Murray](http://alignedleft.com/) vì niềm cảm hứng và các video.
+Cảm ơn [Scott Murray](http://alignedleft.com/) vì niềm cảm hứng và những lời khuyên.
 
 Cảm ơn [Kenichi Yoneda (Kynd)](https://twitter.com/kyndinfo), [Nicolas Barradeau](https://twitter.com/nicoptere), [Karim Naaji](http://karim.naaji.fr/) vì đã hỗ trợ cả về ý tưởng lẫn code.
 
@@ -90,7 +90,7 @@ Cảm ơn [Tong Li](https://www.facebook.com/tong.lee.9484) và [Yi Zhang](https
 
 Cảm ơn [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) vì [Bản dịch tiếng Hàn (한국어)](?lan=kr)
 
-Cảm ơn [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) vì [Bản dịch tiếng Tây Ban Nha (español)](?lan=es)
+Cảm ơn Nahuel Coppero (Necsoft) vì [Bản dịch tiếng Tây Ban Nha (español)](?lan=es)
 
 Cảm ơn [Raphaela Protásio](https://github.com/Rawphs) và [Lucas Mendonça](https://github.com/luuchowl) vì [Bản dịch tiếng Bồ Đào Nha (portugues)](?lan=pt)
 
@@ -102,7 +102,7 @@ Cảm ơn [Michael Tischer](http://www.mitinet.de) vì [Bản dịch tiếng Đ�
 
 Cảm ơn [Sergey Karchevsky](https://www.facebook.com/sergey.karchevsky.3) vì [Bản dịch tiếng Nga (russian)](?lan=ru)
 
-[Bản dịch tiếng Việt (Vietnamese)](?lan=vi) được cung cấp bởi [Vũ Phượng Hoàng](https://www.facebook.com/vuphuonghoang88).
+Cảm ơn [Vu Phuong Hoang](https://github.com/DancingPhoenix88) và [Minh-Phuc Bui](https://github.com/phucbm) vì [Bản dịch tiếng Việt](?lan=vi)
 
 Cảm ơn [Andy Stanton](https://andy.stanton.is/) vì đã sửa lỗi và cải tiến [cách export quyển sách ra định dạng pdf/epub](https://thebookofshaders.com/appendix/02/?lan=vi)
 
@@ -112,4 +112,10 @@ Cảm ơn tất cả mọi người đã tin tưởng, [cùng sửa lỗi](https
 
 Đăng ký nhận thư định kỳ hoặc [theo dõi trên Twitter](https://twitter.com/bookofshaders)
 
- <form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://tinyletter.com/thebookofshaders" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/thebookofshaders', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"><a href="https://tinyletter.com/thebookofshaders"><p><label for="tlemail">Địa chỉ email của bạn</label></p></a><p><input type="text" style="width:140px" name="email" id="tlemail" /></p><input type="hidden" value="1" name="embed"/><input type="submit" value="Đăng ký" /><p><a href="https://tinyletter.com" target="_blank"></a></p></form>
+<div id="fd-form-623359074e5181d777e479f9"></div>
+<script>
+  window.fd('form', {
+    formId: '623359074e5181d777e479f9',
+    containerEl: '#fd-form-623359074e5181d777e479f9'
+  });
+</script>

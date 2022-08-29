@@ -90,7 +90,7 @@ Terima kasih kepada [Tong Li](https://www.facebook.com/tong.lee.9484) dan [Yi Zh
 
 Terima kasih kepada [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) untuk [terjemahan Bahasa Korea (한국어)](?lan=kr)
 
-Terima kasih kepada [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) untuk terjemahan [Bahasa Spanyol (español)](?lan=es)
+Terima kasih kepada Nahuel Coppero (Necsoft) untuk terjemahan [Bahasa Spanyol (español)](?lan=es)
 
 Terima kasih kepada [Raphaela Protásio](https://github.com/Rawphs) dan [Lucas Mendonça](https://github.com/luuchowl) untuk terjemahan [terjemahan Bahasa Portugis](?lan=pt)
 
@@ -110,4 +110,10 @@ Terima kasih kepada semua orang yang telah percaya pada proyek ini dan [telah be
 
 Daftar untuk surat berita atau [follow di Twitter](https://twitter.com/bookofshaders)
 
- <form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://tinyletter.com/thebookofshaders" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/thebookofshaders', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"><a href="https://tinyletter.com/thebookofshaders"><p><label for="tlemail">Masukann alamat email</label></p></a><p><input type="text" style="width:140px" name="email" id="tlemail" /></p><input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe" /><p><a href="https://tinyletter.com" target="_blank"></a></p></form>
+<div id="fd-form-623359074e5181d777e479f9"></div>
+<script>
+  window.fd('form', {
+    formId: '623359074e5181d777e479f9',
+    containerEl: '#fd-form-623359074e5181d777e479f9'
+  });
+</script>

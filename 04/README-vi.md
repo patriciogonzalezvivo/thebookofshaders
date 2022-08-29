@@ -15,7 +15,7 @@ Như bạn thấy, chỉ cần một thẻ `canvas` với `class="glslCanvas"` v
 Nếu bạn giống tôi, bạn có thể sẽ muốn preview shader ngay trong console, và trong trường hợp thì bạn nên ngó qua [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). Ứng dụng này cho phép bạn kết hợp shader với script `bash` hay bất kỳ công cụ dòng lệnh nào của Unix giống như cách mà [ImageMagick](http://www.imagemagick.org/script/index.php) hoạt động. Ngoài ra [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) cũng là một cách hay để biên dịch shader trên [Raspberry Pi](https://www.raspberrypi.org/), cũng chính là lí do mà [openFrame.io](http://openframe.io/) dùng nó để preview shader. Tìm hiểu thêm về công cụ này tại [đây](https://github.com/patriciogonzalezvivo/glslViewer).
 
 ```bash
-glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutputImage.png
+glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -E screenshot,yourOutputImage.png
 ```
 
 **Viết shader**: để chia sẻ kinh nghiệm code shader, tôi đã tạo một editor online gọi là [glslEditor](https://github.com/patriciogonzalezvivo/glslEditor). Editor này được nhúng vào các ví dụ trong quyển sách này, nó bổ sung các widget rất tiện cho việc viết code GLSL. Bạn cũng có thể chạy riêng nó như một ứng dụng web ở  [editor.thebookofshaders.com/](http://editor.thebookofshaders.com/). Tìm hiểu thêm tại [đây](https://github.com/patriciogonzalezvivo/glslEditor).
@@ -26,7 +26,7 @@ Nếu bạn thích làm việc offline bằng [SublimeText](https://www.sublimet
 
 ![](glslViewer.gif)
 
-**Chia sẻ**: Bạn có thể chia sẻ shader bằng editor online ([editor.thebookofshaders.com/](http://editor.thebookofshaders.com/)) Cả phiên bản nhúng và chạy độc lập đều có nút bấm export cho bạn URL tới shader của mình. Nó còn có khả năng export trực tiếp tới [openFrame.io](http://openframe.io/).
+**Chia sẻ**: Bạn có thể chia sẻ shader bằng editor online ([editor.thebookofshaders.com/](http://editor.thebookofshaders.com/))! Cả phiên bản nhúng và chạy độc lập đều có nút bấm export cho bạn một URL tới shader của mình. Nó còn có khả năng export trực tiếp tới [openFrame.io](http://openframe.io/).
 
 ![](glslEditor-00.gif)
 
@@ -36,11 +36,11 @@ Nếu bạn thích làm việc offline bằng [SublimeText](https://www.sublimet
 
 ## Chạy shader trên framework yêu thích
 
-Trong trường hợp bạn đã có kinh nghiệm lập trình với các framework như: [Processing](https://processing.org/), [Three.js](http://threejs.org/) hay [OpenFrameworks](http://openframeworks.cc/), you có thể sẽ muốn thử shader trên các nền tảng đó. Dưới đây là hướng dẫn sử dụng shader trên các framework phổ biến với các uniform giống như shader được viết trong quyển sách này. (Trong [repository GitHub cho chương này](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), bạn có thể tìm thấy mã nguồn hoàn chỉnh của cả 3 framework này).
+Trong trường hợp bạn đã có kinh nghiệm lập trình với các framework như: [Processing](https://processing.org/), [Three.js](http://threejs.org/), [OpenFrameworks](http://openframeworks.cc/) hay [SFML](https://www.sfml-dev.org/), you có thể sẽ muốn thử shader trên các nền tảng đó. Dưới đây là hướng dẫn sử dụng shader trên các framework phổ biến với các uniform giống như shader được viết trong quyển sách này. (Trong [repository GitHub cho chương này](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), bạn có thể tìm thấy mã nguồn hoàn chỉnh của cả 3 framework này).
 
 ### Với **Three.js**
 
-Ricardo Cabello (hay còn gọi là [MrDoob](https://twitter.com/mrdoob) ), một anh chàng thông minh và khiêm tốn đã phát triển một trong những framework nổi tiếng nhất cho WebGL cùng với các [cộng sự](https://github.com/mrdoob/three.js/graphs/contributors), đó là [Three.js](http://threejs.org/). Bạn sẽ tìm thấy rất nhiều ví dụ, hướng dẫn và sách dạy bạn cách dùng thư viện Javascript này để tạo nên các tác phẩm đồ hoạ 3D rất ngầu.
+Ricardo Cabello (hay còn gọi là [MrDoob](https://twitter.com/mrdoob) ), một anh chàng thông minh và khiêm tốn đã phát triển một trong những framework nổi tiếng nhất cho WebGL cùng với các [cộng sự](https://github.com/mrdoob/three.js/graphs/contributors), đó là [Three.js](http://threejs.org/). Bạn sẽ tìm thấy rất nhiều ví dụ, hướng dẫn và sách dạy bạn cách dùng thư viện JavaScript này để tạo nên các tác phẩm đồ hoạ 3D rất ngầu.
 
 Dưới đây là một ví dụ về code HTML và JS mà bạn cần để bắt đầu viết shader với three.js. Hãy chú ý tới đoạn `id="fragmentShader"`, đây là nơi mà bạn có thể copy-paste shader từ quyển sách này thay vào đó để thử.
 
@@ -190,7 +190,7 @@ void ofApp::draw(){
 }
 ```
 
-Nếu bạn muốn sử dụng bộ đầy đủ các uniform trong GlslViewer và GlslCanvas trong openFrameworks một cách đơn giản, tôi xin giới thiệu addon [ofxShader](https://github.com/patriciogonzalezvivo/ofxshader) để hỗ trợ nhiều buffer, vật liệu, hot-reload và tự động chuyển đổi sang OpenGL ES trên Raspberry Pi. Code đơn giản như sau:
+Nếu bạn muốn sử dụng bộ đầy đủ các uniform trong GlslViewer và GlslCanvas trong openFrameworks một cách đơn giản, tôi xin giới thiệu addon [ofxShader](https://github.com/patriciogonzalezvivo/ofxshader) để hỗ trợ nhiều buffer, chất liệu, hot-reload và tự động chuyển đổi sang OpenGL ES trên Raspberry Pi. Code đơn giản như sau:
 
 ```cpp
 //--------------------------------------------------------------
@@ -224,7 +224,7 @@ void ofApp::draw(){
 
 ![](blender/01.png)
 
-3. Sử dụng ảnh trong vật liệu. Tên của ảnh sẽ dựa trên tên của file shader.
+3. Sử dụng ảnh trong chất liệu. Tên của ảnh sẽ dựa trên tên của file shader.
 
 ![](blender/02.png)
 

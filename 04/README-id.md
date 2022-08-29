@@ -14,7 +14,7 @@ Seperti yang dapat anda lihat, hanya membutuhkan elemen `kanvas` dengan `class="
 Jika anda seperti saya, anda mungkin akan menjalankan shader langsung dari kosol, dalam kasus tersebut anda harus melihat [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). Aplikasi ini memperbolehkan anda untuk menggabungkan shader ke skrip `bash` atau pipeline unix dan menggunakannya sama mirip [ImageMagick](http://www.imagemagick.org/script/index.php). [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) juga merupakan cara yang bagus untuk menkompilasi shader pada [Raspberry Pi](https://www.raspberrypi.org/), yang mana merupakan alasan [openFrame.io](http://openframe.io/) menggunakan itu untuk menampilkan artwork shader. Pelajari lebih lanjut tentang aplikasi ini [di sini](https://github.com/patriciogonzalezvivo/glslViewer)
 
 ```bash
-glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutputImage.png
+glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -E screenshot,yourOutputImage.png
 ```
 
 **Membuat**: untuk menerangi pengalaman pengkodean shader, saya membuat editor online bernama  [glslEditor](https://github.com/patriciogonzalezvivo/glslEditor). Editor ini disematkan pada contoh langsung buku, ini membawa serangkaian widget praktis untuk membuat pengalaman abstrak bekerja dengan kode glsl lebih nyata. Anda juga dapat menjalankannya sebagai aplikasi web mandiri dari [editor.thebookofshaders.com/](http://editor.thebookofshaders.com/). Pelajari lebih lanjut tentang itu [di sini](https://github.com/patriciogonzalezvivo/glslEditor).
@@ -35,7 +35,7 @@ Jika anda memilih untuk mengerjakannya offline menggunakan [SublimeText](https:/
 
 ## Menjalankan Shader pada Framework Favoritmu
 
-Dalam kasus kamu mempunyai pengalaman dalam pemrograman pada framework seperti: [Processing](https://processing.org/), [Three.js](http://threejs.org/) or [OpenFrameworks](http://openframeworks.cc/), anda mungkin tertarik untuk mencoba shader pada platform yang nyaman bagi anda. Contoh berikut adalah cara untuk menyetel shader pada beberapa framework terkenal denggan uniform yang sama yag akan kita gunakan di seluruh buku ini, (Dalan [Repositori Bithub Bab ini](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), anda akan menemukan kode sumber lengkap untuk 3 framework ini).
+Dalam kasus kamu mempunyai pengalaman dalam pemrograman pada framework seperti: [Processing](https://processing.org/), [Three.js](http://threejs.org/), [OpenFrameworks](http://openframeworks.cc/) or [SFML](https://www.sfml-dev.org/), anda mungkin tertarik untuk mencoba shader pada platform yang nyaman bagi anda. Contoh berikut adalah cara untuk menyetel shader pada beberapa framework terkenal denggan uniform yang sama yag akan kita gunakan di seluruh buku ini, (Dalan [Repositori Bithub Bab ini](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), anda akan menemukan kode sumber lengkap untuk 3 framework ini).
 
 ### Dan **Three.js**
 

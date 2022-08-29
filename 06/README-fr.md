@@ -19,7 +19,7 @@ red.z = 0.0;
 
 Dans l'exemple ci dessus, *x*, *y* et *z* permettent d'**accéder** aux 3 valeurs contenues dans l'objet `red` de type `vec3`, ce sont les **accesseurs** aux propriétés de `red`.
 
-Définir une couleur avec *x*, *y* et *z* peut être un peu déroutant, c'est pourquoi il existe différentes manières d'accéder aux valeurs des propriétés des vectuers.
+Définir une couleur avec *x*, *y* et *z* peut être un peu déroutant, c'est pourquoi il existe différentes manières d'accéder aux valeurs des propriétés des vecteurs.
 Les valeurs de `.x`, `.y` et `.z` peuvent être récupérées avec les **accesseurs** `.r`, `.g` et `.b`, ou `.s`, `.t` et `.p`. (`.s`, `.t` et `.p` sont généralement utilisées pour encoder les coordonnées spatiales des textures, nous verrons ça dans les chapitres suivants).
 Il est également possible d'accéder aux valeurs des propriétés des vecteurs par leur position d'index dans l'objet: `[0]`, `[1]` and `[2]`.
 
@@ -116,19 +116,6 @@ magenta = jaune.rbg;   // Assigne the valeur en intervertissant le vert et le bl
 
 // crée le vert
 vert.rgb = jaune.bgb; // Assigne le canal bleu du jaune (0) aux canaux rouges et bleus
-```
-
-#### Pour la boîte à outils
-
-Si vous êtes incapables de choisir des couleurs par le biais des chiffres, c'est normal ; cela peut être très contre-intuitif.
-
-Heureusement pour nous, il existe de nombreux programmes qui nous simplifient la tâche.
-Trouvez celui qui vous convient et apprenez à formater vos couleurs en `vec3` ou `vec4`.
-Par exemple, voici les gabarits que j'utilise avec [Spectrum](http://www.eigenlogik.com/spectrum/mac) :
-
-```
-vec3({{rn}},{{gn}},{{bn}})
-vec4({{rn}},{{gn}},{{bn}},1.0)
 ```
 
 ### Mélanger les couleurs

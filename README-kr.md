@@ -96,7 +96,7 @@ Patricio는 심리치료 및 표현예술을 공부했다. 그는 파슨스대�
 
 한국어 번역을 맡고 있는 [유재현](https://www.facebook.com/fkkcloud) 과  [김준](https://github.com/rlawns324) 에게 감사를 표합니다. [Korean translation (한국어)](?lan=kr)
 
-스페인어 번역을 맡고 있는 [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) 에게 감사를 표합니다. [Español translation](?lan=es)
+스페인어 번역을 맡고 있는 Nahuel Coppero (Necsoft) 에게 감사를 표합니다. [Español translation](?lan=es)
 
 포르투갈어 번역을 맡고 있는 [Raphaela Protásio](https://github.com/Rawphs) 와 [Lucas Mendonça](https://github.com/luuchowl) 에게 감사를 표합니다. [Portugues translation](?lan=pt)
 
@@ -116,4 +116,10 @@ Patricio는 심리치료 및 표현예술을 공부했다. 그는 파슨스대�
 
 뉴스 업데이트를 위해 팔로우 해주세요. [follow it on Twitter](https://twitter.com/bookofshaders)
 
- <form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://tinyletter.com/thebookofshaders" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/thebookofshaders', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"><a href="https://tinyletter.com/thebookofshaders"><p><label for="tlemail">Enter your email address</label></p></a><p><input type="text" style="width:140px" name="email" id="tlemail" /></p><input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe" /><p><a href="https://tinyletter.com" target="_blank"></a></p></form>
+<div id="fd-form-623359074e5181d777e479f9"></div>
+<script>
+  window.fd('form', {
+    formId: '623359074e5181d777e479f9',
+    containerEl: '#fd-form-623359074e5181d777e479f9'
+  });
+</script>

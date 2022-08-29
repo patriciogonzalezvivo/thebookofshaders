@@ -13,7 +13,7 @@ Come potete vedere, è solo necessario l'elemento ```canvas``` con l'attributo `
 Se siete come me, probabilmente vorrete eseguire gli shader direttamente dalla console. In questo caso date un'occhiata a [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). Questa applicazione consente d'incorporare gli shader nel vostro script ```bash``` o pipelines UNIX e d?utilizzarli in modo simile a [ImageMagick](http://www.imagemagick.org/script/index.php). Anche [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) è un ottimo modo per compilare gli shader sul [Raspberry Pi](https://www.raspberrypi.org/), motivo per il quale [openFrame.io](http://openframe.io/) lo usa per visualizzare le opere d'arte di tipo shader. Potete trovare ulteriori informazioni su questa applicazione [cliccando qui](https://github.com/patriciogonzalezvivo/glslViewer).
 
 ```bash
-glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutputImage.png
+glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -E screenshot,yourOutputImage.png
 ```
 
 **Creare**: per migliorare la programmazione degli shader, ho realizzato un editor online chiamato [glslEditor](https://github.com/patriciogonzalezvivo/glslEditor). Questo editor è integrato agli esempi del libro e mette a disposizione una serie di comodi widget per rendere più tangibile il codice astratto GLSL. È anche possibile eseguirlo come un'applicazione standalone web da [editor.thebookofshaders.com/](http://editor.thebookofshaders.com/). Scoprite di più a proposito [cliccando qui](https://github.com/patriciogonzalezvivo/glslEditor).
@@ -34,7 +34,7 @@ Se si preferisce lavorare offline utilizzando [SublimeText](https://www.sublimet
 
 ## Eseguire i vostri shader nel vostro framework preferito
 
-Nel caso in cui si dispone già di esperienze di programmazione in framework quali: [Processing](https://processing.org/), [Three.js](http://threejs.org/) o [OpenFrameworks](http://openframeworks.cc/), probabilmente sarete ansiosi di provare gli shader sulle piattaforme su cui vi trovate bene. I seguenti sono esempi di come impostare gli shader in alcuni dei framework più popolari con le stesse uniforms che andremo ad utilizzare in questo libro. (Nella [repository GitHub per questo capitolo](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), troverete il codice sorgente completo per questi tre framework.)
+Nel caso in cui si dispone già di esperienze di programmazione in framework quali: [Processing](https://processing.org/), [Three.js](http://threejs.org/), [OpenFrameworks](http://openframeworks.cc/) o [SFML](https://www.sfml-dev.org/), probabilmente sarete ansiosi di provare gli shader sulle piattaforme su cui vi trovate bene. I seguenti sono esempi di come impostare gli shader in alcuni dei framework più popolari con le stesse uniforms che andremo ad utilizzare in questo libro. (Nella [repository GitHub per questo capitolo](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), troverete il codice sorgente completo per questi tre framework.)
 
 ### In **Three.js**
 

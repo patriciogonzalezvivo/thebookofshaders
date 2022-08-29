@@ -43,15 +43,6 @@ magenta = yellow.rbg;   // Assign the channels with green and blue swapped
 green.rgb = yellow.bgb; // Assign the blue channel of Yellow (0) to red and blue channels
 ```
 
-#### Untuk kotak alat Anda
-
-Anda mungkin tidak terbiasa memilih warna dengan angka - ini bisa sangat berlawanan dengan intuisi. Beruntung bagi Anda, ada banyak program pintar yang memudahkan pekerjaan ini. Temukan yang sesuai dengan kebutuhan Anda, lalu latih untuk memberikan warna dalam format `vec3` atau` vec4`. Misalnya, berikut adalah template yang saya gunakan di [Spectrum](http://www.eigenlogik.com/spectrum/mac):
-
-```
-vec3({{rn}},{{gn}},{{bn}})
-vec4({{`rn}},{{gn}},{{bn}},1.0)
-```
-
 ### Mencampur warna
 
 Sekarang setelah Anda mengetahui bagaimana warna didefinisikan, sekarang saatnya untuk mengintegrasikannya dengan pengetahuan kita sebelumnya. Di GLSL ada fungsi yang sangat berguna, [`mix()`](../glossary/?search=mix), yang memungkinkan Anda mencampur dua nilai dalam persentase. Bisakah Anda menebak berapa kisaran persentasenya? Ya, nilai antara 0,0 dan 1,0! Yang sempurna untuk Anda, setelah berjam-jam berlatih gerakan karate Anda dengan pagar - sekarang saatnya menggunakannya!

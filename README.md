@@ -90,7 +90,7 @@ Thanks [Tong Li](https://www.facebook.com/tong.lee.9484) and [Yi Zhang](https://
 
 Thanks [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) and [June Kim](https://github.com/rlawns324) for the Korean [translation (한국어)](?lan=kr)
 
-Thanks [Nahuel Coppero (Necsoft)](http://hinecsoft.com/) for the Spanish [translation (español)](?lan=es)
+Thanks Nahuel Coppero (Necsoft) for the Spanish [translation (español)](?lan=es)
 
 Thanks [Raphaela Protásio](https://github.com/Rawphs) and [Lucas Mendonça](https://github.com/luuchowl) for the Portuguese [translation (portugues)](?lan=pt)
 
@@ -112,4 +112,15 @@ Thanks to everyone who has believed in this project and [contributed with fixes]
 
 Sign up for the news letter or [follow it on Twitter](https://twitter.com/bookofshaders)
 
- <form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://tinyletter.com/thebookofshaders" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/thebookofshaders', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"><a href="https://tinyletter.com/thebookofshaders"><p><label for="tlemail">Enter your email address</label></p></a><p><input type="text" style="width:140px" name="email" id="tlemail" /></p><input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe" /><p><a href="https://tinyletter.com" target="_blank"></a></p></form>
+<div id="fd-form-623359074e5181d777e479f9"></div>
+<script>
+  window.fd('form', {
+    formId: '623359074e5181d777e479f9',
+    containerEl: '#fd-form-623359074e5181d777e479f9'
+  });
+</script>
+
+## LICENSE
+
+Copyright (c) Patricio Gonzalez Vivo, 2015 - http://patriciogonzalezvivo.com/
+All rights reserved.s

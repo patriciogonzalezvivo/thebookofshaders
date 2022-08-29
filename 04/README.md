@@ -4,7 +4,7 @@ As part of the construction of this book and my art practice I made an ecosystem
 
 ## Running your shaders on the browser
 
-**Display**: all live examples in this book are displayed using [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) which makes the process of running standalone shader incredible easy.
+**Display**: all live examples in this book are displayed using [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) which makes the process of running standalone shader incredibly easy.
 
 ```html
 <canvas class="glslCanvas" data-fragment-url=“yourShader.frag" data-textures=“yourInputImage.png” width="500" height="500"></canvas>
@@ -15,7 +15,7 @@ As you can see, it just needs a `canvas` element with `class="glslCanvas"` and t
 If you are like me, you will probably want to run shaders directly from the console, in that case you should check out [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). This application allows you to incorporate shaders into your `bash` scripts or unix pipelines and use it in a similar way to [ImageMagick](http://www.imagemagick.org/script/index.php). Also [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) is a great way to compile shaders on your [Raspberry Pi](https://www.raspberrypi.org/), which is the reason [openFrame.io](http://openframe.io/) uses it to display shader artwork. Learn more about this application [here](https://github.com/patriciogonzalezvivo/glslViewer).
 
 ```bash
-glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutputImage.png
+glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -E screenshot,yourOutputImage.png
 ```
 
 **Create**: in order to illuminate the experience of coding shaders I made an online editor called [glslEditor](https://github.com/patriciogonzalezvivo/glslEditor). This editor is embedded on the book's live examples, it brings a series of handy widgets to make more tangible the abstract experience of working with glsl code. You can also run it as a standalone web application from [editor.thebookofshaders.com/](http://editor.thebookofshaders.com/). Learn more about it [here](https://github.com/patriciogonzalezvivo/glslEditor).
@@ -36,7 +36,7 @@ If you prefer to work offline using [SublimeText](https://www.sublimetext.com/) 
 
 ## Running your shaders on your favorite framework
 
-In case you already have experience programming in a framework like: [Processing](https://processing.org/), [Three.js](http://threejs.org/) or [OpenFrameworks](http://openframeworks.cc/), you're probably excited to try shaders on these platforms you feel comfortable with. The following are examples of how to set shaders in some popular frameworks with the same uniforms that we are going to use throughout this book. (In the [GitHub repository for this chapter](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), you'll find the full source code for these three frameworks.)
+In case you already have experience programming in a framework like: [Processing](https://processing.org/), [Three.js](http://threejs.org/), [OpenFrameworks](http://openframeworks.cc/) or [SFML](https://www.sfml-dev.org/), you're probably excited to try shaders on these platforms you feel comfortable with. The following are examples of how to set shaders in some popular frameworks with the same uniforms that we are going to use throughout this book. (In the [GitHub repository for this chapter](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), you'll find the full source code for these three frameworks.)
 
 ### In **Three.js**
 
@@ -211,10 +211,9 @@ void ofApp::draw(){
 
 For more information about shaders in openFrameworks go to this [excellent tutorial](http://openframeworks.cc/ofBook/chapters/shaders.html) made by [Joshua Noble](http://thefactoryfactory.com/).
 
-
 ### In **Blender**
 
-[GlslTexture](https://github.com/patriciogonzalezvivo/glslTexture) is an addon that allows you to programatically generate textures using GLSL Shaders and is fully compatible with the rest of the sandboxes on this chapter. How it works:
+[GlslTexture](https://github.com/patriciogonzalezvivo/glslTexture) is an addon that allows you to programmatically generate textures using GLSL Shaders and is fully compatible with the rest of the sandboxes on this chapter. How it works:
 
 
 1. Operator Search: `F3` (or `SpaceBar` depending on your setup). Type `GlslTexture`

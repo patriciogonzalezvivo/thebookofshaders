@@ -45,16 +45,6 @@ magenta = yellow.rbg;   // Assign the channels with green and blue swapped
 green.rgb = yellow.bgb; // Assign the blue channel of Yellow (0) to red and blue channels
 ```
 
-#### 个人工具箱
-
-你可能不习惯用数字拾取颜色--这样非常反直觉。幸运的是，（app store上）有许多可以轻松完成这项任务的程序。寻找一个合适自己的并练习将颜色转化为 ```vec3``` 或 ```vec4``` 格式。例如，这是我在[Spectrum](http://www.eigenlogik.com/spectrum/mac)中使用的的模板。
-
-
-```
-	vec3({{rn}},{{gn}},{{bn}})
-	vec4({{rn}},{{gn}},{{bn}},1.0)
-```
-
 ### 混合颜色
 
 现在你了解到如何定义颜色，是时候将先前所学的整合一下了！在GLSL中，有个十分有用的函数：[```mix()```](../glossary/?search=mix)，这个函数让你以百分比混合两个值。猜下百分比的取值范围？没错，0到1！完美！学了这么久的基本功，是时候来用一用了！

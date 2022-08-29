@@ -25,7 +25,7 @@ vector[2] = vector.b = vector.z = vector.p;
 vector[3] = vector.a = vector.w = vector.q;
 ```
 
-These different ways of pointing to the variables inside a vector are just nomenclatures designed to help you write clear code. This flexibility embedded in shading language is a door for you to start thinking interchangably about color and space coordinates.
+These different ways of pointing to the variables inside a vector are just nomenclatures designed to help you write clear code. This flexibility embedded in shading language is a door for you to start thinking interchangeably about color and space coordinates.
 
 Another great feature of vector types in GLSL is that the properties can be combined in any order you want, which makes it easy to cast and mix values. This ability is called *swizzle*.
 
@@ -41,15 +41,6 @@ magenta = yellow.rbg;   // Assign the channels with green and blue swapped
 
 // Making Green
 green.rgb = yellow.bgb; // Assign the blue channel of Yellow (0) to red and blue channels
-```
-
-#### For your toolbox
-
-You might not be used to picking colors with numbers - it can be very counterintuitive. Lucky for you, there are a lot of smart programs that make this job easy. Find one that fits your needs and then train it to deliver colors in `vec3` or `vec4` format. For example, here are the templates I use on [Spectrum](http://www.eigenlogik.com/spectrum/mac):
-
-```
-vec3({{rn}},{{gn}},{{bn}})
-vec4({{rn}},{{gn}},{{bn}},1.0)
 ```
 
 ### Mixing color

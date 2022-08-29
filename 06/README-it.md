@@ -44,15 +44,6 @@ magenta = yellow.rbg;   // Invertite il canale del verde con quello del blu
 green.rgb = yellow.bgb; // Assegnare il canale blu del giallo (0) ai canali rosso e blu
 ```
 
-#### Per la vostra cassetta degli attrezzi
-
-Potreste non essere abituati a selezionare i colori attraverso numeri - di sicuro questo processo potrebbe risultare controintuitivo. Per vostra fortuna esistono tanti programmi che semplificano questo lavoro. Trovatene uno che vada incontro ai vostri bisogni e usatelo per ottenere colori in formato ```vec3``` 0 ```vec4``` format. Per esempio, qui trovate i templates che io uso su [Spectrum](http://www.eigenlogik.com/spectrum/mac):
-
-```
-	vec3({{rn}},{{gn}},{{bn}})
-	vec4({{rn}},{{gn}},{{bn}},1.0)
-```
-
 ### Mescolare i colori
 
 Ora che sapete come sono definiti i colori, è tempo di integrare ciò con le nostre conoscenze precedenti. In GLSL c’è una funzione molto utile, [```mix()```](../glossary/?search=mix),  che vi permette di mescolare due valori in percentuali. Riuscite ad indovinare l’estensione della percentuale? Esatto, i valori tra 0.0 e 1.0! Dopo lunghe ore di esercizio, finalmente è ora di mettere le vostre conoscenze in pratica!

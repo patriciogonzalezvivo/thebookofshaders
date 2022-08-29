@@ -34,7 +34,7 @@ Wenn Du lieber offline statt online mit [SublimeText](https://www.sublimetext.co
 
 ## Ausführen von Shadern in Deiner bevorzugten Umgebung
 
-Falls Du bereits Erfahrung mit der Programmierung in einer Umgebung wie [Processing](https://processing.org/), [three.js](http://threejs.org/) oder [OpenFrameworks](http://openframeworks.cc/) gesammelt hast, möchtest Du Deine Shader vielleicht in dieser Umgebung ausführen lassen. Die folgenden Codebeispiele zeigen Dir, wie man Shader unter Verwendung der gleichen Uniforms, die wir in diesem Buch verwenden, in diesen Umgebungen ausführen kann. (In der [GitHub-Ablage dieses Kapitels](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04) findest Du den gesamten Sourcecode für die Einbindung von Shadern unter den drei genannten Umgebungen.)
+Falls Du bereits Erfahrung mit der Programmierung in einer Umgebung wie [Processing](https://processing.org/), [three.js](http://threejs.org/), [OpenFrameworks](http://openframeworks.cc/) oder [SFML](https://www.sfml-dev.org/) gesammelt hast, möchtest Du Deine Shader vielleicht in dieser Umgebung ausführen lassen. Die folgenden Codebeispiele zeigen Dir, wie man Shader unter Verwendung der gleichen Uniforms, die wir in diesem Buch verwenden, in diesen Umgebungen ausführen kann. (In der [GitHub-Ablage dieses Kapitels](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04) findest Du den gesamten Sourcecode für die Einbindung von Shadern unter den drei genannten Umgebungen.)
 
 ### Ausführung unter **three.js**
 

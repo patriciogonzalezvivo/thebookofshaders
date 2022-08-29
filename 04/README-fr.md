@@ -19,7 +19,7 @@ Cette application permet d'incorporer un shader dans un script `bash` ou un pipe
 Pour en savoir plus, [cliquez ici](https://github.com/patriciogonzalezvivo/glslViewer).
 
 ```bash
-glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutputImage.png
+glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -E screenshot,yourOutputImage.png
 ```
 
 **Création** : pour améliorer l'expérience de programmation des shaders, j'ai créé un éditeur disponible ici : [glslEditor](https://github.com/patriciogonzalezvivo/glslEditor).
@@ -48,7 +48,7 @@ Il s'appelle [glslGallery](https://github.com/patriciogonzalezvivo/glslGallery),
 
 ## Lancer vos shaders depuis votre plateforme favorite
 
-Si vous avez déjà programmé à l'aide de frameworks/APIs comme : [Processing](https://processing.org/), [Three.js](http://threejs.org/) ou [OpenFrameworks](http://openframeworks.cc/),
+Si vous avez déjà programmé à l'aide de frameworks/APIs comme : [Processing](https://processing.org/), [Three.js](http://threejs.org/), [OpenFrameworks](http://openframeworks.cc/) ou [SFML](https://www.sfml-dev.org/),
 vous êtes sans doute impatients de tester vos shaders dans ces environnements.
 Les exemples suivants montrent comment intégrer les shaders sur ces plateformes en conservant les conventions de nommage que nous utiliserons dans ce livre.
 Vous retrouverez le code source complet sur le [dépôt GitHub de ce chapitre](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04).

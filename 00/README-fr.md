@@ -22,7 +22,7 @@ Au fil des chapitres, vous découvrirez à quel point les shaders sont efficaces
 
 ## A qui s'adresse ce livre ?
 
-Ce livre est écrit pour les *creative coders*, les développeurs de jeux, les ingénieurs et les curieux ayant une expérience evec le code, des connaissances basiques en algèbre linéaire et en trigonométrie et désireux d'améliorer la qualité graphique de leurs productions.
+Ce livre est écrit pour les *creative coders*, les développeurs de jeux, les ingénieurs et les curieux ayant une expérience avec le code, des connaissances basiques en algèbre linéaire et en trigonométrie et désireux d'améliorer la qualité graphique de leurs productions.
 Si vous n'avez aucune connaissance en programmation, nous vous recommandons vivement de commencer par apprendre le langage [Processing](https://processing.org/) puis de revenir à ce livre lorsque vous vous sentirez plus à l'aise.
 
 Ce livre vous montrera comment utiliser et intégrer des shaders dans vos projets, comment améliorer leurs performances et leur rendu graphique.
