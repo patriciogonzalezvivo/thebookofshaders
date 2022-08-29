@@ -12,7 +12,7 @@ Fragment shader cho bạn toàn quyền kiểm soát các điểm ảnh được
 
 ![Game Journey của That Game Company](journey.jpg)
 
-Ở các chương tiếp theo, bạn sẽ biết kỹ thuật này nhanh và mạnh kinh khủng tới mức nào, và làm thế nào để áp dụng nó vào công việc.
+Ở các chương tiếp theo, bạn sẽ khám phá ra kỹ thuật này nhanh và mạnh kinh khủng tới mức nào, và làm thế nào để áp dụng nó vào công việc.
 
 ## Quyển sách này dành cho những ai ?
 
@@ -23,8 +23,7 @@ Quyển sách này sẽ chỉ cho bạn cách dùng các shader và cách áp d�
 ## Nội dung của quyển sách này là gì ?
 
 Quyển sách này sẽ tập trung vào việc sử dụng các pixel shader viết bằng GLSL. Đầu tiên ta sẽ định nghĩa thế nào là shader, rồi mới học cách tạo các hình, mẫu, ảnh bằng Toán học và làm chúng chuyển động bằng shader. Bạn sẽ được học các kiến thức nền tảng của shader và áp dụng chúng vào các chuyên ngành khác như: Xử lý ảnh
-(Các phép toán xử lý ảnh, ma trận chập, làm mờ, bộ lọc, bảng quy chiếu và các hiệu ứng khác), mô phỏng (
-Mô phỏng tiến trình sống theo phương pháp Conway, mô hình Phản ứng - Khuếch tán của Gray-Scott, các gợn sóng trên mặt nước, hiệu ứng màu nước, nhiễu Voronoi, vân vân ...). Tới cuối quyển sách, ta sẽ nói về các kỹ thuật cao cấp hơn dựa trên thuật toán Dò tia - Ray Marching.
+(Các phép toán xử lý ảnh, ma trận chập, làm mờ, bộ lọc, bảng quy chiếu và các hiệu ứng khác), mô phỏng (Mô phỏng tiến trình sống theo phương pháp Conway, mô hình Phản ứng - Khuếch tán của Gray-Scott, các gợn sóng trên mặt nước, hiệu ứng màu nước, nhiễu Voronoi, vân vân ...). Tới cuối quyển sách, ta sẽ nói về các kỹ thuật cao cấp hơn dựa trên thuật toán Dò tia - Ray Marching.
 
 *Tất cả các chương đều có các ví dụ tương tác được để bạn khám phá.* Khi bạn sửa code, bạn sẽ thấy thay đổi ngay lập tức. Các khái niệm có thể hơi trừu tượng và dễ gây nhầm lẫn, nên các ví dụ tương tác được sẽ rất cần thiết để hỗ trợ bạn học. Bạn nắm vững các khái niệm càng nhanh thì bạn học càng dễ.
 

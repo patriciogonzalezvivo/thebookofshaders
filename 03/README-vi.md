@@ -50,12 +50,12 @@ Trong shader ta không có nhiều cách để debug lắm bên cạnh việc th
 
 Giờ là lúc để thử xem ta hiểu code tới đâu.
 
-* Bạn có biết toạ độ `(0.0, 0.0)` nằm ở đâu trên canvas không ?
+* Bạn có biết toạ độ `(0.0, 0.0)` nằm ở đâu trên canvas không?
 
 * Vậy còn `(1.0, 0.0)`, `(0.0, 1.0)`, `(0.5, 0.5)` và `(1.0, 1.0)`?
 
-* Hãy tìm cách lấy màu tại vị trí con trỏ chuột khi được click và di chuyển nó đi bất kỳ chỗ nào con trỏ chuột đang ở
+* Bạn có thể sử dụng `u_mouse` để lấy giá trị điểm ảnh CHƯA chuẩn hoá *(normalize)*? Bạn có thể dùng nó để thay đổi màu khi di chuyển con trỏ chuột?
 
-* Bạn có tưởng tượng được cách nào để tạo ra các mảng màu hay ho bằng cách sử dụng `u_time` và `u_mouse` không ?
+* Bạn có tưởng tượng được cách nào để tạo ra các mảng màu hay ho bằng cách sử dụng `u_time` và `u_mouse` không?
 
 Sau khi làm các bài tập này, bạn có thể sẽ thắc mắc mình có thể sử dụng năng-lực-shader mới này của mình ở đâu nữa. Ở chương tới ta sẽ xem làm thế nào để tạo shader bằng three.js, Processing, và openFrameworks.

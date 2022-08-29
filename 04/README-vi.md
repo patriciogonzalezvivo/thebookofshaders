@@ -26,7 +26,7 @@ Nếu bạn thích làm việc offline bằng [SublimeText](https://www.sublimet
 
 ![](glslViewer.gif)
 
-**Chia sẻ**: Bạn có thể chia sẻ shader bằng editor online ([editor.thebookofshaders.com/](http://editor.thebookofshaders.com/)) Cả phiên bản nhúng và chạy độc lập đều có nút bấm export cho bạn URL tới shader của mình. Nó còn có khả năng export trực tiếp tới [openFrame.io](http://openframe.io/).
+**Chia sẻ**: Bạn có thể chia sẻ shader bằng editor online ([editor.thebookofshaders.com/](http://editor.thebookofshaders.com/))! Cả phiên bản nhúng và chạy độc lập đều có nút bấm export cho bạn một URL tới shader của mình. Nó còn có khả năng export trực tiếp tới [openFrame.io](http://openframe.io/).
 
 ![](glslEditor-00.gif)
 
@@ -40,7 +40,7 @@ Trong trường hợp bạn đã có kinh nghiệm lập trình với các frame
 
 ### Với **Three.js**
 
-Ricardo Cabello (hay còn gọi là [MrDoob](https://twitter.com/mrdoob) ), một anh chàng thông minh và khiêm tốn đã phát triển một trong những framework nổi tiếng nhất cho WebGL cùng với các [cộng sự](https://github.com/mrdoob/three.js/graphs/contributors), đó là [Three.js](http://threejs.org/). Bạn sẽ tìm thấy rất nhiều ví dụ, hướng dẫn và sách dạy bạn cách dùng thư viện Javascript này để tạo nên các tác phẩm đồ hoạ 3D rất ngầu.
+Ricardo Cabello (hay còn gọi là [MrDoob](https://twitter.com/mrdoob) ), một anh chàng thông minh và khiêm tốn đã phát triển một trong những framework nổi tiếng nhất cho WebGL cùng với các [cộng sự](https://github.com/mrdoob/three.js/graphs/contributors), đó là [Three.js](http://threejs.org/). Bạn sẽ tìm thấy rất nhiều ví dụ, hướng dẫn và sách dạy bạn cách dùng thư viện JavaScript này để tạo nên các tác phẩm đồ hoạ 3D rất ngầu.
 
 Dưới đây là một ví dụ về code HTML và JS mà bạn cần để bắt đầu viết shader với three.js. Hãy chú ý tới đoạn `id="fragmentShader"`, đây là nơi mà bạn có thể copy-paste shader từ quyển sách này thay vào đó để thử.
 
@@ -190,7 +190,7 @@ void ofApp::draw(){
 }
 ```
 
-Nếu bạn muốn sử dụng bộ đầy đủ các uniform trong GlslViewer và GlslCanvas trong openFrameworks một cách đơn giản, tôi xin giới thiệu addon [ofxShader](https://github.com/patriciogonzalezvivo/ofxshader) để hỗ trợ nhiều buffer, vật liệu, hot-reload và tự động chuyển đổi sang OpenGL ES trên Raspberry Pi. Code đơn giản như sau:
+Nếu bạn muốn sử dụng bộ đầy đủ các uniform trong GlslViewer và GlslCanvas trong openFrameworks một cách đơn giản, tôi xin giới thiệu addon [ofxShader](https://github.com/patriciogonzalezvivo/ofxshader) để hỗ trợ nhiều buffer, chất liệu, hot-reload và tự động chuyển đổi sang OpenGL ES trên Raspberry Pi. Code đơn giản như sau:
 
 ```cpp
 //--------------------------------------------------------------
@@ -224,7 +224,7 @@ void ofApp::draw(){
 
 ![](blender/01.png)
 
-3. Sử dụng ảnh trong vật liệu. Tên của ảnh sẽ dựa trên tên của file shader.
+3. Sử dụng ảnh trong chất liệu. Tên của ảnh sẽ dựa trên tên của file shader.
 
 ![](blender/02.png)
 
