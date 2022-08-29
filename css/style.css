@@ -371,3 +371,39 @@ code {
   font-style: italic;
   text-align: right;
 }
+
+/* Theme Switcher
+ * ---------------------------------
+ * */
+
+.themeSwitcher {
+    appearance: none;
+    background: none;
+    border: none;
+    margin-bottom: 1.25em;
+    font: inherit;
+    font-size: 0.8em;
+    font-style: italic;
+    color: #555;
+    cursor: pointer;
+}
+
+[data-theme='dark'] {
+    filter: invert(1);
+    background-color: #000;
+}
+
+[data-theme='dark'] img,
+[data-theme='dark'] iframe,
+[data-theme='dark'] canvas:not([data-fragment-url$='moon.frag']) {
+    filter: invert(1);
+}
+
+[data-theme='dark'] img {
+    opacity: 0.75;
+}
+
+[data-theme='dark'] img:hover {
+    opacity: 1;
+}
+
