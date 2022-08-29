@@ -104,6 +104,8 @@ Terima kasih kepada [Sergey Karchevsky](https://www.facebook.com/sergey.karchevs
 
 Terima kasih kepada [Andy Stanton](https://andy.stanton.is/) untuk perbaikan dan improvisasi [the pdf/epub export pipeline](https://thebookofshaders.com/appendix/02/)
 
+Terima kasih kepada [Naufal Adriansyah](https://www.facebook.com/naufal.adrna08) untuk terjemahan [Bahasa Indonesia](?lan=id)
+
 Terima kasih kepada semua orang yang telah percaya pada proyek ini dan [telah berkontribusi dalam perbaikan](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) atau donasi.
 
 ## Dapatkan bagian baru
