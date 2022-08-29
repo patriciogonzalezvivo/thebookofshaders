@@ -17,7 +17,7 @@ Esta relación par entre *x* e *y* (o el brillo) es conocida como *interpolació
 
 <div class="codeAndCanvas" data="expo.frag"></div>
 
-Interesante ¿No? En la línea 19 puedes probar diferentes exponentes: 20.0, 2.0, 1.0, 0.0, 0.2 o 0.02 por ejemplo. Entender esta relación entre el valor y el exponente nos será muy útil. Usar este tipo de funciones matemáticas aquí y allá nos dará un control expresivo sobre nuestro código, como si fuese un tipo de acupuntura con el que manejas el flujo de los valores.
+Interesante ¿No? En la línea 22 puedes probar diferentes exponentes: 20.0, 2.0, 1.0, 0.0, 0.2 o 0.02 por ejemplo. Entender esta relación entre el valor y el exponente nos será muy útil. Usar este tipo de funciones matemáticas aquí y allá nos dará un control expresivo sobre nuestro código, como si fuese un tipo de acupuntura con el que manejas el flujo de los valores.
 
 [```pow()```](../glossary/?search=pow) es una función nativa en GLSL y hay muchas más. La mayoría de ellas son aceleradas por hardware, lo que significa que, usadas de la forma correcta, harán tu código mucho más rápido.
 
