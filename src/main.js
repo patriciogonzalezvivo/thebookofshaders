@@ -277,11 +277,35 @@ function nextPage() {
 	window.location.href =  url;
 }
 
+function enableThemeSwitcher() {
+    function setTheme(theme) {
+        document.body.dataset.theme = currentTheme;
+        switcher.innerText = 'Turn ' + (theme === 'light' ? 'off' : 'on') + ' the lights';
+    }
+
+    var switcher = document.createElement('button');
+    switcher.setAttribute('type', 'button');
+    switcher.classList.add('themeSwitcher');
+    switcher.addEventListener('click', function(event) {
+        currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+        localStorage.setItem('theme', currentTheme);
+        setTheme(currentTheme);
+    } );
+
+    var className = window.location.pathname === '/' ? 'toc-header' : 'header';
+    var header = document.getElementsByClassName(className)[0];
+    header.insertAdjacentElement('beforeend', switcher);
+
+    var currentTheme = localStorage.getItem('theme') || 'light';
+    setTheme(currentTheme);
+}
+
 window.addEventListener("load", function(){
     window.scrollTo(0, 0);
     styleCodeBlocks();
     loadGlslElements();
     captionizeImages();
+    enableThemeSwitcher();
     window.scrollTo(0, 0);
     setTimeout(function () {
          window.scrollTo(0, 0);
