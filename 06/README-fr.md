@@ -118,19 +118,6 @@ magenta = jaune.rbg;   // Assigne the valeur en intervertissant le vert et le bl
 vert.rgb = jaune.bgb; // Assigne le canal bleu du jaune (0) aux canaux rouges et bleus
 ```
 
-#### Pour la boîte à outils
-
-Si vous êtes incapables de choisir des couleurs par le biais des chiffres, c'est normal ; cela peut être très contre-intuitif.
-
-Heureusement pour nous, il existe de nombreux programmes qui nous simplifient la tâche.
-Trouvez celui qui vous convient et apprenez à formater vos couleurs en `vec3` ou `vec4`.
-Par exemple, voici les gabarits que j'utilise avec [Spectrum](http://www.eigenlogik.com/spectrum/mac) :
-
-```
-vec3({{rn}},{{gn}},{{bn}})
-vec4({{rn}},{{gn}},{{bn}},1.0)
-```
-
 ### Mélanger les couleurs
 
 A présent que nous savons définir les couleurs, il est temps de les utiliser avec ce que nous avons déjà appris.

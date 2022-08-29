@@ -43,15 +43,6 @@ magenta = yellow.rbg;   // Đảo vị trí của 2 kênh G và B
 green.rgb = yellow.bgb; // Lấy giá trị ở kênh B của màu vàng để gán đồng thời cho cả kênh R và B của màu xanh lá
 ```
 
-#### Tiện ích
-
-Bạn có thể hiếm khi chọn màu bằng các con số vì nó không mấy trực quan, nhưng bắt buộc phải làm vậy trong GLSL. May thay, có rất nhiều tiện ích hỗ trợ thao tác này. Bạn có thể tuỳ ý lựa chọn tiện ích phù hợp nhất, miễn là kết quả trả về được lưu dưới dạng `vec3` hoặc `vec4`. Ví dụ, tôi sử dụng các template sau trên trang [Spectrum](http://www.eigenlogik.com/spectrum/mac):
-
-```
-vec3({{rn}},{{gn}},{{bn}})
-vec4({{rn}},{{gn}},{{bn}},1.0)
-```
-
 ### Trộn màu
 
 Bạn đã biết cách định nghĩa các màu sắc rồi, giờ thì kết hợp nó với kiến thức đã có từ các chương trước nào. Trong GLSL có 1 hàm rất hữu ích, đó là [`mix()`](../glossary/?lan=vi&search=mix), giúp bạn trộn 2 màu với nhau theo 1 tỉ lệ nhất định. Và tỉ lệ đó cũng nằm trong khoảng [0.0, 1.0]. Hoàn hảo, đó chính là những gì mà ta đã học và luyện tập ở chương trước với việc sơn hàng rào, giờ thì lôi ra áp dụng thôi!

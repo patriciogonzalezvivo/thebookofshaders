@@ -44,15 +44,6 @@ magenta = yellow.rbg;   // Assign the channels with green and blue swapped
 green.rgb = yellow.bgb; // Assign the blue channel of Yellow (0) to red and blue channels
 ```
 
-#### 便利な道具
-
-数値を使って色を指定するのに慣れていないかもしれません。なかなか直感的ではありませんからね。ありがたいことに、手助けになる良くできたプログラムが数多くあります。あなたの使い道にあったものを見つけて ```vec3``` や ```vec4``` の形式で色を取り出せるように設定しておきましょう。例えば、下記は私が[Spectrum](http://www.eigenlogik.com/spectrum/mac)で使っているテンプレートです。
-
-```
-	vec3({{rn}},{{gn}},{{bn}})
-	vec4({{rn}},{{gn}},{{bn}},1.0)
-```
-
 ### 色の調合
 
 色がどのように定義されるか分かったところで、これまでに学んだ知識と組み合わせてみましょう。GLSLにはとても便利な [```mix()```](../glossary/?search=mix) 関数があり、2つの値をパーセンテージを指定して混ぜ合わせることができます。

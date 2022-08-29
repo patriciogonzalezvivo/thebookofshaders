@@ -43,15 +43,6 @@ magenta = yellow.rbg;   // Zuweisung von yellow an magenta bei gleichzeitigem Ta
 green.rgb = yellow.bgb; // Zuweisung des Blau-Kanals von yellow an den Rot- und Blau-Kanal von green
 ```
 
-#### Für Deine Werkzeugkiste
-
-Vielleicht bist Du es nicht gewohnt, Farben über Zahlenwerte zu definieren. Und mal ganz ehrlich, das ist ja auch nicht sonderlich intuitiv. Glücklicherweise gibt es eine Menge intelligenter Programme und Webseiten, mit denen man Farben am Bildschirm auswählen kann und dann die zugehörigen Werte für Rot, Grün und Blau erhält. Am besten, man bekommt sie gleich als Definition für einen ```vec3``` oder ```vec4``` im GLSL-Format geliefert. Hier sind zum Beispiel die Vorlagen, die ich auf [Spectrum](http://www.eigenlogik.com/spectrum/mac) nutze, um einen passenden Ausdruck für GLSL zu erhalten:
-
-```
-	vec3({{rn}},{{gn}},{{bn}})
-	vec4({{rn}},{{gn}},{{bn}},1.0)
-```
-
 ### Mischen von Farben
 
 Jetzt, wo Du weißt, wie man Farben definiert, wird es Zeit, dies mit unserem bisher gesammelten Wissen zu verknüpfen. In GLSL gibt es eine äußerst praktische Funktion mit dem Namen [```mix()```](../glossary/?search=mix), über die man zwei Werte in Form von Prozentangaben mischen kann. Vielleicht kannst Du Dir bereits denken, wie diese Prozentangaben auszusehen haben? Genau, als Werte zwischen ```0.0``` und ```1.0```! Das passt doch perfekt, nachdem Du schon so viel Zahlen-Karate am Zaun geübt hast. Es ist an der Zeit, Dein Wissen umzusetzen.

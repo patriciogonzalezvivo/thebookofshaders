@@ -43,15 +43,6 @@ magenta = yellow.rbg;   // Assign the channels with green and blue swapped
 green.rgb = yellow.bgb; // Assign the blue channel of Yellow (0) to red and blue channels
 ```
 
-#### For your toolbox
-
-You might not be used to picking colors with numbers - it can be very counterintuitive. Lucky for you, there are a lot of smart programs that make this job easy. Find one that fits your needs and then train it to deliver colors in `vec3` or `vec4` format. For example, here are the templates I use on [Spectrum](http://www.eigenlogik.com/spectrum/mac):
-
-```
-vec3({{rn}},{{gn}},{{bn}})
-vec4({{rn}},{{gn}},{{bn}},1.0)
-```
-
 ### Mixing color
 
 Now that you know how colors are defined, it's time to integrate this with our previous knowledge. In GLSL there is a very useful function, [`mix()`](../glossary/?search=mix), that lets you mix two values in percentages. Can you guess what the percentage range is? Yes, values between 0.0 and 1.0! Which is perfect for you, after those long hours practicing your karate moves with the fence - it is time to use them!
