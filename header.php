@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
     $html_attributes = "";
-    if ($_GET['lan'] == "fa") {
+    if (!empty($_GET['lan']) && $_GET['lan'] == "fa") {
         $html_attributes = 'dir="rtl" lang="fa"';
     }
     echo '
