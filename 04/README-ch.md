@@ -1,10 +1,42 @@
 ## 运行你的 shader
 
-现在你可能跃跃欲试，想在你熟悉的平台上小试牛刀了。接下来会有一些比较流行的平台的示例代码，展示如何在这些平台上配置 shader。（在这个 [github 仓库](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04) 中有本章的三种平台的示例代码）
+我制作了一套工具生态系统，用于创建、显示、分享与使用 shader，以此作为本书结构及我艺术实践的一部分。这些工具是跨平台的，无需更改代码就能在 Linux、MacOS、Windows、[树莓派](https://www.raspberrypi.org/) 和浏览器上表现一致。
 
-**注释 1**：如果你不想用这些平台来运行 shader，且你想在浏览器外使用 shader，你可以下载[glslViewer](https://github.com/patriciogonzalezvivo/glslViewer)。这个 MacOS+树莓派程序直接在终端运行，并且是为本书的例子量身打造的。
+## 在浏览器上运行你的 shader
 
-**注释2**：如果你想用 WebGL 显示 shader，并不关心其他平台，你可以用[glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) 。这个 web 工具本来是为本书设计的，但是太好用了，所以我常常用在其他项目中。
+**显示**: 本书中所有实例都可以用 [glslCanvas](https://github.com/patriciogonzalezvivo/glslCanvas) 来显示，这样一来，运行独立的 shader 程序就变得非常简单.
+
+```html
+<canvas class="glslCanvas" data-fragment-url=“yourShader.frag" data-textures=“yourInputImage.png” width="500" height="500"></canvas>
+```
+
+如你所见, 只需要创建一个类名为 `class="glslCanvas"` 的 `canvas` 元素，并将你的 shader 链接放在  `data-fragment-url` 中. 在 [这里](https://github.com/patriciogonzalezvivo/glslCanvas) 可以了解更多.
+
+你可能会像我一样想要从命令行直接运行 shader，那你需要看看 [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer)。这个应用程序可以将 shader 放到  `bash` 脚本或 unix 管道里，并且像 [ImageMagick](http://www.imagemagick.org/script/index.php) 一样使用它。此外，[glslViewer](https://github.com/patriciogonzalezvivo/glslViewer) 也是一个在 [树莓派](https://www.raspberrypi.org/) 上编译 shader 的好办法, 这就是 [openFrame.io](http://openframe.io/) 用它来展示shader 作品的原因。在 [这里](https://github.com/patriciogonzalezvivo/glslViewer) 可以了解该应用程序的更多信息。
+
+```bash
+glslViewer yourShader.frag yourInputImage.png —w 500 -h 500 -s 1 -o yourOutputImage.png
+```
+
+**创建**: 为了介绍 shader 编码的经验，我制作了在线编辑器 [glslEditor](https://github.com/patriciogonzalezvivo/glslEditor)。本书的实例中内嵌了这个编辑器。这个编辑器有很多好用的小组件，使编写 glsl 代码的体验更加直观。你也可以在 [editor.thebookofshaders.com/](http://editor.thebookofshaders.com/) 上将其作为独立的 Web 应用运行。在 [这里](https://github.com/patriciogonzalezvivo/glslEditor) 了解更多。
+
+![](glslEditor-01.gif)
+
+如果你更喜欢用 [SublimeText](https://www.sublimetext.com/) 离线编程，你可以安装 [package for glslViewer](https://packagecontrol.io/packages/glslViewer)。 在 [这里](https://github.com/patriciogonzalezvivo/sublime-glslViewer) 了解更多.
+
+![](glslViewer.gif)
+
+**分享**: 在线编辑器 ([editor.thebookofshaders.com/](http://editor.thebookofshaders.com/)) 可以分享你的 shader！内嵌版和独立版都有导出按钮，你可以通过这个按钮获得 shader 的唯一链接。编辑器也可以直接将 shader 导出到 [openFrame.io](http://openframe.io/)。
+
+![](glslEditor-00.gif)
+
+**使用**: 分享代码只是分享 shader 作品的开始！除了导出到 [openFrame.io](http://openframe.io/)，我还制作了使用 shader 的工具 [glslGallery](https://github.com/patriciogonzalezvivo/glslGallery)，它可以将 shader 放入画廊中，以便嵌入到任何网站. 在 [这里](https://github.com/patriciogonzalezvivo/glslGallery) 了解更多.
+
+![](glslGallery.gif)
+
+## 在你喜欢的框架上运行你的 shader
+
+如果你使用过这些这些框架: [Processing](https://processing.org/), [Three.js](http://threejs.org/), [OpenFrameworks](http://openframeworks.cc/) 或 [SFML](https://www.sfml-dev.org/), 你可能更愿意在你觉得舒服的这些平台上编写 shader。下面将会介绍在这些框架中，用本书范式编写 shader 的方法。 (在 [本章节的 GitHub 仓库中](https://github.com/patriciogonzalezvivo/thebookofshaders/tree/master/04), 你能找到这三个框架的完整源码.)
 
 ### **Three.js**
 
