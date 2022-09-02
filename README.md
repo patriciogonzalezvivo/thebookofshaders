@@ -123,4 +123,4 @@ Sign up for the news letter or [follow it on Twitter](https://twitter.com/bookof
 ## LICENSE
 
 Copyright (c) Patricio Gonzalez Vivo, 2015 - http://patriciogonzalezvivo.com/
-All rights reserved.s
+All rights reserved.
