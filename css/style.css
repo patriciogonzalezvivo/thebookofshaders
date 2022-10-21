@@ -288,12 +288,12 @@ code {
 
 /* GALLERY */
 
-@charset 'utf-8';
+/* @charset 'utf-8'; */
 
-.glslGallery{
-    -moz-column-width: initial;
-    -webkit-column-width: initial;
-}
+/* .glslGallery{ */
+    /* -moz-column-width: initial; */
+    /* -webkit-column-width: initial; */
+/* } */
 
 .glslGallery_item{
     vertical-align: top;

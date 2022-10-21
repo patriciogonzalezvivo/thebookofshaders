@@ -301,13 +301,13 @@ function enableThemeSwitcher() {
 }
 
 window.addEventListener("load", function(){
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     styleCodeBlocks();
     loadGlslElements();
-    captionizeImages();
+    // captionizeImages();
     enableThemeSwitcher();
-    window.scrollTo(0, 0);
-    setTimeout(function () {
-         window.scrollTo(0, 0);
-    }, 500);
+    // window.scrollTo(0, 0);
+    // setTimeout(function () {
+    //      window.scrollTo(0, 0);
+    // }, 500);
 });
