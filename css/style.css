@@ -69,7 +69,6 @@ a {
     text-decoration: none;
     color: #555;
     border-bottom: 1px solid #ccc;
-    -webkit-transition: all ease-out 0.2s;
 }
 
 img {
@@ -375,7 +374,7 @@ code {
 /* Theme Switcher
  * ---------------------------------
  * */
-/* 
+
 .themeSwitcher {
     appearance: none;
     background: none;
@@ -406,4 +405,4 @@ code {
 [data-theme='dark'] img:hover {
     opacity: 1;
 }
- */
+
