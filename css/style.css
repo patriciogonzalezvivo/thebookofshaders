@@ -15,7 +15,7 @@ body {
 }
 
 pre {
- direction: ltr;
+    direction: ltr;
 }
 
 h1 {
@@ -290,10 +290,10 @@ code {
 
 /* @charset 'utf-8'; */
 
-/* .glslGallery{ */
-    /* -moz-column-width: initial; */
-    /* -webkit-column-width: initial; */
-/* } */
+.glslGallery{
+    -moz-column-width: initial;
+    -webkit-column-width: initial;
+}
 
 .glslGallery_item{
     vertical-align: top;
@@ -312,25 +312,25 @@ code {
 }
 
 .glslGallery_credits{
-  position: relative;
-  left: 0;
-  bottom: 0;
-  background: none;
-  margin: 0;
-  padding: 0;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    background: none;
+    margin: 0;
+    padding: 0;
 }
 
 .glslGallery_label{
-  color: #333333;
+    color: #333333;
     font-family:Helvetica,Arial,sans-serif;
     text-decoration:none;
-  width: 200px;
+    width: 200px;
 }
 .glslGallery_title{
     margin: 0px;
     padding-top: 14px;
     font-size:12px;
-  width: 200px;
+    width: 200px;
 }
 .glslGallery_author{
     margin: 0px;
@@ -340,42 +340,42 @@ code {
 }
 
 .glslGallery_openFrameIcon{
-  bottom: 0px;
-  right: 0px;
+    bottom: 0px;
+    right: 0px;
     font-size:14px;
 }
 
 .more {
-  text-align: center;
-  margin-top: 32px;
-  margin-bottom: 32px;
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 32px;
 }
 
 .more a {
-  font-size: 14px;
-  letter-spacing: 0.1em;
+    font-size: 14px;
+    letter-spacing: 0.1em;
     font-family:Helvetica,Arial,sans-serif;
-  font-weight: 600;
-  border-radius: 2px;
-  padding: 8px;
-  border: solid 1px #AAAAAA;
-  text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 2px;
+    padding: 8px;
+    border: solid 1px #AAAAAA;
+    text-transform: uppercase;
 }
 
 .more a:hover {
-  background: #EEEEEE;
+    background: #EEEEEE;
 }
 
 .gallery_author {
-  font-size: 16px;
-  font-style: italic;
-  text-align: right;
+    font-size: 16px;
+    font-style: italic;
+    text-align: right;
 }
 
 /* Theme Switcher
  * ---------------------------------
  * */
-
+/* 
 .themeSwitcher {
     appearance: none;
     background: none;
@@ -406,4 +406,4 @@ code {
 [data-theme='dark'] img:hover {
     opacity: 1;
 }
-
+ */

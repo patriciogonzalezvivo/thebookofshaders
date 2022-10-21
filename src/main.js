@@ -301,7 +301,7 @@ function enableThemeSwitcher() {
 }
 
 window.addEventListener("load", function(){
-    enableThemeSwitcher();
+    // enableThemeSwitcher();
     // window.scrollTo(0, 0);
     styleCodeBlocks();
     loadGlslElements();
