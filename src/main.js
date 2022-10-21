@@ -301,11 +301,11 @@ function enableThemeSwitcher() {
 }
 
 window.addEventListener("load", function(){
+    enableThemeSwitcher();
     // window.scrollTo(0, 0);
     styleCodeBlocks();
     loadGlslElements();
     // captionizeImages();
-    enableThemeSwitcher();
     // window.scrollTo(0, 0);
     // setTimeout(function () {
     //      window.scrollTo(0, 0);
