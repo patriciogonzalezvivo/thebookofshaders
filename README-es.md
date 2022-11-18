@@ -89,7 +89,7 @@ Gracias a todos los que creyeron en este proyecto y [contribuyeron con sus aport
 
 ## ¿Cómo conseguir los nuevos capítulos?
 
-Suscribirse al newsletter o [seguirnos en Twitter](https://twitter.com/bookofshaders)
+Suscribirse al newsletter o seguirnos en [Twitter](https://twitter.com/bookofshaders) / <a rel="me" href="https://mastodon.gamedev.place/@bookofshaders">Mastodon</a> / [Discord](shader.zone) 
 
 <div id="fd-form-623359074e5181d777e479f9"></div>
 <script>

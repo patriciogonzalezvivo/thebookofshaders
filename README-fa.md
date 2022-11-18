@@ -108,7 +108,7 @@
 
 ## قسمت های جدید را دریافت کنید
 
-برای اخبار و اطلاعات جدید ثبت نام کنید یا [در توییتر فالو کنید](https://twitter.com/bookofshaders)
+برای اخبار و اطلاعات جدید ثبت نام کنید یا [در توییتر فالو کنید](https://twitter.com/bookofshaders) / <a rel="me" href="https://mastodon.gamedev.place/@bookofshaders">Mastodon</a> / [Discord](shader.zone) 
 
 <div id="fd-form-623359074e5181d777e479f9"></div>
 <script>

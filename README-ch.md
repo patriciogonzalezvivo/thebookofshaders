@@ -106,7 +106,7 @@ Patricio 研习和实践精神疗法（psychotherapy）和表达性艺术治疗�
 
 ## 获取新的章节
 
-注册以获得最新章节， 或 [在 Twitter 上关注：](https://twitter.com/bookofshaders)
+注册以获得最新章节， 或 在 [Twitter](https://twitter.com/bookofshaders) / <a rel="me" href="https://mastodon.gamedev.place/@bookofshaders">Mastodon</a> / [Discord](shader.zone) 上关注：
 
 <div id="fd-form-623359074e5181d777e479f9"></div>
 <script>

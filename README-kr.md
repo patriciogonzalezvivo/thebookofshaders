@@ -114,7 +114,7 @@ Patricio는 심리치료 및 표현예술을 공부했다. 그는 파슨스대�
 
 ## 새로운 챕터 업데이트 받기
 
-뉴스 업데이트를 위해 팔로우 해주세요. [follow it on Twitter](https://twitter.com/bookofshaders)
+뉴스 업데이트를 위해 팔로우 해주세요. follow it on [Twitter](https://twitter.com/bookofshaders) / <a rel="me" href="https://mastodon.gamedev.place/@bookofshaders">Mastodon</a> / [Discord](shader.zone) 
 
 <div id="fd-form-623359074e5181d777e479f9"></div>
 <script>

@@ -106,7 +106,7 @@ Obrigado a todos que acreditaram neste projeto e [contribuíram com correções]
 
 ## Receba novos capítulos
 
-Assine a newsletter ou [nos siga no Twitter](https://twitter.com/bookofshaders)
+Assine a newsletter ou nos siga no [Twitter](https://twitter.com/bookofshaders) / <a rel="me" href="https://mastodon.gamedev.place/@bookofshaders">Mastodon</a> / [Discord](shader.zone) 
 
 <div id="fd-form-623359074e5181d777e479f9"></div>
 <script>
