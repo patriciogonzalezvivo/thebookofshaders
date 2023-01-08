@@ -1,7 +1,7 @@
 <canvas id="custom" class="canvas" data-fragment-url="src/moon/moon.frag" data-textures="src/moon/moon.jpg" width="350px" height="350px"></canvas>
 
 # The Book of Shaders
-*by [Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) and [Jen Lowe](http://jenlowe.net/)*
+*autorstwa [Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) i [Jen Lowe](http://jenlowe.net/)*
 
 Łagodny, krok po kroku przewodnik przez abstrakcyjny i złożony świat Fragment Shaderów.
 
@@ -15,7 +15,7 @@
 
 * Wprowadzenie
     * [Czym jest shader?](01/)
-    * [“Hello world!”](02/)
+    * ["Witaj świecie!"](02/)
     * [Uniformy](03/)
 	* [Uruchomienie shaderu](04/)
 
@@ -33,27 +33,27 @@
     * [Fraktalny ruch Browna](13/)
     * Fraktale
 
-* Przetwarzanie obrazów
-    * Tekstury
-    * Operacje na obrazach
+* Image processing
+    * Textures
+    * Image operations
     * Kernel convolutions
-    * Filtry
-    * Inne efekty
+    * Filters
+    * Others effects
 
-* Symulacja
+* Simulation
     * Pingpong
     * Conway
     * Ripples
     * Water color
     * Reaction diffusion
 
-* Grafika 3D
-    * Światła
-    * Normal-mapy
-    * Bump-mapy
+* 3D graphics
+    * Lights
+    * Normal-maps
+    * Bump-maps
     * Ray marching
-    * Environmental-mapy (spherical and cube)
-    * Odbicie i refrakcja
+    * Environmental-maps (spherical and cube)
+    * Reflect and refract
 
 * [Dodatek:](appendix/) Inne sposoby korzystania z tej książki
 	* [Jak korzystać z tej książki offline?](appendix/00/)
@@ -68,19 +68,13 @@
 
 ## O autorach
 
-[Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) (1982, Buenos Aires, Argentyna) is a New York based artist and developer. He explores interstitial spaces between organic and synthetic, analog and digital, individual and collective. In his work he uses code as an expressive language with the intention of developing a better together.
-
-# **TODO**
-jest nowojorskim artystą i developerem. Bada to, co między organicznym a syntetycznym, analogowym a cyfrowym, indywidualnym i kolektywnym. W swojej pracy używa kodu jako ekspresywnego języka z intencją rozwijania
+[Patricio Gonzalez Vivo](http://patriciogonzalezvivo.com/) (1982, Buenos Aires, Argentyna) jest nowojorskim artystą i developerem. Bada granice między organicznym a syntetycznym, analogowym a cyfrowym, indywidualnym i kolektywnym. W swojej pracy używa kodu jako ekspresywnego języka, z intencją rozwijania współpracy międzyludzkiej.
 
 Patricio studiował i praktykował psychoterapię oraz arteterapię. Otrzymał tytuł magistra sztuk pięknych w Design & Technology od Parsons The New School, gdzie aktualnie uczy. Obecnie pracuje jako inżynier graficzny w Mapzen, gdzie tworzy opensource'owe narzędzia do kartografii komputerowej. 
 
 <div class="header"> <a href="http://patriciogonzalezvivo.com/" target="_blank">www</a> - <a href="https://twitter.com/patriciogv" target="_blank">Twitter</a> - <a href="https://github.com/patriciogonzalezvivo" target="_blank">GitHub</a> - <a href="https://vimeo.com/patriciogv" target="_blank">Vimeo</a> - <a href="https://www.flickr.com/photos/106950246@N06/" target="_blank"> Flickr</a></div>
 
-[Jen Lowe](http://jenlowe.net/) is an independent data scientist and data communicator at Datatelling where she brings together people + numbers + words. She teaches in SVA's Design for Social Innovation program, cofounded the School for Poetic Computation, taught Math for Artists at NYU ITP, researched at the Spatial Information Design Lab at Columbia University, and contributed ideas at the White House Office of Science and Technology Policy. She's spoken at SXSW and Eyeo. Her work has been covered by The New York Times and Fast Company. Her research, writing, and speaking explore the promises and implications of data and technology in society. She has a B.S. in Applied Math and a Master's in Information Science. Often oppositional, she's always on the side of love.
-
-# **TODO** 
-jest niezależną data scientist w Datatelling, gdzie łączy ludzi + liczby + słowa. Uczy w ramach programu Design for Social Innovation na SVA, współzałożyła School for Poetic Computation, uczyła matematyki dla artystów w NYU ITP, była badaczką w Spatial Information Design Lab na Uniwersytecie Columbia oraz zgłaszała swoje pomysły do Office of Science and Technology Policy Białego Domu. Przemawiała na SXSW i w Eyeo. Jej pracę opisywały The New York Times i Fast Company. Jej działalność badawczą, eksplorują obietnice i implikacje danych i technologii dla społeczeństwa. Obroniła tytuły licencjata matematyki stosowanej oraz magistra informatyki. Często buntownicza, ale zawsze po stronie miłości.
+[Jen Lowe](http://jenlowe.net/) jest niezależną data scientist i komunikatorką danych w Datatelling, gdzie łączy ludzi + liczby + słowa. Uczy w ramach programu Design for Social Innovation na SVA, współzałożyła School for Poetic Computation, uczyła matematyki dla artystów w NYU ITP, była badaczką w Spatial Information Design Lab na Uniwersytecie Columbia oraz zgłaszała swoje pomysły do Office of Science and Technology Policy Białego Domu. Przemawiała na SXSW i w Eyeo. Jej pracę opisywały The New York Times i Fast Company. Jej działalność badawcza, pisarska i mównicza eksplorują obietnice oraz implikacje danych i technologii dla społeczeństwa. Obroniła tytuły licencjata matematyki stosowanej oraz magistra informatyki. Często opozycyjna, ale zawsze po stronie miłości.
 
 <div class="header"> <a href="http://jenlowe.net/" target="_blank">www</a> - <a href="https://twitter.com/datatelling" target="_blank">Twitter</a> - <a href="https://github.com/datatelling" target="_blank">GitHub</a></div>
 
