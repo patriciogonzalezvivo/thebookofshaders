@@ -30,7 +30,7 @@ In **MacOSX**:
 Download and Install MacTeX by:
 
 ```bash
-brew cask install mactex-no-gui
+brew install --cask mactex-no-gui
 ```
 
 and then install [Pandoc](http://johnmacfarlane.net/pandoc/) and Python 3 by:
