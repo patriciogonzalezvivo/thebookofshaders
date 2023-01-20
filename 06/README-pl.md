@@ -216,4 +216,4 @@ int newFunction(in vec4 aVec4,      // read-only
 
 Może w to nie uwierzysz, ale mamy wszystkie składniki potrzbne do tworzenia fajnych rysunków. W następnym rozdziale nauczymy się jak połączyć wszystkie poznane tricki, by stworzyć geometryczne formy przez *blendowanie* przestrzeni. Dobrze słyszysz... *blendowanie* przestrzeni.
 
-You may not believe it but now we have all the elements to make cool drawings. In the next chapter we will learn how to combine all our tricks to make geometric forms by *blending* the space. Yep... *blending* the space.
+<!-- You may not believe it but now we have all the elements to make cool drawings. In the next chapter we will learn how to combine all our tricks to make geometric forms by *blending* the space. Yep... *blending* the space. -->
