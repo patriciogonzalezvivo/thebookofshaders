@@ -184,9 +184,30 @@ Możemy również myśleć o powyższym przykładzie jako o mapie wysokości, gd
 
 ![](distance-field.jpg)
 
-Basically we are using a re-interpretation of the space (based on the distance to the center) to make shapes. This technique is known as a “distance field” and is used in different ways from font outlines to 3D graphics.
+Zasadniczo używamy reinterpretacji przestrzeni (w oparciu o odległość do centrum), aby tworzyć kształty. Ta technika jest znana jako "pole odległości" (ang "distance field") i jest używana na różne sposoby, od konturów czcionek do grafiki 3D.
 
-Try the following exercises:
+<!-- Basically we are using a re-interpretation of the space (based on the distance to the center) to make shapes. This technique is known as a “distance field” and is used in different ways from font outlines to 3D graphics. -->
+
+Spróbuj następujących ćwiczeń:
+
+* Użyj [`step()`](../glossary/?search=step), aby zamienić wszystko powyżej 0.5 na białe, a wszystko poniżej na czarne.
+
+* Odwróć kolory tła i pierwszego planu.
+
+* Używając [`smoothstep()`](../glossary/?search=smoothstep), poeksperymentuj z różnymi wartościami, aby uzyskać ładne, gładkie granice na swoim okręgu.
+
+* Gdy już będziesz zadowolony ze swojej implementacji, stwórz z niej funkcję, którą będziesz mógł ponownie wykorzystać w przyszłości.
+
+* Dodaj kolor do koła.
+
+* Czy możesz zanimować swój krąg, aby rosnął i kurczył się, symulując bijące serce? (Możesz zaczerpnąć inspirację z animacji w poprzednim rozdziale).
+
+* A co z przesuwaniem tego okręgu? Czy możesz go przesuwać i umieszczać różne okręgi na jednej kanwie?
+
+* Co się stanie, jeśli połączysz pola odległości razem, używając różnych funkcji i operacji?
+
+
+<!-- Try the following exercises:
 
 * Use [`step()`](../glossary/?search=step) to turn everything above 0.5 to white and everything below to 0.0.
 
@@ -202,7 +223,7 @@ Try the following exercises:
 
 * What about moving this circle? Can you move it and place different circles in a single billboard?
 
-* What happens if you combine distances fields together using different functions and operations?
+* What happens if you combine distances fields together using different functions and operations? -->
 
 ```glsl
 pct = distance(st,vec2(0.4)) + distance(st,vec2(0.6));
@@ -212,51 +233,76 @@ pct = max(distance(st,vec2(0.4)),distance(st,vec2(0.6)));
 pct = pow(distance(st,vec2(0.4)),distance(st,vec2(0.6)));
 ```
 
-* Make three compositions using this technique. If they are animated, even better!
+* Zrób trzy kompozycje z wykorzystaniem tej techniki. Jeśli są one animowane, jeszcze lepiej!
 
-#### For your tool box
+<!-- * Make three compositions using this technique. If they are animated, even better! -->
 
-In terms of computational power the [`sqrt()`](../glossary/?search=sqrt) function - and all the functions that depend on it - can be expensive. Here is another way to create a circular distance field by using [`dot()`](../glossary/?search=dot) product.
+#### Twoja skrzynka z narzędziami
+
+Pod względem mocy obliczeniowej funkcja [`sqrt()`](../glossary/?search=sqrt) - i wszystkie funkcje, które od niej zależą - mogą być kosztowne. Oto inny sposób tworzenia okrągłego pola odległości za pomocą produktu skalarnego [`dot()`](../glossary/?search=dot):
+
+<!-- In terms of computational power the [`sqrt()`](../glossary/?search=sqrt) function - and all the functions that depend on it - can be expensive. Here is another way to create a circular distance field by using [`dot()`](../glossary/?search=dot) product. -->
 
 <div class="codeAndCanvas" data="circle.frag"></div>
 
-### Useful properties of a Distance Field
+### Przydatne własności Pól Odległości
 
-![Zen garden](zen-garden.jpg)
+![ogórd Zen](zen-garden.jpg)
 
-Distance fields can be used to draw almost everything. Obviously the more complex a shape is, the more complicated its equation will be, but once you have the formula to make distance fields of a particular shape it is very easy to combine and/or apply effects to it, like smooth edges and multiple outlines. Because of this, distance fields are popular in font rendering, like [Mapbox GL Labels](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817), [Matt DesLauriers](https://twitter.com/mattdesl) [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu) and [as is described on Chapter 7 of iPhone 3D Programming, O’Reilly](http://chimera.labs.oreilly.com/books/1234000001814/ch07.html#ch07_id36000921).
+Pola odległości mogą być używane do rysowania prawie wszystkiego. Oczywiście im bardziej złożony jest kształt, tym bardziej skomplikowane będzie jego równanie, ale gdy już masz formułę do tworzenia pól odległości danego kształtu, bardzo łatwo jest połączyć i/lub zastosować do niego efekty, takie jak gładkie krawędzie i wiele konturów. Z tego powodu, pola odległości są popularne w renderowaniu czcionek, takich jak [Mapbox GL Labels](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817), [Matt DesLauriers](https://twitter.com/mattdesl) [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu) i [jak to jest opisane w rozdziale 7 iPhone 3D Programming, O'Reilly](http://chimera.labs.oreilly.com/books/1234000001814/ch07.html#ch07_id36000921).
 
-Take a look at the following code.
+Przyjrzyj się następującemu kodowi.
+
+<!-- Distance fields can be used to draw almost everything. Obviously the more complex a shape is, the more complicated its equation will be, but once you have the formula to make distance fields of a particular shape it is very easy to combine and/or apply effects to it, like smooth edges and multiple outlines. Because of this, distance fields are popular in font rendering, like [Mapbox GL Labels](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817), [Matt DesLauriers](https://twitter.com/mattdesl) [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu) and [as is described on Chapter 7 of iPhone 3D Programming, O’Reilly](http://chimera.labs.oreilly.com/books/1234000001814/ch07.html#ch07_id36000921).
+
+Take a look at the following code. -->
 
 <div class="codeAndCanvas" data="rect-df.frag"></div>
 
-We start by moving the coordinate system to the center and shrinking it in half in order to remap the position values between -1 and 1. Also on *line 24* we are visualizing the distance field values using a [`fract()`](../glossary/?search=fract) function making it easy to see the pattern they create. The distance field pattern repeats over and over like rings in a Zen garden.
+Zaczynamy od przeniesienia układu współrzędnych na środek i skurczenia  go o połowę, mapując wartości pozycji pomiędzy -1 a 1. W *linijce 24* wizualizujemy wartości pola odległości za pomocą funkcji [`fract()`](../glossary/?search=fract) ułatwiając dostrzeżenie tworzonego przez nie wzoru. Wzór pola odległości powtarza się jak pierścienie w ogrodzie Zen.
 
-Let’s take a look at the distance field formula on *line 19*. There we are calculating the distance to the position on `(.3,.3)` or `vec3(.3)` in all four quadrants (that’s what [`abs()`](../glossary/?search=abs) is doing there).
+Przyjrzyjmy się wzorowi pola odległości w *linijce 19*. Obliczamy tam odległość do współrzędnej `(.3,.3)` lub `vec3(.3)` we wszystkich czterech kwadrantach (właśnie po to jest tam [`abs()`](../glossary/?search=abs)).
 
-If you uncomment *line 20*, you will note that we are combining the distances to these four points using the [`min()`](../glossary/?search=min) to zero. The result produces an interesting new pattern.
+<!-- We start by moving the coordinate system to the center and shrinking it in half in order to remap the position values between -1 and 1. Also on *line 24* we are visualizing the distance field values using a [`fract()`](../glossary/?search=fract) function making it easy to see the pattern they create. The distance field pattern repeats over and over like rings in a Zen garden.
+
+Let’s take a look at the distance field formula on *line 19*. There we are calculating the distance to the position on `(.3,.3)` or `vec3(.3)` in all four quadrants (that’s what [`abs()`](../glossary/?search=abs) is doing there). -->
+
+Jeśli odkomentujesz *linijkę 20*, zauważysz, że łączymy odległości do tych czterech punktów za pomocą [`min()`](../glossary/?search=min) do zera. W rezultacie otrzymujemy nowy interesujący wzór.
+
+Spróbuj teraz odkomentować *linijkę 21*; robimy to samo, ale używamy funkcji [`max()`](../glossary/?search=max). Rezultatem jest prostokąt z zaokrąglonymi rogami. Zauważ, jak pierścienie pola odległości stają się gładsze, im bardziej oddalają się od środka.
+
+Dokończ odkomentowywanie *linijek 27 do 29* jedna po drugiej, aby zrozumieć różne zastosowania wzorca pola odległości.
+
+<!-- If you uncomment *line 20*, you will note that we are combining the distances to these four points using the [`min()`](../glossary/?search=min) to zero. The result produces an interesting new pattern.
 
 Now try uncommenting *line 21*; we are doing the same but using the [`max()`](../glossary/?search=max) function. The result is a rectangle with rounded corners. Note how the rings of the distance field get smoother the further away they get from the center.
 
-Finish uncommenting *lines 27 to 29* one by one to understand the different uses of a distance field pattern.
+Finish uncommenting *lines 27 to 29* one by one to understand the different uses of a distance field pattern. -->
 
-### Polar shapes
+### Krzywe biegunowe
 
 ![Robert Mangold - Untitled (2008)](mangold.jpg)
 
-In the chapter about color we map the cartesian coordinates to polar coordinates by calculating the *radius* and *angles* of each pixel with the following formula:
+W rozdziale o kolorze mapujemy współrzędne kartezjańskie na współrzędne biegunowe, obliczając *promień* i *kąt* każdego piksela za pomocą następującego wzoru:
+
+<!-- In the chapter about color we map the cartesian coordinates to polar coordinates by calculating the *radius* and *angles* of each pixel with the following formula: -->
 
 ```glsl
 vec2 pos = vec2(0.5)-st;
 float r = length(pos)*2.0;
 float a = atan(pos.y,pos.x);
 ```
+Część tego wzoru wykorzystaliśmy na początku rozdziału do narysowania okręgu. Odległość do środka obliczyliśmy za pomocą [`length()`](../glossary/?search=length). Teraz, gdy wiemy już o polach odległości, możemy poznać inny sposób rysowania kształtów za pomocą współrzędnych biegunowych.
 
-We use part of this formula at the beginning of the chapter to draw a circle. We calculated the distance to the center using [`length()`](../glossary/?search=length). Now that we know about distance fields we can learn another way of drawing shapes using polar coordinates.
+Technika ta jest nieco restrykcyjna, ale bardzo prosta. Polega ona na zmianie promienia okręgu w zależności od kąta, aby uzyskać różne kształty. Jak dokonuje się ta zmiana? Z użyciem funkcji kształtujących!
+
+Poniżej znajdziesz dwa interaktywne przykłady, w których te same funkcje występują we współrzędnych kartezjańskich i w biegunowych (pomiędzy *linijkami 21 i 25*). Odkomentuj te funkcje jedna za drugą, zwracając uwagę na zależności między jednym układem współrzędnych a drugim.
+
+<!-- We use part of this formula at the beginning of the chapter to draw a circle. We calculated the distance to the center using [`length()`](../glossary/?search=length). Now that we know about distance fields we can learn another way of drawing shapes using polar coordinates.
 
 This technique is a little restrictive but very simple. It consists of changing the radius of a circle depending on the angle to achieve different shapes. How does the modulation work? Yes, using shaping functions!
 
-Below you will find the same functions in the cartesian graph and in a polar coordinates shader example (between *lines 21 and 25*). Uncomment the functions one-by-one, paying attention the relationship between one coordinate system and the other.
+Below you will find the same functions in the cartesian graph and in a polar coordinates shader example (between *lines 21 and 25*). Uncomment the functions one-by-one, paying attention the relationship between one coordinate system and the other. -->
 
 <div class="simpleFunction" data="y = cos(x*3.);
 //y = abs(cos(x*3.));
@@ -266,28 +312,52 @@ Below you will find the same functions in the cartesian graph and in a polar coo
 
 <div class="codeAndCanvas" data="polar.frag"></div>
 
-Try to:
+Spróbuj:
 
-* Animate these shapes.
+<!-- Try to: -->
+
+* Zanimować te kształty
+* Połącz różne funkcje kształtujące by *zrobić dziury* w kształtach, aby powstały kwiaty, płatki śniegu i zębatki.
+* Użyj funkcji `plot()` z rodziału *Funkcje kształtujące* i narysuj sam kontur (bez wypełnienia)
+
+<!-- * Animate these shapes.
 * Combine different shaping functions to *cut holes* in the shape to make flowers, snowflakes and gears.
-* Use the `plot()` function we were using in the *Shaping Functions Chapter* to draw just the contour.
+* Use the `plot()` function we were using in the *Shaping Functions Chapter* to draw just the contour. -->
 
 ### Combining powers
 
-Now that we've learned how to modulate the radius of a circle according to the angle using the [`atan()`](../glossary/?search=atan) to draw different shapes, we can learn how use `atan()` with distance fields and apply all the tricks and effects possible with distance fields.
+### Łączenie
 
-The trick will use the number of edges of a polygon to construct the distance field using polar coordinates. Check out [the following code](http://thndl.com/square-shaped-shaders.html) from [Andrew Baldwin](https://twitter.com/baldand).
+Teraz gdy wiemy, jak zmieniać promień koła w zależności od kąta z użyciem [`atan()`](../glossary/?search=atan), możemy spróbować połączyć `atan()` z polami odległości.
+
+<!-- Now that we've learned how to modulate the radius of a circle according to the angle using the [`atan()`](../glossary/?search=atan) to draw different shapes, we can learn how use `atan()` with distance fields and apply all the tricks and effects possible with distance fields. -->
+
+Trik polega na wykorzystanie liczby krawędzi wielokąta, by skonstruować pole odległości z użyciem współrzędnych polarnych. Sprawdź [następujący kod](http://thndl.com/square-shaped-shaders.html) od [Andrew Baldwin](https://twitter.com/baldand).
+
+<!-- The trick will use the number of edges of a polygon to construct the distance field using polar coordinates. Check out [the following code](http://thndl.com/square-shaped-shaders.html) from [Andrew Baldwin](https://twitter.com/baldand). -->
 
 <div class="codeAndCanvas" data="shapes.frag"></div>
 
-* Using this example, make a function that inputs the position and number of corners of a desired shape and returns a distance field value.
+* Korzystając z tego przykładu, stwórz funkcję, która przyjmuje położenie i liczbę kątów pożądanego wielokąta, a zwraca wartość pola odległości.
 
-* Mix distance fields together using [`min()`](../glossary/?search=min) and [`max()`](../glossary/?search=max).
+<!-- * Using this example, make a function that inputs the position and number of corners of a desired shape and returns a distance field value. -->
 
-* Choose a geometric logo to replicate using distance fields.
+* Połącz pola odległości ze sobą z użyciem [`min()`](../glossary/?search=min) i [`max()`](../glossary/?search=max).
 
-Congratulations! You have made it through the rough part! Take a break and let these concepts settle - drawing simple shapes in Processing is easy but not here. In shader-land drawing shapes is twisted, and it can be exhausting to adapt to this new paradigm of coding.
+<!-- * Mix distance fields together using [`min()`](../glossary/?search=min) and [`max()`](../glossary/?search=max). -->
 
-Down at the end of this chapter you will find a link to [PixelSpirit Deck](https://patriciogonzalezvivo.github.io/PixelSpiritDeck/) this deck of cards will help you learn new SDF functions, compose them into your designs and use on your shaders. The deck has a progressive learning curve, so taking one card a day and working on it will push and challenge your skills for months. 
+* Zreplikuj dowolne logo z użyciem pól odległości
 
-Now that you know how to draw shapes I'm sure new ideas will pop into your mind. In the following chapter you will learn how to move, rotate and scale shapes. This will allow you to make compositions!
+<!-- * Choose a geometric logo to replicate using distance fields. -->
+
+Gratulacje! Udało ci się przebrnąć przez trudny materiał! Odpocznij i pozwól - choć rysowanie prostych kształtów jest proste w Processing, to tutaj już nie. W świecie shaderów rysowanie kształtów jest zawiłe; przestawienie się na ten nowy sposób programowania może być męczące. 
+
+<!-- Congratulations! You have made it through the rough part! Take a break and let these concepts settle - drawing simple shapes in Processing is easy but not here. In shader-land drawing shapes is twisted, and it can be exhausting to adapt to this new paradigm of coding. -->
+
+Na dole strony znajdziesz link do [PixelSpirit Deck](https://patriciogonzalezvivo.github.io/PixelSpiritDeck/). Jest to talia kart, która pomoże ci nauczyć się nowych funkcji SDF (ang. "Signed distance field" - pole odległości z uwzględnieniem wartości ujemnych), które wykorzystasz w swoich pracach i shaderach. Poziom trudności jest progresywny, więc praca nad jedną kartą dziennie zapewni ci wyzwania na kolejne miesiące.
+
+<!-- Down at the end of this chapter you will find a link to [PixelSpirit Deck](https://patriciogonzalezvivo.github.io/PixelSpiritDeck/) this deck of cards will help you learn new SDF functions, compose them into your designs and use on your shaders. The deck has a progressive learning curve, so taking one card a day and working on it will push and challenge your skills for months.  -->
+
+Wiedząc jak rysować kształty, z pewnością przyjdą ci do głowy nowe pomysły. W następnym rozdziale nauczysz się przesuwać, obracać i skalować kształty. Pozwoli ci to tworzyć kompozycje!
+
+<!-- Now that you know how to draw shapes I'm sure new ideas will pop into your mind. In the following chapter you will learn how to move, rotate and scale shapes. This will allow you to make compositions! -->

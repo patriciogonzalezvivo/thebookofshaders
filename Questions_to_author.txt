@@ -6,3 +6,4 @@
 Podać polskie tłumaczenie słowa pipeline
 Podać angielskie tłumaczenie wejście i wyjście
 Wytłumaczyć "hot reloading" (04)
+Distance field - pole odległości 
