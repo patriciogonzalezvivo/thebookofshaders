@@ -178,7 +178,7 @@ W powyższym przykładzie mapujemy odległość do centrum kanwy na jasność pi
 
 ### Distance field
 
-Możemy również myśleć o powyższym przykładzie jako o mapie wysokości, gdzie ciemniejszy kolor oznacza wyższy. Gradient pokazuje nam coś podobnego do wzoru tworzonego przez stożek. Wyobraź sobie, że jesteś na szczycie tego stożka. Pozioma odległość do krawędzi stożka wynosi 0,5. Będzie ona stała we wszystkich kierunkach. Wybierając miejsce "przecięcia" stożka otrzymamy większą lub mniejszą powierzchnię kołową.
+Możemy również myśleć o powyższym przykładzie jako o mapie wysokości, gdzie im ciemniej tym wyżej. Gradient pokazuje nam coś podobnego do wzoru tworzonego przez stożek. Wyobraź sobie, że jesteś na szczycie tego stożka. Pozioma odległość do krawędzi stożka wynosi 0.5. Będzie ona stała we wszystkich kierunkach. Wybierając miejsce "przecięcia" stożka otrzymamy większą lub mniejszą powierzchnię kołową.
 
 <!-- We can also think of the above example as an altitude map, where darker implies taller. The gradient shows us something similar to the pattern made by a cone. Imagine yourself on the top of that cone. The horizontal distance to the edge of the cone is 0.5. This will be constant in all directions. By choosing where to “cut” the cone you will get a bigger or smaller circular surface. -->
 
