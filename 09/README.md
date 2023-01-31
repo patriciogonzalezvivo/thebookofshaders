@@ -57,8 +57,7 @@ So let's say we want to imitate a brick wall. Looking at the wall, you can see a
 
 ![](brick.jpg)
 
-As a first step we need to know if the row of our thread is an even or odd number, because we can use that to determine if we need to offset the x in that row.
-For that we are going to use [```mod()```](../glossary/?search=mod) of ```2.0``` and then see if the result is under ```1.0``` or not. Take a look at the following formula and uncomment the two last lines.
+As a first step we need to know if the row of our thread is an even or odd number, because we can use that to determine if we need to offset the x in that row. For that we are going to use [```mod()```](../glossary/?search=mod) of ```2.0``` and then see if the result is under ```1.0``` or not. Take a look at the following formula and uncomment the two last lines.
 
 <div class="simpleFunction" data="y = mod(x,2.0);
 // y = mod(x,2.0) < 1.0 ? 0. : 1. ;
