@@ -12,3 +12,4 @@ blending - blending
 shapin - kształtowanie
 shaping functions - funkcje kształtujące
 kreatywni koderzy
+Distance field - pole odległości 
