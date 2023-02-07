@@ -6,4 +6,10 @@
 Podać polskie tłumaczenie słowa pipeline
 Podać angielskie tłumaczenie wejście i wyjście
 Wytłumaczyć "hot reloading" (04)
+użyć "akceleracja sprzętowa" zamiast "zaimplementowane w hardware"
+"linii" vs "linijce"
+blending - blending
+shapin - kształtowanie
+shaping functions - funkcje kształtujące
+kreatywni koderzy
 Distance field - pole odległości 
