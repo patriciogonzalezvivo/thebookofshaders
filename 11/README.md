@@ -75,7 +75,7 @@ Now it's your turn:
 
 ![](02.png)
 
-Now that we know how to do noise in 1D, it's time to move on to 2D. In 2D, instead of interpolating between two points of a line (```fract(x)``` and ```fract(x)+1.0```), we are going to interpolate between the four corners of the square area of a plane (```fract(st)```, ```fract(st)+vec2(1.,0.)```, ```fract(st)+vec2(0.,1.)``` and ```fract(st)+vec2(1.,1.)```).
+Now that we know how to do noise in 1D, it's time to move on to 2D. In 2D, instead of interpolating between two points of a line (```rand(x)``` and ```rand(x)+1.0```), we are going to interpolate between the four corners of the square area of a plane (```rand(st)```, ```rand(st)+vec2(1.,0.)```, ```rand(st)+vec2(0.,1.)``` and ```rand(st)+vec2(1.,1.)```).
 
 ![](01.png)
 
