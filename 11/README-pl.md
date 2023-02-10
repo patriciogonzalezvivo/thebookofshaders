@@ -3,9 +3,9 @@
 
 ## Szum (ang. "noise")
 
-Czas na przerwę! Bawiliśmy się losowymi funkcjami, które wyglądają jak telewizyjny biały szum, w głowie wciąż się kręci myśląc o shaderach, a oczy są zmęczone. Czas wyjść na spacer!
+Czas na przerwę! Bawiliśmy się losowymi funkcjami, które wyglądają jak biało-czarny szum telewizyjny (tzw. "szum biały", ang. "white noise"), w głowie wciąż się kręci od myślenia o shaderach, a oczy są po prostu zmęczone. Czas wyjść na spacer!
 
-Czujemy powietrze na skórze, słońce na twarzy. Świat jest tak żywym i bogatym miejscem. Kolory, tekstury, dźwięki. Podczas spaceru nie możemy nie zauważyć powierzchni dróg, skał, drzew i chmur.
+Czujemy powietrze na skórze, słońce na twarzy. Świat jest tak żywym i bogatym miejscem. Kolory, tekstury, dźwięki. Podczas spaceru widzimy powierzchnię dróg, skał, drzew i chmur.
 
 <!-- ## Noise
 
@@ -21,9 +21,9 @@ We feel the air on our skin, the sun in our face. The world is such a vivid and 
 ![](texture-05.jpg)
 ![](texture-06.jpg)
 
-Nieprzewidywalność tych tekstur można by nazwać "losową", ale nie przypominają one losowości, z którą bawiliśmy się wcześniej. "Prawdziwy świat" jest tak bogatym i złożonym miejscem! Jak możemy przybliżyć tę różnorodność obliczeniowo?
+Nieprzewidywalność tych tekstur można by nazwać "losową", ale nie przypominają one losowości, z którą bawiliśmy się wcześniej. "Prawdziwy świat" jest tak bogatym i złożonym miejscem! Jak możemy zamodelować tę różnorodność obliczeniowo?
 
-To było pytanie, które [Ken Perlin](https://mrl.nyu.edu/~perlin/) próbował rozwiązać we wczesnych latach 80-tych, kiedy otrzymał zlecenie wygenerowania bardziej realistycznych tekstur do filmu "Tron". W odpowiedzi na to wymyślił elegancki *Oscar winning* algorytm szumu. (No biggie.)
+To było pytanie, które [Ken Perlin](https://mrl.nyu.edu/~perlin/) próbował rozwiązać we wczesnych latach 80-tych, kiedy otrzymał zlecenie wygenerowania bardziej realistycznych tekstur do filmu "Tron". W odpowiedzi na to wymyślił elegancki algorytm szumu, za który później otrzymał Oskara. (Nic wielkiego.)
 
 <!-- The unpredictability of these textures could be called "random," but they don't look like the random we were playing with before. The “real world” is such a rich and complex place! How can we approximate this variety computationally?
 
@@ -31,7 +31,7 @@ This was the question [Ken Perlin](https://mrl.nyu.edu/~perlin/) was trying to s
 
 ![Disney - Tron (1982)](tron.jpg)
 
-Poniższe nie jest klasycznym algorytmem szumu Perlina, ale jest dobrym punktem wyjścia do zrozumienia sposobu generowania szumu.
+Poniższy kod nie jest klasycznym algorytmem szumu Perlina, ale jest dobrym punktem wyjścia do zrozumienia sposobu generowania szumu.
 
 <!-- The following is not the classic Perlin noise algorithm, but it is a good starting point to understand how to generate noise. -->
 
@@ -45,7 +45,7 @@ y = rand(i); //rand() is described in the previous chapter
 
 W tych liniach robimy coś podobnego do tego, co robiliśmy w poprzednim rozdziale. Dzielimy ciągłą liczbę zmiennoprzecinkową (``x``) na jej składowe całkowitą (``i``) i ułamkową (``f``). Używamy [``floor()``](../glossary/?search=floor) aby uzyskać ``i`` oraz [``fract()``](../glossary/?search=fract) aby uzyskać ``f```. Następnie stosujemy ``rand()`` do części całkowitej ``x``, co daje unikalną wartość losową dla każdej liczby całkowitej.
 
-Po tym widzisz dwie skomentowane linie. Pierwsza z nich interpoluje liniowo każdą wartość losową.
+Spójrz na dwie skomentowane linie. Pierwsza z nich interpoluje liniowo każdą wartość losową.
 
 
 <!-- In these lines we are doing something similar to what we did in the previous chapter. We are subdividing a continuous floating number (```x```) into its integer (```i```) and fractional (```f```) components. We use [```floor()```](../glossary/?search=floor) to obtain ```i``` and [```fract()```](../glossary/?search=fract) to obtain ```f```. Then we apply ```rand()``` to the integer part of ```x```, which gives a unique random value for each integer.
@@ -56,10 +56,10 @@ After that you see two commented lines. The first one interpolates each random v
 y = mix(rand(i), rand(i + 1.0), f);
 ```
 
-Idź dalej i odkomentuj tę linię, aby zobaczyć jak to wygląda. Używamy [``fract()``](../glossary/?search=fract) wartości przechowywanych w `f` do [``mix()``](../glossary/?search=mix) dwóch losowych wartości.
+Odkomentuj tę linię, aby zobaczyć jak to wygląda. Używamy `f` do interpolacji liniowej dwóch sąsiadujących wartości losowych za pomocą funkcji [``mix()``](../glossary/?search=mix).
 
-W tym momencie książki nauczyliśmy się, że możemy zrobić coś lepszego niż interpolacja liniowa, prawda?
-Spróbuj teraz odkomentować następującą linię, która używa interpolacji [``smoothstep()``](../glossary/?search=smoothstep) zamiast liniowej.
+Nauczyliśmy się, że możemy zrobić coś lepszego niż interpolacja liniowa, prawda?
+Spróbuj teraz odkomentować kolejną drugą linię, która używa interpolacji [``smoothstep()``](../glossary/?search=smoothstep) zamiast liniowej.
 
 <!-- Go ahead and uncomment this line to see how this looks. We use the [```fract()```](../glossary/?search=fract) value store in `f` to [```mix()```](../glossary/?search=mix) the two random values.
 
@@ -70,16 +70,16 @@ Now try uncommenting the following line, which uses a [```smoothstep()```](../gl
 y = mix(rand(i), rand(i + 1.0), smoothstep(0.,1.,f));
 ```
 
-Po odkomentowaniu go zauważ, jak przejście między szczytami staje się gładkie. W niektórych implementacjach szumu można zauważyć, że programiści wolą kodować własne krzywe sześcienne (jak poniższy wzór) zamiast używać [``smoothstep()``](../glossary/?search=smoothstep).
+Po odkomentowaniu zauważ, jak przejście między szczytami staje się gładkie. W niektórych implementacjach szumu można zauważyć, że programiści wolą kodować własne krzywe sześcienne (ang. "cubic curves") (jak w kodzie poniżej) zamiast używać [``smoothstep()``](../glossary/?search=smoothstep).
 
 <!-- After uncommenting it, notice how the transition between the peaks gets smooth. In some noise implementations you will find that programmers prefer to code their own cubic curves (like the following formula) instead of using the [```smoothstep()```](../glossary/?search=smoothstep). -->
 
 ```glsl
-float u = f * f * (3.0 - 2.0 * f ); // custom cubic curve
-y = mix(rand(i), rand(i + 1.0), u); // using it in the interpolation
+float u = f * f * (3.0 - 2.0 * f ); // spersonalizowana funkcja sześcienna
+y = mix(rand(i), rand(i + 1.0), u); // interpolacja z jej pomocą
 ```
 
-Ta *płynna losowość* jest przełomem dla inżynierów graficznych i artystów - daje możliwość generowania obrazów i geometrii z organicznym uczuciem. Algorytm Szumu Perlina był wielokrotnie implementowany w różnych językach i wymiarach, aby stworzyć hipnotyzujące dzieła dla wszystkich rodzajów kreatywnych zastosowań.
+Ta *płynna losowość* jest przełomem dla programistów grafiki i artystów - daje możliwość generowania organicznych obrazów i geometrii. Algorytm Szumu Perlina był wielokrotnie implementowany w różnych językach i wymiarach, aby móc tworzyć hipnotyzujące dzieła w celach kreatywnych.
 
 <!-- 
 This *smooth randomness* is a game changer for graphical engineers or artists - it provides the ability to generate images and geometries with an organic feeling. Perlin's Noise Algorithm has been implemented over and over in different languages and dimensions to make mesmerizing pieces for all sorts of creative uses. -->
@@ -96,8 +96,6 @@ Teraz twoja kolej:
 
 * Skonstruuj "organicznie wyglądające" kształty używając funkcji noise.
 
-* Gdy masz już swoje "stworzenie", spróbuj rozwinąć je w postać, przypisując mu określony ruch.
-
 <!-- Now it's your turn:
 
 * Make your own ```float noise(float x)``` function.
@@ -110,43 +108,43 @@ Teraz twoja kolej:
 
 * Once you have your "creature," try to develop it further into a character by assigning it a particular movement. -->
 
-## 2D Noise
+## Szum 2D 
 
 ![](02.png)
 
-Teraz, gdy wiemy jak zrobić szum w 1D, czas przejść do 2D. W 2D zamiast interpolować między dwoma punktami linii (``fract(x)`` i ``fract(x)+1. 0``), będziemy interpolować pomiędzy czterema narożnikami kwadratowego obszaru płaszczyzny (``fract(st)``, ``fract(st)+vec2(1.,0.)``, ``fract(st)+vec2(0.,1.)``` oraz ``fract(st)+vec2(1.,1.)``).
+Teraz, gdy wiemy jak zrobić szum w 1D, czas przejść do 2D. W 2D zamiast interpolować między dwoma punktami linii (``rand(x)`` i ``rand(x)+1.0``), będziemy interpolować pomiędzy czterema narożnikami kwadratowego obszaru płaszczyzny (``rand(st)``, ``rand(st)+vec2(1.,0.)``, ``rand(st)+vec2(0.,1.)`` oraz ``rand(st)+vec2(1.,1.)``).
 
 <!-- Now that we know how to do noise in 1D, it's time to move on to 2D. In 2D, instead of interpolating between two points of a line (```fract(x)``` and ```fract(x)+1.0```), we are going to interpolate between the four corners of the square area of a plane (```fract(st)```, ```fract(st)+vec2(1.,0.)```, ```fract(st)+vec2(0.,1.)``` and ```fract(st)+vec2(1.,1.)```). -->
 
 ![](01.png)
 
-Podobnie, jeśli chcemy uzyskać szum 3D musimy interpolować pomiędzy ośmioma rogami sześcianu. W tej technice chodzi o interpolację losowych wartości, dlatego nazywa się ją **szumem wartościowym**.
+Podobnie, jeśli chcemy uzyskać szum 3D musimy interpolować pomiędzy ośmioma rogami sześcianu. W tej technice chodzi o interpolację losowych wartości ang. (ang. "random **value**s"), dlatego nazywa się ją **value noise**.
 
 <!-- Similarly, if we want to obtain 3D noise we need to interpolate between the eight corners of a cube. This technique is all about interpolating random values, which is why it's called **value noise**. -->
 
 ![](04.jpg)
 
-Podobnie jak w przykładzie 1D, ta interpolacja nie jest liniowa, ale sześcienna, która płynnie interpoluje wszelkie punkty wewnątrz naszej kwadratowej siatki.
+Podobnie jak w przykładzie 1D, interpolacja ta nie jest liniowa, ale sześcienna, więc płynnie interpoluje wszelkie punkty wewnątrz naszego kwadratowego obszaru.
 
 <!-- Like the 1D example, this interpolation is not linear but cubic, which smoothly interpolates any points inside our square grid. -->
 
 ![](05.jpg)
 
-Przyjrzyj się następującej funkcji hałasu.
+Przyjrzyj się następującej funkcji szumu.
 
 <!-- Take a look at the following noise function. -->
 
 <div class="codeAndCanvas" data="2d-noise.frag"></div>
 
-Zaczynamy od przeskalowania przestrzeni o 5 (linia 45), aby zobaczyć interpolację pomiędzy kwadratami siatki. Następnie wewnątrz funkcji szumu dzielimy przestrzeń na komórki. Przechowujemy całkowitą pozycję komórki wraz z pozycjami ułamkowymi wewnątrz komórki. Używamy pozycji całkowitej do obliczenia współrzędnych czterech narożników i otrzymujemy losową wartość dla każdego z nich (linie 23-26). Na koniec, w linii 35 interpolujemy pomiędzy 4 losowymi wartościami narożników używając pozycji frakcyjnych, które przechowywaliśmy wcześniej.
+Zaczynamy od przeskalowania przestrzeni o 5 (linia 45). Następnie wewnątrz funkcji szumu dzielimy przestrzeń na kafellki. Przechowujemy pozycję kafelka jako cześć całkowitą oraz pozycje wewnątrz kafelka jako część ułamkową. Używamy części całkowitej do obliczenia współrzędnych czterech narożników, otrzymując losową wartość dla każdego z nich (linie 23-26). Na koniec, w linii 35 interpolujemy pomiędzy 4 losowymi wartościami narożników używając części ułamkowej.
 
 <!-- We start by scaling the space by 5 (line 45) in order to see the interpolation between the squares of the grid. Then inside the noise function we subdivide the space into cells. We store the integer position of the cell along with the fractional positions inside the cell. We use the integer position to calculate the four corners' coordinates and obtain a random value for each one (lines 23-26). Finally, in line 35 we interpolate between the 4 random values of the corners using the fractional positions we stored before. -->
 
 Teraz twoja kolej. Spróbuj wykonać następujące ćwiczenia:
 
-* Zmień mnożnik linii 45. Spróbuj go animować.
+* Zmień mnożnik w linii 45. Spróbuj go zanimować.
 
-* Przy jakim poziomie powiększenia szum zaczyna znowu wyglądać jak losowy?
+* Przy jakim poziomie powiększenia szum zaczyna znowu wyglądać kompletnie losowo (jak, wspomniany na początku rozdziału, biały szum)?
 
 * Przy jakim poziomie powiększenia szum jest niezauważalny?
 
@@ -172,7 +170,7 @@ Teraz twoja kolej. Spróbuj wykonać następujące ćwiczenia:
 
 ![Mark Rothko - Three (1950)](rothko.jpg)
 
-## Using Noise in Generative Designs
+## Szum a design generatywny
 
 Algorytmy szumu zostały pierwotnie zaprojektowane w celu nadania naturalnego *je ne sais quoi* cyfrowym teksturom. Implementacje 1D i 2D, które widzieliśmy do tej pory, były interpolacjami pomiędzy losowymi *wartościami*, dlatego nazywane są **Value Noise**, ale istnieje więcej sposobów na uzyskanie szumu...
 
@@ -180,7 +178,7 @@ Algorytmy szumu zostały pierwotnie zaprojektowane w celu nadania naturalnego *j
 
 [ ![Inigo Quilez - Value Noise](value-noise.png) ](../edit.php#11/2d-vnoise.frag)
 
-Jak odkryłeś w poprzednich ćwiczeniach, szum wartości ma tendencję do wyglądania "blokowo". Aby zmniejszyć ten blokowy efekt, w 1985 roku [Ken Perlin](https://mrl.nyu.edu/~perlin/) opracował inną implementację algorytmu o nazwie **Gradient Noise**. Ken wymyślił jak interpolować losowe *gradienty* zamiast wartości. Gradienty te były wynikiem funkcji losowej 2D, która zwraca kierunki (reprezentowane przez ``vec2``) zamiast pojedynczych wartości (``float``). Kliknij na poniższy obrazek, aby zobaczyć kod i sposób jego działania.
+Jak odkryłeś w poprzednich ćwiczeniach, value noise ma tendencję do wyglądania "blokowo". Aby zmniejszyć ten blokowy efekt, w 1985 roku [Ken Perlin](https://mrl.nyu.edu/~perlin/) opracował inną implementację algorytmu o nazwie **Gradient Noise**. Ken wymyślił jak interpolować losowe *gradienty* zamiast wartości. Gradienty te były wynikiem funkcji losowej 2D, która zwraca kierunki (reprezentowane przez ``vec2``) zamiast pojedynczych wartości (``float``). Kliknij na poniższy obrazek, aby zobaczyć kod i sposób jego działania.
 
 <!-- As you discovered in the previous exercises, value noise tends to look "blocky." To diminish this blocky effect, in 1985 [Ken Perlin](https://mrl.nyu.edu/~perlin/) developed another implementation of the algorithm called **Gradient Noise**. Ken figured out how to interpolate random *gradients* instead of values. These gradients were the result of a 2D random function that returns directions (represented by a ```vec2```) instead of single values (```float```). Click on the following image to see the code and how it works. -->
 
@@ -188,7 +186,7 @@ Jak odkryłeś w poprzednich ćwiczeniach, szum wartości ma tendencję do wygl�
 
 Poświęć chwilę na przyjrzenie się tym dwóm przykładom autorstwa [Inigo Quilez](http://www.iquilezles.org/) i zwróć uwagę na różnice pomiędzy [value noise](https://www.shadertoy.com/view/lsf3WH) a [gradient noise](https://www.shadertoy.com/view/XdXGW8).
 
-Podobnie jak malarz, który rozumie, jak działają pigmenty jego farb, im więcej wiemy o implementacjach szumu, tym lepiej będziemy mogli z nich korzystać. Na przykład, jeśli użyjemy dwuwymiarowej implementacji szumu do obrócenia przestrzeni, w której renderowane są linie proste, możemy uzyskać następujący efekt swirly, który wygląda jak drewno. Ponownie możesz kliknąć na obrazek, aby zobaczyć, jak wygląda kod.
+Podobnie jak malarz, który rozumie, jak działają pigmenty jego farb, im więcej wiemy o implementacjach szumu, tym lepiej będziemy mogli z nich korzystać. Na przykład, jeśli użyjemy dwuwymiarowej implementacji szumu do obrócenia przestrzeni, w której renderowane są linie proste, możemy uzyskać następujący drewno-podobny efekt. Ponownie możesz kliknąć na obrazek, aby zobaczyć, jak wygląda kod.
 
 <!-- Take a minute to look at these two examples by [Inigo Quilez](http://www.iquilezles.org/) and pay attention to the differences between [value noise](https://www.shadertoy.com/view/lsf3WH) and [gradient noise](https://www.shadertoy.com/view/XdXGW8).
 
@@ -197,8 +195,8 @@ Like a painter who understands how the pigments of their paints work, the more w
 [ ![Wood texture](wood-long.png) ](../edit.php#11/wood.frag)
 
 ```glsl
-    pos = rotate2d( noise(pos) ) * pos; // rotate the space
-    pattern = lines(pos,.5); // draw lines
+    pos = rotate2d( noise(pos) ) * pos; // obracanie przestrzeni
+    pattern = lines(pos,.5); // rysowanie linii
 ```
 
 Innym sposobem na uzyskanie ciekawych wzorów z szumu jest potraktowanie go jak pola odległości i zastosowanie niektórych sztuczek opisanych w rozdziale [Kształty](../07/).
@@ -208,8 +206,8 @@ Innym sposobem na uzyskanie ciekawych wzorów z szumu jest potraktowanie go jak 
 [ ![Splatter texture](splatter-long.png) ](../edit.php#11/splatter.frag)
 
 ```glsl
-    color += smoothstep(.15,.2,noise(st*10.)); // Black splatter
-    color -= smoothstep(.35,.4,noise(st*10.)); // Holes on splatter
+    color += smoothstep(.15,.2,noise(st*10.)); // Czarny rozprysk
+    color -= smoothstep(.35,.4,noise(st*10.)); // Dziury w rozprysku
 ```
 
 Trzecim sposobem wykorzystania funkcji szumu jest modulowanie kształtu. To również wymaga pewnych technik, które poznaliśmy w [rozdziale o kształtach](../07/).
@@ -218,11 +216,11 @@ Trzecim sposobem wykorzystania funkcji szumu jest modulowanie kształtu. To rów
 
 <a href="../edit.php#11/circleWave-noise.frag"><canvas id="custom" class="canvas" data-fragment-url="circleWave-noise.frag"  width="300px" height="300"></canvas></a>
 
-Dla Ciebie do poćwiczenia:
+Do poćwiczenia:
 
 * Jaki inny wzór generatywny możesz stworzyć? Co z granitem? marmurem? magmą? wodą? Znajdź trzy zdjęcia interesujących Cię tekstur i zaimplementuj je algorytmicznie za pomocą szumu.
 * Użyj szumu do modulacji kształtu.
-* A co z wykorzystaniem szumu do ruchu? Wróć do rozdziału [Matrix](../08/). Użyj przykładu tłumaczenia, które przesuwa "+" wokół siebie i zastosuj do niego kilka *losowych* i *szumowych* ruchów.
+* A co z wykorzystaniem szumu do ruchu? Wróć do rozdziału [Macierze](../08/). Użyj przykładu z translacją kształtu "+" i zastosuj do niego kilka *losowych* i *szumowych* ruchów.
 * Zrób generatywnego Jacksona Pollocka.
 
 <!-- For you to practice:
@@ -234,9 +232,9 @@ Dla Ciebie do poćwiczenia:
 
 ![Jackson Pollock - Number 14 gray (1948)](pollock.jpg)
 
-## Improved Noise
+## Lepszy szum
 
-Ulepszeniem Perlina do jego oryginalnego szumu **Simplex Noise**, jest zastąpienie sześciennej krzywej Hermite'a ( _f(x) = 3x^2-2x^3_ , która jest identyczna z funkcją [``smoothstep()``](../glossary/?search=smoothstep)) kwintową krzywą interpolacyjną ( _f(x) = 6x^5-15x^4+10x^3_ ). Dzięki temu oba końce krzywej są bardziej "płaskie", więc każda granica z wdziękiem zszywa się z następną. Innymi słowy, otrzymujesz bardziej ciągłe przejście między komórkami. Możesz to zobaczyć, odkomentowując drugą formułę w poniższym przykładzie wykresu (lub zobacz [dwa równania obok siebie tutaj](https://www.desmos.com/calculator/2xvlk5xp8b)).
+Ulepszenie oryginalnego szumu Perlina, zwane **Simplex Noise**, polega na zastąpieniu sześciennej krzywej Hermite'a ( _f(x) = 3x^2-2x^3_ , która jest identyczna z funkcją [``smoothstep()``](../glossary/?search=smoothstep)) kwintową krzywą interpolacyjną ( _f(x) = 6x^5-15x^4+10x^3_ ). Dzięki temu oba końce krzywej są bardziej "płaskie", więc każda granica z wdziękiem zszywa się z następną. Innymi słowy, otrzymujesz bardziej ciągłe przejście między komórkami. Możesz to zobaczyć, odkomentowując drugą formułę w poniższym przykładzie wykresu (lub zobacz [dwa równania obok siebie tutaj](https://www.desmos.com/calculator/2xvlk5xp8b)).
 
 <!-- An improvement by Perlin to his original non-simplex noise **Simplex Noise**, is the replacement of the cubic Hermite curve ( _f(x) = 3x^2-2x^3_ , which is identical to the [```smoothstep()```](../glossary/?search=smoothstep) function) with a quintic interpolation curve ( _f(x) = 6x^5-15x^4+10x^3_ ). This makes both ends of the curve more "flat" so each border gracefully stitches with the next one. In other words, you get a more continuous transition between the cells. You can see this by uncommenting the second formula in the following graph example (or see the [two equations side by side here](https://www.desmos.com/calculator/2xvlk5xp8b)). -->
 
@@ -247,7 +245,7 @@ y = x*x*(3.0-2.0*x);
 //y = x*x*x*(x*(x*6.-15.)+10.);
 "></div>
 
-Zauważ, jak zmieniają się końce krzywej. Więcej na ten temat możesz przeczytać w [słowach własnych Kena](http://mrl.nyu.edu/~perlin/paper445.pdf).
+Zauważ, jak zmieniają się końce krzywej. Więcej na ten temat możesz usłyszeć [z ust Kena Perlina](http://mrl.nyu.edu/~perlin/paper445.pdf).
 
 <!-- Note how the ends of the curve change. You can read more about this in [Ken's own words](http://mrl.nyu.edu/~perlin/paper445.pdf). -->
 
@@ -259,8 +257,8 @@ Dla Kena Perlina sukces jego algorytmu nie był wystarczający. Uważał, że mo
 * Algorytm o mniejszej złożoności obliczeniowej i mniejszej liczbie mnożeń.
 * Szum, który skaluje się do wyższych wymiarów przy mniejszym koszcie obliczeniowym.
 * Szum bez artefaktów kierunkowych.
-* Szum z dobrze zdefiniowanymi i ciągłymi gradientami, które mogą być obliczane dość tanio.
-* Algorytm, który jest łatwy do zaimplementowania w sprzęcie.
+* Szum z dobrze zdefiniowanymi i ciągłymi gradientami, o niskim koszcie obliczeniowym.
+* Algorytm, który jest łatwy do zaimplementowania w hardware'rze.
 
 <!-- For Ken Perlin the success of his algorithm wasn't enough. He thought it could perform better. At Siggraph 2001 he presented the "simplex noise" in which he achieved the following improvements over the previous algorithm:
 
@@ -270,15 +268,15 @@ Dla Kena Perlina sukces jego algorytmu nie był wystarczający. Uważał, że mo
 * A noise with well-defined and continuous gradients that can be computed quite cheaply.
 * An algorithm that is easy to implement in hardware. -->
 
-Wiem, co myślisz... "Kim jest ten człowiek?" Tak, jego praca jest fantastyczna! Ale poważnie, w jaki sposób ulepszył algorytm? Cóż, widzieliśmy jak dla dwóch wymiarów interpolował 4 punkty (rogi kwadratu); możemy więc poprawnie zgadnąć, że dla [trzech (zobacz implementację tutaj)](../edit.php#11/3d-noise.frag) i czterech wymiarów musimy interpolować 8 i 16 punktów. Prawda? Innymi słowy dla N wymiarów musisz płynnie interpolować 2 do N punktów (2^N). Ale Ken sprytnie zauważył, że chociaż oczywistym wyborem dla kształtu wypełniającego przestrzeń jest kwadrat, najprostszym kształtem w 2D jest trójkąt równoboczny. Zaczął więc od zastąpienia siatki kwadratowej (właśnie nauczyliśmy się jej używać) siatką simplex trójkątów równobocznych.
+Wiem, co myślisz... "Kim jest ten człowiek?" Tak, jego praca jest fantastyczna! Ale poważnie, w jaki sposób ulepszył ten algorytm? Cóż, widzieliśmy jak dla dwóch wymiarów interpolował 4 punkty (rogi kwadratu); możemy więc poprawnie zgadnąć, że dla [trzech (zobacz implementację tutaj)](../edit.php#11/3d-noise.frag) i czterech wymiarów musimy interpolować 8 i 16 punktów. Prawda? Innymi słowy dla N wymiarów musisz płynnie interpolować 2 do N punktów (2^N). Ale Ken sprytnie zauważył, że chociaż oczywistym wyborem dla kształtu wypełniającego przestrzeń jest kwadrat, najprostszym kształtem w 2D jest trójkąt równoboczny. Zaczął więc od zastąpienia siatki kwadratowej (niedawno nauczyliśmy się jej używać) siatką trójkątów równobocznych (inaczej zwaną *siatką sympleksową*).
 
 <!-- I know what you are thinking... "Who is this man?" Yes, his work is fantastic! But seriously, how did he improve the algorithm? Well, we saw how for two dimensions he was interpolating 4 points (corners of a square); so we can correctly guess that for [three (see an implementation here)](../edit.php#11/3d-noise.frag) and four dimensions we need to interpolate 8 and 16 points. Right? In other words for N dimensions you need to smoothly interpolate 2 to the N points (2^N). But Ken smartly noticed that although the obvious choice for a space-filling shape is a square, the simplest shape in 2D is the equilateral triangle. So he started by replacing the squared grid (we just learned how to use) for a simplex grid of equilateral triangles. -->
 
 ![](simplex-grid-00.png)
 
-Kształt simplex dla N wymiarów to kształt z N + 1 narożami. Innymi słowy jeden mniejszy narożnik do obliczenia w 2D, 4 mniej narożniki w 3D i 11 mniej narożników w 4D! To ogromna poprawa!
+Kształt dla N wymiarów to kształt z N + 1 wierzchołkami. Innymi słowy jeden wierzchołek mniej do obliczenia w 2D, 4 wierzchołki mniej w 3D i 11 wierzchołków mniej w 4D! To ogromna poprawa!
 
-W dwóch wymiarach interpolacja odbywa się podobnie do zwykłego szumu, poprzez interpolację wartości narożników odcinka. Ale w tym przypadku, dzięki zastosowaniu siatki simplex, musimy tylko interpolować sumę 3 narożników.
+W dwóch wymiarach interpolacja odbywa się podobnie do zwykłego szumu, poprzez interpolację wartości wierzchołków odcinka. Ale w tym przypadku, dzięki zastosowaniu siatki sympleksowej, musimy tylko interpolować sumę 3 wierzchołków.
 
 <!-- The simplex shape for N dimensions is a shape with N + 1 corners. In other words one fewer corner to compute in 2D, 4 fewer corners in 3D and 11 fewer corners in 4D! That's a huge improvement!
 
@@ -286,7 +284,7 @@ In two dimensions the interpolation happens similarly to regular noise, by inter
 
 ![](simplex-grid-01.png)
 
-Jak powstaje siatka simplex? W kolejnym błyskotliwym i eleganckim posunięciu, siatkę simplex można uzyskać poprzez podział komórek regularnej czteroramiennej siatki na dwa trójkąty równoramienne, a następnie przekrzywianie jej, aż każdy trójkąt będzie równoboczny.
+Jak powstaje siatka sympleksowa? W kolejnym błyskotliwym i eleganckim posunięciu, można ją uzyskać poprzez podział kwadratowych kafelków na dwa trójkąty równoramienne, a następnie przekrzywienia ich, aż każdy trójkąt będzie równoboczny. Proces ten szerzej opisany jest w [artykule Stefana Gustavsona](http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf).
 
 <!-- How is the simplex grid made? In another brilliant and elegant move, the simplex grid can be obtained by subdividing the cells of a regular 4 cornered grid into two isosceles triangles and then skewing it until each triangle is equilateral. -->
 
@@ -296,23 +294,24 @@ Jak powstaje siatka simplex? W kolejnym błyskotliwym i eleganckim posunięciu, 
 
 In the following code you can uncomment line 44 to see how the grid is skewed, and then uncomment line 47 to see how a simplex grid can be constructed. Note how on line 22 we are subdividing the skewed square into two equilateral triangles just by detecting if ```x > y``` ("lower" triangle) or ```y > x``` ("upper" triangle). -->
 
-Wtedy, jak opisuje [Stefan Gustavson w tej pracy](http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf): _"...patrząc na części całkowite przekształconych współrzędnych (x,y) dla punktu, który chcemy ocenić, możemy szybko określić, która komórka dwóch prostopadłościanów zawiera ten punkt. Porównując również wielkości x i y, możemy określić, czy punkt znajduje się w górnej czy dolnej prostej i przemierzyć właściwe trzy punkty narożne."_.
 
-W poniższym kodzie możesz odkomentować linię 44, aby zobaczyć jak siatka jest przekrzywiona, a następnie odkomentować linię 47, aby zobaczyć jak można skonstruować siatkę simpleksową. Zauważ jak w linii 22 dzielimy przekrzywiony kwadrat na dwa trójkąty równoboczne tylko poprzez wykrycie czy ``x > y`` (dolny" trójkąt) lub ``y > x`` (górny" trójkąt).
+<!-- [Stefan Gustavson w tej pracy](http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf) opisuje : _"...patrząc na części całkowite przekształconych współrzędnych (x,y) możemy szybko określić, który kafelek dwóch prostopadłościanów zawiera ten punkt. Porównując również wielkości x i y, możemy określić, czy punkt znajduje się w górnej czy dolnej prostej i przemierzyć właściwe trzy punkty narożne."_. -->
+
+W poniższym kodzie możesz odkomentować linię 44, aby zobaczyć jak siatka jest przekrzywiona, a następnie odkomentować linię 47, aby zobaczyć siatkę simpleksową. Zauważ jak w linii 22 dzielimy przekrzywiony kwadrat na dwa trójkąty równoboczne poprzez wykrycie czy ``x > y`` (dolny" trójkąt) lub ``y > x`` (górny" trójkąt).
 
 <div class="codeAndCanvas" data="simplex-grid.frag"></div>
 
 <!-- All these improvements result in an algorithmic masterpiece known as **Simplex Noise**. The following is a GLSL implementation of this algorithm made by Ian McEwan and Stefan Gustavson (and presented in [this paper](http://webstaff.itn.liu.se/~stegu/jgt2012/article.pdf)) which is overcomplicated for educational purposes, but you will be happy to click on it and see that it is less cryptic than you might expect, and the code is short and fast. -->
 
-Wszystkie te ulepszenia skutkują algorytmicznym arcydziełem znanym jako **Simplex Noise**. Poniżej znajduje się implementacja GLSL tego algorytmu wykonana przez Iana McEwana i Stefana Gustavsona (i przedstawiona w [tym artykule](http://webstaff.itn.liu.se/~stegu/jgt2012/article.pdf)), która jest nadmiernie skomplikowana w celach edukacyjnych, ale z przyjemnością klikniesz na nią i przekonasz się, że jest mniej krypto niż można by się spodziewać, a kod jest krótki i szybki.
+Wszystkie te ulepszenia skutkują algorytmicznym arcydziełem, jakim jest **Simplex Noise**. Poniżej znajduje się implementacja GLSL tego algorytmu wykonana przez Iana McEwana i Stefana Gustavsona (i przedstawiona w [tym artykule](http://webstaff.itn.liu.se/~stegu/jgt2012/article.pdf)), która jest nadmiernie skomplikowana w celach edukacyjnych, ale przekonasz się, że jest mniej enigmatyczna niż można by się spodziewać, a kod jest krótki i szybki.
 
 [ ![Ian McEwan of Ashima Arts - Simplex Noise](simplex-noise.png) ](../edit.php#11/2d-snoise-clear.frag)
 
-Cóż... dość technicznych rozważań, czas na wykorzystanie tego zasobu we własny, ekspresyjny sposób:
+Cóż... dość technicznych rozważań, czas na wykorzystanie tego narzędzia we własny, ekspresyjny sposób:
 
-* Kontempluj, jak wygląda każda implementacja szumu. Wyobraź sobie je jako surowy materiał, jak marmurowy kamień dla rzeźbiarza. Co możesz powiedzieć o "uczuciu", jakie ma każda z nich? Zmruż oczy, aby uruchomić wyobraźnię, tak jak wtedy, gdy chcesz znaleźć kształty w chmurze. Co widzisz? Co ci się przypomina? W co wyobrażasz sobie, że każda realizacja hałasu mogłaby zostać wykonana? Podążając za swoimi wnętrznościami i spróbuj zrealizować to w kodzie.
+* Kontempluj, jak wygląda każda implementacja szumu. Wyobraź sobie je jako surowy materiał, jak marmurowy kamień dla rzeźbiarza. Co możesz powiedzieć o "uczuciu", jakie ma każda z nich? Zmruż oczy, aby uruchomić wyobraźnię, tak jak wtedy, gdy chcesz znaleźć kształty w chmurze. Co widzisz? Co ci się przypomina? W co każda implementacja szumu mogłaby zostać przeobrażana? Podążając za swoją intuicją, spróbuj zrealizować to w kodzie.
 
-* Zrób shader, który rzutuje iluzję przepływu. Jak lampa lawowa, krople atramentu, woda itp.
+* Zrób shader, który tworzy iluzję przepływu. Jak lampa lawowa, krople atramentu, woda itp.
 
 <!-- Well... enough technicalities, it's time for you to use this resource in your own expressive way:
 
@@ -328,9 +327,9 @@ Cóż... dość technicznych rozważań, czas na wykorzystanie tego zasobu we w�
 
 <a href="../edit.php#11/iching-03.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-03.frag"  width="520px" height="520px"></canvas></a>
 
-W tym rozdziale wprowadziliśmy pewną kontrolę nad chaosem. Nie była to łatwa praca! Stanie się mistrzem noise-benderów wymaga czasu i wysiłku.
+W tym rozdziale wprowadziliśmy pewną kontrolę nad chaosem. Nie była to łatwa praca! Stanie się zaklinaczem chaosu wymaga czasu i wysiłku.
 
-W następnych rozdziałach zobaczymy kilka dobrze znanych technik, które pozwolą ci udoskonalić swoje umiejętności i wydobyć więcej z szumu, aby zaprojektować wysokiej jakości treść generatywną za pomocą shaderów. Do tego czasu ciesz się czasem na zewnątrz, kontemplując naturę i jej zawiłe wzory. Twoja umiejętność obserwacji wymaga równego (a może nawet większego) poświęcenia niż twoje umiejętności tworzenia. Wyjdź na zewnątrz i ciesz się resztą dnia!
+W następnych rozdziałach zobaczymy kilka dobrze znanych technik, które pozwolą ci udoskonalić swoje umiejętności i wydobyć więcej z szumu, aby zaprojektować wysokiej jakości generatywne dzieła za pomocą shaderów. Do tego czasu ciesz się czasem na zewnątrz, kontemplując naturę i jej zawiłe wzory. Twoja umiejętność obserwacji wymaga równego (a może nawet większego) poświęcenia niż twoje umiejętności tworzenia. Wyjdź na zewnątrz i ciesz się resztą dnia!
 
 <!-- In this chapter we have introduced some control over the chaos. It was not an easy job! Becoming a noise-bender-master takes time and effort.
 
