@@ -56,7 +56,7 @@
     * Reflect and refract
 
 * [Dodatek:](appendix/) Inne sposoby korzystania z tej książki
-	* [Jak korzystać z tej książki offline?](appendix/00/)
+	* [Jak mogę korzystać z tej książki offline?](appendix/00/)
 	* [Jak uruchomić przykłady na Raspberry Pi?](appendix/01/)
 	* [Jak wydrukować tę książkę?](appendix/02/)
     * [Jak mogę pomóc?](appendix/03/)
