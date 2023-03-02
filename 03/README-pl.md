@@ -1,12 +1,12 @@
 ## Uniformy
 
-Do tej pory widzieliśmy jak GPU zarządza wieloma równoległymi wątkami, z który każdy odpowiada za kolor części renderowanego obrazu. Choć wątki nie komunikują się między sobą, to jednak muszą jakoś otrzymywać input z CPU. Ze względu na architekturę karty graficznej taki input musi być jednakowy (ang. *uniform*) dla wszystkich wątków i, z konieczności, tylko do odczytu. Innymi słowy, każdy wątek otrzymuje takie same dane, które może odczytać, ale nie nadpisać, zmienić.
+Do tej pory widzieliśmy jak GPU zarządza wieloma równoległymi wątkami, z których każdy odpowiada za kolor części renderowanego obrazu. Choć wątki nie komunikują się między sobą, to jednak muszą jakoś otrzymywać input z CPU. Ze względu na architekturę karty graficznej taki input musi być jednakowy (ang. "*uniform*") dla wszystkich wątków i, z konieczności, tylko do odczytu (ang. "read-only"). Innymi słowy, każdy wątek otrzymuje takie same dane, które może odczytać, ale nie nadpisać, zmienić.
 
-~~So far we have seen how the GPU manages large numbers of parallel threads, each one responsible for assigning the color to a fraction of the total image. Although each parallel thread is blind to the others, we need to be able to send some inputs from the CPU to all the threads. Because of the architecture of the graphics card those inputs are going to be equal (*uniform*) to all the threads and necessarily set as *read only*. In other words, each thread receives the same data which it can read but cannot change.~~
+<!-- So far we have seen how the GPU manages large numbers of parallel threads, each one responsible for assigning the color to a fraction of the total image. Although each parallel thread is blind to the others, we need to be able to send some inputs from the CPU to all the threads. Because of the architecture of the graphics card those inputs are going to be equal (*uniform*) to all the threads and necessarily set as *read only*. In other words, each thread receives the same data which it can read but cannot change. -->
 
-Inputy te nazywamy `uniform`ami i mogę być większości wspieranych typów: `float`, `vec2`, `vec3`, `vec4`, `mat2`, `mat3`, `mat4`, `sampler2D` i `samplerCube`. Uniformy definiowane są zwykle na górze shaderu zaraz po przypisaniu domyślnej precyzji floatów.
+Inputy te nazywamy `uniform`ami i mogę być większości wspieranych typów: `float`, `vec2`, `vec3`, `vec4`, `mat2`, `mat3`, `mat4`, `sampler2D` i `samplerCube`. Uniformy definiowane są zwykle na górze shaderu zaraz po przypisaniu domyślnej precyzji float'ów.
 
-~~These inputs are called `uniform` and come in most of the supported types: `float`, `vec2`, `vec3`, `vec4`, `mat2`, `mat3`, `mat4`, `sampler2D` and `samplerCube`. Uniforms are defined with the corresponding type at the top of the shader right after assigning the default floating point precision.~~
+<!-- These inputs are called `uniform` and come in most of the supported types: `float`, `vec2`, `vec3`, `vec4`, `mat2`, `mat3`, `mat4`, `sampler2D` and `samplerCube`. Uniforms are defined with the corresponding type at the top of the shader right after assigning the default floating point precision. -->
 
 ```glsl
 #ifdef GL_ES
@@ -20,7 +20,7 @@ uniform float u_time;       // czas w sekundach od załadowania shadera
 
 Wyobraź sobie te uniformy jak małe mosty między CPU i GPU. Ich nazwy bywają różne, ale w tej książce używam: `u_time`, `u_resolution` i `u_mouse` (przeczytaj komentarze w kodzie, aby wiedzieć, co robią). Podążam za konwencją dodawnaia `u_` przed nazwą uniformów, aby było wiadomo, że nie są to zwykłe zmienne, ale ostatecznie jest to kwestia gustu. Przykładowo, [ShaderToy.com](https://www.shadertoy.com/) używa takich samych uniformów, ale z następującym nazewnictwem: 
 
-~~You can picture the uniforms like little bridges between the CPU and the GPU. The names will vary from implementation to implementation but in this series of examples I’m always passing: `u_time` (time in seconds since the shader started), `u_resolution` (billboard size where the shader is being drawn) and `u_mouse` (mouse position inside the billboard in pixels). I’m following the convention of putting `u_` before the uniform name to be explicit about the nature of this variable but you will find all kinds of names for uniforms. For example [ShaderToy.com](https://www.shadertoy.com/) uses the same uniforms but with the following names:~~
+<!-- You can picture the uniforms like little bridges between the CPU and the GPU. The names will vary from implementation to implementation but in this series of examples I’m always passing: `u_time` (time in seconds since the shader started), `u_resolution` (billboard size where the shader is being drawn) and `u_mouse` (mouse position inside the billboard in pixels). I’m following the convention of putting `u_` before the uniform name to be explicit about the nature of this variable but you will find all kinds of names for uniforms. For example [ShaderToy.com](https://www.shadertoy.com/) uses the same uniforms but with the following names: -->
 
 ```glsl
 uniform vec3 iResolution;   
@@ -57,7 +57,7 @@ Pobawmy się powyższym kodem:
 
 ## gl_FragCoord
 
-GLSL daje nam nie tylko domyślny output `vec4 gl_FragColor`, ale również domyślny input w postaci `vec4 gl_FragCoord`, który przechowuje współrzędne *piksela* (inaczej: *fragmentu*), nad którym aktualnie pracuje wątek - dzięki `vec4 gl_FragCoord` wiemy, gdzie wątek pracuje wewnątrz kanwy. Nie nazywamy go `uniform`em, ponieważ jego wartość różni się między wątkami. Zamiast tego `gl_FragCoord` nazywamy *varying* (z ang. "zmieniający się", "różniący się"). 
+GLSL daje nam nie tylko domyślny output `vec4 gl_FragColor`, ale również domyślny input w postaci `vec4 gl_FragCoord`, który przechowuje współrzędne *piksela* (inaczej: *fragmentu*), nad którym aktualnie pracuje wątek - dzięki `vec4 gl_FragCoord` wiemy, gdzie wątek pracuje wewnątrz kanwy. Nie nazywamy go `uniform`em, ponieważ jego wartość *różni się* między wątkami. Zamiast tego `gl_FragCoord` nazywamy *varying* (z ang. "zmieniający się", "różniący się"). 
 
 <!-- In the same way GLSL gives us a default output, `vec4 gl_FragColor`, it also gives us a default input, `vec4 gl_FragCoord`, which holds the screen coordinates of the *pixel* or *screen fragment* that the active thread is working on. With `vec4 gl_FragCoord`, we know where a thread is working inside the billboard. In this case we don't call it `uniform` because it will be different from thread to thread, instead `gl_FragCoord` is called a *varying*. -->
 
