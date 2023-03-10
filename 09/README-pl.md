@@ -4,9 +4,9 @@ Ponieważ shadery wykonywane są piksel po pikselu, więc niezależnie od tego, 
 
 [ ![Nina Warmerdam - The IMPRINT Project (2013)](warmerdam.jpg) ](../edit.php#09/dots5.frag)
 
-W tym rozdziale zamierzamy zastosować to, czego nauczyliśmy się do tej pory, ale powtarzając to wzdłuż kanwy. Podobnie jak w poprzednich rozdziałach, nasza strategia będzie opierała się na mnożeniu współrzędnych przestrzeni (z przedziału 0.0 a 1.0), dzięki czemu kształty, które narysujemy pomiędzy wartościami 0.0 a 1.0, będą się powtarzać, tworząc siatkę.
+W tym rozdziale zamierzamy zastosować to, czego nauczyliśmy się do tej pory, dodając powtarzalność. Podobnie jak w poprzednich rozdziałach, nasza strategia będzie opierała się na mnożeniu współrzędnych przestrzeni (z przedziału 0.0 a 1.0), dzięki czemu kształty, które narysujemy pomiędzy wartościami 0.0 a 1.0, będą się powtarzać, tworząc siatkę.
 
-*Siatka zapewnia ramy, w których może działać ludzka intuicja i inwencja, i które może obalić. W chaosie natury wzory zapewniają kontrast i obietnicę porządku. Od wczesnych wzorów na ceramice do geometrycznych mozaik w rzymskich łaźniach, ludzie od dawna używali siatek, by wzbogacić swoje życie o dekoracje. "* [*10 PRINT*, Mit Press, (2013)](http://10print.org/)
+*Siatka* (ang. "grid") *zapewnia ramy, w których może działać ludzka intuicja i inwencja, i które może obalić. W chaosie natury wzory zapewniają kontrast i obietnicę porządku. Od wczesnych wzorów na ceramice do geometrycznych mozaik w rzymskich łaźniach, ludzie od dawna używali siatek, by wzbogacić swoje życie o dekoracje. "* [*10 PRINT*, Mit Press, (2013)](http://10print.org/)
 
 Najpierw przypomnijmy sobie funkcję [``fract()``](../glossary/?search=fract). Zwraca ona część ułamkową liczby, dzięki czemu ``fract()`` to w istocie funkcja modulo jeden ([``mod(x,1.0)``](../glossary/?search=mod)). Innymi słowy, [``fract()``](../glossary/?search=fract) zwraca liczbę po przecinku. Nasza zmienna znormalizowanego układu współrzędnych (``st``) już znajduje sie w zakresie od 0.0 do 1.0, więc nie ma sensu robić czegoś takiego jak:
 

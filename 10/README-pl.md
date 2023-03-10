@@ -16,9 +16,9 @@ Let's start by analyzing the following function: -->
 
 <div class="simpleFunction" data="y = fract(sin(x)*1.0);"></div>
 
-Powyżej wyodrębniamy zawartość ułamkową sinusoidy. Wartości [``sin()``](../glossary/?search=sin), które oscylują pomiędzy ``-1.0`` a ``1.0`` zostały posiekane, zwracając wszystkie dodatnie wartości pomiędzy ``0.0`` a ``1.0``. Możemy wykorzystać ten efekt do uzyskania pseudolosowych wartości. W jaki sposób? Mnożąc wypadkową [``sin(x)``](../glossary/?search=sin) przez większe liczby. Śmiało, zmodyfikuj powyższą funkcję, dodając zera do `1.0`.
+Powyżej wyodrębniamy zawartość ułamkową sinusoidy. Wartości [``sin()``](../glossary/?search=sin), które oscylują pomiędzy ``-1.0`` a ``1.0`` zostały posiekane, i sprowadzone do zakresu pomiędzy ``0.0`` a ``1.0``. Możemy wykorzystać ten efekt do uzyskania pseudolosowych wartości. W jaki sposób? Mnożąc wypadkową [``sin(x)``](../glossary/?search=sin) przez większe liczby. Śmiało, zmodyfikuj powyższą funkcję, dodając zera do `1.0`.
 
-Do czasu, gdy dojdziesz do ``100000.0`` (i równanie będzie wyglądało tak: ``y = fract(sin(x)*100000.0)`` ) nie jesteś już w stanie odróżnić sinusoidy. Ziarnistość części ułamkowej zepsuła falę sinusoidy w pseudolosowy chaos.
+Do czasu, gdy dojdziesz do ``100000.0`` (i równanie będzie wyglądało tak: ``y = fract(sin(x)*100000.0)`` ) nie jesteś już w stanie dostrzec sinusoidę. Ziarnistość części ułamkowej zepsuła falę sinusoidy w pseudolosowy chaos.
 
 <!-- Above we are extracting the fractional content of a sine wave. The [```sin()```](../glossary/?search=sin) values that fluctuate between ```-1.0``` and ```1.0``` have been chopped behind the floating point, returning all positive values between ```0.0``` and ```1.0```. We can use this effect to get some pseudo-random values by "breaking" this sine wave into smaller pieces. How? By multiplying the resultant of [```sin(x)```](../glossary/?search=sin) by larger numbers. Go ahead and click on the function above and start adding some zeros.
 
@@ -28,9 +28,9 @@ By the time you get to ```100000.0``` ( and the equation looks like this: ```y =
 
 Używanie losowości może być trudne - czasami jest ona zbyt chaotyczna, a czasami niewystarczająco losowa. Przyjrzyj się poniższemu wykresowi. Aby go stworzyć, używamy funkcji ``rand()``, która jest zaimplementowana dokładnie tak, jak opisaliśmy powyżej.
 
-Przyglądając się bliżej, możesz zobaczyć [```sin()``](../glossary/?search=sin) grzebień fali przy ``-1,5707`` i ``1,5707``. Założę się, że teraz rozumiesz dlaczego - to właśnie tam występuje maksimum i minimum fali sinusoidalnej.
+Przyglądając się bliżej, możesz dostrzec osobiliwości przy ``-1.5707`` i ``1.5707``. Założę się, że teraz rozumiesz dlaczego - to właśnie tam występuje maksimum i minimum fali sinusoidalnej.
 
-Jeśli przyjrzysz się bliżej rozkładowi losowemu, zauważysz, że istnieje pewne skupienie wokół środka w porównaniu do krawędzi.
+Jeśli przyjrzysz się bliżej rozkładowi losowemu, zauważysz, że istnieje pewne skupienie wokół środka w porównaniu do brzegów.
 
 <!-- ## Controlling chaos
 
@@ -45,7 +45,7 @@ If look closely at the random distribution, you will note that the there is some
 //y = sqrt(rand(x));
 //y = pow(rand(x),5.);"></div>
 
-Jakiś czas temu [Pixelero](https://pixelero.wordpress.com) opublikował [ciekawy artykuł o rozkładzie losowym](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/). Dodałem kilka funkcji, których używa, na poprzednim wykresie, abyś mógł zobaczyć, jak można ten rozkład zmienić. Odkomentuj te funkcje i zobacz, co się stanie.
+Jakiś czas temu [Pixelero](https://pixelero.wordpress.com) opublikował [ciekawy artykuł o rozkładzie losowym](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/). Dodałem kilka zakomentowanych funkcji, których używa, abyś mógł zobaczyć, jak można ten rozkład zmienić. Odkomentuj te funkcje i zobacz, co się stanie.
 
 Czytając [artykuł Pixelero](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/), ważne jest, aby pamiętać, że nasza funkcja ``rand()`` jest deterministyczna, pseudolosowa. Co oznacza, że na przykład ``rand(1.)`` zawsze zwróci tę samą wartość. [Pixelero](https://pixelero.wordpress.com/2008/04/24/various-functions-and-various-distributions-with-mathrandom/) odwołuje się do funkcji ActionScript ``Math.random()``, która jest niedeterministyczna - każde jej wywołanie zwróci inną wartość.
 
@@ -143,7 +143,7 @@ Zapoznaj się z pracami [Ikedy](http://www.ryojiikeda.com/) i spróbuj wykonać 
 
 <a href="../edit.php#10/ikeda-04.frag"><canvas id="custom" class="canvas" data-fragment-url="ikeda-04.frag"  width="520px" height="200px"></canvas></a>
 
-Używanie losowości pod względem estetycznym może być problematyczne, zwłaszcza jeśli chcesz zrobić naturalnie wyglądające symulacje. Losowość jest po prostu zbyt chaotyczna i bardzo niewiele rzeczy wygląda ``random()`` w prawdziwym życiu. Jeśli spojrzysz na wzór deszczu lub wykres giełdowy, które są dość losowe, nie przypominają one w niczym losowego wzoru, który stworzyliśmy na początku tego rozdziału. Powód? Cóż, wartości losowe nie mają żadnej korelacji między sobą, podczas gdy większość naturalnych wzorów ma jakąś pamięć o poprzednim stanie.
+Używanie losowości w estetyczny sposób może być problematyczne, zwłaszcza jeśli chcesz zrobić naturalnie wyglądające symulacje. Losowość jest po prostu zbyt chaotyczna i bardzo niewiele rzeczy wygląda ``random()`` w prawdziwym życiu. Jeśli spojrzysz na wzór deszczu lub wykres giełdowy, które są dość losowe, nie przypominają one w niczym losowego wzoru, który stworzyliśmy na początku tego rozdziału. Powód? Cóż, wartości losowe nie mają żadnej korelacji między sobą, podczas gdy większość naturalnych wzorów ma jakąś pamięć o poprzednim stanie.
 
 W następnym rozdziale poznamy szum (ang. "noise"), płynny i *naturalnie wyglądający* sposób tworzenia chaosu obliczeniowego.
 

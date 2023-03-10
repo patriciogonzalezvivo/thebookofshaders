@@ -2,13 +2,13 @@
 
 ## Kształty
 
-Nareszcie! Czekaliśmy na ten moment! Poznałeś większość podstaw GLSL, jego typów i funkcji. Ćwiczyłeś również wykorzystanie funkcji kształtujących. Teraz nadszedł czas, aby połączyć to wszystko w całość. Jesteś w stanie sprostać temu wyzwaniu! W tym rozdziale dowiesz się, jak procedrualnie i równolegle rysować proste kształty.
+Nareszcie! Czekaliśmy na ten moment! Poznałeś większość podstaw GLSL, jego typów i funkcji. Ćwiczyłeś również wykorzystanie shaping functions. Teraz nadszedł czas, aby połączyć to wszystko w całość. Jesteś w stanie sprostać temu wyzwaniu! W tym rozdziale dowiesz się, jak procedrualnie i równolegle rysować proste kształty.
 
 <!-- Finally! We have been building skills for this moment! You have learned most of the GLSL foundations, types and functions. You have practiced your shaping equations over and over. Now is the time to put it all together. You are up for this challenge! In this chapter you'll learn how to draw simple shapes in a parallel procedural way. -->
 
 ### Prostokąt
 
-Wyobraźmy sobie, że mamy papier w kratkę, taki jaki używaliśmy na lekcjach matematyki i naszym zadaniem domowym jest narysowanie kwadratu. Rozmiar papieru to 10x10, a kwadrat ma mieć wymiary 8x8. Co zrobisz?
+Wyobraźmy sobie, że mamy papier w kratkę, taki jaki używaliśmy na lekcjach matematyki i naszym zadaniem domowym jest narysowanie kwadratu. Kartka papieru jest w wymiarach 10x10, a kwadrat w 8x8. Co zrobisz?
 
 <!-- Imagine we have grid paper like we used in math classes and our homework is to draw a square. The paper size is 10x10 and the square is supposed to be 8x8. What will you do? -->
 
@@ -18,11 +18,11 @@ Zamalowałbyś wszystko poza pierwszym i ostatnim rzędem oraz pierwszą i ostat
 
 <!-- You'd paint everything except the first and last rows and the first and last column, right? -->
 
-Jak to się ma do shaderów? Każdy mały kwadracik naszego papieru siatkowego to wątek (piksel). Każdy mały kwadrat zna swoje położenie, podobne do współrzędnych na szachownicy. W poprzednich rozdziałach zmapowaliśmy *x* i *y* na kanały kolorów *czerwony* i *zielony* oraz nauczyliśmy się korzystać z ciasnego dwuwymiarowego terytorium pomiędzy 0.0 a 1.0. Jak możemy tę wiedzę wykorzystać, aby narysować wyśrodkowany kwadrat na środku naszej kanwy?
+Jak to się ma do shaderów? Każdy mały kwadracik naszej kartki papieru to wątek (piksel). Każdy mały kwadrat zna swoje położenie, podobne do współrzędnych na szachownicy. W poprzednich rozdziałach zmapowaliśmy *x* i *y* na kanały kolorów *czerwony* i *zielony* oraz nauczyliśmy się korzystać z ciasnego dwuwymiarowego terytorium pomiędzy 0.0 a 1.0. Jak możemy tę wiedzę wykorzystać, aby narysować wyśrodkowany kwadrat na środku naszej kanwy?
 
 <!-- How does this relate to shaders? Each little square of our grid paper is a thread (a pixel). Each little square knows its position, like the coordinates of a chess board. In previous chapters we mapped *x* and *y* to the *red* and *green* color channels, and we learned how to use the narrow two dimensional territory between 0.0 and 1.0. How can we use this to draw a centered square in the middle of our billboard? -->
 
-Zacznijmy od naszkicowania pseudokodu, który używa `if`ów na współrzędnych kanwy. Zasady, aby to zrobić, są nadzwyczaj podobne do tego, jak myślimy o sytuacji z papieram w kratke.
+Zacznijmy od naszkicowania pseudokodu, który używa `if`ów na współrzędnych kanwy. Idea jest podobna jak w przypadku z papieram w kratke.
 
 <!-- Let's start by sketching pseudocode that uses `if` statements over the spatial field. The principles to do this are remarkably similar to how we think of the grid paper scenario. -->
 
@@ -33,7 +33,7 @@ else
     pomaluj na czarno
 ```
 
-Teraz, gdy mamy lepsze wyobrażenie o tym, jak to będzie działać, zastąpmy `if`a funkcją [`step()`](../glossary/?search=step), a zamiast używać współrzędnych 10x10 użyjmy znormalizowanych odpowiedników pomiędzy 0.0 a 1.0:
+Teraz, gdy mamy lepsze wyobrażenie o tym, jak to będzie działać, zastąpimy `if`a funkcją [`step()`](../glossary/?search=step), a zamiast używać siatki 10x10 użyjmy znormalizowanych odpowiedników pomiędzy 0.0 a 1.0:
 
 <!-- Now that we have a better idea of how this will work, let’s replace the `if` statement with [`step()`](../glossary/?search=step), and instead of using 10x10 let’s use normalized values between 0.0 and 1.0: -->
 
@@ -92,7 +92,7 @@ vec2 tr = step(vec2(0.1),1.0-st);   // top-right
 color = vec3(bl.x * bl.y * tr.x * tr.y);
 ```
 
-Ciekawe, prawda? W tej technice chodzi o wykorzystanie [`step()`](../glossary/?search=step), przerzucania współrzędnych oraz mnożenia (do operacji logicznych).
+Ciekawe, prawda? W tej technice chodzi o wykorzystanie [`step()`](../glossary/?search=step), odwracania (ang. "flip") współrzędnych oraz mnożenia (jako operację logiczną AND).
 
 <!-- Interesting right? This technique is all about using [`step()`](../glossary/?search=step) and multiplication for logical operations and flipping the coordinates. -->
 
@@ -102,7 +102,7 @@ Zanim przejdziesz dalej, spróbuj wykonać następujące ćwiczenia:
 
 * Użyj [`smoothstep()`](../glossary/?search=smoothstep) zamiast [`step()`](../glossary/?search=step). Zauważ, że zmieniając wartości, możesz przejść od rozmytych krawędzi do eleganckich gładkich granic.
 
-* Zaimplementuj to samo, ale za pomocą [`floor()`](../glossary/?search=floor)(+ mnożenia i dzielenia).
+* Zaimplementuj to samo, ale za pomocą [`floor()`](../glossary/?search=floor) (+ mnożenie i dzielenie).
 
 * Wybierz implementację, którą najbardziej lubisz i zrób z niej funkcję, którą możesz ponownie wykorzystać w przyszłości. Spraw, aby twoja funkcja była elastyczna i wydajna.
 
@@ -130,7 +130,7 @@ Zanim przejdziesz dalej, spróbuj wykonać następujące ćwiczenia:
 
 Łatwo jest rysować kwadraty na papierze w kratkę i prostokąty na współrzędnych kartezjańskich, ale okręgi wymagają innego podejścia, zwłaszcza że potrzebujemy algorytmu działającego na każdym pikselu z osobna. Jednym z rozwiązań jest *zmapowanie* współrzędnych tak, abyśmy mogli użyć funkcji [`step()`](../glossary/?search=step) do narysowania okręgu.
 
-Jak to zrobić? Przypomnijmy sobie lekcje matematyki, gdzie rozpościeraliśmy ramiona cyrkla na promień okręgu, wciskaliśmy jedno ramię cyrkla w środek okręgu, a następnie obrysowywaliśmy krawędź okręgu obracając drugie ramię.
+Jak to zrobić? Przypomnijmy sobie lekcje matematyki, gdzie rozpościeraliśmy ramiona cyrkla na długość promienia okręgu, wciskaliśmy jedno ramię cyrkla w środek okręgu, a następnie obrysowywaliśmy krawędź okręgu obracając drugie ramię.
 
 <!-- It's easy to draw squares on grid paper and rectangles on cartesian coordinates, but circles require another approach, especially since we need a "per-pixel" algorithm. One solution is to *re-map* the spatial coordinates so that we can use a [`step()`](../glossary/?search=step) function to draw a circle.
 
@@ -154,7 +154,7 @@ Możesz użyć [`distance()`](../glossary/?search=distance), [`length()`](../glo
 
 <!-- You can use [`distance()`](../glossary/?search=distance), [`length()`](../glossary/?search=length) or [`sqrt()`](../glossary/?search=sqrt) to calculate the distance to the center of the billboard. The following code contains these three functions and the non-surprising fact that each one returns exactly same result. -->
 
-Komentuj i odkomentuj linijki, aby wypróbować różne sposoby uzyskania tego samego wyniku.
+Zakomentuj i odkomentuj linijki, aby wypróbować różne sposoby uzyskania tego samego wyniku.
 
 <!-- * Comment and uncomment lines to try the different ways to get the same result. -->
 
@@ -176,7 +176,7 @@ W powyższym przykładzie mapujemy odległość do centrum kanwy na jasność pi
 
 * Modify the above code in order to contain the entire circular gradient inside the canvas. -->
 
-### Distance field
+### Pole odległości
 
 Możemy również myśleć o powyższym przykładzie jako o mapie wysokości, gdzie im ciemniej tym wyżej. Gradient pokazuje nam coś podobnego do wzoru tworzonego przez stożek. Wyobraź sobie, że jesteś na szczycie tego stożka. Pozioma odległość do krawędzi stożka wynosi 0.5. Będzie ona stała we wszystkich kierunkach. Wybierając miejsce "przecięcia" stożka otrzymamy większą lub mniejszą powierzchnię kołową.
 
@@ -245,9 +245,9 @@ Pod względem mocy obliczeniowej funkcja [`sqrt()`](../glossary/?search=sqrt) - 
 
 <div class="codeAndCanvas" data="circle.frag"></div>
 
-### Przydatne własności Pól Odległości
+### Przydatne własności pól odległości
 
-![ogórd Zen](zen-garden.jpg)
+![ogród Zen](zen-garden.jpg)
 
 Pola odległości mogą być używane do rysowania prawie wszystkiego. Oczywiście im bardziej złożony jest kształt, tym bardziej skomplikowane będzie jego równanie, ale gdy już masz formułę do tworzenia pól odległości danego kształtu, bardzo łatwo jest połączyć i/lub zastosować do niego efekty, takie jak gładkie krawędzie i wiele konturów. Z tego powodu, pola odległości są popularne w renderowaniu czcionek, takich jak [Mapbox GL Labels](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817), [Matt DesLauriers](https://twitter.com/mattdesl) [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu) i [jak to jest opisane w rozdziale 7 iPhone 3D Programming, O'Reilly](http://chimera.labs.oreilly.com/books/1234000001814/ch07.html#ch07_id36000921).
 
@@ -271,7 +271,7 @@ Jeśli odkomentujesz *linijkę 20*, zauważysz, że łączymy odległości do ty
 
 Spróbuj teraz odkomentować *linijkę 21*; robimy to samo, ale używamy funkcji [`max()`](../glossary/?search=max). Rezultatem jest prostokąt z zaokrąglonymi rogami. Zauważ, jak pierścienie pola odległości stają się gładsze, im bardziej oddalają się od środka.
 
-Dokończ odkomentowywanie *linijek 27 do 29* jedna po drugiej, aby zrozumieć różne zastosowania wzorca pola odległości.
+Dokończ odkomentowywanie *linijek 27 do 29* jedna po drugiej, aby zrozumieć różne zastosowania pól odległości.
 
 <!-- If you uncomment *line 20*, you will note that we are combining the distances to these four points using the [`min()`](../glossary/?search=min) to zero. The result produces an interesting new pattern.
 
@@ -294,7 +294,7 @@ float a = atan(pos.y,pos.x);
 ```
 Część tego wzoru wykorzystaliśmy na początku rozdziału do narysowania okręgu. Odległość do środka obliczyliśmy za pomocą [`length()`](../glossary/?search=length). Teraz, gdy wiemy już o polach odległości, możemy poznać inny sposób rysowania kształtów za pomocą współrzędnych biegunowych.
 
-Technika ta jest nieco restrykcyjna, ale bardzo prosta. Polega ona na zmianie promienia okręgu w zależności od kąta, aby uzyskać różne kształty. Jak dokonuje się ta zmiana? Z użyciem funkcji kształtujących!
+Technika ta jest nieco restrykcyjna, ale bardzo prosta. Polega ona na zmianie promienia okręgu w zależności od kąta, aby uzyskać różne kształty. Jak dokonuje się ta zmiana? Z użyciem shaping functions!
 
 Poniżej znajdziesz dwa interaktywne przykłady, w których te same funkcje występują we współrzędnych kartezjańskich i w biegunowych (pomiędzy *linijkami 21 i 25*). Odkomentuj te funkcje jedna za drugą, zwracając uwagę na zależności między jednym układem współrzędnych a drugim.
 
@@ -317,22 +317,20 @@ Spróbuj:
 <!-- Try to: -->
 
 * Zanimować te kształty
-* Połącz różne funkcje kształtujące by *zrobić dziury* w kształtach, aby powstały kwiaty, płatki śniegu i zębatki.
-* Użyj funkcji `plot()` z rodziału *Funkcje kształtujące* i narysuj sam kontur (bez wypełnienia)
+* Połącz różne shaping functions by *zrobić dziury* w kształtach, aby powstały kwiaty, płatki śniegu i zębatki.
+* Użyj funkcji `plot()` z rodziału *Shaping functions* i narysuj sam kontur (bez wypełnienia)
 
 <!-- * Animate these shapes.
 * Combine different shaping functions to *cut holes* in the shape to make flowers, snowflakes and gears.
 * Use the `plot()` function we were using in the *Shaping Functions Chapter* to draw just the contour. -->
 
-### Combining powers
-
-### Łączenie
+### Łącząc siły
 
 Teraz gdy wiemy, jak zmieniać promień koła w zależności od kąta z użyciem [`atan()`](../glossary/?search=atan), możemy spróbować połączyć `atan()` z polami odległości.
 
 <!-- Now that we've learned how to modulate the radius of a circle according to the angle using the [`atan()`](../glossary/?search=atan) to draw different shapes, we can learn how use `atan()` with distance fields and apply all the tricks and effects possible with distance fields. -->
 
-Trik polega na wykorzystanie liczby krawędzi wielokąta, by skonstruować pole odległości z użyciem współrzędnych polarnych. Sprawdź [następujący kod](http://thndl.com/square-shaped-shaders.html) od [Andrew Baldwin](https://twitter.com/baldand).
+Trik polega na wykorzystaniu liczby krawędzi wielokąta, by skonstruować pole odległości z użyciem współrzędnych polarnych. Sprawdź [następujący kod](http://thndl.com/square-shaped-shaders.html) od [Andrew Baldwin](https://twitter.com/baldand).
 
 <!-- The trick will use the number of edges of a polygon to construct the distance field using polar coordinates. Check out [the following code](http://thndl.com/square-shaped-shaders.html) from [Andrew Baldwin](https://twitter.com/baldand). -->
 
@@ -350,7 +348,7 @@ Trik polega na wykorzystanie liczby krawędzi wielokąta, by skonstruować pole 
 
 <!-- * Choose a geometric logo to replicate using distance fields. -->
 
-Gratulacje! Udało ci się przebrnąć przez trudny materiał! Odpocznij i pozwól - choć rysowanie prostych kształtów jest proste w Processing, to tutaj już nie. W świecie shaderów rysowanie kształtów jest zawiłe; przestawienie się na ten nowy sposób programowania może być męczące. 
+Gratulacje! Udało ci się przebrnąć przez bardzo trudny materiał! Choć rysowanie prostych kształtów w Processing jest proste, to tutaj już nie. W świecie shaderów rysowanie kształtów jest zawiłe; przestawienie się na ten nowy sposób programowania może być męczące. 
 
 <!-- Congratulations! You have made it through the rough part! Take a break and let these concepts settle - drawing simple shapes in Processing is easy but not here. In shader-land drawing shapes is twisted, and it can be exhausting to adapt to this new paradigm of coding. -->
 

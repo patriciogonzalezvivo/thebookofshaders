@@ -4,7 +4,7 @@
 
 ### Translacja
 
-W poprzednim rozdziale dowiedzieliśmy się, jak tworzyć różne kształty - sztuczka z przesuwaniem tych kształtów polega na przesuwaniu samego układu współrzędnych. Możemy to osiągnąć poprzez proste dodanie wektora do zmiennej ``st``, zawierającej położenie każdego fragmentu. Powoduje to przesunięcie całego układu współrzędnych.
+W poprzednim rozdziale dowiedzieliśmy się, jak tworzyć różne kształty. Przesuwanie tych kształtów polega na przesuwaniu samego układu współrzędnych. Możemy to osiągnąć poprzez proste dodanie wektora do zmiennej ``st``, zawierającej położenie każdego fragmentu. Powoduje to przesunięcie całego układu współrzędnych.
 
 <!-- In the previous chapter we learned how to make some shapes - the trick to moving those shapes is to move the coordinate system itself. We can achieve that by simply adding a vector to the ```st``` variable that contains the location of each fragment. This causes the whole space coordinate system to move. -->
 
@@ -22,15 +22,15 @@ W poprzednim rozdziale dowiedzieliśmy się, jak tworzyć różne kształty - sz
 
 Spróbuj teraz wykonać następujące ćwiczenie:
 
-* Używając ``u_time`` wraz z funkcjami kształtującymi poruszaj małym krzyżem w ciekawy sposób. Poszukaj interesującego cię ruchu i spróbuj sprawić, by krzyż poruszał się w ten sam sposób. Przydatne może być nagranie najpierw czegoś z "prawdziwego świata" - może to być przypływ i odpływ fal, ruch wahadła, odbijająca się piłka, przyspieszający samochód, zatrzymujący się rower.
+* Używając ``u_time`` wraz z shaping functions poruszaj małym krzyżem w ciekawy sposób. Poszukaj interesującego cię ruchu i spróbuj sprawić, by krzyż poruszał się w ten sam sposób. Przydatne może być nagranie najpierw czegoś z "prawdziwego świata" - może to być przypływ i odpływ fal, ruch wahadła, odbijająca się piłka, przyspieszający samochód, zatrzymujący się rower.
 
 ### Rotacja
 
-Aby obracać obiekty musimy również poruszać całym układem przestrzennym. Do tego celu będziemy używać [macierzy](http://en.wikipedia.org/wiki/Matrix_%28mathematics%29). Macierz to uporządkowany zbiór liczb w kolumnach i wierszach. Wektory są mnożone przez macierze według ściśle określonych reguł w celu zmodyfikowania wartości wektora w określony sposób.
+Aby obracać obiekty również musimy poruszać całym układem przestrzennym. Do tego celu będziemy używać [macierzy](http://en.wikipedia.org/wiki/Matrix_%28mathematics%29). Macierz to uporządkowany zbiór liczb w kolumnach i wierszach. Wektory są mnożone przez macierze według ściśle określonych reguł w celu zmodyfikowania wartości wektora w określony sposób.
 
 [![wpis Wikipedii dotyczący macierzy](matrixes.png)](https://en.wikipedia.org/wiki/Matrix)
 
-GLSL posiada natywne wsparcie dla dwu, trzy i czterowymiarowych macierzy: [``mat2``](../glossary/?search=mat2) (2x2), [``mat3``](../glossary/?search=mat3) (3x3) i [``mat4``](../glossary/?search=mat4) (4x4). GLSL obsługuje również mnożenie macierzy (``*``) oraz funkcję specyficzną dla macierzy ([``matrixCompMult()``](../glossary/?search=matrixCompMult)).
+GLSL posiada natywne wsparcie dla dwu, trzy i czterowymiarowych macierzy: [``mat2``](../glossary/?search=mat2) (2x2), [``mat3``](../glossary/?search=mat3) (3x3) i [``mat4``](../glossary/?search=mat4) (4x4). GLSL obsługuje również mnożenie macierzy (``*``) oraz specyficzną dla macierzy funkcję [``matrixCompMult()``](../glossary/?search=matrixCompMult).
 
 Na podstawie tego, jak zachowują się macierze, możliwe jest skonstruowanie macierzy w celu wytworzenia określonych zachowań. Na przykład możemy użyć macierzy do translacji wektora:
 
@@ -85,7 +85,7 @@ Spróbuj wykonać następujące ćwiczenia:
 
 * Zakomentuj translacje przed i po rotacji, w liniach 37 i 39, i zaobserwuj konsekwencje.
 
-* Użyj rotacji, aby poprawić ruch, który zasymulowałeś w ćwiczeniu z podrozdziału "Translcją".
+* Użyj rotacji, aby poprawić ruch, który zasymulowałeś w ćwiczeniu z podrozdziału "Translcja".
 
 ### Skalowanie
 
@@ -120,7 +120,7 @@ mat2 scale(vec2 _scale){
 
 Spróbuj następujących ćwiczeń, aby głębiej zrozumieć, jak to działa.
 
-* Odkomentuj linię 42 powyższego kodu, aby zobaczyć skalowaną współrzędną przestrzeni.
+* Odkomentuj linię 42 powyższego kodu, aby zobaczyć skalowanie współrzędnych przestrzeni.
 
 * Zobacz, co się stanie, gdy zakomentujesz translacje przed i po skalowaniu w liniach 37 i 39.
 
