@@ -205,7 +205,7 @@ Eksploruj tę ideę dalej:
 - What other ways of constructing this distance field can you imagine, besides ```m_dist = min(m_dist, dist);```?
 - What interesting patterns can you make with this distance field? -->
 
-Algorytm ten można również interpretować z perspektywy punktów, a nie bieżących pikseli. W takim przypadku można go opisać jako: każdy punkt rośnie, dopóki nie znajdzie rosnącego obszaru innego punktu. Odzwierciedla to niektóre z zasad wzrostu w naturze. Żywe formy są kształtowane są przez napięcie między wewnętrzną siłą do rozszerzania się i wzrostu oraz zewnętrznymi siłami ograniczającymi. Klasyczny algorytm symulujący to zachowanie nazwany został za [Georgy Voronoi](https://en.wikipedia.org/wiki/Georgy_Voronoy).
+Algorytm ten można również interpretować z perspektywy punktów, a nie bieżących pikseli. W takim przypadku można go opisać jako: każdy punkt rośnie, dopóki nie znajdzie rosnącego obszaru innego punktu. Odzwierciedla to niektóre z zasad wzrostu w naturze. Żywe formy kształtowane są przez napięcie między wewnętrzną siłą do rozszerzania się i wzrostu oraz zewnętrznymi siłami ograniczającymi. Klasyczny algorytm symulujący to zachowanie nazwany został za [Georgy Voronoi](https://en.wikipedia.org/wiki/Georgy_Voronoy).
 
 <!-- This algorithm can also be interpreted from the perspective of the points and not the pixels. In that case it can be described as: each point grows until it finds the growing area from another point. This mirrors some of the growth rules in nature. Living forms are shaped by this tension between an inner force to expand and grow, and limitations by outside forces. The classic algorithm that simulates this behavior is named after [Georgy Voronoi](https://en.wikipedia.org/wiki/Georgy_Voronoy). -->
 
@@ -213,7 +213,7 @@ Algorytm ten można również interpretować z perspektywy punktów, a nie bież
 
 ### Algorytm Voronoi 
 
-Konstruowanie diagramów Voronoi z szumu komórkowego jest mniej trudne niż mogłoby się wydawać. Musimy tylko *zachować* pewną dodatkową informację o punkcie, który jest najbliżej bieżącego piksela. Do tego celu użyjemy ``vec2`` o nazwie ``m_point`` (z ang. "minimal point"). Przechowując wektor od bieżącego piksela do najbliższego punktu, zamiast tylko odległości, będziemy "przechowywać" "unikalny" identyfikator tego punktu.
+Konstruowanie diagramów Voronoi z szumu komórkowego jest mniej trudne niż mogłoby się wydawać. Musimy tylko *zachować* pewną dodatkową informację o punkcie, który jest najbliżej bieżącego piksela. Do tego celu użyjemy ``vec2`` o nazwie ``m_point`` (z ang. "minimal point"). Przechowując wektor od bieżącego piksela do najbliższego punktu (zamiast samej odległości) będziemy "przechowywać" "unikalny" identyfikator tego punktu.
 
 <!-- Constructing Voronoi diagrams from cellular noise is less hard than what it might seem. We just need to *keep* some extra information about the precise point which is closest to the pixel. For that we are going to use a ```vec2``` called ```m_point```. By storing the vector direction to the center of the closest point, instead of just the distance, we will be "keeping" a "unique" identifier of that point. -->
 
@@ -234,7 +234,7 @@ Zauważ, że w poniższym kodzie nie używamy już ``min`` do obliczania najbli�
 
 Zauważ, jak kolor ruchomej komórki (związanej z pozycją myszy) zmienia kolor w zależności od jej położenia. To dlatego, że kolor jest przypisywany przy użyciu wartości (pozycji) najbliższego punktu.
 
-Podnieśmy poprzeczkę, przechodząc na podejście z [artykułu Stevena Worleya](http://www.rhythmiccanvas.com/research/papers/worley.pdf). Spróbuj zaimplementować to samodzielnie. Możesz skorzystać z pomocy poniższego przykładu, klikając na niego. Zauważ, że oryginalne podejście Stevena Worleya używa zmiennej liczby punktów dla każdego kafla, więcej niż jeden w większości kafli. W jego nie-shaderowej implementacji w C, jest to używane do przyspieszenia pętli poprzez wczesne wychodzenie. Pętle GLSL nie pozwalają na zmienną liczbę iteracji, więc prawdopodobnie chcesz trzymać się jednego punktu na kafelek.
+Podnieśmy poprzeczkę, przechodząc na podejście z [artykułu Stevena Worleya](http://www.rhythmiccanvas.com/research/papers/worley.pdf). Spróbuj zaimplementować to samodzielnie. Możesz skorzystać z pomocy poniższego przykładu, klikając na niego. Zauważ, że oryginalne podejście Stevena Worleya używa zmiennej liczby punktów dla każdego kafla, więcej niż jeden w większości kafli. W tej jego nie-shaderowej implementacji (bo w C, a nie w GLSL) pomaga to przyspieszyć pętlę poprzez wczesne jej opuszczanie. Pętle GLSL nie pozwalają na zmienną liczbę iteracji, więc prawdopodobnie chcesz trzymać się jednego punktu na kafelek.
 
 <!-- Note how the color of the moving cell (bound to the mouse position) changes color according to its position. That's because the color is assigned using the value (position) of the closest point.
 
@@ -262,15 +262,15 @@ W 2011 roku [Stefan Gustavson zoptymalizował algorytm Stevena Worleya](http://w
 
 <div class="glslGallery" data="12/2d-cnoise-2x2,12/2d-cnoise-2x2x2,12/2d-cnoise,12/3d-cnoise" data-properties="clickRun:editor,openFrameIcon:false"></div>
 
-Później w 2012 roku [Inigo Quilez napisał artykuł o tym, jak zrobić precyzyjne granice Voronoi](http://www.iquilezles.org/www/articles/voronoilines/voronoilines.htm).
+Później w 2012 roku [Inigo Quilez napisał artykuł o tym, jak zrobić Voronoi z ostrymi granicami](http://www.iquilezles.org/www/articles/voronoilines/voronoilines.htm).
 
 <!-- Later in 2012 [Inigo Quilez wrote an article on how to make precise Voronoi borders](http://www.iquilezles.org/www/articles/voronoilines/voronoilines.htm). -->
 
 <a href="../edit.php#12/2d-voronoi.frag"><img src="2d-voronoi.gif"  width="520px" height="200px"></img></a>
 
-Eksperymenty Inigo z Voronoi nie skończyły się na tym. W 2014 roku napisał artykuł o tym, co nazywa [voro-noise](http://www.iquilezles.org/www/articles/voronoise/voronoise.htm). Jest to funkcja, która pozwala na stopniowe mieszanie między zwykłym szumem a Voronoi. Jego słowami:
+Eksperymenty Inigo z Voronoi nie skończyły się na tym. W 2014 roku napisał artykuł o tym, co nazywa [voro-noise](http://www.iquilezles.org/www/articles/voronoise/voronoise.htm). Jest to funkcja, która pozwala na stopniowe interpolowanie między zwykłym szumem a Voronoi. Jego słowami:
 
-*"Pomimo tego podobieństwa, faktem jest, że sposób użycia kafelkowania w obu metodach jest inny. Szum interpoluje/uśrednia wartości losowe (jak w Value Noise) lub gradienty (jak w Gradient Noise), podczas gdy Voronoi oblicza odległość do najbliższego punktu w kafelku. Teraz, interpolacja dwuliniowa (ang. "bilinear") i wartość minimalna to dwie bardzo różne operacje, ale czy na pewno? Czy można je połączyć w bardziej ogólną metrykę? Gdyby tak było, to zarówno szum jak i Voronoi mogłyby być postrzegane jako szczególne przypadki bardziej ogólnego generatora wzorów kafelkowych?"*.
+*"Pomimo tego podobieństwa, faktem jest, że sposób użycia kafelkowania w obu metodach jest inny. Szum interpoluje/uśrednia wartości losowe (jak w Value Noise) lub gradienty (jak w Gradient Noise), podczas gdy Voronoi oblicza odległość do najbliższego punktu w kafelku. Interpolacja dwuliniowa* (ang. "bilinear") *i wartość minimalna to dwie bardzo różne operacje, ale czy na pewno? Czy można je połączyć w bardziej ogólną metrykę? Gdyby tak było, to zarówno szum jak i Voronoi mogłyby być postrzegane jako szczególne przypadki bardziej ogólnego generatora wzorów kafelkowych?"*.
 
 <!-- Inigo's experiments with Voronoi didn't stop there. In 2014 he wrote this nice article about what he calls [voro-noise](http://www.iquilezles.org/www/articles/voronoise/voronoise.htm), a function that allows a gradual blend between regular noise and voronoi. In his words:
 

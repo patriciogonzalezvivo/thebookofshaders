@@ -1,9 +1,9 @@
 
 ![NASA / WMAP science team](mcb.jpg)
 
-## Szum (ang. "noise")
+## Noise (pol. "szum")
 
-Czas na przerwę! Bawiliśmy się losowymi funkcjami, które wyglądają jak biało-czarny szum telewizyjny (tzw. "szum biały", ang. "white noise"), w głowie wciąż się kręci od myślenia o shaderach, a oczy są po prostu zmęczone. Czas wyjść na spacer!
+Czas na przerwę! Bawiliśmy się losowymi funkcjami, które wyglądają jak szum telewizyjny (tzw. "szum biały", ang. "white noise"), w głowie wciąż się kręci od myślenia o shaderach, a oczy są po prostu zmęczone. Czas wyjść na spacer!
 
 Czujemy powietrze na skórze, słońce na twarzy. Świat jest tak żywym i bogatym miejscem. Kolory, tekstury, dźwięki. Podczas spaceru widzimy powierzchnię dróg, skał, drzew i chmur.
 
@@ -23,7 +23,7 @@ We feel the air on our skin, the sun in our face. The world is such a vivid and 
 
 Nieprzewidywalność tych tekstur można by nazwać "losową", ale nie przypominają one losowości, z którą bawiliśmy się wcześniej. "Prawdziwy świat" jest tak bogatym i złożonym miejscem! Jak możemy zamodelować tę różnorodność obliczeniowo?
 
-To było pytanie, które [Ken Perlin](https://mrl.nyu.edu/~perlin/) próbował rozwiązać we wczesnych latach 80-tych, kiedy otrzymał zlecenie wygenerowania bardziej realistycznych tekstur do filmu "Tron". W odpowiedzi na to wymyślił elegancki algorytm szumu, za który później otrzymał Oskara. (Nic wielkiego.)
+To było pytanie, które [Ken Perlin](https://mrl.nyu.edu/~perlin/) próbował rozwiązać we wczesnych latach 80-tych, kiedy otrzymał zlecenie wygenerowania bardziej realistycznych tekstur do filmu "Tron". W odpowiedzi na to wymyślił elegancki algorytm szumu, za który później otrzymał Oskara.
 
 <!-- The unpredictability of these textures could be called "random," but they don't look like the random we were playing with before. The “real world” is such a rich and complex place! How can we approximate this variety computationally?
 
@@ -36,14 +36,14 @@ Poniższy kod nie jest klasycznym algorytmem szumu Perlina, ale jest dobrym punk
 <!-- The following is not the classic Perlin noise algorithm, but it is a good starting point to understand how to generate noise. -->
 
 <div class="simpleFunction" data="
-float i = floor(x);  // integer
-float f = fract(x);  // fraction
-y = rand(i); //rand() is described in the previous chapter
+float i = floor(x);  // cz. całkowita
+float f = fract(x);  // cz. ułamkowa
+y = rand(i); //funkcja rand() opisana jest w poprzednim rozdziale 
 //y = mix(rand(i), rand(i + 1.0), f);
 //y = mix(rand(i), rand(i + 1.0), smoothstep(0.,1.,f));
 "></div>
 
-W tych liniach robimy coś podobnego do tego, co robiliśmy w poprzednim rozdziale. Dzielimy ciągłą liczbę zmiennoprzecinkową (``x``) na jej składowe całkowitą (``i``) i ułamkową (``f``). Używamy [``floor()``](../glossary/?search=floor) aby uzyskać ``i`` oraz [``fract()``](../glossary/?search=fract) aby uzyskać ``f```. Następnie stosujemy ``rand()`` do części całkowitej ``x``, co daje unikalną wartość losową dla każdej liczby całkowitej.
+W tych liniach robimy coś podobnego do tego, co robiliśmy w poprzednim rozdziale. Dzielimy ciągłą liczbę zmiennoprzecinkową (``x``) na jej składowe całkowitą (``i``) i ułamkową (``f``). Używamy [``floor()``](../glossary/?search=floor) aby uzyskać ``i`` oraz [``fract()``](../glossary/?search=fract) aby uzyskać ``f``. Następnie stosujemy ``rand()`` do części całkowitej ``x``, co daje unikalną wartość losową dla każdej liczby całkowitej.
 
 Spójrz na dwie skomentowane linie. Pierwsza z nich interpoluje liniowo każdą wartość losową.
 
@@ -303,7 +303,7 @@ W poniższym kodzie możesz odkomentować linię 44, aby zobaczyć jak siatka je
 
 <!-- All these improvements result in an algorithmic masterpiece known as **Simplex Noise**. The following is a GLSL implementation of this algorithm made by Ian McEwan and Stefan Gustavson (and presented in [this paper](http://webstaff.itn.liu.se/~stegu/jgt2012/article.pdf)) which is overcomplicated for educational purposes, but you will be happy to click on it and see that it is less cryptic than you might expect, and the code is short and fast. -->
 
-Wszystkie te ulepszenia skutkują algorytmicznym arcydziełem, jakim jest **Simplex Noise**. Poniżej znajduje się implementacja GLSL tego algorytmu wykonana przez Iana McEwana i Stefana Gustavsona (i przedstawiona w [tym artykule](http://webstaff.itn.liu.se/~stegu/jgt2012/article.pdf)), która jest nadmiernie skomplikowana w celach edukacyjnych, ale przekonasz się, że jest mniej enigmatyczna niż można by się spodziewać, a kod jest krótki i szybki.
+Wszystkie te ulepszenia skutkują algorytmicznym arcydziełem, jakim jest **Simplex Noise**. Poniżej znajduje się implementacja GLSL tego algorytmu wykonana przez Iana McEwana i Stefana Gustavsona (i przedstawiona w [tym artykule](http://webstaff.itn.liu.se/~stegu/jgt2012/article.pdf)), która w celach edukacyjnych jest nadmiernie skomplikowana , ale przekonasz się, że jest też mniej enigmatyczna niż można by się spodziewać, a kod jest krótki i szybki.
 
 [ ![Ian McEwan of Ashima Arts - Simplex Noise](simplex-noise.png) ](../edit.php#11/2d-snoise-clear.frag)
 
@@ -327,7 +327,7 @@ Cóż... dość technicznych rozważań, czas na wykorzystanie tego narzędzia w
 
 <a href="../edit.php#11/iching-03.frag"><canvas id="custom" class="canvas" data-fragment-url="iching-03.frag"  width="520px" height="520px"></canvas></a>
 
-W tym rozdziale wprowadziliśmy pewną kontrolę nad chaosem. Nie była to łatwa praca! Stanie się zaklinaczem chaosu wymaga czasu i wysiłku.
+W tym rozdziale wprowadziliśmy pewną kontrolę nad chaosem. Nie była to łatwa praca! Zostanie zaklinaczem chaosu wymaga czasu i wysiłku.
 
 W następnych rozdziałach zobaczymy kilka dobrze znanych technik, które pozwolą ci udoskonalić swoje umiejętności i wydobyć więcej z szumu, aby zaprojektować wysokiej jakości generatywne dzieła za pomocą shaderów. Do tego czasu ciesz się czasem na zewnątrz, kontemplując naturę i jej zawiłe wzory. Twoja umiejętność obserwacji wymaga równego (a może nawet większego) poświęcenia niż twoje umiejętności tworzenia. Wyjdź na zewnątrz i ciesz się resztą dnia!
 

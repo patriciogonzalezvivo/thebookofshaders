@@ -30,7 +30,7 @@
     * [Random](10/)
     * [Noise](11/)
     * [Cellular noise](12/)
-    * [Fraktalny ruch Browna](13/)
+    * [Fractal Brownian Motion](13/)
     * Fraktale
 
 * Image processing
