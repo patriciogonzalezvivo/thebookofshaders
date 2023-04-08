@@ -127,14 +127,9 @@ float y = smoothstep(0.2,0.5,st.x) - smoothstep(0.5,0.8,st.x);
 
 Здесь собраны ссылки на инструменты, которые упростят визуализацию одномерных функций.
 
-* Grapher: если у вас есть компьютер с MacOS, введите grapher в spotlight и воспользуйтесь этим инструментом.
-
-![Grapher в OS X (2004)](grapher.png)
-
 * [GraphToy](http://www.iquilezles.org/apps/graphtoy/): уже знакомый нам [Иниго Квилес](http://www.iquilezles.org) написал инструмент для визуализации GLSL-функций в WebGL.
 
 ![Иниго Квилес - GraphToy (2010)](graphtoy.png)
 
-* [Shadershop](http://tobyschachman.com/Shadershop/): этот замечательный инструмент, созданный [Тоби Шахманом](http://tobyschachman.com/), научит вас конструировать сложные функции необычайно наглядным и интуитивным способом.
+* [LYGIA Shader Library](https://lygia.xyz/) a shader library of reusable functions that can be include easily on your projects. It's very granular, designed for reusability, performance and flexibility. And can be easily be added to any projects and frameworks.
 
-![Тоби Шахман - Shadershop (2014)](shadershop.png)

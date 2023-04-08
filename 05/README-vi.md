@@ -127,14 +127,8 @@ Hãy nhìn vào bảng các phương trình dưới đây, được tạo bởi 
 
 Đây là một vài công cụ sẽ giúp bạn vẽ đồ thị các hàm 1 cách trực quan nhất.
 
-* Grapher: Nếu bạn dùng máy Mac, gõ `grapher` trong Spotlight và bạn có thể dùng ngay công cụ siêu tiện ích này.
-
-![OS X Grapher (2004)](grapher.png)
-
 * [GraphToy](http://www.iquilezles.org/apps/graphtoy/): Thêm một sản phẩm nữa của [Iñigo Quilez](http://www.iquilezles.org) để minh hoạ các hàm GLSL trên WebGL.
 
 ![Iñigo Quilez - GraphToy (2010)](graphtoy.png)
 
-* [Shadershop](http://tobyschachman.com/Shadershop/): Công cụ tuyệt vời này của [Toby Schachman](http://tobyschachman.com/) sẽ dạy bạn cách để tạo nên các hàm số phức tạp theo cách đơn giản nhất.
-
-![Toby Schachman - Shadershop (2014)](shadershop.png)
+* [LYGIA Shader Library](https://lygia.xyz/) a shader library of reusable functions that can be include easily on your projects. It's very granular, designed for reusability, performance and flexibility. And can be easily be added to any projects and frameworks.

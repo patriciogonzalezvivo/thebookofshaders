@@ -130,14 +130,9 @@ Presta atención a la siguiente tabla de ecuaciones hecha por [Kynd](http://www.
 
 Estas son algunas herramientas que te ayudarán a visualizar este tipo de funciones.
 
-* Grapher: si tienes una computadora con Mac OS, escribe ```grapher``` en tu spotlight y podrás usar esta herramienta super útil.
-
-![OS X Grapher (2004)](grapher.png)
-
 * [GraphToy](http://www.iquilezles.org/apps/graphtoy/): una vez más [Iñigo Quilez](http://www.iquilezles.org) ha creado una herramienta para visualizar funciones GLSL en WebGL.
 
 ![Iñigo Quilez - GraphToy (2010)](graphtoy.png)
 
-* [Shadershop](http://tobyschachman.com/Shadershop/): esta herramienta increíble creada por [Toby Schachman](http://tobyschachman.com/) te enseñará a construir funciones complejas de una manera intuitiva y visual.
+* [LYGIA Shader Library](https://lygia.xyz/) a shader library of reusable functions that can be include easily on your projects. It's very granular, designed for reusability, performance and flexibility. And can be easily be added to any projects and frameworks.
 
-![Toby Schachman - Shadershop (2014)](shadershop.png)

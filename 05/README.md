@@ -127,14 +127,8 @@ Take a look at the following table of equations made by [Kynd](http://www.kynd.i
 
 Here are some tools that will make it easier for you to visualize these types of functions.
 
-* Grapher: if you have a MacOS computer, type `grapher` in your spotlight and you'll be able to use this super handy tool.
-
-![OS X Grapher (2004)](grapher.png)
-
 * [GraphToy](http://www.iquilezles.org/apps/graphtoy/): once again [Iñigo Quilez](http://www.iquilezles.org) made a tool to visualize GLSL functions in WebGL.
 
 ![Iñigo Quilez - GraphToy (2010)](graphtoy.png)
 
-* [Shadershop](http://tobyschachman.com/Shadershop/): this amazing tool created by [Toby Schachman](http://tobyschachman.com/) will teach you how to construct complex functions in an incredible visual and intuitive way.
-
-![Toby Schachman - Shadershop (2014)](shadershop.png)
+* [LYGIA Shader Library](https://lygia.xyz/) a shader library of reusable functions that can be include easily on your projects. It's very granular, designed for reusability, performance and flexibility. And can be easily be added to any projects and frameworks.

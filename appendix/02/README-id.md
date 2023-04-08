@@ -28,7 +28,7 @@ Pada **MacOSX**:
 Unduh dan Pasang MacTeX dengan:
 
 ```bash
-brew cask install mactex-no-gui
+brew install --cask mactex-no-gui
 ```
 
 Kemudian pasang [Pandoc](http://johnmacfarlane.net/pandoc/) dan Python 3 dengan:

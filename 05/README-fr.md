@@ -175,14 +175,8 @@ Souvenez vous que plus vous pratiquerez, meilleur sera votre karaté.
 
 Voici quelques outils qui simplifient la visualisation des fonctions.
 
-* Grapher : si vous avez MacOS, tapez `grapher` dans Spotlight et vous pourrez utiliser cet outil très pratique.
-
-![OS X Grapher (2004)](grapher.png)
-
 * [GraphToy](http://www.iquilezles.org/apps/graphtoy/) : [Iñigo Quilez](http://www.iquilezles.org), encore lui, a créé un outil pour visualiser les fonctions GLSL en WebGL.
 
 ![Iñigo Quilez - GraphToy (2010)](graphtoy.png)
 
-* [Shadershop](http://tobyschachman.com/Shadershop/) : [Toby Schachman](http://tobyschachman.com/) a créé cet outil génial qui permet de construire des fonctions de façon très intuitive.
-
-![Toby Schachman - Shadershop (2014)](shadershop.png)
+* [LYGIA Shader Library](https://lygia.xyz/) a shader library of reusable functions that can be include easily on your projects. It's very granular, designed for reusability, performance and flexibility. And can be easily be added to any projects and frameworks.

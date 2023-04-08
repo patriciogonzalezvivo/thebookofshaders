@@ -129,14 +129,8 @@ GLSL 还有一些独特的原生插值函数可以被硬件加速。
 
 这里有一些工具可以帮你更轻松地可视化这些函数。
 
-* Grapher：如果你是用 MacOS 系统，用 spotlight 搜 ```grapher``` 就会看到这个超级方便的工具了。
-
-![OS X Grapher (2004)](grapher.png)
-
 * [GraphToy](http://www.iquilezles.org/apps/graphtoy/)：仍然是 [Iñigo Quilez](http://www.iquilezles.org) 为大家做的工具，用于在 WebGL 中可视化 GLSL 函数。
 
 ![Iñigo Quilez - GraphToy (2010)](graphtoy.png)
 
-* [Shadershop](http://tobyschachman.com/Shadershop/)：这个超级棒的工具是 [Toby Schachman](http://tobyschachman.com/) 的作品。它会以一种极其视觉化和直观的方式教你如何建造复杂的函数。
-
-![Toby Schachman - Shadershop (2014)](shadershop.png)
+* [LYGIA Shader Library](https://lygia.xyz/) a shader library of reusable functions that can be include easily on your projects. It's very granular, designed for reusability, performance and flexibility. And can be easily be added to any projects and frameworks.

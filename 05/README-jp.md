@@ -139,14 +139,8 @@ GLSLには他にも、値を変化させるのに使うことができるネイ�
 
 この種の関数を簡単に視覚化するためのツールをいくつか紹介します。
 
-* Grapher: MacOSを持っているならSpotlightで「grapher」とタイプするだけで、この素晴らしく便利なツールを使うことができます。
-
-![OS X Grapher (2004)](grapher.png)
-
 * [GraphToy](http://www.iquilezles.org/apps/graphtoy/): 先ほども紹介した[Iñigo Quilez](http://www.iquilezles.org)が作った、GLSLの関数をWebGLで視覚化するためのツールです。
 
 ![Iñigo Quilez - GraphToy (2010)](graphtoy.png)
 
-* [Shadershop](http://tobyschachman.com/Shadershop/): [Toby Schachman](http://tobyschachman.com/)が作ったこの素晴らしいツールを使うと、複雑な関数を組み立てる方法を驚くほど直感的に、目に見える形で学ぶことができます。
-
-![Toby Schachman - Shadershop (2014)](shadershop.png)
+* [LYGIA Shader Library](https://lygia.xyz/) a shader library of reusable functions that can be include easily on your projects. It's very granular, designed for reusability, performance and flexibility. And can be easily be added to any projects and frameworks.

@@ -130,14 +130,8 @@ GLSL에는 하드웨어 가속화된 내장 보간법 함수들이 존재한다.
 
 수학함수를 쉽게 시각화 할수있는 툴을 소개해보고자 한다.
 
-* Grapher: 맥북에서 OSX를 쓴다면, ```grapher```를 스팟라이트에서 검색하면 사용할수 있다.
-
-![OS X Grapher (2004)](grapher.png)
-
 * [GraphToy](http://www.iquilezles.org/apps/graphtoy/): [Iñigo Quilez](http://www.iquilezles.org)의  GLSL함수들을 WebGL에서 시각화 하는 툴이다.
 
 ![Iñigo Quilez - GraphToy (2010)](graphtoy.png)
 
-* [Shadershop](http://tobyschachman.com/Shadershop/): [Toby Schachman](http://tobyschachman.com/)가 만든 복잡한 함수들을 만들고, 직관적인 시각화를 할수 있게 해주는 툴중 하나이다.
-
-![Toby Schachman - Shadershop (2014)](shadershop.png)
+* [LYGIA Shader Library](https://lygia.xyz/) a shader library of reusable functions that can be include easily on your projects. It's very granular, designed for reusability, performance and flexibility. And can be easily be added to any projects and frameworks.
