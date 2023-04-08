@@ -39,9 +39,8 @@ Es hora de jugar con el código de arriba:
 ## gl_FragCoord
 
 De la misma forma que GLSL nos da por default la variable reservada ```vec4 gl_FragColor```, también nos da ```vec4 gl_FragCoord``` que guarda la coordenada del *pixel* o *screen fragment* del thread actual. Con ```vec4 gl_FragCoord``` podemos saber el lugar en la pantalla en el que el thread está actualmente trabajando. En este caso, esta variable no es un ```uniform``` porque será diferente en cada uno de los threads, las variables que cambian en cada thread, como ```gl_FragCoord```, son *varying*.
-```
+
 <div class="codeAndCanvas" data="space.frag"></div>
-```
 
 En el código de arriba *normalizamos* la coordenada del fragment, dividiéndolo por la resolución total de la ventana. Una vez que hicimos este proceso, la posición va de 0.0 a 1.0, lo que vuelve mucho más fácil de usar estos valores en los canales RED (rojo) y GREEN (verde).
 
