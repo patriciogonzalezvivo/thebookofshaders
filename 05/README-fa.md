@@ -126,14 +126,8 @@ float y = smoothstep(0.2,0.5,st.x) - smoothstep(0.5,0.8,st.x);
 
 در اینجا چند ابزار آورده شده که تجسم نوع عملکرد و توابع را برای شما آسان می‌کند.
 
-* Grapher: اگر یک سیستم مک دارید در اسپات لایت خود grapher را تایپ کنید تا ازین ابزار بسیار مفید استفاده کنید.
-
-![OS X Grapher (2004)](grapher.png)
-
 * [GraphToy](http://www.iquilezles.org/apps/graphtoy/): دوباره [Iñigo Quilez](http://www.iquilezles.org) او ابزاری برای تجسم توابع GLSL در WEBGL ساخته است.
 
 ![Iñigo Quilez - GraphToy (2010)](graphtoy.png)
 
-* [Shadershop](http://tobyschachman.com/Shadershop/): این ابزار شگفت انگیز توسط [Toby Schachman](http://tobyschachman.com/) ساخته شده است که به شما می آموزد چگونه توابع پیچیده را به روش بصری به طور باورنکردنی بسازید. 
-
-![Toby Schachman - Shadershop (2014)](shadershop.png)
+* [LYGIA Shader Library](https://lygia.xyz/) a shader library of reusable functions that can be include easily on your projects. It's very granular, designed for reusability, performance and flexibility. And can be easily be added to any projects and frameworks.

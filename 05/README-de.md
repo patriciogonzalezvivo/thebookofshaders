@@ -139,14 +139,9 @@ Wirf einen Blick auf die folgende Tabelle mit Gleichungen, die von [Kynd](http:/
 
 Hier kommen einige Tools, die es Dir erleichtern werden, diese Art von Funktionen grafisch zu visualisieren.
 
-* Grapher: Wenn Du einen Computer mit MacOS hast, gib bei der Suche mit Spotlight ```grapher``` ein, und Du wirst dieses superpraktische Tool finden.
-
-![OS X Grapher (2004)](grapher.png)
-
 * [GraphToy](http://www.iquilezles.org/apps/graphtoy/): Einmal mehr ein Werkzeug von [Inigo Quilez](http://www.iquilezles.org), mit dem man GLSL-Funktionen in WebGL darstellen kann.
 
 ![Inigo Quilez - GraphToy (2010)](graphtoy.png)
 
-* [Shadershop](http://tobyschachman.com/Shadershop/): Dieses großartige Werkzeug von [Toby Schachman](http://tobyschachman.com/) zeigt Dir auf intuitive und grafisch faszinierende Weise, wie Du komplexe Funktionen entwickeln kannst.
+* [LYGIA Shader Library](https://lygia.xyz/) a shader library of reusable functions that can be include easily on your projects. It's very granular, designed for reusability, performance and flexibility. And can be easily be added to any projects and frameworks.
 
-![Toby Schachman - Shadershop (2014)](shadershop.png)

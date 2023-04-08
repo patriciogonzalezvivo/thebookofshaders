@@ -127,14 +127,8 @@ Lihatlah tabel persamaan yang dibuat oleh [Kynd](http://www.kynd.info/log/). Lih
 
 Berikut beberapa alat yang akan memudahkan Anda untuk memvisualisasikan jenis fungsi tersebut.
 
-* Grapher: jika Anda memiliki komputer MacOS, ketik `grapher` di sorotan Anda dan Anda akan dapat menggunakan alat yang sangat berguna ini.
-
-![OS X Grapher (2004)](grapher.png)
-
 * [GraphToy](http://www.iquilezles.org/apps/graphtoy/): sekali lagi[Iñigo Quilez](http://www.iquilezles.org) membuat alat untuk memvisualisasikan funsi GLSL dalam WebGL.
 
 ![Iñigo Quilez - GraphToy (2010)](graphtoy.png)
 
-* [Shadershop](http://tobyschachman.com/Shadershop/): alat menakjubkan ini dibuat oleh [Toby Schachman](http://tobyschachman.com/) akan mengajarkan anda cara untuk membentuk funsi komplek dalam visual yang luar biasa dan jalan yang intuitif.
-
-![Toby Schachman - Shadershop (2014)](shadershop.png)
+* [LYGIA Shader Library](https://lygia.xyz/) a shader library of reusable functions that can be include easily on your projects. It's very granular, designed for reusability, performance and flexibility. And can be easily be added to any projects and frameworks.
