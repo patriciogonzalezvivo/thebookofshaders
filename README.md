@@ -104,6 +104,8 @@ Thanks [Sergey Karchevsky](https://www.facebook.com/sergey.karchevsky.3) for the
 
 Thanks [Vu Phuong Hoang](https://www.facebook.com/vuphuonghoang88) for the Vietnamese [translation (Tiếng Việt)](?lan=vi)
 
+Thanks [Wojciech Pachowiak](https://github.com/WojtekPachowiak) for the Polish [translation (polski)](?lan=pl)
+
 Thanks [Andy Stanton](https://andy.stanton.is/) for fixing and improving [the pdf/epub export pipeline](https://thebookofshaders.com/appendix/02/)
 
 Thanks to everyone who has believed in this project and [contributed with fixes](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) or donations.
