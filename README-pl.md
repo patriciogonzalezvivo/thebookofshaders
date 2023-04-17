@@ -11,26 +11,26 @@
 
 ## Spis treści
 
-* [O książce](00/)
+* [O książce](00/?lan=pl)
 
 * Wprowadzenie
-    * [Czym jest shader?](01/)
-    * ["Witaj świecie!"](02/)
-    * [Uniformy](03/)
-	* [Uruchomienie shaderu](04/)
+    * [Czym jest shader?](01/?lan=pl)
+    * ["Witaj świecie!"](02/?lan=pl)
+    * [Uniformy](03/?lan=pl)
+	* [Uruchomienie shaderu](04/?lan=pl)
 
 * Rysowanie algorytmiczne
-    * [Shaping functions](05/)
-    * [Kolory](06/)
-    * [Kształty](07/)
-    * [Macierze](08/)
-    * [Wzorce](09/)
+    * [Shaping functions](05/?lan=pl)
+    * [Kolory](06/?lan=pl)
+    * [Kształty](07/?lan=pl)
+    * [Macierze](08/?lan=pl)
+    * [Wzorce](09/?lan=pl)
 
 * Design generatywny
-    * [Random](10/)
-    * [Noise](11/)
-    * [Cellular noise](12/)
-    * [Fractal Brownian Motion](13/)
+    * [Random](10/?lan=pl)
+    * [Noise](11/?lan=pl)
+    * [Cellular noise](12/?lan=pl)
+    * [Fractal Brownian Motion](13/?lan=pl)
     * Fraktale
 
 * Image processing
@@ -55,16 +55,16 @@
     * Environmental-maps (spherical and cube)
     * Reflect and refract
 
-* [Dodatek:](appendix/) Inne sposoby korzystania z tej książki
-	* [Jak mogę korzystać z tej książki offline?](appendix/00/)
-	* [Jak uruchomić przykłady na Raspberry Pi?](appendix/01/)
-	* [Jak wydrukować tę książkę?](appendix/02/)
-    * [Jak mogę pomóc?](appendix/03/)
-    * [Wprowadzenie dla biegłych w JavaScript](appendix/04/) by [Nicolas Barradeau](http://www.barradeau.com/)
+* [Dodatek:](appendix/?lan=pl) Inne sposoby korzystania z tej książki
+	* [Jak mogę korzystać z tej książki offline?](appendix/00/?lan=pl)
+	* [Jak uruchomić przykłady na Raspberry Pi?](appendix/01/?lan=pl)
+	* [Jak wydrukować tę książkę?](appendix/02/?lan=pl)
+    * [Jak mogę pomóc?](appendix/03/?lan=pl)
+    * [Wprowadzenie dla biegłych w JavaScript](appendix/04/?lan=pl) by [Nicolas Barradeau](http://www.barradeau.com/)
 
-* [Galeria przykładów](examples/)
+* [Galeria przykładów](examples/?lan=pl)
 
-* [Glosariusz](glossary/)
+* [Glosariusz](glossary/?lan=pl)
 
 ## O autorach
 
