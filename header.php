@@ -11,12 +11,12 @@
 
         <title>The Book of Shaders'.$subtitle.'</title>';
 ?>
-
+        
         <link href="/favicon.gif" rel="shortcut icon"/>
         <meta name="keywords" content="shader,openGL,WebGL,GLSL,book,procedural,generative" />
         <meta name="description" content="Gentle step-by-step guide through the abstract and complex universe of Fragment Shaders."/>
 
-        <!— Open Graph data —>
+        <!-- Open Graph data -->
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="The Book of Shaders"/>
         <meta property="og:site_name" content="The Book of Shaders"/>
@@ -28,7 +28,7 @@
         <meta property="og:image:height" content="500" />
 
 
-        <!— Twitter Card—>
+        <!-- Twitter Card-->
         <meta name="twitter:card" content="image">
         <meta name="twitter:site" content="@bookofshaders">
         <meta name="twitter:creator" content="@patriciogv">
@@ -40,7 +40,7 @@
         <meta name="twitter:image:height" content="500">
 
 
-        <link href="/favicon.gif" rel="shortcut icon"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Highlight -->
 <?php
