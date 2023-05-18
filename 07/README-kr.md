@@ -183,7 +183,7 @@ pct = pow(distance(st,vec2(0.4)),distance(st,vec2(0.6)));
 ![Zen garden](zen-garden.jpg)
 
 거리장은 거의 모든 것을 그리는 데 사용될 수 있다. 당연히 더 복잡한 형태일수록 방정식도 복잡해질것이지만, 일단 특정한 모양의 거리장을 만드는 공식을 갖게 되면, 매끄러운 가장자리나 다중 윤곽선과 같은 효과들과 조합하거나 응용할 수 있을 것이다. 그것들에 결합하거나 효과를 적용하기가 매우 쉽다. 이 때문에 다음 사례들에서 알 수 있듯, 거리장은 글꼴 렌더링에 널리 사용된다.
-[Mapbox GL Labels](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817), [Matt DesLauriers](https://twitter.com/mattdesl), [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu), [O'Reilly - iPhone 3D Programming 7장의 일부](http://chimera.labs.oreilly.com/books/1234000001814/ch07.html#ch07_id36000921).
+[Mapbox GL Labels](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817), [Matt DesLauriers](https://twitter.com/mattdesl), [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu), [O'Reilly - iPhone 3D Programming 7장의 일부](https://www.oreilly.com/library/view/iphone-3d-programming/9781449388133/ch07.html#ch07_id36000844).
 
 다음 코드를 살펴 보십시오.
 

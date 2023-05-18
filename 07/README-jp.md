@@ -166,7 +166,7 @@ pct = pow(distance(st,vec2(0.4)),distance(st,vec2(0.6)));
 * [Mapbox GL Labels](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817)
 * [Matt DesLauriers](https://twitter.com/mattdesl)
 * [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu)
-* [Chapter 7 of iPhone 3D Programming, O’Reilly](http://chimera.labs.oreilly.com/books/1234000001814/ch07.html#ch07_id36000921)
+* [Chapter 7 of iPhone 3D Programming, O’Reilly](https://www.oreilly.com/library/view/iphone-3d-programming/9781449388133/ch07.html#ch07_id36000844)
 
 
 下記のコードをみてください
