@@ -1,6 +1,7 @@
 <?php
 
 	$path = "..";
+	$subtitle = ": Textures";
 	$README = "README";
 	$language = "";
 

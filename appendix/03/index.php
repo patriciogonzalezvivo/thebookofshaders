@@ -1,6 +1,7 @@
 <?php
 
 	$path = "../..";
+	$subtitle = ": How can I collaborate with this book?";
 	$README = "README";
 	$language = "";
 

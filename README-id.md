@@ -106,6 +106,8 @@ Terima kasih kepada [Andy Stanton](https://andy.stanton.is/) untuk perbaikan dan
 
 Terima kasih kepada [Naufal Adriansyah](https://www.facebook.com/naufal.adrna08) untuk terjemahan [Bahasa Indonesia](?lan=id)
 
+Terima kasih kepada [Manoylov Andriy](https://twitter.com/ManoylovAC) untuk terjemahan [Bahasa Ukraina (українська)](?lan=ua)
+
 Terima kasih kepada semua orang yang telah percaya pada proyek ini dan [telah berkontribusi dalam perbaikan](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) atau donasi.
 
 ## Dapatkan bagian baru

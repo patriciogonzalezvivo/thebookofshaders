@@ -100,6 +100,8 @@ Obrigado [Michael Tischer](http://www.mitinet.de) pela [tradução em Alemão (d
 
 Obrigado [Sergey Karchevsky](https://www.facebook.com/sergey.karchevsky.3) pela [tradução em Russo (russian)](?lan=ru)
 
+Obrigado [Manoylov Andriy](https://twitter.com/ManoylovAC) pela [tradução em Ucraniano (українська)](?lan=ua)
+
 Obrigado [Andy Stanton](https://andy.stanton.is/) por corrigir e melhorar [a pipeline para exportar pdf/epub](https://thebookofshaders.com/appendix/02/)
 
 Obrigado a todos que acreditaram neste projeto e [contribuíram com correções](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) ou doações.

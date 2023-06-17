@@ -202,7 +202,7 @@ All these improvements result in an algorithmic masterpiece known as **Simplex N
 
 Well... enough technicalities, it's time for you to use this resource in your own expressive way:
 
-* Contemplate how each noise implementation looks. Imagine them as a raw material, like a marble rock for a sculptor. What can you say about about the "feeling" that each one has? Squinch your eyes to trigger your imagination, like when you want to find shapes in a cloud. What do you see? What are you reminded of? What do you imagine each noise implementation could be made into? Following your guts and try to make it happen in code.
+* Contemplate how each noise implementation looks. Imagine them as a raw material, like a marble rock for a sculptor. What can you say about the "feeling" that each one has? Squinch your eyes to trigger your imagination, like when you want to find shapes in a cloud. What do you see? What are you reminded of? What do you imagine each noise implementation could be made into? Following your guts and try to make it happen in code.
 
 * Make a shader that projects the illusion of flow. Like a lava lamp, ink drops, water, etc.
 

@@ -1,6 +1,7 @@
 <?php
 
 	$path = "../..";
+	$subtitle = ": An introduction to interpolation";
 	$README = "README";
 	$language = "";
 

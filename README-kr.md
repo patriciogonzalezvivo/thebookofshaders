@@ -108,6 +108,8 @@ Patricio는 심리치료 및 표현예술을 공부했다. 그는 파슨스대�
 
 러시아어 번역을 맡고 있는 [Sergey Karchevsky](https://www.facebook.com/sergey.karchevsky.3) 에게 감사를 표합니다. [Russian translation](?lan=ru)
 
+러시아어 번역을 맡고 있는 [Manoylov Andriy](https://twitter.com/ManoylovAC) 에게 감사를 표합니다. [Ukrainian translation (українська)](?lan=ua)
+
 [pdf/epub 배포](https://thebookofshaders.com/appendix/02/) 수정 및 개선을 맡고 있는 [Andy Stanton](https://andy.stanton.is/) 에게 감사를 표합니다.
 
 이 프로젝트를 격려해주시고 기부해주신 모든 분들께 감사를 드립니다. [Contributed with fixes](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors)

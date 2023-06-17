@@ -1,6 +1,7 @@
 <?php
 
 	$path = "../..";
+	$subtitle = ": How to run the examples on a Raspberry Pi?";
 	$README = "README";
 	$language = "";
 

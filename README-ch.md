@@ -100,6 +100,8 @@ Patricio 研习和实践精神疗法（psychotherapy）和表达性艺术治疗�
 
 感谢 Nahuel Coppero (Necsoft) 的 [西班牙语(español)](?lan=es) 翻译。
 
+感谢 [Manoylov Andriy](https://twitter.com/ManoylovAC) 的 [乌克兰语(українська)](?lan=ua) 翻译。
+
 感谢 [Karim Naaji](http://karim.naaji.fr/) 在代码和想法上的支持和贡献。
 
 感谢所有相信这个项目的人[contributed with fixes](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) 以及大家的捐赠.

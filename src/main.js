@@ -259,7 +259,13 @@ function previusPage() {
 }
 
 function homePage() {
-	window.location.href = "../";
+    var language = getParameterByName('lan');
+
+    if (language !== ""){
+        language = "?lan=" + language;
+    }
+
+	window.location.href = "../"  + language;
 }
 
 function nextPage() {

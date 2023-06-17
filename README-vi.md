@@ -104,6 +104,8 @@ Cảm ơn [Sergey Karchevsky](https://www.facebook.com/sergey.karchevsky.3) vì 
 
 Cảm ơn [Vu Phuong Hoang](https://github.com/DancingPhoenix88) và [Minh-Phuc Bui](https://github.com/phucbm) vì [Bản dịch tiếng Việt](?lan=vi)
 
+Cảm ơn [Manoylov Andriy](https://twitter.com/ManoylovAC) vì [Bản dịch tiếng Ukraina (українська)](?lan=ua)
+
 Cảm ơn [Andy Stanton](https://andy.stanton.is/) vì đã sửa lỗi và cải tiến [cách export quyển sách ra định dạng pdf/epub](https://thebookofshaders.com/appendix/02/?lan=vi)
 
 Cảm ơn tất cả mọi người đã tin tưởng, [cùng sửa lỗi](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) và quyên góp cho dự án này.

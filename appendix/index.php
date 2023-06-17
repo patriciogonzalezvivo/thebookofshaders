@@ -1,6 +1,7 @@
 <?php
 
 	$path = "..";
+	$subtitle = ": Appendix";
 	$README = "README";
 	$language = "";
 

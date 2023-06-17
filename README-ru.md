@@ -100,6 +100,8 @@
 
 Спасибо [Сергею Карчевскому](https://www.facebook.com/sergey.karchevsky.3) за [русский перевод](?lan=ru)
 
+Спасибо [Андрею Манойлову](https://twitter.com/ManoylovAC) за [украинский перевод](?lan=ua)
+
 Спасибо всем кто поверил в этот проект и поддержал его [исправлениями](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) или пожертвованиями.
 
 ## Новые параграфы

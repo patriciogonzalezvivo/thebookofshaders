@@ -190,7 +190,7 @@ void ofApp::draw(){
 }
 ```
 
-If you want to use the full set of uniforms contain on the specs of GlslViewer and GlslCanvas in a more simple way on OpenFrameworks I recomend using the [ofxShader](https://github.com/patriciogonzalezvivo/ofxshader) addon which will also have support for multiple buffers, material shaders, hotreload and automatic conversion for OpenGL ES in the Raspberry Pi. And your code will be as simple as doing
+If you want to use the full set of uniforms contain on the specs of GlslViewer and GlslCanvas in a more simple way on OpenFrameworks I recommend using the [ofxShader](https://github.com/patriciogonzalezvivo/ofxshader) addon which will also have support for multiple buffers, material shaders, hotreload and automatic conversion for OpenGL ES in the Raspberry Pi. And your code will be as simple as doing
 
 ```cpp
 //--------------------------------------------------------------
