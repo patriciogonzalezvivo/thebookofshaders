@@ -106,6 +106,8 @@ Podziękowania dla [Vu Phuong Hoang](https://www.facebook.com/vuphuonghoang88) z
 
 Podziękowania dla [Wojciecha Pachowiaka](https://github.com/WojtekPachowiak) za polskie [tłumaczenie (polski)](?lan=pl)
 
+Podziękowania dla [Manoylov Andriy](https://twitter.com/ManoylovAC) za ukraińskie [tłumaczenie (українська)](?lan=ua)
+
 Podziękowania dla [Andy Stanton](https://andy.stanton.is/) za naprawę i usprawnienie funkcji [eksportu pdf/epub ](https://thebookofshaders.com/appendix/02/)
 
 Podziękowania dla każdego, kto [współtworzy](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) ten projekt poprzez swoje rady, korekty lub finansowe wsparcie.

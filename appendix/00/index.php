@@ -1,6 +1,7 @@
 <?php
 
 	$path = "../..";
+	$subtitle = ": How can I navigate this book off-line?";
 	$README = "README";
 	$language = "";
 

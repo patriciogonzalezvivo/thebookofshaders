@@ -102,6 +102,8 @@
 
 ممنون از [Sergey Karchevsky](https://www.facebook.com/sergey.karchevsky.3) برای Russian [translation (russian)](?lan=ru)
 
+ممنون از [Manoylov Andriy](https://twitter.com/ManoylovAC) برای Ukrainian [translation (українська)](?lan=ua)
+
 ممنون از [Andy Stanton](https://andy.stanton.is/) برای اصلاح و بهبود [the pdf/epub export pipeline](https://thebookofshaders.com/appendix/02/)
 
 ممنون از همه کسانی که به این پروژه ایمان داشتند و[در اصلاحات مشارکت کردند](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) و یا اهدا کردند.

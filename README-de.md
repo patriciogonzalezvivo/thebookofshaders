@@ -97,6 +97,8 @@ Dank an [Andrea Rovescalli](https://www.earove.info) für die  [italienische Üb
 
 Dank an [Michael Tischer](http://www.mitinet.de) für die [deutsche Übersetzung des Textes](?lan=de)
 
+Dank an [Manoylov Andriy](https://twitter.com/ManoylovAC) für die [ukrainische Übersetzung des Textes (українська)](?lan=ua)
+
 Und natürlich Danke an alle, die an dieses Projekt geglaubt, dafür gespendet oder durch Hinweise und Korrekturen [daran mitgewirkt haben](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors).
 
 ## Hol Dir die neuen Kapitel

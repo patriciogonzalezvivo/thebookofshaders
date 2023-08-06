@@ -12,7 +12,7 @@ vec4 reflect(vec4 I, vec4 N)
 ### Parameters
 ```I``` specifies the incident vector.
 
-```N``` specifies the normal vector.or.
+```N``` specifies the normal vector.
 
 ### Description
 For a given incident vector ```I``` and surface normal ```N``` reflect returns the reflection direction calculated as ```I - 2.0 * dot(N, I) * N```.
