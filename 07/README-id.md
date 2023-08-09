@@ -154,7 +154,7 @@ Dalam hal daya kompthreadi, fungsi [`sqrt()`](../glossary/?search=sqrt) - dan se
 
 ![Zen garden](zen-garden.jpg)
 
-Bidang jarak dapat digunakan untuk menggambar hampir semua hal. Jelas, semakin kompleks suatu bentuk, semakin rumit persamaannya, tetapi setelah Anda memiliki rumus untuk membuat bidang jarak dari bentuk tertentu, sangat mudah untuk menggabungkan dan / atau menerapkan efek padanya, seperti tepi halus dan beberapa garis tepi . Karenanya, kolom jarak menjadi populer dalam rendering font, seperti [Label GL Kotak Peta](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817), [Matt DesLauriers](https://twitter.com/mattdesl) [Font Desain Material](http://mattdesl.svbtle.com/material-design-on-the-gpu) dan [seperti yang di jelaskan di Bab 7 di buku Phone 3D Programming, O’Reilly](http://chimera.labs.oreilly.com/books/1234000001814/ch07.html#ch07_id36000921).
+Bidang jarak dapat digunakan untuk menggambar hampir semua hal. Jelas, semakin kompleks suatu bentuk, semakin rumit persamaannya, tetapi setelah Anda memiliki rumus untuk membuat bidang jarak dari bentuk tertentu, sangat mudah untuk menggabungkan dan / atau menerapkan efek padanya, seperti tepi halus dan beberapa garis tepi . Karenanya, kolom jarak menjadi populer dalam rendering font, seperti [Label GL Kotak Peta](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817), [Matt DesLauriers](https://twitter.com/mattdesl) [Font Desain Material](http://mattdesl.svbtle.com/material-design-on-the-gpu) dan [seperti yang di jelaskan di Bab 7 di buku Phone 3D Programming, O’Reilly](https://www.oreilly.com/library/view/iphone-3d-programming/9781449388133/ch07.html#ch07_id36000844).
 
 Perhatikan kode berikut.
 

@@ -249,11 +249,11 @@ Pod względem mocy obliczeniowej funkcja [`sqrt()`](../glossary/?search=sqrt) - 
 
 ![ogród Zen](zen-garden.jpg)
 
-Pola odległości mogą być używane do rysowania prawie wszystkiego. Oczywiście im bardziej złożony jest kształt, tym bardziej skomplikowane będzie jego równanie, ale gdy już masz formułę do tworzenia pól odległości danego kształtu, bardzo łatwo jest połączyć i/lub zastosować do niego efekty, takie jak gładkie krawędzie i wiele konturów. Z tego powodu, pola odległości są popularne w renderowaniu czcionek, takich jak [Mapbox GL Labels](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817), [Matt DesLauriers](https://twitter.com/mattdesl) [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu) i [jak to jest opisane w rozdziale 7 iPhone 3D Programming, O'Reilly](http://chimera.labs.oreilly.com/books/1234000001814/ch07.html#ch07_id36000921).
+Pola odległości mogą być używane do rysowania prawie wszystkiego. Oczywiście im bardziej złożony jest kształt, tym bardziej skomplikowane będzie jego równanie, ale gdy już masz formułę do tworzenia pól odległości danego kształtu, bardzo łatwo jest połączyć i/lub zastosować do niego efekty, takie jak gładkie krawędzie i wiele konturów. Z tego powodu, pola odległości są popularne w renderowaniu czcionek, takich jak [Mapbox GL Labels](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817), [Matt DesLauriers](https://twitter.com/mattdesl) [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu) i [jak to jest opisane w rozdziale 7 iPhone 3D Programming, O'Reilly](https://www.oreilly.com/library/view/iphone-3d-programming/9781449388133/ch07.html#ch07_id36000844).
 
 Przyjrzyj się następującemu kodowi.
 
-<!-- Distance fields can be used to draw almost everything. Obviously the more complex a shape is, the more complicated its equation will be, but once you have the formula to make distance fields of a particular shape it is very easy to combine and/or apply effects to it, like smooth edges and multiple outlines. Because of this, distance fields are popular in font rendering, like [Mapbox GL Labels](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817), [Matt DesLauriers](https://twitter.com/mattdesl) [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu) and [as is described on Chapter 7 of iPhone 3D Programming, O’Reilly](http://chimera.labs.oreilly.com/books/1234000001814/ch07.html#ch07_id36000921).
+<!-- Distance fields can be used to draw almost everything. Obviously the more complex a shape is, the more complicated its equation will be, but once you have the formula to make distance fields of a particular shape it is very easy to combine and/or apply effects to it, like smooth edges and multiple outlines. Because of this, distance fields are popular in font rendering, like [Mapbox GL Labels](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817), [Matt DesLauriers](https://twitter.com/mattdesl) [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu) and as is described in [Chapter 7 of iPhone 3D Programming, O’Reilly](https://www.oreilly.com/library/view/iphone-3d-programming/9781449388133/ch07.html#ch07_id36000844).
 
 Take a look at the following code. -->
 
@@ -348,7 +348,7 @@ Trik polega na wykorzystaniu liczby krawędzi wielokąta, by skonstruować pole 
 
 <!-- * Choose a geometric logo to replicate using distance fields. -->
 
-Gratulacje! Udało ci się przebrnąć przez bardzo trudny materiał! Choć rysowanie prostych kształtów w Processing jest proste, to tutaj już nie. W świecie shaderów rysowanie kształtów jest zawiłe; przestawienie się na ten nowy sposób programowania może być męczące. 
+Gratulacje! Udało ci się przebrnąć przez bardzo trudny materiał! Choć rysowanie prostych kształtów w Processing jest proste, to tutaj już nie. W świecie shaderów rysowanie kształtów jest zawiłe; przestawienie się na ten nowy sposób programowania może być męczące.
 
 <!-- Congratulations! You have made it through the rough part! Take a break and let these concepts settle - drawing simple shapes in Processing is easy but not here. In shader-land drawing shapes is twisted, and it can be exhausting to adapt to this new paradigm of coding. -->
 
