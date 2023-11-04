@@ -100,7 +100,7 @@
 [dot()](./?search=dot)
 [cross()](./?search=cross)
 [normalize()](./?search=normalize)
-[facefoward()](./?search=facefoward)
+[faceforward()](./?search=faceforward)
 [reflect()](./?search=reflect)
 [refract()](./?search=refract)
 
