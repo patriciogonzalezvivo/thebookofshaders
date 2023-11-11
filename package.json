@@ -1,0 +1,13 @@
+{
+    "scripts": {
+        "build": "browserify pwabuilder-adv-sw.js -p esmify > pwa-sw.js"
+    },
+    "type": "module",
+    "dependencies": {
+        "workbox-precaching": "^7.0.0"
+    },
+    "devDependencies": {
+        "browserify": "^17.0.0",
+        "esmify": "^2.1.1"
+    }
+}
