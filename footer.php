@@ -21,7 +21,8 @@
             if ("serviceWorker" in navigator) {
                 // Register a service worker hosted at the root of the
                 // site using the default scope.
-                navigator.serviceWorker.register('pwa-sw.js').then(
+                navigator.serviceWorker.register('service-worker.build2.js').then(
+                // navigator.serviceWorker.register('pwa-sw.js').then(
                     (registration) => {
                         console.log("Service worker registration succeeded:", registration);
                     },
