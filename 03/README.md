@@ -54,7 +54,7 @@ Now it is time to try and challenge our understanding of this code.
 
 * What about `(1.0, 0.0)`, `(0.0, 1.0)`, `(0.5, 0.5)` and `(1.0, 1.0)`?
 
-* Can you figure out how to use `u_mouse` knowing that the values are in pixels and NOT normalized values? Can you use it to move colors around?
+* Can you figure out how to use `u_mouse`, knowing that the values are in pixels and NOT normalized values? Can you use it to move colors around?
 
 * Can you imagine an interesting way of changing this color pattern using `u_time` and `u_mouse` coordinates?
 
