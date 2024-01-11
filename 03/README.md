@@ -44,7 +44,7 @@ In the same way GLSL gives us a default output, `vec4 gl_FragColor`, it also giv
 
 In the above code we *normalize* the coordinate of the fragment by dividing it by the total resolution of the billboard. By doing this the values will go between `0.0` and `1.0`, which makes it easy to map the X and Y values to the RED and GREEN channel.
 
-In shader-land we don’t have too many resources for debugging besides assigning strong colors to variables and trying to make sense of them. You will discover that sometimes coding in GLSL is very similar to putting ships inside bottles. Is equally hard, beautiful and gratifying.
+In shader-land we don’t have too many resources for debugging besides assigning strong colors to variables and trying to make sense of them. You will discover that sometimes coding in GLSL is very similar to putting ships inside bottles. It is equally hard, beautiful and gratifying.
 
 ![](08.png)
 
