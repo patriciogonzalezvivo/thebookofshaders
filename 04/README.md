@@ -220,7 +220,7 @@ For more information about shaders in openFrameworks go to this [excellent tutor
 
 ![](blender/00.png)
 
-2. Change `width` and `height` size and `Source` file (which can be a path to an external file). 
+2. Change `width` and `height` size and `Source` file (which can be a path to an external file).
 
 ![](blender/01.png)
 
