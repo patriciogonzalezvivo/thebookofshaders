@@ -11,7 +11,7 @@ In order to use this feature we first need to *upload* the image from the CPU to
 Once the texture is loaded and linked to a valid ```uniform sampler2D``` you can ask for specific color value at specific coordinates (formatted on a [```vec2```](index.html#vec2.md) variable) using the [```texture2D()```](index.html#texture2D.md) function which will return a color formatted on a [```vec4```](index.html#vec4.md) variable.
 
 ```glsl
-vec4 texture2D(sampler2D texture, vec2 coordinates)  
+vec4 texture2D(sampler2D texture, vec2 coordinates)
 ```
 
 Check the following code where we load Hokusai's Wave (1830) as ```uniform sampler2D u_tex0``` and we call every pixel of it inside the billboard:

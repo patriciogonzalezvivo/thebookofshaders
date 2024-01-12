@@ -1,13 +1,14 @@
 # Einstieg
+
 ## Was ist ein Fragment-Shader?
 
-Im vorangegangenen Kapitel haben wir Fragment-Shader als eine Art Gutenbergsche Druckerpresse für Grafiken beschrieben. Nun, wie kommen wir darauf? Und vor allem: Was genau soll das sein, ein „Shader“?
+Im vorangegangenen Kapitel haben wir Fragment-Shader als eine Art Gutenbergsche Druckerpresse für Computergrafiken beschrieben. Nun, wie kommen wir darauf? Und was genau soll ein Shader sein?
 
 ![Von Brief-für-Brief zu Seite-für-Seite. Rechts: William Blades (1891), links Rolt-Wheeler (1920).](print.png)
 
-Falls Du schon Erfahrung mit der Erstellung von Computergrafiken gesammelt hast, kennst Du bestimmt die folgende Vorgehensweise: Man malt per Programmbefehl Kreise, Rechtecke, Dreiecke und Linien, damit auf dem Bildschirm nach und nach die gewünschte Grafik entsteht. Dieser Prozess erinnert stark an das Verfassen eines Dokuments per Hand, indem man einzelne Zeichen-Operationen Schritt für Schritt abarbeitet.
+Falls Du schon Erfahrung mit der Erstellung von Computergrafiken gesammelt hast, kennst Du bestimmt die folgende Vorgehensweise: Man malt per Programmbefehl Kreise, Rechtecke, Dreiecke und Linien, damit auf dem Bildschirm nach und nach die gewünschte Grafik entsteht. Dieser Vorgang ähnelt von Hand einen Brief oder Buch zu verfassen. Es handelt sich um eine Folge von Anweisungen (den Zeichenoperationen), die Schritt für Schritt abgearbeiet werden müssen.
 
-Auch Shader verkörpern eine Abfolge von Operationen, doch hier werden diese Operationen gleichzeitig für jeden Bildpunkt (Pixel) auf der Zeichenfläche ausgeführt. Das hat zur Folge, dass der Programmcode des Shaders in Abhängigkeit von der Lage des jeweils bearbeiteten Bildpunktes unterschiedlich agieren muss. Der Shader arbeitet dabei als eine Funktion, die die Koordinaten des jeweiligen Bildpunktes erhält und als Ergebnis die Farbe für diesen Bildpunkt zurückliefert. Ist der Shader einmal kompiliert, läuft dieser Prozess unglaublich schnell und für sehr viele Bildpunkte gleichzeitig ab.
+Auch Shader sind nur eine Abfolge von Anweisungen, doch werden diese Anweisungen alle gleichzeitig für jeden Bildpunkt (Pixel) in der Grafik ausgeführt. Das bedeutet also, dass das von Dir geschriebene Shader-Programm die Grafik abhängig von der sich ändernden Position eines einzelnen Bildpunkts beschreiben muss. Der Shader arbeitet dabei als eine Funktion, die die Koordinaten des jeweiligen Bildpunktes erhält und als Ergebnis die Farbe für diesen Bildpunkt zurückliefert. Ist der Shader einmal kompiliert, läuft dieser Prozess unglaublich schnell und für sehr viele Bildpunkte gleichzeitig ab.
 
 ![Verschiebbare Lettern mit Chinesischen Symbolen](typepress.jpg)
 
