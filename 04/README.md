@@ -210,24 +210,3 @@ void ofApp::draw(){
 
 
 For more information about shaders in openFrameworks go to this [excellent tutorial](http://openframeworks.cc/ofBook/chapters/shaders.html) made by [Joshua Noble](http://thefactoryfactory.com/).
-
-### In **Blender**
-
-[GlslTexture](https://github.com/patriciogonzalezvivo/glslTexture) is an addon that allows you to programmatically generate textures using GLSL Shaders and is fully compatible with the rest of the sandboxes on this chapter. How it works:
-
-
-1. Operator Search: `F3` (or `SpaceBar` depending on your setup). Type `GlslTexture`
-
-![](blender/00.png)
-
-2. Change `width` and `height` size and `Source` file (which can be a path to an external file). 
-
-![](blender/01.png)
-
-3. Use the Image on your materials. The Image name will be based on the name of the source file.
-
-![](blender/02.png)
-
-4. Go to the Text Editor (or an external editor if your source file is external) and edit the shader. It will hot reload.
-
-![](blender/03.png)

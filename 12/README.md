@@ -188,3 +188,7 @@ Now it's time for you to look closely at things, be inspired by nature and find 
 ![Deyrolle glass film - 1831](DeyrolleFilm.png)
 
 <div class="glslGallery" data="12/metaballs,12/stippling,12/cell,12/tissue,12/cracks,160504143842" data-properties="clickRun:editor,openFrameIcon:false"></div>
+
+#### For your toolbox
+
+* [LYGIA's generative functions ](https://lygia.xyz/generative) are a set of reusable functions to generate patterns in GLSL. It's a great resource to learn how to use randomness and noise to create generative art. It's very granular library, designed for reusability, performance and flexibility. And it can be easily be added to any projects and frameworks.

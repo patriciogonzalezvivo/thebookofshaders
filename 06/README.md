@@ -132,3 +132,8 @@ int newFunction(in vec4 aVec4,      // read-only
 ```
 
 You may not believe it but now we have all the elements to make cool drawings. In the next chapter we will learn how to combine all our tricks to make geometric forms by *blending* the space. Yep... *blending* the space.
+
+
+#### For your toolbox
+
+* [LYGIA's color shader functions ](https://lygia.xyz/color) are set of reusable functions to manipulate colors in GLSL. It includes functions to convert between color spaces, to blend colors, to create gradients, and to apply color transformations. It's very granular library, designed for reusability, performance and flexibility. And it can be easily be added to any projects and frameworks.

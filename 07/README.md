@@ -228,6 +228,10 @@ The trick will use the number of edges of a polygon to construct the distance fi
 
 Congratulations! You have made it through the rough part! Take a break and let these concepts settle - drawing simple shapes in Processing is easy but not here. In shader-land drawing shapes is twisted, and it can be exhausting to adapt to this new paradigm of coding.
 
-Down at the end of this chapter you will find a link to [PixelSpirit Deck](https://patriciogonzalezvivo.github.io/PixelSpiritDeck/) this deck of cards will help you learn new SDF functions, compose them into your designs and use on your shaders. The deck has a progressive learning curve, so taking one card a day and working on it will push and challenge your skills for months. 
+#### For your toolbox
+
+* [LYGIA's draw functions ](https://lygia.xyz/draw) are set of reusable functions to draw 2D shapes and patterns. You can also explore [LYGIA's SDF functions folder](https://lygia.xyz/sdf) to combine more complex shapes through distance fields.  It's very granular library, designed for reusability, performance and flexibility. And it can be easily be added to any projects and frameworks.
+
+* Down at the end of this chapter you will find a link to [PixelSpirit Deck](https://patriciogonzalezvivo.github.io/PixelSpiritDeck/) this deck of cards will help you learn new SDF functions, compose them into your designs and use on your shaders. The deck has a progressive learning curve, so taking one card a day and working on it will push and challenge your skills for months. 
 
 Now that you know how to draw shapes I'm sure new ideas will pop into your mind. In the following chapter you will learn how to move, rotate and scale shapes. This will allow you to make compositions!

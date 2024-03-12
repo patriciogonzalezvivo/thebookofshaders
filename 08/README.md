@@ -99,3 +99,7 @@ The following code is an interesting opportunity to use matrix operations in GLS
 As you can see we are treating colors as vectors by multiplying them with matrices. In that way we “move” the values around.
 
 In this chapter we've learned how to use matrix transformations to move, rotate and scale vectors. These transformations will be essential for making compositions out of the shapes we learned about in the previous chapter. In the next chapter we'll apply all we've learned to make beautiful procedural patterns. You will find that coding repetition and variation can be an exciting practice.
+
+#### For your toolbox
+
+* [LYGIA's space functions ](https://lygia.xyz/space) are set of reusable functions to manipulate space in GLSL. It's a great resource to learn how to use matrices to manipulate space. It's very granular library, designed for reusability, performance and flexibility. And it can be easily be added to any projects and frameworks. 

@@ -210,24 +210,3 @@ void ofApp::draw(){
 
 
 Για περισσότερες πληροφορίες για τους shaders σε openFrameworks δείτε αυτό το [εξαιρετικό μάθημα](http://openframeworks.cc/ofBook/chapters/shaders.html) από τον [Joshua Noble](http://thefactoryfactory.com/).
-
-### Σε **Blender**
-
-Το [GlslTexture](https://github.com/patriciogonzalezvivo/glslTexture) είναι ένα addon που επιτρέπει να παράξετε textures (υφές) προγραμματιστικά χρησιμοποιώντας GLSL Shaders, και είναι πλήρως συμβατό με τα υπόλοιπα απο τα sandboxes (περιβάλλοντα) αυτού του κεφαλαίου. Να πως λειτουργεί:
-
-
-1. Αναζήτηση Operator: `F3` (ή `SpaceBar (διάστημα)` ανάλογα με τις επιλογές περιβάλλοντος του Blender). Γράψτε `GlslTexture`
-
-![](blender/00.png)
-
-2. Αλλάξτε τα μεγέθη `width` και `height` και το αρχείο `Source` (όπου μπορείτε να βάλετε το path -τοποθεσία- ενός εξωτερικού αρχείου).
-
-![](blender/01.png)
-
-3. Χρησιμοποιήστε την Εικόνα στα υλικά σας. Το όνομα της Εικόνας βασίζεται στο όνομα του αρχείου source (βλ. 2)
-
-![](blender/02.png)
-
-4. Πηγαίνετε στον Text Editor (επεξεργαστή κειμένου - ή έναν εξωτερικό επεξεργαστή κειμένου αν το source αρχείο είναι εξωτερικό) και αλλάξτε τον shader. Οι αλλαγές είναι άμεσα ορατές.
-
-![](blender/03.png)
