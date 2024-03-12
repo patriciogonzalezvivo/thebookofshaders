@@ -1,4 +1,5 @@
 <?php
+	// ob_start();
 	$path = ".";
 	$subtitle = "";
 	$README = "README";
@@ -22,4 +23,7 @@
 
 	echo '</div>';
 	include("footer.php");
+
+	// $output = ob_get_contents();
+	// file_put_contents("index.html", $output);
 ?>
