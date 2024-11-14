@@ -24,8 +24,10 @@ void main(){
   // Number of sides of your shape
   int N = 3;
 
-  // Angle and radius from the current pixel
+  // Angle from the current pixel
   float a = atan(st.x,st.y)+PI;
+
+  // Angular spacing between vertices of shape (in radians)
   float r = TWO_PI/float(N);
 
   // Shaping function that modulate the distance
