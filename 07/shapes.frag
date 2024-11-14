@@ -27,7 +27,7 @@ void main(){
   // Angle from the current pixel
   float a = atan(st.x,st.y)+PI;
 
-  // Angular spacing between vertices of shape (in radians)
+  // Angular spacing between vertices of shape
   float r = TWO_PI/float(N);
 
   // Shaping function that modulate the distance
