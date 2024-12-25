@@ -60,10 +60,10 @@
     * 环境贴图 (spherical and cube)
     * 折射和反射
 
-* [附录:](appendix/) 其他阅读本书的方式
-	* [如何离线阅读此书?](appendix/?lan=ch)
-	* [如何在树莓派上运行示例程序?](appendix/?lan=ch)
-	* [如何打印这本书](appendix/?lan=ch)
+* [附录:](appendix/?lan=ch) 其他阅读本书的方式
+	* [如何离线阅读此书?](appendix/00/?lan=ch)
+	* [如何在树莓派上运行示例程序?](appendix/01/?lan=ch)
+	* [如何打印这本书](appendix/02/?lan=ch)
 
 * [example gallery](examples/?lan=ch)
 
