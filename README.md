@@ -31,7 +31,7 @@ This is a gentle step-by-step guide through the abstract and complex universe of
     * [Noise](11/)
     * [Cellular noise](12/)
     * [Fractional brownian motion](13/)
-    * Fractals
+    * [Fractals](14/)
 
 * Image processing
     * Textures
