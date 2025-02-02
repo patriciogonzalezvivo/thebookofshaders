@@ -9,13 +9,13 @@ vec3 sin(vec3 angle)
 vec4 sin(vec4 angle)
 ```
 
-### Parameters
+### Parametry
 ```angle``` określa wartość kąta (w radianach), dla którego ma zostać obliczony sinus.
 
-### Description
+### Opis
 ```sin()``` zwraca trygonometryczny sinus podanego kąta.
 
 <div class="simpleFunction" data="y = sin(x); "></div>
 
-### See Also
+### Zobacz także
 [acos](/glossary/?search=acos), [cos](/glossary/?search=cos), [asin](/glossary/?search=asin), [tan](/glossary/?search=tan), [atan](/glossary/?search=atan), [Rozdział 05: Shaping Functions](/05/)
