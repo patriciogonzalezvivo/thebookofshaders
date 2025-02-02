@@ -2,14 +2,14 @@
 
 <canvas id="custom" class="canvas" data-fragment-url="cmyk-halftone.frag" data-textures="vangogh.jpg" width="700px" height="320px"></canvas>
 
-Powyższe obrazy zostały stworzone na różny sposób. Pierwszy stworzył Van Gogh, aplikując farbę warstwa po wartwie. Zajęło mu to godziny. Drugi z nich stworzono poprzez połączenie czterech macierzy zawierających piksele koloru niebieskozielonego (cyjan), magenty, żółtego i czarnego. Kluczowa różnicę stanowi fakt, że drugi obraz stworzny został natychmiastowo (przez komputer), a nie seryjnie, krok po kroku (przez malarza).
+Powyższe obrazy zostały stworzone na różny sposób. Pierwszy stworzył Van Gogh, aplikując farbę warstwa po warstwie. Zajęło mu to godziny. Drugi z nich stworzono poprzez połączenie czterech macierzy zawierających piksele koloru niebieskozielonego (cyjan), magenty, żółtego i czarnego. Kluczową różnicę stanowi fakt, że drugi obraz stworzony został natychmiastowo (przez komputer), a nie seryjnie, krok po kroku (przez malarza).
 
 Ta książka jest o rewolucyjnej technice obliczeniowej, tzw. *fragment shaderach* (zwanych też *pixel shaderami*), które wznoszą cyfrowo generowane obrazy na wyższy poziom. Możesz o nich myśleć jak o ekwiwalencie maszyny drukarskiej Gutenberga dla zastosowań graficznych.
 
 ![Gutenberg's press](gutenpress.jpg)
 
 
-Fragment shadery dają ci pełnię kontroli nad błyskawicznym renderowaniem pikseli na ekranie. Właśnie dlatego są one używane w przeróżnych sytuacjach: od filtrów wideo w telefonach do niesamowitych twójwymiarowych gier wideo.
+Fragment shadery dają ci pełnię kontroli nad błyskawicznym renderowaniem pikseli na ekranie. Właśnie dlatego są one używane w przeróżnych sytuacjach: od filtrów wideo w telefonach do niesamowitych trójwymiarowych gier wideo.
 
 ![Journey by That Game Company](journey.jpg)
 
@@ -17,15 +17,15 @@ W następujących rozdziałach odkryjesz jak niewiarygodnie szybkie i potężne 
 
 ## Dla kogo jest ta książka?
 
-Ta książka jest napisana dla osób zainteresowanych *creative coding*'iem, game developerów i inżynierów, którzy posiadają doświadczenie programistyczne, podstawową wiedzę z algebry liniowej i trygonometrii, i którzy chcą podnieść jakość swoich prac graficzny na wyższy poziom. (Jeżeli chcesz nauczyć się programować, polecam zacząć od [Processing](https://processing.org/) i wrócić, gdy opanujesz go do komfortowego poziomu. 
+Ta książka jest napisana dla osób zainteresowanych *creative coding*iem, game developerów i inżynierów, którzy posiadają doświadczenie programistyczne, podstawową wiedzę z algebry liniowej i trygonometrii, i którzy chcą podnieść jakość swoich prac graficznych na wyższy poziom. (Jeżeli chcesz nauczyć się programować, polecam zacząć od [Processing](https://processing.org/) i wrócić, gdy opanujesz go do komfortowego poziomu.) 
 
 Ta książka nauczy cię jak używać shadery w celu polepszenia wydajności i wyglądu twoich projektów. Ponieważ shadery GLSL (OpenGL Shading Language) kompilują i uruchamiają się na różnorodnych platformach, będziesz w stanie zaaplikować tutaj zdobytą wiedzę do jakiegokolwiek środowiska wykorzystującego OpenGL, OpenGL ES lub WebGL. Innymi słowy, będziesz w stanie wykorzystać tę wiedzę przy tworzeniu szkiców z [Processing](https://processing.org/), aplikacji z [openFrameworks](http://openframeworks.cc/), interaktywnych instalacji z [Cinder](http://libcinder.org/) czy stron internetowych z [Three.js](http://threejs.org/) i gier iOS/Android.
 
 ## Jaki materiał pokrywa ta książka?
 
-Ta książka skupia się na użyciu fragment shaderów GLSL. Wpierw zdefiniujemy czym shadery są; potem dowiemy się jak, z ich pomocą, tworzyć proceduralne kształty, wzory, tekstury i animacje. Nauczysz się podstaw języka shadingowego i jego przydatnych aplikacji w przetwarzaniu obrazów (operacje na obrazach, sploty macierzowe, rozmycia, filtry koloru, "lookup tables" i inne efekty) czy symulacji ("Gra w życie" Conwaya, model reakcji-dyfuzji Graya-Scotta, plusk wody, efekt akwareli, komórki Voronoi, itp.). Pod koniec książki zobaczymy kilka zaawansowanych technik opartych o Ray Marching.
+Ta książka skupia się na użyciu fragment shaderów GLSL. Najpierw zdefiniujemy czym shadery są; potem dowiemy się jak, z ich pomocą, tworzyć proceduralne kształty, wzory, tekstury i animacje. Nauczysz się podstaw języka shadingowego i jego przydatnych aplikacji w przetwarzaniu obrazów (operacje na obrazach, sploty macierzowe, rozmycia, filtry koloru, "lookup tables" i inne efekty) czy symulacji ("Gra w życie" Conwaya, model reakcji-dyfuzji Graya-Scotta, plusk wody, efekt akwareli, komórki Voronoi, itp.). Pod koniec książki zobaczymy kilka zaawansowanych technik opartych o Ray Marching.
 
-*W każdym rozdziale znajdziesz interaktywne przykłady do wypróbowania.* Kiedy zmodyfikujesz kod, natychmiastowo zobaczysz zmiany. Zagadnienia mogą być abstrakcyjne i mylące, więc takie interkatywne przykłady stanowią konieczną pomoc w zrozumieniu materiału. Im szybciej złapiesz praktykę, tym prostsza będzie dalsza nauka.
+*W każdym rozdziale znajdziesz interaktywne przykłady do wypróbowania.* Kiedy zmodyfikujesz kod, natychmiastowo zobaczysz zmiany. Zagadnienia mogą być abstrakcyjne i mylące, więc takie interaktywne przykłady stanowią konieczną pomoc w zrozumieniu materiału. Im szybciej złapiesz praktykę, tym prostsza będzie dalsza nauka.
 
 Materiał, którego ta książka nie pokrywa:
 
@@ -42,9 +42,9 @@ Alternatywnie, w zależności od tego, co masz albo co potrzebujesz od tej ksią
 
 - [Stworzyć wersję off-line tej książki](https://thebookofshaders.com/appendix/00/?lan=pl)
 
-- [Uruchomić przykłady na Raspberry PI bez przeglądarki](https://thebookofshaders.com/appendix/01/?lan=pl)
+- [Uruchomić przykłady na Raspberry Pi bez przeglądarki](https://thebookofshaders.com/appendix/01/?lan=pl)
 
 - [Stworzyć wersję PDF tej książki do wydrukowania](https://thebookofshaders.com/appendix/02/?lan=pl)
 
-- Sprawdź [repozytorium GitHub](https://github.com/patriciogonzalezvivo/thebookofshaders) tej książki, by pomóc rożwiązać issues i podzielić się swoim kodem.
+- Sprawdź [repozytorium GitHub](https://github.com/patriciogonzalezvivo/thebookofshaders) tej książki, by pomóc rozwiązać issues i podzielić się swoim kodem.
 
