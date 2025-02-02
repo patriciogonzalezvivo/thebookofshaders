@@ -2,7 +2,7 @@
 
 <canvas id="custom" class="canvas" data-fragment-url="cmyk-halftone.frag" data-textures="vangogh.jpg" width="700px" height="320px"></canvas>
 
-Powyższe obrazy zostały stworzone na różny sposób. Pierwszy stworzył Van Gogh, aplikując farbę warstwa po warstwie. Zajęło mu to godziny. Drugi z nich stworzono poprzez połączenie czterech macierzy zawierających piksele koloru niebieskozielonego (cyjan), magenty, żółtego i czarnego. Kluczową różnicę stanowi fakt, że drugi obraz stworzony został natychmiastowo (przez komputer), a nie seryjnie, krok po kroku (przez malarza).
+Powyższe obrazy zostały stworzone na różne sposoby. Pierwszy z nich stworzył Van Gogh, aplikując farbę warstwa po warstwie. Zajęło mu to godziny. Drugi stworzono poprzez połączenie czterech macierzy pikseli odpowiadających kolorom: cyjan, magenta, żółty i czarny. Kluczową różnicę stanowi fakt, że drugi obraz stworzony został natychmiastowo (przez komputer), a nie seryjnie, krok po kroku (przez malarza).
 
 Ta książka jest o rewolucyjnej technice obliczeniowej, tzw. *fragment shaderach* (zwanych też *pixel shaderami*), które wznoszą cyfrowo generowane obrazy na wyższy poziom. Możesz o nich myśleć jak o ekwiwalencie maszyny drukarskiej Gutenberga dla zastosowań graficznych.
 
@@ -31,7 +31,7 @@ Materiał, którego ta książka nie pokrywa:
 
 * To *nie jest* książka o OpenGL lub WebGL. OpenGL/WebGL jest większym tematem niż GLSL czy fragment shadery. Jeśli chcesz wiedzieć więcej o OpenGL i WebGL, polecam zajrzeć do [OpenGL Introduction](https://open.gl/introduction), [the 8th edition of the OpenGL Programming Guide](http://www.amazon.com/OpenGL-Programming-Guide-Official-Learning/dp/0321773039/ref=sr_1_1?s=books&ie=UTF8&qid=1424007417&sr=1-1&keywords=open+gl+programming+guide) (zwana również "czerwoną książką") lub [WebGL: Up and Running](http://www.amazon.com/WebGL-Up-Running-Tony-Parisi/dp/144932357X/ref=sr_1_4?s=books&ie=UTF8&qid=1425147254&sr=1-4&keywords=webgl)
 
-* To *nie jest* książka do nauki matematyki. Choć opisane są w niej algorytmy i techniki, które opierają się zrozumieniu algebry i trygonometrii, to nie będziemy ich szczegółowo tłumaczyć. Z pytaniami dotyczącymi matematyki polecam zajrzeć do następujących książek:
+* To *nie jest* książka do nauki matematyki. Choć opisane są w niej algorytmy i techniki, które opierają się na zrozumieniu algebry i trygonometrii, to nie będziemy ich szczegółowo tłumaczyć. Z pytaniami dotyczącymi matematyki polecam zajrzeć do następujących książek:
 [3rd Edition of Mathematics for 3D Game Programming and computer Graphics](http://www.amazon.com/Mathematics-Programming-Computer-Graphics-Third/dp/1435458869/ref=sr_1_1?ie=UTF8&qid=1424007839&sr=8-1&keywords=mathematics+for+games) lub [2nd Edition of Essential Mathematics for Games and Interactive Applications](http://www.amazon.com/Essential-Mathematics-Games-Interactive-Applications/dp/0123742978/ref=sr_1_1?ie=UTF8&qid=1424007889&sr=8-1&keywords=essentials+mathematics+for+developers).
 
 ## Co potrzeba, żeby zacząć?
@@ -40,11 +40,11 @@ Niewiele! Jeśli masz współczesną przeglądarkę, która obsługuje WebGL (ja
 
 Alternatywnie, w zależności od tego, co masz albo co potrzebujesz od tej książki, możesz:
 
-- [Stworzyć wersję off-line tej książki](https://thebookofshaders.com/appendix/00/?lan=pl)
+- [Stworzyć wersję offline tej książki](https://thebookofshaders.com/appendix/00/?lan=pl)
 
 - [Uruchomić przykłady na Raspberry Pi bez przeglądarki](https://thebookofshaders.com/appendix/01/?lan=pl)
 
 - [Stworzyć wersję PDF tej książki do wydrukowania](https://thebookofshaders.com/appendix/02/?lan=pl)
 
-- Sprawdź [repozytorium GitHub](https://github.com/patriciogonzalezvivo/thebookofshaders) tej książki, by pomóc rozwiązać issues i podzielić się swoim kodem.
+- Sprawdź [repozytorium GitHub](https://github.com/patriciogonzalezvivo/thebookofshaders) tej książki, by pomóc w rozwiązywaniu problemów (issues) i podzielić się swoim kodem.
 
