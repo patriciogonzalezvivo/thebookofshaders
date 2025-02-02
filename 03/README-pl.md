@@ -23,9 +23,9 @@ Wyobraź sobie te uniformy jak małe mosty między CPU i GPU. Ich nazwy bywają 
 <!-- You can picture the uniforms like little bridges between the CPU and the GPU. The names will vary from implementation to implementation but in this series of examples I’m always passing: `u_time` (time in seconds since the shader started), `u_resolution` (billboard size where the shader is being drawn) and `u_mouse` (mouse position inside the billboard in pixels). I’m following the convention of putting `u_` before the uniform name to be explicit about the nature of this variable but you will find all kinds of names for uniforms. For example [ShaderToy.com](https://www.shadertoy.com/) uses the same uniforms but with the following names: -->
 
 ```glsl
-uniform vec3 iResolution;   
-uniform vec4 iMouse;        
-uniform float iTime;        
+uniform vec3 iResolution;   // rozdzielczość obszaru widoku (w pikselach)
+uniform vec4 iMouse;        // współrzędne piksela myszy: xy – bieżąca pozycja, zw – kliknięcie
+uniform float iTime;        // czas działania shadera (w sekundach)
 ```
 (zwróć uwagę, że `iResolution` jest typu `vec3`, a `iMouse` typu `vec4`; uniformy te zawierają po prostu dodatkowe informacje, np.: stosunek szerokości do wysokości pikseli na ekranie, czy któryś z przycisków myszy został kliknięty albo czy jest przytrzymywany)
 
