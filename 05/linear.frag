@@ -8,7 +8,7 @@ uniform float u_time;
 
 // Plot a line on Y using a value between 0.0-1.0
 float plot(vec2 st) {    
-    return smoothstep(0.02, 0.0, abs(st.y - st.x));
+    return 1.0 - smoothstep(0.0, 0.02, abs(st.y - st.x));
 }
 
 void main() {
