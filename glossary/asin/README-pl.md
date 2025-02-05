@@ -1,4 +1,4 @@
-## Asin
+## asin
 Zwraca arcsin parametru
 
 ### Deklaracja
@@ -18,4 +18,4 @@ vec4 asin(vec4 x)
 <div class="simpleFunction" data="y = asin(x); "></div>
 
 ### Zobacz też
-[cos](/glossary/?search=cos), [sin](/glossary/?search=sin), [acos](/glossary/?search=acos), [tan](/glossary/?search=tan), [atan](/glossary/?search=atan), [Rozdział 05: Shaping Functions](/05/)
+[cos](/glossary/?lan=pl&search=cos), [sin](/glossary/?lan=pl&search=sin), [acos](/glossary/?lan=pl&search=acos), [tan](/glossary/?lan=pl&search=tan), [atan](/glossary/?lan=pl&search=atan), [Rozdział 05: Shaping Functions](/05/?lan=pl)

@@ -1,4 +1,4 @@
-## Any
+## any
 Sprawdza, czy choć jeden element wektora logicznego jest prawdziwy
 
 ### Deklaracja
@@ -26,4 +26,4 @@ bool any(bvec x) {     // bvec może być bvec2, bvec3 lub bvec4
 ```
 
 ### Zobacz też
-[any()](/glossary/?search=any), [not()](/glossary/?search=not)
+[any()](/glossary/?lan=pl&search=any), [not()](/glossary/?lan=pl&search=not)

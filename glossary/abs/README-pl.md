@@ -1,4 +1,4 @@
-## Abs
+## abs
 Zwraca wartość bezwzględną z parametru.
 
 ### Deklaracja
@@ -18,4 +18,4 @@ vec4 abs(vec4 x)
 <div class="simpleFunction" data="y = abs(x); "></div>
 
 ### Zobacz także
-[sign()](/glossary/?search=sign), [min()](/glossary/?search=min), [max()](/glossary/?search=max), [Rozdział 05: Shaping Functions](../05/)
+[sign()](/glossary/?lan=pl&search=sign), [min()](/glossary/?lan=pl&search=min), [max()](/glossary/?lan=pl&search=max), [Rozdział 05: Shaping Functions](../05/?lan=pl)

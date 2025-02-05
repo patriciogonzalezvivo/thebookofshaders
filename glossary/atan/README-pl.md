@@ -1,4 +1,4 @@
-## Atan
+## atan
 Zwraca arcus tangens parametrów
 
 ### Deklaracja
@@ -27,6 +27,6 @@ vec4 atan(vec4 y_over_x)
 Dla drugiego przeciążenia, ```atan()``` zwraca kąt, którego tangens wynosi ```y_over_x```. Wartości zwracane w tym przypadku mieszczą się w zakresie -PI do PI.
 
 ### Zobacz też
-[cos](/glossary/?search=cos), [acos](/glossary/?search=acos), [sin](/glossary/?search=sin), [asin](/glossary/?search=asin), [atan](/glossary/?search=atan), [Rozdział 05: Shaping Functions](/05/), [Rozdział 06: Kolory](/06/)
+[cos](/glossary/?lan=pl&search=cos), [acos](/glossary/?lan=pl&search=acos), [sin](/glossary/?lan=pl&search=sin), [asin](/glossary/?lan=pl&search=asin), [atan](/glossary/?lan=pl&search=atan), [Rozdział 05: Shaping Functions](/05/), [Rozdział 06: Kolory](/06/)
 []: # (end)
 []: # (end)

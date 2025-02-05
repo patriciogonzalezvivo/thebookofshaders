@@ -1,4 +1,4 @@
-## Acos
+## acos
 Zwraca arcus cosinus podanego argumentu
 
 ### Deklaracja
@@ -18,4 +18,4 @@ vec4 acos(vec4 x)
 <div class="simpleFunction" data="y = acos(x); "></div>
 
 ### Zobacz też
-[cos()](/glossary/?search=cos), [sin()](/glossary/?search=sin), [asin()](/glossary/?search=asin), [tan()](/glossary/?search=tan), [atan()](/glossary/?search=atan), [Rozdział 05: Shaping Functions](/05/)
+[cos()](/glossary/?lan=pl&search=cos), [sin()](/glossary/?lan=pl&search=sin), [asin()](/glossary/?lan=pl&search=asin), [tan()](/glossary/?lan=pl&search=tan), [atan()](/glossary/?lan=pl&search=atan), [Rozdział 05: Shaping Functions](/05/?lan=pl)
