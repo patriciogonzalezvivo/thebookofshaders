@@ -10,7 +10,7 @@ vec4 ceil(vec4 x)
 ```
 
 ### Parameters
-```x``` specify the value to evaluate.
+```x``` specifies the value to evaluate.
 
 ### Description
 ```ceil()```  returns a value equal to the nearest integer that is greater than or equal to ```x```.

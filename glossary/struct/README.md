@@ -17,4 +17,4 @@ newMaterial = matStruct(vec4(0.1, 0.1, 0.1, 1.0),
 ```
 
 ### Description
-```struct``` declare a custom data structures based on standard types. A constructor for the structure with the same name is created automatically. The declaration of a variable (in this case "newMaterial") is optional.
+```struct``` declares a custom data structure based on standard types. A constructor for the structure with the same name is created automatically. The declaration of a variable (in this case "newMaterial") is optional.

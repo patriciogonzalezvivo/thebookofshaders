@@ -10,7 +10,7 @@ vec4 floor(vec4 x)
 ```
 
 ### Parameters
-```x``` specify the value to evaluate.
+```x``` specifies the value to evaluate.
 
 ### Description
 ```floor()``` returns a value equal to the nearest integer that is less than or equal to ```x```.

@@ -16,7 +16,7 @@ vec4 step(float edge, vec4 x)
 ### Parameters
 ```edge``` specifies the location of the edge of the step function.
 
-```x``` specify the value to be used to generate the step function.
+```x``` specifies the value to be used to generate the step function.
 
 ### Description
 ```step()``` generates a step function by comparing ```x``` to ```edge```.

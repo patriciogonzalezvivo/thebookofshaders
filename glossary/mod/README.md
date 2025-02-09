@@ -14,8 +14,8 @@ vec4 mod(vec4 x, float y)
 ```
 
 ### Parameters
-```x``` specify the value to evaluate.
-```y``` specify the value to obtain the modulo of.
+```x``` specifies the value to evaluate.
+```y``` specifies the value to obtain the modulo of.
 
 ### Description
 ```mod()``` returns the value of ```x``` modulo ```y```. This is computed as ```x - y * floor(x/y)```.

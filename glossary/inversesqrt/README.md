@@ -10,7 +10,7 @@ vec4 inversesqrt(vec4 x)
 ```
 
 ### Parameters
-```x``` specify the value of which to take the inverse of the square root.
+```x``` specifies the value of which to take the inverse of the square root.
 
 ### Description
 ```inversesqrt()``` returns the inverse of the square root of  ```x```.

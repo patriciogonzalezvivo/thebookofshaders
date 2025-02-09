@@ -14,11 +14,11 @@ vec4 mix(vec4 x, vec4 y, float a)
 ```
 
 ### Parameters
-```x``` Specify the start of the range in which to interpolate.
+```x``` specifies the start of the range in which to interpolate.
 
-```y``` Specify the end of the range in which to interpolate.
+```y``` specifies the end of the range in which to interpolate.
 
-```a``` Specify the value to use to interpolate between x and y.
+```a``` specifies the value to use to interpolate between x and y.
 
 ### Description
 ```mix()``` performs a linear interpolation between ```x``` and ```y``` using ```a``` to weight between them. The return value is computed as ```x×(1−a)+y×a```.

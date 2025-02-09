@@ -10,7 +10,7 @@ vec4 tan(vec4 angle)
 ```
 
 ### Parameters
-```angle``` specify the quantity, in radians, of which to return the tangent.
+```angle``` specifies the quantity, in radians, of which to return the tangent.
 
 ### Description
 ```tan()``` returns the trigonometric tangent of angle.
