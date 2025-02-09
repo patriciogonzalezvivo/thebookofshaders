@@ -18,4 +18,4 @@ vec4 sin(vec4 angle)
 <div class="simpleFunction" data="y = sin(x); "></div>
 
 ### Zobacz także
-[acos](/glossary/?search=acos), [cos](/glossary/?search=cos), [asin](/glossary/?search=asin), [tan](/glossary/?search=tan), [atan](/glossary/?search=atan), [Rozdział 05: Shaping Functions](/05/)
+[acos](/glossary/?lan=pl&search=acos), [cos](/glossary/?lan=pl&search=cos), [asin](/glossary/?lan=pl&search=asin), [tan](/glossary/?lan=pl&search=tan), [atan](/glossary/?lan=pl&search=atan), [Rozdział 05: Shaping Functions](/05/?lan=pl)
