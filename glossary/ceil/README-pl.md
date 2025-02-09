@@ -1,5 +1,5 @@
 ## ceil
-Znajdź najbliższą liczbę całkowitą, która jest większa lub równa podanemu parametrowi
+Znajduje najbliższą liczbę całkowitą, która jest większa lub równa podanemu parametrowi
 
 ### Deklaracja
 ```glsl

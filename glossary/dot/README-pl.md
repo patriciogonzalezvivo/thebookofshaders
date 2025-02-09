@@ -1,5 +1,5 @@
 ## dot
-Oblicz iloczyn skalarny (dot product) dwóch wektorów
+Oblicza iloczyn skalarny (dot product) dwóch wektorów
 
 ### Deklaracja
 ```glsl
