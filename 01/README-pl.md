@@ -28,7 +28,7 @@ Wyobraź sobie procesor twojego komputera jako potok przetwarzania (ang. "pipeli
 
 ![CPU](00.jpeg)
 
-Gry video i inne aplikacje graficzne wymagają zdecydowanie więcej mocy obliczeniowej niż większość programów, gdyż muszą wykonywać ogromne ilości operacji piksel po pikselu. Nie dość, że każdy pojedynczy piksel musi być obliczony, to w wypadku gier 3D dochodzą do tego obliczenia geometryczne i obliczenie perspektywy.
+Gry wideo i inne aplikacje graficzne wymagają zdecydowanie więcej mocy obliczeniowej niż większość programów, gdyż muszą wykonywać ogromne ilości operacji piksel po pikselu. Nie dość, że każdy pojedynczy piksel musi być obliczony, to w przypadku gier 3D dochodzą do tego obliczenia geometryczne i obliczenie perspektywy.
 
 <!-- Video games and other graphic applications require a lot more processing power than other programs. Because of their graphic content they have to do huge numbers of pixel-by-pixel operations. Every single pixel on the screen needs to be computed, and in 3D games geometries and perspectives need to be calculated as well. -->
 
@@ -44,7 +44,7 @@ Z pomocą przychodzi przetwarzanie równoległe. Zamiast kilku dużych, potężn
 
 ![GPU](04.jpeg)
 
-Wyobraź sobie mały mikroprocesor jako tablicę rur (spójrz na obrazek powyżej), a dane jako piłeczki ping pongowe. 14.400.000 piłeczek ping pongowych na sekundę może zablokować prawie każdą pojedynczą rurę. Ale tabela 800x600 malutkich rur przyjmująca co sekundę 30 fal po 480.000 piłeczek poradzi sobie z nimi bez problemu. Tak samo działa to na wyższych rozdzielczościach - im więcej równolegle pracującego hardware'u, tym większy potok, z którymi GPU sobie poradzi.
+Wyobraź sobie mały mikroprocesor jako tablicę rur (spójrz na obrazek powyżej), a dane jako piłeczki ping pongowe. 14.400.000 piłeczek ping pongowych na sekundę może zablokować prawie każdą pojedynczą rurę. Ale tabela 800x600 malutkich rur przyjmująca co sekundę 30 fal po 480.000 piłeczek poradzi sobie z nimi bez problemu. Tak samo działa to na wyższych rozdzielczościach - im więcej równolegle pracującego hardware'u, tym większy potok, z którym GPU sobie poradzi.
 
 <!-- Picture the tiny microprocessors as a table of pipes, and the data of each pixel as a ping pong ball. 14,400,000 ping pong balls a second can obstruct almost any pipe. But a table of 800x600 tiny pipes receiving 30 waves of 480,000 pixels a second can be handled smoothly. This works the same at higher resolutions - the more parallel hardware you have, the bigger the stream it can manage. -->
 
@@ -64,7 +64,7 @@ Jak to mówią: "with great power comes great responsibility". Stosuje się to r
 
 <!-- As Uncle Ben said “with great power comes great responsibility,” and parallel computation follows this rule; the powerful architectural design of the GPU comes with its own constraints and restrictions. -->
 
-Aby wątki mogły działać równolegle, muszą być od siebie niezależne. Mówimy, że wątki są *ślepe* na to, co robi reszta wątków. Ograniczenie to implikuje, że dane muszą "płynąć w ten samą stronę" - nie jest możliwe sprawdzić dane wyjściowe innego wątku, zmodyfikować jego dane wejściowe albo przekazać dane wyjściowe jednego wątku jako dane wejściowe innego.
+Aby wątki mogły działać równolegle, muszą być od siebie niezależne. Mówimy, że wątki są *ślepe* na to, co robi reszta wątków. Ograniczenie to implikuje, że dane muszą "płynąć w tę samą stronę" - nie jest możliwe sprawdzić dane wyjściowe innego wątku, zmodyfikować jego dane wejściowe albo przekazać dane wyjściowe jednego wątku jako dane wejściowe innego.
 
 <!-- In order to run in parallel every pipe, or thread, has to be independent from every other thread. We say the threads are *blind* to what the rest of the threads are doing. This restriction implies that all data must flow in the same direction. So it’s impossible to check the result of another thread, modify the input data, or pass the outcome of a thread into another thread. Allowing thread-to-thread communications puts the integrity of the data at risk. -->
 
@@ -72,6 +72,6 @@ Poza tym GPU odpowiada za to, żeby każdy wątek miał coś do roboty, i żeby 
 
 <!-- Also the GPU keeps the parallel micro-processor (the pipes) constantly busy; as soon as they get free they receive new information to process. It's impossible for a thread to know what it was doing in the previous moment. It could be drawing a button from the UI of the operating system, then rendering a portion of sky in a game, then displaying the text of an email. Each thread is not just **blind** but also **memoryless**. Besides the abstraction required to code a general function that changes the result pixel by pixel depending on its position, the blind and memoryless constraints make shaders not very popular among beginning programmers. -->
 
-Ale nie martw się! W następnych rozdziałąch nauczymy się, krok po kroku, prostych i zaawansowanych obliczeń shadingowych. Jeżeli czytasz to we współczesnej przeglądarce, to z pewnością docenisz zabawę z interaktywnymi przykładami. Ale nie przedłużajmy! Naciśnij *Next>>* aby przejść dalej.
+Ale nie martw się! W następnych rozdziałach nauczymy się, krok po kroku, prostych i zaawansowanych obliczeń shadingowych. Jeżeli czytasz to we współczesnej przeglądarce, to z pewnością docenisz zabawę z interaktywnymi przykładami. Ale nie przedłużajmy! Naciśnij *Next>>* aby przejść dalej.
 
 <!-- Don't worry! In the following chapters, we will learn step-by-step how to go from simple to advanced shading computations. If you are reading this with a modern browser, you will appreciate playing with the interactive examples. So let's not delay the fun any longer and press *Next >>* to jump into the code! -->

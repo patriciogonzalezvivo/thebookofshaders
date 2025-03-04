@@ -208,25 +208,3 @@ void ofApp::draw(){
 
 
 برای اطلاعات بیشتر در مورد استفاده از شیدر ها در openFrameworks سری به  [excellent tutorial](http://openframeworks.cc/ofBook/chapters/shaders.html) ساخته شده توسط [Joshua Noble](http://thefactoryfactory.com/) بزنید.
-
-
-### در **Blender**
-
-[GlslTexture](https://github.com/patriciogonzalezvivo/glslTexture) یک افزونه است که امکان می‌دهد با برنامه نویسی و استفاده از GLSL، تکستچر تولید کنید. همچنین با بقیه محیط هم سازگار است. اینگونه کار می‌کند:
-
-
-1. در سرچ بار: `F3` (یا spaceBar). تایپ کنید `GlslTexture`
-
-![](blender/00.png)
-
-2. طول و عرض و منبع را تغییر دهید (که میتواند مسیری به فایل خارجی باشد). 
-
-![](blender/01.png)
-
-3. از این تصویر روی متریال خود اسفاده کنید. اسم عکس بر پایه اسم منبع تعریف می‌شود.
-
-![](blender/02.png)
-
-4. به Text Editor بروید (یا یک ادیتور خارجی در صورت تمایل) و شیدر را تغییر دهید. به صورت آنی(هات ریلود) تغییرات را مشاهده خواهید کرد.
-
-![](blender/03.png)

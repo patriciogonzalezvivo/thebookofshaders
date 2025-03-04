@@ -218,3 +218,7 @@ In the following chapters we will see some well known techniques to perfect your
 
 <p style="text-align:center; font-style: italic;">"Talk to the tree, make friends with it." Bob Ross
 </p>
+
+#### For your toolbox
+
+* [LYGIA's generative functions ](https://lygia.xyz/generative) are a set of reusable functions to generate patterns in GLSL. It's a great resource to learn how to use randomness and noise to create generative art. It's very granular library, designed for reusability, performance and flexibility. And it can be easily be added to any projects and frameworks.

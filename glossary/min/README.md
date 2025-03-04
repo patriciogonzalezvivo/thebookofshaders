@@ -14,9 +14,9 @@ vec4 min(vec4 x, float y)
 ```
 
 ### Parameters
-```x``` specify the first value to compare.
+```x``` specifies the first value to compare.
 
-```y``` specify the second value to compare.
+```y``` specifies the second value to compare.
 
 ### Description
 ```min()``` returns the minimum of the two parameters. It returns ```y``` if ```y``` is less than ```x```, otherwise it returns ```x```.

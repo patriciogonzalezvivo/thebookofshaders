@@ -210,24 +210,3 @@ void ofApp::draw(){
 
 
 Để tìm hiểu thêm về shader trong openFrameworks hãy đọc [bài hướng dẫn tuyệt vời này](http://openframeworks.cc/ofBook/chapters/shaders.html) của [Joshua Noble](http://thefactoryfactory.com/).
-
-
-### Với **Blender**
-
-[GlslTexture](https://github.com/patriciogonzalezvivo/glslTexture) là một addon giúp bạn tạo ra các texture theo công thức của GLSL và hoàn toàn tương thích với các sandbox khác trong chương này. Cách mà nó hoạt động:
-
-1. Operator Search: `F3` (hoặc gõ phím `Space` tuỳ theo chỉnh sửa của bạn). Gõ `GlslTexture`
-
-![](blender/00.png)
-
-2. Đổi kích thước `width` và `height` và tên file shader ở `Source` (có thể là đường dẫn tới 1 file khác)
-
-![](blender/01.png)
-
-3. Sử dụng ảnh trong chất liệu. Tên của ảnh sẽ dựa trên tên của file shader.
-
-![](blender/02.png)
-
-4. Mở phần Text Editor và viết shader (hoặc sửa từ bên ngoài). Nó sẽ được cập nhật ngay lập tức.
-
-![](blender/03.png)

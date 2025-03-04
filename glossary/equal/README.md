@@ -13,9 +13,9 @@ bvec4 equal(ivec4 x, ivec4 y)
 ```
 
 ### Parameters
-```x``` Specifies the first vector to be used in the comparison operation.
+```x``` specifies the first vector to be used in the comparison operation.
 
-```y``` Specifies the second vector to be used in the comparison operation.
+```y``` specifies the second vector to be used in the comparison operation.
 
 ### Description
 ```equal()``` returns a boolean vector in which each element ```i``` is computed as ```x[i] == y[i]```.

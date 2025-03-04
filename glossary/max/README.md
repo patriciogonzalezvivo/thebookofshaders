@@ -14,9 +14,9 @@ vec4 max(vec4 x, float y)
 ```
 
 ### Parameters
-```x``` specify the first value to compare.
+```x``` specifies the first value to compare.
 
-```y``` specify the second value to compare.
+```y``` specifies the second value to compare.
 
 ### Description
 ```max()``` returns the maximum of the two parameters. It returns ```y``` if ```y``` is greater than ```x```, otherwise it returns ```x```.

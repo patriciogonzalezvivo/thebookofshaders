@@ -34,7 +34,7 @@ O que esse livro não cobre:
 
 ## O que você precisa para começar?
 
-Não muito! Se você tem um browser modernos que possa rodar WebGL (como Chrome, Firefox ou Safari) e uma conexão à internet, clique no botão para o próximo capítulo no fim desta página para começar.
+Não muito! Se você tem um browser moderno que possa rodar WebGL (como Chrome, Firefox ou Safari) e uma conexão à internet, clique no botão para o próximo capítulo no fim desta página para começar.
 
 Alternativamente, baseado no que você tem, ou no que você precisa deste livro você pode:
 

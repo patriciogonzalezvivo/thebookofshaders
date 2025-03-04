@@ -10,7 +10,7 @@ vec4 abs(vec4 x)
 ```
 
 ### Parameters
-```x``` specify the value of which to return the absolute.
+```x``` specifies the value of which to return the absolute.
 
 ### Description
 ```abs()``` returns the absolute value of ```x```.

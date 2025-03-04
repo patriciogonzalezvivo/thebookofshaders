@@ -10,7 +10,7 @@ vec4 acos(vec4 x)
 ```
 
 ### Parameters
-```x``` specify the value whose arccosine to return.
+```x``` specifies the value whose arccosine to return.
 
 ### Description
 ```acos()``` returns the angle whose trigonometric cosine is ```x```.
