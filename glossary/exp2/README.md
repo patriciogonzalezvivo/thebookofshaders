@@ -10,7 +10,7 @@ vec4 exp2(vec4 x)
 ```
 
 ### Parameters
-```x``` specify the value of the power to which 2 will be raised.
+```x``` specifies the value of the power to which 2 will be raised.
 
 ### Description
 ```exp2()``` returns 2 raised to the power of ```x```.

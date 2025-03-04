@@ -10,9 +10,9 @@ vec4 pow(vec4 x, vec4 y)
 ```
 
 ### Parameters
-```x``` specify the value to raise to the power ```y```.
+```x``` specifies the value to raise to the power ```y```.
 
-```y``` specify the power to which to raise ```x```.
+```y``` specifies the power to which to raise ```x```.
 
 ### Description
 ```pow()``` returns the value of ```x``` raised to the ```y``` power.

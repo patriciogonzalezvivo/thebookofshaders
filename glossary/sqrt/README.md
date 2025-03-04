@@ -10,7 +10,7 @@ vec4 sqrt(vec4 x)
 ```
 
 ### Parameters
-```x``` specify the value of which to take the square root.
+```x``` specifies the value of which to take the square root.
 
 ### Description
 ```sqrt()``` returns the square root of ```x```.

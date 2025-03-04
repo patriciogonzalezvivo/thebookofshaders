@@ -38,7 +38,7 @@
     * Image operations
     * Kernel convolutions
     * Filters
-    * Others effects
+    * Other effects
 
 * Simulation
     * Pingpong
@@ -80,7 +80,7 @@ Patricio studiował i praktykował psychoterapię oraz arteterapię. Otrzymał t
 
 ## Podziękowania
 
-Podziękowania dla [Scott Murray](http://alignedleft.com/) za porady i inspriację.
+Podziękowania dla [Scott Murray](http://alignedleft.com/) za porady i inspirację.
 
 Podziękowania dla [Kenichi Yoneda (Kynd)](https://twitter.com/kyndinfo), [Nicolas Barradeau](https://twitter.com/nicoptere), [Karim Naaji](http://karim.naaji.fr/) za wsparcie, dobre pomysły i kod.
 

@@ -10,7 +10,7 @@ vec4 exp(vec4 x)
 ```
 
 ### Parameters
-```x``` specify the value to exponentiate.
+```x``` specifies the value to exponentiate.
 
 ### Description
 ```exp()``` returns the natural exponentiation of ```x```.

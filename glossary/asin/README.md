@@ -10,7 +10,7 @@ vec4 asin(vec4 x)
 ```
 
 ### Parameters
-```x``` specify the value whose arcsine to return.
+```x``` specifies the value whose arcsine to return.
 
 ### Description
 ```asin()``` returns the angle whose trigonometric sine is ```x```.

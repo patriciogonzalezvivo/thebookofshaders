@@ -38,7 +38,7 @@ This is a gentle step-by-step guide through the abstract and complex universe of
     * Image operations
     * Kernel convolutions
     * Filters
-    * Others effects
+    * Other effects
 
 * Simulation
     * Pingpong

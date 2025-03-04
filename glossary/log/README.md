@@ -10,7 +10,7 @@ vec4 log(vec4 x)
 ```
 
 ### Parameters
-```x``` specify the value of which to take the natural logarithm.
+```x``` specifies the value of which to take the natural logarithm.
 
 ### Description
 ```log()``` returns the natural logarithm of ```x```.

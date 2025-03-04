@@ -10,7 +10,7 @@ vec4 log2(vec4 x)
 ```
 
 ### Parameters
-```x``` specify the value of which to take the base 2 logarithm.
+```x``` specifies the value of which to take the base 2 logarithm.
 
 ### Description
 ```log2()``` returns the base 2 logarithm of ```x```.
