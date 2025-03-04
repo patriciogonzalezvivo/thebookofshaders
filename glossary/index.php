@@ -1,9 +1,10 @@
 <?php
 
 	$path = "..";
+	$subtitle = ": Glossary";
 	$README = "README";
 	$language = "";
-	
+
 	if ( !empty($_GET['lan']) ) {
 		if (file_exists($README.'-'.$_GET['lan'].'.md')) {
 			$language = '-'.$_GET['lan'];
@@ -11,7 +12,7 @@
 		}
 	}
 
-	if(!empty($_GET))
+	if(!empty($_GET['search']))
 		$subtitle = ": ".$_GET['search'];
 
 	include($path."/header.php");

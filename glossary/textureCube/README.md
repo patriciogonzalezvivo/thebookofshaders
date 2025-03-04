@@ -1,4 +1,4 @@
-## Texture2D
+## TextureCube
 Retrieves texels from a texture
 
 ### Declaration

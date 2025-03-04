@@ -89,6 +89,8 @@ Patricioは心理療法（psychotherapy）と表現療法（expressive art thera
 
 インスピレーションとアドバイスを与えてくれた[Scott Murray](http://alignedleft.com/)、日本語訳を担当してくれた[Kynd](https://twitter.com/kyndinfo)、素晴らしいアイデアとコードで貢献してくれた[Karim Naaji](http://karim.naaji.fr/) にも感謝します。
 
+[(українська) ウクライナ語](?lan=ua)の翻訳をしてくれた [Manoylov Andriy](https://twitter.com/ManoylovAC) にも感謝します。
+
 そして最後に、このプロジェクトを応援し[改善の手助けをしてくれた方々](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors)、寄付をくださったすべての皆様に感謝を述べたいと思います。
 
 ## アップデートのお知らせ

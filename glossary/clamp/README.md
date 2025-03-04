@@ -14,11 +14,11 @@ vec4 clamp(vec4 x, float minVal, float maxVal)
 ```
 
 ### Parameters
-```x``` specify the value to constrain.
+```x``` specifies the value to constrain.
 
-```minVal``` specify the lower end of the range into which to constrain x.
+```minVal``` specifies the lower end of the range into which to constrain x.
 
-```maxVal``` specify the upper end of the range into which to constrain x.
+```maxVal``` specifies the upper end of the range into which to constrain x.
 
 ### Description
 ```clamp()``` returns the value of ```x``` constrained to the range ```minVal``` to ```maxVal```. The returned value is computed as ```min(max(x, minVal), maxVal)```.

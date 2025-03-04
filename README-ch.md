@@ -60,10 +60,12 @@
     * 环境贴图 (spherical and cube)
     * 折射和反射
 
-* [附录:](appendix/) 其他阅读本书的方式
-	* [如何离线阅读此书?](appendix/?lan=ch)
-	* [如何在树莓派上运行示例程序?](appendix/?lan=ch)
-	* [如何打印这本书](appendix/?lan=ch)
+* [附录:](appendix/?lan=ch) 其他阅读本书的方式
+	* [如何离线阅读此书?](appendix/00/?lan=ch)
+	* [如何在树莓派上运行示例程序?](appendix/01/?lan=ch)
+	* [如何打印这本书](appendix/02/?lan=ch)
+	* [我怎样共创这本书](appendix/03/?lan=ch)
+    * [给那些从JS语言过来的人的介绍](appendix/04/?lan=ch) by [Nicolas Barradeau](http://www.barradeau.com/)
 
 * [example gallery](examples/?lan=ch)
 
@@ -99,6 +101,8 @@ Patricio 研习和实践精神疗法（psychotherapy）和表达性艺术治疗�
 感谢 [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) 的 [韩文版 (한국어)](?lan=kr) 翻译。
 
 感谢 Nahuel Coppero (Necsoft) 的 [西班牙语(español)](?lan=es) 翻译。
+
+感谢 [Manoylov Andriy](https://twitter.com/ManoylovAC) 的 [乌克兰语(українська)](?lan=ua) 翻译。
 
 感谢 [Karim Naaji](http://karim.naaji.fr/) 在代码和想法上的支持和贡献。
 

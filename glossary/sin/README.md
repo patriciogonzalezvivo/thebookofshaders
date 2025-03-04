@@ -10,7 +10,7 @@ vec4 sin(vec4 angle)
 ```
 
 ### Parameters
-```angle``` specify the quantity, in radians, of which to return the sine.
+```angle``` specifies the quantity, in radians, of which to return the sine.
 
 ### Description
 ```sin()``` returns the trigonometric sine of angle.

@@ -3,6 +3,12 @@
         <footer>
             <p> Copyright 2015 <a href="http://www.patriciogonzalezvivo.com" target="_blank">Patricio Gonzalez Vivo</a> </p>
         </footer>
+
+        <script type="text/javascript">
+            // Setting the theme immediately inside the inline script prevents flicker
+            document.body.dataset.theme = localStorage.getItem('theme') || 'light';
+        </script>
+
 <?php
     echo '
         <script type="text/javascript" src="'.$path.'/src/main.js" defer></script>';

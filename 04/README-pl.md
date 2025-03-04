@@ -249,28 +249,3 @@ void ofApp::draw(){
 Po więcej informacji na temat shaderów w openFrameworks zajrzyj do znakomitego [tutoriala](http://openframeworks.cc/ofBook/chapters/shaders.html) autorstwa [Joshua Noble](http://thefactoryfactory.com/).
 
 <!-- For more information about shaders in openFrameworks go to this [excellent tutorial](http://openframeworks.cc/ofBook/chapters/shaders.html) made by [Joshua Noble](http://thefactoryfactory.com/). -->
-
-### W **Blender**
-
-[GlslTexture](https://github.com/patriciogonzalezvivo/glslTexture) to addon pozwalający programistycznie generować textury z użyciem shaderów GLSL. Jest on w pełni kompatybilny z resztą sandboxów w tym rozdziale. Jak go użyć?
-
-<!-- [GlslTexture](https://github.com/patriciogonzalezvivo/glslTexture) is an addon that allows you to programmatically generate textures using GLSL Shaders and is fully compatible with the rest of the sandboxes on this chapter. How it works: -->
-
-
-1. Operator Search: `F3` (lub `Spacja`, w zależności od twojego setupu ). Wpisz `GlslTexture`
-
-![](blender/00.png)
-
-2. Zmień pola `width` (szerokość), `height` (wysokość) oraz `Source` (ścieżka pliku źródłowego; może być ścieżką do zewnętrznego pliku). 
-
-![](blender/01.png)
-
-3. Wykorzystaj węzeł Image w zakładce Materials. Nazwa węzła Image będzie taka sama jak nazwa pliku źródłowego.
-<!-- 3. Use the Image on your materials. The Image name will be based on the name of the source file. -->
-
-![](blender/02.png)
-
-4. Idź do zakładki Scripting (lub zewnętrznego edytora, jeśli twój plik źródłowy jest zewnętrzny) i zacznij edytować shader. Będzie hot reload'owany.
-<!-- 4. Go to the Text Editor (or an external editor if your source file is external) and edit the shader. It will hot reload. -->
-
-![](blender/03.png)

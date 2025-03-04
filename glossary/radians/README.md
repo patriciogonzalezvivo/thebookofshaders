@@ -10,7 +10,7 @@ vec4 radians(vec4 degrees)
 ```
 
 ### Parameters
-```degrees``` specify the quantity, in degrees, to be converted to radians.
+```degrees``` specifies the quantity, in degrees, to be converted to radians.
 
 ### Description
 ```radians()``` converts a quantity, specified in degrees into radians. That is, the return value is ```(PI * degrees)/180```.

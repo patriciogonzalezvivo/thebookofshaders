@@ -209,22 +209,4 @@ void ofApp::draw(){
 
 Untuk informasi lebih lanjut mengenai shader dalam openFrameworks lihatlah [tutorial bagus ini](https://processing.org/tutorials/pshader/).
 
-### Dalam **Blender**
 
-[GlslTexture](https://github.com/patriciogonzalezvivo/glslTexture) adalah addon yang memperbolehkan menghasilkan tekstur menggunakan shader GLSL secara terprogram dan kompatibel sepenuhnya dengan sandbox lainnya di bab ini. Bagaimana itu bekerja:
-
-1. Operator Search: `F3` (atau `SpaceBar` tergantung pada setup). Cari `GlslTexture`
-
-![](blender/00.png)
-
-2. Ganti ukuran `width` and `height` dan berkas sumber `Source` (dapat menggunakan path file eksternal). 
-
-![](blender/01.png)
-
-3. Gunakan gambar pada materialmu. Nama gambar akan berdasarkan pada nama file sumber.
-
-![](blender/02.png)
-
-4. Pergi ke Text Editor (atau eksternal editor jika file sumbermu di luar) dan edit shadernya. Ini akan memuat ulang.
-
-![](blender/03.png)

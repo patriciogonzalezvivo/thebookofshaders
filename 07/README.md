@@ -90,7 +90,7 @@ Before going forward, try the following exercises:
 
 ### Circles
 
-It's easy to draw squares on grid paper and rectangles on cartesian coordinates, but circles require another approach, especially since we need a "per-pixel" algorithm. One solution is to *re-map* the spatial coordinates so that we can use a [`step()`](../glossary/?search=step) function to draw a circle.
+It's easy to draw squares on grid paper and rectangles on Cartesian coordinates, but circles require another approach, especially since we need a "per-pixel" algorithm. One solution is to *re-map* the spatial coordinates so that we can use a [`step()`](../glossary/?search=step) function to draw a circle.
 
 How? Let's start by going back to math class and the grid paper, where we opened a compass to the radius of a circle, pressed one of the compass points at the center of the circle and then traced the edge of the circle with a simple spin.
 
@@ -184,7 +184,7 @@ Finish uncommenting *lines 27 to 29* one by one to understand the different uses
 
 ![Robert Mangold - Untitled (2008)](mangold.jpg)
 
-In the chapter about color we map the cartesian coordinates to polar coordinates by calculating the *radius* and *angles* of each pixel with the following formula:
+In the chapter about color we map the Cartesian coordinates to polar coordinates by calculating the *radius* and *angles* of each pixel with the following formula:
 
 ```glsl
 vec2 pos = vec2(0.5)-st;
@@ -196,7 +196,7 @@ We use part of this formula at the beginning of the chapter to draw a circle. We
 
 This technique is a little restrictive but very simple. It consists of changing the radius of a circle depending on the angle to achieve different shapes. How does the modulation work? Yes, using shaping functions!
 
-Below you will find the same functions in the cartesian graph and in a polar coordinates shader example (between *lines 21 and 25*). Uncomment the functions one-by-one, paying attention the relationship between one coordinate system and the other.
+Below you will find the same functions in the Cartesian graph and in a polar coordinates shader example (between *lines 21 and 25*). Uncomment the functions one-by-one, paying attention the relationship between one coordinate system and the other.
 
 <div class="simpleFunction" data="y = cos(x*3.);
 //y = abs(cos(x*3.));
@@ -228,6 +228,10 @@ The trick will use the number of edges of a polygon to construct the distance fi
 
 Congratulations! You have made it through the rough part! Take a break and let these concepts settle - drawing simple shapes in Processing is easy but not here. In shader-land drawing shapes is twisted, and it can be exhausting to adapt to this new paradigm of coding.
 
-Down at the end of this chapter you will find a link to [PixelSpirit Deck](https://patriciogonzalezvivo.github.io/PixelSpiritDeck/) this deck of cards will help you learn new SDF functions, compose them into your designs and use on your shaders. The deck has a progressive learning curve, so taking one card a day and working on it will push and challenge your skills for months.
+#### For your toolbox
+
+* [LYGIA's draw functions ](https://lygia.xyz/draw) are set of reusable functions to draw 2D shapes and patterns. You can also explore [LYGIA's SDF functions folder](https://lygia.xyz/sdf) to combine more complex shapes through distance fields.  It's very granular library, designed for reusability, performance and flexibility. And it can be easily be added to any projects and frameworks.
+
+* Down at the end of this chapter you will find a link to [PixelSpirit Deck](https://patriciogonzalezvivo.github.io/PixelSpiritDeck/) this deck of cards will help you learn new SDF functions, compose them into your designs and use on your shaders. The deck has a progressive learning curve, so taking one card a day and working on it will push and challenge your skills for months. 
 
 Now that you know how to draw shapes I'm sure new ideas will pop into your mind. In the following chapter you will learn how to move, rotate and scale shapes. This will allow you to make compositions!

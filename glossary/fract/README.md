@@ -10,7 +10,7 @@ vec4 fract(vec4 x)
 ```
 
 ### Parameters
-```x``` specify the value to evaluate.
+```x``` specifies the value to evaluate.
 
 ### Description
 ```fract()``` returns the fractional part of ```x```. This is calculated as ```x - floor(x)```.

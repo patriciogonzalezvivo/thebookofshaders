@@ -83,6 +83,8 @@ Gracias a [Tong Li](https://www.facebook.com/tong.lee.9484) y a [Yi Zhang](https
 
 Gracias a [Jae Hyun Yoo](https://www.facebook.com/fkkcloud) por la [Traducción al coreano (한국어).](?lan=kr)
 
+Gracias a [Manoylov Andriy](https://twitter.com/ManoylovAC) por la [traducción al ucraniano (українська)](?lan=ua)
+
 Gracias a [Karim Naaji](http://karim.naaji.fr/) por su contribución, su apoyo, su código y sus buenas ideas.
 
 Gracias a todos los que creyeron en este proyecto y [contribuyeron con sus aportes](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) o donaciones.

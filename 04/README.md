@@ -131,7 +131,7 @@ Below is an example of the HTML and JS you need to get started with shaders in t
 
 ### In **Processing**
 
-Started by [Ben Fry](http://benfry.com/) and [Casey Reas](http://reas.com/) in 2001, [Processing](https://processing.org/) is an extraordinarily simple and powerful environment in which to take your first steps in code (it was for me at least). [Andres Colubri](https://codeanticode.wordpress.com/) has made important updates to the openGL and video in Processing, making it easier than ever to use and play with GLSL shaders in this friendly environment. Processing will search for the shader named `"shader.frag"` in the `data` folder of the sketch. Be sure to copy the examples you find here into that folder and rename the file.
+Started by [Ben Fry](http://benfry.com/) and [Casey Reas](http://reas.com/) in 2001, [Processing](https://processing.org/) is an extraordinarily simple and powerful environment in which to take your first steps in code (it was for me at least). [Andres Colubri](https://codeanticode.wordpress.com/) has made important updates to the OpenGL and video in Processing, making it easier than ever to use and play with GLSL shaders in this friendly environment. Processing will search for the shader named `"shader.frag"` in the `data` folder of the sketch. Be sure to copy the examples you find here into that folder and rename the file.
 
 ```cpp
 PShader shader;
@@ -190,7 +190,7 @@ void ofApp::draw(){
 }
 ```
 
-If you want to use the full set of uniforms contain on the specs of GlslViewer and GlslCanvas in a more simple way on OpenFrameworks I recomend using the [ofxShader](https://github.com/patriciogonzalezvivo/ofxshader) addon which will also have support for multiple buffers, material shaders, hotreload and automatic conversion for OpenGL ES in the Raspberry Pi. And your code will be as simple as doing
+If you want to use the full set of uniforms contain on the specs of GlslViewer and GlslCanvas in a more simple way on OpenFrameworks I recommend using the [ofxShader](https://github.com/patriciogonzalezvivo/ofxshader) addon which will also have support for multiple buffers, material shaders, hotreload and automatic conversion for OpenGL ES in the Raspberry Pi. And your code will be as simple as doing
 
 ```cpp
 //--------------------------------------------------------------
@@ -210,24 +210,3 @@ void ofApp::draw(){
 
 
 For more information about shaders in openFrameworks go to this [excellent tutorial](http://openframeworks.cc/ofBook/chapters/shaders.html) made by [Joshua Noble](http://thefactoryfactory.com/).
-
-### In **Blender**
-
-[GlslTexture](https://github.com/patriciogonzalezvivo/glslTexture) is an addon that allows you to programmatically generate textures using GLSL Shaders and is fully compatible with the rest of the sandboxes on this chapter. How it works:
-
-
-1. Operator Search: `F3` (or `SpaceBar` depending on your setup). Type `GlslTexture`
-
-![](blender/00.png)
-
-2. Change `width` and `height` size and `Source` file (which can be a path to an external file). 
-
-![](blender/01.png)
-
-3. Use the Image on your materials. The Image name will be based on the name of the source file.
-
-![](blender/02.png)
-
-4. Go to the Text Editor (or an external editor if your source file is external) and edit the shader. It will hot reload.
-
-![](blender/03.png)

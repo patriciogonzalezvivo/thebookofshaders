@@ -1,4 +1,4 @@
-## G_FragCoord
+## Gl_FragCoord
 
 ### Declaration / Example
 

@@ -1,6 +1,7 @@
 <?php
 
 	$path = "../..";
+	$subtitle = ": An introduction for those coming from JS";
 	$README = "README";
 	$language = "";
 

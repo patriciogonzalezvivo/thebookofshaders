@@ -90,3 +90,7 @@ Take a look at [Ikeda](http://www.ryojiikeda.com/)'s work and try the following 
 Using random aesthetically can be problematic, especially if you want to make natural-looking simulations. Random is simply too chaotic and very few things look ```random()``` in real life. If you look at a rain pattern or a stock chart, which are both quite random, they are nothing like the random pattern we made at the begining of this chapter. The reason? Well, random values have no correlation between them what so ever, but most natural patterns have some memory of the previous state.
 
 In the next chapter we will learn about noise, the smooth and *natural looking* way of creating computational chaos.
+
+#### For your toolbox
+
+* [LYGIA's generative functions ](https://lygia.xyz/generative) are a set of reusable functions to generate patterns in GLSL. It's a great resource to learn how to use randomness and noise to create generative art. It's very granular library, designed for reusability, performance and flexibility. And it can be easily be added to any projects and frameworks.

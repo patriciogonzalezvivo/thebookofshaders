@@ -64,7 +64,7 @@ le programme va devoir évaluer les 2 branches de toutes façons et cette évalu
 Une stratégie pour parer à ce problème est de structurer le code de manière à éliminer les conditions, donc les branches.
 En l'occurrence, se servir du résultat (0 ou 1) de `step()` et le multiplier par une autre variable (la couleur par exemple).
 Si le `step()` renvoie 1, la couleur se multipliera par 1 et restera la même, si le `step()` renvoie 0, la couleur se multipliera par 0 donc elle passe au noir.
-C'est une technique que voue retrouverez souvent dans les shaders.
+C'est une technique que vous retrouverez souvent dans les shaders.
 
 ![](rect-01.jpg)
 
@@ -215,12 +215,12 @@ Prenez le code suivant:
 <div class="codeAndCanvas" data="rect-df.frag"></div>
 
 On commence par déplacer le système de coordonnées au centre et à le diviser par deux pour obtenir des valeurs comprises entre -1 et 1.
-A la *ligne 24*, nous visualisons le champ de distances grâce à la fonction [`fract()`](../glossary/?search=fract) ce qui nous permet de mieux voir le motif qu'il crée.
+À la *ligne 24*, nous visualisons le champ de distances grâce à la fonction [`fract()`](../glossary/?search=fract) ce qui nous permet de mieux voir le motif qu'il crée.
 Le motif du champ de distances se répète en cercles concentriques, à la manière d'un jardin zen.
 
 Regardons la formule du champ de distances *ligne 19*. Nous calculons la distance entre chaque position et la coordonnée `( .3,.3 )` ( entre `st` et le vecteur `vec2(.3)`) pour chaque quadrant, c'est à ça que sert l'appel à [`abs()`](../glossary/?search=abs).
 
-Si vous décommentez la *ligne 20*, vouz noterez que nous combinons les distances à ces 4 points en utilisant la fonction [`min()`](../glossary/?search=min) contre 0, ce qui produit un nouveau motif.
+Si vous décommentez la *ligne 20*, vous noterez que nous combinons les distances à ces 4 points en utilisant la fonction [`min()`](../glossary/?search=min) contre 0, ce qui produit un nouveau motif.
 
 L'idée est qu'il n'y a qu'un seul point, et non '4', celui en haut à droite mais il est *reflété* dans les 3 autres *quadrants* du fait qu'on a changé la taille de l'espace *ligne 16* !
 

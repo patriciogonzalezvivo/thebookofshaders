@@ -96,6 +96,8 @@ Grazie a [Nicolas Barradeau](https://twitter.com/nicoptere) e a [Karim Naaji](ht
 
 Grazie a [Andrea Rovescalli](https://www.earove.info) per la [traduzione](?lan=it) italiana
 
+Grazie a [Manoylov Andriy](https://twitter.com/ManoylovAC) per la [traduzione ucraina (українська)](?lan=ua)
+
 Grazie a tutti coloro i quali hanno creduto in questo progetto e [contribuito con correzioni](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) o donazioni.
 
 ## Come ottenere i nuovi capitoli?

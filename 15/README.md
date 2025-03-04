@@ -8,10 +8,10 @@ Graphic cards (GPUs) have special memory types for images. Usually on CPUs image
 
 In order to use this feature we first need to *upload* the image from the CPU to the GPU, to then pass the ```id``` of the texture to the right [```uniform```](../05). All that happens outside the shader.
 
-Once the texture is loaded and linked to a valid ```uniform sampler2D``` you can ask for specific color value at specific coordinates (formated on a [```vec2```](index.html#vec2.md) variable) using the [```texture2D()```](index.html#texture2D.md) function which will return a color formatted on a [```vec4```](index.html#vec4.md) variable.
+Once the texture is loaded and linked to a valid ```uniform sampler2D``` you can ask for specific color value at specific coordinates (formatted on a [```vec2```](index.html#vec2.md) variable) using the [```texture2D()```](index.html#texture2D.md) function which will return a color formatted on a [```vec4```](index.html#vec4.md) variable.
 
 ```glsl
-vec4 texture2D(sampler2D texture, vec2 coordinates)  
+vec4 texture2D(sampler2D texture, vec2 coordinates)
 ```
 
 Check the following code where we load Hokusai's Wave (1830) as ```uniform sampler2D u_tex0``` and we call every pixel of it inside the billboard:
@@ -58,7 +58,7 @@ You may be thinking that this is unnecessarily complicated... and you are probab
 
 ![Eadweard's Muybridge study of motion](muybridge.jpg)
 
-This level of craftsmanship links back to some of the first optical experiments ever made. For example on games *sprite animations* are very common, and is inevitably to see on it reminiscence to phenakistoscope, zoetrope and praxinoscope.
+This level of craftsmanship links back to some of the first optical experiments ever made. For example on games *sprite animations* are very common, and is inevitably to see on it reminiscence to [phenakistoscope](https://en.wikipedia.org/wiki/Phenakistiscope), [zoetrope](https://en.wikipedia.org/wiki/Zoetrope) and [praxinoscope](https://en.wikipedia.org/wiki/Praxinoscope).
 
 This could seem simple but the possibilities of modifying textures coordinates are enormous. For example:
 
@@ -68,10 +68,13 @@ Now is your turn:
 
 * Can you make a kaleidoscope using what we have learned?
 
-* Way before Oculus or google cardboard, stereoscopic photography was a big thing. Could you code a simple shader to re-use these beautiful images?
+<canvas id="custom" class="canvas" data-fragment-url="texture-kaleidoscope.frag" data-textures="hokusai.jpg" width="300px" height="300px"></canvas>
 
-<a href=“../edit.php#10/ikeda-03.frag”><canvas id=“custom” class=“canvas” data-fragment-url=“ikeda-03.frag”  width=“520px” height=“200px”></canvas></a>
+* Way before [Oculus](https://en.wikipedia.org/wiki/Oculus_Rift) or [google cardboard](https://en.wikipedia.org/wiki/Google_Cardboard), stereoscopic photography was a big thing. Could you code a simple shader to re-use these beautiful images?
 
+![](texture-stereo-00.jpg)
+![](texture-stereo-01.jpg)
+![](texture-stereo-03.jpg)
 
 * What other optical toys can you re-create using textures?
 

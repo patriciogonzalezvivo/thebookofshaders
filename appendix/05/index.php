@@ -1,6 +1,7 @@
 <?php
 
 	$path = "../..";
+	$subtitle = ": An introduction for vectors";
 	$README = "README";
 	$language = "";
 
