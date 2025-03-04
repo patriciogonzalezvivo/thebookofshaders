@@ -106,7 +106,7 @@ Có vài cách để tính khoảng cách và cách dễ nhất là dùng hàm [
 
 Bạn có thể dùng hàm [`distance()`](../glossary/?lan=vi&search=distance), [`length()`](../glossary/?lan=vi&search=length) hay [`sqrt()`](../glossary/?lan=vi&search=sqrt) tuỳ ý để tính khoảng cách của từng điểm ảnh tới tâm canvas. Đoạn code dưới đây dùng cả 3 hàm trên và không có gì ngạc nhiên là kết quả của chúng đều giống nhau.
 
-* Hãy comment và uncomment từng cách tính để kiểm tra xem có đúng là chúng cho ra cùng 1 kết quả không nhé 
+* Hãy comment và uncomment từng cách tính để kiểm tra xem có đúng là chúng cho ra cùng 1 kết quả không nhé
 
 <div class="codeAndCanvas" data="circle-making.frag"></div>
 
@@ -164,7 +164,7 @@ Thực ra thì hàm [`sqrt()`](../glossary/?lan=vi&search=sqrt) và các hàm gi
 
 ![Vườn phong cách Thiền](zen-garden.jpg)
 
-Các distance field có thể được kết hợp lại với nhau để vẽ hầu như tất cả mọi thứ. Rõ ràng là hình vẽ càng phức tạp thì phương pháp kết hợp chúng sẽ càng rối rắm, nhưng nếu bạn có 1 công thức để tính 1 distance field cho 1 khối hình học cơ bản nào đó rồi, thì việc tạo thêm hiệu ứng cho nó lại rất dễ, uốn cong các cạnh hay vẽ nhiều đường viền cùng lúc chẳng hạn. Chình vì điều này mà distance field là kỹ thuật rất phổ biến khi cần vẽ các ký tự của các phông chữ khác nhau, ví dụ như các phần mềm [Mapbox GL Labels](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817), [Matt DesLauriers](https://twitter.com/mattdesl) [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu) và [được mô tả chi tiết trong chương 7 của quyển sách iPhone 3D Programming của nhà xuất bản O’Reilly](http://chimera.labs.oreilly.com/books/1234000001814/ch07.html#ch07_id36000921).
+Các distance field có thể được kết hợp lại với nhau để vẽ hầu như tất cả mọi thứ. Rõ ràng là hình vẽ càng phức tạp thì phương pháp kết hợp chúng sẽ càng rối rắm, nhưng nếu bạn có 1 công thức để tính 1 distance field cho 1 khối hình học cơ bản nào đó rồi, thì việc tạo thêm hiệu ứng cho nó lại rất dễ, uốn cong các cạnh hay vẽ nhiều đường viền cùng lúc chẳng hạn. Chình vì điều này mà distance field là kỹ thuật rất phổ biến khi cần vẽ các ký tự của các phông chữ khác nhau, ví dụ như các phần mềm [Mapbox GL Labels](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817), [Matt DesLauriers](https://twitter.com/mattdesl) [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu) và [được mô tả chi tiết trong chương 7 của quyển sách iPhone 3D Programming của nhà xuất bản O’Reilly](https://www.oreilly.com/library/view/iphone-3d-programming/9781449388133/ch07.html#ch07_id36000844).
 
 Hãy xem đoạn code sau:
 

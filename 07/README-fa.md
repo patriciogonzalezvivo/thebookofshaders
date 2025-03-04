@@ -163,7 +163,7 @@ pct = pow(distance(st,vec2(0.4)),distance(st,vec2(0.6)));
 
 ![Zen garden](zen-garden.jpg)
 
-با استفاده از فیلد فاصله تقریبا می‌توان هر چیزی کشید. مشخصا هر چه شکل پیچیده تر باشد، معادله آن پیچیده تر خواهد بود، اما وقتی فرمول فیلد فاصله برای رسم یک شکل را بدست آورید، خیلی ساده میتوان آن را با افکت های دیگر ترکیب یا اضافه کرد، مانند لبه های نرم یا outLine ها . برای همین استفاده از فیلد فاصله در رندر کردن فونت ها بسیار رایج است, مانند [Mapbox GL Labels](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817), [Matt DesLauriers](https://twitter.com/mattdesl) [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu) و [as is described on Chapter 7 of iPhone 3D Programming, O’Reilly](http://chimera.labs.oreilly.com/books/1234000001814/ch07.html#ch07_id36000921).
+با استفاده از فیلد فاصله تقریبا می‌توان هر چیزی کشید. مشخصا هر چه شکل پیچیده تر باشد، معادله آن پیچیده تر خواهد بود، اما وقتی فرمول فیلد فاصله برای رسم یک شکل را بدست آورید، خیلی ساده میتوان آن را با افکت های دیگر ترکیب یا اضافه کرد، مانند لبه های نرم یا outLine ها . برای همین استفاده از فیلد فاصله در رندر کردن فونت ها بسیار رایج است, مانند [Mapbox GL Labels](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817), [Matt DesLauriers](https://twitter.com/mattdesl) [Material Design Fonts](http://mattdesl.svbtle.com/material-design-on-the-gpu) و as is described in [Chapter 7 of iPhone 3D Programming, O’Reilly](https://www.oreilly.com/library/view/iphone-3d-programming/9781449388133/ch07.html#ch07_id36000844).
 
 نگاهی به کد زیر بیاندازید.
 
@@ -226,6 +226,6 @@ float a = atan(pos.y,pos.x);
 
 تبریک! بخش سختی را گذراندید! کمی استراحت کنید و اجازه دهید این مفاهیم جا بیوفتد، ساخت اشکال در نرم افزار Processing آسان است، ولی اینجا خیر. در سرزمین شیدر ها طراحی شکل پیچیده است، و سازگاری با این الگوی جدید می‌تواند طاقت فرسا باشد!
 
-در آخر این صفحه به شما [PixelSpirit Deck](https://patriciogonzalezvivo.github.io/PixelSpiritDeck/) معرفی شده. این کارت ها به شما توابع شکل دهی را بخوبی یاد می‌دهند. از آن ها در طرح ها و شیدر های خودتان استفاده کنید. این دسته کارت دارای یک منحنی یادگیری تدریجی است. بنابر این تمرین کردن یک کارت در هر روز می‌تواند تا 30 روز شما را به چالش بکشد. 
+در آخر این صفحه به شما [PixelSpirit Deck](https://patriciogonzalezvivo.github.io/PixelSpiritDeck/) معرفی شده. این کارت ها به شما توابع شکل دهی را بخوبی یاد می‌دهند. از آن ها در طرح ها و شیدر های خودتان استفاده کنید. این دسته کارت دارای یک منحنی یادگیری تدریجی است. بنابر این تمرین کردن یک کارت در هر روز می‌تواند تا 30 روز شما را به چالش بکشد.
 
 اکنون که می‌دانید چگونه اشکال را رسم کنید، مطمئنم ایده های جدید در ذهنتان ایجاد می‌شود. در فصل بعدی، نحوه حرکت، چرخش و مقیاس پذیری اشکال را خواهید آموخت. و امکان ترکیب آنان را خواهید داشت.
