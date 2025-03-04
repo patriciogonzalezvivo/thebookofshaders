@@ -125,7 +125,7 @@ Take a look at the following table of equations made by [Kynd](http://www.kynd.i
 
 #### For your toolbox
 
-* [LYGIA](https://lygia.xyz/) is a shader library of reusable functions that can be include easily on your projects. It's very granular, designed for reusability, performance and flexibility. And can be easily be added to any projects and frameworks. It's divided in different sections and it have an entire one for[math operations](https://lygia.xyz/math)
+* [LYGIA](https://lygia.xyz/) is a shader library of reusable functions that can be include easily on your projects. It's very granular, designed for reusability, performance and flexibility. And can be easily be added to any projects and frameworks. It's divided in different sections and it have an entire one for [math operations](https://lygia.xyz/math)
 
 
 * [GraphToy](http://www.iquilezles.org/apps/graphtoy/): once again [Iñigo Quilez](http://www.iquilezles.org) made a tool to visualize GLSL functions in WebGL.
