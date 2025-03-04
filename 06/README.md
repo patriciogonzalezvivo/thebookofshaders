@@ -93,7 +93,7 @@ By mapping the position on the x axis to the Hue and the position on the y axis 
 
 ### HSB in polar coordinates
 
-HSB was originally designed to be represented in polar coordinates (based on the angle and radius) instead of cartesian coordinates (based on x and y). To map our HSB function to polar coordinates we need to obtain the angle and distance from the center of the billboard to the pixel coordinate. For that we will use the [`length()`](../glossary/?search=length) function and [`atan(y,x)`](../glossary/?search=atan) (which is the GLSL version of the commonly used `atan2(y,x)`).  
+HSB was originally designed to be represented in polar coordinates (based on the angle and radius) instead of cartesian coordinates (based on x and y). To map our HSB function to polar coordinates we need to obtain the angle and distance from the center of the billboard to the pixel coordinate. For that we will use the [`length()`](../glossary/?search=length) function and [`atan(y,x)`](../glossary/?search=atan) (which is the GLSL version of the commonly used `atan2(y,x)`).
 
 When using vector and trigonometric functions, `vec2`, `vec3` and `vec4` are treated as vectors even when they represent colors. We will start treating colors and vectors similarly, in fact you will come to find this conceptual flexibility very empowering.
 

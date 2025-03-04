@@ -6,7 +6,7 @@ Below you will see some examples with images where you can play around and uncom
 
 <div class="codeAndCanvas" data="inv.frag" data-textures="00.jpg,01.jpg"></div>
 
-### Add, Substract, Multiply and others
+### Add, Subtract, Multiply and others
 
 ![](02.jpg)
 
