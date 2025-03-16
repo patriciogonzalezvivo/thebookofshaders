@@ -21,8 +21,16 @@ Imagine the CPU of your computer as a big industrial pipe, and every task as som
 
 Video games and other graphic applications require a lot more processing power than other programs. Because of their graphic content they have to do huge numbers of pixel-by-pixel operations. Every single pixel on the screen needs to be computed, and in 3D games geometries and perspectives need to be calculated as well.
 
-Let's go back to our metaphor of the pipes and tasks. Each pixel on the screen represents a simple small task. Individually each pixel task isn't an issue for the CPU, but (and here is the problem) the tiny task has to be done to each pixel on the screen! That means in an old 800x600 screen, 480,000 pixels have to processed per frame which means 14,400,000 calculations per second! Yes! That’s a problem big enough to overload a microprocessor. In a modern 2880x1800 retina display running at 60 frames per second that calculation adds up to 311,040,000 calculations per second. How do graphics engineers solve this problem?
+Let’s go back to our metaphor of pipes and tasks. Each pixel on the screen represents a simple, small task. Individually, each pixel task isn’t an issue for the CPU, but (and here is the problem) this tiny task has to be performed on every pixel on the screen! That means that on an old 800×600 screen, with 480,000 pixels per frame, at 30 frames per second (FPS), the CPU has to process: 
 
+480,000 * 30 = 14,400,000 
+
+That’s 14.4 million calculations per second! Yes! That’s a problem big enough to overload a microprocessor.
+Now, on a modern 2880×1800 Retina display running at 60 FPS, the calculation skyrockets to:
+
+5,184,000 * 60 = 311,040,000
+
+That’s over 311 million calculations per second! So, how do graphics engineers solve this problem?
 ![](03.jpeg)
 
 This is when parallel processing becomes a good solution. Instead of having a couple of big and powerful microprocessors, or *pipes*, it is smarter to have lots of tiny microprocessors running in parallel at the same time. That’s what a Graphic Processor Unit (GPU) is.
