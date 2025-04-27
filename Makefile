@@ -7,14 +7,20 @@ clean:
 	rm -rf */tmp*.png
 	rm -rf book.*
 
+ifeq ($(OS),Windows_NT)
+PYTHON_SCRIPT = python3 src/parseBookWindows.py
+else
+PYTHON_SCRIPT = python3 src/parseBook.py
+endif
+
 all:
-	python3 src/parseBook.py  -f tex -f pdf -f epub
+	$(PYTHON_SCRIPT) -f tex -f pdf -f epub
 
 epub:
-	python3 src/parseBook.py -f epub
+	$(PYTHON_SCRIPT) -f epub
 
 pdf:
-	python3 src/parseBook.py -f pdf
+	$(PYTHON_SCRIPT) -f pdf
 
 tex:
-	python3 src/parseBook.py -f tex
+	$(PYTHON_SCRIPT) -f tex
