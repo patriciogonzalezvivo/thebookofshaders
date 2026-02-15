@@ -1,0 +1,1 @@
+## Çekirdek evrişimleri
