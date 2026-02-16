@@ -1,0 +1,2 @@
+# Başlarken
+## Fragment shader nedir?

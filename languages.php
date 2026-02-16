@@ -12,5 +12,6 @@
     <a href="?lan=de">Deutsch</a> -
     <a href="?lan=ru">Русский</a> -
     <a href="?lan=pl">Polski</a> -
+    <a href="?lan=tr">Türkçe</a> -
     <a href=".">English</a>
 </p>
