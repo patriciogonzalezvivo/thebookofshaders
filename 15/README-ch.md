@@ -26,13 +26,13 @@ vec4 texture2D(sampler2D texture, vec2 coordinates)
 * 把原先的纹理旋转90度。
 * 将鼠标位置赋值给纹理坐标来移动纹理。
 
-为什么你要为纹理痴狂呢？首先请忘了通道那可悲的255值吧；一旦你的图像被转换成了一个```uniform sampler2D```，所有的值都会在0.0和1.0的区间范围内（小数精度取决于你把```precision```设置成了多少）。这就是着色器能创造出美轮美奂的后处理效果的原因。
+为什么你应该对纹理感到兴奋？首先，忘掉每个通道只有可怜的255个值吧；一旦你的图像被转换成了一个```uniform sampler2D```，所有的值都会在0.0和1.0的区间范围内（小数精度取决于你设置的```precision```）。这就是为什么着色器可以实现非常漂亮的后期处理效果。
 
-其次，[```vec2()```](index.html#vec2.md)类型意味着你甚至可以获取到像素之间的值。如前所述，纹理是连续体（continuum）。也就是说，如果正确地设置好了你的纹理，你可以获取纹理图像上的任意值，而这些值在像素点之间是平滑过渡的！
+其次，[```vec2()```](index.html#vec2.md)类型意味着你甚至可以获取到像素之间的值。如前所述，纹理是连续体（continuum）。也就是说，如果正确地设置好了你的纹理，你可以获取纹理图像上的任意值，而这些值在像素点之间是平滑过渡的，不会出现跳变！
 
-最后，你可以让你的图像在边缘处重复。这样的话，在你获取坐标超出0.0到1.0这个归一化区间的值时，返回值会从另一边的边缘开始循环往复。
+最后，你可以把图像设置为在边缘处重复。这样的话，在你获取坐标在0.0到1.0这个归一化区间之外的值时，返回值会从另一边的边缘开始循环往复。
 
-所有这些功能会让你的图像越发像是无限循环往复的化纤面料。你可以拉扯、伸缩你的纹理而无需注意它们原初的数据究竟是什么样的。要体验这一点，看看下面的代码吧，其中我们使用[我们先前创建的噪声函数](../11/)来扭曲纹理。
+所有这些功能会让你的图像越发像是无限延展的化纤面料。你可以拉扯、伸缩你的纹理而无需注意它们原始的数据究竟是什么样的。要体验这一点，看看下面的代码吧，其中我们使用[我们先前创建的噪声函数](../11/)来扭曲纹理。
 
 <div class="codeAndCanvas" data="texture-noise.frag" data-textures="hokusai.jpg"></div>
 
@@ -42,7 +42,7 @@ vec4 texture2D(sampler2D texture, vec2 coordinates)
 
 ![Joseph Nicéphore Niépce (1826)](nicephore.jpg)
 
-我们该如何解决这个问题呢？我们需要知道这一图像的原始比例，才好在放大或缩小纹理的时候正确地保持它原始的[*宽高比*](http://en.wikipedia.org/wiki/Aspect_ratio)。为此，纹理的宽和高是以```uniform```的形式传递进着色器的——在我们的示例框架里是以纹理名后跟```Resolution```的```uniform vec2```传递进来的。一旦着色器里有了这些信息，我们就可以将纹理分辨率的```宽度```除以```高度```来获得纹理的宽高比。最后，把这个比例和```y```坐标相乘，我们就可以实现伸缩这根轴来让纹理匹配其原始比例。
+我们该如何解决这个问题呢？我们需要知道这一图像的原始比例，才好在放大或缩小纹理的时候正确地保持它原始的[*宽高比*](http://en.wikipedia.org/wiki/Aspect_ratio)。为此，纹理的宽和高是以```uniform```的形式传递进着色器的——在我们的示例框架里是以纹理名后跟```Resolution```的```uniform vec2```传递进来的。一旦着色器里有了这些信息，我们就可以将纹理分辨率的```width```除以```height```来获得纹理的宽高比。最后，把这个比例和```y```坐标相乘，我们就可以实现伸缩这根轴来让纹理匹配其原始比例。
 
 取消 21 行的注释来实操一下吧。
 
@@ -54,13 +54,13 @@ vec4 texture2D(sampler2D texture, vec2 coordinates)
 
 ![](03.jpg)
 
-你可能会觉得这有些不必要地繁琐……呃，可能你是对的。但这种对待图像的方式给了“奇技淫巧”足够的发挥空间。试想，你是一名室内装潢师，通过拉伸和折叠织物结构，你可以创造出更好的新图案和新技巧。
+你可能会觉得这未免太复杂了……呃，你大概率是对的。但这种对待图像的方式给了各种“奇技淫巧”足够的发挥空间。试想，你是一名室内装潢师，通过拉伸和折叠布料，你可以创造出更好的新图案和新技巧。
 
 ![Eadweard's Muybridge study of motion](muybridge.jpg)
 
-这种水平的工艺可以追溯到最早的一些光学实验。例如，游戏里很常见的*精灵动画*（*sprite animations*），你不可避免地会在它身上看到费纳奇镜（phenakistoscope）、西洋镜（zoetrope）和改良版西洋镜（praxinoscope）的影子。
+这种水平的工艺可以追溯到最早的一些光学实验。例如，游戏里很常见的*精灵动画*（*sprite animations*），你不可避免地会在它身上看到[费纳奇镜（phenakistoscope）](https://en.wikipedia.org/wiki/Phenakistiscope)、[走马盘（zoetrope）](https://en.wikipedia.org/wiki/Zoetrope)和[旋转活动视镜（praxinoscope）](https://en.wikipedia.org/wiki/Praxinoscope)的影子。
 
-这看起来很简单，但修改纹理坐标可以带来巨大的可能性。例如：
+这看似简单，但修改纹理坐标可以带来巨大的可能性。例如：
 
 <div class="codeAndCanvas" data="texture-sprite.frag" data-textures="muybridge.jpg"></div>
 
@@ -68,11 +68,14 @@ vec4 texture2D(sampler2D texture, vec2 coordinates)
 
 * 你能活学活用，做出万花筒效果吗？
 
-* 在Oculus和谷歌Cardboard之前，立体摄影是件大事。你能编写一个简单的着色器来重新使用这些美丽的图像吗?
+<canvas id="custom" class="canvas" data-fragment-url="texture-kaleidoscope.frag" data-textures="hokusai.jpg" width="300px" height="300px"></canvas>
 
-<a href=“../edit.php#10/ikeda-03.frag”><canvas id=“custom” class=“canvas” data-fragment-url=“ikeda-03.frag”  width=“520px” height=“200px”></canvas></a>
+* 在[Oculus](https://en.wikipedia.org/wiki/Oculus_Rift)和[谷歌Cardboard](https://en.wikipedia.org/wiki/Google_Cardboard)之前，立体摄影就已经很流行了。你能编写一个简单的着色器来重新使用这些美丽的图像吗?
 
+![](texture-stereo-00.jpg)
+![](texture-stereo-01.jpg)
+![](texture-stereo-03.jpg)
 
-* 你还可以使用纹理来再创造哪些其他的光学玩具吗?
+* 你还可以使用纹理操作来重现哪些其他的光学玩具?
 
 在下一章中，我们将学习如何使用着色器进行一些图像处理。你会注意到着色器的复杂性最终是有意义的，因为它很大程度上是为这一过程而生的。我们将开始做一些图像操作!
