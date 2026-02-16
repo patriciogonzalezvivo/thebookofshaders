@@ -57,7 +57,7 @@ Essayez de changer la valeur de *seuil* à la ligne 20 du code suivant :
 <div class="codeAndCanvas" data="step.frag"></div>
 
 L'autre fonction d'interpolation s'appelle [`smoothstep()`](../glossary/?search=smoothstep).
-Avec deux nombres *A* et *B* et une valeur d'interpolation *T* comprise entre *0.0* et *1.0*, elle nous permet de passer de progressivement (et en souplesse) de *A* à *B* en fonction de *T*.
+Avec deux nombres *A* et *B* et une valeur d'interpolation *T* comprise entre *0.0* et *1.0*, elle nous permet de passer progressivement (et en souplesse) de *A* à *B* en fonction de *T*.
 Les deux premiers arguments sont les *bornes* (*A* et *B*) et le troisième est la valeur d'interpolation (*T*).
 
 <div class="codeAndCanvas" data="smoothstep.frag"></div>
