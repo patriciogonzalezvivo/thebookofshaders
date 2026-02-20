@@ -11,7 +11,7 @@
 			$README .= $language;
 		}
 	}
-
+	
 	if(!empty($_GET['search']))
 		$subtitle = ": ".$_GET['search'];
 

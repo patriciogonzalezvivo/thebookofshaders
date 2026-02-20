@@ -1,0 +1,19 @@
+{
+    "scripts": {
+        "gen-sw": "workbox generateSW workbox-config.js",
+        "build": "browserify pwabuilder-adv-sw.js -p esmify | uglifyjs -cm > pwa-sw.js",
+        "gen-sw2": "node build.js",
+        "sw": "node inject.js",
+        "swb": "browserify service-worker.js -p esmify > ../../service-worker.build.js"
+    },
+    "type": "commonjs",
+    "dependencies": {
+        "workbox-precaching": "^7.0.0"
+    },
+    "devDependencies": {
+        "browserify": "^17.0.0",
+        "esmify": "^2.1.1",
+        "uglifyjs": "^2.4.11",
+        "workbox-cli": "^7.0.0"
+    }
+}
