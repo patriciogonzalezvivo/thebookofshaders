@@ -6,7 +6,7 @@
     <a href="?lan=ch">中文版</a> -
     <a href="?lan=kr">한국어</a> -
     <a href="?lan=es">Español</a> -
-    <a href="?lan=pt">Portugues</a> -
+    <a href="?lan=pt">Português</a> -
     <a href="?lan=fr">Français</a> -
     <a href="?lan=it">Italiano</a> -
     <a href="?lan=de">Deutsch</a> -
