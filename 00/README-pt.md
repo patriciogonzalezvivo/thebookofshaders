@@ -1,4 +1,4 @@
-# Introduction
+# Introdução
 
 <canvas id="custom" class="canvas" data-fragment-url="cmyk-halftone.frag" data-textures="vangogh.jpg" width="700px" height="320px"></canvas>
 
@@ -16,7 +16,7 @@ Nos capítulos seguintes, você vai descobrir o quão incrivelmente rápida e po
 
 ## Para quem é este livro?
 
-Este livro é escrito para programadores criativos, desenvolvedores de jogos e engenheiros que têm experiência em codificação, um conhecimento básico de álgebra linear e trigonometria, e quem quiser levar seu trabalho a um novo nível excitante de qualidade gráfica (se você quer aprender como programar, eu recomendo fortemente que comece com o [Processing](https://processing.org/) e volte mais tarde quando estiver comfortável com isso.).
+Este livro é escrito para programadores criativos, desenvolvedores de jogos e engenheiros que têm experiência em codificação, um conhecimento básico de álgebra linear e trigonometria, e quem quiser levar seu trabalho a um novo nível excitante de qualidade gráfica (se você quer aprender como programar, eu recomendo fortemente que comece com o [Processing](https://processing.org/) e volte mais tarde quando estiver confortável com isso.).
 
 Este livro vai te ensinar como usar e integrar shaders em seus projetos, melhorando a qualidade gráfica e performance. Devido ao fato de shaders GLSL (OpenGL Shading Language) compilarem e rodarem em grande variedade de plataformas, você vai poder aplicar o que aprendeu aqui para qualquer ambiente que usar OpenGL, OpenGL ES ou WebGL. Em outras palavras, você vai poder aplicar e usar seu conhecimento com sketches do [Processing](https://processing.org/), aplicações [openFrameworks](http://openframeworks.cc/) , instalações interativas [Cinder](http://libcinder.org/) , websites [Three.js](http://threejs.org/) ou jogos  iOS/Android.
 
