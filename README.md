@@ -108,6 +108,8 @@ Thanks [Wojciech Pachowiak](https://github.com/WojtekPachowiak) for the Polish [
 
 Thanks [Manoylov Andriy](https://twitter.com/ManoylovAC) for the Ukrainian [translation (український переклад)](?lan=ua)
 
+Thanks [Batuhan Dev](https://batudev.framer.website/portfolio) for the Turkish [translation (Türkçe)](?lan=tr)
+
 Thanks [Andy Stanton](https://andy.stanton.is/) for fixing and improving [the pdf/epub export pipeline](https://thebookofshaders.com/appendix/02/)
 
 Thanks to everyone who has believed in this project and [contributed with fixes](https://github.com/patriciogonzalezvivo/thebookofshaders/graphs/contributors) or donations.
