@@ -78,7 +78,7 @@ Patricio estudou e praticou psicoterapia e terapia de arte expressiva. Ele possu
 
 <div class="header"> <a href="http://jenlowe.net/" target="_blank">WebSite</a> - <a href="https://twitter.com/datatelling" target="_blank">Twitter</a> - <a href="https://github.com/datatelling" target="_blank">GitHub</a></div>
 
-## Acknowledgements
+## Agradecimentos
 
 Obrigado [Scott Murray](http://alignedleft.com/) pela inspiração e conselhos.
 
