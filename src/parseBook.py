@@ -25,7 +25,7 @@ def injectShaderBlocks(_folder, _text):
     for line in lines:
         if line.find('<div class=\"codeAndCanvas\"') >= 0:
             shaderTextureResults = re.findall(
-                r'<div class=\"codeAndCanvas\" data=\".*\" data-imgs=\"(.*)\"></div>', line.rstrip())
+                r'<div class=\"codeAndCanvas\" data=\".*\" data-textures=\"(.*)\"></div>', line.rstrip())
             shaderFile = re.sub(
                 r'<div class=\"codeAndCanvas\" data=\"(.*?)\"(>| .+>)</div>', r'\1', line.rstrip())
 
