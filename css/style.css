@@ -10,12 +10,14 @@ body {
     padding: 0;
     color: #222;
     margin-bottom: 60px;
-    margin-left: 60px;
-	margin-right: 60px;
+    margin-left: clamp(16px, 5vw, 60px);
+    margin-right: clamp(16px, 5vw, 60px);
 }
 
 pre {
     direction: ltr;
+    max-width: 100%;
+    overflow-x: auto;
 }
 
 h1 {
@@ -60,9 +62,11 @@ h3 {
 }
 
 #content {
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    overflow-wrap: anywhere;
 }
 
 a {
@@ -75,14 +79,15 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 520px;
+    max-width: min(520px, 100%);
+    height: auto;
 }
 
 .imgcontainer {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 520px;
+    max-width: min(520px, 100%);
 }
 
 .caption {
@@ -210,7 +215,7 @@ code {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 700px;
+    max-width: min(700px, 100%);
 }
 
 .codeAndCanvas {
@@ -238,7 +243,7 @@ code {
 .simpleFunction {
     margin-left: auto;
     margin-right: auto;
-    max-width: 700px;
+    max-width: min(700px, 100%);
 
 }
 
@@ -254,7 +259,7 @@ code {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 700px;
+    max-width: min(700px, 100%);
 }
 
 .cm-s-default .cm-variable-3 {
@@ -371,6 +376,82 @@ code {
     text-align: right;
 }
 
+/* Narrow viewports
+ * ---------------------------------
+ * */
+
+@media (max-width: 700px) {
+    h1,
+    h2,
+    h3,
+    h4 {
+        line-height: 1.2;
+    }
+
+    .header,
+    .toc-header {
+        overflow-wrap: anywhere;
+    }
+
+    ul.navigationBar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    li.navigationBar {
+        display: block;
+        margin: 10px;
+    }
+
+    .codeAndCanvas {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .codeAndCanvas .ge_canvas_container {
+        float: none !important;
+        width: 100% !important;
+        max-width: 100%;
+        order: 1;
+    }
+
+    .codeAndCanvas .ge_canvas_container table {
+        width: 100% !important;
+        max-width: 100%;
+        table-layout: fixed;
+    }
+
+    .codeAndCanvas canvas {
+        float: none;
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .codeAndCanvas .ge_editor {
+        width: 100% !important;
+        max-width: 100%;
+        overflow: hidden;
+        order: 2;
+    }
+
+    .codeAndCanvas .CodeMirror {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    .codeAndCanvas .ge_export_icon {
+        order: 3;
+    }
+}
+
 /* Theme Switcher
  * ---------------------------------
  * */
@@ -405,4 +486,3 @@ code {
 [data-theme='dark'] img:hover {
     opacity: 1;
 }
-
