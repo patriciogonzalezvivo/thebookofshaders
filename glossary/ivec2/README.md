@@ -3,11 +3,11 @@
 
 ### Declaration
 ```glsl
-bvec2 aIvec2 = ivec2(1, 1);
-bvec2 bIvec2 = ivec2(1);
+ivec2 aIvec2 = ivec2(1, 1);
+ivec2 bIvec2 = ivec2(1);
 
-bvec2 cIvec2 = ivec2(aIvec3);
-bvec2 dIvec2 = ivec2(aIvec3.x, aIvec3.y);
+ivec2 cIvec2 = ivec2(aIvec3);
+ivec2 dIvec2 = ivec2(aIvec3.x, aIvec3.y);
 ```
 
 ### Description

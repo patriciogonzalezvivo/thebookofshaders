@@ -42,7 +42,7 @@
 
 [gl_Position](./?search=gl_Position)
 [gl_PointSize](./?search=gl_PointSize)
-[gl_PointCoord](index.hmtl#gl_PointCoord)
+[gl_PointCoord](./?search=gl_PointCoord)
 [gl_FrontFacing](./?search=gl_FrontFacing)
 [gl_FragCoord](./?search=gl_FragCoord)
 [gl_FragColor](./?search=gl_FragColor)
@@ -180,7 +180,7 @@
 [gl_FragColor](./?search=gl_FragColor)
 [gl_FragCoord](./?search=gl_FragCoord)
 [gl_FrontFacing](./?search=gl_FrontFacing)
-[gl_PointCoord](index.hmtl#gl_PointCoord)
+[gl_PointCoord](./?search=gl_PointCoord)
 [gl_PointSize](./?search=gl_PointSize)
 [gl_Position](./?search=gl_Position)
 [gl_MaxCombinedTextureImageUnits](./?search=gl_MaxCombinedTextureImageUnits)

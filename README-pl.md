@@ -104,7 +104,7 @@ Podziękowania dla [Sergey Karchevsky](https://www.facebook.com/sergey.karchevsk
 
 Podziękowania dla [Vu Phuong Hoang](https://www.facebook.com/vuphuonghoang88) za wietnamskie [tłumaczenie (Tiếng Việt)](?lan=vi)
 
-Podziękowania dla [Wojciecha Pachowiaka](https://github.com/WojtekPachowiak) za polskie [tłumaczenie (polski)](?lan=pl)
+Podziękowania dla [Wojciecha Pachowiaka](https://github.com/WojtekPachowiak) i [Kamila Tomaszka](https://github.com/kvmilos) za polskie [tłumaczenie (polski)](?lan=pl)
 
 Podziękowania dla [Manoylov Andriy](https://twitter.com/ManoylovAC) za ukraińskie [tłumaczenie (українська)](?lan=ua)
 

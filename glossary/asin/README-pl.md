@@ -1,5 +1,5 @@
 ## asin
-Zwraca arcsin parametru
+Zwraca arcus sinus parametru
 
 ### Deklaracja
 ```glsl
@@ -10,10 +10,10 @@ vec4 asin(vec4 x)
 ```
 
 ### Parametry
-```x``` określa wartość, której arcsin ma zostać zwrócony.
+```x``` określa wartość, której arcus sinus ma zostać zwrócony.
 
 ### Opis
-```asin()``` zwraca kąt, którego sinus trygonometryczny to ```x```.
+```asin()``` zwraca kąt, którego trygonometryczny sinus jest równy ```x```.
 
 <div class="simpleFunction" data="y = asin(x); "></div>
 

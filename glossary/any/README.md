@@ -3,9 +3,9 @@ Check whether any element of a boolean vector is true
 
 ### Declaration
 ```glsl
-bool all(bvec2 x)  
-bool all(bvec3 x)  
-bool all(bvec4 x)
+bool any(bvec2 x)  
+bool any(bvec3 x)  
+bool any(bvec4 x)
 ```
 
 ### Parameters
@@ -26,4 +26,4 @@ bool any(bvec x) {     // bvec can be bvec2, bvec3 or bvec4
 ```
 
 ### See Also
-[any()](/glossary/?search=any), [not()](/glossary/?search=not)
+[all()](/glossary/?search=all), [not()](/glossary/?search=not)

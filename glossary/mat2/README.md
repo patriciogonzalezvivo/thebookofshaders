@@ -11,7 +11,7 @@ mat2 dMat2 = mat2(aVec3, aFloat);
 ```
 
 ### Description
-```mat2``` data type is compose for a 2x2 matrix of floating point. As you can see above, can be initialize in different ways:
+```mat2``` data type is composed of a 2x2 matrix of floating point numbers. As you can see above, it can be initialized in different ways:
 
 - Providing a value for each component column by column.
 

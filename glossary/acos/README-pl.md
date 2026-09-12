@@ -3,17 +3,17 @@ Zwraca arcus cosinus podanego argumentu
 
 ### Deklaracja
 ```glsl
-float acos(float x)  
-vec2 acos(vec2 x)  
-vec3 acos(vec3 x)  
+float acos(float x)
+vec2 acos(vec2 x)
+vec3 acos(vec3 x)
 vec4 acos(vec4 x)
 ```
 
 ### Parametry
-```x``` wartość, której arcus cosinus ma zostać zwrócony.
+```x``` określa wartość, której arcus cosinus ma zostać zwrócony.
 
 ### Opis
-```acos()``` zwraca kąt, którego cosinus jest równy ```x```.
+```acos()``` zwraca kąt, którego trygonometryczny cosinus jest równy ```x```.
 
 <div class="simpleFunction" data="y = acos(x); "></div>
 

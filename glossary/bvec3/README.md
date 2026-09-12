@@ -3,14 +3,14 @@
 
 ### Declaration
 ```glsl
-vec3 aBvec3 = bvec3(true, true, true);
-vec3 bBvec3 = bvec3(true);
+bvec3 aBvec3 = bvec3(true, true, true);
+bvec3 bBvec3 = bvec3(true);
 
-vec3 cBvec3 = bvec3(aBvec4);
-vec3 dBvec3 = bvec3(aBvec4.x, aBvec4.y, aBvec4.z);
+bvec3 cBvec3 = bvec3(aBvec4);
+bvec3 dBvec3 = bvec3(aBvec4.x, aBvec4.y, aBvec4.z);
 
-vec3 eBvec3 = bvec3(aBvec2, aBool);
-vec3 fBvec3 = bvec3(aBvec2.x, aBvec2.y, aBool);
+bvec3 eBvec3 = bvec3(aBvec2, aBool);
+bvec3 fBvec3 = bvec3(aBvec2.x, aBvec2.y, aBool);
 ```
 
 ### Description

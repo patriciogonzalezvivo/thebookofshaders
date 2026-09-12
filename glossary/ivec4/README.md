@@ -3,11 +3,11 @@
 
 ### Declaration
 ```glsl
-vec4 aIvec4 = ivec4(1, 1, 1, 1);
-vec4 bIvec4 = ivec4(1);
+ivec4 aIvec4 = ivec4(1, 1, 1, 1);
+ivec4 bIvec4 = ivec4(1);
 
-vec4 cIvec4 = ivec4(aIvec2, aInteger, aIvec3);
-vec4 dIvec4 = ivec4(aIvec2.x, aIvec2.y, aInt, aIvec3.x);
+ivec4 cIvec4 = ivec4(aIvec2, aInt, aIvec3);
+ivec4 dIvec4 = ivec4(aIvec2.x, aIvec2.y, aInt, aIvec3.x);
 ```
 
 ### Description

@@ -1,5 +1,5 @@
 ## Mix
-Constrain a value to lie between two further values
+Linearly interpolate between two values
 
 ### Declaration
 ```glsl

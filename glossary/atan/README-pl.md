@@ -22,11 +22,9 @@ vec4 atan(vec4 y_over_x)
 ```y_over_x``` określa ułamek, którego arcus tangens ma zostać zwrócony.
 
 ### Opis
-```atan()``` zwraca kąt, którego trygonometryczny arcus tangens jest równy ```y,x``` lub ```y_over_x```, w zależności od tego, który przeciążenie jest wywoływane. W pierwszym przeciążeniu znaki ```y``` i ```x``` są używane do określenia ćwiartki, w której znajduje się kąt. Wartości zwracane przez ```atan``` w tym przypadku mieszczą się w zakresie -PI i PI. Wyniki są niezdefiniowane, jeśli ```x``` wynosi zero.
+```atan()``` zwraca kąt, którego trygonometryczny arcus tangens jest równy ```y,x``` lub ```y_over_x```, w zależności od tego, które przeciążenie jest wywoływane. W pierwszym przeciążeniu znaki ```y``` i ```x``` są używane do określenia ćwiartki, w której znajduje się kąt. Wartości zwracane przez ```atan``` w tym przypadku mieszczą się w zakresie od -PI do PI. Wyniki są niezdefiniowane, jeśli ```x``` wynosi zero.
 
-Dla drugiego przeciążenia, ```atan()``` zwraca kąt, którego tangens wynosi ```y_over_x```. Wartości zwracane w tym przypadku mieszczą się w zakresie -PI do PI.
+W drugim przeciążeniu ```atan()``` zwraca kąt, którego tangens wynosi ```y_over_x```. Wartości zwracane w tym przypadku mieszczą się w zakresie od -PI/2 do PI/2.
 
 ### Zobacz też
-[cos](/glossary/?lan=pl&search=cos), [acos](/glossary/?lan=pl&search=acos), [sin](/glossary/?lan=pl&search=sin), [asin](/glossary/?lan=pl&search=asin), [atan](/glossary/?lan=pl&search=atan), [Rozdział 05: Shaping Functions](/05/), [Rozdział 06: Kolory](/06/)
-[]: # (end)
-[]: # (end)
+[cos](/glossary/?lan=pl&search=cos), [acos](/glossary/?lan=pl&search=acos), [sin](/glossary/?lan=pl&search=sin), [asin](/glossary/?lan=pl&search=asin), [tan](/glossary/?lan=pl&search=tan), [Rozdział 05: Shaping Functions](/05/?lan=pl), [Rozdział 06: Kolory](/06/?lan=pl)

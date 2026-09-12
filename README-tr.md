@@ -104,7 +104,7 @@ Rusça [çeviri (russian)](?lan=ru) için [Sergey Karchevsky](https://www.facebo
 
 Vietnamca [çeviri (Tiếng Việt)](?lan=vi) için [Vu Phuong Hoang](https://www.facebook.com/vuphuonghoang88)'a teşekkürler.
 
-Lehçe [çeviri (polski)](?lan=pl) için [Wojciech Pachowiak](https://github.com/WojtekPachowiak)'a teşekkürler.
+Lehçe [çeviri (polski)](?lan=pl) için [Wojciech Pachowiak](https://github.com/WojtekPachowiak) ve [Kamil Tomaszek](https://github.com/kvmilos)'e teşekkürler.
 
 Ukraynaca [çeviri (український переклад)](?lan=ua) için [Manoylov Andriy](https://twitter.com/ManoylovAC)'ye teşekkürler.
 

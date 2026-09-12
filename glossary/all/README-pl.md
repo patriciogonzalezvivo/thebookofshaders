@@ -3,8 +3,8 @@ Sprawdza, czy wszystkie elementy wektora logicznego są prawdziwe
 
 ### Deklaracja
 ```glsl
-bool all(bvec2 x)  
-bool all(bvec3 x)  
+bool all(bvec2 x)
+bool all(bvec3 x)
 bool all(bvec4 x)
 ```
 
@@ -25,5 +25,6 @@ bool all(bvec x){       // bvec może być bvec2, bvec3 lub bvec4
     return result;
 }
 ```
+
 ### Zobacz też
 [any()](/glossary/?lan=pl&search=any), [not()](/glossary/?lan=pl&search=not)

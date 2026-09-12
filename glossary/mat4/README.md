@@ -14,7 +14,7 @@ mat4 dMat4 = mat4(aVec4, aVec3, bVec4, cVec4, aFloat);
 ```
 
 ### Description
-```mat4``` data type is compose for a 4x4 matrix of floating point. As you can see above, can be initialize in different ways:
+```mat4``` data type is composed of a 4x4 matrix of floating point numbers. As you can see above, it can be initialized in different ways:
 
 - Providing a value for each component column by column.
 
@@ -25,6 +25,7 @@ mat4 dMat4 = mat4(aVec4, aVec3, bVec4, cVec4, aFloat);
 In the same way data can be accessed component-wise or column by column:
 
 ```glsl
+mat4 aMat4;
 aMat4[3][3] = 1.0;
 float aFloat = aMat4[3][3];
 

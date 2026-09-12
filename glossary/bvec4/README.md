@@ -3,11 +3,11 @@
 
 ### Declaration
 ```glsl
-vec4 aBvec4 = bvec4(true, true, true, true);
-vec4 bBvec4 = bvec4(true);
+bvec4 aBvec4 = bvec4(true, true, true, true);
+bvec4 bBvec4 = bvec4(true);
 
-vec4 cBvec4 = bvec4(aBvec2, aBool, aBvec3);
-vec4 dBvec4 = bvec4(aBvec2.x, aBvec2.y, aBool, aBvec3.x);
+bvec4 cBvec4 = bvec4(aBvec2, aBool, aBvec3);
+bvec4 dBvec4 = bvec4(aBvec2.x, aBvec2.y, aBool, aBvec3.x);
 ```
 
 ### Description

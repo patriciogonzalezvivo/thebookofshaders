@@ -10,7 +10,7 @@ vec4 ceil(vec4 x)
 ```
 
 ### Parametry
-```x``` określa wartość do ewaluacji
+```x``` określa wartość do ewaluacji.
 
 ### Opis
 ```ceil()``` zwraca wartość równą najbliższej liczbie całkowitej, która jest większa bądź równa ```x```.

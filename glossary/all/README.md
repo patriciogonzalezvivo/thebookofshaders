@@ -3,9 +3,9 @@ Check whether all elements of a boolean vector are true
 
 ### Declaration
 ```glsl
-bool any(bvec2 x)  
-bool any(bvec3 x)  
-bool any(bvec4 x)
+bool all(bvec2 x)  
+bool all(bvec3 x)  
+bool all(bvec4 x)
 ```
 
 ### Parameters

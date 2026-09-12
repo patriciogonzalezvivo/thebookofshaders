@@ -104,7 +104,7 @@
 
 Дякую [Vu Phuong Hoang](https://www.facebook.com/vuphuonghoang88) за [в'єтнамський переклад (Tiếng Việt)](?lan=vi)
 
-Дякую [Wojciech Pachowiak](https://github.com/WojtekPachowiak) за [польський переклад (polski)](?lan=pl)
+Дякую [Wojciech Pachowiak](https://github.com/WojtekPachowiak) та [Kamil Tomaszek](https://github.com/kvmilos) за [польський переклад (polski)](?lan=pl)
 
 Дякую [Манойлову Андрію](https://twitter.com/ManoylovAC) за [український переклад](?lan=ua)
 

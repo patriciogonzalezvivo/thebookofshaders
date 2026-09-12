@@ -11,7 +11,7 @@ mat3 aMat3 = mat3(
 mat3 bMat3 = mat3(1.0);
 
 mat3 cMat3 = mat3(aVec3, bVec3, cVec3);
-mat3 dMat3 = mat3(aVec4, aVec3, bVec4, aFloat);
+mat3 dMat3 = mat3(aVec4, bVec4, aFloat);
 ```
 
 ### Опис

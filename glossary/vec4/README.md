@@ -7,7 +7,7 @@ vec4 aVec4 = vec4(1.0, 1.0, 1.0, 1.0);
 vec4 bVec4 = vec4(1.0);
 
 vec4 cVec4 = vec4(aVec2, aFloat, aVec3);
-vec4 dVec4 = vec4(aBvec2.x, aBvec2.y, aFloat, aBvec3.x);
+vec4 dVec4 = vec4(aVec2.x, aVec2.y, aFloat, aVec3.x);
 ```
 
 ### Description
